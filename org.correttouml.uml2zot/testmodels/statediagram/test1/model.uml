@@ -33,6 +33,25 @@
       </packagedElement>
       <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_NGXMMAYWEeKDB5y-CSxkCg" name="InstanceSpecification1" classifier="_IkT9UAYWEeKDB5y-CSxkCg"/>
       <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Nek34AYWEeKDB5y-CSxkCg" name="InstanceSpecification2" classifier="_JfjdkAYWEeKDB5y-CSxkCg"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_lrNBUIc2EeKH8a9UDB2FCw" name="class1_class2_1" memberEnd="_lrNBUYc2EeKH8a9UDB2FCw _lrLzMIc2EeKH8a9UDB2FCw">
+        <ownedEnd xmi:id="_lrNBUYc2EeKH8a9UDB2FCw" name="class1" type="_IkT9UAYWEeKDB5y-CSxkCg" association="_lrNBUIc2EeKH8a9UDB2FCw">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lrNBUoc2EeKH8a9UDB2FCw" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lrNBU4c2EeKH8a9UDB2FCw" value="1"/>
+        </ownedEnd>
+        <ownedEnd xmi:id="_lrLzMIc2EeKH8a9UDB2FCw" name="class2" type="_JfjdkAYWEeKDB5y-CSxkCg" association="_lrNBUIc2EeKH8a9UDB2FCw">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lrLzMYc2EeKH8a9UDB2FCw" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lrLzMoc2EeKH8a9UDB2FCw" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_ohNlIIc2EeKH8a9UDB2FCw" name="InstanceSpecification0" classifier="_lrNBUIc2EeKH8a9UDB2FCw">
+        <eAnnotations xmi:id="_ohOzQIc2EeKH8a9UDB2FCw" source="InstanceEnd" references="_NGXMMAYWEeKDB5y-CSxkCg _Nek34AYWEeKDB5y-CSxkCg"/>
+        <slot xmi:id="_ohOzQYc2EeKH8a9UDB2FCw" definingFeature="_lrNBUYc2EeKH8a9UDB2FCw">
+          <value xmi:type="uml:InstanceValue" xmi:id="_ohOzQoc2EeKH8a9UDB2FCw" name="InstanceValue0" type="_IkT9UAYWEeKDB5y-CSxkCg" instance="_NGXMMAYWEeKDB5y-CSxkCg"/>
+        </slot>
+        <slot xmi:id="_ohPaUIc2EeKH8a9UDB2FCw" definingFeature="_lrLzMIc2EeKH8a9UDB2FCw">
+          <value xmi:type="uml:InstanceValue" xmi:id="_ohPaUYc2EeKH8a9UDB2FCw" name="InstanceValue0" type="_JfjdkAYWEeKDB5y-CSxkCg" instance="_Nek34AYWEeKDB5y-CSxkCg"/>
+        </slot>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_EAwxoAZuEeKCgqqlDd45Lg" name="Package1">
       <packagedElement xmi:type="uml:Class" xmi:id="_HdohIAZuEeKCgqqlDd45Lg" name="Class1">
