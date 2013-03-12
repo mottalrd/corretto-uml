@@ -16,7 +16,10 @@ public class Test1 {
 	/** THE CCAS MODEL */
 	//private String MODEL_FILE="testmodels/ccas/v0.1/model.uml";
 	//private String MODEL_FILE="testmodels/ccas/v0.2/model.uml";
-	private String MODEL_FILE="testmodels/plugin/model.uml";
+	//private String MODEL_FILE="testmodels/plugin/model.uml";
+	
+	/** Mehdi */
+	private String MODEL_FILE="testmodels/MehdiTest6/model.uml";
 	
 	/** SEQUENCE DIAGRAM TESTING */
 	//private String MODEL_FILE="testmodels/sequencediagram/test1/model.uml";
