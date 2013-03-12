@@ -26,66 +26,117 @@ public class STimeConstraint{
 		this.mades_ti=te;
 	}
 	
-    public BooleanFormulae getSemantics(Object... object) {
-        And sem=new And();
-        Predicate ev1=null;
-        Predicate ev2=null;
-        
-        if(!mades_ti.isEvent1Now()) ev1=SEventFactory.getInstance(mades_ti.getEvent1()).getPredicate(object);
-        if(!mades_ti.isEvent2Now()) ev2=SEventFactory.getInstance(mades_ti.getEvent2()).getPredicate(object);
-        int timeunits=mades_ti.getTimeUnits();
-        
-        switch(mades_ti.getTimeOperator()){
-            case NEQ:{
-                if(mades_ti.isEvent2Now()){
-                    sem.addFormulae(new Not(new Past(ev1,timeunits)));
-                }else{
-                	sem.addFormulae(new Implies(ev2,new Not(new Past(ev1,timeunits))));
-                }
-                break;
-            }
-            case EQ:{
-                if(mades_ti.isEvent2Now()){
-                	sem.addFormulae(new Past(ev1,timeunits));
-                }else{
-                	sem.addFormulae(new Implies(ev2,new Past(ev1,timeunits)));
-                }
-                break;
-            }
-            case LT:{
-                if(mades_ti.isEvent2Now()){
-                	sem.addFormulae(new And(new WithinP(ev1, timeunits-1), new Since_ei(new Not(ev1), ev1)));
-                }else{
-                	sem.addFormulae(new Iff(ev2, new And(new WithinP(ev1, timeunits-1), new Since_ei(new And(new Not(ev2),new Not(ev1)), ev1))));
-                }
-                break;
-            }
-            case LTE:{
-                if(mades_ti.isEvent2Now()){
-                	sem.addFormulae(new And(new WithinP(ev1, timeunits), new Since_ei(new Not(ev1), ev1)));
-                }else{
-                	sem.addFormulae(new Iff(ev2, new And(new WithinP(ev1, timeunits), new Since_ei(new And(new Not(ev2),new Not(ev1)), ev1))));
-                }
-                break;
-            }
-            case GT:{
-                if(mades_ti.isEvent2Now()){
-                	sem.addFormulae(new And(new Lasted_ie(new Not(ev1), timeunits+1), new SomP(ev1)));
-                }else{
-                	sem.addFormulae(new And(ev2, new Lasted_ie(new Not(ev1),timeunits+1),new Since_ei(new Not(ev2),ev1)));
-                }
-                break;
-            }                   
-            case GTE:{
-                if(mades_ti.isEvent2Now()){
-                	sem.addFormulae(new Lasted(new Not(ev1), timeunits-1));
-                }else{
-                	sem.addFormulae(new Iff(ev2, new And(new Lasted(new Not(ev1),timeunits-1),new Since_ei(new Not(ev2),ev1))));
-                }
-                break;
-            }
-        }
-        return sem;
-    }
+	public BooleanFormulae getSemantics(Object... object) {
+		And sem=new And();
+		Predicate ev1=null;
+		Predicate ev2=null;
+
+		if(!mades_ti.isEvent1Now()) ev1=SEventFactory.getInstance(mades_ti.getEvent1()).getPredicate(object);
+		if(!mades_ti.isEvent2Now()) ev2=SEventFactory.getInstance(mades_ti.getEvent2()).getPredicate(object);
+		int timeunits=mades_ti.getTimeUnits();
+		// <if Time Constraint belongs to a Sequence Diagram>
+		if(mades_ti.getContext() instanceof SequenceDiagram){
+			SSequenceDiagram sd = new SSequenceDiagram((SequenceDiagram) mades_ti.getContext());
+			Predicate sd_Predicate = sd.getPredicate();
+			switch(mades_ti.getTimeOperator()){
+			case EQ:{
+				if(!mades_ti.isEvent2Now()){
+					sem.addFormulae(new And(sd_Predicate, new Implies(ev2, new And(new Past(new And(ev1, sd_Predicate), timeunits), new Lasted_ie(new And(new Not(ev1), sd_Predicate), timeunits)))));
+				}
+				break;
+			}
+			case LT:{
+				if(!mades_ti.isEvent2Now()){
+					sem.addFormulae(new And(sd_Predicate, new Implies(new And(ev2, sd_Predicate), new WithinP_ii(new And(ev1, sd_Predicate), timeunits - 1))));
+				}
+				break;
+			}
+			case LTE:{
+				if(!mades_ti.isEvent2Now()){
+					sem.addFormulae(new And(sd_Predicate, new Implies(new And(ev2, sd_Predicate), new WithinP_ii(new And(ev1, sd_Predicate), timeunits))));
+				}
+				break;
+			}
+			case GT:{
+				if(!mades_ti.isEvent2Now()){
+					sem.addFormulae(new And(sd_Predicate, new Implies(new And(ev2, sd_Predicate), new And(new Lasted_ii(new Not(ev1), timeunits), new SomP(new And(ev1, sd_Predicate))))));
+				}
+				break;
+			}                   
+			case GTE:{
+				if(!mades_ti.isEvent2Now()){
+					sem.addFormulae(new And(sd_Predicate, new Implies(new And(ev2, sd_Predicate), new And(new Lasted_ie(new Not(ev1), timeunits), new SomP(new And(ev1, sd_Predicate))))));
+				}
+				break;
+			}
+			}
+			// </if Time Constraint belongs to a Sequence Diagram>
+			// <if Time Constraint belongs to a State Diagram>
+		}else{
+
+			switch(mades_ti.getTimeOperator()){
+			case NEQ:{
+				if(mades_ti.isEvent2Now()){
+					sem.addFormulae(new Not(new Past(ev1,timeunits)));
+				}else{
+					sem.addFormulae(new Implies(ev2,new Not(new Past(ev1,timeunits))));
+				}
+				break;
+			}
+			case EQ:{
+				if(mades_ti.isEvent2Now()){
+					//                	sem.addFormulae(new Past(ev1,timeunits));
+					sem.addFormulae(new And(new Past(ev1, timeunits), new Lasted_ie(new Not(ev1), timeunits)));
+				}else{
+					//                	sem.addFormulae(new Implies(ev2,new Past(ev1,timeunits)));
+					sem.addFormulae(new Since(new And(new Not(ev1), new Not(ev2)), new And(ev2, new Past(ev1, timeunits), new Lasted_ie(new Not(ev1), timeunits))));
+				}
+				break;
+			}
+			case LT:{
+				if(mades_ti.isEvent2Now()){
+					//                	sem.addFormulae(new And(new WithinP(ev1, timeunits-1), new Since(new Not(ev1), ev1)));
+					sem.addFormulae(new WithinP_ii(ev1, timeunits - 1));
+				}else{
+					//                	sem.addFormulae(new Iff(ev2, new And(new WithinP(ev1, timeunits-1), new Since(new And(new Not(ev2),new Not(ev1)), ev1))));
+					sem.addFormulae(new Since(new And(new Not(ev1),new Not(ev2)), new And(ev2, new WithinP_ii(ev1, timeunits - 1))));
+				}
+				break;
+			}
+			case LTE:{
+				if(mades_ti.isEvent2Now()){
+					//                	sem.addFormulae(new And(new WithinP(ev1, timeunits), new Since(new Not(ev1), ev1)));
+					sem.addFormulae(new WithinP_ii(ev1, timeunits));
+				}else{
+					//                	sem.addFormulae(new Iff(ev2, new And(new WithinP(ev1, timeunits), new Since(new And(new Not(ev2),new Not(ev1)), ev1))));
+					sem.addFormulae(new Since(new And(new Not(ev1), new Not(ev2)), new And(ev2, new WithinP_ii(ev1, timeunits))));
+				}
+				break;
+			}
+			case GT:{
+				if(mades_ti.isEvent2Now()){
+					//                	sem.addFormulae(new Lasted(new Not(ev1), timeunits));
+					sem.addFormulae(new And(new Lasted_ii(new Not(ev1), timeunits), new SomP(ev1)));
+				}else{
+					//                	sem.addFormulae(new Iff(ev2, new And(new Lasted(new Not(ev1),timeunits),new Since(new Not(ev2),ev1))));
+					sem.addFormulae(new Since(new Not(ev1), new And(ev2,new Lasted_ii(new Not(ev1), timeunits), new SomP(ev1))));
+				}
+				break;
+			}                   
+			case GTE:{
+				if(mades_ti.isEvent2Now()){
+					//                	sem.addFormulae(new Lasted(new Not(ev1), timeunits-1));
+					sem.addFormulae(new And(new Lasted_ie(new Not(ev1), timeunits), new SomP(ev1)));
+				}else{
+					//                	sem.addFormulae(new Iff(ev2, new And(new Lasted(new Not(ev1),timeunits-1),new Since(new Not(ev2),ev1))));
+					sem.addFormulae(new Since(new Not(ev1), new And(ev2,new Lasted_ie(new Not(ev1), timeunits), new SomP(ev1))));
+				}
+				break;
+			}
+			}
+		}
+		// </if Time Constraint belongs to a State Diagram>
+		return sem;
+	}
 	
 }

@@ -78,7 +78,7 @@ public class STransition {
             sem = sem + new Implies(new And(trigger,guard), orTransitions) + "\n";
             sem = sem + new Implies(transition, new And(sourcestate, trigger, guard)) + "\n";
         } else if (!this.mades_transition.hasTrigger() && this.mades_transition.hasGuard()) {
-        	sem = sem + new Implies(guard, orTransitions) + "\n";
+        	//sem = sem + new Implies(guard, orTransitions) + "\n";
             sem = sem + new Implies(transition, new And(sourcestate, guard)) + "\n";
         } else if (!this.mades_transition.hasTrigger() && !this.mades_transition.hasGuard()){
         	sem = sem + new Implies(transition, sourcestate) + "\n";
