@@ -208,11 +208,11 @@
       <packagedElement xmi:type="uml:Class" xmi:id="_5SUyIIG1EeKy_c6r4VW8XQ" name="term"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_6lBJEIG1EeKy_c6r4VW8XQ" name="constant2"/>
     </packagedElement>
-    <profileApplication xmi:id="_VYB8wIGvEeKo-afdanCdpg">
-      <eAnnotations xmi:id="_WAfD4IGvEeKo-afdanCdpg" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="pathmap://resources/model.profile.uml#_5O4uUIGOEeKdAvnGBia4Rg"/>
+    <profileApplication xmi:id="_ay3msIskEeKq16zbeZ_Fpg">
+      <eAnnotations xmi:id="_ay74IIskEeKq16zbeZ_Fpg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://resources/model.profile.uml#_TgjsIIsjEeKKVfwHBkrs7w"/>
       </eAnnotations>
-      <appliedProfile href="pathmap://resources/model.profile.uml#_jpeHMANtEeKTXbQztILh3g"/>
+      <appliedProfile href="pathmap://resources/model.profile.uml#_DCylYIJgEeKaWIAr5_BKMw"/>
     </profileApplication>
   </uml:Model>
   <MADESVerification.VerificationTags:System xmi:id="_Xi_YcIGvEeKo-afdanCdpg" base_Package="_QErz0IGvEeKo-afdanCdpg"/>

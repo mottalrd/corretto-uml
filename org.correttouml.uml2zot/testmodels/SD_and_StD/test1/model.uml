@@ -150,11 +150,11 @@ with the sysClock</body>
       <message xmi:id="_pzkOcBXjEeKU3rHUqZ-LRQ" name="Message" messageSort="asynchCall" receiveEvent="_pz-eIBXjEeKU3rHUqZ-LRQ" sendEvent="_pz93EBXjEeKU3rHUqZ-LRQ" signature="_KEbsQAYWEeKDB5y-CSxkCg"/>
       <message xmi:id="_bxAgYBXoEeKU3rHUqZ-LRQ" name="Message0" messageSort="asynchCall" receiveEvent="_bxBugBXoEeKU3rHUqZ-LRQ" sendEvent="_bxBHcBXoEeKU3rHUqZ-LRQ" signature="_Z9qTcBXoEeKU3rHUqZ-LRQ"/>
     </packagedElement>
-    <profileApplication xmi:id="_aaO2AAYWEeKDB5y-CSxkCg">
-      <eAnnotations xmi:id="_abEjgAYWEeKDB5y-CSxkCg" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="../../../../eu.mades.profile/model.profile.uml#_iXz1gAajEeKtRYEODWfJYQ"/>
+    <profileApplication xmi:id="_ay3msIskEeKq16zbeZ_Fpg">
+      <eAnnotations xmi:id="_ay74IIskEeKq16zbeZ_Fpg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://resources/model.profile.uml#_TgjsIIsjEeKKVfwHBkrs7w"/>
       </eAnnotations>
-      <appliedProfile href="../../../../eu.mades.profile/model.profile.uml#_jpeHMANtEeKTXbQztILh3g"/>
+      <appliedProfile href="pathmap://resources/model.profile.uml#_DCylYIJgEeKaWIAr5_BKMw"/>
     </profileApplication>
   </uml:Model>
   <CorrettoUML.VerificationTags:System xmi:id="_cDn1sAYWEeKDB5y-CSxkCg" base_Package="_YCrIwAYWEeKDB5y-CSxkCg"/>
