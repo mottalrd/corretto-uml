@@ -68,5 +68,15 @@ public class UML2Zot {
 			e.printStackTrace();
 		}
 	}
+	
+	public void generateZOTFile(int timebound, String plugin, String solver, String zot_file){		
+		LOGGER.info("Build the ZOT file");
+		ZOTConf zot=new ZOTConf(timebound, plugin, solver, this.s_mades_model);
+		try {
+			zot.writeVerificationZOTFile(zot_file);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}	
 
 }

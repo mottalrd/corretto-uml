@@ -1,7 +1,5 @@
 package org.correttouml.uml2zot.tests.scalability;
 
-import static org.junit.Assert.assertTrue;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,54 +24,237 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.resource.UMLResource;
 import org.eclipse.uml2.uml.resources.util.UMLResourcesUtil;
 import org.eclipse.uml2.uml.util.UMLUtil;
-import org.junit.Before;
-import org.junit.Test;
 
-public class Test1 {
+public class ScalabilityTest {
 
-	public static String MADES_PROFILE_PATH="C:/Users/motta/Desktop/Dottorato/UML2ZOT/eu.mades.profile/model.profile.uml";
-	public static String MODEL_SAVE_PATH="C:/Users/motta/Desktop/Dottorato/UML2ZOT/eu.mades.uml2zot/tmp/";
+	public static String MADES_PROFILE_PATH="C:/Users/motta/Desktop/Dottorato/CorrettoUML/org.correttouml.profiles/resources/model.profile.uml";
+	public static String MODEL_SAVE_PATH="C:/Users/motta/Desktop/Dottorato/CorrettoUML/org.correttouml.uml2zot/tmp";
 	public static String MODEL_SAVE_NAME="model";
-	public static String UML_LIBRARY_PATH="jar:file:/C:/Users/motta/Desktop/Dottorato/UML2ZOT/eu.mades.uml2zot/lib/org.eclipse.uml2.uml.resources_4.0.0.v20120604-0919.jar!/";
+	public static String UML_LIBRARY_PATH="jar:file:/C:/Program Files/Eclipse/201302_JunoModeling/eclipse/plugins/org.eclipse.uml2.uml.resources_4.0.1.v20120913-1441.jar!/";
 	
 	/** SCALABILITY **/
-	private String MODEL_FILE="tmp/model.uml";
+	private static String MODEL_FILE="tmp/model.uml";
 	
 	/** The UML2ZOT entry point for making the transformation */
-	private UML2Zot t;
+	private static UML2Zot t;
 	
 	/** A test helper, works on tmp folder before moving to output folder */
-	TestHelper testHelper=new TestHelper("output","tmp");	
+	private static TestHelper testHelper=new TestHelper("output","tmp");	
 	
-	private static final Logger LOGGER = Logger.getLogger(Test1.class); 
+	private static final Logger LOGGER = Logger.getLogger(ScalabilityTest.class); 
 	
-	@Before
-	public void initialize(){
+	public static void main(String[] args){
 		LOGGER.info("Creating the UML model");
 		//create_scalability_model_1();
 		//create_scalability_model_2();
 		//create_scalability_model_2b();
 		//create_scalability_model_2c();
 		//create_scalability_model_2d();
-		create_scalability_model_3();
 		
-		LOGGER.info("Building the MADES UML representation");
-		t=new UML2Zot(new File(this.MODEL_FILE).getAbsolutePath());
+		for(int i=10; i<=50; i=i+5){
+			//create_scalability_model_4a(i);
+			//create_scalability_model_4b(i);
+			create_scalability_model_5(i);
+			
+			LOGGER.info("Building the MADES UML representation");
+			t=new UML2Zot(new File(MODEL_FILE).getAbsolutePath());
+			
+			LOGGER.info("Generate the ZOT File");
+			t.generateZOTFile(100, "meezot", "minisat", new File("output/zot_model_"+i+"_msg.lisp").getAbsolutePath());
+			//t.generateZOTFile(100, "ae2zot", "z3", new File("output/zot_model_"+i+"_msg.lisp").getAbsolutePath());
+		}
+
 	}
+
+	/* SEQUENCE DIAGRAM CON x MESSAGGI 
+	 * TIPO VERIFICA: UNSAT
+	 * PROPRIETA': m2 => SomF(m8)
+	 * */
+	public static void create_scalability_model_5(int x) {
+
+		//Preparazione modello e package
+		Model myModel = createModel("ScalabilityModel");
+		org.eclipse.uml2.uml.Profile madesProfile = loadProfile(MADES_PROFILE_PATH);
+		myModel.createElementImport(madesProfile);
+		myModel.applyProfile(madesProfile);
+		
+		//Creazione <<System>> package
+		org.eclipse.uml2.uml.Package systemPackage = createPackage(myModel, "System");
+		org.eclipse.uml2.uml.Stereotype systemStereotype=getMADESVerificationTagsStereotype(madesProfile, "System");
+		systemPackage.applyStereotype(systemStereotype);
+		
+		//Class diagram
+		org.eclipse.uml2.uml.Class class1=createClass(systemPackage, "Class1", false);
+		org.eclipse.uml2.uml.InstanceSpecification object1=createInstanceSpecification(systemPackage, class1, "object1");
+		org.eclipse.uml2.uml.Class class2=createClass(systemPackage, "Class2", false);
+		org.eclipse.uml2.uml.InstanceSpecification object2=createInstanceSpecification(systemPackage, class2, "object2");
+		org.eclipse.uml2.uml.Operation op1=createOperation(class1, "Operation1");
+		
+		
+		//Sequence diagram
+		org.eclipse.uml2.uml.Interaction sd1=createInteraction(systemPackage, "SD1");
+		org.eclipse.uml2.uml.Lifeline l1=sd1.createLifeline("l1");
+		l1.setSelector(object1.getSpecification());
+		org.eclipse.uml2.uml.Lifeline l2=sd1.createLifeline("l2");
+		l2.setSelector(object2.getSpecification());
+		
+		org.eclipse.uml2.uml.Message m2=null;
+		org.eclipse.uml2.uml.Message m8=null;
+		for(int i=0; i<x; i++){
+			org.eclipse.uml2.uml.Message tmp=createMessage(sd1,l1,l2,op1, "op1_message"+i);
+			if(i==1) m2=tmp;
+			if(i==7) m8=tmp;
+		}
+		
+		//Creazione <<Property>> package
+		org.eclipse.uml2.uml.Package propertyPackage = createPackage(myModel, "Property");
+		org.eclipse.uml2.uml.Stereotype propertyStereotype=getMADESVerificationTagsStereotype(madesProfile, "Property");
+		propertyPackage.applyStereotype(propertyStereotype);
+		
+		//Time Property diagram
+		
+		//<<Term>>
+		org.eclipse.uml2.uml.Class m8Term=createTerm(madesProfile, propertyPackage, m8);
+		
+		//<<SomF>>
+		org.eclipse.uml2.uml.Class somf=createSomF(madesProfile, propertyPackage, m8Term.getStereotypeApplications().get(0));
+		
+		//<<Term>>
+		org.eclipse.uml2.uml.Class m2Term=createTerm(madesProfile, propertyPackage, m2);
+		
+		//<<Implies>>
+		org.eclipse.uml2.uml.Class implies=createImplies(madesProfile, propertyPackage, m2Term.getStereotypeApplications().get(0), somf.getStereotypeApplications().get(0));
+		
+		//<<Alw>>
+		org.eclipse.uml2.uml.Class alw=createAlw(madesProfile, propertyPackage, implies.getStereotypeApplications().get(0));
+		
+		//<<Property>>
+		createProperty(madesProfile, propertyPackage, alw.getStereotypeApplications().get(0));
+		
+		
+		//Salvataggio del modell
+		save(myModel, URI.createFileURI(MODEL_SAVE_PATH).appendSegment(MODEL_SAVE_NAME).appendFileExtension(UMLResource.FILE_EXTENSION)); 
+	}			
 	
-	@Test
-	public void TestModel() throws Exception {
-		LOGGER.info("Testing "+this.MODEL_FILE);
+	/* SEQUENCE DIAGRAM CON x MESSAGGI 
+	 * TIPO VERIFICA: UNSAT
+	 * */
+	public static void create_scalability_model_4b(int x) {
+
+		//Preparazione modello e package
+		Model myModel = createModel("ScalabilityModel");
+		org.eclipse.uml2.uml.Profile madesProfile = loadProfile(MADES_PROFILE_PATH);
+		myModel.createElementImport(madesProfile);
+		myModel.applyProfile(madesProfile);
 		
-		LOGGER.info("Generate the ZOT File");
-		t.generateZOTFile(new File("tmp/zot_model.lisp").getAbsolutePath());
-		LOGGER.info("Generate the Mappings File");
-		t.generateMappingsFile(new File("tmp/model.mappings"));
+		//Creazione <<System>> package
+		org.eclipse.uml2.uml.Package systemPackage = createPackage(myModel, "System");
+		org.eclipse.uml2.uml.Stereotype systemStereotype=getMADESVerificationTagsStereotype(madesProfile, "System");
+		systemPackage.applyStereotype(systemStereotype);
 		
-		assertTrue("Il file di ZOT contiene degli errori",testHelper.isZOTFileValid());
+		//Class diagram
+		org.eclipse.uml2.uml.Class class1=createClass(systemPackage, "Class1", false);
+		org.eclipse.uml2.uml.InstanceSpecification object1=createInstanceSpecification(systemPackage, class1, "object1");
+		org.eclipse.uml2.uml.Class class2=createClass(systemPackage, "Class2", false);
+		org.eclipse.uml2.uml.InstanceSpecification object2=createInstanceSpecification(systemPackage, class2, "object2");
+		org.eclipse.uml2.uml.Operation op1=createOperation(class1, "Operation1");
 		
-		testHelper.cleanUp();
-	}
+		
+		//Sequence diagram
+		org.eclipse.uml2.uml.Interaction sd1=createInteraction(systemPackage, "SD1");
+		org.eclipse.uml2.uml.Lifeline l1=sd1.createLifeline("l1");
+		l1.setSelector(object1.getSpecification());
+		org.eclipse.uml2.uml.Lifeline l2=sd1.createLifeline("l2");
+		l2.setSelector(object2.getSpecification());
+		
+		org.eclipse.uml2.uml.Message m5=null;
+		org.eclipse.uml2.uml.Message m6=null;
+		for(int i=0; i<x; i++){
+			org.eclipse.uml2.uml.Message tmp=createMessage(sd1,l1,l2,op1, "op1_message"+i);
+			if(i==4) m5=tmp;
+			if(i==5) m6=tmp;
+		}
+		
+		//Creazione <<Property>> package
+		org.eclipse.uml2.uml.Package propertyPackage = createPackage(myModel, "Property");
+		org.eclipse.uml2.uml.Stereotype propertyStereotype=getMADESVerificationTagsStereotype(madesProfile, "Property");
+		propertyPackage.applyStereotype(propertyStereotype);
+		
+		//Time Property diagram
+		
+		//<<Term>>
+		org.eclipse.uml2.uml.Class m5Term=createTerm(madesProfile, propertyPackage, m5);
+		
+		//<<Next>>
+		org.eclipse.uml2.uml.Class next=createNext(madesProfile, propertyPackage, m5Term.getStereotypeApplications().get(0));
+		
+		//<<Not>>
+		org.eclipse.uml2.uml.Class not=createNot(madesProfile, propertyPackage, next.getStereotypeApplications().get(0));
+		
+		//<<Term>>
+		org.eclipse.uml2.uml.Class m6Term=createTerm(madesProfile, propertyPackage, m6);
+		
+		//<<Implies>>
+		org.eclipse.uml2.uml.Class implies=createImplies(madesProfile, propertyPackage, m6Term.getStereotypeApplications().get(0), not.getStereotypeApplications().get(0));
+		
+		//<<Alw>>
+		org.eclipse.uml2.uml.Class alw=createAlw(madesProfile, propertyPackage, implies.getStereotypeApplications().get(0));
+		
+		//<<Property>>
+		createProperty(madesProfile, propertyPackage, alw.getStereotypeApplications().get(0));
+		
+		
+		//Salvataggio del modell
+		save(myModel, URI.createFileURI(MODEL_SAVE_PATH).appendSegment(MODEL_SAVE_NAME).appendFileExtension(UMLResource.FILE_EXTENSION)); 
+	}		
+	
+	/* SEQUENCE DIAGRAM CON x MESSAGGI 
+	 * TIPO VERIFICA: SAT
+	 * */
+	public static void create_scalability_model_4(int x) {
+
+		//Preparazione modello e package
+		Model myModel = createModel("ScalabilityModel");
+		org.eclipse.uml2.uml.Profile madesProfile = loadProfile(MADES_PROFILE_PATH);
+		myModel.createElementImport(madesProfile);
+		myModel.applyProfile(madesProfile);
+		
+		//Creazione <<System>> package
+		org.eclipse.uml2.uml.Package systemPackage = createPackage(myModel, "System");
+		org.eclipse.uml2.uml.Stereotype systemStereotype=getMADESVerificationTagsStereotype(madesProfile, "System");
+		systemPackage.applyStereotype(systemStereotype);
+		
+		//Class diagram
+		org.eclipse.uml2.uml.Class class1=createClass(systemPackage, "Class1", false);
+		org.eclipse.uml2.uml.InstanceSpecification object1=createInstanceSpecification(systemPackage, class1, "object1");
+		org.eclipse.uml2.uml.Class class2=createClass(systemPackage, "Class2", false);
+		org.eclipse.uml2.uml.InstanceSpecification object2=createInstanceSpecification(systemPackage, class2, "object2");
+		org.eclipse.uml2.uml.Operation op1=createOperation(class1, "Operation1");
+		
+		
+		//Sequence diagram
+		org.eclipse.uml2.uml.Interaction sd1=createInteraction(systemPackage, "SD1");
+		org.eclipse.uml2.uml.Lifeline l1=sd1.createLifeline("l1");
+		l1.setSelector(object1.getSpecification());
+		org.eclipse.uml2.uml.Lifeline l2=sd1.createLifeline("l2");
+		l2.setSelector(object2.getSpecification());
+		
+		org.eclipse.uml2.uml.Message m5=null;
+		org.eclipse.uml2.uml.Message m6=null;
+		for(int i=0; i<x; i++){
+			org.eclipse.uml2.uml.Message tmp=createMessage(sd1,l1,l2,op1, "op1_message"+i);
+			if(i==4) m5=tmp;
+			if(i==5) m6=tmp;
+		}
+		
+		//Creazione <<Property>> package
+		org.eclipse.uml2.uml.Package propertyPackage = createPackage(myModel, "Property");
+		org.eclipse.uml2.uml.Stereotype propertyStereotype=getMADESVerificationTagsStereotype(madesProfile, "Property");
+		propertyPackage.applyStereotype(propertyStereotype);		
+		
+		//Salvataggio del modell
+		save(myModel, URI.createFileURI(MODEL_SAVE_PATH).appendSegment(MODEL_SAVE_NAME).appendFileExtension(UMLResource.FILE_EXTENSION)); 
+	}	
 	
 	/* 1 SEQUENCE DIAGRAM CON 10 MESSAGGI 
 	 * TIPO VERIFICA: UNSAT
@@ -530,6 +711,7 @@ public class Test1 {
 		save(myModel, URI.createFileURI(MODEL_SAVE_PATH).appendSegment(MODEL_SAVE_NAME).appendFileExtension(UMLResource.FILE_EXTENSION)); 
 	}		
 	
+	
 	protected static org.eclipse.uml2.uml.Class createNot(org.eclipse.uml2.uml.Profile madesProfile, org.eclipse.uml2.uml.Package package_, EObject formulae){
 		//<<Alw>>
 		org.eclipse.uml2.uml.Class not=createClass(package_, "Not", false);
@@ -577,6 +759,18 @@ public class Test1 {
 		next.setValue(nextStereotype, "formulae", formulae);
 		
 		return next;
+	}		
+	
+	protected static org.eclipse.uml2.uml.Class createSomF(org.eclipse.uml2.uml.Profile madesProfile, org.eclipse.uml2.uml.Package package_, EObject formulae){
+		//<<Alw>>
+		org.eclipse.uml2.uml.Class somf=createClass(package_, "SomF", false);
+		org.eclipse.uml2.uml.Stereotype somfStereotype=getMADESPropertiesStereotype(madesProfile, "SomF");
+		org.eclipse.uml2.uml.Stereotype booleanFormulaeStereotype=getMADESPropertiesStereotype(madesProfile, "BooleanFormulae");
+		somf.applyStereotype(booleanFormulaeStereotype);
+		somf.applyStereotype(somfStereotype);
+		somf.setValue(somfStereotype, "formulae", formulae);
+		
+		return somf;
 	}		
 	
 	protected static org.eclipse.uml2.uml.Class createAlw(org.eclipse.uml2.uml.Profile madesProfile, org.eclipse.uml2.uml.Package package_, EObject formulae){
@@ -761,6 +955,10 @@ public class Test1 {
 	@SuppressWarnings("rawtypes")
 	protected static void save(org.eclipse.uml2.uml.Package package_, URI uri) {
 		ResourceSet resourceSet = new ResourceSetImpl();
+		
+		//Register the UML Package
+		resourceSet.getPackageRegistry().put(UMLPackage.eNS_URI, UMLPackage.eINSTANCE);
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(UMLResource.FILE_EXTENSION, UMLResource.Factory.INSTANCE);
 		
 		UMLResourcesUtil.init(resourceSet); // MDT/UML2 4.0.0 (Juno)
 		Resource resource = resourceSet.createResource(uri);
