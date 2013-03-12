@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MADESVerification.Properties="http:///MADESVerification/Properties.ecore" xmlns:MADESVerification.VerificationTags="http:///MADESVerification/VerificationTags.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///MADESVerification/Properties.ecore ../../../../eu.mades.profile/model.profile.uml#_iXz1lAajEeKtRYEODWfJYQ http:///MADESVerification/VerificationTags.ecore ../../../../eu.mades.profile/model.profile.uml#_iXz2KwajEeKtRYEODWfJYQ">
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CorrettoUML.Properties="http:///CorrettoUML/Properties.ecore" xmlns:CorrettoUML.VerificationTags="http:///CorrettoUML/VerificationTags.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///CorrettoUML/Properties.ecore pathmap://resources/model.profile.uml#_e595B4JmEeK0gIgXi94_dg http:///CorrettoUML/Time.ecore pathmap://resources/model.profile.uml#_e5944YJmEeK0gIgXi94_dg http:///CorrettoUML/VerificationTags.ecore pathmap://resources/model.profile.uml#_e5949YJmEeK0gIgXi94_dg">
   <uml:Model xmi:id="_P2Wa0GofEeKQ9axmdpwygg" name="model">
     <packageImport xmi:id="_tR4yIGonEeKN0Lfsey8Guw">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
@@ -169,25 +169,25 @@
       <appliedProfile href="../../../../eu.mades.profile/model.profile.uml#_jpeHMANtEeKTXbQztILh3g"/>
     </profileApplication>
   </uml:Model>
-  <MADESVerification.VerificationTags:System xmi:id="_2T4MgGomEeKN0Lfsey8Guw" base_Package="_zj2ZEGofEeKQ9axmdpwygg"/>
-  <MADESVerification.VerificationTags:Property xmi:id="_4u6K4GouEeKN0Lfsey8Guw" base_Package="_fJMxcGotEeKN0Lfsey8Guw"/>
-  <MADESVerification.Properties:Property xmi:id="_O7SuEHlEEeK4E7I3_bMoKw" formulae="_Tsbh0HlEEeK4E7I3_bMoKw" base_Class="_Ma6cAHlEEeK4E7I3_bMoKw"/>
-  <MADESVerification.Properties:BooleanFormulae xmi:id="_Tsbh0HlEEeK4E7I3_bMoKw" base_Class="_RChgUHlEEeK4E7I3_bMoKw"/>
-  <MADESVerification.Properties:Alw xmi:id="_Ts3mtnlEEeK4E7I3_bMoKw" base_Class="_RChgUHlEEeK4E7I3_bMoKw" formulae="_y5pEYHlHEeK4E7I3_bMoKw"/>
-  <MADESVerification.Properties:BooleanFormulae xmi:id="_y5pEYHlHEeK4E7I3_bMoKw" base_Class="_tS8hoHlHEeK4E7I3_bMoKw"/>
-  <MADESVerification.Properties:Implies xmi:id="_y5yOVnlHEeK4E7I3_bMoKw" base_Class="_tS8hoHlHEeK4E7I3_bMoKw" left="_1ES-EHlHEeK4E7I3_bMoKw" right="_374PMHlHEeK4E7I3_bMoKw"/>
-  <MADESVerification.Properties:BooleanFormulae xmi:id="_1ES-EHlHEeK4E7I3_bMoKw" base_Class="_ud7uEHlHEeK4E7I3_bMoKw"/>
-  <MADESVerification.Properties:And xmi:id="_1EcvFnlHEeK4E7I3_bMoKw" base_Class="_ud7uEHlHEeK4E7I3_bMoKw" left="_a15iEHlIEeK4E7I3_bMoKw" right="_hdT68HlIEeK4E7I3_bMoKw"/>
-  <MADESVerification.Properties:BooleanFormulae xmi:id="_374PMHlHEeK4E7I3_bMoKw" base_Class="_up-mAHlHEeK4E7I3_bMoKw"/>
-  <MADESVerification.Properties:Lasted xmi:id="_38LxMHlHEeK4E7I3_bMoKw" base_Class="_up-mAHlHEeK4E7I3_bMoKw" formulae="_19facHlIEeK4E7I3_bMoKw" t="_5bnHIHlIEeK4E7I3_bMoKw"/>
-  <MADESVerification.Properties:BooleanFormulae xmi:id="_a15iEHlIEeK4E7I3_bMoKw" base_Class="_S485oHlIEeK4E7I3_bMoKw"/>
-  <MADESVerification.Properties:Term xmi:id="_a2NEEHlIEeK4E7I3_bMoKw" base_Class="_S485oHlIEeK4E7I3_bMoKw" element="_IaeeIGoqEeKN0Lfsey8Guw"/>
-  <MADESVerification.Properties:BooleanFormulae xmi:id="_hdT68HlIEeK4E7I3_bMoKw" base_Class="_gZnpUHlIEeK4E7I3_bMoKw"/>
-  <MADESVerification.Properties:Yesterday xmi:id="_hdm14HlIEeK4E7I3_bMoKw" base_Class="_gZnpUHlIEeK4E7I3_bMoKw" formulae="_kP_d8HlIEeK4E7I3_bMoKw"/>
-  <MADESVerification.Properties:BooleanFormulae xmi:id="_kP_d8HlIEeK4E7I3_bMoKw" base_Class="_iBnh4HlIEeK4E7I3_bMoKw"/>
-  <MADESVerification.Properties:Term xmi:id="_kQIn5nlIEeK4E7I3_bMoKw" base_Class="_iBnh4HlIEeK4E7I3_bMoKw" element="_9-_WsGopEeKN0Lfsey8Guw"/>
-  <MADESVerification.Properties:BooleanFormulae xmi:id="_19facHlIEeK4E7I3_bMoKw" base_Class="_0Gn_cHlIEeK4E7I3_bMoKw"/>
-  <MADESVerification.Properties:Term xmi:id="_19pLdnlIEeK4E7I3_bMoKw" base_Class="_0Gn_cHlIEeK4E7I3_bMoKw" element="_9-_WsGopEeKN0Lfsey8Guw"/>
-  <MADESVerification.Properties:BooleanFormulae xmi:id="_5bd9MHlIEeK4E7I3_bMoKw" base_Class="_0atZEHlIEeK4E7I3_bMoKw"/>
-  <MADESVerification.Properties:constant xmi:id="_5bnHIHlIEeK4E7I3_bMoKw" value="10" base_Class="_0atZEHlIEeK4E7I3_bMoKw"/>
+  <CorrettoUML.VerificationTags:System xmi:id="_2T4MgGomEeKN0Lfsey8Guw" base_Package="_zj2ZEGofEeKQ9axmdpwygg"/>
+  <CorrettoUML.VerificationTags:Property xmi:id="_4u6K4GouEeKN0Lfsey8Guw" base_Package="_fJMxcGotEeKN0Lfsey8Guw"/>
+  <CorrettoUML.Properties:Property xmi:id="_O7SuEHlEEeK4E7I3_bMoKw" formulae="_Tsbh0HlEEeK4E7I3_bMoKw" base_Class="_Ma6cAHlEEeK4E7I3_bMoKw"/>
+  <CorrettoUML.Properties:BooleanFormulae xmi:id="_Tsbh0HlEEeK4E7I3_bMoKw" base_Class="_RChgUHlEEeK4E7I3_bMoKw"/>
+  <CorrettoUML.Properties:Alw xmi:id="_Ts3mtnlEEeK4E7I3_bMoKw" base_Class="_RChgUHlEEeK4E7I3_bMoKw" formulae="_y5pEYHlHEeK4E7I3_bMoKw"/>
+  <CorrettoUML.Properties:BooleanFormulae xmi:id="_y5pEYHlHEeK4E7I3_bMoKw" base_Class="_tS8hoHlHEeK4E7I3_bMoKw"/>
+  <CorrettoUML.Properties:Implies xmi:id="_y5yOVnlHEeK4E7I3_bMoKw" base_Class="_tS8hoHlHEeK4E7I3_bMoKw" left="_1ES-EHlHEeK4E7I3_bMoKw" right="_374PMHlHEeK4E7I3_bMoKw"/>
+  <CorrettoUML.Properties:BooleanFormulae xmi:id="_1ES-EHlHEeK4E7I3_bMoKw" base_Class="_ud7uEHlHEeK4E7I3_bMoKw"/>
+  <CorrettoUML.Properties:And xmi:id="_1EcvFnlHEeK4E7I3_bMoKw" base_Class="_ud7uEHlHEeK4E7I3_bMoKw" left="_a15iEHlIEeK4E7I3_bMoKw" right="_hdT68HlIEeK4E7I3_bMoKw"/>
+  <CorrettoUML.Properties:BooleanFormulae xmi:id="_374PMHlHEeK4E7I3_bMoKw" base_Class="_up-mAHlHEeK4E7I3_bMoKw"/>
+  <CorrettoUML.Properties:Lasted xmi:id="_38LxMHlHEeK4E7I3_bMoKw" base_Class="_up-mAHlHEeK4E7I3_bMoKw" formulae="_19facHlIEeK4E7I3_bMoKw" t="_5bnHIHlIEeK4E7I3_bMoKw"/>
+  <CorrettoUML.Properties:BooleanFormulae xmi:id="_a15iEHlIEeK4E7I3_bMoKw" base_Class="_S485oHlIEeK4E7I3_bMoKw"/>
+  <CorrettoUML.Properties:Term xmi:id="_a2NEEHlIEeK4E7I3_bMoKw" base_Class="_S485oHlIEeK4E7I3_bMoKw" element="_IaeeIGoqEeKN0Lfsey8Guw"/>
+  <CorrettoUML.Properties:BooleanFormulae xmi:id="_hdT68HlIEeK4E7I3_bMoKw" base_Class="_gZnpUHlIEeK4E7I3_bMoKw"/>
+  <CorrettoUML.Properties:Yesterday xmi:id="_hdm14HlIEeK4E7I3_bMoKw" base_Class="_gZnpUHlIEeK4E7I3_bMoKw" formulae="_kP_d8HlIEeK4E7I3_bMoKw"/>
+  <CorrettoUML.Properties:BooleanFormulae xmi:id="_kP_d8HlIEeK4E7I3_bMoKw" base_Class="_iBnh4HlIEeK4E7I3_bMoKw"/>
+  <CorrettoUML.Properties:Term xmi:id="_kQIn5nlIEeK4E7I3_bMoKw" base_Class="_iBnh4HlIEeK4E7I3_bMoKw" element="_9-_WsGopEeKN0Lfsey8Guw"/>
+  <CorrettoUML.Properties:BooleanFormulae xmi:id="_19facHlIEeK4E7I3_bMoKw" base_Class="_0Gn_cHlIEeK4E7I3_bMoKw"/>
+  <CorrettoUML.Properties:Term xmi:id="_19pLdnlIEeK4E7I3_bMoKw" base_Class="_0Gn_cHlIEeK4E7I3_bMoKw" element="_9-_WsGopEeKN0Lfsey8Guw"/>
+  <CorrettoUML.Properties:BooleanFormulae xmi:id="_5bd9MHlIEeK4E7I3_bMoKw" base_Class="_0atZEHlIEeK4E7I3_bMoKw"/>
+  <CorrettoUML.Properties:constant xmi:id="_5bnHIHlIEeK4E7I3_bMoKw" value="10" base_Class="_0atZEHlIEeK4E7I3_bMoKw"/>
 </xmi:XMI>

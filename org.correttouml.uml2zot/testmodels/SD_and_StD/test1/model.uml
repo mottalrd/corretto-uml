@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MADESVerification="http:///schemas/MADESVerification/_iXxZQAajEeKtRYEODWfJYQ/19" xmlns:MADESVerification.Properties="http:///MADESVerification/Properties.ecore" xmlns:MADESVerification.Time="http:///MADESVerification/Time.ecore" xmlns:MADESVerification.VerificationTags="http:///MADESVerification/VerificationTags.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/MADESVerification/_iXxZQAajEeKtRYEODWfJYQ/19 ../../../../eu.mades.profile/model.profile.uml#_iXz1gAajEeKtRYEODWfJYQ http:///MADESVerification/Properties.ecore ../../../../eu.mades.profile/model.profile.uml#_iXz1lAajEeKtRYEODWfJYQ http:///MADESVerification/Time.ecore ../../../../eu.mades.profile/model.profile.uml#_iXz2FQajEeKtRYEODWfJYQ http:///MADESVerification/VerificationTags.ecore ../../../../eu.mades.profile/model.profile.uml#_iXz2KwajEeKtRYEODWfJYQ">
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CorrettoUML="http:///schemas/CorrettoUML/_iXxZQAajEeKtRYEODWfJYQ/19" xmlns:CorrettoUML.Properties="http:///CorrettoUML/Properties.ecore" xmlns:CorrettoUML.Time="http:///CorrettoUML/Time.ecore" xmlns:CorrettoUML.VerificationTags="http:///CorrettoUML/VerificationTags.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///CorrettoUML/Properties.ecore pathmap://resources/model.profile.uml#_e595B4JmEeK0gIgXi94_dg http:///CorrettoUML/Time.ecore pathmap://resources/model.profile.uml#_e5944YJmEeK0gIgXi94_dg http:///CorrettoUML/VerificationTags.ecore pathmap://resources/model.profile.uml#_e5949YJmEeK0gIgXi94_dg">
   <uml:Model xmi:id="_HxcV8AYWEeKDB5y-CSxkCg" name="Model">
     <ownedComment xmi:id="_5ciNwBXrEeKU3rHUqZ-LRQ">
       <body>Synchronize op1() &#xD;
@@ -157,26 +157,26 @@ with the sysClock</body>
       <appliedProfile href="../../../../eu.mades.profile/model.profile.uml#_jpeHMANtEeKTXbQztILh3g"/>
     </profileApplication>
   </uml:Model>
-  <MADESVerification.VerificationTags:System xmi:id="_cDn1sAYWEeKDB5y-CSxkCg" base_Package="_YCrIwAYWEeKDB5y-CSxkCg"/>
-  <MADESVerification.Properties:Property xmi:id="_KkeWQAZuEeKCgqqlDd45Lg" formulae="_RplXwAZuEeKCgqqlDd45Lg" base_Class="_HdohIAZuEeKCgqqlDd45Lg"/>
-  <MADESVerification.Properties:Alw xmi:id="_RpWuQAZuEeKCgqqlDd45Lg" base_Class="_QaixwAZuEeKCgqqlDd45Lg" formulae="_ombuAAZuEeKCgqqlDd45Lg"/>
-  <MADESVerification.Properties:BooleanFormulae xmi:id="_RplXwAZuEeKCgqqlDd45Lg" base_Class="_QaixwAZuEeKCgqqlDd45Lg"/>
-  <MADESVerification.Properties:Implies xmi:id="_ol1REAZuEeKCgqqlDd45Lg" base_Class="_nV89kAZuEeKCgqqlDd45Lg" left="_Zi2KQBXpEeKU3rHUqZ-LRQ" right="_kXv3UAZ_EeKCgqqlDd45Lg"/>
-  <MADESVerification.Properties:BooleanFormulae xmi:id="_ombuAAZuEeKCgqqlDd45Lg" base_Class="_nV89kAZuEeKCgqqlDd45Lg"/>
-  <MADESVerification.Properties:BooleanFormulae xmi:id="_kXv3UAZ_EeKCgqqlDd45Lg" base_Class="_iGzvcAZ_EeKCgqqlDd45Lg"/>
-  <MADESVerification.Properties:BooleanFormulae xmi:id="_l3vDYAZ_EeKCgqqlDd45Lg" base_Class="_gU6UAAZ_EeKCgqqlDd45Lg"/>
-  <MADESVerification.Properties:BooleanFormulae xmi:id="_vpsFoAZ_EeKCgqqlDd45Lg" base_Class="_r-QVsAZ_EeKCgqqlDd45Lg"/>
-  <MADESVerification.Properties:Term xmi:id="_XXVqIAaBEeKCgqqlDd45Lg" base_Class="_gU6UAAZ_EeKCgqqlDd45Lg" element="_JwPu4AZsEeKCgqqlDd45Lg"/>
-  <MADESVerification.Time:ClockType xmi:id="_ynydIBXjEeKU3rHUqZ-LRQ" period="5" base_Class="_xlU6kBXjEeKU3rHUqZ-LRQ"/>
-  <MADESVerification:Event xmi:id="_KNVY0BXpEeKU3rHUqZ-LRQ" base_Class="_FtSVEBXpEeKU3rHUqZ-LRQ" event="@op1.call" context="__qxTsAZrEeKCgqqlDd45Lg" object="_NGXMMAYWEeKDB5y-CSxkCg"/>
-  <MADESVerification.Properties:BooleanFormulae xmi:id="_Zi2KQBXpEeKU3rHUqZ-LRQ" base_Class="_V9-8YBXpEeKU3rHUqZ-LRQ"/>
-  <MADESVerification.Properties:And xmi:id="_ZjK6YBXpEeKU3rHUqZ-LRQ" base_Class="_V9-8YBXpEeKU3rHUqZ-LRQ" left="_l3vDYAZ_EeKCgqqlDd45Lg" right="_clGaUBXpEeKU3rHUqZ-LRQ"/>
-  <MADESVerification.Properties:BooleanFormulae xmi:id="_clGaUBXpEeKU3rHUqZ-LRQ" base_Class="_FtSVEBXpEeKU3rHUqZ-LRQ"/>
-  <MADESVerification.Properties:Futr xmi:id="_p_lpgBXpEeKU3rHUqZ-LRQ" base_Class="_iGzvcAZ_EeKCgqqlDd45Lg" formulae="_vpsFoAZ_EeKCgqqlDd45Lg" t="_12CTEBXpEeKU3rHUqZ-LRQ"/>
-  <MADESVerification:Event xmi:id="_re9KgBXpEeKU3rHUqZ-LRQ" base_Class="_r-QVsAZ_EeKCgqqlDd45Lg" event="@op1.call" context="__qxTsAZrEeKCgqqlDd45Lg" object="_NGXMMAYWEeKDB5y-CSxkCg"/>
-  <MADESVerification.Properties:BooleanFormulae xmi:id="_11ncUBXpEeKU3rHUqZ-LRQ" base_Class="_0lM9UBXpEeKU3rHUqZ-LRQ"/>
-  <MADESVerification.Properties:constant xmi:id="_12CTEBXpEeKU3rHUqZ-LRQ" value="5" base_Class="_0lM9UBXpEeKU3rHUqZ-LRQ"/>
-  <MADESVerification.Time:TimedEvent xmi:id="__KXlMBXpEeKU3rHUqZ-LRQ" base_Message="_pzkOcBXjEeKU3rHUqZ-LRQ" on="_C2dccBXqEeKU3rHUqZ-LRQ"/>
-  <MADESVerification.Time:Clock xmi:id="_C2dccBXqEeKU3rHUqZ-LRQ" base_InstanceSpecification="_5w3YoBXjEeKU3rHUqZ-LRQ"/>
-  <MADESVerification.VerificationTags:Property xmi:id="_IpIJMBXrEeKU3rHUqZ-LRQ" base_Package="_EAwxoAZuEeKCgqqlDd45Lg"/>
+  <CorrettoUML.VerificationTags:System xmi:id="_cDn1sAYWEeKDB5y-CSxkCg" base_Package="_YCrIwAYWEeKDB5y-CSxkCg"/>
+  <CorrettoUML.Properties:Property xmi:id="_KkeWQAZuEeKCgqqlDd45Lg" formulae="_RplXwAZuEeKCgqqlDd45Lg" base_Class="_HdohIAZuEeKCgqqlDd45Lg"/>
+  <CorrettoUML.Properties:Alw xmi:id="_RpWuQAZuEeKCgqqlDd45Lg" base_Class="_QaixwAZuEeKCgqqlDd45Lg" formulae="_ombuAAZuEeKCgqqlDd45Lg"/>
+  <CorrettoUML.Properties:BooleanFormulae xmi:id="_RplXwAZuEeKCgqqlDd45Lg" base_Class="_QaixwAZuEeKCgqqlDd45Lg"/>
+  <CorrettoUML.Properties:Implies xmi:id="_ol1REAZuEeKCgqqlDd45Lg" base_Class="_nV89kAZuEeKCgqqlDd45Lg" left="_Zi2KQBXpEeKU3rHUqZ-LRQ" right="_kXv3UAZ_EeKCgqqlDd45Lg"/>
+  <CorrettoUML.Properties:BooleanFormulae xmi:id="_ombuAAZuEeKCgqqlDd45Lg" base_Class="_nV89kAZuEeKCgqqlDd45Lg"/>
+  <CorrettoUML.Properties:BooleanFormulae xmi:id="_kXv3UAZ_EeKCgqqlDd45Lg" base_Class="_iGzvcAZ_EeKCgqqlDd45Lg"/>
+  <CorrettoUML.Properties:BooleanFormulae xmi:id="_l3vDYAZ_EeKCgqqlDd45Lg" base_Class="_gU6UAAZ_EeKCgqqlDd45Lg"/>
+  <CorrettoUML.Properties:BooleanFormulae xmi:id="_vpsFoAZ_EeKCgqqlDd45Lg" base_Class="_r-QVsAZ_EeKCgqqlDd45Lg"/>
+  <CorrettoUML.Properties:Term xmi:id="_XXVqIAaBEeKCgqqlDd45Lg" base_Class="_gU6UAAZ_EeKCgqqlDd45Lg" element="_JwPu4AZsEeKCgqqlDd45Lg"/>
+  <CorrettoUML.Time:ClockType xmi:id="_ynydIBXjEeKU3rHUqZ-LRQ" period="5" base_Class="_xlU6kBXjEeKU3rHUqZ-LRQ"/>
+  <CorrettoUML:Event xmi:id="_KNVY0BXpEeKU3rHUqZ-LRQ" base_Class="_FtSVEBXpEeKU3rHUqZ-LRQ" event="@op1.call" context="__qxTsAZrEeKCgqqlDd45Lg" object="_NGXMMAYWEeKDB5y-CSxkCg"/>
+  <CorrettoUML.Properties:BooleanFormulae xmi:id="_Zi2KQBXpEeKU3rHUqZ-LRQ" base_Class="_V9-8YBXpEeKU3rHUqZ-LRQ"/>
+  <CorrettoUML.Properties:And xmi:id="_ZjK6YBXpEeKU3rHUqZ-LRQ" base_Class="_V9-8YBXpEeKU3rHUqZ-LRQ" left="_l3vDYAZ_EeKCgqqlDd45Lg" right="_clGaUBXpEeKU3rHUqZ-LRQ"/>
+  <CorrettoUML.Properties:BooleanFormulae xmi:id="_clGaUBXpEeKU3rHUqZ-LRQ" base_Class="_FtSVEBXpEeKU3rHUqZ-LRQ"/>
+  <CorrettoUML.Properties:Futr xmi:id="_p_lpgBXpEeKU3rHUqZ-LRQ" base_Class="_iGzvcAZ_EeKCgqqlDd45Lg" formulae="_vpsFoAZ_EeKCgqqlDd45Lg" t="_12CTEBXpEeKU3rHUqZ-LRQ"/>
+  <CorrettoUML:Event xmi:id="_re9KgBXpEeKU3rHUqZ-LRQ" base_Class="_r-QVsAZ_EeKCgqqlDd45Lg" event="@op1.call" context="__qxTsAZrEeKCgqqlDd45Lg" object="_NGXMMAYWEeKDB5y-CSxkCg"/>
+  <CorrettoUML.Properties:BooleanFormulae xmi:id="_11ncUBXpEeKU3rHUqZ-LRQ" base_Class="_0lM9UBXpEeKU3rHUqZ-LRQ"/>
+  <CorrettoUML.Properties:constant xmi:id="_12CTEBXpEeKU3rHUqZ-LRQ" value="5" base_Class="_0lM9UBXpEeKU3rHUqZ-LRQ"/>
+  <CorrettoUML.Time:TimedEvent xmi:id="__KXlMBXpEeKU3rHUqZ-LRQ" base_Message="_pzkOcBXjEeKU3rHUqZ-LRQ" on="_C2dccBXqEeKU3rHUqZ-LRQ"/>
+  <CorrettoUML.Time:Clock xmi:id="_C2dccBXqEeKU3rHUqZ-LRQ" base_InstanceSpecification="_5w3YoBXjEeKU3rHUqZ-LRQ"/>
+  <CorrettoUML.VerificationTags:Property xmi:id="_IpIJMBXrEeKU3rHUqZ-LRQ" base_Package="_EAwxoAZuEeKCgqqlDd45Lg"/>
 </xmi:XMI>

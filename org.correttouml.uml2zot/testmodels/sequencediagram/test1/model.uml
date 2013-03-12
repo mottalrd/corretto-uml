@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MADESVerification.Properties="http:///MADESVerification/Properties.ecore" xmlns:MADESVerification.VerificationTags="http:///MADESVerification/VerificationTags.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///MADESVerification/Properties.ecore ../../../../eu.mades.profile/model.profile.uml#_iXz1lAajEeKtRYEODWfJYQ http:///MADESVerification/VerificationTags.ecore ../../../../eu.mades.profile/model.profile.uml#_iXz2KwajEeKtRYEODWfJYQ">
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CorrettoUML.Properties="http:///CorrettoUML/Properties.ecore" xmlns:CorrettoUML.VerificationTags="http:///CorrettoUML/VerificationTags.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///CorrettoUML/Properties.ecore pathmap://resources/model.profile.uml#_e595B4JmEeK0gIgXi94_dg http:///CorrettoUML/Time.ecore pathmap://resources/model.profile.uml#_e5944YJmEeK0gIgXi94_dg http:///CorrettoUML/VerificationTags.ecore pathmap://resources/model.profile.uml#_e5949YJmEeK0gIgXi94_dg">
   <uml:Model xmi:id="_HxcV8AYWEeKDB5y-CSxkCg" name="Model">
     <packageImport xmi:id="_HxcV8QYWEeKDB5y-CSxkCg">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
@@ -44,13 +44,13 @@ forum di eclipse uml2 in questo senso</body>
       <appliedProfile href="../../../../eu.mades.profile/model.profile.uml#_jpeHMANtEeKTXbQztILh3g"/>
     </profileApplication>
   </uml:Model>
-  <MADESVerification.VerificationTags:System xmi:id="_cDn1sAYWEeKDB5y-CSxkCg" base_Package="_YCrIwAYWEeKDB5y-CSxkCg"/>
-  <MADESVerification.VerificationTags:Property xmi:id="_n3bwQAY9EeKDB5y-CSxkCg" base_Package="_kfrKQAY9EeKDB5y-CSxkCg"/>
-  <MADESVerification.Properties:Property xmi:id="_rPsFgAY9EeKDB5y-CSxkCg" formulae="_sqNiwAY9EeKDB5y-CSxkCg" base_Class="_qFb44AY9EeKDB5y-CSxkCg"/>
-  <MADESVerification.Properties:Alw xmi:id="_sp-5QAY9EeKDB5y-CSxkCg" base_Class="_royiAAY9EeKDB5y-CSxkCg" formulae="_uUNmcAY9EeKDB5y-CSxkCg"/>
-  <MADESVerification.Properties:BooleanFormulae xmi:id="_sqNiwAY9EeKDB5y-CSxkCg" base_Class="_royiAAY9EeKDB5y-CSxkCg"/>
-  <MADESVerification.Properties:Not xmi:id="_uT_kAAY9EeKDB5y-CSxkCg" base_Class="_s7HskAY9EeKDB5y-CSxkCg" formulae="_wtAp0AY9EeKDB5y-CSxkCg"/>
-  <MADESVerification.Properties:BooleanFormulae xmi:id="_uUNmcAY9EeKDB5y-CSxkCg" base_Class="_s7HskAY9EeKDB5y-CSxkCg"/>
-  <MADESVerification.Properties:Term xmi:id="_wsvkEAY9EeKDB5y-CSxkCg" base_Class="_uj9SoAY9EeKDB5y-CSxkCg" element="_b3pVkAYeEeKDB5y-CSxkCg"/>
-  <MADESVerification.Properties:BooleanFormulae xmi:id="_wtAp0AY9EeKDB5y-CSxkCg" base_Class="_uj9SoAY9EeKDB5y-CSxkCg"/>
+  <CorrettoUML.VerificationTags:System xmi:id="_cDn1sAYWEeKDB5y-CSxkCg" base_Package="_YCrIwAYWEeKDB5y-CSxkCg"/>
+  <CorrettoUML.VerificationTags:Property xmi:id="_n3bwQAY9EeKDB5y-CSxkCg" base_Package="_kfrKQAY9EeKDB5y-CSxkCg"/>
+  <CorrettoUML.Properties:Property xmi:id="_rPsFgAY9EeKDB5y-CSxkCg" formulae="_sqNiwAY9EeKDB5y-CSxkCg" base_Class="_qFb44AY9EeKDB5y-CSxkCg"/>
+  <CorrettoUML.Properties:Alw xmi:id="_sp-5QAY9EeKDB5y-CSxkCg" base_Class="_royiAAY9EeKDB5y-CSxkCg" formulae="_uUNmcAY9EeKDB5y-CSxkCg"/>
+  <CorrettoUML.Properties:BooleanFormulae xmi:id="_sqNiwAY9EeKDB5y-CSxkCg" base_Class="_royiAAY9EeKDB5y-CSxkCg"/>
+  <CorrettoUML.Properties:Not xmi:id="_uT_kAAY9EeKDB5y-CSxkCg" base_Class="_s7HskAY9EeKDB5y-CSxkCg" formulae="_wtAp0AY9EeKDB5y-CSxkCg"/>
+  <CorrettoUML.Properties:BooleanFormulae xmi:id="_uUNmcAY9EeKDB5y-CSxkCg" base_Class="_s7HskAY9EeKDB5y-CSxkCg"/>
+  <CorrettoUML.Properties:Term xmi:id="_wsvkEAY9EeKDB5y-CSxkCg" base_Class="_uj9SoAY9EeKDB5y-CSxkCg" element="_b3pVkAYeEeKDB5y-CSxkCg"/>
+  <CorrettoUML.Properties:BooleanFormulae xmi:id="_wtAp0AY9EeKDB5y-CSxkCg" base_Class="_uj9SoAY9EeKDB5y-CSxkCg"/>
 </xmi:XMI>
