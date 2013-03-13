@@ -111,6 +111,10 @@
       </eAnnotations>
       <children xmi:type="notation:DecorationNode" xmi:id="_TfhBEoJhEeK0gIgXi94_dg" type="1034"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_TfhBE4JhEeK0gIgXi94_dg" type="1071">
+        <children xmi:type="notation:Shape" xmi:id="_UFaPIIvzEeKLvcTv2F9FYg" type="3002" fontName="Segoe UI" lineColor="0">
+          <element xmi:type="uml:Property" href="model.profile.uml#_UE9jMIvzEeKLvcTv2F9FYg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_UFaPIYvzEeKLvcTv2F9FYg"/>
+        </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_TfhBFIJhEeK0gIgXi94_dg"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_TfhBFYJhEeK0gIgXi94_dg"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_TfhBFoJhEeK0gIgXi94_dg"/>
