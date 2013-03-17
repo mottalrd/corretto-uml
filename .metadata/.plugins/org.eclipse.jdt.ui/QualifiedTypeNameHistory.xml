@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.correttouml.uml2zot.semantics.util.trio.Lasted_ii"/>
+<fullyQualifiedTypeName name="org.correttouml.uml.diagrams.sequencediagram.SequenceDiagram"/>
+<fullyQualifiedTypeName name="org.correttouml.uml2zot.semantics.sequencediagram.SSequenceDiagram"/>
+<fullyQualifiedTypeName name="org.correttouml.uml2zot.semantics.util.trio.Since"/>
+<fullyQualifiedTypeName name="org.correttouml.uml2zot.semantics.util.trio.WithinP_ii"/>
+<fullyQualifiedTypeName name="org.correttouml.uml2zot.semantics.util.trio.Since_ii"/>
+<fullyQualifiedTypeName name="org.correttouml.uml2zot.semantics.util.bool.Implies"/>
+<fullyQualifiedTypeName name="org.correttouml.uml2zot.semantics.util.trio.Next"/>
+<fullyQualifiedTypeName name="org.correttouml.uml2zot.semantics.util.trio.Lasttime_ii"/>
+</qualifiedTypeNameHistroy>

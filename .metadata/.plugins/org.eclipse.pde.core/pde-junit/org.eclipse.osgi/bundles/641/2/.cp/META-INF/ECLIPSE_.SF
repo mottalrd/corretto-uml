@@ -1,0 +1,52 @@
+Signature-Version: 1.0
+SHA1-Digest-Manifest: vLlkQF7t5qlNWnBjuUPjvAvmZHQ=
+Created-By: 1.6.0 (IBM Corporation)
+SHA1-Digest-Manifest-Main-Attributes: 8vEqXePIbjt9avI/fTzbStBxa0A=
+
+Name: org/eclipse/papyrus/infra/discovery/ui/menu/Activator.class
+SHA1-Digest: yFJIcu3j+4hUHbAkkPUd4hQ+Cww=
+
+Name: META-INF/eclipse.inf
+SHA1-Digest: SAqY+5ITAL0mkdYeijlSRhyIaZk=
+
+Name: icons/Papyrus_32x32_t.gif
+SHA1-Digest: HNh8oDeVzT7dGpnbdgBKktEP6ug=
+
+Name: intro/papyrusDiscovery.xml
+SHA1-Digest: 3WSKHAz4a4DcXPGfaAr88uoeQ4o=
+
+Name: intro/images/banner-discovery-papyrus.png
+SHA1-Digest: Urkq952cuOPfL+gM2hjyIMPj4Ko=
+
+Name: about.html
+SHA1-Digest: UdxSrtnTblyuUXnWjbJDKMc6VtY=
+
+Name: plugin.properties
+SHA1-Digest: Q3+S5tIcp0jefJZkk+eOvr0SiWM=
+
+Name: icons/Papyrus_16x16.gif
+SHA1-Digest: MEe9EVDcNtaMQxVDMc1mblVpHX0=
+
+Name: org/eclipse/papyrus/infra/discovery/ui/menu/handler/PapyrusDisco
+ veryHandler.class
+SHA1-Digest: Y2D9MasKH7W1zugSGNirg1KxLfo=
+
+Name: intro/css/overview.properties
+SHA1-Digest: XNkYYOL9fupIjm/Ua1dJBAl/o2I=
+
+Name: plugin.xml
+SHA1-Digest: GGvVwCeKJDsjhZblwOPjXyRn38w=
+
+Name: intro/css/overview.css
+SHA1-Digest: KbFWWPBDlK+Qdiz7jPYra6ulD0E=
+
+Name: intro/images/banner-discovery.png
+SHA1-Digest: vHRQAy5ERpiDJbYpOmw6teftqyI=
+
+Name: org/eclipse/papyrus/infra/discovery/ui/menu/handler/PapyrusDisco
+ veryAction.class
+SHA1-Digest: lLQLVFllyXfYdp64wAhIC2YqTcs=
+
+Name: doc/ToDo.txt
+SHA1-Digest: 6fgcHdIjPcgmdXXCLfEW/IPKijA=
+

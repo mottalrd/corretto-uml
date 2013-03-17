@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;org.correttouml.uml2zot.semantics.util.trio.Lasttime_ii&apos; to &apos;LastTime_ii&apos;&#x0D;&#x0A;- Original project: &apos;org.correttouml.uml2zot&apos;&#x0D;&#x0A;- Original element: &apos;org.correttouml.uml2zot.semantics.util.trio.Lasttime_ii&apos;&#x0D;&#x0A;- Renamed element: &apos;org.correttouml.uml2zot.semantics.util.trio.LastTime_ii&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Lasttime_ii&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;org.correttouml.uml2zot.semantics.util.trio{Lasttime_ii.java[Lasttime_ii" matchStrategy="1" name="LastTime_ii" qualified="false" references="true" similarDeclarations="false" stamp="1363522628342" textual="false" version="1.0"/>
+</session>

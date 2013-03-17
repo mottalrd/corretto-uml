@@ -13,11 +13,14 @@ import org.correttouml.uml2zot.semantics.util.bool.Not;
 import org.correttouml.uml2zot.semantics.util.trio.Lasted;
 import org.correttouml.uml2zot.semantics.util.trio.Lasted_ie;
 import org.correttouml.uml2zot.semantics.util.trio.Lasted_ii;
+import org.correttouml.uml2zot.semantics.util.trio.LastTime_ii;
+import org.correttouml.uml2zot.semantics.util.trio.Next;
 import org.correttouml.uml2zot.semantics.util.trio.Past;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 import org.correttouml.uml2zot.semantics.util.trio.Since;
 import org.correttouml.uml2zot.semantics.util.trio.Since_ei;
 import org.correttouml.uml2zot.semantics.util.trio.Since_ie;
+import org.correttouml.uml2zot.semantics.util.trio.Since_ii;
 import org.correttouml.uml2zot.semantics.util.trio.SomP;
 import org.correttouml.uml2zot.semantics.util.trio.WithinP;
 import org.correttouml.uml2zot.semantics.util.trio.WithinP_ii;
@@ -30,7 +33,7 @@ public class STimeConstraint{
 	public STimeConstraint(TimeConstraint te){
 		this.mades_ti=te;
 	}
-	
+
 	public BooleanFormulae getSemantics(Object... object) {
 		And sem=new And();
 		Predicate ev1=null;
@@ -43,37 +46,32 @@ public class STimeConstraint{
 		if(mades_ti.getContext() instanceof SequenceDiagram){
 			SSequenceDiagram sd = new SSequenceDiagram((SequenceDiagram) mades_ti.getContext());
 			Predicate sd_Predicate = sd.getPredicate();
-			switch(mades_ti.getTimeOperator()){
-			case EQ:{
-				if(!mades_ti.isEvent2Now()){
-					sem.addFormulae(new And(sd_Predicate, new Implies(ev2, new And(new Past(new And(ev1, sd_Predicate), timeunits), new Lasted_ie(new And(new Not(ev1), sd_Predicate), timeunits)))));
+			Predicate sd_Start_Predicate = sd.getPredicateStart();
+			if(!mades_ti.isEvent2Now()){
+				switch(mades_ti.getTimeOperator()){
+				case EQ:{
+					sem.addFormulae(new And(sd_Predicate, new Implies(ev2, new And(new Next(new LastTime_ii(ev1, timeunits + 1)),new Not(new Since_ii(new Not(ev1), sd_Start_Predicate))))));
+					break;				
 				}
-				break;
-			}
-			case LT:{
-				if(!mades_ti.isEvent2Now()){
-					sem.addFormulae(new And(sd_Predicate, new Implies(new And(ev2, sd_Predicate), new WithinP_ii(new And(ev1, sd_Predicate), timeunits - 1))));
+				case LT:{
+					sem.addFormulae(new And(sd_Predicate, new Implies(ev2, new And(new WithinP_ii(ev1, timeunits - 1), new Not(new Since_ii(new Not(ev1), sd_Start_Predicate))))));
+					break;
 				}
-				break;
-			}
-			case LTE:{
-				if(!mades_ti.isEvent2Now()){
-					sem.addFormulae(new And(sd_Predicate, new Implies(new And(ev2, sd_Predicate), new WithinP_ii(new And(ev1, sd_Predicate), timeunits))));
+				case LTE:{
+					sem.addFormulae(new And(sd_Predicate, new Implies(ev2, new And(new WithinP_ii(ev1, timeunits), new Not(new Since_ii(new Not(ev1), sd_Start_Predicate))))));
+					break;
 				}
-				break;
-			}
-			case GT:{
-				if(!mades_ti.isEvent2Now()){
-					sem.addFormulae(new And(sd_Predicate, new Implies(new And(ev2, sd_Predicate), new And(new Lasted_ii(new Not(ev1), timeunits), new SomP(new And(ev1, sd_Predicate))))));
+				case GT:{
+					sem.addFormulae(new And(sd_Predicate, new Implies(ev2, new And(new Lasted_ii(new Not(ev1), timeunits), new Not(new Since_ii(new Not(ev1), sd_Start_Predicate))))));
+					break;
+				}                   
+				case GTE:{
+					sem.addFormulae(new And(sd_Predicate, new Implies(ev2, new And(new Lasted_ie(new Not(ev1), timeunits), new Not(new Since_ii(new Not(ev1), sd_Start_Predicate))))));
+					break;
 				}
-				break;
-			}                   
-			case GTE:{
-				if(!mades_ti.isEvent2Now()){
-					sem.addFormulae(new And(sd_Predicate, new Implies(new And(ev2, sd_Predicate), new And(new Lasted_ie(new Not(ev1), timeunits), new SomP(new And(ev1, sd_Predicate))))));
+				default:
+					break;
 				}
-				break;
-			}
 			}
 			// </if Time Constraint belongs to a Sequence Diagram>
 			// <if Time Constraint belongs to a State Diagram>
@@ -143,5 +141,5 @@ public class STimeConstraint{
 		// </if Time Constraint belongs to a State Diagram>
 		return sem;
 	}
-	
+
 }
