@@ -30,7 +30,7 @@ public class ScalabilityTest {
 	public static String MADES_PROFILE_PATH="C:/Users/motta/Desktop/Dottorato/CorrettoUML/org.correttouml.profiles/resources/model.profile.uml";
 	public static String MODEL_SAVE_PATH="C:/Users/motta/Desktop/Dottorato/CorrettoUML/org.correttouml.uml2zot/tmp";
 	public static String MODEL_SAVE_NAME="model";
-	public static String UML_LIBRARY_PATH="jar:file:/C:/Program Files/Eclipse/201302_JunoModeling/eclipse/plugins/org.eclipse.uml2.uml.resources_4.0.1.v20120913-1441.jar!/";
+	public static String UML_LIBRARY_PATH="jar:file:/C:/Program Files/Eclipse/201302_JunoModeling/eclipse/plugins/org.eclipse.uml2.uml.resources_4.0.2.v20130114-0902.jar!/";
 	
 	/** SCALABILITY **/
 	private static String MODEL_FILE="tmp/model.uml";
