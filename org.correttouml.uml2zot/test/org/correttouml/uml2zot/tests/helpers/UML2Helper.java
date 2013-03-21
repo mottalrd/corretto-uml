@@ -78,7 +78,7 @@ public class UML2Helper {
 	}		
 	
 	public static org.eclipse.uml2.uml.Class createSomF(org.eclipse.uml2.uml.Profile madesProfile, org.eclipse.uml2.uml.Package package_, EObject formulae){
-		//<<Alw>>
+		//<<SomF>>
 		org.eclipse.uml2.uml.Class somf=createClass(package_, "SomF", false);
 		org.eclipse.uml2.uml.Stereotype somfStereotype=getMADESPropertiesStereotype(madesProfile, "SomF");
 		org.eclipse.uml2.uml.Stereotype booleanFormulaeStereotype=getMADESPropertiesStereotype(madesProfile, "BooleanFormulae");
@@ -87,6 +87,29 @@ public class UML2Helper {
 		somf.setValue(somfStereotype, "formulae", formulae);
 		
 		return somf;
+	}		
+	
+	public static org.eclipse.uml2.uml.Class createWithinF(org.eclipse.uml2.uml.Profile madesProfile, org.eclipse.uml2.uml.Package package_, EObject formulae, EObject constant){
+		//<<WithinF>>
+		org.eclipse.uml2.uml.Class withinf=createClass(package_, "WithinF", false);
+		org.eclipse.uml2.uml.Stereotype withinfStereotype=getMADESPropertiesStereotype(madesProfile, "WithinF");
+		org.eclipse.uml2.uml.Stereotype booleanFormulaeStereotype=getMADESPropertiesStereotype(madesProfile, "BooleanFormulae");
+		withinf.applyStereotype(booleanFormulaeStereotype);
+		withinf.applyStereotype(withinfStereotype);
+		withinf.setValue(withinfStereotype, "formulae", formulae);
+		withinf.setValue(withinfStereotype, "t", constant);
+		
+		return withinf;
+	}		
+	
+	public static org.eclipse.uml2.uml.Class createConstant(org.eclipse.uml2.uml.Profile madesProfile, org.eclipse.uml2.uml.Package package_, int value){
+		//<<constant>>
+		org.eclipse.uml2.uml.Class constant=createClass(package_, "constant", false);
+		org.eclipse.uml2.uml.Stereotype constantStereotype=getMADESPropertiesStereotype(madesProfile, "constant");
+		constant.applyStereotype(constantStereotype);
+		constant.setValue(constantStereotype, "value", value);
+		
+		return constant;
 	}		
 	
 	public static org.eclipse.uml2.uml.Class createAlw(org.eclipse.uml2.uml.Profile madesProfile, org.eclipse.uml2.uml.Package package_, EObject formulae){
