@@ -235,6 +235,57 @@ public class UML2Helper {
 
         return class_;
     }
+    
+    public static org.eclipse.uml2.uml.StateMachine createStateMachine(org.eclipse.uml2.uml.Class klass, String name) {
+        org.eclipse.uml2.uml.StateMachine sm = UMLFactory.eINSTANCE.createStateMachine();
+        sm.setName(name);
+        klass.getOwnedBehaviors().add(sm);
+
+        LOGGER.info("State Machine '" + sm.getQualifiedName() + "' created.");
+
+        return sm;
+    }    
+    
+    public static org.eclipse.uml2.uml.State createState(org.eclipse.uml2.uml.StateMachine sm, String name) {
+        org.eclipse.uml2.uml.State state = UMLFactory.eINSTANCE.createState();
+        state.setName(name);
+        sm.getRegions().get(0).getSubvertices().add(state);
+
+        LOGGER.info("State '" + state.getQualifiedName() + "' created.");
+
+        return state;
+    }  
+    
+    public static org.eclipse.uml2.uml.Pseudostate createInitialState(org.eclipse.uml2.uml.StateMachine sm, String name) {
+        org.eclipse.uml2.uml.Pseudostate state = UMLFactory.eINSTANCE.createPseudostate();
+        state.setName(name);
+        sm.getRegions().get(0).getSubvertices().add(state);
+
+        LOGGER.info("State '" + state.getQualifiedName() + "' created.");
+
+        return state;
+    }   
+    
+    public static org.eclipse.uml2.uml.Region createRegion(org.eclipse.uml2.uml.StateMachine sm) {
+        org.eclipse.uml2.uml.Region region = UMLFactory.eINSTANCE.createRegion();
+        sm.getRegions().add(region);
+
+        LOGGER.info("Region '" + region.getQualifiedName() + "' created.");
+
+        return region;
+    }    
+    
+    public static org.eclipse.uml2.uml.Transition createTransition(org.eclipse.uml2.uml.StateMachine sm, org.eclipse.uml2.uml.Vertex source, org.eclipse.uml2.uml.Vertex target, String name) {
+        org.eclipse.uml2.uml.Transition transition = UMLFactory.eINSTANCE.createTransition();
+        transition.setName(name);
+        transition.setSource(source);
+        transition.setTarget(target);
+        sm.getRegions().get(0).getTransitions().add(transition);
+
+        LOGGER.info("Transition '" + transition.getQualifiedName() + "' created.");
+
+        return transition;
+    }    
 	
 	public static org.eclipse.uml2.uml.Comment createSDTimeConstraint(org.eclipse.uml2.uml.Profile madesProfile, org.eclipse.uml2.uml.Interaction sd, String expression){
 		
