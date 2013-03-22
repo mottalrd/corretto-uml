@@ -42,9 +42,15 @@ public class SMessage {
         if(this.mades_message.getMessageType()==MessageType.INSTANTANEOUS){
             sem = sem + new Iff(message_start, message_end) + "\n";
         }else if(this.mades_message.getMessageType()==MessageType.RECURSIVE){
-            //Nothing to do
+        	//There is no message semantics in this case
+        	//since it is already handled by the lifeline semantics
         }else if(this.mades_message.getMessageType()==MessageType.DELAYED){
-        	//TODO: Semantics for delayed messages
+        	//TODO: Semantics for delayed messages not implemented
+        	try {
+				throw new Exception("Delayed Message Semantics not implemented");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
         }
         
         //Timed event semantics

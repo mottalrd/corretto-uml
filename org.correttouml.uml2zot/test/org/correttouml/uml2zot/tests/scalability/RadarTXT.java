@@ -25,20 +25,20 @@ public class RadarTXT {
 	private static final Logger LOGGER = Logger.getLogger(SequenceDiagram.class); 
 	
 	public static void main(String[] args){
-		for(int i=0; i<5; i++){
+		for(int num_processi=1; num_processi<=5; num_processi++){
 			LOGGER.info("Creating the UML model");
-			create_txt_model(i);
+			create_txt_model(num_processi, false);
 			
 			LOGGER.info("Building the MADES UML representation");
 			t=new UML2Zot(new File(MODEL_FILE).getAbsolutePath());
 			
 			LOGGER.info("Generate the ZOT File");
-			t.generateZOTFile(100, "meezot", "minisat", new File("output/txt_model_"+i+".lisp").getAbsolutePath());
+			t.generateZOTFile(100, "meezot", "minisat", new File("output/txt_model_"+num_processi+".lisp").getAbsolutePath());
 			//t.generateZOTFile(100, "ae2zot", "z3", new File("output/txt_model_"+i+".lisp").getAbsolutePath());
 		}
 	}
 
-	private static void create_txt_model(int num_processes){
+	private static void create_txt_model(int num_processes, boolean verify_property){
 		//Preparazione modello e package
 		Model myModel = UML2Helper.createModel("Radar TXT");
 		org.eclipse.uml2.uml.Profile madesProfile = UML2Helper.loadProfile(MADES_PROFILE_PATH);
@@ -145,6 +145,7 @@ public class RadarTXT {
 		UML2Helper.createRegion(smMainMMI);
 		org.eclipse.uml2.uml.Pseudostate s0=UML2Helper.createInitialState(smMainMMI, "initial");
 		org.eclipse.uml2.uml.State s1=UML2Helper.createState(smMainMMI, "MainMMIState");
+		UML2Helper.createTransition(smMainMMI, s0, s1, "initial");
 		UML2Helper.createTransition(smMainMMI, s1, s1, "@ckMainMMI.tick/@MainMMIToEnvironment.start");
 		
 		//##############################################################//
@@ -165,34 +166,35 @@ public class RadarTXT {
 			
 		//##############################################################//
 		
-		//Creazione <<Property>> package
-		org.eclipse.uml2.uml.Package propertyPackage = UML2Helper.createPackage(myModel, "Property");
-		org.eclipse.uml2.uml.Stereotype propertyStereotype=UML2Helper.getMADESVerificationTagsStereotype(madesProfile, "Property");
-		propertyPackage.applyStereotype(propertyStereotype);
-		
-		//Time Property diagram
-		
-		//<<Term>>
-		org.eclipse.uml2.uml.Class main_panel_getButtonTerm=UML2Helper.createTerm(madesProfile, propertyPackage, swEnvironmentop1);
-		
-		//<<Constant>>
-		org.eclipse.uml2.uml.Class constant=UML2Helper.createConstant(madesProfile, propertyPackage, 15);
-		
-		//<<WithinF>>
-		org.eclipse.uml2.uml.Class withinF=UML2Helper.createWithinF(madesProfile, propertyPackage, main_panel_getButtonTerm.getStereotypeApplications().get(0), constant.getStereotypeApplications().get(0));
-		
-		//<<Term>>
-		org.eclipse.uml2.uml.Class panel_setButtonTerm=UML2Helper.createTerm(madesProfile, propertyPackage, swEnvironmentop14);
-		
-		//<<Implies>>
-		org.eclipse.uml2.uml.Class implies=UML2Helper.createImplies(madesProfile, propertyPackage, panel_setButtonTerm.getStereotypeApplications().get(0), withinF.getStereotypeApplications().get(0));
-		
-		//<<Alw>>
-		org.eclipse.uml2.uml.Class alw=UML2Helper.createAlw(madesProfile, propertyPackage, implies.getStereotypeApplications().get(0));
-		
-		//<<Property>>
-		UML2Helper.createProperty(madesProfile, propertyPackage, alw.getStereotypeApplications().get(0));
-		
+		if(verify_property){
+			//Creazione <<Property>> package
+			org.eclipse.uml2.uml.Package propertyPackage = UML2Helper.createPackage(myModel, "Property");
+			org.eclipse.uml2.uml.Stereotype propertyStereotype=UML2Helper.getMADESVerificationTagsStereotype(madesProfile, "Property");
+			propertyPackage.applyStereotype(propertyStereotype);
+			
+			//Time Property diagram
+			
+			//<<Term>>
+			org.eclipse.uml2.uml.Class main_panel_getButtonTerm=UML2Helper.createTerm(madesProfile, propertyPackage, swEnvironmentop1);
+			
+			//<<Constant>>
+			org.eclipse.uml2.uml.Class constant=UML2Helper.createConstant(madesProfile, propertyPackage, 15);
+			
+			//<<WithinF>>
+			org.eclipse.uml2.uml.Class withinF=UML2Helper.createWithinF(madesProfile, propertyPackage, main_panel_getButtonTerm.getStereotypeApplications().get(0), constant.getStereotypeApplications().get(0));
+			
+			//<<Term>>
+			org.eclipse.uml2.uml.Class panel_setButtonTerm=UML2Helper.createTerm(madesProfile, propertyPackage, swEnvironmentop14);
+			
+			//<<Implies>>
+			org.eclipse.uml2.uml.Class implies=UML2Helper.createImplies(madesProfile, propertyPackage, panel_setButtonTerm.getStereotypeApplications().get(0), withinF.getStereotypeApplications().get(0));
+			
+			//<<Alw>>
+			org.eclipse.uml2.uml.Class alw=UML2Helper.createAlw(madesProfile, propertyPackage, implies.getStereotypeApplications().get(0));
+			
+			//<<Property>>
+			UML2Helper.createProperty(madesProfile, propertyPackage, alw.getStereotypeApplications().get(0));
+		}
 		
 		//Salvataggio del modell
 		UML2Helper.save(myModel, URI.createFileURI(MODEL_SAVE_PATH).appendSegment(MODEL_SAVE_NAME).appendFileExtension(UMLResource.FILE_EXTENSION)); 	
@@ -224,6 +226,7 @@ public class RadarTXT {
 		UML2Helper.createRegion(SMPanelData);
 		org.eclipse.uml2.uml.Vertex s0=UML2Helper.createInitialState(SMPanelData, "initial");
 		org.eclipse.uml2.uml.Vertex s1=UML2Helper.createState(SMPanelData, "PanelDataState");
+		UML2Helper.createTransition(SMPanelData, s0, s1, "initial");
 		UML2Helper.createTransition(SMPanelData, s1, s1, "@ckPanelData.tick/@PanelDataToEnvironment"+id+".start");
 	}
 	
@@ -254,6 +257,7 @@ public class RadarTXT {
 		UML2Helper.createRegion(SMRadarData);
 		org.eclipse.uml2.uml.Vertex s0=UML2Helper.createInitialState(SMRadarData, "initial");
 		org.eclipse.uml2.uml.Vertex s1=UML2Helper.createState(SMRadarData, "RadarDataState");
+		UML2Helper.createTransition(SMRadarData, s0, s1, "initial");
 		UML2Helper.createTransition(SMRadarData, s1, s1, "@ckRadar.tick/@RadarDataToEnvironment.start");
 	}
 
@@ -284,6 +288,7 @@ public class RadarTXT {
 		UML2Helper.createRegion(SMNavData);
 		org.eclipse.uml2.uml.Vertex s0=UML2Helper.createInitialState(SMNavData, "initial");
 		org.eclipse.uml2.uml.Vertex s1=UML2Helper.createState(SMNavData, "NavDataState");
+		UML2Helper.createTransition(SMNavData, s0, s1, "initial");
 		UML2Helper.createTransition(SMNavData, s1, s1, "@ckNavigation.tick/@NavigationToEnvironment.start");
 	}
 
@@ -313,6 +318,7 @@ public class RadarTXT {
 		UML2Helper.createRegion(SMWeatherData);
 		org.eclipse.uml2.uml.Vertex s0=UML2Helper.createInitialState(SMWeatherData, "initial");
 		org.eclipse.uml2.uml.Vertex s1=UML2Helper.createState(SMWeatherData, "WeatherDataState");
+		UML2Helper.createTransition(SMWeatherData, s0, s1, "initial");
 		UML2Helper.createTransition(SMWeatherData, s1, s1, "@ckWeather.tick/@WeatherDataToEnvironment.start");
 	}
 }
