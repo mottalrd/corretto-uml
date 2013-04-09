@@ -12,17 +12,6 @@ public class AbstractLaunchConfigurationTabGroupMadesVerification extends
 	@Override
 	public void createTabs(ILaunchConfigurationDialog dialog, String mode) {
 		
-//		MadesVerificationSourceTab sourceTab= new MadesVerificationSourceTab();
-//		ZotConfigurationTab zotTab= new ZotConfigurationTab();
-//		CommonTab commonTab = new CommonTab();
-//		ILaunchConfigurationTab[] tabs = 
-//				new ILaunchConfigurationTab[]{
-//					sourceTab,
-//					zotTab,
-//					commonTab
-//				};
-//			setTabs(tabs);	
-		
 		SampleTab sampleTab = new SampleTab();
 		
 		ILaunchConfigurationTab[] tabs = 
