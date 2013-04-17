@@ -31,7 +31,7 @@ public class SMessage {
         Predicate message_end=new SMessageEnd(this.mades_message.getMessageEndEvent()).getPredicate();
         
         //Message predicate definition
-        sem = sem + new Iff(message, new Or(message_start, new Since(message_end, message_start))) + "\n";
+        sem = sem + new Iff(message, new Or(message_start, new Since(new Not(message_end), message_start))) + "\n";
         
         //Message parameter semantics
         for (MessageParameter mp : this.mades_message.getParameters()) {
