@@ -6,9 +6,11 @@ import org.correttouml.uml.diagrams.sequencediagram.MessageParameter;
 import org.correttouml.uml.diagrams.sequencediagram.MessageType;
 import org.correttouml.uml2zot.semantics.events.SClockTickEvent;
 import org.correttouml.uml2zot.semantics.util.bool.Iff;
+import org.correttouml.uml2zot.semantics.util.bool.Not;
 import org.correttouml.uml2zot.semantics.util.bool.Or;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 import org.correttouml.uml2zot.semantics.util.trio.Since;
+import org.correttouml.uml2zot.semantics.util.trio.Since_ei;
 
 
 public class SMessage {
@@ -31,7 +33,7 @@ public class SMessage {
         Predicate message_end=new SMessageEnd(this.mades_message.getMessageEndEvent()).getPredicate();
         
         //Message predicate definition
-        sem = sem + new Iff(message, new Or(message_start, new Since(new Not(message_end), message_start))) + "\n";
+        sem = sem + new Iff(message, new Or(message_start, new Since_ei(new Not(message_end), message_start))) + "\n";
         
         //Message parameter semantics
         for (MessageParameter mp : this.mades_message.getParameters()) {
