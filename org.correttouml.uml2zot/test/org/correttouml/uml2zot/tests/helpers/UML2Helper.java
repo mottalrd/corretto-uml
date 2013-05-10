@@ -6,13 +6,18 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLFactory;
@@ -20,6 +25,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.resource.UMLResource;
 import org.eclipse.uml2.uml.resources.util.UMLResourcesUtil;
 import org.eclipse.uml2.uml.util.UMLUtil;
+import org.eclipse.uml2.uml.AggregationKind;
 
 public class UML2Helper {
 
@@ -146,6 +152,26 @@ public class UML2Helper {
 
         return instanceSpecification;
     }	
+    
+    public static org.eclipse.uml2.uml.InstanceSpecification createInstanceSpecificationLink(org.eclipse.uml2.uml.Package package_, org.eclipse.uml2.uml.Association association, org.eclipse.uml2.uml.InstanceSpecification obj1, org.eclipse.uml2.uml.InstanceSpecification obj2,  String name) {
+        
+    	org.eclipse.uml2.uml.InstanceSpecification link = UMLFactory.eINSTANCE.createInstanceSpecification();
+    	
+    	link.getClassifiers().add(association);
+    	package_.getPackagedElements().add(link);
+    	link.setName(name);
+    	
+    	//TODO[mottalrd] is it correct?
+    	//To understand look at a papyrus generated uml file or debug a model 
+    	//with association links and see the model variables
+    	EAnnotation end1=link.createEAnnotation("InstanceEnd");
+    	end1.getReferences().add(obj1);
+    	end1.getReferences().add(obj2);
+
+        LOGGER.info("InstanceSpecification '" + link.getQualifiedName() + "' created.");
+
+        return link;
+    }
 	
     public static org.eclipse.uml2.uml.Interaction createInteraction(org.eclipse.uml2.uml.Package package_, String name) {
         
@@ -259,6 +285,100 @@ public class UML2Helper {
         return class_;
     }
     
+    //clear me
+//    public static org.eclipse.uml2.uml.Association createAssociation(org.eclipse.uml2.uml.Package package_, org.eclipse.uml2.uml.Class class_1, org.eclipse.uml2.uml.Class class_2, String name) {
+//        //org.eclipse.uml2.uml.Association association = UMLFactory.eINSTANCE.createAssociation();
+//    	org.eclipse.uml2.uml.Association association=org.eclipse.uml2.uml.Association.createAssociation(true, AggregationKind.NONE, 
+//    			class_1.getName(), 
+//    			1, 
+//    			1, 
+//    			class_1, 
+//    			true, 
+//    			AggregationKind.NONE, 
+//    			class_2.getName(), 
+//    			1, 
+//    			1);
+//        
+//        //First end
+//        org.eclipse.uml2.uml.Property end_class_1=UMLFactory.eINSTANCE.createProperty();
+//        end_class_1.setAssociation(association);
+//        //TODO[mottalrd][bug?] not sure about this. I was for setDataType but wasn't ok
+//        end_class_1.setType(class_1);
+//        
+//        //Second end
+//        org.eclipse.uml2.uml.Property end_class_2=UMLFactory.eINSTANCE.createProperty();
+//        end_class_2.setAssociation(association);
+//        //TODO[mottalrd][bug?] not sure about this. I was for setDataType but wasn't ok
+//        end_class_2.setType(class_2);
+//        
+//        //Add to the parent package
+//        package_.getPackagedElements().add(association);
+//        
+//        LOGGER.info("Associaction '" + association.getQualifiedName() + "' created.");
+//
+//        return association;
+//    }
+    
+    public static org.eclipse.uml2.uml.Association createAssociation(org.eclipse.uml2.uml.Type type1, boolean end1IsNavigable, AggregationKind end1Aggregation,
+            String end1Name, int end1LowerBound, int end1UpperBound,
+            org.eclipse.uml2.uml.Type type2, boolean end2IsNavigable, AggregationKind end2Aggregation,
+            String end2Name, int end2LowerBound, int end2UpperBound) {
+
+    	org.eclipse.uml2.uml.Association association = type1.createAssociation(end1IsNavigable, end1Aggregation, end1Name, end1LowerBound, end1UpperBound,
+            type2, end2IsNavigable, end2Aggregation, end2Name, end2LowerBound, end2UpperBound);
+
+        StringBuffer sb = new StringBuffer();
+
+        sb.append("Association ");
+
+        if (null == end1Name || 0 == end1Name.length()) {
+            sb.append('{');
+            sb.append(type1.getQualifiedName());
+            sb.append('}');
+        } else {
+            sb.append("'");
+            sb.append(type1.getQualifiedName());
+            sb.append(NamedElement.SEPARATOR);
+            sb.append(end1Name);
+            sb.append("'");
+        }
+
+        sb.append(" [");
+        sb.append(end1LowerBound);
+        sb.append("..");
+        sb.append(LiteralUnlimitedNatural.UNLIMITED == end1UpperBound ? "*" : String.valueOf(end1UpperBound));
+        sb.append("] ");
+
+        sb.append(end2IsNavigable ? '<' : '-');
+        sb.append('-');
+        sb.append(end1IsNavigable ? '>' : '-');
+        sb.append(' ');
+
+        if (null == end2Name || 0 == end2Name.length()) {
+            sb.append('{');
+            sb.append(type2.getQualifiedName());
+            sb.append('}');
+        } else {
+            sb.append("'");
+            sb.append(type2.getQualifiedName());
+            sb.append(NamedElement.SEPARATOR);
+            sb.append(end2Name);
+            sb.append("'");
+        }
+
+        sb.append(" [");
+        sb.append(end2LowerBound);
+        sb.append("..");
+        sb.append(LiteralUnlimitedNatural.UNLIMITED == end2UpperBound ? "*" : String.valueOf(end2UpperBound));
+        sb.append("]");
+
+        sb.append(" created.");
+
+        LOGGER.info(sb.toString());
+
+        return association;
+    }
+    
     public static org.eclipse.uml2.uml.StateMachine createStateMachine(org.eclipse.uml2.uml.Class klass, String name) {
         org.eclipse.uml2.uml.StateMachine sm = UMLFactory.eINSTANCE.createStateMachine();
         sm.setName(name);
@@ -274,7 +394,7 @@ public class UML2Helper {
         state.setName(name);
         sm.getRegions().get(0).getSubvertices().add(state);
 
-        LOGGER.info("State '" + state.getQualifiedName() + "' created.");
+        LOGGER.info("State '" + state.getName() + "' created.");
 
         return state;
     }  
@@ -284,7 +404,7 @@ public class UML2Helper {
         state.setName(name);
         sm.getRegions().get(0).getSubvertices().add(state);
 
-        LOGGER.info("State '" + state.getQualifiedName() + "' created.");
+        LOGGER.info("State '" + state.getName() + "' created.");
 
         return state;
     }   
@@ -292,6 +412,7 @@ public class UML2Helper {
     public static org.eclipse.uml2.uml.Region createRegion(org.eclipse.uml2.uml.StateMachine sm) {
         org.eclipse.uml2.uml.Region region = UMLFactory.eINSTANCE.createRegion();
         sm.getRegions().add(region);
+        region.setName(sm.getQualifiedName() + "main region");
 
         LOGGER.info("Region '" + region.getQualifiedName() + "' created.");
 
@@ -305,7 +426,7 @@ public class UML2Helper {
         transition.setTarget(target);
         sm.getRegions().get(0).getTransitions().add(transition);
 
-        LOGGER.info("Transition '" + transition.getQualifiedName() + "' created.");
+        LOGGER.info("Transition '" + transition.getName() + "' created.");
 
         return transition;
     }    

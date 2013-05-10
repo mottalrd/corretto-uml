@@ -1,4 +1,4 @@
-package org.correttouml.uml2zot.tests;
+package org.correttouml.uml2zot.tests.helpers;
 
 
 import java.io.BufferedReader;
@@ -9,13 +9,13 @@ import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
-import org.correttouml.uml2zot.tests.models.Test1;
+import org.correttouml.uml2zot.tests.papyrus.PapyrusModels;
 import org.correttouml.uml2zot.zotutil.TimeInstant;
 import org.correttouml.uml2zot.zotutil.ZOTTrace;
 
 public class TestHelper {
 
-	private static final Logger LOGGER = Logger.getLogger(Test1.class);
+	private static final Logger LOGGER = Logger.getLogger(PapyrusModels.class);
 	private String TMP_DIR; 
 	private String OUTPUT_DIR;
 	private String ZOT_MODEL_FILE="zot_model.lisp";

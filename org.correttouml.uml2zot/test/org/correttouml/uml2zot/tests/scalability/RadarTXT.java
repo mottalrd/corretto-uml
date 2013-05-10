@@ -4,20 +4,13 @@ import java.io.File;
 
 import org.apache.log4j.Logger;
 import org.correttouml.uml2zot.UML2Zot;
+import org.correttouml.uml2zot.tests.TestConfiguration;
 import org.correttouml.uml2zot.tests.helpers.UML2Helper;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.resource.UMLResource;
 
 public class RadarTXT {
-
-	public static String MADES_PROFILE_PATH="C:/Users/motta/Desktop/Dottorato/CorrettoUML/org.correttouml.profiles/resources/model.profile.uml";
-	public static String MODEL_SAVE_PATH="C:/Users/motta/Desktop/Dottorato/CorrettoUML/org.correttouml.uml2zot/tmp";
-	public static String MODEL_SAVE_NAME="model";
-
-	
-	/** SCALABILITY **/
-	private static String MODEL_FILE="tmp/model.uml";
 	
 	/** The UML2ZOT entry point for making the transformation */
 	private static UML2Zot t;
@@ -30,7 +23,7 @@ public class RadarTXT {
 			create_txt_model(num_processi, false);
 			
 			LOGGER.info("Building the MADES UML representation");
-			t=new UML2Zot(new File(MODEL_FILE).getAbsolutePath());
+			t=new UML2Zot(new File(TestConfiguration.MODEL_FILE).getAbsolutePath());
 			
 			LOGGER.info("Generate the ZOT File");
 			t.generateZOTFile(100, "meezot", "minisat", new File("output/txt_model_"+num_processi+".lisp").getAbsolutePath());
@@ -41,7 +34,7 @@ public class RadarTXT {
 	private static void create_txt_model(int num_processes, boolean verify_property){
 		//Preparazione modello e package
 		Model myModel = UML2Helper.createModel("Radar TXT");
-		org.eclipse.uml2.uml.Profile madesProfile = UML2Helper.loadProfile(MADES_PROFILE_PATH);
+		org.eclipse.uml2.uml.Profile madesProfile = UML2Helper.loadProfile(TestConfiguration.MADES_PROFILE_PATH);
 		myModel.createElementImport(madesProfile);
 		myModel.applyProfile(madesProfile);
 		
@@ -197,7 +190,7 @@ public class RadarTXT {
 		}
 		
 		//Salvataggio del modell
-		UML2Helper.save(myModel, URI.createFileURI(MODEL_SAVE_PATH).appendSegment(MODEL_SAVE_NAME).appendFileExtension(UMLResource.FILE_EXTENSION)); 	
+		UML2Helper.save(myModel, URI.createFileURI(TestConfiguration.MODEL_SAVE_PATH).appendSegment(TestConfiguration.MODEL_SAVE_NAME).appendFileExtension(UMLResource.FILE_EXTENSION)); 	
 	}
 
 	private static void create_panel_data(org.eclipse.uml2.uml.Package systemPackage, org.eclipse.uml2.uml.InstanceSpecification environment, org.eclipse.uml2.uml.Operation panel_getLed,  org.eclipse.uml2.uml.Operation panel_setButton, int id){

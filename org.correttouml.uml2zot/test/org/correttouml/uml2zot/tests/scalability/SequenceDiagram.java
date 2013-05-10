@@ -4,6 +4,7 @@ import java.io.File;
 
 import org.apache.log4j.Logger;
 import org.correttouml.uml2zot.UML2Zot;
+import org.correttouml.uml2zot.tests.TestConfiguration;
 import org.correttouml.uml2zot.tests.helpers.UML2Helper;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.uml2.uml.Message;
@@ -11,12 +12,6 @@ import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.resource.UMLResource;
 
 public class SequenceDiagram {
-
-	public static String PATH_TO_REPOSITORY="/home/motta/workspace/milano/CorrettoUML/";
-	public static String MADES_PROFILE_PATH=PATH_TO_REPOSITORY+"org.correttouml.profiles/resources/model.profile.uml";
-	public static String MODEL_SAVE_PATH=PATH_TO_REPOSITORY+"org.correttouml.uml2zot/tmp";
-	public static String MODEL_SAVE_NAME="model";
-	public static String MODEL_FILE="tmp/model.uml";
 	
 	/** The UML2ZOT entry point for making the transformation */
 	private static UML2Zot t;
@@ -32,10 +27,10 @@ public class SequenceDiagram {
 			Model myModel=create_scalability_model(i);
 			
 			//Save it to disk
-			UML2Helper.save(myModel, URI.createFileURI(MODEL_SAVE_PATH).appendSegment(MODEL_SAVE_NAME).appendFileExtension(UMLResource.FILE_EXTENSION)); 
+			UML2Helper.save(myModel, URI.createFileURI(TestConfiguration.MODEL_SAVE_PATH).appendSegment(TestConfiguration.MODEL_SAVE_NAME).appendFileExtension(UMLResource.FILE_EXTENSION)); 
 			
 			LOGGER.info("Building the MADES UML representation");
-			t=new UML2Zot(new File(MODEL_FILE).getAbsolutePath());
+			t=new UML2Zot(new File(TestConfiguration.MODEL_FILE).getAbsolutePath());
 			
 			LOGGER.info("Generate the ZOT File");
 			t.generateZOTFile(100, "meezot", "minisat", new File("output/zot_model_"+i+"_msg.lisp").getAbsolutePath());
@@ -53,7 +48,7 @@ public class SequenceDiagram {
 	public static Model create_scalability_model(int x) {		
 		//Preparazione modello e package
 		Model myModel = UML2Helper.createModel("ScalabilityModel");
-		org.eclipse.uml2.uml.Profile madesProfile = UML2Helper.loadProfile(MADES_PROFILE_PATH);
+		org.eclipse.uml2.uml.Profile madesProfile = UML2Helper.loadProfile(TestConfiguration.MADES_PROFILE_PATH);
 		myModel.createElementImport(madesProfile);
 		myModel.applyProfile(madesProfile);
 		
@@ -98,7 +93,7 @@ public class SequenceDiagram {
 	public static Model create_model_and_apply_profile(Model myModel, org.eclipse.uml2.uml.Profile madesProfile){
 		//Preparazione modello e package
 		myModel = UML2Helper.createModel("ScalabilityModel");
-		madesProfile = UML2Helper.loadProfile(MADES_PROFILE_PATH);
+		madesProfile = UML2Helper.loadProfile(TestConfiguration.MADES_PROFILE_PATH);
 		myModel.createElementImport(madesProfile);
 		myModel.applyProfile(madesProfile);
 		return myModel;

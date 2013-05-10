@@ -1,4 +1,4 @@
-package org.correttouml.uml2zot.tests.models;
+package org.correttouml.uml2zot.tests.papyrus;
 
 import static org.junit.Assert.assertTrue;
 
@@ -6,15 +6,15 @@ import java.io.File;
 
 import org.apache.log4j.Logger;
 import org.correttouml.uml2zot.UML2Zot;
-import org.correttouml.uml2zot.tests.TestHelper;
+import org.correttouml.uml2zot.tests.helpers.TestHelper;
 import org.junit.Test;
 
-public class Test1 {
+public class PapyrusModels {
 
-	private static final Logger LOGGER = Logger.getLogger(Test1.class); 
+	private static final Logger LOGGER = Logger.getLogger(PapyrusModels.class); 
 	
 	/** THE CCAS MODEL */
-	//private String MODEL_FILE="testmodels/ccas/v0.1/model.uml";
+	private String MODEL_FILE="testmodels/ccas/v0.1/model.uml";
 	//private String MODEL_FILE="testmodels/ccas/v0.2/model.uml";
 	//private String MODEL_FILE="testmodels/plugin/model.uml";
 	
@@ -31,7 +31,7 @@ public class Test1 {
 	//private String MODEL_FILE="testmodels/iod/test1/model.uml";
 	
 	/** TXT RADAR MODEL */
-	private String MODEL_FILE="testmodels/txt/v0.1/model.uml";
+	//private String MODEL_FILE="testmodels/txt/v0.1/model.uml";
 	
 	/** CASSIDIAN RADAR MODEL */
 	//private String MODEL_FILE="testmodels/cassidian/model.uml";
