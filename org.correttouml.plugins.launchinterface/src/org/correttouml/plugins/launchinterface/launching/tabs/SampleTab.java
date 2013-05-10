@@ -2,6 +2,8 @@ package org.correttouml.plugins.launchinterface.launching.tabs;
 
 import org.correttouml.plugins.launchinterface.launching.MadesVerificationLaunchConfigurationAttributes;
 import org.correttouml.plugins.launchinterface.util.ZotSetupUtil;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.ui.AbstractLaunchConfigurationTab;
@@ -285,6 +287,14 @@ public class SampleTab extends AbstractLaunchConfigurationTab implements ModifyL
 		configuration.setAttribute(MadesVerificationLaunchConfigurationAttributes.TIME_BOUND, tbText.getText());
 		configuration.setAttribute(MadesVerificationLaunchConfigurationAttributes.ZOT_LOCATION, location.getText());
 		configuration.setAttribute(MadesVerificationLaunchConfigurationAttributes.OUTPUT_FOLDER, output_location.getText());
+		try {
+			ILaunchConfiguration s=configuration.doSave();
+			IFile f=s.getFile();
+			System.out.println(f);
+		} catch (CoreException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
