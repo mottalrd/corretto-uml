@@ -26,7 +26,7 @@ public class UML2Helper {
 	private static final Logger LOGGER = Logger.getLogger(UML2Helper.class); 
 	
 	//Double check that this is updated when running
-	public static String UML_LIBRARY_PATH="jar:file:/C:/Program Files/Eclipse/201302_JunoModeling/eclipse/plugins/org.eclipse.uml2.uml.resources_4.0.2.v20130114-0902.jar!/";
+	public static String UML_LIBRARY_PATH="jar:file:/opt/eclipse/2012-11-eclipse-modeling-juno/plugins/org.eclipse.uml2.uml.resources_4.0.1.v20120913-1441.jar!/";
 	
 	public static org.eclipse.uml2.uml.Class createNot(org.eclipse.uml2.uml.Profile madesProfile, org.eclipse.uml2.uml.Package package_, EObject formulae){
 		//<<Alw>>
