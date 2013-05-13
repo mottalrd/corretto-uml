@@ -713,9 +713,22 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
             int LA1_0 = input.LA(1);
 
             if ( (LA1_0==RULE_ID) ) {
-                alt1=1;
+                int LA1_1 = input.LA(2);
+
+                if ( (LA1_1==20) ) {
+                    alt1=1;
+                }
+                else if ( (LA1_1==21) ) {
+                    alt1=2;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 1, 1, input);
+
+                    throw nvae;
+                }
             }
-            else if ( (LA1_0==21) ) {
+            else if ( (LA1_0==21||LA1_0==25) ) {
                 alt1=2;
             }
             else {
@@ -806,11 +819,11 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
             if ( (LA2_0==RULE_ID) ) {
                 int LA2_1 = input.LA(2);
 
-                if ( (LA2_1==RULE_OPERATOR) ) {
-                    alt2=1;
-                }
-                else if ( (LA2_1==EOF||LA2_1==19) ) {
+                if ( (LA2_1==EOF||LA2_1==19) ) {
                     alt2=2;
+                }
+                else if ( (LA2_1==RULE_OPERATOR) ) {
+                    alt2=1;
                 }
                 else {
                     NoViableAltException nvae =
@@ -822,11 +835,11 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
             else if ( (LA2_0==RULE_INT) ) {
                 int LA2_2 = input.LA(2);
 
-                if ( (LA2_2==RULE_OPERATOR) ) {
-                    alt2=1;
-                }
-                else if ( (LA2_2==EOF||LA2_2==19) ) {
+                if ( (LA2_2==EOF||LA2_2==19) ) {
                     alt2=2;
+                }
+                else if ( (LA2_2==RULE_OPERATOR) ) {
+                    alt2=1;
                 }
                 else {
                     NoViableAltException nvae =
@@ -1000,14 +1013,14 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
     // $ANTLR end "rule__TERM__Alternatives"
 
 
-    // $ANTLR start "rule__EventAction__Alternatives_1"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:350:1: rule__EventAction__Alternatives_1 : ( ( ( rule__EventAction__LinkNameAssignment_1_0 ) ) | ( ( rule__EventAction__SelfAssignment_1_1 ) ) );
-    public final void rule__EventAction__Alternatives_1() throws RecognitionException {
+    // $ANTLR start "rule__EventAction__Alternatives_0"
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:350:1: rule__EventAction__Alternatives_0 : ( ( ( rule__EventAction__LinkNameAssignment_0_0 ) ) | ( ( rule__EventAction__SelfAssignment_0_1 ) ) );
+    public final void rule__EventAction__Alternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:354:1: ( ( ( rule__EventAction__LinkNameAssignment_1_0 ) ) | ( ( rule__EventAction__SelfAssignment_1_1 ) ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:354:1: ( ( ( rule__EventAction__LinkNameAssignment_0_0 ) ) | ( ( rule__EventAction__SelfAssignment_0_1 ) ) )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1025,24 +1038,24 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:355:1: ( ( rule__EventAction__LinkNameAssignment_1_0 ) )
+                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:355:1: ( ( rule__EventAction__LinkNameAssignment_0_0 ) )
                     {
-                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:355:1: ( ( rule__EventAction__LinkNameAssignment_1_0 ) )
-                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:356:1: ( rule__EventAction__LinkNameAssignment_1_0 )
+                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:355:1: ( ( rule__EventAction__LinkNameAssignment_0_0 ) )
+                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:356:1: ( rule__EventAction__LinkNameAssignment_0_0 )
                     {
-                     before(grammarAccess.getEventActionAccess().getLinkNameAssignment_1_0()); 
-                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:357:1: ( rule__EventAction__LinkNameAssignment_1_0 )
-                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:357:2: rule__EventAction__LinkNameAssignment_1_0
+                     before(grammarAccess.getEventActionAccess().getLinkNameAssignment_0_0()); 
+                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:357:1: ( rule__EventAction__LinkNameAssignment_0_0 )
+                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:357:2: rule__EventAction__LinkNameAssignment_0_0
                     {
-                    pushFollow(FOLLOW_rule__EventAction__LinkNameAssignment_1_0_in_rule__EventAction__Alternatives_1703);
-                    rule__EventAction__LinkNameAssignment_1_0();
+                    pushFollow(FOLLOW_rule__EventAction__LinkNameAssignment_0_0_in_rule__EventAction__Alternatives_0703);
+                    rule__EventAction__LinkNameAssignment_0_0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getEventActionAccess().getLinkNameAssignment_1_0()); 
+                     after(grammarAccess.getEventActionAccess().getLinkNameAssignment_0_0()); 
 
                     }
 
@@ -1050,24 +1063,24 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
                     }
                     break;
                 case 2 :
-                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:361:6: ( ( rule__EventAction__SelfAssignment_1_1 ) )
+                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:361:6: ( ( rule__EventAction__SelfAssignment_0_1 ) )
                     {
-                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:361:6: ( ( rule__EventAction__SelfAssignment_1_1 ) )
-                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:362:1: ( rule__EventAction__SelfAssignment_1_1 )
+                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:361:6: ( ( rule__EventAction__SelfAssignment_0_1 ) )
+                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:362:1: ( rule__EventAction__SelfAssignment_0_1 )
                     {
-                     before(grammarAccess.getEventActionAccess().getSelfAssignment_1_1()); 
-                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:363:1: ( rule__EventAction__SelfAssignment_1_1 )
-                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:363:2: rule__EventAction__SelfAssignment_1_1
+                     before(grammarAccess.getEventActionAccess().getSelfAssignment_0_1()); 
+                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:363:1: ( rule__EventAction__SelfAssignment_0_1 )
+                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:363:2: rule__EventAction__SelfAssignment_0_1
                     {
-                    pushFollow(FOLLOW_rule__EventAction__SelfAssignment_1_1_in_rule__EventAction__Alternatives_1721);
-                    rule__EventAction__SelfAssignment_1_1();
+                    pushFollow(FOLLOW_rule__EventAction__SelfAssignment_0_1_in_rule__EventAction__Alternatives_0721);
+                    rule__EventAction__SelfAssignment_0_1();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getEventActionAccess().getSelfAssignment_1_1()); 
+                     after(grammarAccess.getEventActionAccess().getSelfAssignment_0_1()); 
 
                     }
 
@@ -1088,7 +1101,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__EventAction__Alternatives_1"
+    // $ANTLR end "rule__EventAction__Alternatives_0"
 
 
     // $ANTLR start "rule__Parameters__Alternatives"
@@ -2227,21 +2240,42 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__EventAction__Group__0__Impl"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:784:1: rule__EventAction__Group__0__Impl : ( '@' ) ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:784:1: rule__EventAction__Group__0__Impl : ( ( rule__EventAction__Alternatives_0 )? ) ;
     public final void rule__EventAction__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:788:1: ( ( '@' ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:789:1: ( '@' )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:788:1: ( ( ( rule__EventAction__Alternatives_0 )? ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:789:1: ( ( rule__EventAction__Alternatives_0 )? )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:789:1: ( '@' )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:790:1: '@'
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:789:1: ( ( rule__EventAction__Alternatives_0 )? )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:790:1: ( rule__EventAction__Alternatives_0 )?
             {
-             before(grammarAccess.getEventActionAccess().getCommercialAtKeyword_0()); 
-            match(input,21,FOLLOW_21_in_rule__EventAction__Group__0__Impl1602); 
-             after(grammarAccess.getEventActionAccess().getCommercialAtKeyword_0()); 
+             before(grammarAccess.getEventActionAccess().getAlternatives_0()); 
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:791:1: ( rule__EventAction__Alternatives_0 )?
+            int alt8=2;
+            int LA8_0 = input.LA(1);
+
+            if ( (LA8_0==RULE_ID||LA8_0==25) ) {
+                alt8=1;
+            }
+            switch (alt8) {
+                case 1 :
+                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:791:2: rule__EventAction__Alternatives_0
+                    {
+                    pushFollow(FOLLOW_rule__EventAction__Alternatives_0_in_rule__EventAction__Group__0__Impl1601);
+                    rule__EventAction__Alternatives_0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getEventActionAccess().getAlternatives_0()); 
 
             }
 
@@ -2264,21 +2298,21 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__EventAction__Group__1"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:803:1: rule__EventAction__Group__1 : rule__EventAction__Group__1__Impl rule__EventAction__Group__2 ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:801:1: rule__EventAction__Group__1 : rule__EventAction__Group__1__Impl rule__EventAction__Group__2 ;
     public final void rule__EventAction__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:807:1: ( rule__EventAction__Group__1__Impl rule__EventAction__Group__2 )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:808:2: rule__EventAction__Group__1__Impl rule__EventAction__Group__2
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:805:1: ( rule__EventAction__Group__1__Impl rule__EventAction__Group__2 )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:806:2: rule__EventAction__Group__1__Impl rule__EventAction__Group__2
             {
-            pushFollow(FOLLOW_rule__EventAction__Group__1__Impl_in_rule__EventAction__Group__11633);
+            pushFollow(FOLLOW_rule__EventAction__Group__1__Impl_in_rule__EventAction__Group__11632);
             rule__EventAction__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EventAction__Group__2_in_rule__EventAction__Group__11636);
+            pushFollow(FOLLOW_rule__EventAction__Group__2_in_rule__EventAction__Group__11635);
             rule__EventAction__Group__2();
 
             state._fsp--;
@@ -2302,42 +2336,21 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__EventAction__Group__1__Impl"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:815:1: rule__EventAction__Group__1__Impl : ( ( rule__EventAction__Alternatives_1 )? ) ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:813:1: rule__EventAction__Group__1__Impl : ( '@' ) ;
     public final void rule__EventAction__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:819:1: ( ( ( rule__EventAction__Alternatives_1 )? ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:820:1: ( ( rule__EventAction__Alternatives_1 )? )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:817:1: ( ( '@' ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:818:1: ( '@' )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:820:1: ( ( rule__EventAction__Alternatives_1 )? )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:821:1: ( rule__EventAction__Alternatives_1 )?
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:818:1: ( '@' )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:819:1: '@'
             {
-             before(grammarAccess.getEventActionAccess().getAlternatives_1()); 
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:822:1: ( rule__EventAction__Alternatives_1 )?
-            int alt8=2;
-            int LA8_0 = input.LA(1);
-
-            if ( (LA8_0==RULE_ID||LA8_0==25) ) {
-                alt8=1;
-            }
-            switch (alt8) {
-                case 1 :
-                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:822:2: rule__EventAction__Alternatives_1
-                    {
-                    pushFollow(FOLLOW_rule__EventAction__Alternatives_1_in_rule__EventAction__Group__1__Impl1663);
-                    rule__EventAction__Alternatives_1();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getEventActionAccess().getAlternatives_1()); 
+             before(grammarAccess.getEventActionAccess().getCommercialAtKeyword_1()); 
+            match(input,21,FOLLOW_21_in_rule__EventAction__Group__1__Impl1663); 
+             after(grammarAccess.getEventActionAccess().getCommercialAtKeyword_1()); 
 
             }
 
@@ -2398,21 +2411,31 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__EventAction__Group__2__Impl"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:844:1: rule__EventAction__Group__2__Impl : ( '.' ) ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:844:1: rule__EventAction__Group__2__Impl : ( ( rule__EventAction__EventNameAssignment_2 ) ) ;
     public final void rule__EventAction__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:848:1: ( ( '.' ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:849:1: ( '.' )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:848:1: ( ( ( rule__EventAction__EventNameAssignment_2 ) ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:849:1: ( ( rule__EventAction__EventNameAssignment_2 ) )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:849:1: ( '.' )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:850:1: '.'
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:849:1: ( ( rule__EventAction__EventNameAssignment_2 ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:850:1: ( rule__EventAction__EventNameAssignment_2 )
             {
-             before(grammarAccess.getEventActionAccess().getFullStopKeyword_2()); 
-            match(input,22,FOLLOW_22_in_rule__EventAction__Group__2__Impl1725); 
-             after(grammarAccess.getEventActionAccess().getFullStopKeyword_2()); 
+             before(grammarAccess.getEventActionAccess().getEventNameAssignment_2()); 
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:851:1: ( rule__EventAction__EventNameAssignment_2 )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:851:2: rule__EventAction__EventNameAssignment_2
+            {
+            pushFollow(FOLLOW_rule__EventAction__EventNameAssignment_2_in_rule__EventAction__Group__2__Impl1724);
+            rule__EventAction__EventNameAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getEventActionAccess().getEventNameAssignment_2()); 
 
             }
 
@@ -2435,21 +2458,21 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__EventAction__Group__3"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:863:1: rule__EventAction__Group__3 : rule__EventAction__Group__3__Impl rule__EventAction__Group__4 ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:861:1: rule__EventAction__Group__3 : rule__EventAction__Group__3__Impl rule__EventAction__Group__4 ;
     public final void rule__EventAction__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:867:1: ( rule__EventAction__Group__3__Impl rule__EventAction__Group__4 )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:868:2: rule__EventAction__Group__3__Impl rule__EventAction__Group__4
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:865:1: ( rule__EventAction__Group__3__Impl rule__EventAction__Group__4 )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:866:2: rule__EventAction__Group__3__Impl rule__EventAction__Group__4
             {
-            pushFollow(FOLLOW_rule__EventAction__Group__3__Impl_in_rule__EventAction__Group__31756);
+            pushFollow(FOLLOW_rule__EventAction__Group__3__Impl_in_rule__EventAction__Group__31754);
             rule__EventAction__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EventAction__Group__4_in_rule__EventAction__Group__31759);
+            pushFollow(FOLLOW_rule__EventAction__Group__4_in_rule__EventAction__Group__31757);
             rule__EventAction__Group__4();
 
             state._fsp--;
@@ -2473,31 +2496,42 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__EventAction__Group__3__Impl"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:875:1: rule__EventAction__Group__3__Impl : ( ( rule__EventAction__EventNameAssignment_3 ) ) ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:873:1: rule__EventAction__Group__3__Impl : ( ( rule__EventAction__Group_3__0 )? ) ;
     public final void rule__EventAction__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:879:1: ( ( ( rule__EventAction__EventNameAssignment_3 ) ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:880:1: ( ( rule__EventAction__EventNameAssignment_3 ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:877:1: ( ( ( rule__EventAction__Group_3__0 )? ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:878:1: ( ( rule__EventAction__Group_3__0 )? )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:880:1: ( ( rule__EventAction__EventNameAssignment_3 ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:881:1: ( rule__EventAction__EventNameAssignment_3 )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:878:1: ( ( rule__EventAction__Group_3__0 )? )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:879:1: ( rule__EventAction__Group_3__0 )?
             {
-             before(grammarAccess.getEventActionAccess().getEventNameAssignment_3()); 
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:882:1: ( rule__EventAction__EventNameAssignment_3 )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:882:2: rule__EventAction__EventNameAssignment_3
-            {
-            pushFollow(FOLLOW_rule__EventAction__EventNameAssignment_3_in_rule__EventAction__Group__3__Impl1786);
-            rule__EventAction__EventNameAssignment_3();
+             before(grammarAccess.getEventActionAccess().getGroup_3()); 
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:880:1: ( rule__EventAction__Group_3__0 )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-            state._fsp--;
+            if ( (LA9_0==23) ) {
+                alt9=1;
+            }
+            switch (alt9) {
+                case 1 :
+                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:880:2: rule__EventAction__Group_3__0
+                    {
+                    pushFollow(FOLLOW_rule__EventAction__Group_3__0_in_rule__EventAction__Group__3__Impl1784);
+                    rule__EventAction__Group_3__0();
 
+                    state._fsp--;
+
+
+                    }
+                    break;
 
             }
 
-             after(grammarAccess.getEventActionAccess().getEventNameAssignment_3()); 
+             after(grammarAccess.getEventActionAccess().getGroup_3()); 
 
             }
 
@@ -2520,21 +2554,21 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__EventAction__Group__4"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:892:1: rule__EventAction__Group__4 : rule__EventAction__Group__4__Impl rule__EventAction__Group__5 ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:890:1: rule__EventAction__Group__4 : rule__EventAction__Group__4__Impl rule__EventAction__Group__5 ;
     public final void rule__EventAction__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:896:1: ( rule__EventAction__Group__4__Impl rule__EventAction__Group__5 )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:897:2: rule__EventAction__Group__4__Impl rule__EventAction__Group__5
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:894:1: ( rule__EventAction__Group__4__Impl rule__EventAction__Group__5 )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:895:2: rule__EventAction__Group__4__Impl rule__EventAction__Group__5
             {
-            pushFollow(FOLLOW_rule__EventAction__Group__4__Impl_in_rule__EventAction__Group__41816);
+            pushFollow(FOLLOW_rule__EventAction__Group__4__Impl_in_rule__EventAction__Group__41815);
             rule__EventAction__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EventAction__Group__5_in_rule__EventAction__Group__41819);
+            pushFollow(FOLLOW_rule__EventAction__Group__5_in_rule__EventAction__Group__41818);
             rule__EventAction__Group__5();
 
             state._fsp--;
@@ -2558,42 +2592,21 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__EventAction__Group__4__Impl"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:904:1: rule__EventAction__Group__4__Impl : ( ( rule__EventAction__Group_4__0 )? ) ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:902:1: rule__EventAction__Group__4__Impl : ( '.' ) ;
     public final void rule__EventAction__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:908:1: ( ( ( rule__EventAction__Group_4__0 )? ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:909:1: ( ( rule__EventAction__Group_4__0 )? )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:906:1: ( ( '.' ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:907:1: ( '.' )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:909:1: ( ( rule__EventAction__Group_4__0 )? )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:910:1: ( rule__EventAction__Group_4__0 )?
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:907:1: ( '.' )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:908:1: '.'
             {
-             before(grammarAccess.getEventActionAccess().getGroup_4()); 
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:911:1: ( rule__EventAction__Group_4__0 )?
-            int alt9=2;
-            int LA9_0 = input.LA(1);
-
-            if ( (LA9_0==23) ) {
-                alt9=1;
-            }
-            switch (alt9) {
-                case 1 :
-                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:911:2: rule__EventAction__Group_4__0
-                    {
-                    pushFollow(FOLLOW_rule__EventAction__Group_4__0_in_rule__EventAction__Group__4__Impl1846);
-                    rule__EventAction__Group_4__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getEventActionAccess().getGroup_4()); 
+             before(grammarAccess.getEventActionAccess().getFullStopKeyword_4()); 
+            match(input,22,FOLLOW_22_in_rule__EventAction__Group__4__Impl1846); 
+             after(grammarAccess.getEventActionAccess().getFullStopKeyword_4()); 
 
             }
 
@@ -2616,22 +2629,17 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__EventAction__Group__5"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:921:1: rule__EventAction__Group__5 : rule__EventAction__Group__5__Impl rule__EventAction__Group__6 ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:921:1: rule__EventAction__Group__5 : rule__EventAction__Group__5__Impl ;
     public final void rule__EventAction__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:925:1: ( rule__EventAction__Group__5__Impl rule__EventAction__Group__6 )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:926:2: rule__EventAction__Group__5__Impl rule__EventAction__Group__6
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:925:1: ( rule__EventAction__Group__5__Impl )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:926:2: rule__EventAction__Group__5__Impl
             {
             pushFollow(FOLLOW_rule__EventAction__Group__5__Impl_in_rule__EventAction__Group__51877);
             rule__EventAction__Group__5__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__EventAction__Group__6_in_rule__EventAction__Group__51880);
-            rule__EventAction__Group__6();
 
             state._fsp--;
 
@@ -2654,21 +2662,31 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__EventAction__Group__5__Impl"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:933:1: rule__EventAction__Group__5__Impl : ( '.' ) ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:932:1: rule__EventAction__Group__5__Impl : ( ( rule__EventAction__EventExtensionAssignment_5 ) ) ;
     public final void rule__EventAction__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:937:1: ( ( '.' ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:938:1: ( '.' )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:936:1: ( ( ( rule__EventAction__EventExtensionAssignment_5 ) ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:937:1: ( ( rule__EventAction__EventExtensionAssignment_5 ) )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:938:1: ( '.' )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:939:1: '.'
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:937:1: ( ( rule__EventAction__EventExtensionAssignment_5 ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:938:1: ( rule__EventAction__EventExtensionAssignment_5 )
             {
-             before(grammarAccess.getEventActionAccess().getFullStopKeyword_5()); 
-            match(input,22,FOLLOW_22_in_rule__EventAction__Group__5__Impl1908); 
-             after(grammarAccess.getEventActionAccess().getFullStopKeyword_5()); 
+             before(grammarAccess.getEventActionAccess().getEventExtensionAssignment_5()); 
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:939:1: ( rule__EventAction__EventExtensionAssignment_5 )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:939:2: rule__EventAction__EventExtensionAssignment_5
+            {
+            pushFollow(FOLLOW_rule__EventAction__EventExtensionAssignment_5_in_rule__EventAction__Group__5__Impl1904);
+            rule__EventAction__EventExtensionAssignment_5();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getEventActionAccess().getEventExtensionAssignment_5()); 
 
             }
 
@@ -2690,18 +2708,23 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
     // $ANTLR end "rule__EventAction__Group__5__Impl"
 
 
-    // $ANTLR start "rule__EventAction__Group__6"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:952:1: rule__EventAction__Group__6 : rule__EventAction__Group__6__Impl ;
-    public final void rule__EventAction__Group__6() throws RecognitionException {
+    // $ANTLR start "rule__EventAction__Group_3__0"
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:961:1: rule__EventAction__Group_3__0 : rule__EventAction__Group_3__0__Impl rule__EventAction__Group_3__1 ;
+    public final void rule__EventAction__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:956:1: ( rule__EventAction__Group__6__Impl )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:957:2: rule__EventAction__Group__6__Impl
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:965:1: ( rule__EventAction__Group_3__0__Impl rule__EventAction__Group_3__1 )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:966:2: rule__EventAction__Group_3__0__Impl rule__EventAction__Group_3__1
             {
-            pushFollow(FOLLOW_rule__EventAction__Group__6__Impl_in_rule__EventAction__Group__61939);
-            rule__EventAction__Group__6__Impl();
+            pushFollow(FOLLOW_rule__EventAction__Group_3__0__Impl_in_rule__EventAction__Group_3__01946);
+            rule__EventAction__Group_3__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__EventAction__Group_3__1_in_rule__EventAction__Group_3__01949);
+            rule__EventAction__Group_3__1();
 
             state._fsp--;
 
@@ -2720,35 +2743,25 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__EventAction__Group__6"
+    // $ANTLR end "rule__EventAction__Group_3__0"
 
 
-    // $ANTLR start "rule__EventAction__Group__6__Impl"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:963:1: rule__EventAction__Group__6__Impl : ( ( rule__EventAction__EventExtensionAssignment_6 ) ) ;
-    public final void rule__EventAction__Group__6__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EventAction__Group_3__0__Impl"
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:973:1: rule__EventAction__Group_3__0__Impl : ( '(' ) ;
+    public final void rule__EventAction__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:967:1: ( ( ( rule__EventAction__EventExtensionAssignment_6 ) ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:968:1: ( ( rule__EventAction__EventExtensionAssignment_6 ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:977:1: ( ( '(' ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:978:1: ( '(' )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:968:1: ( ( rule__EventAction__EventExtensionAssignment_6 ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:969:1: ( rule__EventAction__EventExtensionAssignment_6 )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:978:1: ( '(' )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:979:1: '('
             {
-             before(grammarAccess.getEventActionAccess().getEventExtensionAssignment_6()); 
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:970:1: ( rule__EventAction__EventExtensionAssignment_6 )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:970:2: rule__EventAction__EventExtensionAssignment_6
-            {
-            pushFollow(FOLLOW_rule__EventAction__EventExtensionAssignment_6_in_rule__EventAction__Group__6__Impl1966);
-            rule__EventAction__EventExtensionAssignment_6();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getEventActionAccess().getEventExtensionAssignment_6()); 
+             before(grammarAccess.getEventActionAccess().getLeftParenthesisKeyword_3_0()); 
+            match(input,23,FOLLOW_23_in_rule__EventAction__Group_3__0__Impl1977); 
+             after(grammarAccess.getEventActionAccess().getLeftParenthesisKeyword_3_0()); 
 
             }
 
@@ -2767,101 +2780,26 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__EventAction__Group__6__Impl"
+    // $ANTLR end "rule__EventAction__Group_3__0__Impl"
 
 
-    // $ANTLR start "rule__EventAction__Group_4__0"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:994:1: rule__EventAction__Group_4__0 : rule__EventAction__Group_4__0__Impl rule__EventAction__Group_4__1 ;
-    public final void rule__EventAction__Group_4__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:998:1: ( rule__EventAction__Group_4__0__Impl rule__EventAction__Group_4__1 )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:999:2: rule__EventAction__Group_4__0__Impl rule__EventAction__Group_4__1
-            {
-            pushFollow(FOLLOW_rule__EventAction__Group_4__0__Impl_in_rule__EventAction__Group_4__02010);
-            rule__EventAction__Group_4__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__EventAction__Group_4__1_in_rule__EventAction__Group_4__02013);
-            rule__EventAction__Group_4__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EventAction__Group_4__0"
-
-
-    // $ANTLR start "rule__EventAction__Group_4__0__Impl"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1006:1: rule__EventAction__Group_4__0__Impl : ( '(' ) ;
-    public final void rule__EventAction__Group_4__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EventAction__Group_3__1"
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:992:1: rule__EventAction__Group_3__1 : rule__EventAction__Group_3__1__Impl rule__EventAction__Group_3__2 ;
+    public final void rule__EventAction__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1010:1: ( ( '(' ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1011:1: ( '(' )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:996:1: ( rule__EventAction__Group_3__1__Impl rule__EventAction__Group_3__2 )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:997:2: rule__EventAction__Group_3__1__Impl rule__EventAction__Group_3__2
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1011:1: ( '(' )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1012:1: '('
-            {
-             before(grammarAccess.getEventActionAccess().getLeftParenthesisKeyword_4_0()); 
-            match(input,23,FOLLOW_23_in_rule__EventAction__Group_4__0__Impl2041); 
-             after(grammarAccess.getEventActionAccess().getLeftParenthesisKeyword_4_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EventAction__Group_4__0__Impl"
-
-
-    // $ANTLR start "rule__EventAction__Group_4__1"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1025:1: rule__EventAction__Group_4__1 : rule__EventAction__Group_4__1__Impl rule__EventAction__Group_4__2 ;
-    public final void rule__EventAction__Group_4__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1029:1: ( rule__EventAction__Group_4__1__Impl rule__EventAction__Group_4__2 )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1030:2: rule__EventAction__Group_4__1__Impl rule__EventAction__Group_4__2
-            {
-            pushFollow(FOLLOW_rule__EventAction__Group_4__1__Impl_in_rule__EventAction__Group_4__12072);
-            rule__EventAction__Group_4__1__Impl();
+            pushFollow(FOLLOW_rule__EventAction__Group_3__1__Impl_in_rule__EventAction__Group_3__12008);
+            rule__EventAction__Group_3__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EventAction__Group_4__2_in_rule__EventAction__Group_4__12075);
-            rule__EventAction__Group_4__2();
+            pushFollow(FOLLOW_rule__EventAction__Group_3__2_in_rule__EventAction__Group_3__12011);
+            rule__EventAction__Group_3__2();
 
             state._fsp--;
 
@@ -2880,35 +2818,35 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__EventAction__Group_4__1"
+    // $ANTLR end "rule__EventAction__Group_3__1"
 
 
-    // $ANTLR start "rule__EventAction__Group_4__1__Impl"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1037:1: rule__EventAction__Group_4__1__Impl : ( ( rule__EventAction__ParametersAssignment_4_1 ) ) ;
-    public final void rule__EventAction__Group_4__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EventAction__Group_3__1__Impl"
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1004:1: rule__EventAction__Group_3__1__Impl : ( ( rule__EventAction__ParametersAssignment_3_1 ) ) ;
+    public final void rule__EventAction__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1041:1: ( ( ( rule__EventAction__ParametersAssignment_4_1 ) ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1042:1: ( ( rule__EventAction__ParametersAssignment_4_1 ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1008:1: ( ( ( rule__EventAction__ParametersAssignment_3_1 ) ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1009:1: ( ( rule__EventAction__ParametersAssignment_3_1 ) )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1042:1: ( ( rule__EventAction__ParametersAssignment_4_1 ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1043:1: ( rule__EventAction__ParametersAssignment_4_1 )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1009:1: ( ( rule__EventAction__ParametersAssignment_3_1 ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1010:1: ( rule__EventAction__ParametersAssignment_3_1 )
             {
-             before(grammarAccess.getEventActionAccess().getParametersAssignment_4_1()); 
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1044:1: ( rule__EventAction__ParametersAssignment_4_1 )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1044:2: rule__EventAction__ParametersAssignment_4_1
+             before(grammarAccess.getEventActionAccess().getParametersAssignment_3_1()); 
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1011:1: ( rule__EventAction__ParametersAssignment_3_1 )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1011:2: rule__EventAction__ParametersAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__EventAction__ParametersAssignment_4_1_in_rule__EventAction__Group_4__1__Impl2102);
-            rule__EventAction__ParametersAssignment_4_1();
+            pushFollow(FOLLOW_rule__EventAction__ParametersAssignment_3_1_in_rule__EventAction__Group_3__1__Impl2038);
+            rule__EventAction__ParametersAssignment_3_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getEventActionAccess().getParametersAssignment_4_1()); 
+             after(grammarAccess.getEventActionAccess().getParametersAssignment_3_1()); 
 
             }
 
@@ -2927,21 +2865,21 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__EventAction__Group_4__1__Impl"
+    // $ANTLR end "rule__EventAction__Group_3__1__Impl"
 
 
-    // $ANTLR start "rule__EventAction__Group_4__2"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1054:1: rule__EventAction__Group_4__2 : rule__EventAction__Group_4__2__Impl ;
-    public final void rule__EventAction__Group_4__2() throws RecognitionException {
+    // $ANTLR start "rule__EventAction__Group_3__2"
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1021:1: rule__EventAction__Group_3__2 : rule__EventAction__Group_3__2__Impl ;
+    public final void rule__EventAction__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1058:1: ( rule__EventAction__Group_4__2__Impl )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1059:2: rule__EventAction__Group_4__2__Impl
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1025:1: ( rule__EventAction__Group_3__2__Impl )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1026:2: rule__EventAction__Group_3__2__Impl
             {
-            pushFollow(FOLLOW_rule__EventAction__Group_4__2__Impl_in_rule__EventAction__Group_4__22132);
-            rule__EventAction__Group_4__2__Impl();
+            pushFollow(FOLLOW_rule__EventAction__Group_3__2__Impl_in_rule__EventAction__Group_3__22068);
+            rule__EventAction__Group_3__2__Impl();
 
             state._fsp--;
 
@@ -2960,25 +2898,25 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__EventAction__Group_4__2"
+    // $ANTLR end "rule__EventAction__Group_3__2"
 
 
-    // $ANTLR start "rule__EventAction__Group_4__2__Impl"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1065:1: rule__EventAction__Group_4__2__Impl : ( ')' ) ;
-    public final void rule__EventAction__Group_4__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EventAction__Group_3__2__Impl"
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1032:1: rule__EventAction__Group_3__2__Impl : ( ')' ) ;
+    public final void rule__EventAction__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1069:1: ( ( ')' ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1070:1: ( ')' )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1036:1: ( ( ')' ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1037:1: ( ')' )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1070:1: ( ')' )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1071:1: ')'
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1037:1: ( ')' )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1038:1: ')'
             {
-             before(grammarAccess.getEventActionAccess().getRightParenthesisKeyword_4_2()); 
-            match(input,24,FOLLOW_24_in_rule__EventAction__Group_4__2__Impl2160); 
-             after(grammarAccess.getEventActionAccess().getRightParenthesisKeyword_4_2()); 
+             before(grammarAccess.getEventActionAccess().getRightParenthesisKeyword_3_2()); 
+            match(input,24,FOLLOW_24_in_rule__EventAction__Group_3__2__Impl2096); 
+             after(grammarAccess.getEventActionAccess().getRightParenthesisKeyword_3_2()); 
 
             }
 
@@ -2997,25 +2935,25 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__EventAction__Group_4__2__Impl"
+    // $ANTLR end "rule__EventAction__Group_3__2__Impl"
 
 
     // $ANTLR start "rule__Parameters__Group_1__0"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1090:1: rule__Parameters__Group_1__0 : rule__Parameters__Group_1__0__Impl rule__Parameters__Group_1__1 ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1057:1: rule__Parameters__Group_1__0 : rule__Parameters__Group_1__0__Impl rule__Parameters__Group_1__1 ;
     public final void rule__Parameters__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1094:1: ( rule__Parameters__Group_1__0__Impl rule__Parameters__Group_1__1 )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1095:2: rule__Parameters__Group_1__0__Impl rule__Parameters__Group_1__1
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1061:1: ( rule__Parameters__Group_1__0__Impl rule__Parameters__Group_1__1 )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1062:2: rule__Parameters__Group_1__0__Impl rule__Parameters__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Parameters__Group_1__0__Impl_in_rule__Parameters__Group_1__02197);
+            pushFollow(FOLLOW_rule__Parameters__Group_1__0__Impl_in_rule__Parameters__Group_1__02133);
             rule__Parameters__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Parameters__Group_1__1_in_rule__Parameters__Group_1__02200);
+            pushFollow(FOLLOW_rule__Parameters__Group_1__1_in_rule__Parameters__Group_1__02136);
             rule__Parameters__Group_1__1();
 
             state._fsp--;
@@ -3039,23 +2977,23 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__Parameters__Group_1__0__Impl"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1102:1: rule__Parameters__Group_1__0__Impl : ( ( rule__Parameters__ParamAssignment_1_0 ) ) ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1069:1: rule__Parameters__Group_1__0__Impl : ( ( rule__Parameters__ParamAssignment_1_0 ) ) ;
     public final void rule__Parameters__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1106:1: ( ( ( rule__Parameters__ParamAssignment_1_0 ) ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1107:1: ( ( rule__Parameters__ParamAssignment_1_0 ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1073:1: ( ( ( rule__Parameters__ParamAssignment_1_0 ) ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1074:1: ( ( rule__Parameters__ParamAssignment_1_0 ) )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1107:1: ( ( rule__Parameters__ParamAssignment_1_0 ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1108:1: ( rule__Parameters__ParamAssignment_1_0 )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1074:1: ( ( rule__Parameters__ParamAssignment_1_0 ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1075:1: ( rule__Parameters__ParamAssignment_1_0 )
             {
              before(grammarAccess.getParametersAccess().getParamAssignment_1_0()); 
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1109:1: ( rule__Parameters__ParamAssignment_1_0 )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1109:2: rule__Parameters__ParamAssignment_1_0
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1076:1: ( rule__Parameters__ParamAssignment_1_0 )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1076:2: rule__Parameters__ParamAssignment_1_0
             {
-            pushFollow(FOLLOW_rule__Parameters__ParamAssignment_1_0_in_rule__Parameters__Group_1__0__Impl2227);
+            pushFollow(FOLLOW_rule__Parameters__ParamAssignment_1_0_in_rule__Parameters__Group_1__0__Impl2163);
             rule__Parameters__ParamAssignment_1_0();
 
             state._fsp--;
@@ -3086,21 +3024,21 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__Parameters__Group_1__1"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1119:1: rule__Parameters__Group_1__1 : rule__Parameters__Group_1__1__Impl rule__Parameters__Group_1__2 ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1086:1: rule__Parameters__Group_1__1 : rule__Parameters__Group_1__1__Impl rule__Parameters__Group_1__2 ;
     public final void rule__Parameters__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1123:1: ( rule__Parameters__Group_1__1__Impl rule__Parameters__Group_1__2 )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1124:2: rule__Parameters__Group_1__1__Impl rule__Parameters__Group_1__2
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1090:1: ( rule__Parameters__Group_1__1__Impl rule__Parameters__Group_1__2 )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1091:2: rule__Parameters__Group_1__1__Impl rule__Parameters__Group_1__2
             {
-            pushFollow(FOLLOW_rule__Parameters__Group_1__1__Impl_in_rule__Parameters__Group_1__12257);
+            pushFollow(FOLLOW_rule__Parameters__Group_1__1__Impl_in_rule__Parameters__Group_1__12193);
             rule__Parameters__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Parameters__Group_1__2_in_rule__Parameters__Group_1__12260);
+            pushFollow(FOLLOW_rule__Parameters__Group_1__2_in_rule__Parameters__Group_1__12196);
             rule__Parameters__Group_1__2();
 
             state._fsp--;
@@ -3124,20 +3062,20 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__Parameters__Group_1__1__Impl"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1131:1: rule__Parameters__Group_1__1__Impl : ( ',' ) ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1098:1: rule__Parameters__Group_1__1__Impl : ( ',' ) ;
     public final void rule__Parameters__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1135:1: ( ( ',' ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1136:1: ( ',' )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1102:1: ( ( ',' ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1103:1: ( ',' )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1136:1: ( ',' )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1137:1: ','
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1103:1: ( ',' )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1104:1: ','
             {
              before(grammarAccess.getParametersAccess().getCommaKeyword_1_1()); 
-            match(input,19,FOLLOW_19_in_rule__Parameters__Group_1__1__Impl2288); 
+            match(input,19,FOLLOW_19_in_rule__Parameters__Group_1__1__Impl2224); 
              after(grammarAccess.getParametersAccess().getCommaKeyword_1_1()); 
 
             }
@@ -3161,16 +3099,16 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__Parameters__Group_1__2"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1150:1: rule__Parameters__Group_1__2 : rule__Parameters__Group_1__2__Impl ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1117:1: rule__Parameters__Group_1__2 : rule__Parameters__Group_1__2__Impl ;
     public final void rule__Parameters__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1154:1: ( rule__Parameters__Group_1__2__Impl )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1155:2: rule__Parameters__Group_1__2__Impl
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1121:1: ( rule__Parameters__Group_1__2__Impl )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1122:2: rule__Parameters__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__Parameters__Group_1__2__Impl_in_rule__Parameters__Group_1__22319);
+            pushFollow(FOLLOW_rule__Parameters__Group_1__2__Impl_in_rule__Parameters__Group_1__22255);
             rule__Parameters__Group_1__2__Impl();
 
             state._fsp--;
@@ -3194,23 +3132,23 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__Parameters__Group_1__2__Impl"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1161:1: rule__Parameters__Group_1__2__Impl : ( ( rule__Parameters__ParametersAssignment_1_2 ) ) ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1128:1: rule__Parameters__Group_1__2__Impl : ( ( rule__Parameters__ParametersAssignment_1_2 ) ) ;
     public final void rule__Parameters__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1165:1: ( ( ( rule__Parameters__ParametersAssignment_1_2 ) ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1166:1: ( ( rule__Parameters__ParametersAssignment_1_2 ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1132:1: ( ( ( rule__Parameters__ParametersAssignment_1_2 ) ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1133:1: ( ( rule__Parameters__ParametersAssignment_1_2 ) )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1166:1: ( ( rule__Parameters__ParametersAssignment_1_2 ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1167:1: ( rule__Parameters__ParametersAssignment_1_2 )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1133:1: ( ( rule__Parameters__ParametersAssignment_1_2 ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1134:1: ( rule__Parameters__ParametersAssignment_1_2 )
             {
              before(grammarAccess.getParametersAccess().getParametersAssignment_1_2()); 
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1168:1: ( rule__Parameters__ParametersAssignment_1_2 )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1168:2: rule__Parameters__ParametersAssignment_1_2
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1135:1: ( rule__Parameters__ParametersAssignment_1_2 )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1135:2: rule__Parameters__ParametersAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__Parameters__ParametersAssignment_1_2_in_rule__Parameters__Group_1__2__Impl2346);
+            pushFollow(FOLLOW_rule__Parameters__ParametersAssignment_1_2_in_rule__Parameters__Group_1__2__Impl2282);
             rule__Parameters__ParametersAssignment_1_2();
 
             state._fsp--;
@@ -3241,20 +3179,20 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__Model__ActionAssignment_0"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1185:1: rule__Model__ActionAssignment_0 : ( ruleAction ) ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1152:1: rule__Model__ActionAssignment_0 : ( ruleAction ) ;
     public final void rule__Model__ActionAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1189:1: ( ( ruleAction ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1190:1: ( ruleAction )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1156:1: ( ( ruleAction ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1157:1: ( ruleAction )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1190:1: ( ruleAction )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1191:1: ruleAction
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1157:1: ( ruleAction )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1158:1: ruleAction
             {
              before(grammarAccess.getModelAccess().getActionActionParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleAction_in_rule__Model__ActionAssignment_02387);
+            pushFollow(FOLLOW_ruleAction_in_rule__Model__ActionAssignment_02323);
             ruleAction();
 
             state._fsp--;
@@ -3282,20 +3220,20 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__Model__ActionsAssignment_1_1"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1200:1: rule__Model__ActionsAssignment_1_1 : ( ruleModel ) ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1167:1: rule__Model__ActionsAssignment_1_1 : ( ruleModel ) ;
     public final void rule__Model__ActionsAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1204:1: ( ( ruleModel ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1205:1: ( ruleModel )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1171:1: ( ( ruleModel ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1172:1: ( ruleModel )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1205:1: ( ruleModel )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1206:1: ruleModel
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1172:1: ( ruleModel )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1173:1: ruleModel
             {
              before(grammarAccess.getModelAccess().getActionsModelParserRuleCall_1_1_0()); 
-            pushFollow(FOLLOW_ruleModel_in_rule__Model__ActionsAssignment_1_12418);
+            pushFollow(FOLLOW_ruleModel_in_rule__Model__ActionsAssignment_1_12354);
             ruleModel();
 
             state._fsp--;
@@ -3323,20 +3261,20 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__Action__AssignmentAssignment_0"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1215:1: rule__Action__AssignmentAssignment_0 : ( ruleAssignment ) ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1182:1: rule__Action__AssignmentAssignment_0 : ( ruleAssignment ) ;
     public final void rule__Action__AssignmentAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1219:1: ( ( ruleAssignment ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1220:1: ( ruleAssignment )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1186:1: ( ( ruleAssignment ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1187:1: ( ruleAssignment )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1220:1: ( ruleAssignment )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1221:1: ruleAssignment
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1187:1: ( ruleAssignment )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1188:1: ruleAssignment
             {
              before(grammarAccess.getActionAccess().getAssignmentAssignmentParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleAssignment_in_rule__Action__AssignmentAssignment_02449);
+            pushFollow(FOLLOW_ruleAssignment_in_rule__Action__AssignmentAssignment_02385);
             ruleAssignment();
 
             state._fsp--;
@@ -3364,20 +3302,20 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__Action__EventActionAssignment_1"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1230:1: rule__Action__EventActionAssignment_1 : ( ruleEventAction ) ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1197:1: rule__Action__EventActionAssignment_1 : ( ruleEventAction ) ;
     public final void rule__Action__EventActionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1234:1: ( ( ruleEventAction ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1235:1: ( ruleEventAction )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1201:1: ( ( ruleEventAction ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1202:1: ( ruleEventAction )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1235:1: ( ruleEventAction )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1236:1: ruleEventAction
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1202:1: ( ruleEventAction )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1203:1: ruleEventAction
             {
              before(grammarAccess.getActionAccess().getEventActionEventActionParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleEventAction_in_rule__Action__EventActionAssignment_12480);
+            pushFollow(FOLLOW_ruleEventAction_in_rule__Action__EventActionAssignment_12416);
             ruleEventAction();
 
             state._fsp--;
@@ -3405,20 +3343,20 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__Assignment__LeftvarAssignment_0"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1245:1: rule__Assignment__LeftvarAssignment_0 : ( RULE_ID ) ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1212:1: rule__Assignment__LeftvarAssignment_0 : ( RULE_ID ) ;
     public final void rule__Assignment__LeftvarAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1249:1: ( ( RULE_ID ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1250:1: ( RULE_ID )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1216:1: ( ( RULE_ID ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1217:1: ( RULE_ID )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1250:1: ( RULE_ID )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1251:1: RULE_ID
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1217:1: ( RULE_ID )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1218:1: RULE_ID
             {
              before(grammarAccess.getAssignmentAccess().getLeftvarIDTerminalRuleCall_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Assignment__LeftvarAssignment_02511); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Assignment__LeftvarAssignment_02447); 
              after(grammarAccess.getAssignmentAccess().getLeftvarIDTerminalRuleCall_0_0()); 
 
             }
@@ -3442,20 +3380,20 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__Assignment__ExpressionAssignment_2"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1260:1: rule__Assignment__ExpressionAssignment_2 : ( ruleEXPRESSION ) ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1227:1: rule__Assignment__ExpressionAssignment_2 : ( ruleEXPRESSION ) ;
     public final void rule__Assignment__ExpressionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1264:1: ( ( ruleEXPRESSION ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1265:1: ( ruleEXPRESSION )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1231:1: ( ( ruleEXPRESSION ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1232:1: ( ruleEXPRESSION )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1265:1: ( ruleEXPRESSION )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1266:1: ruleEXPRESSION
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1232:1: ( ruleEXPRESSION )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1233:1: ruleEXPRESSION
             {
              before(grammarAccess.getAssignmentAccess().getExpressionEXPRESSIONParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleEXPRESSION_in_rule__Assignment__ExpressionAssignment_22542);
+            pushFollow(FOLLOW_ruleEXPRESSION_in_rule__Assignment__ExpressionAssignment_22478);
             ruleEXPRESSION();
 
             state._fsp--;
@@ -3483,20 +3421,20 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__EXPRESSION__FirstTermAssignment_0_0"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1275:1: rule__EXPRESSION__FirstTermAssignment_0_0 : ( ruleTERM ) ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1242:1: rule__EXPRESSION__FirstTermAssignment_0_0 : ( ruleTERM ) ;
     public final void rule__EXPRESSION__FirstTermAssignment_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1279:1: ( ( ruleTERM ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1280:1: ( ruleTERM )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1246:1: ( ( ruleTERM ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1247:1: ( ruleTERM )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1280:1: ( ruleTERM )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1281:1: ruleTERM
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1247:1: ( ruleTERM )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1248:1: ruleTERM
             {
              before(grammarAccess.getEXPRESSIONAccess().getFirstTermTERMParserRuleCall_0_0_0()); 
-            pushFollow(FOLLOW_ruleTERM_in_rule__EXPRESSION__FirstTermAssignment_0_02573);
+            pushFollow(FOLLOW_ruleTERM_in_rule__EXPRESSION__FirstTermAssignment_0_02509);
             ruleTERM();
 
             state._fsp--;
@@ -3524,20 +3462,20 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__EXPRESSION__OperatorAssignment_0_1"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1290:1: rule__EXPRESSION__OperatorAssignment_0_1 : ( RULE_OPERATOR ) ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1257:1: rule__EXPRESSION__OperatorAssignment_0_1 : ( RULE_OPERATOR ) ;
     public final void rule__EXPRESSION__OperatorAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1294:1: ( ( RULE_OPERATOR ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1295:1: ( RULE_OPERATOR )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1261:1: ( ( RULE_OPERATOR ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1262:1: ( RULE_OPERATOR )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1295:1: ( RULE_OPERATOR )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1296:1: RULE_OPERATOR
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1262:1: ( RULE_OPERATOR )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1263:1: RULE_OPERATOR
             {
              before(grammarAccess.getEXPRESSIONAccess().getOperatorOPERATORTerminalRuleCall_0_1_0()); 
-            match(input,RULE_OPERATOR,FOLLOW_RULE_OPERATOR_in_rule__EXPRESSION__OperatorAssignment_0_12604); 
+            match(input,RULE_OPERATOR,FOLLOW_RULE_OPERATOR_in_rule__EXPRESSION__OperatorAssignment_0_12540); 
              after(grammarAccess.getEXPRESSIONAccess().getOperatorOPERATORTerminalRuleCall_0_1_0()); 
 
             }
@@ -3561,20 +3499,20 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__EXPRESSION__SecondTermAssignment_0_2"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1305:1: rule__EXPRESSION__SecondTermAssignment_0_2 : ( ruleTERM ) ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1272:1: rule__EXPRESSION__SecondTermAssignment_0_2 : ( ruleTERM ) ;
     public final void rule__EXPRESSION__SecondTermAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1309:1: ( ( ruleTERM ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1310:1: ( ruleTERM )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1276:1: ( ( ruleTERM ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1277:1: ( ruleTERM )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1310:1: ( ruleTERM )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1311:1: ruleTERM
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1277:1: ( ruleTERM )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1278:1: ruleTERM
             {
              before(grammarAccess.getEXPRESSIONAccess().getSecondTermTERMParserRuleCall_0_2_0()); 
-            pushFollow(FOLLOW_ruleTERM_in_rule__EXPRESSION__SecondTermAssignment_0_22635);
+            pushFollow(FOLLOW_ruleTERM_in_rule__EXPRESSION__SecondTermAssignment_0_22571);
             ruleTERM();
 
             state._fsp--;
@@ -3602,20 +3540,20 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__EXPRESSION__AloneAssignment_1"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1320:1: rule__EXPRESSION__AloneAssignment_1 : ( ruleTERM ) ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1287:1: rule__EXPRESSION__AloneAssignment_1 : ( ruleTERM ) ;
     public final void rule__EXPRESSION__AloneAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1324:1: ( ( ruleTERM ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1325:1: ( ruleTERM )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1291:1: ( ( ruleTERM ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1292:1: ( ruleTERM )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1325:1: ( ruleTERM )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1326:1: ruleTERM
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1292:1: ( ruleTERM )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1293:1: ruleTERM
             {
              before(grammarAccess.getEXPRESSIONAccess().getAloneTERMParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleTERM_in_rule__EXPRESSION__AloneAssignment_12666);
+            pushFollow(FOLLOW_ruleTERM_in_rule__EXPRESSION__AloneAssignment_12602);
             ruleTERM();
 
             state._fsp--;
@@ -3643,20 +3581,20 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__TERM__VariableAssignment_0"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1335:1: rule__TERM__VariableAssignment_0 : ( RULE_ID ) ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1302:1: rule__TERM__VariableAssignment_0 : ( RULE_ID ) ;
     public final void rule__TERM__VariableAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1339:1: ( ( RULE_ID ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1340:1: ( RULE_ID )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1306:1: ( ( RULE_ID ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1307:1: ( RULE_ID )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1340:1: ( RULE_ID )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1341:1: RULE_ID
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1307:1: ( RULE_ID )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1308:1: RULE_ID
             {
              before(grammarAccess.getTERMAccess().getVariableIDTerminalRuleCall_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__TERM__VariableAssignment_02697); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__TERM__VariableAssignment_02633); 
              after(grammarAccess.getTERMAccess().getVariableIDTerminalRuleCall_0_0()); 
 
             }
@@ -3680,20 +3618,20 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__TERM__ConstantAssignment_1"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1350:1: rule__TERM__ConstantAssignment_1 : ( RULE_INT ) ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1317:1: rule__TERM__ConstantAssignment_1 : ( RULE_INT ) ;
     public final void rule__TERM__ConstantAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1354:1: ( ( RULE_INT ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1355:1: ( RULE_INT )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1321:1: ( ( RULE_INT ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1322:1: ( RULE_INT )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1355:1: ( RULE_INT )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1356:1: RULE_INT
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1322:1: ( RULE_INT )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1323:1: RULE_INT
             {
              before(grammarAccess.getTERMAccess().getConstantINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__TERM__ConstantAssignment_12728); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__TERM__ConstantAssignment_12664); 
              after(grammarAccess.getTERMAccess().getConstantINTTerminalRuleCall_1_0()); 
 
             }
@@ -3716,22 +3654,22 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
     // $ANTLR end "rule__TERM__ConstantAssignment_1"
 
 
-    // $ANTLR start "rule__EventAction__LinkNameAssignment_1_0"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1365:1: rule__EventAction__LinkNameAssignment_1_0 : ( RULE_ID ) ;
-    public final void rule__EventAction__LinkNameAssignment_1_0() throws RecognitionException {
+    // $ANTLR start "rule__EventAction__LinkNameAssignment_0_0"
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1332:1: rule__EventAction__LinkNameAssignment_0_0 : ( RULE_ID ) ;
+    public final void rule__EventAction__LinkNameAssignment_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1369:1: ( ( RULE_ID ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1370:1: ( RULE_ID )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1336:1: ( ( RULE_ID ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1337:1: ( RULE_ID )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1370:1: ( RULE_ID )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1371:1: RULE_ID
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1337:1: ( RULE_ID )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1338:1: RULE_ID
             {
-             before(grammarAccess.getEventActionAccess().getLinkNameIDTerminalRuleCall_1_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EventAction__LinkNameAssignment_1_02759); 
-             after(grammarAccess.getEventActionAccess().getLinkNameIDTerminalRuleCall_1_0_0()); 
+             before(grammarAccess.getEventActionAccess().getLinkNameIDTerminalRuleCall_0_0_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EventAction__LinkNameAssignment_0_02695); 
+             after(grammarAccess.getEventActionAccess().getLinkNameIDTerminalRuleCall_0_0_0()); 
 
             }
 
@@ -3750,33 +3688,33 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__EventAction__LinkNameAssignment_1_0"
+    // $ANTLR end "rule__EventAction__LinkNameAssignment_0_0"
 
 
-    // $ANTLR start "rule__EventAction__SelfAssignment_1_1"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1380:1: rule__EventAction__SelfAssignment_1_1 : ( ( 'self' ) ) ;
-    public final void rule__EventAction__SelfAssignment_1_1() throws RecognitionException {
+    // $ANTLR start "rule__EventAction__SelfAssignment_0_1"
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1347:1: rule__EventAction__SelfAssignment_0_1 : ( ( 'self' ) ) ;
+    public final void rule__EventAction__SelfAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1384:1: ( ( ( 'self' ) ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1385:1: ( ( 'self' ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1351:1: ( ( ( 'self' ) ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1352:1: ( ( 'self' ) )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1385:1: ( ( 'self' ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1386:1: ( 'self' )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1352:1: ( ( 'self' ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1353:1: ( 'self' )
             {
-             before(grammarAccess.getEventActionAccess().getSelfSelfKeyword_1_1_0()); 
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1387:1: ( 'self' )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1388:1: 'self'
+             before(grammarAccess.getEventActionAccess().getSelfSelfKeyword_0_1_0()); 
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1354:1: ( 'self' )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1355:1: 'self'
             {
-             before(grammarAccess.getEventActionAccess().getSelfSelfKeyword_1_1_0()); 
-            match(input,25,FOLLOW_25_in_rule__EventAction__SelfAssignment_1_12795); 
-             after(grammarAccess.getEventActionAccess().getSelfSelfKeyword_1_1_0()); 
+             before(grammarAccess.getEventActionAccess().getSelfSelfKeyword_0_1_0()); 
+            match(input,25,FOLLOW_25_in_rule__EventAction__SelfAssignment_0_12731); 
+             after(grammarAccess.getEventActionAccess().getSelfSelfKeyword_0_1_0()); 
 
             }
 
-             after(grammarAccess.getEventActionAccess().getSelfSelfKeyword_1_1_0()); 
+             after(grammarAccess.getEventActionAccess().getSelfSelfKeyword_0_1_0()); 
 
             }
 
@@ -3795,25 +3733,25 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__EventAction__SelfAssignment_1_1"
+    // $ANTLR end "rule__EventAction__SelfAssignment_0_1"
 
 
-    // $ANTLR start "rule__EventAction__EventNameAssignment_3"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1403:1: rule__EventAction__EventNameAssignment_3 : ( RULE_ID ) ;
-    public final void rule__EventAction__EventNameAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__EventAction__EventNameAssignment_2"
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1370:1: rule__EventAction__EventNameAssignment_2 : ( RULE_ID ) ;
+    public final void rule__EventAction__EventNameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1407:1: ( ( RULE_ID ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1408:1: ( RULE_ID )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1374:1: ( ( RULE_ID ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1375:1: ( RULE_ID )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1408:1: ( RULE_ID )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1409:1: RULE_ID
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1375:1: ( RULE_ID )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1376:1: RULE_ID
             {
-             before(grammarAccess.getEventActionAccess().getEventNameIDTerminalRuleCall_3_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EventAction__EventNameAssignment_32834); 
-             after(grammarAccess.getEventActionAccess().getEventNameIDTerminalRuleCall_3_0()); 
+             before(grammarAccess.getEventActionAccess().getEventNameIDTerminalRuleCall_2_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EventAction__EventNameAssignment_22770); 
+             after(grammarAccess.getEventActionAccess().getEventNameIDTerminalRuleCall_2_0()); 
 
             }
 
@@ -3832,29 +3770,29 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__EventAction__EventNameAssignment_3"
+    // $ANTLR end "rule__EventAction__EventNameAssignment_2"
 
 
-    // $ANTLR start "rule__EventAction__ParametersAssignment_4_1"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1418:1: rule__EventAction__ParametersAssignment_4_1 : ( ruleParameters ) ;
-    public final void rule__EventAction__ParametersAssignment_4_1() throws RecognitionException {
+    // $ANTLR start "rule__EventAction__ParametersAssignment_3_1"
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1385:1: rule__EventAction__ParametersAssignment_3_1 : ( ruleParameters ) ;
+    public final void rule__EventAction__ParametersAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1422:1: ( ( ruleParameters ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1423:1: ( ruleParameters )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1389:1: ( ( ruleParameters ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1390:1: ( ruleParameters )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1423:1: ( ruleParameters )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1424:1: ruleParameters
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1390:1: ( ruleParameters )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1391:1: ruleParameters
             {
-             before(grammarAccess.getEventActionAccess().getParametersParametersParserRuleCall_4_1_0()); 
-            pushFollow(FOLLOW_ruleParameters_in_rule__EventAction__ParametersAssignment_4_12865);
+             before(grammarAccess.getEventActionAccess().getParametersParametersParserRuleCall_3_1_0()); 
+            pushFollow(FOLLOW_ruleParameters_in_rule__EventAction__ParametersAssignment_3_12801);
             ruleParameters();
 
             state._fsp--;
 
-             after(grammarAccess.getEventActionAccess().getParametersParametersParserRuleCall_4_1_0()); 
+             after(grammarAccess.getEventActionAccess().getParametersParametersParserRuleCall_3_1_0()); 
 
             }
 
@@ -3873,29 +3811,29 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__EventAction__ParametersAssignment_4_1"
+    // $ANTLR end "rule__EventAction__ParametersAssignment_3_1"
 
 
-    // $ANTLR start "rule__EventAction__EventExtensionAssignment_6"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1433:1: rule__EventAction__EventExtensionAssignment_6 : ( ruleEventExtensions ) ;
-    public final void rule__EventAction__EventExtensionAssignment_6() throws RecognitionException {
+    // $ANTLR start "rule__EventAction__EventExtensionAssignment_5"
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1400:1: rule__EventAction__EventExtensionAssignment_5 : ( ruleEventExtensions ) ;
+    public final void rule__EventAction__EventExtensionAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1437:1: ( ( ruleEventExtensions ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1438:1: ( ruleEventExtensions )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1404:1: ( ( ruleEventExtensions ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1405:1: ( ruleEventExtensions )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1438:1: ( ruleEventExtensions )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1439:1: ruleEventExtensions
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1405:1: ( ruleEventExtensions )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1406:1: ruleEventExtensions
             {
-             before(grammarAccess.getEventActionAccess().getEventExtensionEventExtensionsParserRuleCall_6_0()); 
-            pushFollow(FOLLOW_ruleEventExtensions_in_rule__EventAction__EventExtensionAssignment_62896);
+             before(grammarAccess.getEventActionAccess().getEventExtensionEventExtensionsParserRuleCall_5_0()); 
+            pushFollow(FOLLOW_ruleEventExtensions_in_rule__EventAction__EventExtensionAssignment_52832);
             ruleEventExtensions();
 
             state._fsp--;
 
-             after(grammarAccess.getEventActionAccess().getEventExtensionEventExtensionsParserRuleCall_6_0()); 
+             after(grammarAccess.getEventActionAccess().getEventExtensionEventExtensionsParserRuleCall_5_0()); 
 
             }
 
@@ -3914,24 +3852,24 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__EventAction__EventExtensionAssignment_6"
+    // $ANTLR end "rule__EventAction__EventExtensionAssignment_5"
 
 
     // $ANTLR start "rule__Parameters__ParamAssignment_0"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1448:1: rule__Parameters__ParamAssignment_0 : ( RULE_ID ) ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1415:1: rule__Parameters__ParamAssignment_0 : ( RULE_ID ) ;
     public final void rule__Parameters__ParamAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1452:1: ( ( RULE_ID ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1453:1: ( RULE_ID )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1419:1: ( ( RULE_ID ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1420:1: ( RULE_ID )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1453:1: ( RULE_ID )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1454:1: RULE_ID
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1420:1: ( RULE_ID )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1421:1: RULE_ID
             {
              before(grammarAccess.getParametersAccess().getParamIDTerminalRuleCall_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Parameters__ParamAssignment_02927); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Parameters__ParamAssignment_02863); 
              after(grammarAccess.getParametersAccess().getParamIDTerminalRuleCall_0_0()); 
 
             }
@@ -3955,20 +3893,20 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__Parameters__ParamAssignment_1_0"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1463:1: rule__Parameters__ParamAssignment_1_0 : ( RULE_ID ) ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1430:1: rule__Parameters__ParamAssignment_1_0 : ( RULE_ID ) ;
     public final void rule__Parameters__ParamAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1467:1: ( ( RULE_ID ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1468:1: ( RULE_ID )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1434:1: ( ( RULE_ID ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1435:1: ( RULE_ID )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1468:1: ( RULE_ID )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1469:1: RULE_ID
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1435:1: ( RULE_ID )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1436:1: RULE_ID
             {
              before(grammarAccess.getParametersAccess().getParamIDTerminalRuleCall_1_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Parameters__ParamAssignment_1_02958); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Parameters__ParamAssignment_1_02894); 
              after(grammarAccess.getParametersAccess().getParamIDTerminalRuleCall_1_0_0()); 
 
             }
@@ -3992,20 +3930,20 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__Parameters__ParametersAssignment_1_2"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1478:1: rule__Parameters__ParametersAssignment_1_2 : ( ruleParameters ) ;
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1445:1: rule__Parameters__ParametersAssignment_1_2 : ( ruleParameters ) ;
     public final void rule__Parameters__ParametersAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1482:1: ( ( ruleParameters ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1483:1: ( ruleParameters )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1449:1: ( ( ruleParameters ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1450:1: ( ruleParameters )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1483:1: ( ruleParameters )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1484:1: ruleParameters
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1450:1: ( ruleParameters )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1451:1: ruleParameters
             {
              before(grammarAccess.getParametersAccess().getParametersParametersParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_ruleParameters_in_rule__Parameters__ParametersAssignment_1_22989);
+            pushFollow(FOLLOW_ruleParameters_in_rule__Parameters__ParametersAssignment_1_22925);
             ruleParameters();
 
             state._fsp--;
@@ -4066,8 +4004,8 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
     public static final BitSet FOLLOW_rule__EXPRESSION__AloneAssignment_1_in_rule__EXPRESSION__Alternatives619 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__TERM__VariableAssignment_0_in_rule__TERM__Alternatives652 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__TERM__ConstantAssignment_1_in_rule__TERM__Alternatives670 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventAction__LinkNameAssignment_1_0_in_rule__EventAction__Alternatives_1703 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventAction__SelfAssignment_1_1_in_rule__EventAction__Alternatives_1721 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventAction__LinkNameAssignment_0_0_in_rule__EventAction__Alternatives_0703 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventAction__SelfAssignment_0_1_in_rule__EventAction__Alternatives_0721 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Parameters__ParamAssignment_0_in_rule__Parameters__Alternatives754 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Parameters__Group_1__0_in_rule__Parameters__Alternatives772 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_12_in_rule__EventExtensions__Alternatives806 = new BitSet(new long[]{0x0000000000000002L});
@@ -4082,7 +4020,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
     public static final BitSet FOLLOW_rule__Model__ActionAssignment_0_in_rule__Model__Group__0__Impl988 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Model__Group__1__Impl_in_rule__Model__Group__11018 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Model__Group_1__0_in_rule__Model__Group__1__Impl1045 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__Group_1__0__Impl_in_rule__Model__Group_1__01080 = new BitSet(new long[]{0x0000000000200010L});
+    public static final BitSet FOLLOW_rule__Model__Group_1__0__Impl_in_rule__Model__Group_1__01080 = new BitSet(new long[]{0x0000000002200010L});
     public static final BitSet FOLLOW_rule__Model__Group_1__1_in_rule__Model__Group_1__01083 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_19_in_rule__Model__Group_1__0__Impl1111 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Model__Group_1__1__Impl_in_rule__Model__Group_1__11142 = new BitSet(new long[]{0x0000000000000002L});
@@ -4103,61 +4041,58 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
     public static final BitSet FOLLOW_rule__EXPRESSION__OperatorAssignment_0_1_in_rule__EXPRESSION__Group_0__1__Impl1478 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__EXPRESSION__Group_0__2__Impl_in_rule__EXPRESSION__Group_0__21508 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__EXPRESSION__SecondTermAssignment_0_2_in_rule__EXPRESSION__Group_0__2__Impl1535 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventAction__Group__0__Impl_in_rule__EventAction__Group__01571 = new BitSet(new long[]{0x0000000002400010L});
+    public static final BitSet FOLLOW_rule__EventAction__Group__0__Impl_in_rule__EventAction__Group__01571 = new BitSet(new long[]{0x0000000002200010L});
     public static final BitSet FOLLOW_rule__EventAction__Group__1_in_rule__EventAction__Group__01574 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__EventAction__Group__0__Impl1602 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventAction__Group__1__Impl_in_rule__EventAction__Group__11633 = new BitSet(new long[]{0x0000000002400010L});
-    public static final BitSet FOLLOW_rule__EventAction__Group__2_in_rule__EventAction__Group__11636 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventAction__Alternatives_1_in_rule__EventAction__Group__1__Impl1663 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventAction__Group__2__Impl_in_rule__EventAction__Group__21694 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__EventAction__Alternatives_0_in_rule__EventAction__Group__0__Impl1601 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventAction__Group__1__Impl_in_rule__EventAction__Group__11632 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__EventAction__Group__2_in_rule__EventAction__Group__11635 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__EventAction__Group__1__Impl1663 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventAction__Group__2__Impl_in_rule__EventAction__Group__21694 = new BitSet(new long[]{0x0000000000C00000L});
     public static final BitSet FOLLOW_rule__EventAction__Group__3_in_rule__EventAction__Group__21697 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__EventAction__Group__2__Impl1725 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventAction__Group__3__Impl_in_rule__EventAction__Group__31756 = new BitSet(new long[]{0x0000000000C00000L});
-    public static final BitSet FOLLOW_rule__EventAction__Group__4_in_rule__EventAction__Group__31759 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventAction__EventNameAssignment_3_in_rule__EventAction__Group__3__Impl1786 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventAction__Group__4__Impl_in_rule__EventAction__Group__41816 = new BitSet(new long[]{0x0000000000C00000L});
-    public static final BitSet FOLLOW_rule__EventAction__Group__5_in_rule__EventAction__Group__41819 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventAction__Group_4__0_in_rule__EventAction__Group__4__Impl1846 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventAction__Group__5__Impl_in_rule__EventAction__Group__51877 = new BitSet(new long[]{0x000000000007F000L});
-    public static final BitSet FOLLOW_rule__EventAction__Group__6_in_rule__EventAction__Group__51880 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__EventAction__Group__5__Impl1908 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventAction__Group__6__Impl_in_rule__EventAction__Group__61939 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventAction__EventExtensionAssignment_6_in_rule__EventAction__Group__6__Impl1966 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventAction__Group_4__0__Impl_in_rule__EventAction__Group_4__02010 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__EventAction__Group_4__1_in_rule__EventAction__Group_4__02013 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__EventAction__Group_4__0__Impl2041 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventAction__Group_4__1__Impl_in_rule__EventAction__Group_4__12072 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_rule__EventAction__Group_4__2_in_rule__EventAction__Group_4__12075 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventAction__ParametersAssignment_4_1_in_rule__EventAction__Group_4__1__Impl2102 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventAction__Group_4__2__Impl_in_rule__EventAction__Group_4__22132 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__EventAction__Group_4__2__Impl2160 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Parameters__Group_1__0__Impl_in_rule__Parameters__Group_1__02197 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_rule__Parameters__Group_1__1_in_rule__Parameters__Group_1__02200 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Parameters__ParamAssignment_1_0_in_rule__Parameters__Group_1__0__Impl2227 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Parameters__Group_1__1__Impl_in_rule__Parameters__Group_1__12257 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Parameters__Group_1__2_in_rule__Parameters__Group_1__12260 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__Parameters__Group_1__1__Impl2288 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Parameters__Group_1__2__Impl_in_rule__Parameters__Group_1__22319 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Parameters__ParametersAssignment_1_2_in_rule__Parameters__Group_1__2__Impl2346 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAction_in_rule__Model__ActionAssignment_02387 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleModel_in_rule__Model__ActionsAssignment_1_12418 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAssignment_in_rule__Action__AssignmentAssignment_02449 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEventAction_in_rule__Action__EventActionAssignment_12480 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Assignment__LeftvarAssignment_02511 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEXPRESSION_in_rule__Assignment__ExpressionAssignment_22542 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTERM_in_rule__EXPRESSION__FirstTermAssignment_0_02573 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_OPERATOR_in_rule__EXPRESSION__OperatorAssignment_0_12604 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTERM_in_rule__EXPRESSION__SecondTermAssignment_0_22635 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTERM_in_rule__EXPRESSION__AloneAssignment_12666 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__TERM__VariableAssignment_02697 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__TERM__ConstantAssignment_12728 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__EventAction__LinkNameAssignment_1_02759 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__EventAction__SelfAssignment_1_12795 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__EventAction__EventNameAssignment_32834 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleParameters_in_rule__EventAction__ParametersAssignment_4_12865 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEventExtensions_in_rule__EventAction__EventExtensionAssignment_62896 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Parameters__ParamAssignment_02927 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Parameters__ParamAssignment_1_02958 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleParameters_in_rule__Parameters__ParametersAssignment_1_22989 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventAction__EventNameAssignment_2_in_rule__EventAction__Group__2__Impl1724 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventAction__Group__3__Impl_in_rule__EventAction__Group__31754 = new BitSet(new long[]{0x0000000000C00000L});
+    public static final BitSet FOLLOW_rule__EventAction__Group__4_in_rule__EventAction__Group__31757 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventAction__Group_3__0_in_rule__EventAction__Group__3__Impl1784 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventAction__Group__4__Impl_in_rule__EventAction__Group__41815 = new BitSet(new long[]{0x000000000007F000L});
+    public static final BitSet FOLLOW_rule__EventAction__Group__5_in_rule__EventAction__Group__41818 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_rule__EventAction__Group__4__Impl1846 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventAction__Group__5__Impl_in_rule__EventAction__Group__51877 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventAction__EventExtensionAssignment_5_in_rule__EventAction__Group__5__Impl1904 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventAction__Group_3__0__Impl_in_rule__EventAction__Group_3__01946 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__EventAction__Group_3__1_in_rule__EventAction__Group_3__01949 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__EventAction__Group_3__0__Impl1977 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventAction__Group_3__1__Impl_in_rule__EventAction__Group_3__12008 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__EventAction__Group_3__2_in_rule__EventAction__Group_3__12011 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventAction__ParametersAssignment_3_1_in_rule__EventAction__Group_3__1__Impl2038 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventAction__Group_3__2__Impl_in_rule__EventAction__Group_3__22068 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__EventAction__Group_3__2__Impl2096 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Parameters__Group_1__0__Impl_in_rule__Parameters__Group_1__02133 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_rule__Parameters__Group_1__1_in_rule__Parameters__Group_1__02136 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Parameters__ParamAssignment_1_0_in_rule__Parameters__Group_1__0__Impl2163 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Parameters__Group_1__1__Impl_in_rule__Parameters__Group_1__12193 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Parameters__Group_1__2_in_rule__Parameters__Group_1__12196 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__Parameters__Group_1__1__Impl2224 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Parameters__Group_1__2__Impl_in_rule__Parameters__Group_1__22255 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Parameters__ParametersAssignment_1_2_in_rule__Parameters__Group_1__2__Impl2282 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAction_in_rule__Model__ActionAssignment_02323 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleModel_in_rule__Model__ActionsAssignment_1_12354 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAssignment_in_rule__Action__AssignmentAssignment_02385 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEventAction_in_rule__Action__EventActionAssignment_12416 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Assignment__LeftvarAssignment_02447 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEXPRESSION_in_rule__Assignment__ExpressionAssignment_22478 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTERM_in_rule__EXPRESSION__FirstTermAssignment_0_02509 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_OPERATOR_in_rule__EXPRESSION__OperatorAssignment_0_12540 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTERM_in_rule__EXPRESSION__SecondTermAssignment_0_22571 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTERM_in_rule__EXPRESSION__AloneAssignment_12602 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__TERM__VariableAssignment_02633 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__TERM__ConstantAssignment_12664 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__EventAction__LinkNameAssignment_0_02695 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__EventAction__SelfAssignment_0_12731 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__EventAction__EventNameAssignment_22770 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleParameters_in_rule__EventAction__ParametersAssignment_3_12801 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEventExtensions_in_rule__EventAction__EventExtensionAssignment_52832 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Parameters__ParamAssignment_02863 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Parameters__ParamAssignment_1_02894 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleParameters_in_rule__Parameters__ParametersAssignment_1_22925 = new BitSet(new long[]{0x0000000000000002L});
 
 }

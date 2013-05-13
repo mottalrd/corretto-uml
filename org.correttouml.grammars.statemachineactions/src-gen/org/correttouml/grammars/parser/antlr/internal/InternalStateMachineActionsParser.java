@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalStateMachineActionsParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_OPERATOR", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "','", "'='", "'@'", "'self'", "'.'", "'('", "')'", "'exit'", "'enter'", "'start'", "'end'", "'tick'", "'sig'", "'call'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_OPERATOR", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "','", "'='", "'self'", "'@'", "'('", "')'", "'.'", "'exit'", "'enter'", "'start'", "'end'", "'tick'", "'sig'", "'call'"
     };
     public static final int RULE_ID=4;
     public static final int T__25=25;
@@ -301,9 +301,22 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
             int LA2_0 = input.LA(1);
 
             if ( (LA2_0==RULE_ID) ) {
-                alt2=1;
+                int LA2_1 = input.LA(2);
+
+                if ( (LA2_1==13) ) {
+                    alt2=1;
+                }
+                else if ( (LA2_1==15) ) {
+                    alt2=2;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 2, 1, input);
+
+                    throw nvae;
+                }
             }
-            else if ( (LA2_0==14) ) {
+            else if ( ((LA2_0>=14 && LA2_0<=15)) ) {
                 alt2=2;
             }
             else {
@@ -986,59 +999,54 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleEventAction"
-    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:408:1: ruleEventAction returns [EObject current=null] : (otherlv_0= '@' ( ( (lv_linkName_1_0= RULE_ID ) ) | ( (lv_self_2_0= 'self' ) ) )? otherlv_3= '.' ( (lv_eventName_4_0= RULE_ID ) ) (otherlv_5= '(' ( (lv_parameters_6_0= ruleParameters ) ) otherlv_7= ')' )? otherlv_8= '.' ( (lv_eventExtension_9_0= ruleEventExtensions ) ) ) ;
+    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:408:1: ruleEventAction returns [EObject current=null] : ( ( ( (lv_linkName_0_0= RULE_ID ) ) | ( (lv_self_1_0= 'self' ) ) )? otherlv_2= '@' ( (lv_eventName_3_0= RULE_ID ) ) (otherlv_4= '(' ( (lv_parameters_5_0= ruleParameters ) ) otherlv_6= ')' )? otherlv_7= '.' ( (lv_eventExtension_8_0= ruleEventExtensions ) ) ) ;
     public final EObject ruleEventAction() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
-        Token lv_linkName_1_0=null;
-        Token lv_self_2_0=null;
-        Token otherlv_3=null;
-        Token lv_eventName_4_0=null;
-        Token otherlv_5=null;
+        Token lv_linkName_0_0=null;
+        Token lv_self_1_0=null;
+        Token otherlv_2=null;
+        Token lv_eventName_3_0=null;
+        Token otherlv_4=null;
+        Token otherlv_6=null;
         Token otherlv_7=null;
-        Token otherlv_8=null;
-        EObject lv_parameters_6_0 = null;
+        EObject lv_parameters_5_0 = null;
 
-        AntlrDatatypeRuleToken lv_eventExtension_9_0 = null;
+        AntlrDatatypeRuleToken lv_eventExtension_8_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:411:28: ( (otherlv_0= '@' ( ( (lv_linkName_1_0= RULE_ID ) ) | ( (lv_self_2_0= 'self' ) ) )? otherlv_3= '.' ( (lv_eventName_4_0= RULE_ID ) ) (otherlv_5= '(' ( (lv_parameters_6_0= ruleParameters ) ) otherlv_7= ')' )? otherlv_8= '.' ( (lv_eventExtension_9_0= ruleEventExtensions ) ) ) )
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:412:1: (otherlv_0= '@' ( ( (lv_linkName_1_0= RULE_ID ) ) | ( (lv_self_2_0= 'self' ) ) )? otherlv_3= '.' ( (lv_eventName_4_0= RULE_ID ) ) (otherlv_5= '(' ( (lv_parameters_6_0= ruleParameters ) ) otherlv_7= ')' )? otherlv_8= '.' ( (lv_eventExtension_9_0= ruleEventExtensions ) ) )
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:411:28: ( ( ( ( (lv_linkName_0_0= RULE_ID ) ) | ( (lv_self_1_0= 'self' ) ) )? otherlv_2= '@' ( (lv_eventName_3_0= RULE_ID ) ) (otherlv_4= '(' ( (lv_parameters_5_0= ruleParameters ) ) otherlv_6= ')' )? otherlv_7= '.' ( (lv_eventExtension_8_0= ruleEventExtensions ) ) ) )
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:412:1: ( ( ( (lv_linkName_0_0= RULE_ID ) ) | ( (lv_self_1_0= 'self' ) ) )? otherlv_2= '@' ( (lv_eventName_3_0= RULE_ID ) ) (otherlv_4= '(' ( (lv_parameters_5_0= ruleParameters ) ) otherlv_6= ')' )? otherlv_7= '.' ( (lv_eventExtension_8_0= ruleEventExtensions ) ) )
             {
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:412:1: (otherlv_0= '@' ( ( (lv_linkName_1_0= RULE_ID ) ) | ( (lv_self_2_0= 'self' ) ) )? otherlv_3= '.' ( (lv_eventName_4_0= RULE_ID ) ) (otherlv_5= '(' ( (lv_parameters_6_0= ruleParameters ) ) otherlv_7= ')' )? otherlv_8= '.' ( (lv_eventExtension_9_0= ruleEventExtensions ) ) )
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:412:3: otherlv_0= '@' ( ( (lv_linkName_1_0= RULE_ID ) ) | ( (lv_self_2_0= 'self' ) ) )? otherlv_3= '.' ( (lv_eventName_4_0= RULE_ID ) ) (otherlv_5= '(' ( (lv_parameters_6_0= ruleParameters ) ) otherlv_7= ')' )? otherlv_8= '.' ( (lv_eventExtension_9_0= ruleEventExtensions ) )
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:412:1: ( ( ( (lv_linkName_0_0= RULE_ID ) ) | ( (lv_self_1_0= 'self' ) ) )? otherlv_2= '@' ( (lv_eventName_3_0= RULE_ID ) ) (otherlv_4= '(' ( (lv_parameters_5_0= ruleParameters ) ) otherlv_6= ')' )? otherlv_7= '.' ( (lv_eventExtension_8_0= ruleEventExtensions ) ) )
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:412:2: ( ( (lv_linkName_0_0= RULE_ID ) ) | ( (lv_self_1_0= 'self' ) ) )? otherlv_2= '@' ( (lv_eventName_3_0= RULE_ID ) ) (otherlv_4= '(' ( (lv_parameters_5_0= ruleParameters ) ) otherlv_6= ')' )? otherlv_7= '.' ( (lv_eventExtension_8_0= ruleEventExtensions ) )
             {
-            otherlv_0=(Token)match(input,14,FOLLOW_14_in_ruleEventAction780); 
-
-                	newLeafNode(otherlv_0, grammarAccess.getEventActionAccess().getCommercialAtKeyword_0());
-                
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:416:1: ( ( (lv_linkName_1_0= RULE_ID ) ) | ( (lv_self_2_0= 'self' ) ) )?
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:412:2: ( ( (lv_linkName_0_0= RULE_ID ) ) | ( (lv_self_1_0= 'self' ) ) )?
             int alt5=3;
             int LA5_0 = input.LA(1);
 
             if ( (LA5_0==RULE_ID) ) {
                 alt5=1;
             }
-            else if ( (LA5_0==15) ) {
+            else if ( (LA5_0==14) ) {
                 alt5=2;
             }
             switch (alt5) {
                 case 1 :
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:416:2: ( (lv_linkName_1_0= RULE_ID ) )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:412:3: ( (lv_linkName_0_0= RULE_ID ) )
                     {
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:416:2: ( (lv_linkName_1_0= RULE_ID ) )
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:417:1: (lv_linkName_1_0= RULE_ID )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:412:3: ( (lv_linkName_0_0= RULE_ID ) )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:413:1: (lv_linkName_0_0= RULE_ID )
                     {
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:417:1: (lv_linkName_1_0= RULE_ID )
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:418:3: lv_linkName_1_0= RULE_ID
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:413:1: (lv_linkName_0_0= RULE_ID )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:414:3: lv_linkName_0_0= RULE_ID
                     {
-                    lv_linkName_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEventAction798); 
+                    lv_linkName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEventAction786); 
 
-                    			newLeafNode(lv_linkName_1_0, grammarAccess.getEventActionAccess().getLinkNameIDTerminalRuleCall_1_0_0()); 
+                    			newLeafNode(lv_linkName_0_0, grammarAccess.getEventActionAccess().getLinkNameIDTerminalRuleCall_0_0_0()); 
                     		
 
                     	        if (current==null) {
@@ -1047,7 +1055,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                            		setWithLastConsumed(
                            			current, 
                            			"linkName",
-                            		lv_linkName_1_0, 
+                            		lv_linkName_0_0, 
                             		"ID");
                     	    
 
@@ -1060,23 +1068,23 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 2 :
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:435:6: ( (lv_self_2_0= 'self' ) )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:431:6: ( (lv_self_1_0= 'self' ) )
                     {
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:435:6: ( (lv_self_2_0= 'self' ) )
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:436:1: (lv_self_2_0= 'self' )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:431:6: ( (lv_self_1_0= 'self' ) )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:432:1: (lv_self_1_0= 'self' )
                     {
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:436:1: (lv_self_2_0= 'self' )
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:437:3: lv_self_2_0= 'self'
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:432:1: (lv_self_1_0= 'self' )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:433:3: lv_self_1_0= 'self'
                     {
-                    lv_self_2_0=(Token)match(input,15,FOLLOW_15_in_ruleEventAction827); 
+                    lv_self_1_0=(Token)match(input,14,FOLLOW_14_in_ruleEventAction815); 
 
-                            newLeafNode(lv_self_2_0, grammarAccess.getEventActionAccess().getSelfSelfKeyword_1_1_0());
+                            newLeafNode(lv_self_1_0, grammarAccess.getEventActionAccess().getSelfSelfKeyword_0_1_0());
                         
 
                     	        if (current==null) {
                     	            current = createModelElement(grammarAccess.getEventActionRule());
                     	        }
-                           		setWithLastConsumed(current, "self", lv_self_2_0, "self");
+                           		setWithLastConsumed(current, "self", lv_self_1_0, "self");
                     	    
 
                     }
@@ -1090,19 +1098,19 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
 
             }
 
-            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleEventAction854); 
+            otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleEventAction842); 
 
-                	newLeafNode(otherlv_3, grammarAccess.getEventActionAccess().getFullStopKeyword_2());
+                	newLeafNode(otherlv_2, grammarAccess.getEventActionAccess().getCommercialAtKeyword_1());
                 
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:454:1: ( (lv_eventName_4_0= RULE_ID ) )
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:455:1: (lv_eventName_4_0= RULE_ID )
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:450:1: ( (lv_eventName_3_0= RULE_ID ) )
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:451:1: (lv_eventName_3_0= RULE_ID )
             {
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:455:1: (lv_eventName_4_0= RULE_ID )
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:456:3: lv_eventName_4_0= RULE_ID
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:451:1: (lv_eventName_3_0= RULE_ID )
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:452:3: lv_eventName_3_0= RULE_ID
             {
-            lv_eventName_4_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEventAction871); 
+            lv_eventName_3_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEventAction859); 
 
-            			newLeafNode(lv_eventName_4_0, grammarAccess.getEventActionAccess().getEventNameIDTerminalRuleCall_3_0()); 
+            			newLeafNode(lv_eventName_3_0, grammarAccess.getEventActionAccess().getEventNameIDTerminalRuleCall_2_0()); 
             		
 
             	        if (current==null) {
@@ -1111,7 +1119,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                    		setWithLastConsumed(
                    			current, 
                    			"eventName",
-                    		lv_eventName_4_0, 
+                    		lv_eventName_3_0, 
                     		"ID");
             	    
 
@@ -1120,32 +1128,32 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
 
             }
 
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:472:2: (otherlv_5= '(' ( (lv_parameters_6_0= ruleParameters ) ) otherlv_7= ')' )?
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:468:2: (otherlv_4= '(' ( (lv_parameters_5_0= ruleParameters ) ) otherlv_6= ')' )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==17) ) {
+            if ( (LA6_0==16) ) {
                 alt6=1;
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:472:4: otherlv_5= '(' ( (lv_parameters_6_0= ruleParameters ) ) otherlv_7= ')'
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:468:4: otherlv_4= '(' ( (lv_parameters_5_0= ruleParameters ) ) otherlv_6= ')'
                     {
-                    otherlv_5=(Token)match(input,17,FOLLOW_17_in_ruleEventAction889); 
+                    otherlv_4=(Token)match(input,16,FOLLOW_16_in_ruleEventAction877); 
 
-                        	newLeafNode(otherlv_5, grammarAccess.getEventActionAccess().getLeftParenthesisKeyword_4_0());
+                        	newLeafNode(otherlv_4, grammarAccess.getEventActionAccess().getLeftParenthesisKeyword_3_0());
                         
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:476:1: ( (lv_parameters_6_0= ruleParameters ) )
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:477:1: (lv_parameters_6_0= ruleParameters )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:472:1: ( (lv_parameters_5_0= ruleParameters ) )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:473:1: (lv_parameters_5_0= ruleParameters )
                     {
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:477:1: (lv_parameters_6_0= ruleParameters )
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:478:3: lv_parameters_6_0= ruleParameters
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:473:1: (lv_parameters_5_0= ruleParameters )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:474:3: lv_parameters_5_0= ruleParameters
                     {
                      
-                    	        newCompositeNode(grammarAccess.getEventActionAccess().getParametersParametersParserRuleCall_4_1_0()); 
+                    	        newCompositeNode(grammarAccess.getEventActionAccess().getParametersParametersParserRuleCall_3_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleParameters_in_ruleEventAction910);
-                    lv_parameters_6_0=ruleParameters();
+                    pushFollow(FOLLOW_ruleParameters_in_ruleEventAction898);
+                    lv_parameters_5_0=ruleParameters();
 
                     state._fsp--;
 
@@ -1156,7 +1164,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                            		set(
                            			current, 
                            			"parameters",
-                            		lv_parameters_6_0, 
+                            		lv_parameters_5_0, 
                             		"Parameters");
                     	        afterParserOrEnumRuleCall();
                     	    
@@ -1166,9 +1174,9 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
 
                     }
 
-                    otherlv_7=(Token)match(input,18,FOLLOW_18_in_ruleEventAction922); 
+                    otherlv_6=(Token)match(input,17,FOLLOW_17_in_ruleEventAction910); 
 
-                        	newLeafNode(otherlv_7, grammarAccess.getEventActionAccess().getRightParenthesisKeyword_4_2());
+                        	newLeafNode(otherlv_6, grammarAccess.getEventActionAccess().getRightParenthesisKeyword_3_2());
                         
 
                     }
@@ -1176,21 +1184,21 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
 
             }
 
-            otherlv_8=(Token)match(input,16,FOLLOW_16_in_ruleEventAction936); 
+            otherlv_7=(Token)match(input,18,FOLLOW_18_in_ruleEventAction924); 
 
-                	newLeafNode(otherlv_8, grammarAccess.getEventActionAccess().getFullStopKeyword_5());
+                	newLeafNode(otherlv_7, grammarAccess.getEventActionAccess().getFullStopKeyword_4());
                 
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:502:1: ( (lv_eventExtension_9_0= ruleEventExtensions ) )
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:503:1: (lv_eventExtension_9_0= ruleEventExtensions )
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:498:1: ( (lv_eventExtension_8_0= ruleEventExtensions ) )
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:499:1: (lv_eventExtension_8_0= ruleEventExtensions )
             {
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:503:1: (lv_eventExtension_9_0= ruleEventExtensions )
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:504:3: lv_eventExtension_9_0= ruleEventExtensions
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:499:1: (lv_eventExtension_8_0= ruleEventExtensions )
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:500:3: lv_eventExtension_8_0= ruleEventExtensions
             {
              
-            	        newCompositeNode(grammarAccess.getEventActionAccess().getEventExtensionEventExtensionsParserRuleCall_6_0()); 
+            	        newCompositeNode(grammarAccess.getEventActionAccess().getEventExtensionEventExtensionsParserRuleCall_5_0()); 
             	    
-            pushFollow(FOLLOW_ruleEventExtensions_in_ruleEventAction957);
-            lv_eventExtension_9_0=ruleEventExtensions();
+            pushFollow(FOLLOW_ruleEventExtensions_in_ruleEventAction945);
+            lv_eventExtension_8_0=ruleEventExtensions();
 
             state._fsp--;
 
@@ -1201,7 +1209,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                    		set(
                    			current, 
                    			"eventExtension",
-                    		lv_eventExtension_9_0, 
+                    		lv_eventExtension_8_0, 
                     		"EventExtensions");
             	        afterParserOrEnumRuleCall();
             	    
@@ -1232,7 +1240,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleParameters"
-    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:528:1: entryRuleParameters returns [EObject current=null] : iv_ruleParameters= ruleParameters EOF ;
+    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:524:1: entryRuleParameters returns [EObject current=null] : iv_ruleParameters= ruleParameters EOF ;
     public final EObject entryRuleParameters() throws RecognitionException {
         EObject current = null;
 
@@ -1240,17 +1248,17 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
 
 
         try {
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:529:2: (iv_ruleParameters= ruleParameters EOF )
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:530:2: iv_ruleParameters= ruleParameters EOF
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:525:2: (iv_ruleParameters= ruleParameters EOF )
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:526:2: iv_ruleParameters= ruleParameters EOF
             {
              newCompositeNode(grammarAccess.getParametersRule()); 
-            pushFollow(FOLLOW_ruleParameters_in_entryRuleParameters993);
+            pushFollow(FOLLOW_ruleParameters_in_entryRuleParameters981);
             iv_ruleParameters=ruleParameters();
 
             state._fsp--;
 
              current =iv_ruleParameters; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleParameters1003); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleParameters991); 
 
             }
 
@@ -1268,7 +1276,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleParameters"
-    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:537:1: ruleParameters returns [EObject current=null] : ( ( (lv_param_0_0= RULE_ID ) ) | ( ( (lv_param_1_0= RULE_ID ) ) otherlv_2= ',' ( (lv_parameters_3_0= ruleParameters ) ) ) ) ;
+    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:533:1: ruleParameters returns [EObject current=null] : ( ( (lv_param_0_0= RULE_ID ) ) | ( ( (lv_param_1_0= RULE_ID ) ) otherlv_2= ',' ( (lv_parameters_3_0= ruleParameters ) ) ) ) ;
     public final EObject ruleParameters() throws RecognitionException {
         EObject current = null;
 
@@ -1281,10 +1289,10 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
          enterRule(); 
             
         try {
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:540:28: ( ( ( (lv_param_0_0= RULE_ID ) ) | ( ( (lv_param_1_0= RULE_ID ) ) otherlv_2= ',' ( (lv_parameters_3_0= ruleParameters ) ) ) ) )
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:541:1: ( ( (lv_param_0_0= RULE_ID ) ) | ( ( (lv_param_1_0= RULE_ID ) ) otherlv_2= ',' ( (lv_parameters_3_0= ruleParameters ) ) ) )
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:536:28: ( ( ( (lv_param_0_0= RULE_ID ) ) | ( ( (lv_param_1_0= RULE_ID ) ) otherlv_2= ',' ( (lv_parameters_3_0= ruleParameters ) ) ) ) )
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:537:1: ( ( (lv_param_0_0= RULE_ID ) ) | ( ( (lv_param_1_0= RULE_ID ) ) otherlv_2= ',' ( (lv_parameters_3_0= ruleParameters ) ) ) )
             {
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:541:1: ( ( (lv_param_0_0= RULE_ID ) ) | ( ( (lv_param_1_0= RULE_ID ) ) otherlv_2= ',' ( (lv_parameters_3_0= ruleParameters ) ) ) )
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:537:1: ( ( (lv_param_0_0= RULE_ID ) ) | ( ( (lv_param_1_0= RULE_ID ) ) otherlv_2= ',' ( (lv_parameters_3_0= ruleParameters ) ) ) )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1294,7 +1302,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                 if ( (LA7_1==12) ) {
                     alt7=2;
                 }
-                else if ( (LA7_1==EOF||LA7_1==18) ) {
+                else if ( (LA7_1==EOF||LA7_1==17) ) {
                     alt7=1;
                 }
                 else {
@@ -1312,15 +1320,15 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:541:2: ( (lv_param_0_0= RULE_ID ) )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:537:2: ( (lv_param_0_0= RULE_ID ) )
                     {
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:541:2: ( (lv_param_0_0= RULE_ID ) )
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:542:1: (lv_param_0_0= RULE_ID )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:537:2: ( (lv_param_0_0= RULE_ID ) )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:538:1: (lv_param_0_0= RULE_ID )
                     {
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:542:1: (lv_param_0_0= RULE_ID )
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:543:3: lv_param_0_0= RULE_ID
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:538:1: (lv_param_0_0= RULE_ID )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:539:3: lv_param_0_0= RULE_ID
                     {
-                    lv_param_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleParameters1045); 
+                    lv_param_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleParameters1033); 
 
                     			newLeafNode(lv_param_0_0, grammarAccess.getParametersAccess().getParamIDTerminalRuleCall_0_0()); 
                     		
@@ -1344,18 +1352,18 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 2 :
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:560:6: ( ( (lv_param_1_0= RULE_ID ) ) otherlv_2= ',' ( (lv_parameters_3_0= ruleParameters ) ) )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:556:6: ( ( (lv_param_1_0= RULE_ID ) ) otherlv_2= ',' ( (lv_parameters_3_0= ruleParameters ) ) )
                     {
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:560:6: ( ( (lv_param_1_0= RULE_ID ) ) otherlv_2= ',' ( (lv_parameters_3_0= ruleParameters ) ) )
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:560:7: ( (lv_param_1_0= RULE_ID ) ) otherlv_2= ',' ( (lv_parameters_3_0= ruleParameters ) )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:556:6: ( ( (lv_param_1_0= RULE_ID ) ) otherlv_2= ',' ( (lv_parameters_3_0= ruleParameters ) ) )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:556:7: ( (lv_param_1_0= RULE_ID ) ) otherlv_2= ',' ( (lv_parameters_3_0= ruleParameters ) )
                     {
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:560:7: ( (lv_param_1_0= RULE_ID ) )
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:561:1: (lv_param_1_0= RULE_ID )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:556:7: ( (lv_param_1_0= RULE_ID ) )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:557:1: (lv_param_1_0= RULE_ID )
                     {
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:561:1: (lv_param_1_0= RULE_ID )
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:562:3: lv_param_1_0= RULE_ID
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:557:1: (lv_param_1_0= RULE_ID )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:558:3: lv_param_1_0= RULE_ID
                     {
-                    lv_param_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleParameters1074); 
+                    lv_param_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleParameters1062); 
 
                     			newLeafNode(lv_param_1_0, grammarAccess.getParametersAccess().getParamIDTerminalRuleCall_1_0_0()); 
                     		
@@ -1375,20 +1383,20 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
 
                     }
 
-                    otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleParameters1091); 
+                    otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleParameters1079); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getParametersAccess().getCommaKeyword_1_1());
                         
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:582:1: ( (lv_parameters_3_0= ruleParameters ) )
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:583:1: (lv_parameters_3_0= ruleParameters )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:578:1: ( (lv_parameters_3_0= ruleParameters ) )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:579:1: (lv_parameters_3_0= ruleParameters )
                     {
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:583:1: (lv_parameters_3_0= ruleParameters )
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:584:3: lv_parameters_3_0= ruleParameters
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:579:1: (lv_parameters_3_0= ruleParameters )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:580:3: lv_parameters_3_0= ruleParameters
                     {
                      
                     	        newCompositeNode(grammarAccess.getParametersAccess().getParametersParametersParserRuleCall_1_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleParameters_in_ruleParameters1112);
+                    pushFollow(FOLLOW_ruleParameters_in_ruleParameters1100);
                     lv_parameters_3_0=ruleParameters();
 
                     state._fsp--;
@@ -1437,7 +1445,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "entryRuleEventExtensions"
-    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:608:1: entryRuleEventExtensions returns [String current=null] : iv_ruleEventExtensions= ruleEventExtensions EOF ;
+    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:604:1: entryRuleEventExtensions returns [String current=null] : iv_ruleEventExtensions= ruleEventExtensions EOF ;
     public final String entryRuleEventExtensions() throws RecognitionException {
         String current = null;
 
@@ -1445,17 +1453,17 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
 
 
         try {
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:609:2: (iv_ruleEventExtensions= ruleEventExtensions EOF )
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:610:2: iv_ruleEventExtensions= ruleEventExtensions EOF
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:605:2: (iv_ruleEventExtensions= ruleEventExtensions EOF )
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:606:2: iv_ruleEventExtensions= ruleEventExtensions EOF
             {
              newCompositeNode(grammarAccess.getEventExtensionsRule()); 
-            pushFollow(FOLLOW_ruleEventExtensions_in_entryRuleEventExtensions1150);
+            pushFollow(FOLLOW_ruleEventExtensions_in_entryRuleEventExtensions1138);
             iv_ruleEventExtensions=ruleEventExtensions();
 
             state._fsp--;
 
              current =iv_ruleEventExtensions.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEventExtensions1161); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEventExtensions1149); 
 
             }
 
@@ -1473,7 +1481,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleEventExtensions"
-    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:617:1: ruleEventExtensions returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' ) ;
+    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:613:1: ruleEventExtensions returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' ) ;
     public final AntlrDatatypeRuleToken ruleEventExtensions() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1482,10 +1490,10 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
          enterRule(); 
             
         try {
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:620:28: ( (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' ) )
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:621:1: (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' )
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:616:28: ( (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' ) )
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:617:1: (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' )
             {
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:621:1: (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' )
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:617:1: (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' )
             int alt8=7;
             switch ( input.LA(1) ) {
             case 19:
@@ -1532,9 +1540,9 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
 
             switch (alt8) {
                 case 1 :
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:622:2: kw= 'exit'
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:618:2: kw= 'exit'
                     {
-                    kw=(Token)match(input,19,FOLLOW_19_in_ruleEventExtensions1199); 
+                    kw=(Token)match(input,19,FOLLOW_19_in_ruleEventExtensions1187); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getExitKeyword_0()); 
@@ -1543,9 +1551,9 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 2 :
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:629:2: kw= 'enter'
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:625:2: kw= 'enter'
                     {
-                    kw=(Token)match(input,20,FOLLOW_20_in_ruleEventExtensions1218); 
+                    kw=(Token)match(input,20,FOLLOW_20_in_ruleEventExtensions1206); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getEnterKeyword_1()); 
@@ -1554,9 +1562,9 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 3 :
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:636:2: kw= 'start'
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:632:2: kw= 'start'
                     {
-                    kw=(Token)match(input,21,FOLLOW_21_in_ruleEventExtensions1237); 
+                    kw=(Token)match(input,21,FOLLOW_21_in_ruleEventExtensions1225); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getStartKeyword_2()); 
@@ -1565,9 +1573,9 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 4 :
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:643:2: kw= 'end'
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:639:2: kw= 'end'
                     {
-                    kw=(Token)match(input,22,FOLLOW_22_in_ruleEventExtensions1256); 
+                    kw=(Token)match(input,22,FOLLOW_22_in_ruleEventExtensions1244); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getEndKeyword_3()); 
@@ -1576,9 +1584,9 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 5 :
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:650:2: kw= 'tick'
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:646:2: kw= 'tick'
                     {
-                    kw=(Token)match(input,23,FOLLOW_23_in_ruleEventExtensions1275); 
+                    kw=(Token)match(input,23,FOLLOW_23_in_ruleEventExtensions1263); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getTickKeyword_4()); 
@@ -1587,9 +1595,9 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 6 :
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:657:2: kw= 'sig'
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:653:2: kw= 'sig'
                     {
-                    kw=(Token)match(input,24,FOLLOW_24_in_ruleEventExtensions1294); 
+                    kw=(Token)match(input,24,FOLLOW_24_in_ruleEventExtensions1282); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getSigKeyword_5()); 
@@ -1598,9 +1606,9 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 7 :
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:664:2: kw= 'call'
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:660:2: kw= 'call'
                     {
-                    kw=(Token)match(input,25,FOLLOW_25_in_ruleEventExtensions1313); 
+                    kw=(Token)match(input,25,FOLLOW_25_in_ruleEventExtensions1301); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getCallKeyword_6()); 
@@ -1635,7 +1643,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
     public static final BitSet FOLLOW_ruleModel_in_entryRuleModel75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleModel85 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAction_in_ruleModel131 = new BitSet(new long[]{0x0000000000001002L});
-    public static final BitSet FOLLOW_12_in_ruleModel144 = new BitSet(new long[]{0x0000000000004010L});
+    public static final BitSet FOLLOW_12_in_ruleModel144 = new BitSet(new long[]{0x000000000000C010L});
     public static final BitSet FOLLOW_ruleModel_in_ruleModel165 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAction_in_entryRuleAction203 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAction213 = new BitSet(new long[]{0x0000000000000002L});
@@ -1658,30 +1666,29 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
     public static final BitSet FOLLOW_RULE_INT_in_ruleTERM692 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEventAction_in_entryRuleEventAction733 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleEventAction743 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_ruleEventAction780 = new BitSet(new long[]{0x0000000000018010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEventAction798 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_15_in_ruleEventAction827 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleEventAction854 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEventAction871 = new BitSet(new long[]{0x0000000000030000L});
-    public static final BitSet FOLLOW_17_in_ruleEventAction889 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleParameters_in_ruleEventAction910 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleEventAction922 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleEventAction936 = new BitSet(new long[]{0x0000000003F80000L});
-    public static final BitSet FOLLOW_ruleEventExtensions_in_ruleEventAction957 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleParameters_in_entryRuleParameters993 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleParameters1003 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleParameters1045 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleParameters1074 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleParameters1091 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleParameters_in_ruleParameters1112 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEventExtensions_in_entryRuleEventExtensions1150 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEventExtensions1161 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_ruleEventExtensions1199 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_ruleEventExtensions1218 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_ruleEventExtensions1237 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_ruleEventExtensions1256 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_ruleEventExtensions1275 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleEventExtensions1294 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleEventExtensions1313 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEventAction786 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_14_in_ruleEventAction815 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleEventAction842 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEventAction859 = new BitSet(new long[]{0x0000000000050000L});
+    public static final BitSet FOLLOW_16_in_ruleEventAction877 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleParameters_in_ruleEventAction898 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleEventAction910 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleEventAction924 = new BitSet(new long[]{0x0000000003F80000L});
+    public static final BitSet FOLLOW_ruleEventExtensions_in_ruleEventAction945 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleParameters_in_entryRuleParameters981 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleParameters991 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleParameters1033 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleParameters1062 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_ruleParameters1079 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleParameters_in_ruleParameters1100 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEventExtensions_in_entryRuleEventExtensions1138 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEventExtensions1149 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_ruleEventExtensions1187 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_ruleEventExtensions1206 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_ruleEventExtensions1225 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_ruleEventExtensions1244 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_ruleEventExtensions1263 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_ruleEventExtensions1282 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleEventExtensions1301 = new BitSet(new long[]{0x0000000000000002L});
 
 }

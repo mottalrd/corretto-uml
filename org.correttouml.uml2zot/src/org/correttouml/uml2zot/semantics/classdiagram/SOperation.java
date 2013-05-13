@@ -1,5 +1,7 @@
 package org.correttouml.uml2zot.semantics.classdiagram;
 
+import java.util.List;
+
 import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.classdiagram.Operation;
 import org.correttouml.uml.diagrams.sequencediagram.Message;
@@ -41,21 +43,27 @@ public class SOperation {
 		}
 		
 		//ACTIONS INVOKING THIS OPERATION
+		addActionsInvokingThisOperation(orCond, object);
+		
+        if(orCond.size()!=0) sem=sem+new Iff(this.getPredicate(object),orCond) + "\n";
+        return sem;
+	}
+
+	private void addActionsInvokingThisOperation(Or orCond, Object object) {
 		for(Object linked_to_me_obj: object.getAssociatedObjects()){
 	        for (StateDiagram std : linked_to_me_obj.getOwningClass().getStateDiagrams()) {
 				for(Transition t: std.getTransitions()){
-		            if(t.hasAction()){
-		                Action act=t.getAction();
-		                if(act instanceof CallAction && ((CallAction) act).getOperation().equals(this.mades_operation)){
-		                	orCond.addFormulae(new SCallAction((CallAction)act).getPredicate(linked_to_me_obj));
+		            if(t.hasActions()){
+		                List<Action> actions=t.getActions();
+		                for(Action act: actions){
+			                if(act instanceof CallAction && ((CallAction) act).getOperation().equals(this.mades_operation)){
+			                	orCond.addFormulae(new SCallAction((CallAction)act).getPredicate(linked_to_me_obj));
+			                }
 		                }
 		            }
 		         }  
 			}			
 		}
-		
-        if(orCond.size()!=0) sem=sem+new Iff(this.getPredicate(object),orCond) + "\n";
-        return sem;
 	}
 
 }

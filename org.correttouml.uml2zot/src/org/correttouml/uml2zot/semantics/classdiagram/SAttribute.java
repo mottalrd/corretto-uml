@@ -1,5 +1,7 @@
 package org.correttouml.uml2zot.semantics.classdiagram;
 
+import java.util.List;
+
 import org.correttouml.uml.diagrams.classdiagram.Attribute;
 import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.expressions.PrimitiveType;
@@ -48,21 +50,14 @@ public class SAttribute implements SVariable {
 				|| this.mades_attribute.getType()==PrimitiveType.REAL)
 			) return sem;
 		
-		Or orCond = new Or();
-		// ACTIONS INVOKING THIS OPERATION
+		Or orCond=null;
+		
+		// ACTIONS CHANGING THIS ATTRIBUTE
 		for (StateDiagram std : mades_obj.getOwningClass().getStateDiagrams()) {
 			for (Transition t : std.getTransitions()) {
-				if (t.hasAction()) {
-					Action act = t.getAction();
-					if (act instanceof AssignmentAction) {
-						AssignmentAction ass_act = (AssignmentAction) act;
-						if (ass_act.getAssignment().getAssignment()
-								.getVariable()
-								.equals(mades_attribute.getName())) {
-							orCond.addFormulae(new SAssignmentAction(ass_act)
-									.getPredicate(mades_obj));
-						}
-					}
+				if (t.hasActions()) {
+					List<Action> actions = t.getActions();
+					for(Action act: actions) orCond=getModificationConditions(act, mades_obj);
 				}
 			}
 		}
@@ -76,6 +71,20 @@ public class SAttribute implements SVariable {
 			sem = sem+ new EQ(this.getPredicate(mades_obj), new Yesterday(this.getPredicate(mades_obj)));
 		}
 		return sem;
+	}
+
+	private Or getModificationConditions(Action act, Object mades_obj) {
+		Or orCond=new Or();
+		if (act instanceof AssignmentAction) {
+			AssignmentAction ass_act = (AssignmentAction) act;
+			if (ass_act.getAssignment().getAssignment()
+					.getLeftvar()
+					.equals(mades_attribute.getName())) {
+				orCond.addFormulae(new SAssignmentAction(ass_act)
+						.getPredicate(mades_obj));
+			}
+		}
+		return orCond;
 	}
 
 	public String getInitializationSemantics(Object mades_obj) {

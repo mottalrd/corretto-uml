@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
@@ -14,14 +15,18 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.uml2.uml.AggregationKind;
+import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.eclipse.uml2.uml.internal.impl.UMLPackageImpl;
 import org.eclipse.uml2.uml.resource.UMLResource;
 import org.eclipse.uml2.uml.resources.util.UMLResourcesUtil;
 import org.eclipse.uml2.uml.util.UMLUtil;
@@ -276,6 +281,30 @@ public class UML2Helper {
 
         return operation;
     }	
+    
+    public static org.eclipse.uml2.uml.Operation createOperation(org.eclipse.uml2.uml.Class class_, String name, EList<String> parametersName, EList<Type> parametersType) {
+        org.eclipse.uml2.uml.Operation operation = class_.createOwnedOperation(name, parametersName, parametersType); 
+        
+        LOGGER.info("Operation '" + operation.getQualifiedName() + "' created.");
+
+        return operation;
+    }	
+    
+    public static org.eclipse.uml2.uml.PrimitiveType createPrimitiveType(Model m, String name){
+		PrimitiveType mytype=UMLFactory.eINSTANCE.createPrimitiveType();
+		mytype.setName(name);
+		m.getPackagedElements().add(mytype);
+		
+		return mytype;
+    }
+    
+	public static org.eclipse.uml2.uml.Property createAttribute(Class klass, String name, PrimitiveType type) {
+		org.eclipse.uml2.uml.Property attribute = klass.createOwnedAttribute(name, type);
+        
+        LOGGER.info("Operation '" + attribute.getQualifiedName() + "' created.");
+
+        return attribute;
+	}	
 	
     public static org.eclipse.uml2.uml.Class createClass(org.eclipse.uml2.uml.Package package_, String name, boolean isAbstract) {
         org.eclipse.uml2.uml.Class class_ = package_.createOwnedClass(name, isAbstract);
@@ -567,6 +596,8 @@ public class UML2Helper {
 		
 		Profile m=(Profile)EcoreUtil.getObjectByType(r.getContents(), UMLPackage.eINSTANCE.getProfile());
 		return m;
-	}		
+	}
+
+	
 	
 }

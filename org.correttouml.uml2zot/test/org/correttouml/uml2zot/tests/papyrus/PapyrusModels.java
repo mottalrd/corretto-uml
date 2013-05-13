@@ -14,7 +14,7 @@ public class PapyrusModels {
 	private static final Logger LOGGER = Logger.getLogger(PapyrusModels.class); 
 	
 	/** THE CCAS MODEL */
-	private String MODEL_FILE="testmodels/ccas/v0.1/model.uml";
+	//private String MODEL_FILE="testmodels/ccas/v0.1/model.uml";
 	//private String MODEL_FILE="testmodels/ccas/v0.2/model.uml";
 	//private String MODEL_FILE="testmodels/plugin/model.uml";
 	
@@ -37,7 +37,7 @@ public class PapyrusModels {
 	//private String MODEL_FILE="testmodels/cassidian/model.uml";
 	
 	/** OMEGA ATM MODEL */
-	//private String MODEL_FILE="testmodels/atm_omega/v0.1/model.uml";
+	private String MODEL_FILE="testmodels/atm_omega/v0.1/model.uml";
 	
 	/** SD and StD **/
 	//private String MODEL_FILE="testmodels/SD_and_StD/test1/model.uml";

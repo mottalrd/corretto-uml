@@ -409,15 +409,11 @@ ruleEventAction returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='@' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getEventActionAccess().getCommercialAtKeyword_0());
-    }
-((
+(((
 (
-		lv_linkName_1_0=RULE_ID
+		lv_linkName_0_0=RULE_ID
 		{
-			newLeafNode(lv_linkName_1_0, grammarAccess.getEventActionAccess().getLinkNameIDTerminalRuleCall_1_0_0()); 
+			newLeafNode(lv_linkName_0_0, grammarAccess.getEventActionAccess().getLinkNameIDTerminalRuleCall_0_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -426,7 +422,7 @@ ruleEventAction returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"linkName",
-        		lv_linkName_1_0, 
+        		lv_linkName_0_0, 
         		"ID");
 	    }
 
@@ -434,28 +430,28 @@ ruleEventAction returns [EObject current=null]
 )
     |(
 (
-		lv_self_2_0=	'self' 
+		lv_self_1_0=	'self' 
     {
-        newLeafNode(lv_self_2_0, grammarAccess.getEventActionAccess().getSelfSelfKeyword_1_1_0());
+        newLeafNode(lv_self_1_0, grammarAccess.getEventActionAccess().getSelfSelfKeyword_0_1_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getEventActionRule());
 	        }
-       		setWithLastConsumed($current, "self", lv_self_2_0, "self");
+       		setWithLastConsumed($current, "self", lv_self_1_0, "self");
 	    }
 
 )
-))?	otherlv_3='.' 
+))?	otherlv_2='@' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getEventActionAccess().getFullStopKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getEventActionAccess().getCommercialAtKeyword_1());
     }
 (
 (
-		lv_eventName_4_0=RULE_ID
+		lv_eventName_3_0=RULE_ID
 		{
-			newLeafNode(lv_eventName_4_0, grammarAccess.getEventActionAccess().getEventNameIDTerminalRuleCall_3_0()); 
+			newLeafNode(lv_eventName_3_0, grammarAccess.getEventActionAccess().getEventNameIDTerminalRuleCall_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -464,54 +460,54 @@ ruleEventAction returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"eventName",
-        		lv_eventName_4_0, 
+        		lv_eventName_3_0, 
         		"ID");
 	    }
 
 )
-)(	otherlv_5='(' 
+)(	otherlv_4='(' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getEventActionAccess().getLeftParenthesisKeyword_4_0());
+    	newLeafNode(otherlv_4, grammarAccess.getEventActionAccess().getLeftParenthesisKeyword_3_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEventActionAccess().getParametersParametersParserRuleCall_4_1_0()); 
+	        newCompositeNode(grammarAccess.getEventActionAccess().getParametersParametersParserRuleCall_3_1_0()); 
 	    }
-		lv_parameters_6_0=ruleParameters		{
+		lv_parameters_5_0=ruleParameters		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getEventActionRule());
 	        }
        		set(
        			$current, 
        			"parameters",
-        		lv_parameters_6_0, 
+        		lv_parameters_5_0, 
         		"Parameters");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_7=')' 
+)	otherlv_6=')' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getEventActionAccess().getRightParenthesisKeyword_4_2());
+    	newLeafNode(otherlv_6, grammarAccess.getEventActionAccess().getRightParenthesisKeyword_3_2());
     }
-)?	otherlv_8='.' 
+)?	otherlv_7='.' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getEventActionAccess().getFullStopKeyword_5());
+    	newLeafNode(otherlv_7, grammarAccess.getEventActionAccess().getFullStopKeyword_4());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEventActionAccess().getEventExtensionEventExtensionsParserRuleCall_6_0()); 
+	        newCompositeNode(grammarAccess.getEventActionAccess().getEventExtensionEventExtensionsParserRuleCall_5_0()); 
 	    }
-		lv_eventExtension_9_0=ruleEventExtensions		{
+		lv_eventExtension_8_0=ruleEventExtensions		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getEventActionRule());
 	        }
        		set(
        			$current, 
        			"eventExtension",
-        		lv_eventExtension_9_0, 
+        		lv_eventExtension_8_0, 
         		"EventExtensions");
 	        afterParserOrEnumRuleCall();
 	    }
