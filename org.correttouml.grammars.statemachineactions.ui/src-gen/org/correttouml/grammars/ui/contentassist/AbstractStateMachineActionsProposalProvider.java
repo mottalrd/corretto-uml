@@ -5,7 +5,6 @@ package org.correttouml.grammars.ui.contentassist;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.*;
-import org.eclipse.xtext.common.ui.contentassist.TerminalsProposalProvider;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 
@@ -15,9 +14,12 @@ import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
  * with a more concrete subtype. 
  */
 @SuppressWarnings("all")
-public class AbstractStateMachineActionsProposalProvider extends TerminalsProposalProvider {
+public class AbstractStateMachineActionsProposalProvider extends org.eclipse.xtext.common.ui.contentassist.TerminalsProposalProvider {
 		
 	public void completeModel_Action(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+	}
+	public void completeModel_Actions(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
 	}
 	public void completeAction_Assignment(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
@@ -49,6 +51,12 @@ public class AbstractStateMachineActionsProposalProvider extends TerminalsPropos
 	}
 	public void completeTERM_Constant(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+	}
+	public void completeEventAction_LinkName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+	}
+	public void completeEventAction_Self(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		// subclasses may override
 	}
 	public void completeEventAction_EventName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);

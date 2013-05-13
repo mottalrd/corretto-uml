@@ -116,7 +116,7 @@ public class StateMachineActionsSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Constraint:
-	 *     (eventName=ID parameters=Parameters? eventExtension=EventExtensions)
+	 *     ((linkName=ID | self='self')? eventName=ID parameters=Parameters? eventExtension=EventExtensions)
 	 */
 	protected void sequence_EventAction(EObject context, EventAction semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -125,17 +125,10 @@ public class StateMachineActionsSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Constraint:
-	 *     action=Action
+	 *     (action=Action actions=Model?)
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, StateMachineActionsPackage.Literals.MODEL__ACTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateMachineActionsPackage.Literals.MODEL__ACTION));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getModelAccess().getActionActionParserRuleCall_0(), semanticObject.getAction());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

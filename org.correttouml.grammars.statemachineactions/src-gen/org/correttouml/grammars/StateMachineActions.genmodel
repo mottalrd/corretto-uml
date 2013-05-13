@@ -10,6 +10,7 @@
       disposableProviderFactory="true" ecorePackage="StateMachineActions.ecore#/">
     <genClasses ecoreClass="StateMachineActions.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachineActions.ecore#//Model/action"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachineActions.ecore#//Model/actions"/>
     </genClasses>
     <genClasses ecoreClass="StateMachineActions.ecore#//Action">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachineActions.ecore#//Action/assignment"/>
@@ -30,6 +31,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//TERM/constant"/>
     </genClasses>
     <genClasses ecoreClass="StateMachineActions.ecore#//EventAction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//EventAction/linkName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//EventAction/self"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//EventAction/eventName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachineActions.ecore#//EventAction/parameters"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//EventAction/eventExtension"/>
