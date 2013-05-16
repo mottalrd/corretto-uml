@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CorrettoUML.VerificationTags="http:///CorrettoUML/VerificationTags.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///CorrettoUML/VerificationTags.ecore pathmap://resources/model.profile.uml#_TgjsNYsjEeKKVfwHBkrs7w">
+  <uml:Model xmi:id="_qlcOAL2tEeKKSenVvntNZQ" name="model">
+    <packagedElement xmi:type="uml:Package" xmi:id="_8jM0EL2tEeKKSenVvntNZQ" name="Package1">
+      <packagedElement xmi:type="uml:Class" xmi:id="__rDV0L2tEeKKSenVvntNZQ" name="Class1">
+        <ownedAttribute xmi:id="_AdopUL2uEeKKSenVvntNZQ" name="class2" type="__7keEL2tEeKKSenVvntNZQ" association="_AdopU72uEeKKSenVvntNZQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AdopUb2uEeKKSenVvntNZQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AdopUr2uEeKKSenVvntNZQ" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="__7keEL2tEeKKSenVvntNZQ" name="Class2"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AdopU72uEeKKSenVvntNZQ" name="class1_class2_1" memberEnd="_AdopVL2uEeKKSenVvntNZQ _AdopUL2uEeKKSenVvntNZQ" navigableOwnedEnd="_AdopVL2uEeKKSenVvntNZQ">
+        <ownedEnd xmi:id="_AdopVL2uEeKKSenVvntNZQ" name="class1" type="__rDV0L2tEeKKSenVvntNZQ" association="_AdopU72uEeKKSenVvntNZQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AdopVb2uEeKKSenVvntNZQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AdopVr2uEeKKSenVvntNZQ" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Gkw_oL2uEeKKSenVvntNZQ" name="c1" classifier="__rDV0L2tEeKKSenVvntNZQ">
+        <slot xmi:id="_PrzcpL2uEeKKSenVvntNZQ" definingFeature="_AdopUL2uEeKKSenVvntNZQ">
+          <value xmi:type="uml:InstanceValue" xmi:id="_Przcpb2uEeKKSenVvntNZQ" name="InstanceValue0" type="__7keEL2tEeKKSenVvntNZQ" instance="_I-AH4L2uEeKKSenVvntNZQ"/>
+        </slot>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_I-AH4L2uEeKKSenVvntNZQ" name="c2" classifier="__7keEL2tEeKKSenVvntNZQ"/>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_PrzcoL2uEeKKSenVvntNZQ" name="InstanceSpecification0" classifier="_AdopU72uEeKKSenVvntNZQ">
+        <eAnnotations xmi:id="_Przcob2uEeKKSenVvntNZQ" source="InstanceEnd" references="_Gkw_oL2uEeKKSenVvntNZQ _I-AH4L2uEeKKSenVvntNZQ"/>
+        <slot xmi:id="_Przcor2uEeKKSenVvntNZQ" definingFeature="_AdopVL2uEeKKSenVvntNZQ">
+          <value xmi:type="uml:InstanceValue" xmi:id="_Przco72uEeKKSenVvntNZQ" name="InstanceValue0" type="__rDV0L2tEeKKSenVvntNZQ" instance="_Gkw_oL2uEeKKSenVvntNZQ"/>
+        </slot>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:id="_7CWFUL2tEeKKSenVvntNZQ">
+      <eAnnotations xmi:id="_7CpAQL2tEeKKSenVvntNZQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://resources/model.profile.uml#_TgjsIIsjEeKKVfwHBkrs7w"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://resources/model.profile.uml#_DCylYIJgEeKaWIAr5_BKMw"/>
+    </profileApplication>
+  </uml:Model>
+  <CorrettoUML.VerificationTags:System xmi:id="_95GQAL2tEeKKSenVvntNZQ" base_Package="_8jM0EL2tEeKKSenVvntNZQ"/>
+</xmi:XMI>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.papyrus.infra.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/org.correttouml.uml2zot/testmodels/SD_IF/model.uml:uml:Namespace:context">
+	</section>
+	<section name="org.eclipse.papyrus.infra.emf.providers.EMFGraphicalContentProvider_history__uml:Namespace:context">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/org.correttouml.uml2zot/testmodels/SD_IF/model.uml:uml:NamedElement:signature">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/org.correttouml.uml2zot/testmodels/SD_IF/model.uml#_y9wTEL3JEeKKSenVvntNZQ"/>
+				<item value="platform:/resource/org.correttouml.uml2zot/testmodels/SD_IF/model.uml#_nQZIUL2uEeKKSenVvntNZQ"/>
+				<item value="platform:/resource/org.correttouml.uml2zot/testmodels/SD_IF/model.uml#_ml2WgL2uEeKKSenVvntNZQ"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/org.correttouml.uml2zot/testmodels/SD_IF/model.uml:uml:Type:type">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.emf.providers.EMFGraphicalContentProvider_history__uml:InstanceSpecification:instance">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/org.correttouml.uml2zot/testmodels/SD_IF/model.uml#_Gkw_oL2uEeKKSenVvntNZQ"/>
+				<item value="platform:/resource/org.correttouml.uml2zot/testmodels/SD_IF/model.uml#_I-AH4L2uEeKKSenVvntNZQ"/>
+			</list>
+		</section>
+	</section>
+</section>
