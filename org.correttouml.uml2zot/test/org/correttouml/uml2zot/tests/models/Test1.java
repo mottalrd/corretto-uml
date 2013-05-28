@@ -14,7 +14,7 @@ public class Test1 {
 	private static final Logger LOGGER = Logger.getLogger(Test1.class); 
 	
 	/** THE CCAS MODEL */
-	//private String MODEL_FILE="testmodels/ccas/v0.1/model.uml";
+	private String MODEL_FILE="testmodels/ccas/v0.1/model.uml";
 	//private String MODEL_FILE="testmodels/ccas/v0.2/model.uml";
 	//private String MODEL_FILE="testmodels/plugin/model.uml";
 	
@@ -31,7 +31,7 @@ public class Test1 {
 	//private String MODEL_FILE="testmodels/iod/test1/model.uml";
 	
 	/** TXT RADAR MODEL */
-	private String MODEL_FILE="testmodels/txt/v0.1/model.uml";
+	//private String MODEL_FILE="testmodels/txt/v0.1/model.uml";
 	
 	/** CASSIDIAN RADAR MODEL */
 	//private String MODEL_FILE="testmodels/cassidian/model.uml";
