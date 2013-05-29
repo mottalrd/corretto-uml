@@ -26,8 +26,11 @@ public class SVariableCondition {
 	public BooleanFormulae getSemantics(Object mades_object, ExpressionContext context) {
 		BooleanFormulae r=null;
 		
+		//TODO[improvement] please improve variable inequalities
+		
 		//Right now we are just considering stuffs that looks like
 		//<<var>> REL <<const>>
+		//<<var>> REL <<var>>
 		//REL \in {==, !=, <=, <, >, >=}
 		
 		//Find the variable
@@ -37,26 +40,35 @@ public class SVariableCondition {
 		//get the f*** predicate
 		r=s_variable.getPredicate(mades_object);
 		
-		//Prepare the constant
-		SConstant constant=new SConstant(mades_condition.getValue());
+		SConstant constant=null;
+		SVariable s_rightVariable=null;
+		if(mades_condition.getRightVariable()!=null){
+			Variable rightVariable=VariableFactory.getInstance(mades_condition.getRightVariable(), mades_object, context);
+			s_rightVariable=SVariableFactory.getInstance(rightVariable);
+		}else{
+			constant=new SConstant(mades_condition.getValue());
+		}
+		BooleanFormulae right=null;
+		if(s_rightVariable!=null)right=s_rightVariable.getPredicate(mades_object);
+		else right=constant;
 		
 		if(InequalityOperator.getOpFromString(mades_condition.getRelation()).equals(InequalityOperator.EQ)){
-			r=new EQ(s_variable.getPredicate(mades_object), constant);		
+			r=new EQ(s_variable.getPredicate(mades_object), right);		
 		}
 		else if(InequalityOperator.getOpFromString(mades_condition.getRelation()).equals(InequalityOperator.NEQ)){
-			r=new Not(new EQ(s_variable.getPredicate(mades_object), constant));		
+			r=new Not(new EQ(s_variable.getPredicate(mades_object), right));		
 		}
 		else if(InequalityOperator.getOpFromString(mades_condition.getRelation()).equals(InequalityOperator.GT)){
-			r=new GT(s_variable.getPredicate(mades_object), constant);	
+			r=new GT(s_variable.getPredicate(mades_object), right);	
 		}
 		else if(InequalityOperator.getOpFromString(mades_condition.getRelation()).equals(InequalityOperator.GTE)){
-			r=new GTE(s_variable.getPredicate(mades_object), constant);	
+			r=new GTE(s_variable.getPredicate(mades_object), right);	
 		}
 		else if(InequalityOperator.getOpFromString(mades_condition.getRelation()).equals(InequalityOperator.LT)){
-			r=new LT(s_variable.getPredicate(mades_object), constant);	
+			r=new LT(s_variable.getPredicate(mades_object), right);	
 		}
 		else if(InequalityOperator.getOpFromString(mades_condition.getRelation()).equals(InequalityOperator.LTE)){
-			r=new LTE(s_variable.getPredicate(mades_object), constant);	
+			r=new LTE(s_variable.getPredicate(mades_object), right);	
 		}
 		return r;	
 	}

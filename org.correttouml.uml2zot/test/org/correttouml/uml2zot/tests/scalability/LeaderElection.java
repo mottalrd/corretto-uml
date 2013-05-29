@@ -105,27 +105,16 @@ public class LeaderElection {
 		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN, "@two.call[{active==0}]/@two(nr).call"); 
 		//active, receive one and pass the info
 		
-		//TODO[mottalrd] add variable initialization
-		//TODO[mottalrd] fix boolean expressions
-		//TODO[mottalrd] fix variable inequalities (we can't have right now a==b but only a==const)
+		//TODO[mottalrd] add variable initialization (see error by running the program)
+		//TODO[mottalrd] add class diagram links disambiguation in actions/triggers
 		
-//		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN, "one(nr)[active==1 && nr!=max]/two(nr), neighbourR=nr"); 
-//		//active, receive two and keep playing
-//		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN, "two(nr)[active==1 && neighbourR>nr && neighbourR>max]/max=neighbourR, one(neighbourR)");  
-//		//active, receive two and go out of the game
-//		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN, "two(nr)[active==1 && (neighbourR<=nr || neighbourR<=max)]/active=0, one(neighbourR)"); 
-//		//winner found, communicate the winner
-//		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN, "one(nr)[active==1 && nr==max]/winner(nr)"); 
-		
-		//TODO[mottalrd] clear me (start fake test)
-		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN, "@one.call[{active==1} && {nr!=5}]/@two(nr).call, neighbourR=nr"); 
+		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN, "@one.call[{active==1} && {nr!=max}]/@two(nr).call, neighbourR=nr"); 
 		//active, receive two and keep playing
-		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN, "@two.call[{active==1} && {neighbourR>5}]/max=neighbourR, @one(neighbourR).call");  
+		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN, "@two.call[{active==1} && {neighbourR>nr} && {neighbourR>max}]/max=neighbourR, @one(neighbourR).call");  
 		//active, receive two and go out of the game
-		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN, "@two.call[{active==1} && {neighbourR<=5}]/active=0, @one(neighbourR).call"); 
+		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN, "@two.call[{active==1} && ({neighbourR<=nr} || {neighbourR<=max})]/active=0, @one(neighbourR).call"); 
 		//winner found, communicate the winner
-		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN, "@one.call[{active==1} && {nr==5}]/@winner(nr).call"); 
-		//TODO[mottalrd] clear me (end fake test)
+		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN, "@one.call[{active==1} && {nr==max}]/@winner(nr).call"); 
 		
 		//received winner communication, it is me
 		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_WIN, "@winner.call[{nr==5}]");
