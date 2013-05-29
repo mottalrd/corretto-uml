@@ -80,9 +80,19 @@ public class BooleanExpressionsAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter casebooleanExpression(booleanExpression object)
+      public Adapter caseOrExpression(OrExpression object)
       {
-        return createbooleanExpressionAdapter();
+        return createOrExpressionAdapter();
+      }
+      @Override
+      public Adapter caseAndExpression(AndExpression object)
+      {
+        return createAndExpressionAdapter();
+      }
+      @Override
+      public Adapter caseBaseExpression(BaseExpression object)
+      {
+        return createBaseExpressionAdapter();
       }
       @Override
       public Adapter casebooleanTerm(booleanTerm object)
@@ -147,16 +157,46 @@ public class BooleanExpressionsAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.correttouml.grammars.booleanExpressions.booleanExpression <em>boolean Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link org.correttouml.grammars.booleanExpressions.OrExpression <em>Or Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.correttouml.grammars.booleanExpressions.booleanExpression
+   * @see org.correttouml.grammars.booleanExpressions.OrExpression
    * @generated
    */
-  public Adapter createbooleanExpressionAdapter()
+  public Adapter createOrExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.correttouml.grammars.booleanExpressions.AndExpression <em>And Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.correttouml.grammars.booleanExpressions.AndExpression
+   * @generated
+   */
+  public Adapter createAndExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.correttouml.grammars.booleanExpressions.BaseExpression <em>Base Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.correttouml.grammars.booleanExpressions.BaseExpression
+   * @generated
+   */
+  public Adapter createBaseExpressionAdapter()
   {
     return null;
   }

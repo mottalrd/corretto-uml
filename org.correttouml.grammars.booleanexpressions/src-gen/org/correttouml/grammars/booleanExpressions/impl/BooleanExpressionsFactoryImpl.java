@@ -65,7 +65,9 @@ public class BooleanExpressionsFactoryImpl extends EFactoryImpl implements Boole
     switch (eClass.getClassifierID())
     {
       case BooleanExpressionsPackage.MODEL: return createModel();
-      case BooleanExpressionsPackage.BOOLEAN_EXPRESSION: return createbooleanExpression();
+      case BooleanExpressionsPackage.OR_EXPRESSION: return createOrExpression();
+      case BooleanExpressionsPackage.AND_EXPRESSION: return createAndExpression();
+      case BooleanExpressionsPackage.BASE_EXPRESSION: return createBaseExpression();
       case BooleanExpressionsPackage.BOOLEAN_TERM: return createbooleanTerm();
       case BooleanExpressionsPackage.TIME_CONSTRAINT: return createTimeConstraint();
       case BooleanExpressionsPackage.BOOLEAN_VARIABLE: return createBooleanVariable();
@@ -92,10 +94,32 @@ public class BooleanExpressionsFactoryImpl extends EFactoryImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public booleanExpression createbooleanExpression()
+  public OrExpression createOrExpression()
   {
-    booleanExpressionImpl booleanExpression = new booleanExpressionImpl();
-    return booleanExpression;
+    OrExpressionImpl orExpression = new OrExpressionImpl();
+    return orExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AndExpression createAndExpression()
+  {
+    AndExpressionImpl andExpression = new AndExpressionImpl();
+    return andExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BaseExpression createBaseExpression()
+  {
+    BaseExpressionImpl baseExpression = new BaseExpressionImpl();
+    return baseExpression;
   }
 
   /**

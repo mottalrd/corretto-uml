@@ -2,13 +2,16 @@ package org.correttouml.grammars.serializer;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
+import org.correttouml.grammars.booleanExpressions.AndExpression;
+import org.correttouml.grammars.booleanExpressions.BaseExpression;
 import org.correttouml.grammars.booleanExpressions.BooleanExpressionsPackage;
 import org.correttouml.grammars.booleanExpressions.BooleanVariable;
 import org.correttouml.grammars.booleanExpressions.Event;
 import org.correttouml.grammars.booleanExpressions.Model;
+import org.correttouml.grammars.booleanExpressions.OrExpression;
 import org.correttouml.grammars.booleanExpressions.TimeConstraint;
 import org.correttouml.grammars.booleanExpressions.VariableCondition;
-import org.correttouml.grammars.booleanExpressions.booleanExpression;
+import org.correttouml.grammars.booleanExpressions.booleanTerm;
 import org.correttouml.grammars.services.BooleanExpressionsGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
@@ -30,9 +33,20 @@ public class BooleanExpressionsSemanticSequencer extends AbstractDelegatingSeman
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == BooleanExpressionsPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case BooleanExpressionsPackage.AND_EXPRESSION:
+				if(context == grammarAccess.getAndExpressionRule()) {
+					sequence_AndExpression(context, (AndExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case BooleanExpressionsPackage.BASE_EXPRESSION:
+				if(context == grammarAccess.getBaseExpressionRule()) {
+					sequence_BaseExpression(context, (BaseExpression) semanticObject); 
+					return; 
+				}
+				else break;
 			case BooleanExpressionsPackage.BOOLEAN_VARIABLE:
-				if(context == grammarAccess.getBooleanVariableRule() ||
-				   context == grammarAccess.getBooleanTermRule()) {
+				if(context == grammarAccess.getBooleanVariableRule()) {
 					sequence_BooleanVariable(context, (BooleanVariable) semanticObject); 
 					return; 
 				}
@@ -49,29 +63,51 @@ public class BooleanExpressionsSemanticSequencer extends AbstractDelegatingSeman
 					return; 
 				}
 				else break;
+			case BooleanExpressionsPackage.OR_EXPRESSION:
+				if(context == grammarAccess.getOrExpressionRule()) {
+					sequence_OrExpression(context, (OrExpression) semanticObject); 
+					return; 
+				}
+				else break;
 			case BooleanExpressionsPackage.TIME_CONSTRAINT:
-				if(context == grammarAccess.getTimeConstraintRule() ||
-				   context == grammarAccess.getBooleanTermRule()) {
+				if(context == grammarAccess.getTimeConstraintRule()) {
 					sequence_TimeConstraint(context, (TimeConstraint) semanticObject); 
 					return; 
 				}
 				else break;
 			case BooleanExpressionsPackage.VARIABLE_CONDITION:
-				if(context == grammarAccess.getVariableConditionRule() ||
-				   context == grammarAccess.getBooleanTermRule()) {
+				if(context == grammarAccess.getVariableConditionRule()) {
 					sequence_VariableCondition(context, (VariableCondition) semanticObject); 
 					return; 
 				}
 				else break;
-			case BooleanExpressionsPackage.BOOLEAN_EXPRESSION:
-				if(context == grammarAccess.getBooleanExpressionRule()) {
-					sequence_booleanExpression(context, (booleanExpression) semanticObject); 
+			case BooleanExpressionsPackage.BOOLEAN_TERM:
+				if(context == grammarAccess.getBooleanTermRule()) {
+					sequence_booleanTerm(context, (booleanTerm) semanticObject); 
 					return; 
 				}
 				else break;
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Constraint:
+	 *     (leftExpression=BaseExpression (and=AND rightExpression=AndExpression)?)
+	 */
+	protected void sequence_AndExpression(EObject context, AndExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (not=NOT? (booleanTerm=booleanTerm | rootExpression=OrExpression))
+	 */
+	protected void sequence_BaseExpression(EObject context, BaseExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Constraint:
@@ -100,7 +136,7 @@ public class BooleanExpressionsSemanticSequencer extends AbstractDelegatingSeman
 	
 	/**
 	 * Constraint:
-	 *     expression=booleanExpression
+	 *     expression=OrExpression
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
 		if(errorAcceptor != null) {
@@ -109,8 +145,17 @@ public class BooleanExpressionsSemanticSequencer extends AbstractDelegatingSeman
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getModelAccess().getExpressionBooleanExpressionParserRuleCall_0(), semanticObject.getExpression());
+		feeder.accept(grammarAccess.getModelAccess().getExpressionOrExpressionParserRuleCall_0(), semanticObject.getExpression());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (leftExpression=AndExpression (or=OR rightExpression=OrExpression)?)
+	 */
+	protected void sequence_OrExpression(EObject context, OrExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -141,31 +186,18 @@ public class BooleanExpressionsSemanticSequencer extends AbstractDelegatingSeman
 	
 	/**
 	 * Constraint:
-	 *     (variable=ID relation=RELATIONS value=INT)
+	 *     (variable=ID relation=RELATIONS (value=INT | rightVariable=ID))
 	 */
 	protected void sequence_VariableCondition(EObject context, VariableCondition semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, BooleanExpressionsPackage.Literals.VARIABLE_CONDITION__VARIABLE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BooleanExpressionsPackage.Literals.VARIABLE_CONDITION__VARIABLE));
-			if(transientValues.isValueTransient(semanticObject, BooleanExpressionsPackage.Literals.VARIABLE_CONDITION__RELATION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BooleanExpressionsPackage.Literals.VARIABLE_CONDITION__RELATION));
-			if(transientValues.isValueTransient(semanticObject, BooleanExpressionsPackage.Literals.VARIABLE_CONDITION__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BooleanExpressionsPackage.Literals.VARIABLE_CONDITION__VALUE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getVariableConditionAccess().getVariableIDTerminalRuleCall_1_0(), semanticObject.getVariable());
-		feeder.accept(grammarAccess.getVariableConditionAccess().getRelationRELATIONSTerminalRuleCall_2_0(), semanticObject.getRelation());
-		feeder.accept(grammarAccess.getVariableConditionAccess().getValueINTTerminalRuleCall_3_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (notExpression=booleanExpression | (orLeft=booleanTerm orRight=booleanTerm) | (andLeft=booleanTerm andRight=booleanTerm) | booleanTerm=booleanTerm)
+	 *     (timeConstraint=TimeConstraint | booleanVariable=BooleanVariable | variableCondition=VariableCondition)
 	 */
-	protected void sequence_booleanExpression(EObject context, booleanExpression semanticObject) {
+	protected void sequence_booleanTerm(EObject context, booleanTerm semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 }

@@ -31,12 +31,12 @@ public interface Model extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Expression</em>' containment reference.
-   * @see #setExpression(booleanExpression)
+   * @see #setExpression(OrExpression)
    * @see org.correttouml.grammars.booleanExpressions.BooleanExpressionsPackage#getModel_Expression()
    * @model containment="true"
    * @generated
    */
-  booleanExpression getExpression();
+  OrExpression getExpression();
 
   /**
    * Sets the value of the '{@link org.correttouml.grammars.booleanExpressions.Model#getExpression <em>Expression</em>}' containment reference.
@@ -46,6 +46,6 @@ public interface Model extends EObject
    * @see #getExpression()
    * @generated
    */
-  void setExpression(booleanExpression value);
+  void setExpression(OrExpression value);
 
 } // Model

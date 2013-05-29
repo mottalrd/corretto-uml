@@ -2,6 +2,7 @@
  */
 package org.correttouml.grammars.booleanExpressions;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +23,7 @@ package org.correttouml.grammars.booleanExpressions;
  * @model
  * @generated
  */
-public interface TimeConstraint extends booleanTerm
+public interface TimeConstraint extends EObject
 {
   /**
    * Returns the value of the '<em><b>Event2</b></em>' containment reference.

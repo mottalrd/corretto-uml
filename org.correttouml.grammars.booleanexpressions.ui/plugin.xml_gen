@@ -9,7 +9,7 @@
             class="org.correttouml.grammars.ui.BooleanExpressionsExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
             contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
             default="true"
-            extensions="mydsl"
+            extensions="boolexp"
             id="org.correttouml.grammars.BooleanExpressions"
             name="BooleanExpressions Editor">
         </editor>
@@ -213,13 +213,13 @@
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
 			class="org.correttouml.grammars.ui.BooleanExpressionsExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
-			type="mydsl">
+			type="boolexp">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
         <resourceServiceProvider
             class="org.correttouml.grammars.ui.BooleanExpressionsExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
-            uriExtension="mydsl">
+            uriExtension="boolexp">
         </resourceServiceProvider>
     </extension>
 
@@ -377,19 +377,19 @@
   <extension point="org.eclipse.compare.contentViewers">
     <viewer id="org.correttouml.grammars.BooleanExpressions.compare.contentViewers"
             class="org.correttouml.grammars.ui.BooleanExpressionsExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="mydsl">
+            extensions="boolexp">
     </viewer>
   </extension>
   <extension point="org.eclipse.compare.contentMergeViewers">
     <viewer id="org.correttouml.grammars.BooleanExpressions.compare.contentMergeViewers"
             class="org.correttouml.grammars.ui.BooleanExpressionsExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="mydsl" label="BooleanExpressions Compare">
+            extensions="boolexp" label="BooleanExpressions Compare">
      </viewer>
   </extension>
   <extension point="org.eclipse.ui.editors.documentProviders">
     <provider id="org.correttouml.grammars.BooleanExpressions.editors.documentProviders"
             class="org.correttouml.grammars.ui.BooleanExpressionsExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
-            extensions="mydsl">
+            extensions="boolexp">
     </provider>
   </extension>
 

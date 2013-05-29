@@ -2,6 +2,7 @@
  */
 package org.correttouml.grammars.booleanExpressions;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +15,7 @@ package org.correttouml.grammars.booleanExpressions;
  *   <li>{@link org.correttouml.grammars.booleanExpressions.VariableCondition#getVariable <em>Variable</em>}</li>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.VariableCondition#getRelation <em>Relation</em>}</li>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.VariableCondition#getValue <em>Value</em>}</li>
+ *   <li>{@link org.correttouml.grammars.booleanExpressions.VariableCondition#getRightVariable <em>Right Variable</em>}</li>
  * </ul>
  * </p>
  *
@@ -21,7 +23,7 @@ package org.correttouml.grammars.booleanExpressions;
  * @model
  * @generated
  */
-public interface VariableCondition extends booleanTerm
+public interface VariableCondition extends EObject
 {
   /**
    * Returns the value of the '<em><b>Variable</b></em>' attribute.
@@ -100,5 +102,31 @@ public interface VariableCondition extends booleanTerm
    * @generated
    */
   void setValue(int value);
+
+  /**
+   * Returns the value of the '<em><b>Right Variable</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Right Variable</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Right Variable</em>' attribute.
+   * @see #setRightVariable(String)
+   * @see org.correttouml.grammars.booleanExpressions.BooleanExpressionsPackage#getVariableCondition_RightVariable()
+   * @model
+   * @generated
+   */
+  String getRightVariable();
+
+  /**
+   * Sets the value of the '{@link org.correttouml.grammars.booleanExpressions.VariableCondition#getRightVariable <em>Right Variable</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Right Variable</em>' attribute.
+   * @see #getRightVariable()
+   * @generated
+   */
+  void setRightVariable(String value);
 
 } // VariableCondition

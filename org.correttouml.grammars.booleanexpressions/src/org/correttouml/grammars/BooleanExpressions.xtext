@@ -6,19 +6,26 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 generate booleanExpressions "http://www.correttouml.org/grammars/BooleanExpressions"
 
-Model: expression=booleanExpression;
-	
-booleanExpression:
-	("!!" notExpression=booleanExpression)
-	|
-	(orLeft=booleanTerm "||" orRight=booleanTerm)
-	|
-	(andLeft=booleanTerm "&&" andRight=booleanTerm)
-	| 
-	booleanTerm=booleanTerm;
+Model: expression=OrExpression;
+
+//============================================//
+//				BOOLEAN EXPRESSIONS			  //
+//============================================//
+
+OrExpression:
+	leftExpression=AndExpression (or=OR rightExpression=OrExpression)?
+;
+
+AndExpression:
+	leftExpression=BaseExpression (and=AND rightExpression=AndExpression)?
+;
+
+BaseExpression:
+	not=(NOT)? (booleanTerm=booleanTerm | '(' rootExpression=OrExpression ')')
+;
 	
 booleanTerm:
-	TimeConstraint | BooleanVariable | VariableCondition
+	timeConstraint=TimeConstraint | booleanVariable=BooleanVariable | variableCondition=VariableCondition
 ;
 
 TimeConstraint:
@@ -30,7 +37,7 @@ BooleanVariable:
 ;
 
 VariableCondition:
-	'{' variable=ID  relation=RELATIONS value=INT '}'
+	'{' variable=ID  relation=RELATIONS (value=INT | rightVariable=ID) '}'
 ;
 
 Event:
@@ -44,4 +51,10 @@ EventExtensions :
 terminal RELATIONS:
 	('<'| '>'| '==' | '<=' |'>=' | '!=')
 ;	
+
+terminal OR: '||' ;
+
+terminal AND: '&&';
+
+terminal NOT: '!!';
 	

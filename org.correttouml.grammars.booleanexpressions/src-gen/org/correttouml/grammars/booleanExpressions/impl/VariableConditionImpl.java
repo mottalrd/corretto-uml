@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,12 +22,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.correttouml.grammars.booleanExpressions.impl.VariableConditionImpl#getVariable <em>Variable</em>}</li>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.impl.VariableConditionImpl#getRelation <em>Relation</em>}</li>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.impl.VariableConditionImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.correttouml.grammars.booleanExpressions.impl.VariableConditionImpl#getRightVariable <em>Right Variable</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class VariableConditionImpl extends booleanTermImpl implements VariableCondition
+public class VariableConditionImpl extends MinimalEObjectImpl.Container implements VariableCondition
 {
   /**
    * The default value of the '{@link #getVariable() <em>Variable</em>}' attribute.
@@ -87,6 +89,26 @@ public class VariableConditionImpl extends booleanTermImpl implements VariableCo
    * @ordered
    */
   protected int value = VALUE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getRightVariable() <em>Right Variable</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRightVariable()
+   * @generated
+   * @ordered
+   */
+  protected static final String RIGHT_VARIABLE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getRightVariable() <em>Right Variable</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRightVariable()
+   * @generated
+   * @ordered
+   */
+  protected String rightVariable = RIGHT_VARIABLE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -183,6 +205,29 @@ public class VariableConditionImpl extends booleanTermImpl implements VariableCo
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getRightVariable()
+  {
+    return rightVariable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setRightVariable(String newRightVariable)
+  {
+    String oldRightVariable = rightVariable;
+    rightVariable = newRightVariable;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, BooleanExpressionsPackage.VARIABLE_CONDITION__RIGHT_VARIABLE, oldRightVariable, rightVariable));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -194,6 +239,8 @@ public class VariableConditionImpl extends booleanTermImpl implements VariableCo
         return getRelation();
       case BooleanExpressionsPackage.VARIABLE_CONDITION__VALUE:
         return getValue();
+      case BooleanExpressionsPackage.VARIABLE_CONDITION__RIGHT_VARIABLE:
+        return getRightVariable();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -216,6 +263,9 @@ public class VariableConditionImpl extends booleanTermImpl implements VariableCo
         return;
       case BooleanExpressionsPackage.VARIABLE_CONDITION__VALUE:
         setValue((Integer)newValue);
+        return;
+      case BooleanExpressionsPackage.VARIABLE_CONDITION__RIGHT_VARIABLE:
+        setRightVariable((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -240,6 +290,9 @@ public class VariableConditionImpl extends booleanTermImpl implements VariableCo
       case BooleanExpressionsPackage.VARIABLE_CONDITION__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
+      case BooleanExpressionsPackage.VARIABLE_CONDITION__RIGHT_VARIABLE:
+        setRightVariable(RIGHT_VARIABLE_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -260,6 +313,8 @@ public class VariableConditionImpl extends booleanTermImpl implements VariableCo
         return RELATION_EDEFAULT == null ? relation != null : !RELATION_EDEFAULT.equals(relation);
       case BooleanExpressionsPackage.VARIABLE_CONDITION__VALUE:
         return value != VALUE_EDEFAULT;
+      case BooleanExpressionsPackage.VARIABLE_CONDITION__RIGHT_VARIABLE:
+        return RIGHT_VARIABLE_EDEFAULT == null ? rightVariable != null : !RIGHT_VARIABLE_EDEFAULT.equals(rightVariable);
     }
     return super.eIsSet(featureID);
   }
@@ -281,6 +336,8 @@ public class VariableConditionImpl extends booleanTermImpl implements VariableCo
     result.append(relation);
     result.append(", value: ");
     result.append(value);
+    result.append(", rightVariable: ");
+    result.append(rightVariable);
     result.append(')');
     return result.toString();
   }
