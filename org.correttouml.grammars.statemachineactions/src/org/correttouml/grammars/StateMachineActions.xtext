@@ -33,7 +33,7 @@ terminal OPERATOR:
 	('-' | '+' | '*');
 
 EventAction:
-	(linkName=ID | self='self')? '@' eventName=ID ('(' parameters=Parameters ')')? '.' eventExtension=EventExtensions
+	(associationEnd=ID | self='self')? '@' eventName=ID ('(' parameters=Parameters ')')? '.' eventExtension=EventExtensions
 ;
 
 Parameters :

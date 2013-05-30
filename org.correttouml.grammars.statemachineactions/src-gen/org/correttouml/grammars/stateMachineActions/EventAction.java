@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.correttouml.grammars.stateMachineActions.EventAction#getLinkName <em>Link Name</em>}</li>
+ *   <li>{@link org.correttouml.grammars.stateMachineActions.EventAction#getAssociationEnd <em>Association End</em>}</li>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.EventAction#getSelf <em>Self</em>}</li>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.EventAction#getEventName <em>Event Name</em>}</li>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.EventAction#getParameters <em>Parameters</em>}</li>
@@ -27,30 +27,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface EventAction extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Link Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Association End</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Link Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Association End</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Link Name</em>' attribute.
-   * @see #setLinkName(String)
-   * @see org.correttouml.grammars.stateMachineActions.StateMachineActionsPackage#getEventAction_LinkName()
+   * @return the value of the '<em>Association End</em>' attribute.
+   * @see #setAssociationEnd(String)
+   * @see org.correttouml.grammars.stateMachineActions.StateMachineActionsPackage#getEventAction_AssociationEnd()
    * @model
    * @generated
    */
-  String getLinkName();
+  String getAssociationEnd();
 
   /**
-   * Sets the value of the '{@link org.correttouml.grammars.stateMachineActions.EventAction#getLinkName <em>Link Name</em>}' attribute.
+   * Sets the value of the '{@link org.correttouml.grammars.stateMachineActions.EventAction#getAssociationEnd <em>Association End</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Link Name</em>' attribute.
-   * @see #getLinkName()
+   * @param value the new value of the '<em>Association End</em>' attribute.
+   * @see #getAssociationEnd()
    * @generated
    */
-  void setLinkName(String value);
+  void setAssociationEnd(String value);
 
   /**
    * Returns the value of the '<em><b>Self</b></em>' attribute.

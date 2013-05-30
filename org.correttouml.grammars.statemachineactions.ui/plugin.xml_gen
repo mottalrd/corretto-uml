@@ -6,48 +6,48 @@
     <extension
             point="org.eclipse.ui.editors">
         <editor
-            class="org.correttouml.grammars.ui.StateMachineTriggersExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+            class="org.correttouml.grammars.ui.StateMachineActionsExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
             contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
             default="true"
-            extensions="mydsl"
-            id="org.correttouml.grammars.StateMachineTriggers"
-            name="StateMachineTriggers Editor">
+            extensions="stdactions"
+            id="org.correttouml.grammars.StateMachineActions"
+            name="StateMachineActions Editor">
         </editor>
     </extension>
     <extension
         point="org.eclipse.ui.handlers">
         <handler
-            class="org.correttouml.grammars.ui.StateMachineTriggersExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+            class="org.correttouml.grammars.ui.StateMachineActionsExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
             commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
             <activeWhen>
                 <reference
-                    definitionId="org.correttouml.grammars.StateMachineTriggers.Editor.opened">
+                    definitionId="org.correttouml.grammars.StateMachineActions.Editor.opened">
                 </reference>
             </activeWhen>
         </handler>
         <handler
-            class="org.correttouml.grammars.ui.StateMachineTriggersExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
-            commandId="org.correttouml.grammars.StateMachineTriggers.validate">
+            class="org.correttouml.grammars.ui.StateMachineActionsExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+            commandId="org.correttouml.grammars.StateMachineActions.validate">
          <activeWhen>
             <reference
-                    definitionId="org.correttouml.grammars.StateMachineTriggers.Editor.opened">
+                    definitionId="org.correttouml.grammars.StateMachineActions.Editor.opened">
             </reference>
          </activeWhen>
       	</handler>
       	<!-- copy qualified name -->
         <handler
-            class="org.correttouml.grammars.ui.StateMachineTriggersExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
+            class="org.correttouml.grammars.ui.StateMachineActionsExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
             commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName">
             <activeWhen>
-				<reference definitionId="org.correttouml.grammars.StateMachineTriggers.Editor.opened" />
+				<reference definitionId="org.correttouml.grammars.StateMachineActions.Editor.opened" />
             </activeWhen>
         </handler>
         <handler
-            class="org.correttouml.grammars.ui.StateMachineTriggersExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
+            class="org.correttouml.grammars.ui.StateMachineActionsExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
             commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName">
             <activeWhen>
             	<and>
-            		<reference definitionId="org.correttouml.grammars.StateMachineTriggers.XtextEditor.opened" />
+            		<reference definitionId="org.correttouml.grammars.StateMachineActions.XtextEditor.opened" />
 	                <iterate>
 						<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 					</iterate>
@@ -56,22 +56,22 @@
         </handler>
     </extension>
     <extension point="org.eclipse.core.expressions.definitions">
-        <definition id="org.correttouml.grammars.StateMachineTriggers.Editor.opened">
+        <definition id="org.correttouml.grammars.StateMachineActions.Editor.opened">
             <and>
                 <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
                 <with variable="activeEditor">
                     <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
-                        value="org.correttouml.grammars.StateMachineTriggers" 
+                        value="org.correttouml.grammars.StateMachineActions" 
                         forcePluginActivation="true"/>
                 </with>        
             </and>
         </definition>
-        <definition id="org.correttouml.grammars.StateMachineTriggers.XtextEditor.opened">
+        <definition id="org.correttouml.grammars.StateMachineActions.XtextEditor.opened">
             <and>
                 <reference definitionId="isXtextEditorActive"/>
                 <with variable="activeEditor">
                     <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
-                        value="org.correttouml.grammars.StateMachineTriggers" 
+                        value="org.correttouml.grammars.StateMachineActions" 
                         forcePluginActivation="true"/>
                 </with>        
             </and>
@@ -80,33 +80,33 @@
     <extension
             point="org.eclipse.ui.preferencePages">
         <page
-            class="org.correttouml.grammars.ui.StateMachineTriggersExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-            id="org.correttouml.grammars.StateMachineTriggers"
-            name="StateMachineTriggers">
-            <keywordReference id="org.correttouml.grammars.ui.keyword_StateMachineTriggers"/>
+            class="org.correttouml.grammars.ui.StateMachineActionsExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="org.correttouml.grammars.StateMachineActions"
+            name="StateMachineActions">
+            <keywordReference id="org.correttouml.grammars.ui.keyword_StateMachineActions"/>
         </page>
         <page
-            category="org.correttouml.grammars.StateMachineTriggers"
-            class="org.correttouml.grammars.ui.StateMachineTriggersExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
-            id="org.correttouml.grammars.StateMachineTriggers.coloring"
+            category="org.correttouml.grammars.StateMachineActions"
+            class="org.correttouml.grammars.ui.StateMachineActionsExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+            id="org.correttouml.grammars.StateMachineActions.coloring"
             name="Syntax Coloring">
-            <keywordReference id="org.correttouml.grammars.ui.keyword_StateMachineTriggers"/>
+            <keywordReference id="org.correttouml.grammars.ui.keyword_StateMachineActions"/>
         </page>
         <page
-            category="org.correttouml.grammars.StateMachineTriggers"
-            class="org.correttouml.grammars.ui.StateMachineTriggersExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
-            id="org.correttouml.grammars.StateMachineTriggers.templates"
+            category="org.correttouml.grammars.StateMachineActions"
+            class="org.correttouml.grammars.ui.StateMachineActionsExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+            id="org.correttouml.grammars.StateMachineActions.templates"
             name="Templates">
-            <keywordReference id="org.correttouml.grammars.ui.keyword_StateMachineTriggers"/>
+            <keywordReference id="org.correttouml.grammars.ui.keyword_StateMachineActions"/>
         </page>
     </extension>
     <extension
             point="org.eclipse.ui.propertyPages">
         <page
-            class="org.correttouml.grammars.ui.StateMachineTriggersExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-            id="org.correttouml.grammars.StateMachineTriggers"
-            name="StateMachineTriggers">
-            <keywordReference id="org.correttouml.grammars.ui.keyword_StateMachineTriggers"/>
+            class="org.correttouml.grammars.ui.StateMachineActionsExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="org.correttouml.grammars.StateMachineActions"
+            name="StateMachineActions">
+            <keywordReference id="org.correttouml.grammars.ui.keyword_StateMachineActions"/>
             <enabledWhen>
 	            <adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -116,14 +116,14 @@
     <extension
         point="org.eclipse.ui.keywords">
         <keyword
-            id="org.correttouml.grammars.ui.keyword_StateMachineTriggers"
-            label="StateMachineTriggers"/>
+            id="org.correttouml.grammars.ui.keyword_StateMachineActions"
+            label="StateMachineActions"/>
     </extension>
     <extension
          point="org.eclipse.ui.commands">
       <command
             description="Trigger expensive validation"
-            id="org.correttouml.grammars.StateMachineTriggers.validate"
+            id="org.correttouml.grammars.StateMachineActions.validate"
             name="Validate">
       </command>
       <!-- copy qualified name -->
@@ -144,12 +144,12 @@
         <menuContribution
             locationURI="popup:#TextEditorContext?after=group.edit">
              <command
-                 commandId="org.correttouml.grammars.StateMachineTriggers.validate"
+                 commandId="org.correttouml.grammars.StateMachineActions.validate"
                  style="push"
                  tooltip="Trigger expensive validation">
             <visibleWhen checkEnabled="false">
                 <reference
-                    definitionId="org.correttouml.grammars.StateMachineTriggers.Editor.opened">
+                    definitionId="org.correttouml.grammars.StateMachineActions.Editor.opened">
                 </reference>
             </visibleWhen>
          </command>  
@@ -159,7 +159,7 @@
          	<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName" 
          		style="push" tooltip="Copy Qualified Name">
             	<visibleWhen checkEnabled="false">
-                	<reference definitionId="org.correttouml.grammars.StateMachineTriggers.Editor.opened" />
+                	<reference definitionId="org.correttouml.grammars.StateMachineActions.Editor.opened" />
             	</visibleWhen>
          	</command>  
          </menuContribution>
@@ -167,7 +167,7 @@
          	<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
             	style="push" tooltip="Copy Qualified Name">
             	<visibleWhen checkEnabled="false">
-                	<reference definitionId="org.correttouml.grammars.StateMachineTriggers.Editor.opened" />
+                	<reference definitionId="org.correttouml.grammars.StateMachineActions.Editor.opened" />
             	</visibleWhen>
          	</command>  
          </menuContribution>
@@ -176,7 +176,7 @@
 				style="push" tooltip="Copy Qualified Name">
          		<visibleWhen checkEnabled="false">
 	            	<and>
-	            		<reference definitionId="org.correttouml.grammars.StateMachineTriggers.XtextEditor.opened" />
+	            		<reference definitionId="org.correttouml.grammars.StateMachineActions.XtextEditor.opened" />
 						<iterate>
 							<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 						</iterate>
@@ -189,7 +189,7 @@
 		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
 			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
 				<visibleWhen checkEnabled="false">
-                	<reference definitionId="org.correttouml.grammars.StateMachineTriggers.Editor.opened">
+                	<reference definitionId="org.correttouml.grammars.StateMachineActions.Editor.opened">
                 	</reference>
             	</visibleWhen>
 			</command>
@@ -197,11 +197,11 @@
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 	    <handler
-            class="org.correttouml.grammars.ui.StateMachineTriggersExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+            class="org.correttouml.grammars.ui.StateMachineActionsExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
             commandId="org.eclipse.xtext.ui.editor.FindReferences">
             <activeWhen>
                 <reference
-                    definitionId="org.correttouml.grammars.StateMachineTriggers.Editor.opened">
+                    definitionId="org.correttouml.grammars.StateMachineActions.Editor.opened">
                 </reference>
             </activeWhen>
         </handler>
@@ -212,36 +212,36 @@
 	<extension
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
-			class="org.correttouml.grammars.ui.StateMachineTriggersExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
-			type="mydsl">
+			class="org.correttouml.grammars.ui.StateMachineActionsExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			type="stdactions">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
         <resourceServiceProvider
-            class="org.correttouml.grammars.ui.StateMachineTriggersExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
-            uriExtension="mydsl">
+            class="org.correttouml.grammars.ui.StateMachineActionsExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+            uriExtension="stdactions">
         </resourceServiceProvider>
     </extension>
 
 
-    <!-- marker definitions for org.correttouml.grammars.StateMachineTriggers -->
+    <!-- marker definitions for org.correttouml.grammars.StateMachineActions -->
     <extension
-            id="statemachinetriggers.check.fast"
-            name="StateMachineTriggers Problem"
+            id="statemachineactions.check.fast"
+            name="StateMachineActions Problem"
             point="org.eclipse.core.resources.markers">
         <super type="org.eclipse.xtext.ui.check.fast"/>
         <persistent value="true"/>
     </extension>
     <extension
-            id="statemachinetriggers.check.normal"
-            name="StateMachineTriggers Problem"
+            id="statemachineactions.check.normal"
+            name="StateMachineActions Problem"
             point="org.eclipse.core.resources.markers">
         <super type="org.eclipse.xtext.ui.check.normal"/>
         <persistent value="true"/>
     </extension>
     <extension
-            id="statemachinetriggers.check.expensive"
-            name="StateMachineTriggers Problem"
+            id="statemachineactions.check.expensive"
+            name="StateMachineActions Problem"
             point="org.eclipse.core.resources.markers">
         <super type="org.eclipse.xtext.ui.check.expensive"/>
         <persistent value="true"/>
@@ -250,27 +250,27 @@
    <extension
          point="org.eclipse.xtext.builder.participant">
       <participant
-            class="org.correttouml.grammars.ui.StateMachineTriggersExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
+            class="org.correttouml.grammars.ui.StateMachineActionsExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
       </participant>
    </extension>
    <extension
             point="org.eclipse.ui.preferencePages">
         <page
-            category="org.correttouml.grammars.StateMachineTriggers"
-            class="org.correttouml.grammars.ui.StateMachineTriggersExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-            id="org.correttouml.grammars.StateMachineTriggers.compiler.preferencePage"
+            category="org.correttouml.grammars.StateMachineActions"
+            class="org.correttouml.grammars.ui.StateMachineActionsExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="org.correttouml.grammars.StateMachineActions.compiler.preferencePage"
             name="Compiler">
-            <keywordReference id="org.correttouml.grammars.ui.keyword_StateMachineTriggers"/>
+            <keywordReference id="org.correttouml.grammars.ui.keyword_StateMachineActions"/>
         </page>
     </extension>
     <extension
             point="org.eclipse.ui.propertyPages">
         <page
-            category="org.correttouml.grammars.StateMachineTriggers"
-            class="org.correttouml.grammars.ui.StateMachineTriggersExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-            id="org.correttouml.grammars.StateMachineTriggers.compiler.propertyPage"
+            category="org.correttouml.grammars.StateMachineActions"
+            class="org.correttouml.grammars.ui.StateMachineActionsExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="org.correttouml.grammars.StateMachineActions.compiler.propertyPage"
             name="Compiler">
-            <keywordReference id="org.correttouml.grammars.ui.keyword_StateMachineTriggers"/>
+            <keywordReference id="org.correttouml.grammars.ui.keyword_StateMachineActions"/>
             <enabledWhen>
 	            <adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -282,11 +282,11 @@
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler 
-			class="org.correttouml.grammars.ui.StateMachineTriggersExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			class="org.correttouml.grammars.ui.StateMachineActionsExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
 			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
 			<activeWhen>
 				<reference
-					definitionId="org.correttouml.grammars.StateMachineTriggers.Editor.opened">
+					definitionId="org.correttouml.grammars.StateMachineActions.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -306,33 +306,33 @@
 				style="push"
 				tooltip="Open Quick Outline">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="org.correttouml.grammars.StateMachineTriggers.Editor.opened"/>
+					<reference definitionId="org.correttouml.grammars.StateMachineActions.Editor.opened"/>
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
-    <!-- quickfix marker resolution generator for org.correttouml.grammars.StateMachineTriggers -->
+    <!-- quickfix marker resolution generator for org.correttouml.grammars.StateMachineActions -->
     <extension
             point="org.eclipse.ui.ide.markerResolution">
         <markerResolutionGenerator
-            class="org.correttouml.grammars.ui.StateMachineTriggersExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="org.correttouml.grammars.ui.statemachinetriggers.check.fast">
+            class="org.correttouml.grammars.ui.StateMachineActionsExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="org.correttouml.grammars.ui.statemachineactions.check.fast">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
             </attribute>
         </markerResolutionGenerator>
         <markerResolutionGenerator
-            class="org.correttouml.grammars.ui.StateMachineTriggersExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="org.correttouml.grammars.ui.statemachinetriggers.check.normal">
+            class="org.correttouml.grammars.ui.StateMachineActionsExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="org.correttouml.grammars.ui.statemachineactions.check.normal">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
             </attribute>
         </markerResolutionGenerator>
         <markerResolutionGenerator
-            class="org.correttouml.grammars.ui.StateMachineTriggersExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="org.correttouml.grammars.ui.statemachinetriggers.check.expensive">
+            class="org.correttouml.grammars.ui.StateMachineActionsExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="org.correttouml.grammars.ui.statemachineactions.check.expensive">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
@@ -342,11 +342,11 @@
    	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler 
-			class="org.correttouml.grammars.ui.StateMachineTriggersExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
+			class="org.correttouml.grammars.ui.StateMachineActionsExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
 			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
 			<activeWhen>
 				<reference
-					definitionId="org.correttouml.grammars.StateMachineTriggers.Editor.opened">
+					definitionId="org.correttouml.grammars.StateMachineActions.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -358,7 +358,7 @@
                style="push">
             <visibleWhen checkEnabled="false">
                <reference
-                     definitionId="org.correttouml.grammars.StateMachineTriggers.Editor.opened">
+                     definitionId="org.correttouml.grammars.StateMachineActions.Editor.opened">
                </reference>
             </visibleWhen>
          </command>
@@ -366,30 +366,30 @@
    </extension>
    <extension point="org.eclipse.ui.preferencePages">
 	    <page
-	        category="org.correttouml.grammars.StateMachineTriggers"
-	        class="org.correttouml.grammars.ui.StateMachineTriggersExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
-	        id="org.correttouml.grammars.StateMachineTriggers.refactoring"
+	        category="org.correttouml.grammars.StateMachineActions"
+	        class="org.correttouml.grammars.ui.StateMachineActionsExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+	        id="org.correttouml.grammars.StateMachineActions.refactoring"
 	        name="Refactoring">
-	        <keywordReference id="org.correttouml.grammars.ui.keyword_StateMachineTriggers"/>
+	        <keywordReference id="org.correttouml.grammars.ui.keyword_StateMachineActions"/>
 	    </page>
 	</extension>
 
   <extension point="org.eclipse.compare.contentViewers">
-    <viewer id="org.correttouml.grammars.StateMachineTriggers.compare.contentViewers"
-            class="org.correttouml.grammars.ui.StateMachineTriggersExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="mydsl">
+    <viewer id="org.correttouml.grammars.StateMachineActions.compare.contentViewers"
+            class="org.correttouml.grammars.ui.StateMachineActionsExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="stdactions">
     </viewer>
   </extension>
   <extension point="org.eclipse.compare.contentMergeViewers">
-    <viewer id="org.correttouml.grammars.StateMachineTriggers.compare.contentMergeViewers"
-            class="org.correttouml.grammars.ui.StateMachineTriggersExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="mydsl" label="StateMachineTriggers Compare">
+    <viewer id="org.correttouml.grammars.StateMachineActions.compare.contentMergeViewers"
+            class="org.correttouml.grammars.ui.StateMachineActionsExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="stdactions" label="StateMachineActions Compare">
      </viewer>
   </extension>
   <extension point="org.eclipse.ui.editors.documentProviders">
-    <provider id="org.correttouml.grammars.StateMachineTriggers.editors.documentProviders"
-            class="org.correttouml.grammars.ui.StateMachineTriggersExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
-            extensions="mydsl">
+    <provider id="org.correttouml.grammars.StateMachineActions.editors.documentProviders"
+            class="org.correttouml.grammars.ui.StateMachineActionsExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+            extensions="stdactions">
     </provider>
   </extension>
 

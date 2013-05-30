@@ -116,7 +116,7 @@ public class StateMachineActionsSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Constraint:
-	 *     ((linkName=ID | self='self')? eventName=ID parameters=Parameters? eventExtension=EventExtensions)
+	 *     ((associationEnd=ID | self='self')? eventName=ID parameters=Parameters? eventExtension=EventExtensions)
 	 */
 	protected void sequence_EventAction(EObject context, EventAction semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

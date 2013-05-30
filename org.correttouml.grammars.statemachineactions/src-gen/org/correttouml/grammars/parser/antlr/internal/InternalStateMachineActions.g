@@ -411,9 +411,9 @@ ruleEventAction returns [EObject current=null]
     @after { leaveRule(); }:
 (((
 (
-		lv_linkName_0_0=RULE_ID
+		lv_associationEnd_0_0=RULE_ID
 		{
-			newLeafNode(lv_linkName_0_0, grammarAccess.getEventActionAccess().getLinkNameIDTerminalRuleCall_0_0_0()); 
+			newLeafNode(lv_associationEnd_0_0, grammarAccess.getEventActionAccess().getAssociationEndIDTerminalRuleCall_0_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -421,8 +421,8 @@ ruleEventAction returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"linkName",
-        		lv_linkName_0_0, 
+       			"associationEnd",
+        		lv_associationEnd_0_0, 
         		"ID");
 	    }
 

@@ -1014,13 +1014,13 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__EventAction__Alternatives_0"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:350:1: rule__EventAction__Alternatives_0 : ( ( ( rule__EventAction__LinkNameAssignment_0_0 ) ) | ( ( rule__EventAction__SelfAssignment_0_1 ) ) );
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:350:1: rule__EventAction__Alternatives_0 : ( ( ( rule__EventAction__AssociationEndAssignment_0_0 ) ) | ( ( rule__EventAction__SelfAssignment_0_1 ) ) );
     public final void rule__EventAction__Alternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:354:1: ( ( ( rule__EventAction__LinkNameAssignment_0_0 ) ) | ( ( rule__EventAction__SelfAssignment_0_1 ) ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:354:1: ( ( ( rule__EventAction__AssociationEndAssignment_0_0 ) ) | ( ( rule__EventAction__SelfAssignment_0_1 ) ) )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1038,24 +1038,24 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:355:1: ( ( rule__EventAction__LinkNameAssignment_0_0 ) )
+                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:355:1: ( ( rule__EventAction__AssociationEndAssignment_0_0 ) )
                     {
-                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:355:1: ( ( rule__EventAction__LinkNameAssignment_0_0 ) )
-                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:356:1: ( rule__EventAction__LinkNameAssignment_0_0 )
+                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:355:1: ( ( rule__EventAction__AssociationEndAssignment_0_0 ) )
+                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:356:1: ( rule__EventAction__AssociationEndAssignment_0_0 )
                     {
-                     before(grammarAccess.getEventActionAccess().getLinkNameAssignment_0_0()); 
-                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:357:1: ( rule__EventAction__LinkNameAssignment_0_0 )
-                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:357:2: rule__EventAction__LinkNameAssignment_0_0
+                     before(grammarAccess.getEventActionAccess().getAssociationEndAssignment_0_0()); 
+                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:357:1: ( rule__EventAction__AssociationEndAssignment_0_0 )
+                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:357:2: rule__EventAction__AssociationEndAssignment_0_0
                     {
-                    pushFollow(FOLLOW_rule__EventAction__LinkNameAssignment_0_0_in_rule__EventAction__Alternatives_0703);
-                    rule__EventAction__LinkNameAssignment_0_0();
+                    pushFollow(FOLLOW_rule__EventAction__AssociationEndAssignment_0_0_in_rule__EventAction__Alternatives_0703);
+                    rule__EventAction__AssociationEndAssignment_0_0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getEventActionAccess().getLinkNameAssignment_0_0()); 
+                     after(grammarAccess.getEventActionAccess().getAssociationEndAssignment_0_0()); 
 
                     }
 
@@ -3654,9 +3654,9 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
     // $ANTLR end "rule__TERM__ConstantAssignment_1"
 
 
-    // $ANTLR start "rule__EventAction__LinkNameAssignment_0_0"
-    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1332:1: rule__EventAction__LinkNameAssignment_0_0 : ( RULE_ID ) ;
-    public final void rule__EventAction__LinkNameAssignment_0_0() throws RecognitionException {
+    // $ANTLR start "rule__EventAction__AssociationEndAssignment_0_0"
+    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1332:1: rule__EventAction__AssociationEndAssignment_0_0 : ( RULE_ID ) ;
+    public final void rule__EventAction__AssociationEndAssignment_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -3667,9 +3667,9 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
             // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1337:1: ( RULE_ID )
             // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1338:1: RULE_ID
             {
-             before(grammarAccess.getEventActionAccess().getLinkNameIDTerminalRuleCall_0_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EventAction__LinkNameAssignment_0_02695); 
-             after(grammarAccess.getEventActionAccess().getLinkNameIDTerminalRuleCall_0_0_0()); 
+             before(grammarAccess.getEventActionAccess().getAssociationEndIDTerminalRuleCall_0_0_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EventAction__AssociationEndAssignment_0_02695); 
+             after(grammarAccess.getEventActionAccess().getAssociationEndIDTerminalRuleCall_0_0_0()); 
 
             }
 
@@ -3688,7 +3688,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__EventAction__LinkNameAssignment_0_0"
+    // $ANTLR end "rule__EventAction__AssociationEndAssignment_0_0"
 
 
     // $ANTLR start "rule__EventAction__SelfAssignment_0_1"
@@ -4004,7 +4004,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
     public static final BitSet FOLLOW_rule__EXPRESSION__AloneAssignment_1_in_rule__EXPRESSION__Alternatives619 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__TERM__VariableAssignment_0_in_rule__TERM__Alternatives652 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__TERM__ConstantAssignment_1_in_rule__TERM__Alternatives670 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventAction__LinkNameAssignment_0_0_in_rule__EventAction__Alternatives_0703 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventAction__AssociationEndAssignment_0_0_in_rule__EventAction__Alternatives_0703 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__EventAction__SelfAssignment_0_1_in_rule__EventAction__Alternatives_0721 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Parameters__ParamAssignment_0_in_rule__Parameters__Alternatives754 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Parameters__Group_1__0_in_rule__Parameters__Alternatives772 = new BitSet(new long[]{0x0000000000000002L});
@@ -4086,7 +4086,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalContentAs
     public static final BitSet FOLLOW_ruleTERM_in_rule__EXPRESSION__AloneAssignment_12602 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__TERM__VariableAssignment_02633 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_INT_in_rule__TERM__ConstantAssignment_12664 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__EventAction__LinkNameAssignment_0_02695 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__EventAction__AssociationEndAssignment_0_02695 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_25_in_rule__EventAction__SelfAssignment_0_12731 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__EventAction__EventNameAssignment_22770 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleParameters_in_rule__EventAction__ParametersAssignment_3_12801 = new BitSet(new long[]{0x0000000000000002L});

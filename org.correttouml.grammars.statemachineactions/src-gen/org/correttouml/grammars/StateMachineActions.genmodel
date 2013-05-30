@@ -31,7 +31,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//TERM/constant"/>
     </genClasses>
     <genClasses ecoreClass="StateMachineActions.ecore#//EventAction">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//EventAction/linkName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//EventAction/associationEnd"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//EventAction/self"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//EventAction/eventName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachineActions.ecore#//EventAction/parameters"/>

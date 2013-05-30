@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.correttouml.grammars.stateMachineActions.impl.EventActionImpl#getLinkName <em>Link Name</em>}</li>
+ *   <li>{@link org.correttouml.grammars.stateMachineActions.impl.EventActionImpl#getAssociationEnd <em>Association End</em>}</li>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.impl.EventActionImpl#getSelf <em>Self</em>}</li>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.impl.EventActionImpl#getEventName <em>Event Name</em>}</li>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.impl.EventActionImpl#getParameters <em>Parameters</em>}</li>
@@ -35,24 +35,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class EventActionImpl extends MinimalEObjectImpl.Container implements EventAction
 {
   /**
-   * The default value of the '{@link #getLinkName() <em>Link Name</em>}' attribute.
+   * The default value of the '{@link #getAssociationEnd() <em>Association End</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLinkName()
+   * @see #getAssociationEnd()
    * @generated
    * @ordered
    */
-  protected static final String LINK_NAME_EDEFAULT = null;
+  protected static final String ASSOCIATION_END_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getLinkName() <em>Link Name</em>}' attribute.
+   * The cached value of the '{@link #getAssociationEnd() <em>Association End</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLinkName()
+   * @see #getAssociationEnd()
    * @generated
    * @ordered
    */
-  protected String linkName = LINK_NAME_EDEFAULT;
+  protected String associationEnd = ASSOCIATION_END_EDEFAULT;
 
   /**
    * The default value of the '{@link #getSelf() <em>Self</em>}' attribute.
@@ -150,9 +150,9 @@ public class EventActionImpl extends MinimalEObjectImpl.Container implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getLinkName()
+  public String getAssociationEnd()
   {
-    return linkName;
+    return associationEnd;
   }
 
   /**
@@ -160,12 +160,12 @@ public class EventActionImpl extends MinimalEObjectImpl.Container implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLinkName(String newLinkName)
+  public void setAssociationEnd(String newAssociationEnd)
   {
-    String oldLinkName = linkName;
-    linkName = newLinkName;
+    String oldAssociationEnd = associationEnd;
+    associationEnd = newAssociationEnd;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, StateMachineActionsPackage.EVENT_ACTION__LINK_NAME, oldLinkName, linkName));
+      eNotify(new ENotificationImpl(this, Notification.SET, StateMachineActionsPackage.EVENT_ACTION__ASSOCIATION_END, oldAssociationEnd, associationEnd));
   }
 
   /**
@@ -311,8 +311,8 @@ public class EventActionImpl extends MinimalEObjectImpl.Container implements Eve
   {
     switch (featureID)
     {
-      case StateMachineActionsPackage.EVENT_ACTION__LINK_NAME:
-        return getLinkName();
+      case StateMachineActionsPackage.EVENT_ACTION__ASSOCIATION_END:
+        return getAssociationEnd();
       case StateMachineActionsPackage.EVENT_ACTION__SELF:
         return getSelf();
       case StateMachineActionsPackage.EVENT_ACTION__EVENT_NAME:
@@ -335,8 +335,8 @@ public class EventActionImpl extends MinimalEObjectImpl.Container implements Eve
   {
     switch (featureID)
     {
-      case StateMachineActionsPackage.EVENT_ACTION__LINK_NAME:
-        setLinkName((String)newValue);
+      case StateMachineActionsPackage.EVENT_ACTION__ASSOCIATION_END:
+        setAssociationEnd((String)newValue);
         return;
       case StateMachineActionsPackage.EVENT_ACTION__SELF:
         setSelf((String)newValue);
@@ -364,8 +364,8 @@ public class EventActionImpl extends MinimalEObjectImpl.Container implements Eve
   {
     switch (featureID)
     {
-      case StateMachineActionsPackage.EVENT_ACTION__LINK_NAME:
-        setLinkName(LINK_NAME_EDEFAULT);
+      case StateMachineActionsPackage.EVENT_ACTION__ASSOCIATION_END:
+        setAssociationEnd(ASSOCIATION_END_EDEFAULT);
         return;
       case StateMachineActionsPackage.EVENT_ACTION__SELF:
         setSelf(SELF_EDEFAULT);
@@ -393,8 +393,8 @@ public class EventActionImpl extends MinimalEObjectImpl.Container implements Eve
   {
     switch (featureID)
     {
-      case StateMachineActionsPackage.EVENT_ACTION__LINK_NAME:
-        return LINK_NAME_EDEFAULT == null ? linkName != null : !LINK_NAME_EDEFAULT.equals(linkName);
+      case StateMachineActionsPackage.EVENT_ACTION__ASSOCIATION_END:
+        return ASSOCIATION_END_EDEFAULT == null ? associationEnd != null : !ASSOCIATION_END_EDEFAULT.equals(associationEnd);
       case StateMachineActionsPackage.EVENT_ACTION__SELF:
         return SELF_EDEFAULT == null ? self != null : !SELF_EDEFAULT.equals(self);
       case StateMachineActionsPackage.EVENT_ACTION__EVENT_NAME:
@@ -418,8 +418,8 @@ public class EventActionImpl extends MinimalEObjectImpl.Container implements Eve
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (linkName: ");
-    result.append(linkName);
+    result.append(" (associationEnd: ");
+    result.append(associationEnd);
     result.append(", self: ");
     result.append(self);
     result.append(", eventName: ");

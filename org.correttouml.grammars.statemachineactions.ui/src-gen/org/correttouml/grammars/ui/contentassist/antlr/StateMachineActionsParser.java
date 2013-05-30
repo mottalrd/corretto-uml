@@ -62,7 +62,7 @@ public class StateMachineActionsParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEXPRESSIONAccess().getAloneAssignment_1(), "rule__EXPRESSION__AloneAssignment_1");
 					put(grammarAccess.getTERMAccess().getVariableAssignment_0(), "rule__TERM__VariableAssignment_0");
 					put(grammarAccess.getTERMAccess().getConstantAssignment_1(), "rule__TERM__ConstantAssignment_1");
-					put(grammarAccess.getEventActionAccess().getLinkNameAssignment_0_0(), "rule__EventAction__LinkNameAssignment_0_0");
+					put(grammarAccess.getEventActionAccess().getAssociationEndAssignment_0_0(), "rule__EventAction__AssociationEndAssignment_0_0");
 					put(grammarAccess.getEventActionAccess().getSelfAssignment_0_1(), "rule__EventAction__SelfAssignment_0_1");
 					put(grammarAccess.getEventActionAccess().getEventNameAssignment_2(), "rule__EventAction__EventNameAssignment_2");
 					put(grammarAccess.getEventActionAccess().getParametersAssignment_3_1(), "rule__EventAction__ParametersAssignment_3_1");

@@ -322,7 +322,7 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEventAction_LinkName()
+  public EAttribute getEventAction_AssociationEnd()
   {
     return (EAttribute)eventActionEClass.getEStructuralFeatures().get(0);
   }
@@ -450,7 +450,7 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
     createEAttribute(termEClass, TERM__CONSTANT);
 
     eventActionEClass = createEClass(EVENT_ACTION);
-    createEAttribute(eventActionEClass, EVENT_ACTION__LINK_NAME);
+    createEAttribute(eventActionEClass, EVENT_ACTION__ASSOCIATION_END);
     createEAttribute(eventActionEClass, EVENT_ACTION__SELF);
     createEAttribute(eventActionEClass, EVENT_ACTION__EVENT_NAME);
     createEReference(eventActionEClass, EVENT_ACTION__PARAMETERS);
@@ -515,7 +515,7 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
     initEAttribute(getTERM_Constant(), ecorePackage.getEInt(), "constant", null, 0, 1, org.correttouml.grammars.stateMachineActions.TERM.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(eventActionEClass, EventAction.class, "EventAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEventAction_LinkName(), ecorePackage.getEString(), "linkName", null, 0, 1, EventAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEventAction_AssociationEnd(), ecorePackage.getEString(), "associationEnd", null, 0, 1, EventAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEventAction_Self(), ecorePackage.getEString(), "self", null, 0, 1, EventAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEventAction_EventName(), ecorePackage.getEString(), "eventName", null, 0, 1, EventAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEventAction_Parameters(), this.getParameters(), null, "parameters", null, 0, 1, EventAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

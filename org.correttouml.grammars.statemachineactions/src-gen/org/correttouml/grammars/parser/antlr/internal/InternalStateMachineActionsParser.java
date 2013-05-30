@@ -999,11 +999,11 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleEventAction"
-    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:408:1: ruleEventAction returns [EObject current=null] : ( ( ( (lv_linkName_0_0= RULE_ID ) ) | ( (lv_self_1_0= 'self' ) ) )? otherlv_2= '@' ( (lv_eventName_3_0= RULE_ID ) ) (otherlv_4= '(' ( (lv_parameters_5_0= ruleParameters ) ) otherlv_6= ')' )? otherlv_7= '.' ( (lv_eventExtension_8_0= ruleEventExtensions ) ) ) ;
+    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:408:1: ruleEventAction returns [EObject current=null] : ( ( ( (lv_associationEnd_0_0= RULE_ID ) ) | ( (lv_self_1_0= 'self' ) ) )? otherlv_2= '@' ( (lv_eventName_3_0= RULE_ID ) ) (otherlv_4= '(' ( (lv_parameters_5_0= ruleParameters ) ) otherlv_6= ')' )? otherlv_7= '.' ( (lv_eventExtension_8_0= ruleEventExtensions ) ) ) ;
     public final EObject ruleEventAction() throws RecognitionException {
         EObject current = null;
 
-        Token lv_linkName_0_0=null;
+        Token lv_associationEnd_0_0=null;
         Token lv_self_1_0=null;
         Token otherlv_2=null;
         Token lv_eventName_3_0=null;
@@ -1018,13 +1018,13 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
          enterRule(); 
             
         try {
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:411:28: ( ( ( ( (lv_linkName_0_0= RULE_ID ) ) | ( (lv_self_1_0= 'self' ) ) )? otherlv_2= '@' ( (lv_eventName_3_0= RULE_ID ) ) (otherlv_4= '(' ( (lv_parameters_5_0= ruleParameters ) ) otherlv_6= ')' )? otherlv_7= '.' ( (lv_eventExtension_8_0= ruleEventExtensions ) ) ) )
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:412:1: ( ( ( (lv_linkName_0_0= RULE_ID ) ) | ( (lv_self_1_0= 'self' ) ) )? otherlv_2= '@' ( (lv_eventName_3_0= RULE_ID ) ) (otherlv_4= '(' ( (lv_parameters_5_0= ruleParameters ) ) otherlv_6= ')' )? otherlv_7= '.' ( (lv_eventExtension_8_0= ruleEventExtensions ) ) )
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:411:28: ( ( ( ( (lv_associationEnd_0_0= RULE_ID ) ) | ( (lv_self_1_0= 'self' ) ) )? otherlv_2= '@' ( (lv_eventName_3_0= RULE_ID ) ) (otherlv_4= '(' ( (lv_parameters_5_0= ruleParameters ) ) otherlv_6= ')' )? otherlv_7= '.' ( (lv_eventExtension_8_0= ruleEventExtensions ) ) ) )
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:412:1: ( ( ( (lv_associationEnd_0_0= RULE_ID ) ) | ( (lv_self_1_0= 'self' ) ) )? otherlv_2= '@' ( (lv_eventName_3_0= RULE_ID ) ) (otherlv_4= '(' ( (lv_parameters_5_0= ruleParameters ) ) otherlv_6= ')' )? otherlv_7= '.' ( (lv_eventExtension_8_0= ruleEventExtensions ) ) )
             {
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:412:1: ( ( ( (lv_linkName_0_0= RULE_ID ) ) | ( (lv_self_1_0= 'self' ) ) )? otherlv_2= '@' ( (lv_eventName_3_0= RULE_ID ) ) (otherlv_4= '(' ( (lv_parameters_5_0= ruleParameters ) ) otherlv_6= ')' )? otherlv_7= '.' ( (lv_eventExtension_8_0= ruleEventExtensions ) ) )
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:412:2: ( ( (lv_linkName_0_0= RULE_ID ) ) | ( (lv_self_1_0= 'self' ) ) )? otherlv_2= '@' ( (lv_eventName_3_0= RULE_ID ) ) (otherlv_4= '(' ( (lv_parameters_5_0= ruleParameters ) ) otherlv_6= ')' )? otherlv_7= '.' ( (lv_eventExtension_8_0= ruleEventExtensions ) )
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:412:1: ( ( ( (lv_associationEnd_0_0= RULE_ID ) ) | ( (lv_self_1_0= 'self' ) ) )? otherlv_2= '@' ( (lv_eventName_3_0= RULE_ID ) ) (otherlv_4= '(' ( (lv_parameters_5_0= ruleParameters ) ) otherlv_6= ')' )? otherlv_7= '.' ( (lv_eventExtension_8_0= ruleEventExtensions ) ) )
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:412:2: ( ( (lv_associationEnd_0_0= RULE_ID ) ) | ( (lv_self_1_0= 'self' ) ) )? otherlv_2= '@' ( (lv_eventName_3_0= RULE_ID ) ) (otherlv_4= '(' ( (lv_parameters_5_0= ruleParameters ) ) otherlv_6= ')' )? otherlv_7= '.' ( (lv_eventExtension_8_0= ruleEventExtensions ) )
             {
-            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:412:2: ( ( (lv_linkName_0_0= RULE_ID ) ) | ( (lv_self_1_0= 'self' ) ) )?
+            // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:412:2: ( ( (lv_associationEnd_0_0= RULE_ID ) ) | ( (lv_self_1_0= 'self' ) ) )?
             int alt5=3;
             int LA5_0 = input.LA(1);
 
@@ -1036,17 +1036,17 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
             }
             switch (alt5) {
                 case 1 :
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:412:3: ( (lv_linkName_0_0= RULE_ID ) )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:412:3: ( (lv_associationEnd_0_0= RULE_ID ) )
                     {
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:412:3: ( (lv_linkName_0_0= RULE_ID ) )
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:413:1: (lv_linkName_0_0= RULE_ID )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:412:3: ( (lv_associationEnd_0_0= RULE_ID ) )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:413:1: (lv_associationEnd_0_0= RULE_ID )
                     {
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:413:1: (lv_linkName_0_0= RULE_ID )
-                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:414:3: lv_linkName_0_0= RULE_ID
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:413:1: (lv_associationEnd_0_0= RULE_ID )
+                    // ../org.correttouml.grammars.statemachineactions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineActions.g:414:3: lv_associationEnd_0_0= RULE_ID
                     {
-                    lv_linkName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEventAction786); 
+                    lv_associationEnd_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEventAction786); 
 
-                    			newLeafNode(lv_linkName_0_0, grammarAccess.getEventActionAccess().getLinkNameIDTerminalRuleCall_0_0_0()); 
+                    			newLeafNode(lv_associationEnd_0_0, grammarAccess.getEventActionAccess().getAssociationEndIDTerminalRuleCall_0_0_0()); 
                     		
 
                     	        if (current==null) {
@@ -1054,8 +1054,8 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                     	        }
                            		setWithLastConsumed(
                            			current, 
-                           			"linkName",
-                            		lv_linkName_0_0, 
+                           			"associationEnd",
+                            		lv_associationEnd_0_0, 
                             		"ID");
                     	    
 

@@ -13,7 +13,7 @@ Trigger:
 ;
 
 Left:
-	'@' event=Event
+	(linkName=ID | self='self')? '@' event=Event
 ;
 
 Right:

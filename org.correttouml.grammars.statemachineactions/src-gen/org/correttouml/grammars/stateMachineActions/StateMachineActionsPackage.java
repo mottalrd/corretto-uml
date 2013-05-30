@@ -270,13 +270,13 @@ public interface StateMachineActionsPackage extends EPackage
   int EVENT_ACTION = 5;
 
   /**
-   * The feature id for the '<em><b>Link Name</b></em>' attribute.
+   * The feature id for the '<em><b>Association End</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EVENT_ACTION__LINK_NAME = 0;
+  int EVENT_ACTION__ASSOCIATION_END = 0;
 
   /**
    * The feature id for the '<em><b>Self</b></em>' attribute.
@@ -554,15 +554,15 @@ public interface StateMachineActionsPackage extends EPackage
   EClass getEventAction();
 
   /**
-   * Returns the meta object for the attribute '{@link org.correttouml.grammars.stateMachineActions.EventAction#getLinkName <em>Link Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.correttouml.grammars.stateMachineActions.EventAction#getAssociationEnd <em>Association End</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Link Name</em>'.
-   * @see org.correttouml.grammars.stateMachineActions.EventAction#getLinkName()
+   * @return the meta object for the attribute '<em>Association End</em>'.
+   * @see org.correttouml.grammars.stateMachineActions.EventAction#getAssociationEnd()
    * @see #getEventAction()
    * @generated
    */
-  EAttribute getEventAction_LinkName();
+  EAttribute getEventAction_AssociationEnd();
 
   /**
    * Returns the meta object for the attribute '{@link org.correttouml.grammars.stateMachineActions.EventAction#getSelf <em>Self</em>}'.
@@ -820,12 +820,12 @@ public interface StateMachineActionsPackage extends EPackage
     EClass EVENT_ACTION = eINSTANCE.getEventAction();
 
     /**
-     * The meta object literal for the '<em><b>Link Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Association End</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EVENT_ACTION__LINK_NAME = eINSTANCE.getEventAction_LinkName();
+    EAttribute EVENT_ACTION__ASSOCIATION_END = eINSTANCE.getEventAction_AssociationEnd();
 
     /**
      * The meta object literal for the '<em><b>Self</b></em>' attribute feature.
