@@ -1,6 +1,7 @@
 package org.correttouml.uml2zot.semantics.classdiagram;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.classdiagram.Operation;
@@ -43,27 +44,35 @@ public class SOperation {
 		}
 		
 		//ACTIONS INVOKING THIS OPERATION
-		addActionsInvokingThisOperation(orCond, object);
+		Set<CallAction> actions=getActionsInvokingThisOperation(object);
+		for(CallAction act: actions) orCond.addFormulae(new SCallAction((CallAction)act).getPredicate(object));
+		
 		
         if(orCond.size()!=0) sem=sem+new Iff(this.getPredicate(object),orCond) + "\n";
         return sem;
 	}
 
-	private void addActionsInvokingThisOperation(Or orCond, Object object) {
+	private Set<CallAction> getActionsInvokingThisOperation(Object object) {
+		//TODO[mottalrd] cambiare il modo in cui vado a identificare queste connessioni
+		HashSet<CallAction> retactions=new HashSet<CallAction>();
+		
 		for(Object linked_to_me_obj: object.getAssociatedObjects()){
 	        for (StateDiagram std : linked_to_me_obj.getOwningClass().getStateDiagrams()) {
 				for(Transition t: std.getTransitions()){
 		            if(t.hasActions()){
-		                List<Action> actions=t.getActions();
-		                for(Action act: actions){
-			                if(act instanceof CallAction && ((CallAction) act).getOperation().equals(this.mades_operation)){
-			                	orCond.addFormulae(new SCallAction((CallAction)act).getPredicate(linked_to_me_obj));
+		                for(Action act: t.getActions(object)){
+			                if(act instanceof CallAction 
+			                		&& ((CallAction) act).getOperation().equals(this.mades_operation)
+			                		&& ((CallAction) act).getObject().equals(object)
+			                		&& !retactions.contains(act)){
+			                	retactions.add((CallAction)act);
 			                }
 		                }
 		            }
 		         }  
 			}			
 		}
+		return retactions;
 	}
 
 }

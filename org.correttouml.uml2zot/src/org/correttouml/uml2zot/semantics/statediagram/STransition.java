@@ -56,7 +56,7 @@ public class STransition {
         
         List<SAction> actions=new ArrayList<SAction>();
         if(this.mades_transition.hasActions()){
-        	for(Action act: this.mades_transition.getActions()){
+        	for(Action act: this.mades_transition.getActions(object)){
         		actions.add(SActionFactory.getInstance(act));
         	}
         }

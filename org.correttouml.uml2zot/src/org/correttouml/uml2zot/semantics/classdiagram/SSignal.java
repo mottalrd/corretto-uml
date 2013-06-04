@@ -46,7 +46,7 @@ public class SSignal {
             for(StateDiagram std: obj.getOwningClass().getStateDiagrams()){
             	for(Transition t: std.getTransitions()){
             		if(!t.isInitialTransition() && t.hasActions()){
-            			for(Action act: t.getActions()){
+            			for(Action act: t.getActions(null)){
             				if(act instanceof SignalAction){
                     			SignalAction s= (SignalAction)act;
                     			if(s.equals(new SignalAction(this.mades_signal))) orCond.addFormulae(new STransition(t).getPredicate(obj));

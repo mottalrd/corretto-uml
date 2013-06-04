@@ -17,15 +17,20 @@ import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.InstanceSpecification;
+import org.eclipse.uml2.uml.LiteralInteger;
 import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.Profile;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Slot;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.eclipse.uml2.uml.ValueSpecification;
 import org.eclipse.uml2.uml.internal.impl.UMLPackageImpl;
 import org.eclipse.uml2.uml.resource.UMLResource;
 import org.eclipse.uml2.uml.resources.util.UMLResourcesUtil;
@@ -158,7 +163,7 @@ public class UML2Helper {
         return instanceSpecification;
     }	
     
-    public static org.eclipse.uml2.uml.InstanceSpecification createInstanceSpecificationLink(org.eclipse.uml2.uml.Package package_, org.eclipse.uml2.uml.Association association, org.eclipse.uml2.uml.InstanceSpecification obj1, org.eclipse.uml2.uml.InstanceSpecification obj2,  String name) {
+    public static org.eclipse.uml2.uml.InstanceSpecification createInstanceSpecificationLink(String name, org.eclipse.uml2.uml.Package package_, org.eclipse.uml2.uml.Association association, String memberEnd1, org.eclipse.uml2.uml.InstanceSpecification obj1, String memberEnd2, org.eclipse.uml2.uml.InstanceSpecification obj2) {
         
     	org.eclipse.uml2.uml.InstanceSpecification link = UMLFactory.eINSTANCE.createInstanceSpecification();
     	
@@ -169,9 +174,10 @@ public class UML2Helper {
     	//TODO[mottalrd] is it correct?
     	//To understand look at a papyrus generated uml file or debug a model 
     	//with association links and see the model variables
-    	EAnnotation end1=link.createEAnnotation("InstanceEnd");
+    	EAnnotation end1=link.createEAnnotation("memberEnd_"+memberEnd1);
     	end1.getReferences().add(obj1);
-    	end1.getReferences().add(obj2);
+    	EAnnotation end2=link.createEAnnotation("memberEnd_"+memberEnd2);
+    	end2.getReferences().add(obj2);
 
         LOGGER.info("InstanceSpecification '" + link.getQualifiedName() + "' created.");
 
@@ -300,8 +306,20 @@ public class UML2Helper {
     
 	public static org.eclipse.uml2.uml.Property createAttribute(Class klass, String name, PrimitiveType type) {
 		org.eclipse.uml2.uml.Property attribute = klass.createOwnedAttribute(name, type);
-        
+		
         LOGGER.info("Operation '" + attribute.getQualifiedName() + "' created.");
+        
+        return attribute;
+	}	
+    
+	public static org.eclipse.uml2.uml.Property createIntegerAttribute(Class klass, String name, PrimitiveType integerType, int defaultValue) {
+		//TODO[improvement] replace with the standard UML library integer type
+		org.eclipse.uml2.uml.Property attribute = klass.createOwnedAttribute(name, integerType);
+		
+		attribute.setIntegerDefaultValue(defaultValue);
+		
+        LOGGER.info("Operation '" + attribute.getQualifiedName() + "' created.");
+        LOGGER.info("Default value is '" + attribute.getDefaultValue());
 
         return attribute;
 	}	
@@ -314,7 +332,19 @@ public class UML2Helper {
         return class_;
     }
     
-    //clear me
+    public static org.eclipse.uml2.uml.Slot createIntegerSlot(InstanceSpecification object, Property attribute, int value){
+    	Slot slot=object.createSlot();
+    	
+		slot.setDefiningFeature(attribute);
+		LiteralInteger proc_1_attr_active_value=(LiteralInteger) slot.createValue(attribute.getName(), attribute.getType(), UMLPackage.Literals.LITERAL_INTEGER);
+		proc_1_attr_active_value.setValue(value);
+		
+		LOGGER.info("Slot of "+attribute.getName()+" created for object '" + object.getQualifiedName() + "' with value "+slot.getValues().indexOf(0)+" .");
+		
+		return slot;
+    }
+    
+    //TODO[mottalrd] clear me
 //    public static org.eclipse.uml2.uml.Association createAssociation(org.eclipse.uml2.uml.Package package_, org.eclipse.uml2.uml.Class class_1, org.eclipse.uml2.uml.Class class_2, String name) {
 //        //org.eclipse.uml2.uml.Association association = UMLFactory.eINSTANCE.createAssociation();
 //    	org.eclipse.uml2.uml.Association association=org.eclipse.uml2.uml.Association.createAssociation(true, AggregationKind.NONE, 
@@ -348,14 +378,14 @@ public class UML2Helper {
 //        return association;
 //    }
     
-    public static org.eclipse.uml2.uml.Association createAssociation(org.eclipse.uml2.uml.Type type1, boolean end1IsNavigable, AggregationKind end1Aggregation,
+    public static org.eclipse.uml2.uml.Association createAssociation(String name, org.eclipse.uml2.uml.Type type1, boolean end1IsNavigable, AggregationKind end1Aggregation,
             String end1Name, int end1LowerBound, int end1UpperBound,
             org.eclipse.uml2.uml.Type type2, boolean end2IsNavigable, AggregationKind end2Aggregation,
             String end2Name, int end2LowerBound, int end2UpperBound) {
 
     	org.eclipse.uml2.uml.Association association = type1.createAssociation(end1IsNavigable, end1Aggregation, end1Name, end1LowerBound, end1UpperBound,
             type2, end2IsNavigable, end2Aggregation, end2Name, end2LowerBound, end2UpperBound);
-
+    	
         StringBuffer sb = new StringBuffer();
 
         sb.append("Association ");
@@ -402,7 +432,8 @@ public class UML2Helper {
         sb.append("]");
 
         sb.append(" created.");
-
+        
+        association.setName(name);
         LOGGER.info(sb.toString());
 
         return association;

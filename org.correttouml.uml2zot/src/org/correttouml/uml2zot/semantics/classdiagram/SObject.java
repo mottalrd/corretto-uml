@@ -3,6 +3,8 @@ package org.correttouml.uml2zot.semantics.classdiagram;
 import org.correttouml.uml.diagrams.classdiagram.Attribute;
 import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.classdiagram.Operation;
+import org.correttouml.uml.diagrams.classdiagram.Slot;
+import org.correttouml.uml.diagrams.expressions.ValueSpecification;
 import org.correttouml.uml.diagrams.statediagram.StateDiagram;
 import org.correttouml.uml2zot.semantics.SMadesModel;
 import org.correttouml.uml2zot.semantics.statediagram.SStateDiagram;
@@ -21,12 +23,12 @@ public class SObject {
 	public String getSemantics(){
 		String sem="";
 		
-		SMadesModel.printSeparatorSmall("Object operation definitions", false);
+		sem=sem+SMadesModel.printSeparatorSmall("Object operation definitions", false);
 		for(Operation op: this.mades_obj.getOwningClass().getOperations()){
 			sem=sem+new SOperation(op).getSemantics(mades_obj);
 		}
 		
-		SMadesModel.printSeparatorSmall("Attribute semantics", false);
+		sem=sem+SMadesModel.printSeparatorSmall("Attribute semantics", false);
 		for(Attribute attr: this.mades_obj.getOwningClass().getAttributes()){
 			sem=sem+new SAttribute(attr).getSemantics(mades_obj);
 		}
@@ -46,7 +48,16 @@ public class SObject {
 		String sem="";
 		
 		for(Attribute att: this.mades_obj.getOwningClass().getAttributes()){
-			sem=sem+new SAttribute(att).getInitializationSemantics(mades_obj);
+			
+			ValueSpecification value=null;
+			Slot s=null;
+			if((s=mades_obj.getSlot(att))!=null){
+				value=s.getValueSpecification();
+			}else{
+				//use the default attribute value
+				value=att.getDefaultValue();
+			}
+			sem=sem+new SAttribute(att).getInitializationSemantics(mades_obj, value);
 		}
 		
 		return sem;

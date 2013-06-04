@@ -5,6 +5,7 @@ import java.util.List;
 import org.correttouml.uml.diagrams.classdiagram.Attribute;
 import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.expressions.PrimitiveType;
+import org.correttouml.uml.diagrams.expressions.ValueSpecification;
 import org.correttouml.uml.diagrams.statediagram.StateDiagram;
 import org.correttouml.uml.diagrams.statediagram.Transition;
 import org.correttouml.uml.diagrams.statediagram.actions.Action;
@@ -50,14 +51,17 @@ public class SAttribute implements SVariable {
 				|| this.mades_attribute.getType()==PrimitiveType.REAL)
 			) return sem;
 		
-		Or orCond=null;
+		Or orCond=new Or();
 		
 		// ACTIONS CHANGING THIS ATTRIBUTE
 		for (StateDiagram std : mades_obj.getOwningClass().getStateDiagrams()) {
 			for (Transition t : std.getTransitions()) {
 				if (t.hasActions()) {
-					List<Action> actions = t.getActions();
-					for(Action act: actions) orCond=getModificationConditions(act, mades_obj);
+					List<Action> actions = t.getActions(mades_obj);
+					for(Action act: actions){
+						if(isActionAssigningAttribute(act)) 
+							orCond.addFormulae(new SAssignmentAction((AssignmentAction)act).getPredicate(mades_obj));
+					}
 				}
 			}
 		}
@@ -73,27 +77,23 @@ public class SAttribute implements SVariable {
 		return sem;
 	}
 
-	private Or getModificationConditions(Action act, Object mades_obj) {
-		Or orCond=new Or();
+	private boolean isActionAssigningAttribute(Action act) {
 		if (act instanceof AssignmentAction) {
 			AssignmentAction ass_act = (AssignmentAction) act;
 			if (ass_act.getAssignment().getAssignment()
 					.getLeftvar()
 					.equals(mades_attribute.getName())) {
-				orCond.addFormulae(new SAssignmentAction(ass_act)
-						.getPredicate(mades_obj));
+				return true;
 			}
 		}
-		return orCond;
+		return false;
 	}
 
-	public String getInitializationSemantics(Object mades_obj) {
+	public String getInitializationSemantics(Object mades_obj, ValueSpecification value) {
 		String sem="";
 		
-		//TODO: Initialization for other variable types
-		if(this.mades_attribute.getType()==PrimitiveType.INTEGER){
-			sem=sem+new EQ(new SAttribute(this.mades_attribute).getPredicate(mades_obj),new Constant(mades_attribute.getDefaultValue().getValue()));
-		}
+		//TODO: Value specification has only integers right now, veeery bad
+		sem=sem+new EQ(new SAttribute(this.mades_attribute).getPredicate(mades_obj),new Constant(value.getValue()));
 		
 		return sem;
 	}

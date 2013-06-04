@@ -4,15 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.correttouml.uml.diagrams.classdiagram.Operation;
-
+import org.correttouml.uml.diagrams.classdiagram.Object;
 
 public class CallAction implements Action{
 	
 	private Operation mades_operation;
+	private Object mades_object;
 	private List<CallActionParameter> params=new ArrayList<CallActionParameter>();
 
-	public CallAction(Operation operation) {
+	public CallAction(Object object, Operation operation) {
 		this.mades_operation=operation;
+		this.mades_object=object;
 	}
 	
 	public void addCallActionParameter(CallActionParameter param){
@@ -23,8 +25,23 @@ public class CallAction implements Action{
 		return mades_operation;
 	}
 	
+	public Object getObject(){
+		return mades_object;
+	}
+	
 	public List<CallActionParameter> getCallActionParameters(){
 		return params;
+	}
+	
+	@Override
+	public boolean equals(java.lang.Object o){
+		CallAction other_object=(CallAction) o;
+		return this.mades_object.equals(other_object.getObject()) && this.mades_operation.equals(other_object.mades_operation);
+	}
+	
+	@Override
+	public int hashCode(){
+		return this.mades_object.hashCode()+this.mades_operation.hashCode();
 	}
 
 }

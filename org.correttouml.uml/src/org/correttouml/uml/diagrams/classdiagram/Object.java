@@ -3,6 +3,7 @@ package org.correttouml.uml.diagrams.classdiagram;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.correttouml.uml.MadesModel;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.uml2.uml.Classifier;
@@ -30,7 +31,32 @@ public class Object {
 		return uml_object.getName();
 	}
 	
+	public Slot getSlot(Attribute attr){
+		
+		for(org.eclipse.uml2.uml.Slot slot: uml_object.getSlots()){
+			Attribute tmp=new Attribute((org.eclipse.uml2.uml.Property) slot.getDefiningFeature());
+			if(tmp.equals(attr)) return new Slot(slot);
+		}
+		
+		return null;
+	}
+	
+	public MadesModel getMadesModel(){
+		return new MadesModel(this.uml_object.getModel());
+	}
+	
+	public Set<AssociationInstance> getAssociationInstances(){
+		HashSet<AssociationInstance> associationInstances=new HashSet<AssociationInstance>();
+		
+		for(AssociationInstance a: this.getMadesModel().getClassdiagram().getAssociationInstances()){
+			if(a.isMemberEnd(this)) associationInstances.add(a);
+		}
+		
+		return associationInstances;
+	}
+	
 	public Set<Object> getAssociatedObjects() {
+		//TODO[mottalrd] questo fa veramente schifo
 		//TODO: Verificare se tra gli insiemi degli oggetti associati a un certo oggetto
 		//esisten l'oggetto stesso o meno
 		Set<Object> ass_objects=new HashSet<Object>();
@@ -39,6 +65,7 @@ public class Object {
 		for(Element c: this.uml_object.getModel().allOwnedElements()){
 			if(c instanceof org.eclipse.uml2.uml.InstanceSpecification){
 				org.eclipse.uml2.uml.InstanceSpecification ass=(org.eclipse.uml2.uml.InstanceSpecification) c;
+				//TODO verificare che l'instance specification è un instance specification link guardando il suo classifier
 				for(EAnnotation e: ass.getEAnnotations()){
 					for(EObject eobj: e.getReferences()){
 						if(eobj instanceof org.eclipse.uml2.uml.InstanceSpecification){

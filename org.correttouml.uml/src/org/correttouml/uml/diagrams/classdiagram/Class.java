@@ -7,8 +7,8 @@ import java.util.Set;
 import org.correttouml.uml.MadesModel;
 import org.correttouml.uml.diagrams.statediagram.StateDiagram;
 import org.correttouml.uml.helpers.UML2ModelHelper;
-import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.ExtensionEnd;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.StateMachine;
 
@@ -45,8 +45,9 @@ public class Class {
 	/** Returns the attributes of this class */
 	public Set<Attribute> getAttributes(){
 		HashSet<Attribute> attributes=new HashSet<Attribute>();
-		for(org.eclipse.uml2.uml.Property at: this.uml_class.getAllAttributes()){
-			attributes.add(new Attribute(at));
+		for(org.eclipse.uml2.uml.Property at: this.uml_class.getAttributes()){
+			//I want only the attributes, not the associations
+			if(at.getAssociation()==null) attributes.add(new Attribute(at));
 		}
 		return attributes;
 	}
@@ -60,10 +61,22 @@ public class Class {
 		return operations;
 	}
 	
+	/**
+	 * Return the operation with the specified name
+	 * @param opname
+	 * @return
+	 */
+	public Operation getOperation(String opname) {
+		for(org.eclipse.uml2.uml.Operation p: this.uml_class.getAllOperations()){
+			if(p.getName().equals(opname)) return new Operation(p);
+		}
+		return null;
+	}
+	
 	public Set<Class> getAssociatedClasses() {
 		Set<Class> ass_classes=new HashSet<Class>();
 		
-		for(Association a: this.uml_class.getAssociations()){
+		for(org.eclipse.uml2.uml.Association a: this.uml_class.getAssociations()){
 			for(Property p: a.getMemberEnds()){
 				if(p.getType() instanceof org.eclipse.uml2.uml.Class){
 					ass_classes.add(new Class((org.eclipse.uml2.uml.Class)p.getType()));
@@ -72,6 +85,29 @@ public class Class {
 		}
 		return ass_classes;
 	}
+	
+	public Set<Association> getAssociations(){
+		HashSet<Association> associations=new HashSet<Association>();
+		for(org.eclipse.uml2.uml.Association a: uml_class.getAssociations()){
+			associations.add(new Association(a));
+		}
+		
+		return associations;
+	}
+	
+	//TODO[mottalrd] clear me
+//	public Set<Class> getAssociatedClasses(String associationEnd) {
+//		Set<Class> ass_classes=new HashSet<Class>();
+//		
+//		for(Association a: this.uml_class.getAssociations()){
+//			for(Property p: a.getMemberEnds()){
+//				if((p.getType() instanceof org.eclipse.uml2.uml.Class) && p.getName().equals(associationEnd)){
+//					ass_classes.add(new Class((org.eclipse.uml2.uml.Class)p.getType()));
+//				}
+//			}
+//		}
+//		return ass_classes;
+//	}
 	
 	public MadesModel getMadesModel(){
 		return new MadesModel(this.uml_class.getModel());
@@ -95,6 +131,8 @@ public class Class {
 	public int hashCode(){
 		return this.uml_class.hashCode();
 	}
+
+
 
 
 

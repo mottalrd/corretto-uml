@@ -213,7 +213,7 @@ public class SSequenceDiagram {
             for (StateDiagram std : mades_object.getOwningClass().getStateDiagrams()) {
                 for(Transition t: std.getTransitions()){
                 	if(t.hasActions()){
-                		for(Action act: t.getActions()){
+                		for(Action act: t.getActions(null)){
                         	if(act instanceof SequenceDiagramAction && ((SequenceDiagramAction) act).getSequenceDiagram().equals(this.mades_sd)){
         	                	condStart.addFormulae(new STransition(t).getPredicate(mades_object));
         	                }
