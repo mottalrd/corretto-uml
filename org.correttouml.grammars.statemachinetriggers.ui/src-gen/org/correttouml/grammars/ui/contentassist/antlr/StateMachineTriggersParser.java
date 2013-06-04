@@ -37,7 +37,6 @@ public class StateMachineTriggersParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getLeftAccess().getAlternatives_0(), "rule__Left__Alternatives_0");
 					put(grammarAccess.getEventAccess().getAlternatives(), "rule__Event__Alternatives");
 					put(grammarAccess.getEventExtensionsAccess().getAlternatives(), "rule__EventExtensions__Alternatives");
 					put(grammarAccess.getTriggerAccess().getGroup(), "rule__Trigger__Group__0");
@@ -47,9 +46,7 @@ public class StateMachineTriggersParser extends AbstractContentAssistParser {
 					put(grammarAccess.getModelAccess().getTriggerAssignment(), "rule__Model__TriggerAssignment");
 					put(grammarAccess.getTriggerAccess().getLeftAssignment_0(), "rule__Trigger__LeftAssignment_0");
 					put(grammarAccess.getTriggerAccess().getRightAssignment_1(), "rule__Trigger__RightAssignment_1");
-					put(grammarAccess.getLeftAccess().getLinkNameAssignment_0_0(), "rule__Left__LinkNameAssignment_0_0");
-					put(grammarAccess.getLeftAccess().getSelfAssignment_0_1(), "rule__Left__SelfAssignment_0_1");
-					put(grammarAccess.getLeftAccess().getEventAssignment_2(), "rule__Left__EventAssignment_2");
+					put(grammarAccess.getLeftAccess().getEventAssignment_1(), "rule__Left__EventAssignment_1");
 					put(grammarAccess.getRightAccess().getEventAssignment_2(), "rule__Right__EventAssignment_2");
 					put(grammarAccess.getRightAccess().getOpAssignment_3(), "rule__Right__OpAssignment_3");
 					put(grammarAccess.getRightAccess().getValueAssignment_4(), "rule__Right__ValueAssignment_4");

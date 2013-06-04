@@ -270,49 +270,22 @@ public interface StateMachineActionsPackage extends EPackage
   int EVENT_ACTION = 5;
 
   /**
-   * The feature id for the '<em><b>Association End</b></em>' attribute.
+   * The feature id for the '<em><b>Link</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EVENT_ACTION__ASSOCIATION_END = 0;
+  int EVENT_ACTION__LINK = 0;
 
   /**
-   * The feature id for the '<em><b>Self</b></em>' attribute.
+   * The feature id for the '<em><b>Event</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EVENT_ACTION__SELF = 1;
-
-  /**
-   * The feature id for the '<em><b>Event Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EVENT_ACTION__EVENT_NAME = 2;
-
-  /**
-   * The feature id for the '<em><b>Parameters</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EVENT_ACTION__PARAMETERS = 3;
-
-  /**
-   * The feature id for the '<em><b>Event Extension</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EVENT_ACTION__EVENT_EXTENSION = 4;
+  int EVENT_ACTION__EVENT = 1;
 
   /**
    * The number of structural features of the '<em>Event Action</em>' class.
@@ -321,7 +294,99 @@ public interface StateMachineActionsPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_ACTION_FEATURE_COUNT = 5;
+  int EVENT_ACTION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.correttouml.grammars.stateMachineActions.impl.LinkImpl <em>Link</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.correttouml.grammars.stateMachineActions.impl.LinkImpl
+   * @see org.correttouml.grammars.stateMachineActions.impl.StateMachineActionsPackageImpl#getLink()
+   * @generated
+   */
+  int LINK = 6;
+
+  /**
+   * The feature id for the '<em><b>Link Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINK__LINK_NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Association End</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINK__ASSOCIATION_END = 1;
+
+  /**
+   * The feature id for the '<em><b>Self</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINK__SELF = 2;
+
+  /**
+   * The number of structural features of the '<em>Link</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINK_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.correttouml.grammars.stateMachineActions.impl.EventImpl <em>Event</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.correttouml.grammars.stateMachineActions.impl.EventImpl
+   * @see org.correttouml.grammars.stateMachineActions.impl.StateMachineActionsPackageImpl#getEvent()
+   * @generated
+   */
+  int EVENT = 7;
+
+  /**
+   * The feature id for the '<em><b>Event Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EVENT__EVENT_NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Parameters</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EVENT__PARAMETERS = 1;
+
+  /**
+   * The feature id for the '<em><b>Event Extension</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EVENT__EVENT_EXTENSION = 2;
+
+  /**
+   * The number of structural features of the '<em>Event</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EVENT_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.correttouml.grammars.stateMachineActions.impl.ParametersImpl <em>Parameters</em>}' class.
@@ -331,7 +396,7 @@ public interface StateMachineActionsPackage extends EPackage
    * @see org.correttouml.grammars.stateMachineActions.impl.StateMachineActionsPackageImpl#getParameters()
    * @generated
    */
-  int PARAMETERS = 6;
+  int PARAMETERS = 8;
 
   /**
    * The feature id for the '<em><b>Param</b></em>' attribute.
@@ -554,59 +619,112 @@ public interface StateMachineActionsPackage extends EPackage
   EClass getEventAction();
 
   /**
-   * Returns the meta object for the attribute '{@link org.correttouml.grammars.stateMachineActions.EventAction#getAssociationEnd <em>Association End</em>}'.
+   * Returns the meta object for the containment reference '{@link org.correttouml.grammars.stateMachineActions.EventAction#getLink <em>Link</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Link</em>'.
+   * @see org.correttouml.grammars.stateMachineActions.EventAction#getLink()
+   * @see #getEventAction()
+   * @generated
+   */
+  EReference getEventAction_Link();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.correttouml.grammars.stateMachineActions.EventAction#getEvent <em>Event</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Event</em>'.
+   * @see org.correttouml.grammars.stateMachineActions.EventAction#getEvent()
+   * @see #getEventAction()
+   * @generated
+   */
+  EReference getEventAction_Event();
+
+  /**
+   * Returns the meta object for class '{@link org.correttouml.grammars.stateMachineActions.Link <em>Link</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Link</em>'.
+   * @see org.correttouml.grammars.stateMachineActions.Link
+   * @generated
+   */
+  EClass getLink();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.correttouml.grammars.stateMachineActions.Link#getLinkName <em>Link Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Link Name</em>'.
+   * @see org.correttouml.grammars.stateMachineActions.Link#getLinkName()
+   * @see #getLink()
+   * @generated
+   */
+  EAttribute getLink_LinkName();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.correttouml.grammars.stateMachineActions.Link#getAssociationEnd <em>Association End</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Association End</em>'.
-   * @see org.correttouml.grammars.stateMachineActions.EventAction#getAssociationEnd()
-   * @see #getEventAction()
+   * @see org.correttouml.grammars.stateMachineActions.Link#getAssociationEnd()
+   * @see #getLink()
    * @generated
    */
-  EAttribute getEventAction_AssociationEnd();
+  EAttribute getLink_AssociationEnd();
 
   /**
-   * Returns the meta object for the attribute '{@link org.correttouml.grammars.stateMachineActions.EventAction#getSelf <em>Self</em>}'.
+   * Returns the meta object for the attribute '{@link org.correttouml.grammars.stateMachineActions.Link#getSelf <em>Self</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Self</em>'.
-   * @see org.correttouml.grammars.stateMachineActions.EventAction#getSelf()
-   * @see #getEventAction()
+   * @see org.correttouml.grammars.stateMachineActions.Link#getSelf()
+   * @see #getLink()
    * @generated
    */
-  EAttribute getEventAction_Self();
+  EAttribute getLink_Self();
 
   /**
-   * Returns the meta object for the attribute '{@link org.correttouml.grammars.stateMachineActions.EventAction#getEventName <em>Event Name</em>}'.
+   * Returns the meta object for class '{@link org.correttouml.grammars.stateMachineActions.Event <em>Event</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Event</em>'.
+   * @see org.correttouml.grammars.stateMachineActions.Event
+   * @generated
+   */
+  EClass getEvent();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.correttouml.grammars.stateMachineActions.Event#getEventName <em>Event Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Event Name</em>'.
-   * @see org.correttouml.grammars.stateMachineActions.EventAction#getEventName()
-   * @see #getEventAction()
+   * @see org.correttouml.grammars.stateMachineActions.Event#getEventName()
+   * @see #getEvent()
    * @generated
    */
-  EAttribute getEventAction_EventName();
+  EAttribute getEvent_EventName();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.correttouml.grammars.stateMachineActions.EventAction#getParameters <em>Parameters</em>}'.
+   * Returns the meta object for the containment reference '{@link org.correttouml.grammars.stateMachineActions.Event#getParameters <em>Parameters</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Parameters</em>'.
-   * @see org.correttouml.grammars.stateMachineActions.EventAction#getParameters()
-   * @see #getEventAction()
+   * @see org.correttouml.grammars.stateMachineActions.Event#getParameters()
+   * @see #getEvent()
    * @generated
    */
-  EReference getEventAction_Parameters();
+  EReference getEvent_Parameters();
 
   /**
-   * Returns the meta object for the attribute '{@link org.correttouml.grammars.stateMachineActions.EventAction#getEventExtension <em>Event Extension</em>}'.
+   * Returns the meta object for the attribute '{@link org.correttouml.grammars.stateMachineActions.Event#getEventExtension <em>Event Extension</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Event Extension</em>'.
-   * @see org.correttouml.grammars.stateMachineActions.EventAction#getEventExtension()
-   * @see #getEventAction()
+   * @see org.correttouml.grammars.stateMachineActions.Event#getEventExtension()
+   * @see #getEvent()
    * @generated
    */
-  EAttribute getEventAction_EventExtension();
+  EAttribute getEvent_EventExtension();
 
   /**
    * Returns the meta object for class '{@link org.correttouml.grammars.stateMachineActions.Parameters <em>Parameters</em>}'.
@@ -820,12 +938,46 @@ public interface StateMachineActionsPackage extends EPackage
     EClass EVENT_ACTION = eINSTANCE.getEventAction();
 
     /**
+     * The meta object literal for the '<em><b>Link</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EVENT_ACTION__LINK = eINSTANCE.getEventAction_Link();
+
+    /**
+     * The meta object literal for the '<em><b>Event</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EVENT_ACTION__EVENT = eINSTANCE.getEventAction_Event();
+
+    /**
+     * The meta object literal for the '{@link org.correttouml.grammars.stateMachineActions.impl.LinkImpl <em>Link</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.correttouml.grammars.stateMachineActions.impl.LinkImpl
+     * @see org.correttouml.grammars.stateMachineActions.impl.StateMachineActionsPackageImpl#getLink()
+     * @generated
+     */
+    EClass LINK = eINSTANCE.getLink();
+
+    /**
+     * The meta object literal for the '<em><b>Link Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LINK__LINK_NAME = eINSTANCE.getLink_LinkName();
+
+    /**
      * The meta object literal for the '<em><b>Association End</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EVENT_ACTION__ASSOCIATION_END = eINSTANCE.getEventAction_AssociationEnd();
+    EAttribute LINK__ASSOCIATION_END = eINSTANCE.getLink_AssociationEnd();
 
     /**
      * The meta object literal for the '<em><b>Self</b></em>' attribute feature.
@@ -833,7 +985,17 @@ public interface StateMachineActionsPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EVENT_ACTION__SELF = eINSTANCE.getEventAction_Self();
+    EAttribute LINK__SELF = eINSTANCE.getLink_Self();
+
+    /**
+     * The meta object literal for the '{@link org.correttouml.grammars.stateMachineActions.impl.EventImpl <em>Event</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.correttouml.grammars.stateMachineActions.impl.EventImpl
+     * @see org.correttouml.grammars.stateMachineActions.impl.StateMachineActionsPackageImpl#getEvent()
+     * @generated
+     */
+    EClass EVENT = eINSTANCE.getEvent();
 
     /**
      * The meta object literal for the '<em><b>Event Name</b></em>' attribute feature.
@@ -841,7 +1003,7 @@ public interface StateMachineActionsPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EVENT_ACTION__EVENT_NAME = eINSTANCE.getEventAction_EventName();
+    EAttribute EVENT__EVENT_NAME = eINSTANCE.getEvent_EventName();
 
     /**
      * The meta object literal for the '<em><b>Parameters</b></em>' containment reference feature.
@@ -849,7 +1011,7 @@ public interface StateMachineActionsPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EVENT_ACTION__PARAMETERS = eINSTANCE.getEventAction_Parameters();
+    EReference EVENT__PARAMETERS = eINSTANCE.getEvent_Parameters();
 
     /**
      * The meta object literal for the '<em><b>Event Extension</b></em>' attribute feature.
@@ -857,7 +1019,7 @@ public interface StateMachineActionsPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EVENT_ACTION__EVENT_EXTENSION = eINSTANCE.getEventAction_EventExtension();
+    EAttribute EVENT__EVENT_EXTENSION = eINSTANCE.getEvent_EventExtension();
 
     /**
      * The meta object literal for the '{@link org.correttouml.grammars.stateMachineActions.impl.ParametersImpl <em>Parameters</em>}' class.

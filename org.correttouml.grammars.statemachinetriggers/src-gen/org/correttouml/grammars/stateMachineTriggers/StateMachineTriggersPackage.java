@@ -132,31 +132,13 @@ public interface StateMachineTriggersPackage extends EPackage
   int LEFT = 2;
 
   /**
-   * The feature id for the '<em><b>Link Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LEFT__LINK_NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Self</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LEFT__SELF = 1;
-
-  /**
    * The feature id for the '<em><b>Event</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LEFT__EVENT = 2;
+  int LEFT__EVENT = 0;
 
   /**
    * The number of structural features of the '<em>Left</em>' class.
@@ -165,7 +147,7 @@ public interface StateMachineTriggersPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LEFT_FEATURE_COUNT = 3;
+  int LEFT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.correttouml.grammars.stateMachineTriggers.impl.RightImpl <em>Right</em>}' class.
@@ -322,28 +304,6 @@ public interface StateMachineTriggersPackage extends EPackage
    * @generated
    */
   EClass getLeft();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.correttouml.grammars.stateMachineTriggers.Left#getLinkName <em>Link Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Link Name</em>'.
-   * @see org.correttouml.grammars.stateMachineTriggers.Left#getLinkName()
-   * @see #getLeft()
-   * @generated
-   */
-  EAttribute getLeft_LinkName();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.correttouml.grammars.stateMachineTriggers.Left#getSelf <em>Self</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Self</em>'.
-   * @see org.correttouml.grammars.stateMachineTriggers.Left#getSelf()
-   * @see #getLeft()
-   * @generated
-   */
-  EAttribute getLeft_Self();
 
   /**
    * Returns the meta object for the containment reference '{@link org.correttouml.grammars.stateMachineTriggers.Left#getEvent <em>Event</em>}'.
@@ -518,22 +478,6 @@ public interface StateMachineTriggersPackage extends EPackage
      * @generated
      */
     EClass LEFT = eINSTANCE.getLeft();
-
-    /**
-     * The meta object literal for the '<em><b>Link Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LEFT__LINK_NAME = eINSTANCE.getLeft_LinkName();
-
-    /**
-     * The meta object literal for the '<em><b>Self</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LEFT__SELF = eINSTANCE.getLeft_Self();
 
     /**
      * The meta object literal for the '<em><b>Event</b></em>' containment reference feature.

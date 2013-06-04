@@ -188,29 +188,9 @@ public class StateMachineTriggersPackageImpl extends EPackageImpl implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLeft_LinkName()
-  {
-    return (EAttribute)leftEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getLeft_Self()
-  {
-    return (EAttribute)leftEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getLeft_Event()
   {
-    return (EReference)leftEClass.getEStructuralFeatures().get(2);
+    return (EReference)leftEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -331,8 +311,6 @@ public class StateMachineTriggersPackageImpl extends EPackageImpl implements Sta
     createEReference(triggerEClass, TRIGGER__RIGHT);
 
     leftEClass = createEClass(LEFT);
-    createEAttribute(leftEClass, LEFT__LINK_NAME);
-    createEAttribute(leftEClass, LEFT__SELF);
     createEReference(leftEClass, LEFT__EVENT);
 
     rightEClass = createEClass(RIGHT);
@@ -385,8 +363,6 @@ public class StateMachineTriggersPackageImpl extends EPackageImpl implements Sta
     initEReference(getTrigger_Right(), this.getRight(), null, "right", null, 0, 1, Trigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(leftEClass, Left.class, "Left", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLeft_LinkName(), ecorePackage.getEString(), "linkName", null, 0, 1, Left.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getLeft_Self(), ecorePackage.getEString(), "self", null, 0, 1, Left.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLeft_Event(), this.getEvent(), null, "event", null, 0, 1, Left.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(rightEClass, Right.class, "Right", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

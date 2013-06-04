@@ -4,7 +4,9 @@ package org.correttouml.grammars.stateMachineActions.impl;
 
 import org.correttouml.grammars.stateMachineActions.Action;
 import org.correttouml.grammars.stateMachineActions.Assignment;
+import org.correttouml.grammars.stateMachineActions.Event;
 import org.correttouml.grammars.stateMachineActions.EventAction;
+import org.correttouml.grammars.stateMachineActions.Link;
 import org.correttouml.grammars.stateMachineActions.Model;
 import org.correttouml.grammars.stateMachineActions.Parameters;
 import org.correttouml.grammars.stateMachineActions.StateMachineActionsFactory;
@@ -66,6 +68,20 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * @generated
    */
   private EClass eventActionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass linkEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass eventEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -322,9 +338,9 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEventAction_AssociationEnd()
+  public EReference getEventAction_Link()
   {
-    return (EAttribute)eventActionEClass.getEStructuralFeatures().get(0);
+    return (EReference)eventActionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -332,9 +348,9 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEventAction_Self()
+  public EReference getEventAction_Event()
   {
-    return (EAttribute)eventActionEClass.getEStructuralFeatures().get(1);
+    return (EReference)eventActionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -342,9 +358,9 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEventAction_EventName()
+  public EClass getLink()
   {
-    return (EAttribute)eventActionEClass.getEStructuralFeatures().get(2);
+    return linkEClass;
   }
 
   /**
@@ -352,9 +368,9 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEventAction_Parameters()
+  public EAttribute getLink_LinkName()
   {
-    return (EReference)eventActionEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)linkEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -362,9 +378,59 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEventAction_EventExtension()
+  public EAttribute getLink_AssociationEnd()
   {
-    return (EAttribute)eventActionEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)linkEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLink_Self()
+  {
+    return (EAttribute)linkEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEvent()
+  {
+    return eventEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEvent_EventName()
+  {
+    return (EAttribute)eventEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEvent_Parameters()
+  {
+    return (EReference)eventEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEvent_EventExtension()
+  {
+    return (EAttribute)eventEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -450,11 +516,18 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
     createEAttribute(termEClass, TERM__CONSTANT);
 
     eventActionEClass = createEClass(EVENT_ACTION);
-    createEAttribute(eventActionEClass, EVENT_ACTION__ASSOCIATION_END);
-    createEAttribute(eventActionEClass, EVENT_ACTION__SELF);
-    createEAttribute(eventActionEClass, EVENT_ACTION__EVENT_NAME);
-    createEReference(eventActionEClass, EVENT_ACTION__PARAMETERS);
-    createEAttribute(eventActionEClass, EVENT_ACTION__EVENT_EXTENSION);
+    createEReference(eventActionEClass, EVENT_ACTION__LINK);
+    createEReference(eventActionEClass, EVENT_ACTION__EVENT);
+
+    linkEClass = createEClass(LINK);
+    createEAttribute(linkEClass, LINK__LINK_NAME);
+    createEAttribute(linkEClass, LINK__ASSOCIATION_END);
+    createEAttribute(linkEClass, LINK__SELF);
+
+    eventEClass = createEClass(EVENT);
+    createEAttribute(eventEClass, EVENT__EVENT_NAME);
+    createEReference(eventEClass, EVENT__PARAMETERS);
+    createEAttribute(eventEClass, EVENT__EVENT_EXTENSION);
 
     parametersEClass = createEClass(PARAMETERS);
     createEAttribute(parametersEClass, PARAMETERS__PARAM);
@@ -515,11 +588,18 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
     initEAttribute(getTERM_Constant(), ecorePackage.getEInt(), "constant", null, 0, 1, org.correttouml.grammars.stateMachineActions.TERM.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(eventActionEClass, EventAction.class, "EventAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEventAction_AssociationEnd(), ecorePackage.getEString(), "associationEnd", null, 0, 1, EventAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEventAction_Self(), ecorePackage.getEString(), "self", null, 0, 1, EventAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEventAction_EventName(), ecorePackage.getEString(), "eventName", null, 0, 1, EventAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEventAction_Parameters(), this.getParameters(), null, "parameters", null, 0, 1, EventAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEventAction_EventExtension(), ecorePackage.getEString(), "eventExtension", null, 0, 1, EventAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEventAction_Link(), this.getLink(), null, "link", null, 0, 1, EventAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEventAction_Event(), this.getEvent(), null, "event", null, 0, 1, EventAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(linkEClass, Link.class, "Link", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLink_LinkName(), ecorePackage.getEString(), "linkName", null, 0, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLink_AssociationEnd(), ecorePackage.getEString(), "associationEnd", null, 0, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLink_Self(), ecorePackage.getEString(), "self", null, 0, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(eventEClass, Event.class, "Event", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEvent_EventName(), ecorePackage.getEString(), "eventName", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEvent_Parameters(), this.getParameters(), null, "parameters", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEvent_EventExtension(), ecorePackage.getEString(), "eventExtension", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(parametersEClass, Parameters.class, "Parameters", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getParameters_Param(), ecorePackage.getEString(), "param", null, 0, 1, Parameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

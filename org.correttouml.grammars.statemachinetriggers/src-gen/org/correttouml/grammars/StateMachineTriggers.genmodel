@@ -16,8 +16,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachineTriggers.ecore#//Trigger/right"/>
     </genClasses>
     <genClasses ecoreClass="StateMachineTriggers.ecore#//Left">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineTriggers.ecore#//Left/linkName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineTriggers.ecore#//Left/self"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachineTriggers.ecore#//Left/event"/>
     </genClasses>
     <genClasses ecoreClass="StateMachineTriggers.ecore#//Right">

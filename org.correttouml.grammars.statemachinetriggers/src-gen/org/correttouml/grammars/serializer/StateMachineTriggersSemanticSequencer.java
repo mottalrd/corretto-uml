@@ -74,10 +74,17 @@ public class StateMachineTriggersSemanticSequencer extends AbstractDelegatingSem
 	
 	/**
 	 * Constraint:
-	 *     ((linkName=ID | self='self')? event=Event)
+	 *     event=Event
 	 */
 	protected void sequence_Left(EObject context, Left semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, StateMachineTriggersPackage.Literals.LEFT__EVENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateMachineTriggersPackage.Literals.LEFT__EVENT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getLeftAccess().getEventEventParserRuleCall_1_0(), semanticObject.getEvent());
+		feeder.finish();
 	}
 	
 	

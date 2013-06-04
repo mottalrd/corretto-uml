@@ -114,6 +114,20 @@ public class StateMachineActionsSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case StateMachineActionsPackage.LINK:
+      {
+        Link link = (Link)theEObject;
+        T result = caseLink(link);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case StateMachineActionsPackage.EVENT:
+      {
+        Event event = (Event)theEObject;
+        T result = caseEvent(event);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case StateMachineActionsPackage.PARAMETERS:
       {
         Parameters parameters = (Parameters)theEObject;
@@ -217,6 +231,38 @@ public class StateMachineActionsSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseEventAction(EventAction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Link</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Link</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLink(Link object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Event</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Event</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEvent(Event object)
   {
     return null;
   }

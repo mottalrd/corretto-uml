@@ -173,57 +173,23 @@ ruleLeft returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(((
-(
-		lv_linkName_0_0=RULE_ID
-		{
-			newLeafNode(lv_linkName_0_0, grammarAccess.getLeftAccess().getLinkNameIDTerminalRuleCall_0_0_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getLeftRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"linkName",
-        		lv_linkName_0_0, 
-        		"ID");
-	    }
-
-)
-)
-    |(
-(
-		lv_self_1_0=	'self' 
+(	otherlv_0='@' 
     {
-        newLeafNode(lv_self_1_0, grammarAccess.getLeftAccess().getSelfSelfKeyword_0_1_0());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getLeftRule());
-	        }
-       		setWithLastConsumed($current, "self", lv_self_1_0, "self");
-	    }
-
-)
-))?	otherlv_2='@' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getLeftAccess().getCommercialAtKeyword_1());
+    	newLeafNode(otherlv_0, grammarAccess.getLeftAccess().getCommercialAtKeyword_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getLeftAccess().getEventEventParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getLeftAccess().getEventEventParserRuleCall_1_0()); 
 	    }
-		lv_event_3_0=ruleEvent		{
+		lv_event_1_0=ruleEvent		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getLeftRule());
 	        }
        		set(
        			$current, 
        			"event",
-        		lv_event_3_0, 
+        		lv_event_1_0, 
         		"Event");
 	        afterParserOrEnumRuleCall();
 	    }

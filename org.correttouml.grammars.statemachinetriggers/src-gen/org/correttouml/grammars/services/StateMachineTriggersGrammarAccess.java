@@ -65,45 +65,25 @@ public class StateMachineTriggersGrammarAccess extends AbstractGrammarElementFin
 	public class LeftElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Left");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final Assignment cLinkNameAssignment_0_0 = (Assignment)cAlternatives_0.eContents().get(0);
-		private final RuleCall cLinkNameIDTerminalRuleCall_0_0_0 = (RuleCall)cLinkNameAssignment_0_0.eContents().get(0);
-		private final Assignment cSelfAssignment_0_1 = (Assignment)cAlternatives_0.eContents().get(1);
-		private final Keyword cSelfSelfKeyword_0_1_0 = (Keyword)cSelfAssignment_0_1.eContents().get(0);
-		private final Keyword cCommercialAtKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cEventAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cEventEventParserRuleCall_2_0 = (RuleCall)cEventAssignment_2.eContents().get(0);
+		private final Keyword cCommercialAtKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cEventAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cEventEventParserRuleCall_1_0 = (RuleCall)cEventAssignment_1.eContents().get(0);
 		
 		//Left:
-		//	(linkName=ID | self="self")? "@" event=Event;
+		//	"@" event=Event;
 		public ParserRule getRule() { return rule; }
 
-		//(linkName=ID | self="self")? "@" event=Event
+		//"@" event=Event
 		public Group getGroup() { return cGroup; }
 
-		//(linkName=ID | self="self")?
-		public Alternatives getAlternatives_0() { return cAlternatives_0; }
-
-		//linkName=ID
-		public Assignment getLinkNameAssignment_0_0() { return cLinkNameAssignment_0_0; }
-
-		//ID
-		public RuleCall getLinkNameIDTerminalRuleCall_0_0_0() { return cLinkNameIDTerminalRuleCall_0_0_0; }
-
-		//self="self"
-		public Assignment getSelfAssignment_0_1() { return cSelfAssignment_0_1; }
-
-		//"self"
-		public Keyword getSelfSelfKeyword_0_1_0() { return cSelfSelfKeyword_0_1_0; }
-
 		//"@"
-		public Keyword getCommercialAtKeyword_1() { return cCommercialAtKeyword_1; }
+		public Keyword getCommercialAtKeyword_0() { return cCommercialAtKeyword_0; }
 
 		//event=Event
-		public Assignment getEventAssignment_2() { return cEventAssignment_2; }
+		public Assignment getEventAssignment_1() { return cEventAssignment_1; }
 
 		//Event
-		public RuleCall getEventEventParserRuleCall_2_0() { return cEventEventParserRuleCall_2_0; }
+		public RuleCall getEventEventParserRuleCall_1_0() { return cEventEventParserRuleCall_1_0; }
 	}
 
 	public class RightElements extends AbstractParserRuleElementFinder {
@@ -302,7 +282,7 @@ public class StateMachineTriggersGrammarAccess extends AbstractGrammarElementFin
 	}
 
 	//Left:
-	//	(linkName=ID | self="self")? "@" event=Event;
+	//	"@" event=Event;
 	public LeftElements getLeftAccess() {
 		return (pLeft != null) ? pLeft : (pLeft = new LeftElements());
 	}
