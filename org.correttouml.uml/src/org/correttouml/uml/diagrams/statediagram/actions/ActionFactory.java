@@ -73,7 +73,7 @@ public class ActionFactory {
 		// let's the guy we are looking for
 		Object objToInvoke = null;
 		for (AssociationInstance ai : object.getAssociationInstances()) {
-			if (ai.getAssociation().getName().equals(linkName) && ai.hasMemberEnd(associationEnd)) {
+			if (ai.getAssociation().getName().equals(linkName) && ai.hasMemberEnd(associationEnd) && !ai.getMemberEnd(associationEnd).equals(object)) {
 				objToInvoke = ai.getMemberEnd(associationEnd);
 			}
 		}
@@ -85,21 +85,16 @@ public class ActionFactory {
 
 		// Check if everything is ok, please
 		CallAction action = null;
-		if (invoked_op != null) 
-			action = new CallAction(object, invoked_op);
+		if (invoked_op != null) action = new CallAction(objToInvoke, invoked_op);
 		// ops, something went wrong
-		else
-			throw new Exception("Operation not found");
+		else throw new Exception("Operation not found");
 
 		// Get the parameters of the invocation
 		Parameters next = curr.getEventAction().getEvent().getParameters();
 		do {
-			if (next == null)
-				break; // no parameters
-			String param_name = curr.getEventAction().getEvent().getParameters()
-					.getParam();
-			action.addCallActionParameter(new CallActionParameter(param_name,
-					action, transition.getStateDiagram()));
+			if (next == null) break; // no parameters
+			String param_name = curr.getEventAction().getEvent().getParameters().getParam();
+			action.addCallActionParameter(new CallActionParameter(param_name, action, transition.getStateDiagram()));
 			next = next.getParameters();
 		} while (next != null);
 

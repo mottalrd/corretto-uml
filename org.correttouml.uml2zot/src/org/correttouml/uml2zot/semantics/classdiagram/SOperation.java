@@ -60,7 +60,7 @@ public class SOperation {
 	        for (StateDiagram std : linked_to_me_obj.getOwningClass().getStateDiagrams()) {
 				for(Transition t: std.getTransitions()){
 		            if(t.hasActions()){
-		                for(Action act: t.getActions(object)){
+		                for(Action act: t.getActions(linked_to_me_obj)){
 			                if(act instanceof CallAction 
 			                		&& ((CallAction) act).getOperation().equals(this.mades_operation)
 			                		&& ((CallAction) act).getObject().equals(object)

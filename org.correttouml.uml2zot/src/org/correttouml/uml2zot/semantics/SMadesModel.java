@@ -74,9 +74,9 @@ public class SMadesModel {
         String s="";
         for(org.correttouml.uml2zot.semantics.util.trio.TrioVar t: org.correttouml.uml2zot.semantics.util.trio.TrioVar.instances){
             if(t.getType()==org.correttouml.uml.diagrams.expressions.PrimitiveType.INTEGER)
-                s = s + "(define-tvar '" + t.getVariableName() + " *int*)" + "\n";
+                s = s + "(define-tvar " + t.getVariableName() + " *int*)" + "\n";
             else if(t.getType()==org.correttouml.uml.diagrams.expressions.PrimitiveType.REAL)
-                s = s + "(define-tvar '" + t.getVariableName() + " *real*)" + "\n";
+                s = s + "(define-tvar " + t.getVariableName() + " *real*)" + "\n";
         }
         return s;
     }

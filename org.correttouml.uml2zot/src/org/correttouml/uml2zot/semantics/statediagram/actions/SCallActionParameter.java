@@ -25,16 +25,7 @@ public class SCallActionParameter {
         Predicate call_action_predicate=new SCallAction(mades_cap.getCallAction()).getPredicate(object);
         BooleanFormulae var=SVariableFactory.getInstance(this.mades_cap.getVariable(object)).getPredicate(object);
         
-        //TODO: Move this piece of code to the mades uml part of the project
-        Object target_object=null;
-        for(Object ass_obj: object.getAssociatedObjects()){
-			//Find the operation we are invoking 
-			for(Operation op: ass_obj.getOwningClass().getOperations()){
-				if(op.equals(mades_cap.getCallAction().getOperation())) target_object=ass_obj;
-			}
-        }
-        
-        BooleanFormulae operationpar=new SOperationParameter(this.mades_cap.getOperationParameter()).getPredicate(target_object);
+        BooleanFormulae operationpar=new SOperationParameter(this.mades_cap.getOperationParameter()).getPredicate(this.mades_cap.getCallAction().getObject());
         
         /*@AXIOM
          * \begin{align}

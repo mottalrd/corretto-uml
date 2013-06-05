@@ -25,12 +25,12 @@ public class SObject {
 		
 		sem=sem+SMadesModel.printSeparatorSmall("Object operation definitions", false);
 		for(Operation op: this.mades_obj.getOwningClass().getOperations()){
-			sem=sem+new SOperation(op).getSemantics(mades_obj);
+			sem=sem+new SOperation(op).getSemantics(mades_obj)+"\n";
 		}
 		
 		sem=sem+SMadesModel.printSeparatorSmall("Attribute semantics", false);
 		for(Attribute attr: this.mades_obj.getOwningClass().getAttributes()){
-			sem=sem+new SAttribute(attr).getSemantics(mades_obj);
+			sem=sem+new SAttribute(attr).getSemantics(mades_obj)+"\n";
 		}
 		
 		//TODO Add the blocking semantics

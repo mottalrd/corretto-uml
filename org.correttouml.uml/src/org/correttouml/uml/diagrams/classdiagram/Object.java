@@ -95,6 +95,11 @@ public class Object {
 	}
 	
 	@Override
+	public String toString(){
+		return this.getName();
+	}
+	
+	@Override
 	public boolean equals(java.lang.Object o){
 		Object other_object=(Object) o;
 		return this.uml_object.equals((org.eclipse.uml2.uml.InstanceSpecification) other_object.uml_object);

@@ -108,6 +108,7 @@ public class LeaderElection {
 		org.eclipse.uml2.uml.InstanceSpecification proc_2_proc_3=UML2Helper.createInstanceSpecificationLink("proc_2_proc_3", systemPackage, processClass_processClass, "in", proc_2, "out", proc_3);
 		org.eclipse.uml2.uml.InstanceSpecification proc_3_proc_4=UML2Helper.createInstanceSpecificationLink("proc_3_proc_4", systemPackage, processClass_processClass, "in", proc_3, "out", proc_4);
 		org.eclipse.uml2.uml.InstanceSpecification proc_4_proc_5=UML2Helper.createInstanceSpecificationLink("proc_4_proc_5", systemPackage, processClass_processClass, "in", proc_4, "out", proc_5);
+		org.eclipse.uml2.uml.InstanceSpecification proc_5_proc_1=UML2Helper.createInstanceSpecificationLink("proc_5_proc_1", systemPackage, processClass_processClass, "in", proc_5, "out", proc_1);
 		
 		//STD 
 		org.eclipse.uml2.uml.StateMachine process_SM=UML2Helper.createStateMachine(processClass, "Process_SM");
@@ -121,23 +122,28 @@ public class LeaderElection {
 		//initial transition
 		UML2Helper.createTransition(process_SM, STATE_0, STATE_INIT, "");
 		//at the beginning send your number to the neighbour
-		UML2Helper.createTransition(process_SM, STATE_INIT, STATE_MAIN, "@now - @INIT.enter == 1/#link.out@one(mynumber).call, max=mynumber");
+		//UML2Helper.createTransition(process_SM, STATE_INIT, STATE_MAIN, "@now - @INIT.enter > 1/#link.out@one(mynumber).call, max=mynumber");
+		//UML2Helper.createTransition(process_SM, STATE_INIT, STATE_MAIN, "@now - @INIT.enter > 1/#link.out@one(mynumber).call"); //UNSAT
+		//UML2Helper.createTransition(process_SM, STATE_INIT, STATE_MAIN, "/#link.out@one(mynumber).call"); //SAT
+		//UML2Helper.createTransition(process_SM, STATE_INIT, STATE_MAIN, "@now - @INIT.enter > 1/max=mynumber"); //SAT
+		UML2Helper.createTransition(process_SM, STATE_INIT, STATE_MAIN, "@now - @INIT.enter > 1/#link.out@one(mynumber).call"); //UNSAT 
+		//UML2Helper.createTransition(process_SM, STATE_INIT, STATE_MAIN, "@now - @INIT.enter > 1/#link.out@one.call"); //SAT
 		//no active, just pass the message
-		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN, "@one.call[{active==0}]/#link.out@one(one_nr).call"); 
-		//no active, just pass the message
-		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN, "@two.call[{active==0}]/#link.out@two(two_nr).call"); 	
-		//active, receive one and pass the info
-		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN, "@one.call[{active==1} && {one_nr!=max}]/#link.out@two(one_nr).call, neighbourR=one_nr"); 
-		//active, receive two and keep playing
-		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN, "@two.call[{active==1} && {neighbourR>two_nr} && {neighbourR>max}]/max=neighbourR, #link.out@one(neighbourR).call");  
-		//active, receive two and go out of the game
-		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN, "@two.call[{active==1} && ({neighbourR<=two_nr} || {neighbourR<=max})]/active=0, #link.out@one(neighbourR).call"); 
-		//winner found, communicate the winner
-		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN, "@one.call[{active==1} && {one_nr==max}]/#link.out@winner(one_nr).call"); 
-		//received winner communication, it is me
-		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_WIN, "@winner.call[{win_nr==5}]");
-		//received winner communication, it is NOT me
-		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_LOST, "@winner.call[{win_nr!=5}]");
+//		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN, "@one.call[{active==0}]/#link.out@one(one_nr).call"); 
+//		//no active, just pass the message
+//		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN, "@two.call[{active==0}]/#link.out@two(two_nr).call"); 	
+//		//active, receive one and pass the info
+//		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN, "@one.call[{active==1} && {one_nr!=max}]/#link.out@two(one_nr).call, neighbourR=one_nr"); 
+//		//active, receive two and keep playing
+//		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN, "@two.call[{active==1} && {neighbourR>two_nr} && {neighbourR>max}]/max=neighbourR, #link.out@one(neighbourR).call");  
+//		//active, receive two and go out of the game
+//		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN, "@two.call[{active==1} && ({neighbourR<=two_nr} || {neighbourR<=max})]/active=0, #link.out@one(neighbourR).call"); 
+//		//winner found, communicate the winner
+//		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN, "@one.call[{active==1} && {one_nr==max}]/#link.out@winner(one_nr).call"); 
+//		//received winner communication, it is me
+//		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_WIN, "@winner.call[{win_nr==5}]");
+//		//received winner communication, it is NOT me
+//		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_LOST, "@winner.call[{win_nr!=5}]");
 		
 		return myModel;
 	}
