@@ -85,7 +85,7 @@ public class ActionFactory {
 
 		// Check if everything is ok, please
 		CallAction action = null;
-		if (invoked_op != null) action = new CallAction(objToInvoke, invoked_op);
+		if (invoked_op != null) action = new CallAction(transition, objToInvoke, invoked_op);
 		// ops, something went wrong
 		else throw new Exception("Operation not found");
 

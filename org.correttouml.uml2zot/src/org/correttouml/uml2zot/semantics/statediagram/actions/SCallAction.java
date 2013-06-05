@@ -17,7 +17,7 @@ public class SCallAction implements SAction{
 	
 	public Predicate getPredicate(Object... optObject){
 		
-		return new Predicate("OBJ"+mades_callAction.getObject()+"OP"+mades_callAction.getOperation().getName()+"_CALL");
+		return new Predicate("OBJ"+mades_callAction.getObject()+"OP"+mades_callAction.getOperation().getName()+"TR"+mades_callAction.getTransition().getUMLId()+"_CALL");
 	}
 
 	@Override
