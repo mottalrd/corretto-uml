@@ -80,13 +80,13 @@ public class STransition {
         
         //definition of transition
         if (this.mades_transition.hasTrigger() && !this.mades_transition.hasGuard()) {
-            sem = sem + new Implies(trigger, orTransitions) + "\n";
+            sem = sem + new Implies(new And(sourcestate, trigger), orTransitions) + "\n";
             sem = sem + new Implies(transition, new And(sourcestate, trigger)) + "\n";
         } else if (this.mades_transition.hasTrigger() && this.mades_transition.hasGuard()) {
-            sem = sem + new Implies(new And(trigger,guard), orTransitions) + "\n";
+            sem = sem + new Implies(new And(sourcestate, trigger,guard), orTransitions) + "\n";
             sem = sem + new Implies(transition, new And(sourcestate, trigger, guard)) + "\n";
         } else if (!this.mades_transition.hasTrigger() && this.mades_transition.hasGuard()) {
-        	sem = sem + new Implies(guard, orTransitions) + "\n";
+        	sem = sem + new Implies(new And(sourcestate, guard), orTransitions) + "\n";
             sem = sem + new Implies(transition, new And(sourcestate, guard)) + "\n";
         } else if (!this.mades_transition.hasTrigger() && !this.mades_transition.hasGuard()){
         	sem = sem + new Implies(transition, sourcestate) + "\n";
@@ -108,7 +108,7 @@ public class STransition {
         }
         if (this.mades_transition.hasActions()){
             for(SAction act: actions){
-            	sem = sem + new Iff(new And(sourcestate, transition), act.getPredicate(object)) + "\n"; 
+            	sem = sem + new Iff(new And(sourcestate, transition), new Next(act.getPredicate(object))) + "\n"; 
                 if(act.getSemantics(this.mades_transition.getStateDiagram(), object)!=null) sem=sem+act.getSemantics(this.mades_transition.getStateDiagram(), object)+"\n";
             }
         }
