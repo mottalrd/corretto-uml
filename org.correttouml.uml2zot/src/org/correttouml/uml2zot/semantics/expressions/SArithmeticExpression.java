@@ -5,7 +5,9 @@ import org.correttouml.uml.diagrams.expressions.*;
 import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
 import org.correttouml.uml2zot.semantics.util.trio.Minus;
 import org.correttouml.uml2zot.semantics.util.trio.Multiply;
+import org.correttouml.uml2zot.semantics.util.trio.Next;
 import org.correttouml.uml2zot.semantics.util.trio.Plus;
+import org.correttouml.uml2zot.semantics.util.trio.Yesterday;
 
 
 
@@ -45,7 +47,14 @@ public class SArithmeticExpression {
 			//build the semantic stuff
 			SVariable s_variable=SVariableFactory.getInstance(variable);
 			//get the f*** predicate
-			r=s_variable.getPredicate(obj);
+			if(parsed.getIsFuture()!=null){
+				r=new Next(s_variable.getPredicate(obj));
+			}
+			else if(parsed.getIsPast()!=null){
+				r=new Yesterday(s_variable.getPredicate(obj));
+			}else{
+				r=s_variable.getPredicate(obj);
+			}
 		}
 		else{
 			r=new SConstant(parsed.getConstant());

@@ -8,7 +8,9 @@ import org.correttouml.uml2zot.semantics.expressions.SVariableFactory;
 import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
 import org.correttouml.uml2zot.semantics.util.bool.Implies;
 import org.correttouml.uml2zot.semantics.util.trio.EQ;
+import org.correttouml.uml2zot.semantics.util.trio.Next;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
+import org.correttouml.uml2zot.semantics.util.trio.Yesterday;
 
 
 public class SCallActionParameter {
@@ -27,14 +29,14 @@ public class SCallActionParameter {
         
         BooleanFormulae operationpar=new SOperationParameter(this.mades_cap.getOperationParameter()).getPredicate(this.mades_cap.getCallAction().getObject());
         
-        /*@AXIOM
-         * \begin{align}
-         * The parameter of a message holds at the time of the message end
-         * messageEnd \Rightarrow messageParameter = operationParameter
-         * \nonumber
-         * \end{align}
-         */
-        sem = sem + new Implies(call_action_predicate ,new EQ(operationpar, var));
+        if(mades_cap.isFuture()){
+        	sem = sem + new Implies(call_action_predicate ,new EQ(operationpar, new Next(var)));
+        }else if(mades_cap.isPast()){
+        	sem = sem + new Implies(call_action_predicate ,new EQ(operationpar, new Yesterday(var)));
+        }else{
+        	sem = sem + new Implies(call_action_predicate ,new EQ(operationpar, var));
+        }
+        
         return sem;
 	}
 	

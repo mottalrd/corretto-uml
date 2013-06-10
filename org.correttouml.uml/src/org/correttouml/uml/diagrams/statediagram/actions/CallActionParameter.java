@@ -3,6 +3,7 @@ package org.correttouml.uml.diagrams.statediagram.actions;
 
 import java.util.List;
 
+import org.correttouml.grammars.stateMachineActions.Parameters;
 import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.classdiagram.OperationParameter;
 import org.correttouml.uml.diagrams.expressions.Variable;
@@ -17,11 +18,29 @@ public class CallActionParameter {
 	private StateDiagram stateDiagram;
 	/** my call action */
 	private CallAction callAction;
+	/** the element parsed **/
+	private Parameters parsedElement;
 
-	public CallActionParameter(String param_name, CallAction action, StateDiagram stateDiagram) {
+
+	public CallActionParameter(String param_name, CallAction action, StateDiagram stateDiagram, Parameters next) {
 		this.param_name=param_name;
 		this.stateDiagram=stateDiagram;
 		this.callAction=action;
+		this.parsedElement=next;
+	}
+	
+	/**
+	 * Tells me if we must consider the value at the next time instant
+	 */
+	public boolean isFuture(){
+		return this.parsedElement.getIsFuture()!=null;
+	}
+	
+	/**
+	 * Tells me if we must consider the value at the next time instant
+	 */
+	public boolean isPast(){
+		return this.parsedElement.getIsPast()!=null;
 	}
 
 	/**
