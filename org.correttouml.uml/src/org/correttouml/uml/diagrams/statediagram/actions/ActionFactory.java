@@ -44,7 +44,7 @@ public class ActionFactory {
 			}
 			if (curr.getEventAction().getEvent().getEventExtension()
 					.equals("sig")) {
-				return getSignalAction(curr, transition);
+				return getSignalAction(curr, transition, object);
 			}
 			if (curr.getEventAction().getEvent().getEventExtension()
 					.equals("start")) {
@@ -93,20 +93,20 @@ public class ActionFactory {
 		Parameters next = curr.getEventAction().getEvent().getParameters();
 		do {
 			if (next == null) break; // no parameters
-			String param_name = curr.getEventAction().getEvent().getParameters().getParam();
-			action.addCallActionParameter(new CallActionParameter(param_name, action, transition.getStateDiagram()));
+			String param_name = next.getParam();
+			action.addCallActionParameter(new CallActionParameter(param_name, action, transition.getStateDiagram(), next));
 			next = next.getParameters();
 		} while (next != null);
 
 		return action;
 	}
 	
-	private static SignalAction getSignalAction(org.correttouml.grammars.stateMachineActions.Action action, Transition transition){
+	private static SignalAction getSignalAction(org.correttouml.grammars.stateMachineActions.Action action, Transition transition, Object object){
 		try {
 			String signame=action.getEventAction().getEvent().getEventName();
 			//TODO[mottalrd][improvement] wtf you are doing here? why we need the transition to get this info?
 			for(Signal s: transition.getStateDiagram().getMadesModel().getClassdiagram().getSignals()){
-				if(s.getName().equals(signame)) return new SignalAction(s);
+				if(s.getName().equals(signame)) return new SignalAction(s, transition, object);
 			}
 			throw new Exception("Signal not found Exception");
 		} catch (Exception e) {

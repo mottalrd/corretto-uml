@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
@@ -30,12 +29,9 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.eclipse.uml2.uml.ValueSpecification;
-import org.eclipse.uml2.uml.internal.impl.UMLPackageImpl;
 import org.eclipse.uml2.uml.resource.UMLResource;
 import org.eclipse.uml2.uml.resources.util.UMLResourcesUtil;
 import org.eclipse.uml2.uml.util.UMLUtil;
-import org.eclipse.uml2.uml.AggregationKind;
 
 public class UML2Helper {
 
@@ -330,6 +326,16 @@ public class UML2Helper {
         LOGGER.info("Class '" + class_.getQualifiedName() + "' created.");
 
         return class_;
+    }
+    
+    public static org.eclipse.uml2.uml.Signal createSignal(org.eclipse.uml2.uml.Package package_, String name) {
+        org.eclipse.uml2.uml.Signal signal = UMLFactory.eINSTANCE.createSignal();
+        package_.getPackagedElements().add(signal);
+        signal.setName(name);
+
+        LOGGER.info("Signal '" + signal.getQualifiedName() + "' created.");
+
+        return signal;
     }
     
     public static org.eclipse.uml2.uml.Slot createIntegerSlot(InstanceSpecification object, Property attribute, int value){

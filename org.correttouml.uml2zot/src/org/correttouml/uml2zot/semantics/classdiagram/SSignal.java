@@ -7,9 +7,11 @@ import org.correttouml.uml.diagrams.statediagram.Transition;
 import org.correttouml.uml.diagrams.statediagram.actions.Action;
 import org.correttouml.uml.diagrams.statediagram.actions.SignalAction;
 import org.correttouml.uml2zot.semantics.statediagram.STransition;
+import org.correttouml.uml2zot.semantics.statediagram.actions.SSignalAction;
 import org.correttouml.uml2zot.semantics.util.bool.Iff;
 import org.correttouml.uml2zot.semantics.util.bool.Or;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
+import org.correttouml.uml2zot.semantics.util.trio.Yesterday;
 
 
 public class SSignal {
@@ -46,10 +48,12 @@ public class SSignal {
             for(StateDiagram std: obj.getOwningClass().getStateDiagrams()){
             	for(Transition t: std.getTransitions()){
             		if(!t.isInitialTransition() && t.hasActions()){
-            			for(Action act: t.getActions(null)){
+            			for(Action act: t.getActions(obj)){
             				if(act instanceof SignalAction){
                     			SignalAction s= (SignalAction)act;
-                    			if(s.equals(new SignalAction(this.mades_signal))) orCond.addFormulae(new STransition(t).getPredicate(obj));
+                    			if(s.getSignal().equals(this.mades_signal)){
+                    				orCond.addFormulae(new SSignalAction(s).getPredicate((Object[])null));
+                    			}
             				}
             			}
             		}
