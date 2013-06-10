@@ -167,30 +167,57 @@ public class StateMachineActionsGrammarAccess extends AbstractGrammarElementFind
 
 	public class TERMElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TERM");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cVariableAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cVariableIDTerminalRuleCall_0_0 = (RuleCall)cVariableAssignment_0.eContents().get(0);
-		private final Assignment cConstantAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cConstantINTTerminalRuleCall_1_0 = (RuleCall)cConstantAssignment_1.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Assignment cIsPastAssignment_0_0 = (Assignment)cAlternatives_0.eContents().get(0);
+		private final Keyword cIsPastPKeyword_0_0_0 = (Keyword)cIsPastAssignment_0_0.eContents().get(0);
+		private final Assignment cIsFutureAssignment_0_1 = (Assignment)cAlternatives_0.eContents().get(1);
+		private final Keyword cIsFutureFKeyword_0_1_0 = (Keyword)cIsFutureAssignment_0_1.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Assignment cVariableAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
+		private final RuleCall cVariableIDTerminalRuleCall_1_0_0 = (RuleCall)cVariableAssignment_1_0.eContents().get(0);
+		private final Assignment cConstantAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
+		private final RuleCall cConstantINTTerminalRuleCall_1_1_0 = (RuleCall)cConstantAssignment_1_1.eContents().get(0);
 		
 		//TERM:
-		//	variable=ID | constant=INT;
+		//	(isPast="<P>" //we can decide if we want the value at the previous time instant or at the next
+		//	| isFuture="<F>")? (variable=ID | constant=INT);
 		public ParserRule getRule() { return rule; }
 
+		//(isPast="<P>" //we can decide if we want the value at the previous time instant or at the next
+		//| isFuture="<F>")? (variable=ID | constant=INT)
+		public Group getGroup() { return cGroup; }
+
+		//(isPast="<P>" //we can decide if we want the value at the previous time instant or at the next
+		//| isFuture="<F>")?
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+
+		//isPast="<P>"
+		public Assignment getIsPastAssignment_0_0() { return cIsPastAssignment_0_0; }
+
+		//"<P>"
+		public Keyword getIsPastPKeyword_0_0_0() { return cIsPastPKeyword_0_0_0; }
+
+		//isFuture="<F>"
+		public Assignment getIsFutureAssignment_0_1() { return cIsFutureAssignment_0_1; }
+
+		//"<F>"
+		public Keyword getIsFutureFKeyword_0_1_0() { return cIsFutureFKeyword_0_1_0; }
+
 		//variable=ID | constant=INT
-		public Alternatives getAlternatives() { return cAlternatives; }
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
 		//variable=ID
-		public Assignment getVariableAssignment_0() { return cVariableAssignment_0; }
+		public Assignment getVariableAssignment_1_0() { return cVariableAssignment_1_0; }
 
 		//ID
-		public RuleCall getVariableIDTerminalRuleCall_0_0() { return cVariableIDTerminalRuleCall_0_0; }
+		public RuleCall getVariableIDTerminalRuleCall_1_0_0() { return cVariableIDTerminalRuleCall_1_0_0; }
 
 		//constant=INT
-		public Assignment getConstantAssignment_1() { return cConstantAssignment_1; }
+		public Assignment getConstantAssignment_1_1() { return cConstantAssignment_1_1; }
 
 		//INT
-		public RuleCall getConstantINTTerminalRuleCall_1_0() { return cConstantINTTerminalRuleCall_1_0; }
+		public RuleCall getConstantINTTerminalRuleCall_1_1_0() { return cConstantINTTerminalRuleCall_1_1_0; }
 	}
 
 	public class EventActionElements extends AbstractParserRuleElementFinder {
@@ -330,45 +357,93 @@ public class StateMachineActionsGrammarAccess extends AbstractGrammarElementFind
 	public class ParametersElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Parameters");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cParamAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cParamIDTerminalRuleCall_0_0 = (RuleCall)cParamAssignment_0.eContents().get(0);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Alternatives cAlternatives_0_0 = (Alternatives)cGroup_0.eContents().get(0);
+		private final Assignment cIsPastAssignment_0_0_0 = (Assignment)cAlternatives_0_0.eContents().get(0);
+		private final Keyword cIsPastPKeyword_0_0_0_0 = (Keyword)cIsPastAssignment_0_0_0.eContents().get(0);
+		private final Assignment cIsFutureAssignment_0_0_1 = (Assignment)cAlternatives_0_0.eContents().get(1);
+		private final Keyword cIsFutureFKeyword_0_0_1_0 = (Keyword)cIsFutureAssignment_0_0_1.eContents().get(0);
+		private final Assignment cParamAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cParamIDTerminalRuleCall_0_1_0 = (RuleCall)cParamAssignment_0_1.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Assignment cParamAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final RuleCall cParamIDTerminalRuleCall_1_0_0 = (RuleCall)cParamAssignment_1_0.eContents().get(0);
-		private final Keyword cCommaKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Assignment cParametersAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cParametersParametersParserRuleCall_1_2_0 = (RuleCall)cParametersAssignment_1_2.eContents().get(0);
+		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
+		private final Assignment cIsPastAssignment_1_0_0 = (Assignment)cAlternatives_1_0.eContents().get(0);
+		private final Keyword cIsPastPKeyword_1_0_0_0 = (Keyword)cIsPastAssignment_1_0_0.eContents().get(0);
+		private final Assignment cIsFutureAssignment_1_0_1 = (Assignment)cAlternatives_1_0.eContents().get(1);
+		private final Keyword cIsFutureFKeyword_1_0_1_0 = (Keyword)cIsFutureAssignment_1_0_1.eContents().get(0);
+		private final Assignment cParamAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cParamIDTerminalRuleCall_1_1_0 = (RuleCall)cParamAssignment_1_1.eContents().get(0);
+		private final Keyword cCommaKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final Assignment cParametersAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
+		private final RuleCall cParametersParametersParserRuleCall_1_3_0 = (RuleCall)cParametersAssignment_1_3.eContents().get(0);
 		
 		//Parameters:
-		//	param=ID | param=ID "," parameters=Parameters;
+		//	(isPast="<P>" //TODO very bad duplication for <P> and <F> (see TERM)
+		//	| isFuture="<F>")? param=ID | (isPast="<P>" | isFuture="<F>")? param=ID "," parameters=Parameters;
 		public ParserRule getRule() { return rule; }
 
-		//param=ID | param=ID "," parameters=Parameters
+		//(isPast="<P>" //TODO very bad duplication for <P> and <F> (see TERM)
+		//| isFuture="<F>")? param=ID | (isPast="<P>" | isFuture="<F>")? param=ID "," parameters=Parameters
 		public Alternatives getAlternatives() { return cAlternatives; }
 
+		//(isPast="<P>" //TODO very bad duplication for <P> and <F> (see TERM)
+		//| isFuture="<F>")? param=ID
+		public Group getGroup_0() { return cGroup_0; }
+
+		//(isPast="<P>" //TODO very bad duplication for <P> and <F> (see TERM)
+		//| isFuture="<F>")?
+		public Alternatives getAlternatives_0_0() { return cAlternatives_0_0; }
+
+		//isPast="<P>"
+		public Assignment getIsPastAssignment_0_0_0() { return cIsPastAssignment_0_0_0; }
+
+		//"<P>"
+		public Keyword getIsPastPKeyword_0_0_0_0() { return cIsPastPKeyword_0_0_0_0; }
+
+		//isFuture="<F>"
+		public Assignment getIsFutureAssignment_0_0_1() { return cIsFutureAssignment_0_0_1; }
+
+		//"<F>"
+		public Keyword getIsFutureFKeyword_0_0_1_0() { return cIsFutureFKeyword_0_0_1_0; }
+
 		//param=ID
-		public Assignment getParamAssignment_0() { return cParamAssignment_0; }
+		public Assignment getParamAssignment_0_1() { return cParamAssignment_0_1; }
 
 		//ID
-		public RuleCall getParamIDTerminalRuleCall_0_0() { return cParamIDTerminalRuleCall_0_0; }
+		public RuleCall getParamIDTerminalRuleCall_0_1_0() { return cParamIDTerminalRuleCall_0_1_0; }
 
-		//param=ID "," parameters=Parameters
+		//(isPast="<P>" | isFuture="<F>")? param=ID "," parameters=Parameters
 		public Group getGroup_1() { return cGroup_1; }
 
+		//(isPast="<P>" | isFuture="<F>")?
+		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
+
+		//isPast="<P>"
+		public Assignment getIsPastAssignment_1_0_0() { return cIsPastAssignment_1_0_0; }
+
+		//"<P>"
+		public Keyword getIsPastPKeyword_1_0_0_0() { return cIsPastPKeyword_1_0_0_0; }
+
+		//isFuture="<F>"
+		public Assignment getIsFutureAssignment_1_0_1() { return cIsFutureAssignment_1_0_1; }
+
+		//"<F>"
+		public Keyword getIsFutureFKeyword_1_0_1_0() { return cIsFutureFKeyword_1_0_1_0; }
+
 		//param=ID
-		public Assignment getParamAssignment_1_0() { return cParamAssignment_1_0; }
+		public Assignment getParamAssignment_1_1() { return cParamAssignment_1_1; }
 
 		//ID
-		public RuleCall getParamIDTerminalRuleCall_1_0_0() { return cParamIDTerminalRuleCall_1_0_0; }
+		public RuleCall getParamIDTerminalRuleCall_1_1_0() { return cParamIDTerminalRuleCall_1_1_0; }
 
 		//","
-		public Keyword getCommaKeyword_1_1() { return cCommaKeyword_1_1; }
+		public Keyword getCommaKeyword_1_2() { return cCommaKeyword_1_2; }
 
 		//parameters=Parameters
-		public Assignment getParametersAssignment_1_2() { return cParametersAssignment_1_2; }
+		public Assignment getParametersAssignment_1_3() { return cParametersAssignment_1_3; }
 
 		//Parameters
-		public RuleCall getParametersParametersParserRuleCall_1_2_0() { return cParametersParametersParserRuleCall_1_2_0; }
+		public RuleCall getParametersParametersParserRuleCall_1_3_0() { return cParametersParametersParserRuleCall_1_3_0; }
 	}
 
 	public class EventExtensionsElements extends AbstractParserRuleElementFinder {
@@ -506,7 +581,8 @@ public class StateMachineActionsGrammarAccess extends AbstractGrammarElementFind
 	}
 
 	//TERM:
-	//	variable=ID | constant=INT;
+	//	(isPast="<P>" //we can decide if we want the value at the previous time instant or at the next
+	//	| isFuture="<F>")? (variable=ID | constant=INT);
 	public TERMElements getTERMAccess() {
 		return (pTERM != null) ? pTERM : (pTERM = new TERMElements());
 	}
@@ -553,7 +629,8 @@ public class StateMachineActionsGrammarAccess extends AbstractGrammarElementFind
 	}
 
 	//Parameters:
-	//	param=ID | param=ID "," parameters=Parameters;
+	//	(isPast="<P>" //TODO very bad duplication for <P> and <F> (see TERM)
+	//	| isFuture="<F>")? param=ID | (isPast="<P>" | isFuture="<F>")? param=ID "," parameters=Parameters;
 	public ParametersElements getParametersAccess() {
 		return (pParameters != null) ? pParameters : (pParameters = new ParametersElements());
 	}

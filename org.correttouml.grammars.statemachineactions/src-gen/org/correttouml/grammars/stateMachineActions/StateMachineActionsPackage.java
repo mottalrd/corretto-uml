@@ -233,13 +233,31 @@ public interface StateMachineActionsPackage extends EPackage
   int TERM = 4;
 
   /**
+   * The feature id for the '<em><b>Is Past</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__IS_PAST = 0;
+
+  /**
+   * The feature id for the '<em><b>Is Future</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__IS_FUTURE = 1;
+
+  /**
    * The feature id for the '<em><b>Variable</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TERM__VARIABLE = 0;
+  int TERM__VARIABLE = 2;
 
   /**
    * The feature id for the '<em><b>Constant</b></em>' attribute.
@@ -248,7 +266,7 @@ public interface StateMachineActionsPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERM__CONSTANT = 1;
+  int TERM__CONSTANT = 3;
 
   /**
    * The number of structural features of the '<em>TERM</em>' class.
@@ -257,7 +275,7 @@ public interface StateMachineActionsPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERM_FEATURE_COUNT = 2;
+  int TERM_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link org.correttouml.grammars.stateMachineActions.impl.EventActionImpl <em>Event Action</em>}' class.
@@ -399,13 +417,31 @@ public interface StateMachineActionsPackage extends EPackage
   int PARAMETERS = 8;
 
   /**
+   * The feature id for the '<em><b>Is Past</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETERS__IS_PAST = 0;
+
+  /**
+   * The feature id for the '<em><b>Is Future</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETERS__IS_FUTURE = 1;
+
+  /**
    * The feature id for the '<em><b>Param</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PARAMETERS__PARAM = 0;
+  int PARAMETERS__PARAM = 2;
 
   /**
    * The feature id for the '<em><b>Parameters</b></em>' containment reference.
@@ -414,7 +450,7 @@ public interface StateMachineActionsPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PARAMETERS__PARAMETERS = 1;
+  int PARAMETERS__PARAMETERS = 3;
 
   /**
    * The number of structural features of the '<em>Parameters</em>' class.
@@ -423,7 +459,7 @@ public interface StateMachineActionsPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PARAMETERS_FEATURE_COUNT = 2;
+  int PARAMETERS_FEATURE_COUNT = 4;
 
 
   /**
@@ -587,6 +623,28 @@ public interface StateMachineActionsPackage extends EPackage
   EClass getTERM();
 
   /**
+   * Returns the meta object for the attribute '{@link org.correttouml.grammars.stateMachineActions.TERM#getIsPast <em>Is Past</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Past</em>'.
+   * @see org.correttouml.grammars.stateMachineActions.TERM#getIsPast()
+   * @see #getTERM()
+   * @generated
+   */
+  EAttribute getTERM_IsPast();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.correttouml.grammars.stateMachineActions.TERM#getIsFuture <em>Is Future</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Future</em>'.
+   * @see org.correttouml.grammars.stateMachineActions.TERM#getIsFuture()
+   * @see #getTERM()
+   * @generated
+   */
+  EAttribute getTERM_IsFuture();
+
+  /**
    * Returns the meta object for the attribute '{@link org.correttouml.grammars.stateMachineActions.TERM#getVariable <em>Variable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -735,6 +793,28 @@ public interface StateMachineActionsPackage extends EPackage
    * @generated
    */
   EClass getParameters();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.correttouml.grammars.stateMachineActions.Parameters#getIsPast <em>Is Past</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Past</em>'.
+   * @see org.correttouml.grammars.stateMachineActions.Parameters#getIsPast()
+   * @see #getParameters()
+   * @generated
+   */
+  EAttribute getParameters_IsPast();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.correttouml.grammars.stateMachineActions.Parameters#getIsFuture <em>Is Future</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Future</em>'.
+   * @see org.correttouml.grammars.stateMachineActions.Parameters#getIsFuture()
+   * @see #getParameters()
+   * @generated
+   */
+  EAttribute getParameters_IsFuture();
 
   /**
    * Returns the meta object for the attribute '{@link org.correttouml.grammars.stateMachineActions.Parameters#getParam <em>Param</em>}'.
@@ -912,6 +992,22 @@ public interface StateMachineActionsPackage extends EPackage
     EClass TERM = eINSTANCE.getTERM();
 
     /**
+     * The meta object literal for the '<em><b>Is Past</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TERM__IS_PAST = eINSTANCE.getTERM_IsPast();
+
+    /**
+     * The meta object literal for the '<em><b>Is Future</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TERM__IS_FUTURE = eINSTANCE.getTERM_IsFuture();
+
+    /**
      * The meta object literal for the '<em><b>Variable</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1030,6 +1126,22 @@ public interface StateMachineActionsPackage extends EPackage
      * @generated
      */
     EClass PARAMETERS = eINSTANCE.getParameters();
+
+    /**
+     * The meta object literal for the '<em><b>Is Past</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PARAMETERS__IS_PAST = eINSTANCE.getParameters_IsPast();
+
+    /**
+     * The meta object literal for the '<em><b>Is Future</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PARAMETERS__IS_FUTURE = eINSTANCE.getParameters_IsFuture();
 
     /**
      * The meta object literal for the '<em><b>Param</b></em>' attribute feature.

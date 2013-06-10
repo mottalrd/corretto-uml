@@ -351,11 +351,42 @@ ruleTERM returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(((
 (
-		lv_variable_0_0=RULE_ID
+		lv_isPast_0_0=	'<P>' 
+    {
+        newLeafNode(lv_isPast_0_0, grammarAccess.getTERMAccess().getIsPastPKeyword_0_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTERMRule());
+	        }
+       		setWithLastConsumed($current, "isPast", lv_isPast_0_0, "<P>");
+	    }
+
+)
+)
+    |(
+(
+		lv_isFuture_1_0=	'<F>' 
+    {
+        newLeafNode(lv_isFuture_1_0, grammarAccess.getTERMAccess().getIsFutureFKeyword_0_1_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTERMRule());
+	        }
+       		setWithLastConsumed($current, "isFuture", lv_isFuture_1_0, "<F>");
+	    }
+
+)
+))?((
+(
+		lv_variable_2_0=RULE_ID
 		{
-			newLeafNode(lv_variable_0_0, grammarAccess.getTERMAccess().getVariableIDTerminalRuleCall_0_0()); 
+			newLeafNode(lv_variable_2_0, grammarAccess.getTERMAccess().getVariableIDTerminalRuleCall_1_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -364,7 +395,7 @@ ruleTERM returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"variable",
-        		lv_variable_0_0, 
+        		lv_variable_2_0, 
         		"ID");
 	    }
 
@@ -372,9 +403,9 @@ ruleTERM returns [EObject current=null]
 )
     |(
 (
-		lv_constant_1_0=RULE_INT
+		lv_constant_3_0=RULE_INT
 		{
-			newLeafNode(lv_constant_1_0, grammarAccess.getTERMAccess().getConstantINTTerminalRuleCall_1_0()); 
+			newLeafNode(lv_constant_3_0, grammarAccess.getTERMAccess().getConstantINTTerminalRuleCall_1_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -383,12 +414,12 @@ ruleTERM returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"constant",
-        		lv_constant_1_0, 
+        		lv_constant_3_0, 
         		"INT");
 	    }
 
 )
-))
+)))
 ;
 
 
@@ -638,60 +669,122 @@ ruleParameters returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+((((
 (
-		lv_param_0_0=RULE_ID
-		{
-			newLeafNode(lv_param_0_0, grammarAccess.getParametersAccess().getParamIDTerminalRuleCall_0_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getParametersRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"param",
-        		lv_param_0_0, 
-        		"ID");
-	    }
-
-)
-)
-    |((
-(
-		lv_param_1_0=RULE_ID
-		{
-			newLeafNode(lv_param_1_0, grammarAccess.getParametersAccess().getParamIDTerminalRuleCall_1_0_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getParametersRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"param",
-        		lv_param_1_0, 
-        		"ID");
-	    }
-
-)
-)	otherlv_2=',' 
+		lv_isPast_0_0=	'<P>' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getParametersAccess().getCommaKeyword_1_1());
+        newLeafNode(lv_isPast_0_0, grammarAccess.getParametersAccess().getIsPastPKeyword_0_0_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getParametersRule());
+	        }
+       		setWithLastConsumed($current, "isPast", lv_isPast_0_0, "<P>");
+	    }
+
+)
+)
+    |(
+(
+		lv_isFuture_1_0=	'<F>' 
+    {
+        newLeafNode(lv_isFuture_1_0, grammarAccess.getParametersAccess().getIsFutureFKeyword_0_0_1_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getParametersRule());
+	        }
+       		setWithLastConsumed($current, "isFuture", lv_isFuture_1_0, "<F>");
+	    }
+
+)
+))?(
+(
+		lv_param_2_0=RULE_ID
+		{
+			newLeafNode(lv_param_2_0, grammarAccess.getParametersAccess().getParamIDTerminalRuleCall_0_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getParametersRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"param",
+        		lv_param_2_0, 
+        		"ID");
+	    }
+
+)
+))
+    |(((
+(
+		lv_isPast_3_0=	'<P>' 
+    {
+        newLeafNode(lv_isPast_3_0, grammarAccess.getParametersAccess().getIsPastPKeyword_1_0_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getParametersRule());
+	        }
+       		setWithLastConsumed($current, "isPast", lv_isPast_3_0, "<P>");
+	    }
+
+)
+)
+    |(
+(
+		lv_isFuture_4_0=	'<F>' 
+    {
+        newLeafNode(lv_isFuture_4_0, grammarAccess.getParametersAccess().getIsFutureFKeyword_1_0_1_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getParametersRule());
+	        }
+       		setWithLastConsumed($current, "isFuture", lv_isFuture_4_0, "<F>");
+	    }
+
+)
+))?(
+(
+		lv_param_5_0=RULE_ID
+		{
+			newLeafNode(lv_param_5_0, grammarAccess.getParametersAccess().getParamIDTerminalRuleCall_1_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getParametersRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"param",
+        		lv_param_5_0, 
+        		"ID");
+	    }
+
+)
+)	otherlv_6=',' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getParametersAccess().getCommaKeyword_1_2());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getParametersAccess().getParametersParametersParserRuleCall_1_2_0()); 
+	        newCompositeNode(grammarAccess.getParametersAccess().getParametersParametersParserRuleCall_1_3_0()); 
 	    }
-		lv_parameters_3_0=ruleParameters		{
+		lv_parameters_7_0=ruleParameters		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getParametersRule());
 	        }
        		set(
        			$current, 
        			"parameters",
-        		lv_parameters_3_0, 
+        		lv_parameters_7_0, 
         		"Parameters");
 	        afterParserOrEnumRuleCall();
 	    }

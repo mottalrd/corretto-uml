@@ -75,12 +75,22 @@
       <type metamodel="/0/@metamodelDeclarations.1">
         <classifier xsi:type="ecore:EClass" href="http://www.correttouml.org/grammars/StateMachineActions#//TERM"/>
       </type>
-      <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:Assignment" feature="variable" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Alternatives" cardinality="?">
+          <elements xsi:type="xtext:Assignment" feature="isPast" operator="=">
+            <terminal xsi:type="xtext:Keyword" value="&lt;P>"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="isFuture" operator="=">
+            <terminal xsi:type="xtext:Keyword" value="&lt;F>"/>
+          </elements>
         </elements>
-        <elements xsi:type="xtext:Assignment" feature="constant" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
+        <elements xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Assignment" feature="variable" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="constant" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
+          </elements>
         </elements>
       </alternatives>
     </rules>
@@ -154,10 +164,28 @@
         <classifier xsi:type="ecore:EClass" href="http://www.correttouml.org/grammars/StateMachineActions#//Parameters"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:Assignment" feature="param" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Alternatives" cardinality="?">
+            <elements xsi:type="xtext:Assignment" feature="isPast" operator="=">
+              <terminal xsi:type="xtext:Keyword" value="&lt;P>"/>
+            </elements>
+            <elements xsi:type="xtext:Assignment" feature="isFuture" operator="=">
+              <terminal xsi:type="xtext:Keyword" value="&lt;F>"/>
+            </elements>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="param" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+          </elements>
         </elements>
         <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Alternatives" cardinality="?">
+            <elements xsi:type="xtext:Assignment" feature="isPast" operator="=">
+              <terminal xsi:type="xtext:Keyword" value="&lt;P>"/>
+            </elements>
+            <elements xsi:type="xtext:Assignment" feature="isFuture" operator="=">
+              <terminal xsi:type="xtext:Keyword" value="&lt;F>"/>
+            </elements>
+          </elements>
           <elements xsi:type="xtext:Assignment" feature="param" operator="=">
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
           </elements>

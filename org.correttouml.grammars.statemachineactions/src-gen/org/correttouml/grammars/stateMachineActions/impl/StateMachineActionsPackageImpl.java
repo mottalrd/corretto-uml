@@ -308,7 +308,7 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTERM_Variable()
+  public EAttribute getTERM_IsPast()
   {
     return (EAttribute)termEClass.getEStructuralFeatures().get(0);
   }
@@ -318,9 +318,29 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTERM_Constant()
+  public EAttribute getTERM_IsFuture()
   {
     return (EAttribute)termEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTERM_Variable()
+  {
+    return (EAttribute)termEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTERM_Constant()
+  {
+    return (EAttribute)termEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -448,7 +468,7 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getParameters_Param()
+  public EAttribute getParameters_IsPast()
   {
     return (EAttribute)parametersEClass.getEStructuralFeatures().get(0);
   }
@@ -458,9 +478,29 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getParameters_IsFuture()
+  {
+    return (EAttribute)parametersEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getParameters_Param()
+  {
+    return (EAttribute)parametersEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getParameters_Parameters()
   {
-    return (EReference)parametersEClass.getEStructuralFeatures().get(1);
+    return (EReference)parametersEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -512,6 +552,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
     createEReference(expressionEClass, EXPRESSION__ALONE);
 
     termEClass = createEClass(TERM);
+    createEAttribute(termEClass, TERM__IS_PAST);
+    createEAttribute(termEClass, TERM__IS_FUTURE);
     createEAttribute(termEClass, TERM__VARIABLE);
     createEAttribute(termEClass, TERM__CONSTANT);
 
@@ -530,6 +572,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
     createEAttribute(eventEClass, EVENT__EVENT_EXTENSION);
 
     parametersEClass = createEClass(PARAMETERS);
+    createEAttribute(parametersEClass, PARAMETERS__IS_PAST);
+    createEAttribute(parametersEClass, PARAMETERS__IS_FUTURE);
     createEAttribute(parametersEClass, PARAMETERS__PARAM);
     createEReference(parametersEClass, PARAMETERS__PARAMETERS);
   }
@@ -584,6 +628,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
     initEReference(getEXPRESSION_Alone(), this.getTERM(), null, "alone", null, 0, 1, org.correttouml.grammars.stateMachineActions.EXPRESSION.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(termEClass, org.correttouml.grammars.stateMachineActions.TERM.class, "TERM", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTERM_IsPast(), ecorePackage.getEString(), "isPast", null, 0, 1, org.correttouml.grammars.stateMachineActions.TERM.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTERM_IsFuture(), ecorePackage.getEString(), "isFuture", null, 0, 1, org.correttouml.grammars.stateMachineActions.TERM.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTERM_Variable(), ecorePackage.getEString(), "variable", null, 0, 1, org.correttouml.grammars.stateMachineActions.TERM.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTERM_Constant(), ecorePackage.getEInt(), "constant", null, 0, 1, org.correttouml.grammars.stateMachineActions.TERM.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -602,6 +648,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
     initEAttribute(getEvent_EventExtension(), ecorePackage.getEString(), "eventExtension", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(parametersEClass, Parameters.class, "Parameters", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getParameters_IsPast(), ecorePackage.getEString(), "isPast", null, 0, 1, Parameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getParameters_IsFuture(), ecorePackage.getEString(), "isFuture", null, 0, 1, Parameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getParameters_Param(), ecorePackage.getEString(), "param", null, 0, 1, Parameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getParameters_Parameters(), this.getParameters(), null, "parameters", null, 0, 1, Parameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

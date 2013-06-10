@@ -27,6 +27,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachineActions.ecore#//EXPRESSION/alone"/>
     </genClasses>
     <genClasses ecoreClass="StateMachineActions.ecore#//TERM">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//TERM/isPast"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//TERM/isFuture"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//TERM/variable"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//TERM/constant"/>
     </genClasses>
@@ -45,6 +47,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//Event/eventExtension"/>
     </genClasses>
     <genClasses ecoreClass="StateMachineActions.ecore#//Parameters">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//Parameters/isPast"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//Parameters/isFuture"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//Parameters/param"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachineActions.ecore#//Parameters/parameters"/>
     </genClasses>

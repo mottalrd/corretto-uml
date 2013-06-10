@@ -26,7 +26,8 @@ EXPRESSION:
 ;
 
 TERM:
-	variable=ID | constant=INT
+	//we can decide if we want the value at the previous time instant or at the next
+	(isPast='<P>' | isFuture='<F>')? (variable=ID | constant=INT)
 ;
 
 terminal OPERATOR:
@@ -46,7 +47,8 @@ Event:
 ;
 
 Parameters :
-	param=ID | param=ID ',' parameters=Parameters
+	//TODO very bad duplication for <P> and <F> (see TERM)
+	(isPast='<P>' | isFuture='<F>')? param=ID | (isPast='<P>' | isFuture='<F>')? param=ID ',' parameters=Parameters
 ;
 
 EventExtensions :

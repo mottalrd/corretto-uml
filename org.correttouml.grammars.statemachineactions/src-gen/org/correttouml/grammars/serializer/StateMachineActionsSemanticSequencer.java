@@ -166,7 +166,7 @@ public class StateMachineActionsSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Constraint:
-	 *     (param=ID | (param=ID parameters=Parameters))
+	 *     (((isPast='<P>' | isFuture='<F>')? param=ID) | ((isPast='<P>' | isFuture='<F>')? param=ID parameters=Parameters))
 	 */
 	protected void sequence_Parameters(EObject context, Parameters semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -175,7 +175,7 @@ public class StateMachineActionsSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Constraint:
-	 *     (variable=ID | constant=INT)
+	 *     ((isPast='<P>' | isFuture='<F>')? (variable=ID | constant=INT))
 	 */
 	protected void sequence_TERM(EObject context, TERM semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
