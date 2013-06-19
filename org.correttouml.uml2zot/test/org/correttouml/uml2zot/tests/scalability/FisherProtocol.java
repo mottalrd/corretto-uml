@@ -44,7 +44,7 @@ public class FisherProtocol {
 	public void start() {
 		LOGGER.info("Creating the UML model");
 
-		for (int i = 5; i <= 10; i = i++) {
+		for (int i = 5; i <= 10; i++) {
 			create_fisher_model(i);
 			// create_alw_somf_monitor_state_winner();
 			// create_alw_not_monitor_state_error();
@@ -153,12 +153,12 @@ public class FisherProtocol {
 		Property pid_attr = UML2Helper.createAttribute(processClass, "pid",
 				integer);
 		// TODO: this is a global variable, trick made by hand on lisp
-		UML2Helper.createIntegerAttribute(processClass, "id", integer, 0);
-		UML2Helper.createIntegerAttribute(processClass, "counter", integer, 0);
+		UML2Helper.createIntegerAttribute(processClass, "id", integer,0);
+		UML2Helper.createIntegerAttribute(processClass, "counter", integer,0);
 
 		ArrayList<InstanceSpecification> processes = new ArrayList<InstanceSpecification>();
 		for (int i = 0; i < num_process; i++) {
-			IdGenerator gen = new IdGenerator(0, num_process * 3);
+			IdGenerator gen = new IdGenerator(0, num_process);
 			int id = gen.getNextId();
 
 			InstanceSpecification tmp = UML2Helper.createInstanceSpecification(
@@ -199,7 +199,7 @@ public class FisherProtocol {
 		UML2Helper.createTransition(process_SM, STATE_WAIT, STATE_FISHERP,
 				"[id!=pid]");
 		UML2Helper.createTransition(process_SM, STATE_CS, STATE_EXIT, "/counter=counter+1");
-		UML2Helper.createTransition(process_SM, STATE_EXIT, STATE_FISHERP, "/id=-1, counter=counter-1");
+		UML2Helper.createTransition(process_SM, STATE_EXIT, STATE_FISHERP, "/id=0-1, counter=counter-1");
 
 	}
 
@@ -220,7 +220,7 @@ public class FisherProtocol {
 
 		public int getNextId() {
 
-			int r = ids.get(this.getRandom(0, ids.size()));
+			int r = ids.get(this.getRandom(0, ids.size()-1));
 			ids.remove(ids.indexOf(r));
 
 			return r;

@@ -306,15 +306,15 @@ public class UML2Helper {
         LOGGER.info("Operation '" + attribute.getQualifiedName() + "' created.");
         
         return attribute;
-	}	
-    
+	}		
+	
 	public static org.eclipse.uml2.uml.Property createIntegerAttribute(Class klass, String name, PrimitiveType integerType, int defaultValue) {
 		//TODO[improvement] replace with the standard UML library integer type
 		org.eclipse.uml2.uml.Property attribute = klass.createOwnedAttribute(name, integerType);
 		
 		attribute.setIntegerDefaultValue(defaultValue);
 		
-        LOGGER.info("Operation '" + attribute.getQualifiedName() + "' created.");
+        LOGGER.info("Attribute '" + attribute.getQualifiedName() + "' created.");
         LOGGER.info("Default value is '" + attribute.getDefaultValue());
 
         return attribute;
