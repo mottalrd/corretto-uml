@@ -158,8 +158,7 @@ public class FisherProtocol {
 
 		ArrayList<InstanceSpecification> processes = new ArrayList<InstanceSpecification>();
 		for (int i = 0; i < num_process; i++) {
-			IdGenerator gen = new IdGenerator(0, num_process);
-			int id = gen.getNextId();
+			int id = i;
 
 			InstanceSpecification tmp = UML2Helper.createInstanceSpecification(
 					systemPackage, processClass, "proc_" + id);
@@ -200,35 +199,6 @@ public class FisherProtocol {
 				"[id!=pid]");
 		UML2Helper.createTransition(process_SM, STATE_CS, STATE_EXIT, "/counter=counter+1");
 		UML2Helper.createTransition(process_SM, STATE_EXIT, STATE_FISHERP, "/id=0-1, counter=counter-1");
-
-	}
-
-	private class IdGenerator {
-		/**
-		 * Given a set of adiacent ids returns each of them in random order
-		 * 
-		 * @author motta
-		 * 
-		 */
-
-		ArrayList<Integer> ids = new ArrayList<Integer>();
-
-		public IdGenerator(int min, int max) {
-			for (int i = min; i <= max; i++)
-				ids.add(i);
-		}
-
-		public int getNextId() {
-
-			int r = ids.get(this.getRandom(0, ids.size()-1));
-			ids.remove(ids.indexOf(r));
-
-			return r;
-		}
-
-		private int getRandom(int min, int max) {
-			return min + (int) (Math.random() * ((max - min) + 1));
-		}
 
 	}
 

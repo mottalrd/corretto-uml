@@ -198,6 +198,7 @@ public class LeaderElection {
 
 		ArrayList<InstanceSpecification> processes=new ArrayList<InstanceSpecification>();
 		for(int i=0; i<num_process; i++){
+			//TODO: id generator not working
 			IdGenerator gen=new IdGenerator(0, num_process*3);
 			int id=gen.getNextId();
 			
@@ -321,6 +322,7 @@ public class LeaderElection {
 		
 		public int getNextId(){
 			
+			//TODO: this is wrong
 			int r=ids.get(this.getRandom(0, ids.size()));
 			ids.remove(ids.indexOf(r));
 						
