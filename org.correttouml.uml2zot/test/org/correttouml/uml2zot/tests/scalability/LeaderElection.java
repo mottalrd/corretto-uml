@@ -1,6 +1,8 @@
 package org.correttouml.uml2zot.tests.scalability;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.HashSet;
 
 import org.apache.log4j.Logger;
 import org.correttouml.uml2zot.UML2Zot;
@@ -10,6 +12,7 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.uml2.uml.AggregationKind;
+import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.Profile;
@@ -42,56 +45,27 @@ public class LeaderElection {
 	public void start() {
 		LOGGER.info("Creating the UML model");
 
-		create_leader_election_model();
-		//create_alw_somf_monitor_state_winner();
-		create_alw_not_monitor_state_error();
+		for(int i=5; i<=20; i=i+5){
+			create_leader_election_model(i);
+			//create_alw_somf_monitor_state_winner();
+			//create_alw_not_monitor_state_error();
 
-		// Save it to disk
-		UML2Helper.save(myModel,
-				URI.createFileURI(TestConfiguration.MODEL_SAVE_PATH)
-						.appendSegment(TestConfiguration.MODEL_SAVE_NAME)
-						.appendFileExtension(UMLResource.FILE_EXTENSION));
+			// Save it to disk
+			UML2Helper.save(myModel,
+					URI.createFileURI(TestConfiguration.MODEL_SAVE_PATH)
+							.appendSegment(TestConfiguration.MODEL_SAVE_NAME)
+							.appendFileExtension(UMLResource.FILE_EXTENSION));
 
-		LOGGER.info("Building the MADES UML representation");
-		t = new UML2Zot(
-				new File(TestConfiguration.MODEL_FILE).getAbsolutePath());
+			LOGGER.info("Building the MADES UML representation");
+			t = new UML2Zot(
+					new File(TestConfiguration.MODEL_FILE).getAbsolutePath());
 
-		LOGGER.info("Generate the ZOT File");
-		t.generateZOTFile(30, "ae2zot", "z3",
-				new File("output/zot_model.lisp").getAbsolutePath());
+			LOGGER.info("Generate the ZOT File");
+			t.generateZOTFile(75, "ae2zot", "z3",
+					new File("output/zot_model_"+i+"_proc.lisp").getAbsolutePath());			
+		}
+
 	}
-
-	//Alw(SomF(STATE_WIN))
-	//TODO[mottalrd] clear me
-//	private void create_alw_somf_state_win() {
-//
-//		// Creazione <<Property>> package
-//		org.eclipse.uml2.uml.Package propertyPackage = UML2Helper
-//				.createPackage(myModel, "Property");
-//		org.eclipse.uml2.uml.Stereotype propertyStereotype = UML2Helper
-//				.getMADESVerificationTagsStereotype(madesProfile, "Property");
-//		propertyPackage.applyStereotype(propertyStereotype);
-//
-//		// Time Property diagram
-//
-//		// <<Term>>
-//		org.eclipse.uml2.uml.Class STATE_WIN_TERM = UML2Helper.createTerm(
-//				madesProfile, propertyPackage, STATE_WIN);
-//
-//		// <<SomF>>
-//		org.eclipse.uml2.uml.Class implies = UML2Helper.createSomF(
-//				madesProfile, propertyPackage, STATE_WIN_TERM
-//						.getStereotypeApplications().get(0));
-//
-//		// <<Alw>>
-//		org.eclipse.uml2.uml.Class alw = UML2Helper.createAlw(madesProfile,
-//				propertyPackage, implies.getStereotypeApplications().get(0));
-//
-//		// <<Property>>
-//		UML2Helper.createProperty(madesProfile, propertyPackage, alw
-//				.getStereotypeApplications().get(0));
-//
-//	}
 	
 	//Alw(SomF(MONITOR_STATE_WINNER))
 	private void create_alw_somf_monitor_state_winner() {
@@ -222,54 +196,33 @@ public class LeaderElection {
 						(org.eclipse.uml2.uml.Type) processClass, true,
 						AggregationKind.NONE_LITERAL, "out", 1, 1);
 
-		
-		// Object diagram
-		org.eclipse.uml2.uml.InstanceSpecification proc_1 = UML2Helper
-				.createInstanceSpecification(systemPackage, processClass,
-						"proc_1");
-		org.eclipse.uml2.uml.InstanceSpecification proc_2 = UML2Helper
-				.createInstanceSpecification(systemPackage, processClass,
-						"proc_2");
-		org.eclipse.uml2.uml.InstanceSpecification proc_3 = UML2Helper
-				.createInstanceSpecification(systemPackage, processClass,
-						"proc_3");
-		org.eclipse.uml2.uml.InstanceSpecification proc_4 = UML2Helper
-				.createInstanceSpecification(systemPackage, processClass,
-						"proc_4");
-		org.eclipse.uml2.uml.InstanceSpecification proc_5 = UML2Helper
-				.createInstanceSpecification(systemPackage, processClass,
-						"proc_5");
+		ArrayList<InstanceSpecification> processes=new ArrayList<InstanceSpecification>();
+		for(int i=0; i<num_process; i++){
+			IdGenerator gen=new IdGenerator(0, num_process*3);
+			int id=gen.getNextId();
+			
+			InstanceSpecification tmp=UML2Helper
+			.createInstanceSpecification(systemPackage, processClass,
+					"proc_"+id);
+			UML2Helper.createIntegerSlot(tmp, mynumber_attr, id);
+			processes.add(tmp);
+		}
 		org.eclipse.uml2.uml.InstanceSpecification monitor = UML2Helper
 				.createInstanceSpecification(systemPackage, monitorClass,
 						"monitor");
 
-		// Set the value of the attributes for the different objects
-		UML2Helper.createIntegerSlot(proc_1, mynumber_attr, 1);
-		UML2Helper.createIntegerSlot(proc_2, mynumber_attr, 2);
-		UML2Helper.createIntegerSlot(proc_3, mynumber_attr, 3);
-		UML2Helper.createIntegerSlot(proc_4, mynumber_attr, 4);
-		UML2Helper.createIntegerSlot(proc_5, mynumber_attr, 5);
+		for(int i=0; i<num_process; i++){
+			int pos1=i % num_process;
+			int pos2=(i+1) % num_process;
+			
+			InstanceSpecification proc_1=processes.get(pos1);
+			InstanceSpecification proc_2=processes.get(pos2);
+			
+			UML2Helper.createInstanceSpecificationLink(proc_1.getName()+"_"+proc_2.getName(),
+							systemPackage, processClass_processClass, "in", proc_1,
+							"out", proc_2);
+		}
 
-		org.eclipse.uml2.uml.InstanceSpecification proc_1_proc_2 = UML2Helper
-				.createInstanceSpecificationLink("proc_1_proc_2",
-						systemPackage, processClass_processClass, "in", proc_1,
-						"out", proc_2);
-		org.eclipse.uml2.uml.InstanceSpecification proc_2_proc_3 = UML2Helper
-				.createInstanceSpecificationLink("proc_2_proc_3",
-						systemPackage, processClass_processClass, "in", proc_2,
-						"out", proc_3);
-		org.eclipse.uml2.uml.InstanceSpecification proc_3_proc_4 = UML2Helper
-				.createInstanceSpecificationLink("proc_3_proc_4",
-						systemPackage, processClass_processClass, "in", proc_3,
-						"out", proc_4);
-		org.eclipse.uml2.uml.InstanceSpecification proc_4_proc_5 = UML2Helper
-				.createInstanceSpecificationLink("proc_4_proc_5",
-						systemPackage, processClass_processClass, "in", proc_4,
-						"out", proc_5);
-		org.eclipse.uml2.uml.InstanceSpecification proc_5_proc_1 = UML2Helper
-				.createInstanceSpecificationLink("proc_5_proc_1",
-						systemPackage, processClass_processClass, "in", proc_5,
-						"out", proc_1);
 
 		// STD MONITOR
 		org.eclipse.uml2.uml.StateMachine monitor_SM = UML2Helper
@@ -349,6 +302,35 @@ public class LeaderElection {
 				.createTransition(process_SM, STATE_MAIN, STATE_LOST,
 						"@winner.call[{win_nr!=mynumber}]/#link.out@winner(<P>win_nr).call");
 
+	}
+	
+
+	private class IdGenerator{
+		/** 
+		 * Given a set of adiacent ids
+		 * returns each of them in random order
+		 * @author motta
+		 *
+		 */
+		
+		ArrayList<Integer> ids=new ArrayList<Integer>();
+		
+		public IdGenerator(int min, int max){
+			for(int i=min; i<=max; i++) ids.add(i);
+		}
+		
+		public int getNextId(){
+			
+			int r=ids.get(this.getRandom(0, ids.size()));
+			ids.remove(ids.indexOf(r));
+						
+			return r;
+		}
+		
+		private int getRandom(int min, int max){
+			return min + (int)(Math.random() * ((max - min) + 1));
+		}
+		
 	}
 
 }
