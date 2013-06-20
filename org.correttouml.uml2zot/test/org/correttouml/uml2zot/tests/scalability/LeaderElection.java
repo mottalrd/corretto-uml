@@ -2,7 +2,6 @@ package org.correttouml.uml2zot.tests.scalability;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.HashSet;
 
 import org.apache.log4j.Logger;
 import org.correttouml.uml2zot.UML2Zot;
@@ -150,14 +149,13 @@ public class LeaderElection {
 
 		org.eclipse.uml2.uml.Class processClass = UML2Helper.createClass(
 				systemPackage, "Process", false);
-		UML2Helper.createIntegerAttribute(processClass, "active", integer, 1);
+		UML2Helper.createAttribute(processClass, "active", integer).setIntegerDefaultValue(1);
 		// this attribute has not a default value but will be initialized with
 		// the slots
 		Property mynumber_attr = UML2Helper.createAttribute(processClass,
 				"mynumber", integer);
-		UML2Helper.createIntegerAttribute(processClass, "max", integer, 0);
-		UML2Helper.createIntegerAttribute(processClass, "neighbourR", integer,
-				0);
+		UML2Helper.createAttribute(processClass, "max", integer).setIntegerDefaultValue(0);
+		UML2Helper.createAttribute(processClass, "neighbourR", integer).setIntegerDefaultValue(0);
 		
 		//This guy is going to monitor if we have a winner
 		org.eclipse.uml2.uml.Class monitorClass = UML2Helper.createClass(

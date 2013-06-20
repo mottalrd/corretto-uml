@@ -17,6 +17,7 @@ import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.State;
+import org.eclipse.uml2.uml.StateMachine;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.resource.UMLResource;
 
@@ -29,9 +30,7 @@ public class FisherProtocol {
 	private Model myModel;
 	private Profile madesProfile;
 
-	private State STATE_NO_WINNER;
-	private State STATE_WINNER;
-	private State STATE_ERROR;
+	private StateMachine process_SM;
 
 	private static final Logger LOGGER = Logger
 			.getLogger(SequenceDiagram.class);
@@ -44,10 +43,9 @@ public class FisherProtocol {
 	public void start() {
 		LOGGER.info("Creating the UML model");
 
-		for (int i = 5; i <= 10; i++) {
+		for (int i = 5; i <= 5; i++) {
 			create_fisher_model(i);
-			// create_alw_somf_monitor_state_winner();
-			// create_alw_not_monitor_state_error();
+			//create_alw_not_counter_greater_than_one();
 
 			// Save it to disk
 			UML2Helper.save(myModel,
@@ -66,8 +64,7 @@ public class FisherProtocol {
 
 	}
 
-	// Alw(SomF(MONITOR_STATE_WINNER))
-	private void create_alw_somf_monitor_state_winner() {
+	private void create_alw_not_counter_greater_than_one() {
 
 		// Creazione <<Property>> package
 		org.eclipse.uml2.uml.Package propertyPackage = UML2Helper
@@ -79,43 +76,12 @@ public class FisherProtocol {
 		// Time Property diagram
 
 		// <<Term>>
-		org.eclipse.uml2.uml.Class MONITOR_STATE_WINNER = UML2Helper
-				.createTerm(madesProfile, propertyPackage, STATE_WINNER);
-
-		// <<SomF>>
-		org.eclipse.uml2.uml.Class somf = UML2Helper.createSomF(madesProfile,
-				propertyPackage, MONITOR_STATE_WINNER
-						.getStereotypeApplications().get(0));
-
-		// <<Alw>>
-		org.eclipse.uml2.uml.Class alw = UML2Helper.createAlw(madesProfile,
-				propertyPackage, somf.getStereotypeApplications().get(0));
-
-		// <<Property>>
-		UML2Helper.createProperty(madesProfile, propertyPackage, alw
-				.getStereotypeApplications().get(0));
-
-	}
-
-	// Alw(Not(MONITOR_STATE_ERROR))
-	private void create_alw_not_monitor_state_error() {
-
-		// Creazione <<Property>> package
-		org.eclipse.uml2.uml.Package propertyPackage = UML2Helper
-				.createPackage(myModel, "Property");
-		org.eclipse.uml2.uml.Stereotype propertyStereotype = UML2Helper
-				.getMADESVerificationTagsStereotype(madesProfile, "Property");
-		propertyPackage.applyStereotype(propertyStereotype);
-
-		// Time Property diagram
-
-		// <<Term>>
-		org.eclipse.uml2.uml.Class MONITOR_STATE_ERROR = UML2Helper.createTerm(
-				madesProfile, propertyPackage, STATE_ERROR);
+		org.eclipse.uml2.uml.Class COUNTER_EXP = UML2Helper
+				.createBooleanExpression(madesProfile, propertyPackage, "{counter>1}", process_SM );
 
 		// <<Not>>
 		org.eclipse.uml2.uml.Class not = UML2Helper.createNot(madesProfile,
-				propertyPackage, MONITOR_STATE_ERROR
+				propertyPackage, COUNTER_EXP
 						.getStereotypeApplications().get(0));
 
 		// <<Alw>>
@@ -152,9 +118,8 @@ public class FisherProtocol {
 
 		Property pid_attr = UML2Helper.createAttribute(processClass, "pid",
 				integer);
-		// TODO: this is a global variable, trick made by hand on lisp
-		UML2Helper.createIntegerAttribute(processClass, "id", integer,0);
-		UML2Helper.createIntegerAttribute(processClass, "counter", integer,0);
+		UML2Helper.createAttribute(processClass, "id", integer, true).setIntegerDefaultValue(0);
+		UML2Helper.createAttribute(processClass, "counter", integer, true).setIntegerDefaultValue(0);
 
 		ArrayList<InstanceSpecification> processes = new ArrayList<InstanceSpecification>();
 		for (int i = 0; i < num_process; i++) {
@@ -167,7 +132,7 @@ public class FisherProtocol {
 		}
 
 		// STD PROCESS
-		org.eclipse.uml2.uml.StateMachine process_SM = UML2Helper
+		process_SM = UML2Helper
 				.createStateMachine(processClass, "Process_SM");
 		UML2Helper.createRegion(process_SM);
 		org.eclipse.uml2.uml.Pseudostate STATE_0 = UML2Helper
@@ -188,15 +153,15 @@ public class FisherProtocol {
 		// initial transition
 		UML2Helper.createTransition(process_SM, STATE_0, STATE_FISHERP, "");
 		UML2Helper.createTransition(process_SM, STATE_FISHERP, STATE_REQ,
-				"[id==-1]");
+				"[{id==-1}]");
 		UML2Helper.createTransition(process_SM, STATE_REQ, STATE_UPDATED,
 				"@now - @REQ.enter == 3/id=pid");
 		UML2Helper.createTransition(process_SM, STATE_UPDATED, STATE_WAIT,
-				"@now - @REQ.enter == 4");
+				"@now - @UPDATED.enter == 4");
 		UML2Helper.createTransition(process_SM, STATE_WAIT, STATE_CS,
-				"[id==pid]");
+				"[{id==pid}]");
 		UML2Helper.createTransition(process_SM, STATE_WAIT, STATE_FISHERP,
-				"[id!=pid]");
+				"[{id!=pid}]");
 		UML2Helper.createTransition(process_SM, STATE_CS, STATE_EXIT, "/counter=counter+1");
 		UML2Helper.createTransition(process_SM, STATE_EXIT, STATE_FISHERP, "/id=0-1, counter=counter-1");
 

@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
+import org.correttouml.uml.diagrams.expressions.ExpressionContext;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
@@ -66,7 +67,7 @@ public class UML2Helper {
 	}
 	
 	public static org.eclipse.uml2.uml.Class createTerm(org.eclipse.uml2.uml.Profile madesProfile, org.eclipse.uml2.uml.Package package_, org.eclipse.uml2.uml.Element element){
-		//<<Alw>>
+		//<<Term>>
 		org.eclipse.uml2.uml.Class term=createClass(package_, "Term", false);
 		org.eclipse.uml2.uml.Stereotype termStereotype=getMADESPropertiesStereotype(madesProfile, "Term");
 		org.eclipse.uml2.uml.Stereotype booleanFormulaeStereotype=getMADESPropertiesStereotype(madesProfile, "BooleanFormulae");
@@ -75,7 +76,20 @@ public class UML2Helper {
 		term.setValue(termStereotype, "element", element);
 		
 		return term;
-	}	
+	}
+	
+	public static org.eclipse.uml2.uml.Class createBooleanExpression(org.eclipse.uml2.uml.Profile madesProfile, org.eclipse.uml2.uml.Package package_, String expression, NamedElement context){
+		//<<Term>>
+		org.eclipse.uml2.uml.Class booleanExpression=createClass(package_, "BooleanExpression", false);
+		org.eclipse.uml2.uml.Stereotype booleanExpressionStereotype=getMADESPropertiesStereotype(madesProfile, "BooleanExpression");
+		org.eclipse.uml2.uml.Stereotype booleanFormulaeStereotype=getMADESPropertiesStereotype(madesProfile, "BooleanFormulae");
+		booleanExpression.applyStereotype(booleanFormulaeStereotype);
+		booleanExpression.applyStereotype(booleanExpressionStereotype);
+		booleanExpression.setValue(booleanExpressionStereotype, "context", context);
+		booleanExpression.setValue(booleanExpressionStereotype, "exp", expression);
+		
+		return booleanExpression;
+	}
 	
 	public static org.eclipse.uml2.uml.Class createNext(org.eclipse.uml2.uml.Profile madesProfile, org.eclipse.uml2.uml.Package package_, EObject formulae){
 		//<<Alw>>
@@ -300,25 +314,19 @@ public class UML2Helper {
 		return mytype;
     }
     
+    public static org.eclipse.uml2.uml.Property createAttribute(Class klass, String name, PrimitiveType type, boolean isStatic) {
+		org.eclipse.uml2.uml.Property attribute=createAttribute(klass, name, type);
+		attribute.setIsStatic(isStatic);
+		return attribute;
+	}		
+    
 	public static org.eclipse.uml2.uml.Property createAttribute(Class klass, String name, PrimitiveType type) {
 		org.eclipse.uml2.uml.Property attribute = klass.createOwnedAttribute(name, type);
 		
-        LOGGER.info("Operation '" + attribute.getQualifiedName() + "' created.");
+        LOGGER.info("Attribute '" + attribute.getQualifiedName() + "' created.");
         
         return attribute;
-	}		
-	
-	public static org.eclipse.uml2.uml.Property createIntegerAttribute(Class klass, String name, PrimitiveType integerType, int defaultValue) {
-		//TODO[improvement] replace with the standard UML library integer type
-		org.eclipse.uml2.uml.Property attribute = klass.createOwnedAttribute(name, integerType);
-		
-		attribute.setIntegerDefaultValue(defaultValue);
-		
-        LOGGER.info("Attribute '" + attribute.getQualifiedName() + "' created.");
-        LOGGER.info("Default value is '" + attribute.getDefaultValue());
-
-        return attribute;
-	}	
+	}			
 	
     public static org.eclipse.uml2.uml.Class createClass(org.eclipse.uml2.uml.Package package_, String name, boolean isAbstract) {
         org.eclipse.uml2.uml.Class class_ = package_.createOwnedClass(name, isAbstract);
