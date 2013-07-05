@@ -118,6 +118,7 @@ public class FisherProtocol {
 
 		Property pid_attr = UML2Helper.createAttribute(processClass, "pid",
 				integer);
+		//The following two are static attributes
 		UML2Helper.createAttribute(processClass, "id", integer, true).setIntegerDefaultValue(0);
 		UML2Helper.createAttribute(processClass, "counter", integer, true).setIntegerDefaultValue(0);
 
