@@ -28,6 +28,10 @@ public class Attribute extends Variable{
 		return null;
 	}
 	
+	public boolean isStatic(){
+		return this.uml_attribute.isStatic();
+	}
+	
 	public String getName(){
 		return uml_attribute.getName();
 	}
