@@ -10,6 +10,10 @@ public class Invariant {
 		this.uml_constraint=c;
 	}
 	
+	public String getInvariant(){
+		return uml_constraint.getSpecification().stringValue();
+	}
+	
 	@Override
 	public boolean equals(java.lang.Object o){
 		Invariant other_invariant=(Invariant) o;

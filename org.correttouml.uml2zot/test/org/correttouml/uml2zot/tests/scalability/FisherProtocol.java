@@ -11,6 +11,7 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.uml2.uml.AggregationKind;
+import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.PrimitiveType;
@@ -43,9 +44,9 @@ public class FisherProtocol {
 	public void start() {
 		LOGGER.info("Creating the UML model");
 
-		for (int i = 5; i <= 5; i++) {
+		for (int i = 2; i <= 10; i++) {
 			create_fisher_model(i);
-			//create_alw_not_counter_greater_than_one();
+			create_alw_not_counter_greater_than_one();
 
 			// Save it to disk
 			UML2Helper.save(myModel,
@@ -150,22 +151,25 @@ public class FisherProtocol {
 				process_SM, "CS");
 		org.eclipse.uml2.uml.State STATE_EXIT = UML2Helper.createState(
 				process_SM, "EXIT");
+		
+		UML2Helper.addStateInvariant(STATE_REQ, "@now - @REQ.enter <= 3");
+		UML2Helper.addStateInvariant(STATE_UPDATED, "@now - @UPDATED.enter <= 4");
 
 		// initial transition
 		UML2Helper.createTransition(process_SM, STATE_0, STATE_FISHERP, "");
 		UML2Helper.createTransition(process_SM, STATE_FISHERP, STATE_REQ,
 				"[{id==-1}]");
 		UML2Helper.createTransition(process_SM, STATE_REQ, STATE_UPDATED,
-				"@now - @REQ.enter == 3/id=pid");
+				"/id=pid");
 		UML2Helper.createTransition(process_SM, STATE_UPDATED, STATE_WAIT,
-				"@now - @UPDATED.enter == 4");
+				"");
 		UML2Helper.createTransition(process_SM, STATE_WAIT, STATE_CS,
 				"[{id==pid}]");
 		UML2Helper.createTransition(process_SM, STATE_WAIT, STATE_FISHERP,
 				"[{id!=pid}]");
 		UML2Helper.createTransition(process_SM, STATE_CS, STATE_EXIT, "/counter=counter+1");
 		UML2Helper.createTransition(process_SM, STATE_EXIT, STATE_FISHERP, "/id=0-1, counter=counter-1");
-
+		
 	}
 
 }

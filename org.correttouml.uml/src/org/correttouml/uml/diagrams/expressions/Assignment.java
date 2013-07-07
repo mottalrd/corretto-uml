@@ -15,7 +15,9 @@ public class Assignment {
 	}
 
 	public String getUMLId() {
-		return this.context.getUMLId();
+		//TODO: we do not have a good id for multiple assignments
+		return this.context.getUMLId()+assignment.getLeftvar();
+		
 	}
 
 }

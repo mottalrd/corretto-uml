@@ -1,6 +1,8 @@
 package org.correttouml.uml2zot.semantics.classdiagram;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.correttouml.uml.diagrams.classdiagram.Attribute;
 import org.correttouml.uml.diagrams.classdiagram.Object;
@@ -32,15 +34,27 @@ public class SAttribute implements SVariable {
 	}
 
 	public BooleanFormulae getPredicate(Object... obj) {
-		if (mades_attribute.getType() == PrimitiveType.INTEGER
-				|| mades_attribute.getType() == PrimitiveType.REAL)
-			return new TrioVar("OBJ" + obj[0].getName() + "ATTR"
-					+ mades_attribute.getName(), mades_attribute.getType());
-		else if (mades_attribute.getType() == PrimitiveType.BOOLEAN) {
-			return new Predicate("OBJ" + obj[0].getName() + "ATTR"
-					+ mades_attribute.getName());
+		if(mades_attribute.isStatic()){
+			if (mades_attribute.getType() == PrimitiveType.INTEGER
+					|| mades_attribute.getType() == PrimitiveType.REAL)
+				return new TrioVar("ATTR"
+						+ mades_attribute.getName(), mades_attribute.getType());
+			else if (mades_attribute.getType() == PrimitiveType.BOOLEAN) {
+				return new Predicate("ATTR"
+						+ mades_attribute.getName());
+			}			
+		}else{
+			if (mades_attribute.getType() == PrimitiveType.INTEGER
+					|| mades_attribute.getType() == PrimitiveType.REAL)
+				return new TrioVar("OBJ" + obj[0].getName() + "ATTR"
+						+ mades_attribute.getName(), mades_attribute.getType());
+			else if (mades_attribute.getType() == PrimitiveType.BOOLEAN) {
+				return new Predicate("OBJ" + obj[0].getName() + "ATTR"
+						+ mades_attribute.getName());
+			}			
 		}
-		// WARNING: dovrei avere una eccezione
+		
+		// TODO: dovrei avere una eccezione
 		return null;
 	}
 
@@ -53,17 +67,11 @@ public class SAttribute implements SVariable {
 		
 		Or orCond=new Or();
 		
-		// ACTIONS CHANGING THIS ATTRIBUTE
-		for (StateDiagram std : mades_obj.getOwningClass().getStateDiagrams()) {
-			for (Transition t : std.getTransitions()) {
-				if (t.hasActions()) {
-					List<Action> actions = t.getActions(mades_obj);
-					for(Action act: actions){
-						if(isActionAssigningAttribute(act)) 
-							orCond.addFormulae(new SAssignmentAction((AssignmentAction)act).getPredicate(mades_obj));
-					}
-				}
-			}
+		Set<AssignmentAction> actions;
+		if(this.mades_attribute.isStatic()){
+			getActionsChangingThisStaticAttribute(mades_obj, orCond);
+		}else{
+			getActionsChangingThisAttribute(mades_obj, orCond);
 		}
 
 		if (orCond.size() != 0){
@@ -76,6 +84,38 @@ public class SAttribute implements SVariable {
 		}
 		return sem;
 	}
+
+	private void getActionsChangingThisStaticAttribute(Object curr_obj, Or orCond) {
+		
+		// ACTIONS CHANGING THIS ATTRIBUTE
+		for(Object obj: curr_obj.getOwningClass().getObjects()){
+			for (StateDiagram std : obj.getOwningClass().getStateDiagrams()) {
+				for (Transition t : std.getTransitions()) {
+					if (t.hasActions()) {
+						List<Action> actions = t.getActions(obj);
+						for(Action act: actions){
+							if(isActionAssigningAttribute(act)) orCond.addFormulae(new SAssignmentAction((AssignmentAction)act).getPredicate(obj));
+						}
+					}
+				}
+			}			
+		}
+	}
+	
+	private void getActionsChangingThisAttribute(Object curr_obj, Or orCond) {
+		
+		// ACTIONS CHANGING THIS ATTRIBUTE
+		for (StateDiagram std : curr_obj.getOwningClass().getStateDiagrams()) {
+			for (Transition t : std.getTransitions()) {
+				if (t.hasActions()) {
+					List<Action> actions = t.getActions(curr_obj);
+					for(Action act: actions){
+						if(isActionAssigningAttribute(act)) orCond.addFormulae(new SAssignmentAction((AssignmentAction)act).getPredicate(curr_obj));
+					}
+				}
+			}
+		}	
+	}	
 
 	private boolean isActionAssigningAttribute(Action act) {
 		if (act instanceof AssignmentAction) {

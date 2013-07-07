@@ -16,9 +16,11 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.LiteralInteger;
+import org.eclipse.uml2.uml.LiteralString;
 import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.NamedElement;
@@ -26,6 +28,8 @@ import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Slot;
+import org.eclipse.uml2.uml.State;
+import org.eclipse.uml2.uml.StateInvariant;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLFactory;
@@ -473,6 +477,17 @@ public class UML2Helper {
         return state;
     }  
     
+	public static void addStateInvariant(State state, String invariant) {
+		
+		LiteralString inv_string=UMLFactory.eINSTANCE.createLiteralString();
+		inv_string.setValue(invariant);
+		Constraint inv_constraint=UMLFactory.eINSTANCE.createConstraint();
+		inv_constraint.setSpecification(inv_string);
+		state.setStateInvariant(inv_constraint);
+		
+		LOGGER.info("State '" + state.getName() + "' has now invariant " + state.getStateInvariant().getSpecification());
+	}
+    
     public static org.eclipse.uml2.uml.Pseudostate createInitialState(org.eclipse.uml2.uml.StateMachine sm, String name) {
         org.eclipse.uml2.uml.Pseudostate state = UMLFactory.eINSTANCE.createPseudostate();
         state.setName(name);
@@ -642,6 +657,8 @@ public class UML2Helper {
 		Profile m=(Profile)EcoreUtil.getObjectByType(r.getContents(), UMLPackage.eINSTANCE.getProfile());
 		return m;
 	}
+
+
 
 	
 	
