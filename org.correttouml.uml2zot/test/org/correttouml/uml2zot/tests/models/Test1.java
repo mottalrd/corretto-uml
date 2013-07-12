@@ -14,9 +14,14 @@ public class Test1 {
 	private static final Logger LOGGER = Logger.getLogger(Test1.class); 
 	
 	/** THE CCAS MODEL */
-	private String MODEL_FILE="testmodels/ccas/v0.1/model.uml";
+	//private String MODEL_FILE="testmodels/ccas/v0.1/model.uml";
 	//private String MODEL_FILE="testmodels/ccas/v0.2/model.uml";
 	//private String MODEL_FILE="testmodels/plugin/model.uml";
+	
+	/** Mehdi */
+//	private String MODEL_FILE="testmodels/MehdiTest6/model.uml";
+	private String MODEL_FILE="testmodels/SD_IF/model.uml";
+	
 	
 	/** SEQUENCE DIAGRAM TESTING */
 	//private String MODEL_FILE="testmodels/sequencediagram/test1/model.uml";

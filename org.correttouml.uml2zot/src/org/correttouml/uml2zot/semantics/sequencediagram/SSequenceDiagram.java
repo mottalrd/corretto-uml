@@ -120,8 +120,21 @@ public class SSequenceDiagram {
 		
 		// get time constraint semantics
 		sem = sem + SMadesModel.printSeparatorSmall("TIME CONSTRAINTS SEMANTICS");
+		int counter=0;
 		for (TimeConstraint t : mades_sd.getTimeConstraints()) {
-			sem = sem + new STimeConstraint(t).getSemantics();
+			//Give a predicate to the current time constraint
+			//TIMECONSTRAINT_SDname_i <=> something...
+			//sem=sem+new Iff()
+			
+			counter++;
+			SSequenceDiagram sd = new SSequenceDiagram(mades_sd);
+			sem = sem + "(<-> (-P- SD" + mades_sd.getName() + "_TIMECONSTRAINT_" + Integer.toString(counter) + ") " + new STimeConstraint(t).getSemantics().toString() + ")\n";
+			sem = sem + "(-> " + sd.getPredicate().toString() + " (-P- SD" + mades_sd.getName() + "_TIMECONSTRAINT_" + Integer.toString(counter) + "))\n";
+//			new STimeConstraint(t).getSemantics().toString();
+			//axiom saying that the time constraint holds
+			//when we are in the sequence diagram
+			//
+			// SD_inside => TIMECONSTRAINT_SDname_i
 		}
 		
 		// get parameter semantics

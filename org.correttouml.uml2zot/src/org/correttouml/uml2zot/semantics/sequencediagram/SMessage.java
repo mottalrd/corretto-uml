@@ -9,7 +9,6 @@ import org.correttouml.uml2zot.semantics.util.bool.Iff;
 import org.correttouml.uml2zot.semantics.util.bool.Not;
 import org.correttouml.uml2zot.semantics.util.bool.Or;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
-import org.correttouml.uml2zot.semantics.util.trio.Since;
 import org.correttouml.uml2zot.semantics.util.trio.Since_ei;
 
 
@@ -44,15 +43,9 @@ public class SMessage {
         if(this.mades_message.getMessageType()==MessageType.INSTANTANEOUS){
             sem = sem + new Iff(message_start, message_end) + "\n";
         }else if(this.mades_message.getMessageType()==MessageType.RECURSIVE){
-        	//There is no message semantics in this case
-        	//since it is already handled by the lifeline semantics
+            //Nothing to do
         }else if(this.mades_message.getMessageType()==MessageType.DELAYED){
-        	//TODO: Semantics for delayed messages not implemented
-        	try {
-				throw new Exception("Delayed Message Semantics not implemented");
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+        	//TODO: Semantics for delayed messages
         }
         
         //Timed event semantics
