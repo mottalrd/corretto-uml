@@ -46,7 +46,7 @@ public class FisherProtocol {
 
 		for (int i = 2; i <= 10; i++) {
 			create_fisher_model(i);
-			create_alw_not_counter_greater_than_one();
+			//create_alw_not_counter_greater_than_one();
 
 			// Save it to disk
 			UML2Helper.save(myModel,
