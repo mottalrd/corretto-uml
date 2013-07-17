@@ -41,25 +41,18 @@
         </slot>
       </packagedElement>
       <packagedElement xmi:type="uml:Interaction" xmi:id="_Zc1R0L2uEeKKSenVvntNZQ" name="SD1">
-        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_p_E18b3LEeKKSenVvntNZQ" name="MessageSend" covered="_a4xrYL2uEeKKSenVvntNZQ" message="_p_E18L3LEeKKSenVvntNZQ"/>
-        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_p_FdAL3LEeKKSenVvntNZQ" name="MessageRecv" covered="_agOogL2uEeKKSenVvntNZQ" message="_p_E18L3LEeKKSenVvntNZQ"/>
-        <fragment xmi:type="uml:CombinedFragment" xmi:id="_sKZeAL3LEeKKSenVvntNZQ" name="CombinedFragment" covered="_a4xrYL2uEeKKSenVvntNZQ _agOogL2uEeKKSenVvntNZQ" interactionOperator="alt">
-          <operand xmi:id="_sKaFEL3LEeKKSenVvntNZQ" name="InteractionOperand" covered="_a4xrYL2uEeKKSenVvntNZQ _agOogL2uEeKKSenVvntNZQ">
-            <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7JxnYb3LEeKKSenVvntNZQ" name="MessageSend" covered="_agOogL2uEeKKSenVvntNZQ" message="_7JxnYL3LEeKKSenVvntNZQ"/>
-            <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_9WAOYL3LEeKKSenVvntNZQ" name="MessageSend0" covered="_agOogL2uEeKKSenVvntNZQ" message="_9V_nUL3LEeKKSenVvntNZQ"/>
-            <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7JyOcL3LEeKKSenVvntNZQ" name="MessageRecv" covered="_a4xrYL2uEeKKSenVvntNZQ" message="_7JxnYL3LEeKKSenVvntNZQ"/>
-            <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_9WA1cL3LEeKKSenVvntNZQ" name="MessageRecv0" covered="_a4xrYL2uEeKKSenVvntNZQ" message="_9V_nUL3LEeKKSenVvntNZQ"/>
-          </operand>
-        </fragment>
-        <lifeline xmi:id="_agOogL2uEeKKSenVvntNZQ" name="l1" coveredBy="_p_FdAL3LEeKKSenVvntNZQ _sKZeAL3LEeKKSenVvntNZQ _sKaFEL3LEeKKSenVvntNZQ _7JxnYb3LEeKKSenVvntNZQ _9WAOYL3LEeKKSenVvntNZQ">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_hWDMsOtUEeKAM98Dj2yylg" name="MessageSend" covered="_agOogL2uEeKKSenVvntNZQ" message="_hWAwcOtUEeKAM98Dj2yylg"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_hWDMsetUEeKAM98Dj2yylg" name="MessageRecv" covered="_a4xrYL2uEeKKSenVvntNZQ" message="_hWAwcOtUEeKAM98Dj2yylg"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_WPhHsetVEeKAM98Dj2yylg" name="Message0Send" covered="_agOogL2uEeKKSenVvntNZQ" message="_WPhHsOtVEeKAM98Dj2yylg"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_WPhuwOtVEeKAM98Dj2yylg" name="Message0Recv" covered="_a4xrYL2uEeKKSenVvntNZQ" message="_WPhHsOtVEeKAM98Dj2yylg"/>
+        <lifeline xmi:id="_agOogL2uEeKKSenVvntNZQ" name="l1" coveredBy="_hWDMsOtUEeKAM98Dj2yylg _WPhHsetVEeKAM98Dj2yylg">
           <selector xmi:type="uml:InstanceValue" xmi:id="_e1_H0L2uEeKKSenVvntNZQ" name="" instance="_Gkw_oL2uEeKKSenVvntNZQ"/>
         </lifeline>
-        <lifeline xmi:id="_a4xrYL2uEeKKSenVvntNZQ" name="l2" coveredBy="_p_E18b3LEeKKSenVvntNZQ _sKZeAL3LEeKKSenVvntNZQ _sKaFEL3LEeKKSenVvntNZQ _7JyOcL3LEeKKSenVvntNZQ _9WA1cL3LEeKKSenVvntNZQ">
+        <lifeline xmi:id="_a4xrYL2uEeKKSenVvntNZQ" name="l2" coveredBy="_hWDMsetUEeKAM98Dj2yylg _WPhuwOtVEeKAM98Dj2yylg">
           <selector xmi:type="uml:InstanceValue" xmi:id="_gv-vUL2uEeKKSenVvntNZQ" name="" instance="_I-AH4L2uEeKKSenVvntNZQ"/>
         </lifeline>
-        <message xmi:id="_p_E18L3LEeKKSenVvntNZQ" name="m1" messageSort="asynchCall" receiveEvent="_p_FdAL3LEeKKSenVvntNZQ" sendEvent="_p_E18b3LEeKKSenVvntNZQ" signature="_ml2WgL2uEeKKSenVvntNZQ"/>
-        <message xmi:id="_7JxnYL3LEeKKSenVvntNZQ" name="m2" messageSort="asynchCall" receiveEvent="_7JyOcL3LEeKKSenVvntNZQ" sendEvent="_7JxnYb3LEeKKSenVvntNZQ" signature="_nQZIUL2uEeKKSenVvntNZQ"/>
-        <message xmi:id="_9V_nUL3LEeKKSenVvntNZQ" name="m3" messageSort="asynchCall" receiveEvent="_9WA1cL3LEeKKSenVvntNZQ" sendEvent="_9WAOYL3LEeKKSenVvntNZQ" signature="_y9wTEL3JEeKKSenVvntNZQ"/>
+        <message xmi:id="_hWAwcOtUEeKAM98Dj2yylg" name="Message" messageSort="asynchCall" receiveEvent="_hWDMsetUEeKAM98Dj2yylg" sendEvent="_hWDMsOtUEeKAM98Dj2yylg" signature="_nQZIUL2uEeKKSenVvntNZQ"/>
+        <message xmi:id="_WPhHsOtVEeKAM98Dj2yylg" name="Message0" messageSort="asynchCall" receiveEvent="_WPhuwOtVEeKAM98Dj2yylg" sendEvent="_WPhHsetVEeKAM98Dj2yylg" signature="_y9wTEL3JEeKKSenVvntNZQ"/>
       </packagedElement>
     </packagedElement>
     <profileApplication xmi:id="_7CWFUL2tEeKKSenVvntNZQ">
