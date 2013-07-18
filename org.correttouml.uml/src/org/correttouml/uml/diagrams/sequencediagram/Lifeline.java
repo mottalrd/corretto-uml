@@ -19,7 +19,7 @@ public class Lifeline {
 		
 		//la lista ordinata del sequence diagram
 		List<org.eclipse.uml2.uml.InteractionFragment> sd_fragment=uml_lifeline.getInteraction().getFragments();
-		//NOTA: in Papyrus la lista coveredbys non sembra essere ordinata
+		//TODO: in Papyrus the list covoredbys seems not ordered
 		for(org.eclipse.uml2.uml.InteractionFragment ifr: sd_fragment){
 			if(uml_lifeline.getCoveredBys().contains(ifr)){
 				//FIXME: Please do not ignore ActionExecutionSpecification and BehaviorExecutionSpecification
