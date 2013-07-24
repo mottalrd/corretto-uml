@@ -95,6 +95,24 @@ public interface BooleanExpressionsFactory extends EFactory
   VariableCondition createVariableCondition();
 
   /**
+   * Returns a new object of class '<em>EXPRESSION</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>EXPRESSION</em>'.
+   * @generated
+   */
+  EXPRESSION createEXPRESSION();
+
+  /**
+   * Returns a new object of class '<em>TERM</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>TERM</em>'.
+   * @generated
+   */
+  TERM createTERM();
+
+  /**
    * Returns a new object of class '<em>Event</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

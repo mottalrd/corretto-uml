@@ -1,6 +1,10 @@
 package org.correttouml.uml2zot.semantics.expressions;
 
+import org.correttouml.grammars.booleanExpressions.EXPRESSION;
+import org.correttouml.grammars.booleanExpressions.TERM;
+import org.correttouml.grammars.booleanExpressions.VariableCondition;
 import org.correttouml.uml.diagrams.classdiagram.Object;
+import org.correttouml.uml.diagrams.expressions.ArithmeticOperator;
 import org.correttouml.uml.diagrams.expressions.ExpressionContext;
 import org.correttouml.uml.diagrams.expressions.InequalityOperator;
 import org.correttouml.uml.diagrams.expressions.Variable;
@@ -12,13 +16,16 @@ import org.correttouml.uml2zot.semantics.util.trio.GT;
 import org.correttouml.uml2zot.semantics.util.trio.GTE;
 import org.correttouml.uml2zot.semantics.util.trio.LT;
 import org.correttouml.uml2zot.semantics.util.trio.LTE;
-
-import org.correttouml.grammars.booleanExpressions.VariableCondition;
+import org.correttouml.uml2zot.semantics.util.trio.Minus;
+import org.correttouml.uml2zot.semantics.util.trio.Multiply;
+import org.correttouml.uml2zot.semantics.util.trio.Plus;
 
 public class SVariableCondition {
 
 	private VariableCondition mades_condition;
-
+	private Object mades_object;
+	private ExpressionContext context;
+	
 	public SVariableCondition(VariableCondition term) {
 		this.mades_condition=term;
 	}
@@ -26,51 +33,80 @@ public class SVariableCondition {
 	public BooleanFormulae getSemantics(Object mades_object, ExpressionContext context) {
 		BooleanFormulae r=null;
 		
-		//TODO[improvement] please improve variable inequalities
+		this.mades_object=mades_object;
+		this.context=context;
 		
-		//Right now we are just considering stuffs that looks like
-		//<<var>> REL <<const>>
-		//<<var>> REL <<var>>
+		//EXPRESSION REL EXPRESSION
 		//REL \in {==, !=, <=, <, >, >=}
-		
-		//Find the variable
-		Variable variable=VariableFactory.getInstance(mades_condition.getVariable(), mades_object, context);
-		//build the semantic stuff
-		SVariable s_variable=SVariableFactory.getInstance(variable);
-		//get the f*** predicate
-		r=s_variable.getPredicate(mades_object);
-		
-		SConstant constant=null;
-		SVariable s_rightVariable=null;
-		if(mades_condition.getRightVariable()!=null){
-			Variable rightVariable=VariableFactory.getInstance(mades_condition.getRightVariable(), mades_object, context);
-			s_rightVariable=SVariableFactory.getInstance(rightVariable);
-		}else{
-			constant=new SConstant(mades_condition.getValue());
-		}
-		BooleanFormulae right=null;
-		if(s_rightVariable!=null)right=s_rightVariable.getPredicate(mades_object);
-		else right=constant;
+		//EXPRESSION: firstTerm=TERM operator=OPERATOR secondTerm=TERM | alone=TERM
+
+		BooleanFormulae expression_left=this.parseExpression(mades_condition.getExpression_left());
+		BooleanFormulae expression_right=this.parseExpression(mades_condition.getExpression_right());
 		
 		if(InequalityOperator.getOpFromString(mades_condition.getRelation()).equals(InequalityOperator.EQ)){
-			r=new EQ(s_variable.getPredicate(mades_object), right);		
+			r=new EQ(expression_left, expression_right);		
 		}
 		else if(InequalityOperator.getOpFromString(mades_condition.getRelation()).equals(InequalityOperator.NEQ)){
-			r=new Not(new EQ(s_variable.getPredicate(mades_object), right));		
+			r=new Not(new EQ(expression_left, expression_right));		
 		}
 		else if(InequalityOperator.getOpFromString(mades_condition.getRelation()).equals(InequalityOperator.GT)){
-			r=new GT(s_variable.getPredicate(mades_object), right);	
+			r=new GT(expression_left, expression_right);	
 		}
 		else if(InequalityOperator.getOpFromString(mades_condition.getRelation()).equals(InequalityOperator.GTE)){
-			r=new GTE(s_variable.getPredicate(mades_object), right);	
+			r=new GTE(expression_left, expression_right);	
 		}
 		else if(InequalityOperator.getOpFromString(mades_condition.getRelation()).equals(InequalityOperator.LT)){
-			r=new LT(s_variable.getPredicate(mades_object), right);	
+			r=new LT(expression_left, expression_right);	
 		}
 		else if(InequalityOperator.getOpFromString(mades_condition.getRelation()).equals(InequalityOperator.LTE)){
-			r=new LTE(s_variable.getPredicate(mades_object), right);	
-		}
+			r=new LTE(expression_left, expression_right);	
+		}			
+		
 		return r;	
+	}
+
+	private BooleanFormulae parseExpression(EXPRESSION expression) {
+		BooleanFormulae r=null;
+		
+		if(expression.getAlone()!=null){
+			r=this.parseTerm(expression.getAlone(), mades_object, context);
+		}
+		else if(this.parseOperation(expression.getOperator()).equals(ArithmeticOperator.PLUS)){
+			r=new Plus(this.parseTerm(expression.getFirstTerm(), mades_object, context), this.parseTerm(expression.getSecondTerm(),mades_object, context));
+		}
+		else if(this.parseOperation(expression.getOperator()).equals(ArithmeticOperator.MINUS)){
+			r=new Minus(this.parseTerm(expression.getFirstTerm(), mades_object, context), this.parseTerm(expression.getSecondTerm(),mades_object, context));		
+		}
+		else if(this.parseOperation(expression.getOperator()).equals(ArithmeticOperator.MULTIPLY)){
+			r=new Multiply(this.parseTerm(expression.getFirstTerm(), mades_object, context), this.parseTerm(expression.getSecondTerm(),mades_object, context));
+		}
+		return r;		
+	}
+	
+	private BooleanFormulae parseTerm(TERM parsed, Object obj, ExpressionContext context){
+		BooleanFormulae r=null;
+		//What kind of term we are talking about?
+		
+		if(parsed.getVariable()!=null){
+			//Go and find it in the model
+			Variable variable=VariableFactory.getInstance(parsed.getVariable(), obj, context);
+			//build the semantic stuff
+			SVariable s_variable=SVariableFactory.getInstance(variable);
+			//get the f*** predicate
+			r=s_variable.getPredicate(obj);
+		}
+		else{
+			r=new SConstant(parsed.getConstant());
+		}
+		return r;
+	}	
+	
+	private org.correttouml.uml.diagrams.expressions.ArithmeticOperator parseOperation(String operator) {
+		if(operator.equals("+")) return org.correttouml.uml.diagrams.expressions.ArithmeticOperator.PLUS;
+		//TODO[mottalrd]: the minus does not work, check the grammar definition
+		else if(operator.equals("--")) return org.correttouml.uml.diagrams.expressions.ArithmeticOperator.MINUS;
+		else if(operator.equals("*")) return org.correttouml.uml.diagrams.expressions.ArithmeticOperator.MULTIPLY;
+		return null;
 	}
 
 }

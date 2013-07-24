@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalBooleanExpressionsParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_OR", "RULE_AND", "RULE_NOT", "RULE_RELATIONS", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'exit'", "'enter'", "'start'", "'end'", "'tick'", "'sig'", "'call'", "'send'", "'receive'", "'('", "')'", "'@'", "'-'", "'{'", "'}'", "'.'", "'now'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_OR", "RULE_AND", "RULE_NOT", "RULE_RELATIONS", "RULE_INT", "RULE_ID", "RULE_OPERATOR", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'exit'", "'enter'", "'start'", "'end'", "'tick'", "'sig'", "'call'", "'send'", "'receive'", "'('", "')'", "'@'", "'-'", "'{'", "'}'", "'.'", "'now'"
     };
     public static final int RULE_ID=9;
     public static final int T__29=29;
@@ -33,26 +33,27 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
     public static final int T__24=24;
     public static final int T__23=23;
     public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=14;
+    public static final int RULE_ANY_OTHER=15;
     public static final int T__21=21;
     public static final int T__20=20;
     public static final int RULE_OR=4;
     public static final int RULE_RELATIONS=7;
     public static final int RULE_AND=5;
-    public static final int RULE_SL_COMMENT=12;
+    public static final int RULE_SL_COMMENT=13;
     public static final int EOF=-1;
     public static final int RULE_NOT=6;
-    public static final int RULE_ML_COMMENT=11;
-    public static final int T__30=30;
+    public static final int RULE_ML_COMMENT=12;
     public static final int T__19=19;
+    public static final int T__30=30;
     public static final int T__31=31;
-    public static final int RULE_STRING=10;
+    public static final int RULE_STRING=11;
+    public static final int T__32=32;
     public static final int T__16=16;
-    public static final int T__15=15;
     public static final int T__18=18;
     public static final int T__17=17;
     public static final int RULE_INT=8;
-    public static final int RULE_WS=13;
+    public static final int RULE_OPERATOR=10;
+    public static final int RULE_WS=14;
 
     // delegates
     // delegators
@@ -707,21 +708,175 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
     // $ANTLR end "ruleVariableCondition"
 
 
+    // $ANTLR start "entryRuleEXPRESSION"
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:284:1: entryRuleEXPRESSION : ruleEXPRESSION EOF ;
+    public final void entryRuleEXPRESSION() throws RecognitionException {
+        try {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:285:1: ( ruleEXPRESSION EOF )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:286:1: ruleEXPRESSION EOF
+            {
+             before(grammarAccess.getEXPRESSIONRule()); 
+            pushFollow(FOLLOW_ruleEXPRESSION_in_entryRuleEXPRESSION541);
+            ruleEXPRESSION();
+
+            state._fsp--;
+
+             after(grammarAccess.getEXPRESSIONRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEXPRESSION548); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleEXPRESSION"
+
+
+    // $ANTLR start "ruleEXPRESSION"
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:293:1: ruleEXPRESSION : ( ( rule__EXPRESSION__Alternatives ) ) ;
+    public final void ruleEXPRESSION() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:297:2: ( ( ( rule__EXPRESSION__Alternatives ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:298:1: ( ( rule__EXPRESSION__Alternatives ) )
+            {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:298:1: ( ( rule__EXPRESSION__Alternatives ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:299:1: ( rule__EXPRESSION__Alternatives )
+            {
+             before(grammarAccess.getEXPRESSIONAccess().getAlternatives()); 
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:300:1: ( rule__EXPRESSION__Alternatives )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:300:2: rule__EXPRESSION__Alternatives
+            {
+            pushFollow(FOLLOW_rule__EXPRESSION__Alternatives_in_ruleEXPRESSION574);
+            rule__EXPRESSION__Alternatives();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getEXPRESSIONAccess().getAlternatives()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleEXPRESSION"
+
+
+    // $ANTLR start "entryRuleTERM"
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:312:1: entryRuleTERM : ruleTERM EOF ;
+    public final void entryRuleTERM() throws RecognitionException {
+        try {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:313:1: ( ruleTERM EOF )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:314:1: ruleTERM EOF
+            {
+             before(grammarAccess.getTERMRule()); 
+            pushFollow(FOLLOW_ruleTERM_in_entryRuleTERM601);
+            ruleTERM();
+
+            state._fsp--;
+
+             after(grammarAccess.getTERMRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTERM608); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleTERM"
+
+
+    // $ANTLR start "ruleTERM"
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:321:1: ruleTERM : ( ( rule__TERM__Alternatives ) ) ;
+    public final void ruleTERM() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:325:2: ( ( ( rule__TERM__Alternatives ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:326:1: ( ( rule__TERM__Alternatives ) )
+            {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:326:1: ( ( rule__TERM__Alternatives ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:327:1: ( rule__TERM__Alternatives )
+            {
+             before(grammarAccess.getTERMAccess().getAlternatives()); 
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:328:1: ( rule__TERM__Alternatives )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:328:2: rule__TERM__Alternatives
+            {
+            pushFollow(FOLLOW_rule__TERM__Alternatives_in_ruleTERM634);
+            rule__TERM__Alternatives();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getTERMAccess().getAlternatives()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleTERM"
+
+
     // $ANTLR start "entryRuleEvent"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:284:1: entryRuleEvent : ruleEvent EOF ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:340:1: entryRuleEvent : ruleEvent EOF ;
     public final void entryRuleEvent() throws RecognitionException {
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:285:1: ( ruleEvent EOF )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:286:1: ruleEvent EOF
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:341:1: ( ruleEvent EOF )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:342:1: ruleEvent EOF
             {
              before(grammarAccess.getEventRule()); 
-            pushFollow(FOLLOW_ruleEvent_in_entryRuleEvent541);
+            pushFollow(FOLLOW_ruleEvent_in_entryRuleEvent661);
             ruleEvent();
 
             state._fsp--;
 
              after(grammarAccess.getEventRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEvent548); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEvent668); 
 
             }
 
@@ -738,23 +893,23 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "ruleEvent"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:293:1: ruleEvent : ( ( rule__Event__Alternatives ) ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:349:1: ruleEvent : ( ( rule__Event__Alternatives ) ) ;
     public final void ruleEvent() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:297:2: ( ( ( rule__Event__Alternatives ) ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:298:1: ( ( rule__Event__Alternatives ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:353:2: ( ( ( rule__Event__Alternatives ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:354:1: ( ( rule__Event__Alternatives ) )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:298:1: ( ( rule__Event__Alternatives ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:299:1: ( rule__Event__Alternatives )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:354:1: ( ( rule__Event__Alternatives ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:355:1: ( rule__Event__Alternatives )
             {
              before(grammarAccess.getEventAccess().getAlternatives()); 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:300:1: ( rule__Event__Alternatives )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:300:2: rule__Event__Alternatives
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:356:1: ( rule__Event__Alternatives )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:356:2: rule__Event__Alternatives
             {
-            pushFollow(FOLLOW_rule__Event__Alternatives_in_ruleEvent574);
+            pushFollow(FOLLOW_rule__Event__Alternatives_in_ruleEvent694);
             rule__Event__Alternatives();
 
             state._fsp--;
@@ -785,20 +940,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "entryRuleEventExtensions"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:312:1: entryRuleEventExtensions : ruleEventExtensions EOF ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:368:1: entryRuleEventExtensions : ruleEventExtensions EOF ;
     public final void entryRuleEventExtensions() throws RecognitionException {
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:313:1: ( ruleEventExtensions EOF )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:314:1: ruleEventExtensions EOF
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:369:1: ( ruleEventExtensions EOF )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:370:1: ruleEventExtensions EOF
             {
              before(grammarAccess.getEventExtensionsRule()); 
-            pushFollow(FOLLOW_ruleEventExtensions_in_entryRuleEventExtensions601);
+            pushFollow(FOLLOW_ruleEventExtensions_in_entryRuleEventExtensions721);
             ruleEventExtensions();
 
             state._fsp--;
 
              after(grammarAccess.getEventExtensionsRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEventExtensions608); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEventExtensions728); 
 
             }
 
@@ -815,23 +970,23 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "ruleEventExtensions"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:321:1: ruleEventExtensions : ( ( rule__EventExtensions__Alternatives ) ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:377:1: ruleEventExtensions : ( ( rule__EventExtensions__Alternatives ) ) ;
     public final void ruleEventExtensions() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:325:2: ( ( ( rule__EventExtensions__Alternatives ) ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:326:1: ( ( rule__EventExtensions__Alternatives ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:381:2: ( ( ( rule__EventExtensions__Alternatives ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:382:1: ( ( rule__EventExtensions__Alternatives ) )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:326:1: ( ( rule__EventExtensions__Alternatives ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:327:1: ( rule__EventExtensions__Alternatives )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:382:1: ( ( rule__EventExtensions__Alternatives ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:383:1: ( rule__EventExtensions__Alternatives )
             {
              before(grammarAccess.getEventExtensionsAccess().getAlternatives()); 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:328:1: ( rule__EventExtensions__Alternatives )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:328:2: rule__EventExtensions__Alternatives
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:384:1: ( rule__EventExtensions__Alternatives )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:384:2: rule__EventExtensions__Alternatives
             {
-            pushFollow(FOLLOW_rule__EventExtensions__Alternatives_in_ruleEventExtensions634);
+            pushFollow(FOLLOW_rule__EventExtensions__Alternatives_in_ruleEventExtensions754);
             rule__EventExtensions__Alternatives();
 
             state._fsp--;
@@ -862,20 +1017,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__Alternatives_1"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:340:1: rule__BaseExpression__Alternatives_1 : ( ( ( rule__BaseExpression__BooleanTermAssignment_1_0 ) ) | ( ( rule__BaseExpression__Group_1_1__0 ) ) );
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:396:1: rule__BaseExpression__Alternatives_1 : ( ( ( rule__BaseExpression__BooleanTermAssignment_1_0 ) ) | ( ( rule__BaseExpression__Group_1_1__0 ) ) );
     public final void rule__BaseExpression__Alternatives_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:344:1: ( ( ( rule__BaseExpression__BooleanTermAssignment_1_0 ) ) | ( ( rule__BaseExpression__Group_1_1__0 ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:400:1: ( ( ( rule__BaseExpression__BooleanTermAssignment_1_0 ) ) | ( ( rule__BaseExpression__Group_1_1__0 ) ) )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( (LA1_0==RULE_ID||LA1_0==26||LA1_0==28) ) {
+            if ( (LA1_0==RULE_ID||LA1_0==27||LA1_0==29) ) {
                 alt1=1;
             }
-            else if ( (LA1_0==24) ) {
+            else if ( (LA1_0==25) ) {
                 alt1=2;
             }
             else {
@@ -886,16 +1041,16 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:345:1: ( ( rule__BaseExpression__BooleanTermAssignment_1_0 ) )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:401:1: ( ( rule__BaseExpression__BooleanTermAssignment_1_0 ) )
                     {
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:345:1: ( ( rule__BaseExpression__BooleanTermAssignment_1_0 ) )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:346:1: ( rule__BaseExpression__BooleanTermAssignment_1_0 )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:401:1: ( ( rule__BaseExpression__BooleanTermAssignment_1_0 ) )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:402:1: ( rule__BaseExpression__BooleanTermAssignment_1_0 )
                     {
                      before(grammarAccess.getBaseExpressionAccess().getBooleanTermAssignment_1_0()); 
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:347:1: ( rule__BaseExpression__BooleanTermAssignment_1_0 )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:347:2: rule__BaseExpression__BooleanTermAssignment_1_0
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:403:1: ( rule__BaseExpression__BooleanTermAssignment_1_0 )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:403:2: rule__BaseExpression__BooleanTermAssignment_1_0
                     {
-                    pushFollow(FOLLOW_rule__BaseExpression__BooleanTermAssignment_1_0_in_rule__BaseExpression__Alternatives_1670);
+                    pushFollow(FOLLOW_rule__BaseExpression__BooleanTermAssignment_1_0_in_rule__BaseExpression__Alternatives_1790);
                     rule__BaseExpression__BooleanTermAssignment_1_0();
 
                     state._fsp--;
@@ -911,16 +1066,16 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
                     }
                     break;
                 case 2 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:351:6: ( ( rule__BaseExpression__Group_1_1__0 ) )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:407:6: ( ( rule__BaseExpression__Group_1_1__0 ) )
                     {
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:351:6: ( ( rule__BaseExpression__Group_1_1__0 ) )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:352:1: ( rule__BaseExpression__Group_1_1__0 )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:407:6: ( ( rule__BaseExpression__Group_1_1__0 ) )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:408:1: ( rule__BaseExpression__Group_1_1__0 )
                     {
                      before(grammarAccess.getBaseExpressionAccess().getGroup_1_1()); 
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:353:1: ( rule__BaseExpression__Group_1_1__0 )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:353:2: rule__BaseExpression__Group_1_1__0
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:409:1: ( rule__BaseExpression__Group_1_1__0 )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:409:2: rule__BaseExpression__Group_1_1__0
                     {
-                    pushFollow(FOLLOW_rule__BaseExpression__Group_1_1__0_in_rule__BaseExpression__Alternatives_1688);
+                    pushFollow(FOLLOW_rule__BaseExpression__Group_1_1__0_in_rule__BaseExpression__Alternatives_1808);
                     rule__BaseExpression__Group_1_1__0();
 
                     state._fsp--;
@@ -953,16 +1108,16 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BooleanTerm__Alternatives"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:362:1: rule__BooleanTerm__Alternatives : ( ( ( rule__BooleanTerm__TimeConstraintAssignment_0 ) ) | ( ( rule__BooleanTerm__BooleanVariableAssignment_1 ) ) | ( ( rule__BooleanTerm__VariableConditionAssignment_2 ) ) );
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:418:1: rule__BooleanTerm__Alternatives : ( ( ( rule__BooleanTerm__TimeConstraintAssignment_0 ) ) | ( ( rule__BooleanTerm__BooleanVariableAssignment_1 ) ) | ( ( rule__BooleanTerm__VariableConditionAssignment_2 ) ) );
     public final void rule__BooleanTerm__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:366:1: ( ( ( rule__BooleanTerm__TimeConstraintAssignment_0 ) ) | ( ( rule__BooleanTerm__BooleanVariableAssignment_1 ) ) | ( ( rule__BooleanTerm__VariableConditionAssignment_2 ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:422:1: ( ( ( rule__BooleanTerm__TimeConstraintAssignment_0 ) ) | ( ( rule__BooleanTerm__BooleanVariableAssignment_1 ) ) | ( ( rule__BooleanTerm__VariableConditionAssignment_2 ) ) )
             int alt2=3;
             switch ( input.LA(1) ) {
-            case 26:
+            case 27:
                 {
                 alt2=1;
                 }
@@ -972,7 +1127,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
                 alt2=2;
                 }
                 break;
-            case 28:
+            case 29:
                 {
                 alt2=3;
                 }
@@ -986,16 +1141,16 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
             switch (alt2) {
                 case 1 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:367:1: ( ( rule__BooleanTerm__TimeConstraintAssignment_0 ) )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:423:1: ( ( rule__BooleanTerm__TimeConstraintAssignment_0 ) )
                     {
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:367:1: ( ( rule__BooleanTerm__TimeConstraintAssignment_0 ) )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:368:1: ( rule__BooleanTerm__TimeConstraintAssignment_0 )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:423:1: ( ( rule__BooleanTerm__TimeConstraintAssignment_0 ) )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:424:1: ( rule__BooleanTerm__TimeConstraintAssignment_0 )
                     {
                      before(grammarAccess.getBooleanTermAccess().getTimeConstraintAssignment_0()); 
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:369:1: ( rule__BooleanTerm__TimeConstraintAssignment_0 )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:369:2: rule__BooleanTerm__TimeConstraintAssignment_0
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:425:1: ( rule__BooleanTerm__TimeConstraintAssignment_0 )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:425:2: rule__BooleanTerm__TimeConstraintAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__BooleanTerm__TimeConstraintAssignment_0_in_rule__BooleanTerm__Alternatives721);
+                    pushFollow(FOLLOW_rule__BooleanTerm__TimeConstraintAssignment_0_in_rule__BooleanTerm__Alternatives841);
                     rule__BooleanTerm__TimeConstraintAssignment_0();
 
                     state._fsp--;
@@ -1011,16 +1166,16 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
                     }
                     break;
                 case 2 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:373:6: ( ( rule__BooleanTerm__BooleanVariableAssignment_1 ) )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:429:6: ( ( rule__BooleanTerm__BooleanVariableAssignment_1 ) )
                     {
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:373:6: ( ( rule__BooleanTerm__BooleanVariableAssignment_1 ) )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:374:1: ( rule__BooleanTerm__BooleanVariableAssignment_1 )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:429:6: ( ( rule__BooleanTerm__BooleanVariableAssignment_1 ) )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:430:1: ( rule__BooleanTerm__BooleanVariableAssignment_1 )
                     {
                      before(grammarAccess.getBooleanTermAccess().getBooleanVariableAssignment_1()); 
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:375:1: ( rule__BooleanTerm__BooleanVariableAssignment_1 )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:375:2: rule__BooleanTerm__BooleanVariableAssignment_1
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:431:1: ( rule__BooleanTerm__BooleanVariableAssignment_1 )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:431:2: rule__BooleanTerm__BooleanVariableAssignment_1
                     {
-                    pushFollow(FOLLOW_rule__BooleanTerm__BooleanVariableAssignment_1_in_rule__BooleanTerm__Alternatives739);
+                    pushFollow(FOLLOW_rule__BooleanTerm__BooleanVariableAssignment_1_in_rule__BooleanTerm__Alternatives859);
                     rule__BooleanTerm__BooleanVariableAssignment_1();
 
                     state._fsp--;
@@ -1036,16 +1191,16 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
                     }
                     break;
                 case 3 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:379:6: ( ( rule__BooleanTerm__VariableConditionAssignment_2 ) )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:435:6: ( ( rule__BooleanTerm__VariableConditionAssignment_2 ) )
                     {
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:379:6: ( ( rule__BooleanTerm__VariableConditionAssignment_2 ) )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:380:1: ( rule__BooleanTerm__VariableConditionAssignment_2 )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:435:6: ( ( rule__BooleanTerm__VariableConditionAssignment_2 ) )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:436:1: ( rule__BooleanTerm__VariableConditionAssignment_2 )
                     {
                      before(grammarAccess.getBooleanTermAccess().getVariableConditionAssignment_2()); 
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:381:1: ( rule__BooleanTerm__VariableConditionAssignment_2 )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:381:2: rule__BooleanTerm__VariableConditionAssignment_2
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:437:1: ( rule__BooleanTerm__VariableConditionAssignment_2 )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:437:2: rule__BooleanTerm__VariableConditionAssignment_2
                     {
-                    pushFollow(FOLLOW_rule__BooleanTerm__VariableConditionAssignment_2_in_rule__BooleanTerm__Alternatives757);
+                    pushFollow(FOLLOW_rule__BooleanTerm__VariableConditionAssignment_2_in_rule__BooleanTerm__Alternatives877);
                     rule__BooleanTerm__VariableConditionAssignment_2();
 
                     state._fsp--;
@@ -1077,22 +1232,48 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
     // $ANTLR end "rule__BooleanTerm__Alternatives"
 
 
-    // $ANTLR start "rule__VariableCondition__Alternatives_3"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:390:1: rule__VariableCondition__Alternatives_3 : ( ( ( rule__VariableCondition__ValueAssignment_3_0 ) ) | ( ( rule__VariableCondition__RightVariableAssignment_3_1 ) ) );
-    public final void rule__VariableCondition__Alternatives_3() throws RecognitionException {
+    // $ANTLR start "rule__EXPRESSION__Alternatives"
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:446:1: rule__EXPRESSION__Alternatives : ( ( ( rule__EXPRESSION__Group_0__0 ) ) | ( ( rule__EXPRESSION__AloneAssignment_1 ) ) );
+    public final void rule__EXPRESSION__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:394:1: ( ( ( rule__VariableCondition__ValueAssignment_3_0 ) ) | ( ( rule__VariableCondition__RightVariableAssignment_3_1 ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:450:1: ( ( ( rule__EXPRESSION__Group_0__0 ) ) | ( ( rule__EXPRESSION__AloneAssignment_1 ) ) )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( (LA3_0==RULE_INT) ) {
-                alt3=1;
+            if ( (LA3_0==RULE_ID) ) {
+                int LA3_1 = input.LA(2);
+
+                if ( (LA3_1==EOF||LA3_1==RULE_RELATIONS||LA3_1==30) ) {
+                    alt3=2;
+                }
+                else if ( (LA3_1==RULE_OPERATOR) ) {
+                    alt3=1;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 3, 1, input);
+
+                    throw nvae;
+                }
             }
-            else if ( (LA3_0==RULE_ID) ) {
-                alt3=2;
+            else if ( (LA3_0==RULE_INT) ) {
+                int LA3_2 = input.LA(2);
+
+                if ( (LA3_2==EOF||LA3_2==RULE_RELATIONS||LA3_2==30) ) {
+                    alt3=2;
+                }
+                else if ( (LA3_2==RULE_OPERATOR) ) {
+                    alt3=1;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 3, 2, input);
+
+                    throw nvae;
+                }
             }
             else {
                 NoViableAltException nvae =
@@ -1102,24 +1283,24 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
             }
             switch (alt3) {
                 case 1 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:395:1: ( ( rule__VariableCondition__ValueAssignment_3_0 ) )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:451:1: ( ( rule__EXPRESSION__Group_0__0 ) )
                     {
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:395:1: ( ( rule__VariableCondition__ValueAssignment_3_0 ) )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:396:1: ( rule__VariableCondition__ValueAssignment_3_0 )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:451:1: ( ( rule__EXPRESSION__Group_0__0 ) )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:452:1: ( rule__EXPRESSION__Group_0__0 )
                     {
-                     before(grammarAccess.getVariableConditionAccess().getValueAssignment_3_0()); 
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:397:1: ( rule__VariableCondition__ValueAssignment_3_0 )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:397:2: rule__VariableCondition__ValueAssignment_3_0
+                     before(grammarAccess.getEXPRESSIONAccess().getGroup_0()); 
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:453:1: ( rule__EXPRESSION__Group_0__0 )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:453:2: rule__EXPRESSION__Group_0__0
                     {
-                    pushFollow(FOLLOW_rule__VariableCondition__ValueAssignment_3_0_in_rule__VariableCondition__Alternatives_3790);
-                    rule__VariableCondition__ValueAssignment_3_0();
+                    pushFollow(FOLLOW_rule__EXPRESSION__Group_0__0_in_rule__EXPRESSION__Alternatives910);
+                    rule__EXPRESSION__Group_0__0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getVariableConditionAccess().getValueAssignment_3_0()); 
+                     after(grammarAccess.getEXPRESSIONAccess().getGroup_0()); 
 
                     }
 
@@ -1127,24 +1308,24 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
                     }
                     break;
                 case 2 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:401:6: ( ( rule__VariableCondition__RightVariableAssignment_3_1 ) )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:457:6: ( ( rule__EXPRESSION__AloneAssignment_1 ) )
                     {
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:401:6: ( ( rule__VariableCondition__RightVariableAssignment_3_1 ) )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:402:1: ( rule__VariableCondition__RightVariableAssignment_3_1 )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:457:6: ( ( rule__EXPRESSION__AloneAssignment_1 ) )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:458:1: ( rule__EXPRESSION__AloneAssignment_1 )
                     {
-                     before(grammarAccess.getVariableConditionAccess().getRightVariableAssignment_3_1()); 
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:403:1: ( rule__VariableCondition__RightVariableAssignment_3_1 )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:403:2: rule__VariableCondition__RightVariableAssignment_3_1
+                     before(grammarAccess.getEXPRESSIONAccess().getAloneAssignment_1()); 
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:459:1: ( rule__EXPRESSION__AloneAssignment_1 )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:459:2: rule__EXPRESSION__AloneAssignment_1
                     {
-                    pushFollow(FOLLOW_rule__VariableCondition__RightVariableAssignment_3_1_in_rule__VariableCondition__Alternatives_3808);
-                    rule__VariableCondition__RightVariableAssignment_3_1();
+                    pushFollow(FOLLOW_rule__EXPRESSION__AloneAssignment_1_in_rule__EXPRESSION__Alternatives928);
+                    rule__EXPRESSION__AloneAssignment_1();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getVariableConditionAccess().getRightVariableAssignment_3_1()); 
+                     after(grammarAccess.getEXPRESSIONAccess().getAloneAssignment_1()); 
 
                     }
 
@@ -1165,24 +1346,24 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
         }
         return ;
     }
-    // $ANTLR end "rule__VariableCondition__Alternatives_3"
+    // $ANTLR end "rule__EXPRESSION__Alternatives"
 
 
-    // $ANTLR start "rule__Event__Alternatives"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:412:1: rule__Event__Alternatives : ( ( ( rule__Event__Group_0__0 ) ) | ( ( rule__Event__NowEventAssignment_1 ) ) );
-    public final void rule__Event__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__TERM__Alternatives"
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:468:1: rule__TERM__Alternatives : ( ( ( rule__TERM__VariableAssignment_0 ) ) | ( ( rule__TERM__ConstantAssignment_1 ) ) );
+    public final void rule__TERM__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:416:1: ( ( ( rule__Event__Group_0__0 ) ) | ( ( rule__Event__NowEventAssignment_1 ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:472:1: ( ( ( rule__TERM__VariableAssignment_0 ) ) | ( ( rule__TERM__ConstantAssignment_1 ) ) )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
             if ( (LA4_0==RULE_ID) ) {
                 alt4=1;
             }
-            else if ( (LA4_0==31) ) {
+            else if ( (LA4_0==RULE_INT) ) {
                 alt4=2;
             }
             else {
@@ -1193,16 +1374,107 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:417:1: ( ( rule__Event__Group_0__0 ) )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:473:1: ( ( rule__TERM__VariableAssignment_0 ) )
                     {
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:417:1: ( ( rule__Event__Group_0__0 ) )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:418:1: ( rule__Event__Group_0__0 )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:473:1: ( ( rule__TERM__VariableAssignment_0 ) )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:474:1: ( rule__TERM__VariableAssignment_0 )
+                    {
+                     before(grammarAccess.getTERMAccess().getVariableAssignment_0()); 
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:475:1: ( rule__TERM__VariableAssignment_0 )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:475:2: rule__TERM__VariableAssignment_0
+                    {
+                    pushFollow(FOLLOW_rule__TERM__VariableAssignment_0_in_rule__TERM__Alternatives961);
+                    rule__TERM__VariableAssignment_0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getTERMAccess().getVariableAssignment_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:479:6: ( ( rule__TERM__ConstantAssignment_1 ) )
+                    {
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:479:6: ( ( rule__TERM__ConstantAssignment_1 ) )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:480:1: ( rule__TERM__ConstantAssignment_1 )
+                    {
+                     before(grammarAccess.getTERMAccess().getConstantAssignment_1()); 
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:481:1: ( rule__TERM__ConstantAssignment_1 )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:481:2: rule__TERM__ConstantAssignment_1
+                    {
+                    pushFollow(FOLLOW_rule__TERM__ConstantAssignment_1_in_rule__TERM__Alternatives979);
+                    rule__TERM__ConstantAssignment_1();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getTERMAccess().getConstantAssignment_1()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__TERM__Alternatives"
+
+
+    // $ANTLR start "rule__Event__Alternatives"
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:490:1: rule__Event__Alternatives : ( ( ( rule__Event__Group_0__0 ) ) | ( ( rule__Event__NowEventAssignment_1 ) ) );
+    public final void rule__Event__Alternatives() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:494:1: ( ( ( rule__Event__Group_0__0 ) ) | ( ( rule__Event__NowEventAssignment_1 ) ) )
+            int alt5=2;
+            int LA5_0 = input.LA(1);
+
+            if ( (LA5_0==RULE_ID) ) {
+                alt5=1;
+            }
+            else if ( (LA5_0==32) ) {
+                alt5=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 5, 0, input);
+
+                throw nvae;
+            }
+            switch (alt5) {
+                case 1 :
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:495:1: ( ( rule__Event__Group_0__0 ) )
+                    {
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:495:1: ( ( rule__Event__Group_0__0 ) )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:496:1: ( rule__Event__Group_0__0 )
                     {
                      before(grammarAccess.getEventAccess().getGroup_0()); 
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:419:1: ( rule__Event__Group_0__0 )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:419:2: rule__Event__Group_0__0
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:497:1: ( rule__Event__Group_0__0 )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:497:2: rule__Event__Group_0__0
                     {
-                    pushFollow(FOLLOW_rule__Event__Group_0__0_in_rule__Event__Alternatives841);
+                    pushFollow(FOLLOW_rule__Event__Group_0__0_in_rule__Event__Alternatives1012);
                     rule__Event__Group_0__0();
 
                     state._fsp--;
@@ -1218,16 +1490,16 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
                     }
                     break;
                 case 2 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:423:6: ( ( rule__Event__NowEventAssignment_1 ) )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:501:6: ( ( rule__Event__NowEventAssignment_1 ) )
                     {
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:423:6: ( ( rule__Event__NowEventAssignment_1 ) )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:424:1: ( rule__Event__NowEventAssignment_1 )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:501:6: ( ( rule__Event__NowEventAssignment_1 ) )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:502:1: ( rule__Event__NowEventAssignment_1 )
                     {
                      before(grammarAccess.getEventAccess().getNowEventAssignment_1()); 
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:425:1: ( rule__Event__NowEventAssignment_1 )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:425:2: rule__Event__NowEventAssignment_1
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:503:1: ( rule__Event__NowEventAssignment_1 )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:503:2: rule__Event__NowEventAssignment_1
                     {
-                    pushFollow(FOLLOW_rule__Event__NowEventAssignment_1_in_rule__Event__Alternatives859);
+                    pushFollow(FOLLOW_rule__Event__NowEventAssignment_1_in_rule__Event__Alternatives1030);
                     rule__Event__NowEventAssignment_1();
 
                     state._fsp--;
@@ -1260,76 +1532,76 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__EventExtensions__Alternatives"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:434:1: rule__EventExtensions__Alternatives : ( ( 'exit' ) | ( 'enter' ) | ( 'start' ) | ( 'end' ) | ( 'tick' ) | ( 'sig' ) | ( 'call' ) | ( 'send' ) | ( 'receive' ) );
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:512:1: rule__EventExtensions__Alternatives : ( ( 'exit' ) | ( 'enter' ) | ( 'start' ) | ( 'end' ) | ( 'tick' ) | ( 'sig' ) | ( 'call' ) | ( 'send' ) | ( 'receive' ) );
     public final void rule__EventExtensions__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:438:1: ( ( 'exit' ) | ( 'enter' ) | ( 'start' ) | ( 'end' ) | ( 'tick' ) | ( 'sig' ) | ( 'call' ) | ( 'send' ) | ( 'receive' ) )
-            int alt5=9;
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:516:1: ( ( 'exit' ) | ( 'enter' ) | ( 'start' ) | ( 'end' ) | ( 'tick' ) | ( 'sig' ) | ( 'call' ) | ( 'send' ) | ( 'receive' ) )
+            int alt6=9;
             switch ( input.LA(1) ) {
-            case 15:
-                {
-                alt5=1;
-                }
-                break;
             case 16:
                 {
-                alt5=2;
+                alt6=1;
                 }
                 break;
             case 17:
                 {
-                alt5=3;
+                alt6=2;
                 }
                 break;
             case 18:
                 {
-                alt5=4;
+                alt6=3;
                 }
                 break;
             case 19:
                 {
-                alt5=5;
+                alt6=4;
                 }
                 break;
             case 20:
                 {
-                alt5=6;
+                alt6=5;
                 }
                 break;
             case 21:
                 {
-                alt5=7;
+                alt6=6;
                 }
                 break;
             case 22:
                 {
-                alt5=8;
+                alt6=7;
                 }
                 break;
             case 23:
                 {
-                alt5=9;
+                alt6=8;
+                }
+                break;
+            case 24:
+                {
+                alt6=9;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 5, 0, input);
+                    new NoViableAltException("", 6, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt5) {
+            switch (alt6) {
                 case 1 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:439:1: ( 'exit' )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:517:1: ( 'exit' )
                     {
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:439:1: ( 'exit' )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:440:1: 'exit'
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:517:1: ( 'exit' )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:518:1: 'exit'
                     {
                      before(grammarAccess.getEventExtensionsAccess().getExitKeyword_0()); 
-                    match(input,15,FOLLOW_15_in_rule__EventExtensions__Alternatives893); 
+                    match(input,16,FOLLOW_16_in_rule__EventExtensions__Alternatives1064); 
                      after(grammarAccess.getEventExtensionsAccess().getExitKeyword_0()); 
 
                     }
@@ -1338,13 +1610,13 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
                     }
                     break;
                 case 2 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:447:6: ( 'enter' )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:525:6: ( 'enter' )
                     {
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:447:6: ( 'enter' )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:448:1: 'enter'
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:525:6: ( 'enter' )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:526:1: 'enter'
                     {
                      before(grammarAccess.getEventExtensionsAccess().getEnterKeyword_1()); 
-                    match(input,16,FOLLOW_16_in_rule__EventExtensions__Alternatives913); 
+                    match(input,17,FOLLOW_17_in_rule__EventExtensions__Alternatives1084); 
                      after(grammarAccess.getEventExtensionsAccess().getEnterKeyword_1()); 
 
                     }
@@ -1353,13 +1625,13 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
                     }
                     break;
                 case 3 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:455:6: ( 'start' )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:533:6: ( 'start' )
                     {
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:455:6: ( 'start' )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:456:1: 'start'
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:533:6: ( 'start' )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:534:1: 'start'
                     {
                      before(grammarAccess.getEventExtensionsAccess().getStartKeyword_2()); 
-                    match(input,17,FOLLOW_17_in_rule__EventExtensions__Alternatives933); 
+                    match(input,18,FOLLOW_18_in_rule__EventExtensions__Alternatives1104); 
                      after(grammarAccess.getEventExtensionsAccess().getStartKeyword_2()); 
 
                     }
@@ -1368,13 +1640,13 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
                     }
                     break;
                 case 4 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:463:6: ( 'end' )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:541:6: ( 'end' )
                     {
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:463:6: ( 'end' )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:464:1: 'end'
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:541:6: ( 'end' )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:542:1: 'end'
                     {
                      before(grammarAccess.getEventExtensionsAccess().getEndKeyword_3()); 
-                    match(input,18,FOLLOW_18_in_rule__EventExtensions__Alternatives953); 
+                    match(input,19,FOLLOW_19_in_rule__EventExtensions__Alternatives1124); 
                      after(grammarAccess.getEventExtensionsAccess().getEndKeyword_3()); 
 
                     }
@@ -1383,13 +1655,13 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
                     }
                     break;
                 case 5 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:471:6: ( 'tick' )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:549:6: ( 'tick' )
                     {
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:471:6: ( 'tick' )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:472:1: 'tick'
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:549:6: ( 'tick' )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:550:1: 'tick'
                     {
                      before(grammarAccess.getEventExtensionsAccess().getTickKeyword_4()); 
-                    match(input,19,FOLLOW_19_in_rule__EventExtensions__Alternatives973); 
+                    match(input,20,FOLLOW_20_in_rule__EventExtensions__Alternatives1144); 
                      after(grammarAccess.getEventExtensionsAccess().getTickKeyword_4()); 
 
                     }
@@ -1398,13 +1670,13 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
                     }
                     break;
                 case 6 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:479:6: ( 'sig' )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:557:6: ( 'sig' )
                     {
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:479:6: ( 'sig' )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:480:1: 'sig'
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:557:6: ( 'sig' )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:558:1: 'sig'
                     {
                      before(grammarAccess.getEventExtensionsAccess().getSigKeyword_5()); 
-                    match(input,20,FOLLOW_20_in_rule__EventExtensions__Alternatives993); 
+                    match(input,21,FOLLOW_21_in_rule__EventExtensions__Alternatives1164); 
                      after(grammarAccess.getEventExtensionsAccess().getSigKeyword_5()); 
 
                     }
@@ -1413,13 +1685,13 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
                     }
                     break;
                 case 7 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:487:6: ( 'call' )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:565:6: ( 'call' )
                     {
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:487:6: ( 'call' )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:488:1: 'call'
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:565:6: ( 'call' )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:566:1: 'call'
                     {
                      before(grammarAccess.getEventExtensionsAccess().getCallKeyword_6()); 
-                    match(input,21,FOLLOW_21_in_rule__EventExtensions__Alternatives1013); 
+                    match(input,22,FOLLOW_22_in_rule__EventExtensions__Alternatives1184); 
                      after(grammarAccess.getEventExtensionsAccess().getCallKeyword_6()); 
 
                     }
@@ -1428,13 +1700,13 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
                     }
                     break;
                 case 8 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:495:6: ( 'send' )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:573:6: ( 'send' )
                     {
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:495:6: ( 'send' )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:496:1: 'send'
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:573:6: ( 'send' )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:574:1: 'send'
                     {
                      before(grammarAccess.getEventExtensionsAccess().getSendKeyword_7()); 
-                    match(input,22,FOLLOW_22_in_rule__EventExtensions__Alternatives1033); 
+                    match(input,23,FOLLOW_23_in_rule__EventExtensions__Alternatives1204); 
                      after(grammarAccess.getEventExtensionsAccess().getSendKeyword_7()); 
 
                     }
@@ -1443,13 +1715,13 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
                     }
                     break;
                 case 9 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:503:6: ( 'receive' )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:581:6: ( 'receive' )
                     {
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:503:6: ( 'receive' )
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:504:1: 'receive'
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:581:6: ( 'receive' )
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:582:1: 'receive'
                     {
                      before(grammarAccess.getEventExtensionsAccess().getReceiveKeyword_8()); 
-                    match(input,23,FOLLOW_23_in_rule__EventExtensions__Alternatives1053); 
+                    match(input,24,FOLLOW_24_in_rule__EventExtensions__Alternatives1224); 
                      after(grammarAccess.getEventExtensionsAccess().getReceiveKeyword_8()); 
 
                     }
@@ -1475,21 +1747,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__OrExpression__Group__0"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:518:1: rule__OrExpression__Group__0 : rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1 ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:596:1: rule__OrExpression__Group__0 : rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1 ;
     public final void rule__OrExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:522:1: ( rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:523:2: rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:600:1: ( rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:601:2: rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1
             {
-            pushFollow(FOLLOW_rule__OrExpression__Group__0__Impl_in_rule__OrExpression__Group__01085);
+            pushFollow(FOLLOW_rule__OrExpression__Group__0__Impl_in_rule__OrExpression__Group__01256);
             rule__OrExpression__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__OrExpression__Group__1_in_rule__OrExpression__Group__01088);
+            pushFollow(FOLLOW_rule__OrExpression__Group__1_in_rule__OrExpression__Group__01259);
             rule__OrExpression__Group__1();
 
             state._fsp--;
@@ -1513,23 +1785,23 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__OrExpression__Group__0__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:530:1: rule__OrExpression__Group__0__Impl : ( ( rule__OrExpression__LeftExpressionAssignment_0 ) ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:608:1: rule__OrExpression__Group__0__Impl : ( ( rule__OrExpression__LeftExpressionAssignment_0 ) ) ;
     public final void rule__OrExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:534:1: ( ( ( rule__OrExpression__LeftExpressionAssignment_0 ) ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:535:1: ( ( rule__OrExpression__LeftExpressionAssignment_0 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:612:1: ( ( ( rule__OrExpression__LeftExpressionAssignment_0 ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:613:1: ( ( rule__OrExpression__LeftExpressionAssignment_0 ) )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:535:1: ( ( rule__OrExpression__LeftExpressionAssignment_0 ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:536:1: ( rule__OrExpression__LeftExpressionAssignment_0 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:613:1: ( ( rule__OrExpression__LeftExpressionAssignment_0 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:614:1: ( rule__OrExpression__LeftExpressionAssignment_0 )
             {
              before(grammarAccess.getOrExpressionAccess().getLeftExpressionAssignment_0()); 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:537:1: ( rule__OrExpression__LeftExpressionAssignment_0 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:537:2: rule__OrExpression__LeftExpressionAssignment_0
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:615:1: ( rule__OrExpression__LeftExpressionAssignment_0 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:615:2: rule__OrExpression__LeftExpressionAssignment_0
             {
-            pushFollow(FOLLOW_rule__OrExpression__LeftExpressionAssignment_0_in_rule__OrExpression__Group__0__Impl1115);
+            pushFollow(FOLLOW_rule__OrExpression__LeftExpressionAssignment_0_in_rule__OrExpression__Group__0__Impl1286);
             rule__OrExpression__LeftExpressionAssignment_0();
 
             state._fsp--;
@@ -1560,16 +1832,16 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__OrExpression__Group__1"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:547:1: rule__OrExpression__Group__1 : rule__OrExpression__Group__1__Impl ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:625:1: rule__OrExpression__Group__1 : rule__OrExpression__Group__1__Impl ;
     public final void rule__OrExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:551:1: ( rule__OrExpression__Group__1__Impl )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:552:2: rule__OrExpression__Group__1__Impl
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:629:1: ( rule__OrExpression__Group__1__Impl )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:630:2: rule__OrExpression__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__OrExpression__Group__1__Impl_in_rule__OrExpression__Group__11145);
+            pushFollow(FOLLOW_rule__OrExpression__Group__1__Impl_in_rule__OrExpression__Group__11316);
             rule__OrExpression__Group__1__Impl();
 
             state._fsp--;
@@ -1593,31 +1865,31 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__OrExpression__Group__1__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:558:1: rule__OrExpression__Group__1__Impl : ( ( rule__OrExpression__Group_1__0 )? ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:636:1: rule__OrExpression__Group__1__Impl : ( ( rule__OrExpression__Group_1__0 )? ) ;
     public final void rule__OrExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:562:1: ( ( ( rule__OrExpression__Group_1__0 )? ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:563:1: ( ( rule__OrExpression__Group_1__0 )? )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:640:1: ( ( ( rule__OrExpression__Group_1__0 )? ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:641:1: ( ( rule__OrExpression__Group_1__0 )? )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:563:1: ( ( rule__OrExpression__Group_1__0 )? )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:564:1: ( rule__OrExpression__Group_1__0 )?
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:641:1: ( ( rule__OrExpression__Group_1__0 )? )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:642:1: ( rule__OrExpression__Group_1__0 )?
             {
              before(grammarAccess.getOrExpressionAccess().getGroup_1()); 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:565:1: ( rule__OrExpression__Group_1__0 )?
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:643:1: ( rule__OrExpression__Group_1__0 )?
+            int alt7=2;
+            int LA7_0 = input.LA(1);
 
-            if ( (LA6_0==RULE_OR) ) {
-                alt6=1;
+            if ( (LA7_0==RULE_OR) ) {
+                alt7=1;
             }
-            switch (alt6) {
+            switch (alt7) {
                 case 1 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:565:2: rule__OrExpression__Group_1__0
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:643:2: rule__OrExpression__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__OrExpression__Group_1__0_in_rule__OrExpression__Group__1__Impl1172);
+                    pushFollow(FOLLOW_rule__OrExpression__Group_1__0_in_rule__OrExpression__Group__1__Impl1343);
                     rule__OrExpression__Group_1__0();
 
                     state._fsp--;
@@ -1651,21 +1923,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__OrExpression__Group_1__0"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:579:1: rule__OrExpression__Group_1__0 : rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1 ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:657:1: rule__OrExpression__Group_1__0 : rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1 ;
     public final void rule__OrExpression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:583:1: ( rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:584:2: rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:661:1: ( rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:662:2: rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1
             {
-            pushFollow(FOLLOW_rule__OrExpression__Group_1__0__Impl_in_rule__OrExpression__Group_1__01207);
+            pushFollow(FOLLOW_rule__OrExpression__Group_1__0__Impl_in_rule__OrExpression__Group_1__01378);
             rule__OrExpression__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__OrExpression__Group_1__1_in_rule__OrExpression__Group_1__01210);
+            pushFollow(FOLLOW_rule__OrExpression__Group_1__1_in_rule__OrExpression__Group_1__01381);
             rule__OrExpression__Group_1__1();
 
             state._fsp--;
@@ -1689,23 +1961,23 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__OrExpression__Group_1__0__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:591:1: rule__OrExpression__Group_1__0__Impl : ( ( rule__OrExpression__OrAssignment_1_0 ) ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:669:1: rule__OrExpression__Group_1__0__Impl : ( ( rule__OrExpression__OrAssignment_1_0 ) ) ;
     public final void rule__OrExpression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:595:1: ( ( ( rule__OrExpression__OrAssignment_1_0 ) ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:596:1: ( ( rule__OrExpression__OrAssignment_1_0 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:673:1: ( ( ( rule__OrExpression__OrAssignment_1_0 ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:674:1: ( ( rule__OrExpression__OrAssignment_1_0 ) )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:596:1: ( ( rule__OrExpression__OrAssignment_1_0 ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:597:1: ( rule__OrExpression__OrAssignment_1_0 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:674:1: ( ( rule__OrExpression__OrAssignment_1_0 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:675:1: ( rule__OrExpression__OrAssignment_1_0 )
             {
              before(grammarAccess.getOrExpressionAccess().getOrAssignment_1_0()); 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:598:1: ( rule__OrExpression__OrAssignment_1_0 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:598:2: rule__OrExpression__OrAssignment_1_0
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:676:1: ( rule__OrExpression__OrAssignment_1_0 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:676:2: rule__OrExpression__OrAssignment_1_0
             {
-            pushFollow(FOLLOW_rule__OrExpression__OrAssignment_1_0_in_rule__OrExpression__Group_1__0__Impl1237);
+            pushFollow(FOLLOW_rule__OrExpression__OrAssignment_1_0_in_rule__OrExpression__Group_1__0__Impl1408);
             rule__OrExpression__OrAssignment_1_0();
 
             state._fsp--;
@@ -1736,16 +2008,16 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__OrExpression__Group_1__1"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:608:1: rule__OrExpression__Group_1__1 : rule__OrExpression__Group_1__1__Impl ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:686:1: rule__OrExpression__Group_1__1 : rule__OrExpression__Group_1__1__Impl ;
     public final void rule__OrExpression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:612:1: ( rule__OrExpression__Group_1__1__Impl )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:613:2: rule__OrExpression__Group_1__1__Impl
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:690:1: ( rule__OrExpression__Group_1__1__Impl )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:691:2: rule__OrExpression__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__OrExpression__Group_1__1__Impl_in_rule__OrExpression__Group_1__11267);
+            pushFollow(FOLLOW_rule__OrExpression__Group_1__1__Impl_in_rule__OrExpression__Group_1__11438);
             rule__OrExpression__Group_1__1__Impl();
 
             state._fsp--;
@@ -1769,23 +2041,23 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__OrExpression__Group_1__1__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:619:1: rule__OrExpression__Group_1__1__Impl : ( ( rule__OrExpression__RightExpressionAssignment_1_1 ) ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:697:1: rule__OrExpression__Group_1__1__Impl : ( ( rule__OrExpression__RightExpressionAssignment_1_1 ) ) ;
     public final void rule__OrExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:623:1: ( ( ( rule__OrExpression__RightExpressionAssignment_1_1 ) ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:624:1: ( ( rule__OrExpression__RightExpressionAssignment_1_1 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:701:1: ( ( ( rule__OrExpression__RightExpressionAssignment_1_1 ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:702:1: ( ( rule__OrExpression__RightExpressionAssignment_1_1 ) )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:624:1: ( ( rule__OrExpression__RightExpressionAssignment_1_1 ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:625:1: ( rule__OrExpression__RightExpressionAssignment_1_1 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:702:1: ( ( rule__OrExpression__RightExpressionAssignment_1_1 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:703:1: ( rule__OrExpression__RightExpressionAssignment_1_1 )
             {
              before(grammarAccess.getOrExpressionAccess().getRightExpressionAssignment_1_1()); 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:626:1: ( rule__OrExpression__RightExpressionAssignment_1_1 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:626:2: rule__OrExpression__RightExpressionAssignment_1_1
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:704:1: ( rule__OrExpression__RightExpressionAssignment_1_1 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:704:2: rule__OrExpression__RightExpressionAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__OrExpression__RightExpressionAssignment_1_1_in_rule__OrExpression__Group_1__1__Impl1294);
+            pushFollow(FOLLOW_rule__OrExpression__RightExpressionAssignment_1_1_in_rule__OrExpression__Group_1__1__Impl1465);
             rule__OrExpression__RightExpressionAssignment_1_1();
 
             state._fsp--;
@@ -1816,21 +2088,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AndExpression__Group__0"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:640:1: rule__AndExpression__Group__0 : rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1 ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:718:1: rule__AndExpression__Group__0 : rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1 ;
     public final void rule__AndExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:644:1: ( rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:645:2: rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:722:1: ( rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:723:2: rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1
             {
-            pushFollow(FOLLOW_rule__AndExpression__Group__0__Impl_in_rule__AndExpression__Group__01328);
+            pushFollow(FOLLOW_rule__AndExpression__Group__0__Impl_in_rule__AndExpression__Group__01499);
             rule__AndExpression__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AndExpression__Group__1_in_rule__AndExpression__Group__01331);
+            pushFollow(FOLLOW_rule__AndExpression__Group__1_in_rule__AndExpression__Group__01502);
             rule__AndExpression__Group__1();
 
             state._fsp--;
@@ -1854,23 +2126,23 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AndExpression__Group__0__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:652:1: rule__AndExpression__Group__0__Impl : ( ( rule__AndExpression__LeftExpressionAssignment_0 ) ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:730:1: rule__AndExpression__Group__0__Impl : ( ( rule__AndExpression__LeftExpressionAssignment_0 ) ) ;
     public final void rule__AndExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:656:1: ( ( ( rule__AndExpression__LeftExpressionAssignment_0 ) ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:657:1: ( ( rule__AndExpression__LeftExpressionAssignment_0 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:734:1: ( ( ( rule__AndExpression__LeftExpressionAssignment_0 ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:735:1: ( ( rule__AndExpression__LeftExpressionAssignment_0 ) )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:657:1: ( ( rule__AndExpression__LeftExpressionAssignment_0 ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:658:1: ( rule__AndExpression__LeftExpressionAssignment_0 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:735:1: ( ( rule__AndExpression__LeftExpressionAssignment_0 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:736:1: ( rule__AndExpression__LeftExpressionAssignment_0 )
             {
              before(grammarAccess.getAndExpressionAccess().getLeftExpressionAssignment_0()); 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:659:1: ( rule__AndExpression__LeftExpressionAssignment_0 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:659:2: rule__AndExpression__LeftExpressionAssignment_0
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:737:1: ( rule__AndExpression__LeftExpressionAssignment_0 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:737:2: rule__AndExpression__LeftExpressionAssignment_0
             {
-            pushFollow(FOLLOW_rule__AndExpression__LeftExpressionAssignment_0_in_rule__AndExpression__Group__0__Impl1358);
+            pushFollow(FOLLOW_rule__AndExpression__LeftExpressionAssignment_0_in_rule__AndExpression__Group__0__Impl1529);
             rule__AndExpression__LeftExpressionAssignment_0();
 
             state._fsp--;
@@ -1901,16 +2173,16 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AndExpression__Group__1"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:669:1: rule__AndExpression__Group__1 : rule__AndExpression__Group__1__Impl ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:747:1: rule__AndExpression__Group__1 : rule__AndExpression__Group__1__Impl ;
     public final void rule__AndExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:673:1: ( rule__AndExpression__Group__1__Impl )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:674:2: rule__AndExpression__Group__1__Impl
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:751:1: ( rule__AndExpression__Group__1__Impl )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:752:2: rule__AndExpression__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__AndExpression__Group__1__Impl_in_rule__AndExpression__Group__11388);
+            pushFollow(FOLLOW_rule__AndExpression__Group__1__Impl_in_rule__AndExpression__Group__11559);
             rule__AndExpression__Group__1__Impl();
 
             state._fsp--;
@@ -1934,31 +2206,31 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AndExpression__Group__1__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:680:1: rule__AndExpression__Group__1__Impl : ( ( rule__AndExpression__Group_1__0 )? ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:758:1: rule__AndExpression__Group__1__Impl : ( ( rule__AndExpression__Group_1__0 )? ) ;
     public final void rule__AndExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:684:1: ( ( ( rule__AndExpression__Group_1__0 )? ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:685:1: ( ( rule__AndExpression__Group_1__0 )? )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:762:1: ( ( ( rule__AndExpression__Group_1__0 )? ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:763:1: ( ( rule__AndExpression__Group_1__0 )? )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:685:1: ( ( rule__AndExpression__Group_1__0 )? )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:686:1: ( rule__AndExpression__Group_1__0 )?
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:763:1: ( ( rule__AndExpression__Group_1__0 )? )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:764:1: ( rule__AndExpression__Group_1__0 )?
             {
              before(grammarAccess.getAndExpressionAccess().getGroup_1()); 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:687:1: ( rule__AndExpression__Group_1__0 )?
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:765:1: ( rule__AndExpression__Group_1__0 )?
+            int alt8=2;
+            int LA8_0 = input.LA(1);
 
-            if ( (LA7_0==RULE_AND) ) {
-                alt7=1;
+            if ( (LA8_0==RULE_AND) ) {
+                alt8=1;
             }
-            switch (alt7) {
+            switch (alt8) {
                 case 1 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:687:2: rule__AndExpression__Group_1__0
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:765:2: rule__AndExpression__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__AndExpression__Group_1__0_in_rule__AndExpression__Group__1__Impl1415);
+                    pushFollow(FOLLOW_rule__AndExpression__Group_1__0_in_rule__AndExpression__Group__1__Impl1586);
                     rule__AndExpression__Group_1__0();
 
                     state._fsp--;
@@ -1992,21 +2264,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AndExpression__Group_1__0"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:701:1: rule__AndExpression__Group_1__0 : rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1 ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:779:1: rule__AndExpression__Group_1__0 : rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1 ;
     public final void rule__AndExpression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:705:1: ( rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:706:2: rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:783:1: ( rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:784:2: rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1
             {
-            pushFollow(FOLLOW_rule__AndExpression__Group_1__0__Impl_in_rule__AndExpression__Group_1__01450);
+            pushFollow(FOLLOW_rule__AndExpression__Group_1__0__Impl_in_rule__AndExpression__Group_1__01621);
             rule__AndExpression__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AndExpression__Group_1__1_in_rule__AndExpression__Group_1__01453);
+            pushFollow(FOLLOW_rule__AndExpression__Group_1__1_in_rule__AndExpression__Group_1__01624);
             rule__AndExpression__Group_1__1();
 
             state._fsp--;
@@ -2030,23 +2302,23 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AndExpression__Group_1__0__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:713:1: rule__AndExpression__Group_1__0__Impl : ( ( rule__AndExpression__AndAssignment_1_0 ) ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:791:1: rule__AndExpression__Group_1__0__Impl : ( ( rule__AndExpression__AndAssignment_1_0 ) ) ;
     public final void rule__AndExpression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:717:1: ( ( ( rule__AndExpression__AndAssignment_1_0 ) ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:718:1: ( ( rule__AndExpression__AndAssignment_1_0 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:795:1: ( ( ( rule__AndExpression__AndAssignment_1_0 ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:796:1: ( ( rule__AndExpression__AndAssignment_1_0 ) )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:718:1: ( ( rule__AndExpression__AndAssignment_1_0 ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:719:1: ( rule__AndExpression__AndAssignment_1_0 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:796:1: ( ( rule__AndExpression__AndAssignment_1_0 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:797:1: ( rule__AndExpression__AndAssignment_1_0 )
             {
              before(grammarAccess.getAndExpressionAccess().getAndAssignment_1_0()); 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:720:1: ( rule__AndExpression__AndAssignment_1_0 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:720:2: rule__AndExpression__AndAssignment_1_0
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:798:1: ( rule__AndExpression__AndAssignment_1_0 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:798:2: rule__AndExpression__AndAssignment_1_0
             {
-            pushFollow(FOLLOW_rule__AndExpression__AndAssignment_1_0_in_rule__AndExpression__Group_1__0__Impl1480);
+            pushFollow(FOLLOW_rule__AndExpression__AndAssignment_1_0_in_rule__AndExpression__Group_1__0__Impl1651);
             rule__AndExpression__AndAssignment_1_0();
 
             state._fsp--;
@@ -2077,16 +2349,16 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AndExpression__Group_1__1"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:730:1: rule__AndExpression__Group_1__1 : rule__AndExpression__Group_1__1__Impl ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:808:1: rule__AndExpression__Group_1__1 : rule__AndExpression__Group_1__1__Impl ;
     public final void rule__AndExpression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:734:1: ( rule__AndExpression__Group_1__1__Impl )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:735:2: rule__AndExpression__Group_1__1__Impl
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:812:1: ( rule__AndExpression__Group_1__1__Impl )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:813:2: rule__AndExpression__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__AndExpression__Group_1__1__Impl_in_rule__AndExpression__Group_1__11510);
+            pushFollow(FOLLOW_rule__AndExpression__Group_1__1__Impl_in_rule__AndExpression__Group_1__11681);
             rule__AndExpression__Group_1__1__Impl();
 
             state._fsp--;
@@ -2110,23 +2382,23 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AndExpression__Group_1__1__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:741:1: rule__AndExpression__Group_1__1__Impl : ( ( rule__AndExpression__RightExpressionAssignment_1_1 ) ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:819:1: rule__AndExpression__Group_1__1__Impl : ( ( rule__AndExpression__RightExpressionAssignment_1_1 ) ) ;
     public final void rule__AndExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:745:1: ( ( ( rule__AndExpression__RightExpressionAssignment_1_1 ) ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:746:1: ( ( rule__AndExpression__RightExpressionAssignment_1_1 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:823:1: ( ( ( rule__AndExpression__RightExpressionAssignment_1_1 ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:824:1: ( ( rule__AndExpression__RightExpressionAssignment_1_1 ) )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:746:1: ( ( rule__AndExpression__RightExpressionAssignment_1_1 ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:747:1: ( rule__AndExpression__RightExpressionAssignment_1_1 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:824:1: ( ( rule__AndExpression__RightExpressionAssignment_1_1 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:825:1: ( rule__AndExpression__RightExpressionAssignment_1_1 )
             {
              before(grammarAccess.getAndExpressionAccess().getRightExpressionAssignment_1_1()); 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:748:1: ( rule__AndExpression__RightExpressionAssignment_1_1 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:748:2: rule__AndExpression__RightExpressionAssignment_1_1
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:826:1: ( rule__AndExpression__RightExpressionAssignment_1_1 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:826:2: rule__AndExpression__RightExpressionAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__AndExpression__RightExpressionAssignment_1_1_in_rule__AndExpression__Group_1__1__Impl1537);
+            pushFollow(FOLLOW_rule__AndExpression__RightExpressionAssignment_1_1_in_rule__AndExpression__Group_1__1__Impl1708);
             rule__AndExpression__RightExpressionAssignment_1_1();
 
             state._fsp--;
@@ -2157,21 +2429,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__Group__0"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:762:1: rule__BaseExpression__Group__0 : rule__BaseExpression__Group__0__Impl rule__BaseExpression__Group__1 ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:840:1: rule__BaseExpression__Group__0 : rule__BaseExpression__Group__0__Impl rule__BaseExpression__Group__1 ;
     public final void rule__BaseExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:766:1: ( rule__BaseExpression__Group__0__Impl rule__BaseExpression__Group__1 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:767:2: rule__BaseExpression__Group__0__Impl rule__BaseExpression__Group__1
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:844:1: ( rule__BaseExpression__Group__0__Impl rule__BaseExpression__Group__1 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:845:2: rule__BaseExpression__Group__0__Impl rule__BaseExpression__Group__1
             {
-            pushFollow(FOLLOW_rule__BaseExpression__Group__0__Impl_in_rule__BaseExpression__Group__01571);
+            pushFollow(FOLLOW_rule__BaseExpression__Group__0__Impl_in_rule__BaseExpression__Group__01742);
             rule__BaseExpression__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__BaseExpression__Group__1_in_rule__BaseExpression__Group__01574);
+            pushFollow(FOLLOW_rule__BaseExpression__Group__1_in_rule__BaseExpression__Group__01745);
             rule__BaseExpression__Group__1();
 
             state._fsp--;
@@ -2195,31 +2467,31 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__Group__0__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:774:1: rule__BaseExpression__Group__0__Impl : ( ( rule__BaseExpression__NotAssignment_0 )? ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:852:1: rule__BaseExpression__Group__0__Impl : ( ( rule__BaseExpression__NotAssignment_0 )? ) ;
     public final void rule__BaseExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:778:1: ( ( ( rule__BaseExpression__NotAssignment_0 )? ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:779:1: ( ( rule__BaseExpression__NotAssignment_0 )? )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:856:1: ( ( ( rule__BaseExpression__NotAssignment_0 )? ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:857:1: ( ( rule__BaseExpression__NotAssignment_0 )? )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:779:1: ( ( rule__BaseExpression__NotAssignment_0 )? )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:780:1: ( rule__BaseExpression__NotAssignment_0 )?
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:857:1: ( ( rule__BaseExpression__NotAssignment_0 )? )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:858:1: ( rule__BaseExpression__NotAssignment_0 )?
             {
              before(grammarAccess.getBaseExpressionAccess().getNotAssignment_0()); 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:781:1: ( rule__BaseExpression__NotAssignment_0 )?
-            int alt8=2;
-            int LA8_0 = input.LA(1);
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:859:1: ( rule__BaseExpression__NotAssignment_0 )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-            if ( (LA8_0==RULE_NOT) ) {
-                alt8=1;
+            if ( (LA9_0==RULE_NOT) ) {
+                alt9=1;
             }
-            switch (alt8) {
+            switch (alt9) {
                 case 1 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:781:2: rule__BaseExpression__NotAssignment_0
+                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:859:2: rule__BaseExpression__NotAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__BaseExpression__NotAssignment_0_in_rule__BaseExpression__Group__0__Impl1601);
+                    pushFollow(FOLLOW_rule__BaseExpression__NotAssignment_0_in_rule__BaseExpression__Group__0__Impl1772);
                     rule__BaseExpression__NotAssignment_0();
 
                     state._fsp--;
@@ -2253,16 +2525,16 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__Group__1"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:791:1: rule__BaseExpression__Group__1 : rule__BaseExpression__Group__1__Impl ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:869:1: rule__BaseExpression__Group__1 : rule__BaseExpression__Group__1__Impl ;
     public final void rule__BaseExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:795:1: ( rule__BaseExpression__Group__1__Impl )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:796:2: rule__BaseExpression__Group__1__Impl
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:873:1: ( rule__BaseExpression__Group__1__Impl )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:874:2: rule__BaseExpression__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__BaseExpression__Group__1__Impl_in_rule__BaseExpression__Group__11632);
+            pushFollow(FOLLOW_rule__BaseExpression__Group__1__Impl_in_rule__BaseExpression__Group__11803);
             rule__BaseExpression__Group__1__Impl();
 
             state._fsp--;
@@ -2286,23 +2558,23 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__Group__1__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:802:1: rule__BaseExpression__Group__1__Impl : ( ( rule__BaseExpression__Alternatives_1 ) ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:880:1: rule__BaseExpression__Group__1__Impl : ( ( rule__BaseExpression__Alternatives_1 ) ) ;
     public final void rule__BaseExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:806:1: ( ( ( rule__BaseExpression__Alternatives_1 ) ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:807:1: ( ( rule__BaseExpression__Alternatives_1 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:884:1: ( ( ( rule__BaseExpression__Alternatives_1 ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:885:1: ( ( rule__BaseExpression__Alternatives_1 ) )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:807:1: ( ( rule__BaseExpression__Alternatives_1 ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:808:1: ( rule__BaseExpression__Alternatives_1 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:885:1: ( ( rule__BaseExpression__Alternatives_1 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:886:1: ( rule__BaseExpression__Alternatives_1 )
             {
              before(grammarAccess.getBaseExpressionAccess().getAlternatives_1()); 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:809:1: ( rule__BaseExpression__Alternatives_1 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:809:2: rule__BaseExpression__Alternatives_1
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:887:1: ( rule__BaseExpression__Alternatives_1 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:887:2: rule__BaseExpression__Alternatives_1
             {
-            pushFollow(FOLLOW_rule__BaseExpression__Alternatives_1_in_rule__BaseExpression__Group__1__Impl1659);
+            pushFollow(FOLLOW_rule__BaseExpression__Alternatives_1_in_rule__BaseExpression__Group__1__Impl1830);
             rule__BaseExpression__Alternatives_1();
 
             state._fsp--;
@@ -2333,21 +2605,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__Group_1_1__0"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:823:1: rule__BaseExpression__Group_1_1__0 : rule__BaseExpression__Group_1_1__0__Impl rule__BaseExpression__Group_1_1__1 ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:901:1: rule__BaseExpression__Group_1_1__0 : rule__BaseExpression__Group_1_1__0__Impl rule__BaseExpression__Group_1_1__1 ;
     public final void rule__BaseExpression__Group_1_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:827:1: ( rule__BaseExpression__Group_1_1__0__Impl rule__BaseExpression__Group_1_1__1 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:828:2: rule__BaseExpression__Group_1_1__0__Impl rule__BaseExpression__Group_1_1__1
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:905:1: ( rule__BaseExpression__Group_1_1__0__Impl rule__BaseExpression__Group_1_1__1 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:906:2: rule__BaseExpression__Group_1_1__0__Impl rule__BaseExpression__Group_1_1__1
             {
-            pushFollow(FOLLOW_rule__BaseExpression__Group_1_1__0__Impl_in_rule__BaseExpression__Group_1_1__01693);
+            pushFollow(FOLLOW_rule__BaseExpression__Group_1_1__0__Impl_in_rule__BaseExpression__Group_1_1__01864);
             rule__BaseExpression__Group_1_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__BaseExpression__Group_1_1__1_in_rule__BaseExpression__Group_1_1__01696);
+            pushFollow(FOLLOW_rule__BaseExpression__Group_1_1__1_in_rule__BaseExpression__Group_1_1__01867);
             rule__BaseExpression__Group_1_1__1();
 
             state._fsp--;
@@ -2371,20 +2643,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__Group_1_1__0__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:835:1: rule__BaseExpression__Group_1_1__0__Impl : ( '(' ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:913:1: rule__BaseExpression__Group_1_1__0__Impl : ( '(' ) ;
     public final void rule__BaseExpression__Group_1_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:839:1: ( ( '(' ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:840:1: ( '(' )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:917:1: ( ( '(' ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:918:1: ( '(' )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:840:1: ( '(' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:841:1: '('
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:918:1: ( '(' )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:919:1: '('
             {
              before(grammarAccess.getBaseExpressionAccess().getLeftParenthesisKeyword_1_1_0()); 
-            match(input,24,FOLLOW_24_in_rule__BaseExpression__Group_1_1__0__Impl1724); 
+            match(input,25,FOLLOW_25_in_rule__BaseExpression__Group_1_1__0__Impl1895); 
              after(grammarAccess.getBaseExpressionAccess().getLeftParenthesisKeyword_1_1_0()); 
 
             }
@@ -2408,21 +2680,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__Group_1_1__1"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:854:1: rule__BaseExpression__Group_1_1__1 : rule__BaseExpression__Group_1_1__1__Impl rule__BaseExpression__Group_1_1__2 ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:932:1: rule__BaseExpression__Group_1_1__1 : rule__BaseExpression__Group_1_1__1__Impl rule__BaseExpression__Group_1_1__2 ;
     public final void rule__BaseExpression__Group_1_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:858:1: ( rule__BaseExpression__Group_1_1__1__Impl rule__BaseExpression__Group_1_1__2 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:859:2: rule__BaseExpression__Group_1_1__1__Impl rule__BaseExpression__Group_1_1__2
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:936:1: ( rule__BaseExpression__Group_1_1__1__Impl rule__BaseExpression__Group_1_1__2 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:937:2: rule__BaseExpression__Group_1_1__1__Impl rule__BaseExpression__Group_1_1__2
             {
-            pushFollow(FOLLOW_rule__BaseExpression__Group_1_1__1__Impl_in_rule__BaseExpression__Group_1_1__11755);
+            pushFollow(FOLLOW_rule__BaseExpression__Group_1_1__1__Impl_in_rule__BaseExpression__Group_1_1__11926);
             rule__BaseExpression__Group_1_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__BaseExpression__Group_1_1__2_in_rule__BaseExpression__Group_1_1__11758);
+            pushFollow(FOLLOW_rule__BaseExpression__Group_1_1__2_in_rule__BaseExpression__Group_1_1__11929);
             rule__BaseExpression__Group_1_1__2();
 
             state._fsp--;
@@ -2446,23 +2718,23 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__Group_1_1__1__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:866:1: rule__BaseExpression__Group_1_1__1__Impl : ( ( rule__BaseExpression__RootExpressionAssignment_1_1_1 ) ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:944:1: rule__BaseExpression__Group_1_1__1__Impl : ( ( rule__BaseExpression__RootExpressionAssignment_1_1_1 ) ) ;
     public final void rule__BaseExpression__Group_1_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:870:1: ( ( ( rule__BaseExpression__RootExpressionAssignment_1_1_1 ) ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:871:1: ( ( rule__BaseExpression__RootExpressionAssignment_1_1_1 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:948:1: ( ( ( rule__BaseExpression__RootExpressionAssignment_1_1_1 ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:949:1: ( ( rule__BaseExpression__RootExpressionAssignment_1_1_1 ) )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:871:1: ( ( rule__BaseExpression__RootExpressionAssignment_1_1_1 ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:872:1: ( rule__BaseExpression__RootExpressionAssignment_1_1_1 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:949:1: ( ( rule__BaseExpression__RootExpressionAssignment_1_1_1 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:950:1: ( rule__BaseExpression__RootExpressionAssignment_1_1_1 )
             {
              before(grammarAccess.getBaseExpressionAccess().getRootExpressionAssignment_1_1_1()); 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:873:1: ( rule__BaseExpression__RootExpressionAssignment_1_1_1 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:873:2: rule__BaseExpression__RootExpressionAssignment_1_1_1
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:951:1: ( rule__BaseExpression__RootExpressionAssignment_1_1_1 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:951:2: rule__BaseExpression__RootExpressionAssignment_1_1_1
             {
-            pushFollow(FOLLOW_rule__BaseExpression__RootExpressionAssignment_1_1_1_in_rule__BaseExpression__Group_1_1__1__Impl1785);
+            pushFollow(FOLLOW_rule__BaseExpression__RootExpressionAssignment_1_1_1_in_rule__BaseExpression__Group_1_1__1__Impl1956);
             rule__BaseExpression__RootExpressionAssignment_1_1_1();
 
             state._fsp--;
@@ -2493,16 +2765,16 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__Group_1_1__2"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:883:1: rule__BaseExpression__Group_1_1__2 : rule__BaseExpression__Group_1_1__2__Impl ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:961:1: rule__BaseExpression__Group_1_1__2 : rule__BaseExpression__Group_1_1__2__Impl ;
     public final void rule__BaseExpression__Group_1_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:887:1: ( rule__BaseExpression__Group_1_1__2__Impl )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:888:2: rule__BaseExpression__Group_1_1__2__Impl
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:965:1: ( rule__BaseExpression__Group_1_1__2__Impl )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:966:2: rule__BaseExpression__Group_1_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__BaseExpression__Group_1_1__2__Impl_in_rule__BaseExpression__Group_1_1__21815);
+            pushFollow(FOLLOW_rule__BaseExpression__Group_1_1__2__Impl_in_rule__BaseExpression__Group_1_1__21986);
             rule__BaseExpression__Group_1_1__2__Impl();
 
             state._fsp--;
@@ -2526,20 +2798,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__Group_1_1__2__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:894:1: rule__BaseExpression__Group_1_1__2__Impl : ( ')' ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:972:1: rule__BaseExpression__Group_1_1__2__Impl : ( ')' ) ;
     public final void rule__BaseExpression__Group_1_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:898:1: ( ( ')' ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:899:1: ( ')' )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:976:1: ( ( ')' ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:977:1: ( ')' )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:899:1: ( ')' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:900:1: ')'
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:977:1: ( ')' )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:978:1: ')'
             {
              before(grammarAccess.getBaseExpressionAccess().getRightParenthesisKeyword_1_1_2()); 
-            match(input,25,FOLLOW_25_in_rule__BaseExpression__Group_1_1__2__Impl1843); 
+            match(input,26,FOLLOW_26_in_rule__BaseExpression__Group_1_1__2__Impl2014); 
              after(grammarAccess.getBaseExpressionAccess().getRightParenthesisKeyword_1_1_2()); 
 
             }
@@ -2563,21 +2835,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__0"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:919:1: rule__TimeConstraint__Group__0 : rule__TimeConstraint__Group__0__Impl rule__TimeConstraint__Group__1 ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:997:1: rule__TimeConstraint__Group__0 : rule__TimeConstraint__Group__0__Impl rule__TimeConstraint__Group__1 ;
     public final void rule__TimeConstraint__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:923:1: ( rule__TimeConstraint__Group__0__Impl rule__TimeConstraint__Group__1 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:924:2: rule__TimeConstraint__Group__0__Impl rule__TimeConstraint__Group__1
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1001:1: ( rule__TimeConstraint__Group__0__Impl rule__TimeConstraint__Group__1 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1002:2: rule__TimeConstraint__Group__0__Impl rule__TimeConstraint__Group__1
             {
-            pushFollow(FOLLOW_rule__TimeConstraint__Group__0__Impl_in_rule__TimeConstraint__Group__01880);
+            pushFollow(FOLLOW_rule__TimeConstraint__Group__0__Impl_in_rule__TimeConstraint__Group__02051);
             rule__TimeConstraint__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TimeConstraint__Group__1_in_rule__TimeConstraint__Group__01883);
+            pushFollow(FOLLOW_rule__TimeConstraint__Group__1_in_rule__TimeConstraint__Group__02054);
             rule__TimeConstraint__Group__1();
 
             state._fsp--;
@@ -2601,20 +2873,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__0__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:931:1: rule__TimeConstraint__Group__0__Impl : ( '@' ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1009:1: rule__TimeConstraint__Group__0__Impl : ( '@' ) ;
     public final void rule__TimeConstraint__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:935:1: ( ( '@' ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:936:1: ( '@' )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1013:1: ( ( '@' ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1014:1: ( '@' )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:936:1: ( '@' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:937:1: '@'
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1014:1: ( '@' )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1015:1: '@'
             {
              before(grammarAccess.getTimeConstraintAccess().getCommercialAtKeyword_0()); 
-            match(input,26,FOLLOW_26_in_rule__TimeConstraint__Group__0__Impl1911); 
+            match(input,27,FOLLOW_27_in_rule__TimeConstraint__Group__0__Impl2082); 
              after(grammarAccess.getTimeConstraintAccess().getCommercialAtKeyword_0()); 
 
             }
@@ -2638,21 +2910,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__1"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:950:1: rule__TimeConstraint__Group__1 : rule__TimeConstraint__Group__1__Impl rule__TimeConstraint__Group__2 ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1028:1: rule__TimeConstraint__Group__1 : rule__TimeConstraint__Group__1__Impl rule__TimeConstraint__Group__2 ;
     public final void rule__TimeConstraint__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:954:1: ( rule__TimeConstraint__Group__1__Impl rule__TimeConstraint__Group__2 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:955:2: rule__TimeConstraint__Group__1__Impl rule__TimeConstraint__Group__2
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1032:1: ( rule__TimeConstraint__Group__1__Impl rule__TimeConstraint__Group__2 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1033:2: rule__TimeConstraint__Group__1__Impl rule__TimeConstraint__Group__2
             {
-            pushFollow(FOLLOW_rule__TimeConstraint__Group__1__Impl_in_rule__TimeConstraint__Group__11942);
+            pushFollow(FOLLOW_rule__TimeConstraint__Group__1__Impl_in_rule__TimeConstraint__Group__12113);
             rule__TimeConstraint__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TimeConstraint__Group__2_in_rule__TimeConstraint__Group__11945);
+            pushFollow(FOLLOW_rule__TimeConstraint__Group__2_in_rule__TimeConstraint__Group__12116);
             rule__TimeConstraint__Group__2();
 
             state._fsp--;
@@ -2676,23 +2948,23 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__1__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:962:1: rule__TimeConstraint__Group__1__Impl : ( ( rule__TimeConstraint__Event2Assignment_1 ) ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1040:1: rule__TimeConstraint__Group__1__Impl : ( ( rule__TimeConstraint__Event2Assignment_1 ) ) ;
     public final void rule__TimeConstraint__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:966:1: ( ( ( rule__TimeConstraint__Event2Assignment_1 ) ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:967:1: ( ( rule__TimeConstraint__Event2Assignment_1 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1044:1: ( ( ( rule__TimeConstraint__Event2Assignment_1 ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1045:1: ( ( rule__TimeConstraint__Event2Assignment_1 ) )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:967:1: ( ( rule__TimeConstraint__Event2Assignment_1 ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:968:1: ( rule__TimeConstraint__Event2Assignment_1 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1045:1: ( ( rule__TimeConstraint__Event2Assignment_1 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1046:1: ( rule__TimeConstraint__Event2Assignment_1 )
             {
              before(grammarAccess.getTimeConstraintAccess().getEvent2Assignment_1()); 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:969:1: ( rule__TimeConstraint__Event2Assignment_1 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:969:2: rule__TimeConstraint__Event2Assignment_1
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1047:1: ( rule__TimeConstraint__Event2Assignment_1 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1047:2: rule__TimeConstraint__Event2Assignment_1
             {
-            pushFollow(FOLLOW_rule__TimeConstraint__Event2Assignment_1_in_rule__TimeConstraint__Group__1__Impl1972);
+            pushFollow(FOLLOW_rule__TimeConstraint__Event2Assignment_1_in_rule__TimeConstraint__Group__1__Impl2143);
             rule__TimeConstraint__Event2Assignment_1();
 
             state._fsp--;
@@ -2723,21 +2995,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__2"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:979:1: rule__TimeConstraint__Group__2 : rule__TimeConstraint__Group__2__Impl rule__TimeConstraint__Group__3 ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1057:1: rule__TimeConstraint__Group__2 : rule__TimeConstraint__Group__2__Impl rule__TimeConstraint__Group__3 ;
     public final void rule__TimeConstraint__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:983:1: ( rule__TimeConstraint__Group__2__Impl rule__TimeConstraint__Group__3 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:984:2: rule__TimeConstraint__Group__2__Impl rule__TimeConstraint__Group__3
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1061:1: ( rule__TimeConstraint__Group__2__Impl rule__TimeConstraint__Group__3 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1062:2: rule__TimeConstraint__Group__2__Impl rule__TimeConstraint__Group__3
             {
-            pushFollow(FOLLOW_rule__TimeConstraint__Group__2__Impl_in_rule__TimeConstraint__Group__22002);
+            pushFollow(FOLLOW_rule__TimeConstraint__Group__2__Impl_in_rule__TimeConstraint__Group__22173);
             rule__TimeConstraint__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TimeConstraint__Group__3_in_rule__TimeConstraint__Group__22005);
+            pushFollow(FOLLOW_rule__TimeConstraint__Group__3_in_rule__TimeConstraint__Group__22176);
             rule__TimeConstraint__Group__3();
 
             state._fsp--;
@@ -2761,20 +3033,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__2__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:991:1: rule__TimeConstraint__Group__2__Impl : ( '-' ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1069:1: rule__TimeConstraint__Group__2__Impl : ( '-' ) ;
     public final void rule__TimeConstraint__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:995:1: ( ( '-' ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:996:1: ( '-' )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1073:1: ( ( '-' ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1074:1: ( '-' )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:996:1: ( '-' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:997:1: '-'
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1074:1: ( '-' )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1075:1: '-'
             {
              before(grammarAccess.getTimeConstraintAccess().getHyphenMinusKeyword_2()); 
-            match(input,27,FOLLOW_27_in_rule__TimeConstraint__Group__2__Impl2033); 
+            match(input,28,FOLLOW_28_in_rule__TimeConstraint__Group__2__Impl2204); 
              after(grammarAccess.getTimeConstraintAccess().getHyphenMinusKeyword_2()); 
 
             }
@@ -2798,21 +3070,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__3"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1010:1: rule__TimeConstraint__Group__3 : rule__TimeConstraint__Group__3__Impl rule__TimeConstraint__Group__4 ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1088:1: rule__TimeConstraint__Group__3 : rule__TimeConstraint__Group__3__Impl rule__TimeConstraint__Group__4 ;
     public final void rule__TimeConstraint__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1014:1: ( rule__TimeConstraint__Group__3__Impl rule__TimeConstraint__Group__4 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1015:2: rule__TimeConstraint__Group__3__Impl rule__TimeConstraint__Group__4
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1092:1: ( rule__TimeConstraint__Group__3__Impl rule__TimeConstraint__Group__4 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1093:2: rule__TimeConstraint__Group__3__Impl rule__TimeConstraint__Group__4
             {
-            pushFollow(FOLLOW_rule__TimeConstraint__Group__3__Impl_in_rule__TimeConstraint__Group__32064);
+            pushFollow(FOLLOW_rule__TimeConstraint__Group__3__Impl_in_rule__TimeConstraint__Group__32235);
             rule__TimeConstraint__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TimeConstraint__Group__4_in_rule__TimeConstraint__Group__32067);
+            pushFollow(FOLLOW_rule__TimeConstraint__Group__4_in_rule__TimeConstraint__Group__32238);
             rule__TimeConstraint__Group__4();
 
             state._fsp--;
@@ -2836,20 +3108,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__3__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1022:1: rule__TimeConstraint__Group__3__Impl : ( '@' ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1100:1: rule__TimeConstraint__Group__3__Impl : ( '@' ) ;
     public final void rule__TimeConstraint__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1026:1: ( ( '@' ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1027:1: ( '@' )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1104:1: ( ( '@' ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1105:1: ( '@' )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1027:1: ( '@' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1028:1: '@'
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1105:1: ( '@' )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1106:1: '@'
             {
              before(grammarAccess.getTimeConstraintAccess().getCommercialAtKeyword_3()); 
-            match(input,26,FOLLOW_26_in_rule__TimeConstraint__Group__3__Impl2095); 
+            match(input,27,FOLLOW_27_in_rule__TimeConstraint__Group__3__Impl2266); 
              after(grammarAccess.getTimeConstraintAccess().getCommercialAtKeyword_3()); 
 
             }
@@ -2873,21 +3145,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__4"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1041:1: rule__TimeConstraint__Group__4 : rule__TimeConstraint__Group__4__Impl rule__TimeConstraint__Group__5 ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1119:1: rule__TimeConstraint__Group__4 : rule__TimeConstraint__Group__4__Impl rule__TimeConstraint__Group__5 ;
     public final void rule__TimeConstraint__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1045:1: ( rule__TimeConstraint__Group__4__Impl rule__TimeConstraint__Group__5 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1046:2: rule__TimeConstraint__Group__4__Impl rule__TimeConstraint__Group__5
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1123:1: ( rule__TimeConstraint__Group__4__Impl rule__TimeConstraint__Group__5 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1124:2: rule__TimeConstraint__Group__4__Impl rule__TimeConstraint__Group__5
             {
-            pushFollow(FOLLOW_rule__TimeConstraint__Group__4__Impl_in_rule__TimeConstraint__Group__42126);
+            pushFollow(FOLLOW_rule__TimeConstraint__Group__4__Impl_in_rule__TimeConstraint__Group__42297);
             rule__TimeConstraint__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TimeConstraint__Group__5_in_rule__TimeConstraint__Group__42129);
+            pushFollow(FOLLOW_rule__TimeConstraint__Group__5_in_rule__TimeConstraint__Group__42300);
             rule__TimeConstraint__Group__5();
 
             state._fsp--;
@@ -2911,23 +3183,23 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__4__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1053:1: rule__TimeConstraint__Group__4__Impl : ( ( rule__TimeConstraint__Event1Assignment_4 ) ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1131:1: rule__TimeConstraint__Group__4__Impl : ( ( rule__TimeConstraint__Event1Assignment_4 ) ) ;
     public final void rule__TimeConstraint__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1057:1: ( ( ( rule__TimeConstraint__Event1Assignment_4 ) ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1058:1: ( ( rule__TimeConstraint__Event1Assignment_4 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1135:1: ( ( ( rule__TimeConstraint__Event1Assignment_4 ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1136:1: ( ( rule__TimeConstraint__Event1Assignment_4 ) )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1058:1: ( ( rule__TimeConstraint__Event1Assignment_4 ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1059:1: ( rule__TimeConstraint__Event1Assignment_4 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1136:1: ( ( rule__TimeConstraint__Event1Assignment_4 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1137:1: ( rule__TimeConstraint__Event1Assignment_4 )
             {
              before(grammarAccess.getTimeConstraintAccess().getEvent1Assignment_4()); 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1060:1: ( rule__TimeConstraint__Event1Assignment_4 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1060:2: rule__TimeConstraint__Event1Assignment_4
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1138:1: ( rule__TimeConstraint__Event1Assignment_4 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1138:2: rule__TimeConstraint__Event1Assignment_4
             {
-            pushFollow(FOLLOW_rule__TimeConstraint__Event1Assignment_4_in_rule__TimeConstraint__Group__4__Impl2156);
+            pushFollow(FOLLOW_rule__TimeConstraint__Event1Assignment_4_in_rule__TimeConstraint__Group__4__Impl2327);
             rule__TimeConstraint__Event1Assignment_4();
 
             state._fsp--;
@@ -2958,21 +3230,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__5"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1070:1: rule__TimeConstraint__Group__5 : rule__TimeConstraint__Group__5__Impl rule__TimeConstraint__Group__6 ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1148:1: rule__TimeConstraint__Group__5 : rule__TimeConstraint__Group__5__Impl rule__TimeConstraint__Group__6 ;
     public final void rule__TimeConstraint__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1074:1: ( rule__TimeConstraint__Group__5__Impl rule__TimeConstraint__Group__6 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1075:2: rule__TimeConstraint__Group__5__Impl rule__TimeConstraint__Group__6
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1152:1: ( rule__TimeConstraint__Group__5__Impl rule__TimeConstraint__Group__6 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1153:2: rule__TimeConstraint__Group__5__Impl rule__TimeConstraint__Group__6
             {
-            pushFollow(FOLLOW_rule__TimeConstraint__Group__5__Impl_in_rule__TimeConstraint__Group__52186);
+            pushFollow(FOLLOW_rule__TimeConstraint__Group__5__Impl_in_rule__TimeConstraint__Group__52357);
             rule__TimeConstraint__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TimeConstraint__Group__6_in_rule__TimeConstraint__Group__52189);
+            pushFollow(FOLLOW_rule__TimeConstraint__Group__6_in_rule__TimeConstraint__Group__52360);
             rule__TimeConstraint__Group__6();
 
             state._fsp--;
@@ -2996,23 +3268,23 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__5__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1082:1: rule__TimeConstraint__Group__5__Impl : ( ( rule__TimeConstraint__OpAssignment_5 ) ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1160:1: rule__TimeConstraint__Group__5__Impl : ( ( rule__TimeConstraint__OpAssignment_5 ) ) ;
     public final void rule__TimeConstraint__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1086:1: ( ( ( rule__TimeConstraint__OpAssignment_5 ) ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1087:1: ( ( rule__TimeConstraint__OpAssignment_5 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1164:1: ( ( ( rule__TimeConstraint__OpAssignment_5 ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1165:1: ( ( rule__TimeConstraint__OpAssignment_5 ) )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1087:1: ( ( rule__TimeConstraint__OpAssignment_5 ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1088:1: ( rule__TimeConstraint__OpAssignment_5 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1165:1: ( ( rule__TimeConstraint__OpAssignment_5 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1166:1: ( rule__TimeConstraint__OpAssignment_5 )
             {
              before(grammarAccess.getTimeConstraintAccess().getOpAssignment_5()); 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1089:1: ( rule__TimeConstraint__OpAssignment_5 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1089:2: rule__TimeConstraint__OpAssignment_5
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1167:1: ( rule__TimeConstraint__OpAssignment_5 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1167:2: rule__TimeConstraint__OpAssignment_5
             {
-            pushFollow(FOLLOW_rule__TimeConstraint__OpAssignment_5_in_rule__TimeConstraint__Group__5__Impl2216);
+            pushFollow(FOLLOW_rule__TimeConstraint__OpAssignment_5_in_rule__TimeConstraint__Group__5__Impl2387);
             rule__TimeConstraint__OpAssignment_5();
 
             state._fsp--;
@@ -3043,16 +3315,16 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__6"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1099:1: rule__TimeConstraint__Group__6 : rule__TimeConstraint__Group__6__Impl ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1177:1: rule__TimeConstraint__Group__6 : rule__TimeConstraint__Group__6__Impl ;
     public final void rule__TimeConstraint__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1103:1: ( rule__TimeConstraint__Group__6__Impl )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1104:2: rule__TimeConstraint__Group__6__Impl
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1181:1: ( rule__TimeConstraint__Group__6__Impl )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1182:2: rule__TimeConstraint__Group__6__Impl
             {
-            pushFollow(FOLLOW_rule__TimeConstraint__Group__6__Impl_in_rule__TimeConstraint__Group__62246);
+            pushFollow(FOLLOW_rule__TimeConstraint__Group__6__Impl_in_rule__TimeConstraint__Group__62417);
             rule__TimeConstraint__Group__6__Impl();
 
             state._fsp--;
@@ -3076,23 +3348,23 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__6__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1110:1: rule__TimeConstraint__Group__6__Impl : ( ( rule__TimeConstraint__ValueAssignment_6 ) ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1188:1: rule__TimeConstraint__Group__6__Impl : ( ( rule__TimeConstraint__ValueAssignment_6 ) ) ;
     public final void rule__TimeConstraint__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1114:1: ( ( ( rule__TimeConstraint__ValueAssignment_6 ) ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1115:1: ( ( rule__TimeConstraint__ValueAssignment_6 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1192:1: ( ( ( rule__TimeConstraint__ValueAssignment_6 ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1193:1: ( ( rule__TimeConstraint__ValueAssignment_6 ) )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1115:1: ( ( rule__TimeConstraint__ValueAssignment_6 ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1116:1: ( rule__TimeConstraint__ValueAssignment_6 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1193:1: ( ( rule__TimeConstraint__ValueAssignment_6 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1194:1: ( rule__TimeConstraint__ValueAssignment_6 )
             {
              before(grammarAccess.getTimeConstraintAccess().getValueAssignment_6()); 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1117:1: ( rule__TimeConstraint__ValueAssignment_6 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1117:2: rule__TimeConstraint__ValueAssignment_6
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1195:1: ( rule__TimeConstraint__ValueAssignment_6 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1195:2: rule__TimeConstraint__ValueAssignment_6
             {
-            pushFollow(FOLLOW_rule__TimeConstraint__ValueAssignment_6_in_rule__TimeConstraint__Group__6__Impl2273);
+            pushFollow(FOLLOW_rule__TimeConstraint__ValueAssignment_6_in_rule__TimeConstraint__Group__6__Impl2444);
             rule__TimeConstraint__ValueAssignment_6();
 
             state._fsp--;
@@ -3123,21 +3395,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__VariableCondition__Group__0"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1141:1: rule__VariableCondition__Group__0 : rule__VariableCondition__Group__0__Impl rule__VariableCondition__Group__1 ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1219:1: rule__VariableCondition__Group__0 : rule__VariableCondition__Group__0__Impl rule__VariableCondition__Group__1 ;
     public final void rule__VariableCondition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1145:1: ( rule__VariableCondition__Group__0__Impl rule__VariableCondition__Group__1 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1146:2: rule__VariableCondition__Group__0__Impl rule__VariableCondition__Group__1
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1223:1: ( rule__VariableCondition__Group__0__Impl rule__VariableCondition__Group__1 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1224:2: rule__VariableCondition__Group__0__Impl rule__VariableCondition__Group__1
             {
-            pushFollow(FOLLOW_rule__VariableCondition__Group__0__Impl_in_rule__VariableCondition__Group__02317);
+            pushFollow(FOLLOW_rule__VariableCondition__Group__0__Impl_in_rule__VariableCondition__Group__02488);
             rule__VariableCondition__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__VariableCondition__Group__1_in_rule__VariableCondition__Group__02320);
+            pushFollow(FOLLOW_rule__VariableCondition__Group__1_in_rule__VariableCondition__Group__02491);
             rule__VariableCondition__Group__1();
 
             state._fsp--;
@@ -3161,20 +3433,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__VariableCondition__Group__0__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1153:1: rule__VariableCondition__Group__0__Impl : ( '{' ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1231:1: rule__VariableCondition__Group__0__Impl : ( '{' ) ;
     public final void rule__VariableCondition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1157:1: ( ( '{' ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1158:1: ( '{' )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1235:1: ( ( '{' ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1236:1: ( '{' )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1158:1: ( '{' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1159:1: '{'
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1236:1: ( '{' )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1237:1: '{'
             {
              before(grammarAccess.getVariableConditionAccess().getLeftCurlyBracketKeyword_0()); 
-            match(input,28,FOLLOW_28_in_rule__VariableCondition__Group__0__Impl2348); 
+            match(input,29,FOLLOW_29_in_rule__VariableCondition__Group__0__Impl2519); 
              after(grammarAccess.getVariableConditionAccess().getLeftCurlyBracketKeyword_0()); 
 
             }
@@ -3198,21 +3470,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__VariableCondition__Group__1"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1172:1: rule__VariableCondition__Group__1 : rule__VariableCondition__Group__1__Impl rule__VariableCondition__Group__2 ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1250:1: rule__VariableCondition__Group__1 : rule__VariableCondition__Group__1__Impl rule__VariableCondition__Group__2 ;
     public final void rule__VariableCondition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1176:1: ( rule__VariableCondition__Group__1__Impl rule__VariableCondition__Group__2 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1177:2: rule__VariableCondition__Group__1__Impl rule__VariableCondition__Group__2
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1254:1: ( rule__VariableCondition__Group__1__Impl rule__VariableCondition__Group__2 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1255:2: rule__VariableCondition__Group__1__Impl rule__VariableCondition__Group__2
             {
-            pushFollow(FOLLOW_rule__VariableCondition__Group__1__Impl_in_rule__VariableCondition__Group__12379);
+            pushFollow(FOLLOW_rule__VariableCondition__Group__1__Impl_in_rule__VariableCondition__Group__12550);
             rule__VariableCondition__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__VariableCondition__Group__2_in_rule__VariableCondition__Group__12382);
+            pushFollow(FOLLOW_rule__VariableCondition__Group__2_in_rule__VariableCondition__Group__12553);
             rule__VariableCondition__Group__2();
 
             state._fsp--;
@@ -3236,31 +3508,31 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__VariableCondition__Group__1__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1184:1: rule__VariableCondition__Group__1__Impl : ( ( rule__VariableCondition__VariableAssignment_1 ) ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1262:1: rule__VariableCondition__Group__1__Impl : ( ( rule__VariableCondition__Expression_leftAssignment_1 ) ) ;
     public final void rule__VariableCondition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1188:1: ( ( ( rule__VariableCondition__VariableAssignment_1 ) ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1189:1: ( ( rule__VariableCondition__VariableAssignment_1 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1266:1: ( ( ( rule__VariableCondition__Expression_leftAssignment_1 ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1267:1: ( ( rule__VariableCondition__Expression_leftAssignment_1 ) )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1189:1: ( ( rule__VariableCondition__VariableAssignment_1 ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1190:1: ( rule__VariableCondition__VariableAssignment_1 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1267:1: ( ( rule__VariableCondition__Expression_leftAssignment_1 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1268:1: ( rule__VariableCondition__Expression_leftAssignment_1 )
             {
-             before(grammarAccess.getVariableConditionAccess().getVariableAssignment_1()); 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1191:1: ( rule__VariableCondition__VariableAssignment_1 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1191:2: rule__VariableCondition__VariableAssignment_1
+             before(grammarAccess.getVariableConditionAccess().getExpression_leftAssignment_1()); 
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1269:1: ( rule__VariableCondition__Expression_leftAssignment_1 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1269:2: rule__VariableCondition__Expression_leftAssignment_1
             {
-            pushFollow(FOLLOW_rule__VariableCondition__VariableAssignment_1_in_rule__VariableCondition__Group__1__Impl2409);
-            rule__VariableCondition__VariableAssignment_1();
+            pushFollow(FOLLOW_rule__VariableCondition__Expression_leftAssignment_1_in_rule__VariableCondition__Group__1__Impl2580);
+            rule__VariableCondition__Expression_leftAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getVariableConditionAccess().getVariableAssignment_1()); 
+             after(grammarAccess.getVariableConditionAccess().getExpression_leftAssignment_1()); 
 
             }
 
@@ -3283,21 +3555,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__VariableCondition__Group__2"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1201:1: rule__VariableCondition__Group__2 : rule__VariableCondition__Group__2__Impl rule__VariableCondition__Group__3 ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1279:1: rule__VariableCondition__Group__2 : rule__VariableCondition__Group__2__Impl rule__VariableCondition__Group__3 ;
     public final void rule__VariableCondition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1205:1: ( rule__VariableCondition__Group__2__Impl rule__VariableCondition__Group__3 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1206:2: rule__VariableCondition__Group__2__Impl rule__VariableCondition__Group__3
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1283:1: ( rule__VariableCondition__Group__2__Impl rule__VariableCondition__Group__3 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1284:2: rule__VariableCondition__Group__2__Impl rule__VariableCondition__Group__3
             {
-            pushFollow(FOLLOW_rule__VariableCondition__Group__2__Impl_in_rule__VariableCondition__Group__22439);
+            pushFollow(FOLLOW_rule__VariableCondition__Group__2__Impl_in_rule__VariableCondition__Group__22610);
             rule__VariableCondition__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__VariableCondition__Group__3_in_rule__VariableCondition__Group__22442);
+            pushFollow(FOLLOW_rule__VariableCondition__Group__3_in_rule__VariableCondition__Group__22613);
             rule__VariableCondition__Group__3();
 
             state._fsp--;
@@ -3321,23 +3593,23 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__VariableCondition__Group__2__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1213:1: rule__VariableCondition__Group__2__Impl : ( ( rule__VariableCondition__RelationAssignment_2 ) ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1291:1: rule__VariableCondition__Group__2__Impl : ( ( rule__VariableCondition__RelationAssignment_2 ) ) ;
     public final void rule__VariableCondition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1217:1: ( ( ( rule__VariableCondition__RelationAssignment_2 ) ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1218:1: ( ( rule__VariableCondition__RelationAssignment_2 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1295:1: ( ( ( rule__VariableCondition__RelationAssignment_2 ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1296:1: ( ( rule__VariableCondition__RelationAssignment_2 ) )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1218:1: ( ( rule__VariableCondition__RelationAssignment_2 ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1219:1: ( rule__VariableCondition__RelationAssignment_2 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1296:1: ( ( rule__VariableCondition__RelationAssignment_2 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1297:1: ( rule__VariableCondition__RelationAssignment_2 )
             {
              before(grammarAccess.getVariableConditionAccess().getRelationAssignment_2()); 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1220:1: ( rule__VariableCondition__RelationAssignment_2 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1220:2: rule__VariableCondition__RelationAssignment_2
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1298:1: ( rule__VariableCondition__RelationAssignment_2 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1298:2: rule__VariableCondition__RelationAssignment_2
             {
-            pushFollow(FOLLOW_rule__VariableCondition__RelationAssignment_2_in_rule__VariableCondition__Group__2__Impl2469);
+            pushFollow(FOLLOW_rule__VariableCondition__RelationAssignment_2_in_rule__VariableCondition__Group__2__Impl2640);
             rule__VariableCondition__RelationAssignment_2();
 
             state._fsp--;
@@ -3368,21 +3640,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__VariableCondition__Group__3"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1230:1: rule__VariableCondition__Group__3 : rule__VariableCondition__Group__3__Impl rule__VariableCondition__Group__4 ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1308:1: rule__VariableCondition__Group__3 : rule__VariableCondition__Group__3__Impl rule__VariableCondition__Group__4 ;
     public final void rule__VariableCondition__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1234:1: ( rule__VariableCondition__Group__3__Impl rule__VariableCondition__Group__4 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1235:2: rule__VariableCondition__Group__3__Impl rule__VariableCondition__Group__4
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1312:1: ( rule__VariableCondition__Group__3__Impl rule__VariableCondition__Group__4 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1313:2: rule__VariableCondition__Group__3__Impl rule__VariableCondition__Group__4
             {
-            pushFollow(FOLLOW_rule__VariableCondition__Group__3__Impl_in_rule__VariableCondition__Group__32499);
+            pushFollow(FOLLOW_rule__VariableCondition__Group__3__Impl_in_rule__VariableCondition__Group__32670);
             rule__VariableCondition__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__VariableCondition__Group__4_in_rule__VariableCondition__Group__32502);
+            pushFollow(FOLLOW_rule__VariableCondition__Group__4_in_rule__VariableCondition__Group__32673);
             rule__VariableCondition__Group__4();
 
             state._fsp--;
@@ -3406,31 +3678,31 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__VariableCondition__Group__3__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1242:1: rule__VariableCondition__Group__3__Impl : ( ( rule__VariableCondition__Alternatives_3 ) ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1320:1: rule__VariableCondition__Group__3__Impl : ( ( rule__VariableCondition__Expression_rightAssignment_3 ) ) ;
     public final void rule__VariableCondition__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1246:1: ( ( ( rule__VariableCondition__Alternatives_3 ) ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1247:1: ( ( rule__VariableCondition__Alternatives_3 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1324:1: ( ( ( rule__VariableCondition__Expression_rightAssignment_3 ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1325:1: ( ( rule__VariableCondition__Expression_rightAssignment_3 ) )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1247:1: ( ( rule__VariableCondition__Alternatives_3 ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1248:1: ( rule__VariableCondition__Alternatives_3 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1325:1: ( ( rule__VariableCondition__Expression_rightAssignment_3 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1326:1: ( rule__VariableCondition__Expression_rightAssignment_3 )
             {
-             before(grammarAccess.getVariableConditionAccess().getAlternatives_3()); 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1249:1: ( rule__VariableCondition__Alternatives_3 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1249:2: rule__VariableCondition__Alternatives_3
+             before(grammarAccess.getVariableConditionAccess().getExpression_rightAssignment_3()); 
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1327:1: ( rule__VariableCondition__Expression_rightAssignment_3 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1327:2: rule__VariableCondition__Expression_rightAssignment_3
             {
-            pushFollow(FOLLOW_rule__VariableCondition__Alternatives_3_in_rule__VariableCondition__Group__3__Impl2529);
-            rule__VariableCondition__Alternatives_3();
+            pushFollow(FOLLOW_rule__VariableCondition__Expression_rightAssignment_3_in_rule__VariableCondition__Group__3__Impl2700);
+            rule__VariableCondition__Expression_rightAssignment_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getVariableConditionAccess().getAlternatives_3()); 
+             after(grammarAccess.getVariableConditionAccess().getExpression_rightAssignment_3()); 
 
             }
 
@@ -3453,16 +3725,16 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__VariableCondition__Group__4"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1259:1: rule__VariableCondition__Group__4 : rule__VariableCondition__Group__4__Impl ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1337:1: rule__VariableCondition__Group__4 : rule__VariableCondition__Group__4__Impl ;
     public final void rule__VariableCondition__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1263:1: ( rule__VariableCondition__Group__4__Impl )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1264:2: rule__VariableCondition__Group__4__Impl
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1341:1: ( rule__VariableCondition__Group__4__Impl )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1342:2: rule__VariableCondition__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__VariableCondition__Group__4__Impl_in_rule__VariableCondition__Group__42559);
+            pushFollow(FOLLOW_rule__VariableCondition__Group__4__Impl_in_rule__VariableCondition__Group__42730);
             rule__VariableCondition__Group__4__Impl();
 
             state._fsp--;
@@ -3486,20 +3758,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__VariableCondition__Group__4__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1270:1: rule__VariableCondition__Group__4__Impl : ( '}' ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1348:1: rule__VariableCondition__Group__4__Impl : ( '}' ) ;
     public final void rule__VariableCondition__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1274:1: ( ( '}' ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1275:1: ( '}' )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1352:1: ( ( '}' ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1353:1: ( '}' )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1275:1: ( '}' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1276:1: '}'
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1353:1: ( '}' )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1354:1: '}'
             {
              before(grammarAccess.getVariableConditionAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,29,FOLLOW_29_in_rule__VariableCondition__Group__4__Impl2587); 
+            match(input,30,FOLLOW_30_in_rule__VariableCondition__Group__4__Impl2758); 
              after(grammarAccess.getVariableConditionAccess().getRightCurlyBracketKeyword_4()); 
 
             }
@@ -3522,22 +3794,272 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
     // $ANTLR end "rule__VariableCondition__Group__4__Impl"
 
 
+    // $ANTLR start "rule__EXPRESSION__Group_0__0"
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1377:1: rule__EXPRESSION__Group_0__0 : rule__EXPRESSION__Group_0__0__Impl rule__EXPRESSION__Group_0__1 ;
+    public final void rule__EXPRESSION__Group_0__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1381:1: ( rule__EXPRESSION__Group_0__0__Impl rule__EXPRESSION__Group_0__1 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1382:2: rule__EXPRESSION__Group_0__0__Impl rule__EXPRESSION__Group_0__1
+            {
+            pushFollow(FOLLOW_rule__EXPRESSION__Group_0__0__Impl_in_rule__EXPRESSION__Group_0__02799);
+            rule__EXPRESSION__Group_0__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__EXPRESSION__Group_0__1_in_rule__EXPRESSION__Group_0__02802);
+            rule__EXPRESSION__Group_0__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__EXPRESSION__Group_0__0"
+
+
+    // $ANTLR start "rule__EXPRESSION__Group_0__0__Impl"
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1389:1: rule__EXPRESSION__Group_0__0__Impl : ( ( rule__EXPRESSION__FirstTermAssignment_0_0 ) ) ;
+    public final void rule__EXPRESSION__Group_0__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1393:1: ( ( ( rule__EXPRESSION__FirstTermAssignment_0_0 ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1394:1: ( ( rule__EXPRESSION__FirstTermAssignment_0_0 ) )
+            {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1394:1: ( ( rule__EXPRESSION__FirstTermAssignment_0_0 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1395:1: ( rule__EXPRESSION__FirstTermAssignment_0_0 )
+            {
+             before(grammarAccess.getEXPRESSIONAccess().getFirstTermAssignment_0_0()); 
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1396:1: ( rule__EXPRESSION__FirstTermAssignment_0_0 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1396:2: rule__EXPRESSION__FirstTermAssignment_0_0
+            {
+            pushFollow(FOLLOW_rule__EXPRESSION__FirstTermAssignment_0_0_in_rule__EXPRESSION__Group_0__0__Impl2829);
+            rule__EXPRESSION__FirstTermAssignment_0_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getEXPRESSIONAccess().getFirstTermAssignment_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__EXPRESSION__Group_0__0__Impl"
+
+
+    // $ANTLR start "rule__EXPRESSION__Group_0__1"
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1406:1: rule__EXPRESSION__Group_0__1 : rule__EXPRESSION__Group_0__1__Impl rule__EXPRESSION__Group_0__2 ;
+    public final void rule__EXPRESSION__Group_0__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1410:1: ( rule__EXPRESSION__Group_0__1__Impl rule__EXPRESSION__Group_0__2 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1411:2: rule__EXPRESSION__Group_0__1__Impl rule__EXPRESSION__Group_0__2
+            {
+            pushFollow(FOLLOW_rule__EXPRESSION__Group_0__1__Impl_in_rule__EXPRESSION__Group_0__12859);
+            rule__EXPRESSION__Group_0__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__EXPRESSION__Group_0__2_in_rule__EXPRESSION__Group_0__12862);
+            rule__EXPRESSION__Group_0__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__EXPRESSION__Group_0__1"
+
+
+    // $ANTLR start "rule__EXPRESSION__Group_0__1__Impl"
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1418:1: rule__EXPRESSION__Group_0__1__Impl : ( ( rule__EXPRESSION__OperatorAssignment_0_1 ) ) ;
+    public final void rule__EXPRESSION__Group_0__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1422:1: ( ( ( rule__EXPRESSION__OperatorAssignment_0_1 ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1423:1: ( ( rule__EXPRESSION__OperatorAssignment_0_1 ) )
+            {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1423:1: ( ( rule__EXPRESSION__OperatorAssignment_0_1 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1424:1: ( rule__EXPRESSION__OperatorAssignment_0_1 )
+            {
+             before(grammarAccess.getEXPRESSIONAccess().getOperatorAssignment_0_1()); 
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1425:1: ( rule__EXPRESSION__OperatorAssignment_0_1 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1425:2: rule__EXPRESSION__OperatorAssignment_0_1
+            {
+            pushFollow(FOLLOW_rule__EXPRESSION__OperatorAssignment_0_1_in_rule__EXPRESSION__Group_0__1__Impl2889);
+            rule__EXPRESSION__OperatorAssignment_0_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getEXPRESSIONAccess().getOperatorAssignment_0_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__EXPRESSION__Group_0__1__Impl"
+
+
+    // $ANTLR start "rule__EXPRESSION__Group_0__2"
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1435:1: rule__EXPRESSION__Group_0__2 : rule__EXPRESSION__Group_0__2__Impl ;
+    public final void rule__EXPRESSION__Group_0__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1439:1: ( rule__EXPRESSION__Group_0__2__Impl )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1440:2: rule__EXPRESSION__Group_0__2__Impl
+            {
+            pushFollow(FOLLOW_rule__EXPRESSION__Group_0__2__Impl_in_rule__EXPRESSION__Group_0__22919);
+            rule__EXPRESSION__Group_0__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__EXPRESSION__Group_0__2"
+
+
+    // $ANTLR start "rule__EXPRESSION__Group_0__2__Impl"
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1446:1: rule__EXPRESSION__Group_0__2__Impl : ( ( rule__EXPRESSION__SecondTermAssignment_0_2 ) ) ;
+    public final void rule__EXPRESSION__Group_0__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1450:1: ( ( ( rule__EXPRESSION__SecondTermAssignment_0_2 ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1451:1: ( ( rule__EXPRESSION__SecondTermAssignment_0_2 ) )
+            {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1451:1: ( ( rule__EXPRESSION__SecondTermAssignment_0_2 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1452:1: ( rule__EXPRESSION__SecondTermAssignment_0_2 )
+            {
+             before(grammarAccess.getEXPRESSIONAccess().getSecondTermAssignment_0_2()); 
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1453:1: ( rule__EXPRESSION__SecondTermAssignment_0_2 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1453:2: rule__EXPRESSION__SecondTermAssignment_0_2
+            {
+            pushFollow(FOLLOW_rule__EXPRESSION__SecondTermAssignment_0_2_in_rule__EXPRESSION__Group_0__2__Impl2946);
+            rule__EXPRESSION__SecondTermAssignment_0_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getEXPRESSIONAccess().getSecondTermAssignment_0_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__EXPRESSION__Group_0__2__Impl"
+
+
     // $ANTLR start "rule__Event__Group_0__0"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1299:1: rule__Event__Group_0__0 : rule__Event__Group_0__0__Impl rule__Event__Group_0__1 ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1469:1: rule__Event__Group_0__0 : rule__Event__Group_0__0__Impl rule__Event__Group_0__1 ;
     public final void rule__Event__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1303:1: ( rule__Event__Group_0__0__Impl rule__Event__Group_0__1 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1304:2: rule__Event__Group_0__0__Impl rule__Event__Group_0__1
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1473:1: ( rule__Event__Group_0__0__Impl rule__Event__Group_0__1 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1474:2: rule__Event__Group_0__0__Impl rule__Event__Group_0__1
             {
-            pushFollow(FOLLOW_rule__Event__Group_0__0__Impl_in_rule__Event__Group_0__02628);
+            pushFollow(FOLLOW_rule__Event__Group_0__0__Impl_in_rule__Event__Group_0__02982);
             rule__Event__Group_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Event__Group_0__1_in_rule__Event__Group_0__02631);
+            pushFollow(FOLLOW_rule__Event__Group_0__1_in_rule__Event__Group_0__02985);
             rule__Event__Group_0__1();
 
             state._fsp--;
@@ -3561,23 +4083,23 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Event__Group_0__0__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1311:1: rule__Event__Group_0__0__Impl : ( ( rule__Event__EventNameAssignment_0_0 ) ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1481:1: rule__Event__Group_0__0__Impl : ( ( rule__Event__EventNameAssignment_0_0 ) ) ;
     public final void rule__Event__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1315:1: ( ( ( rule__Event__EventNameAssignment_0_0 ) ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1316:1: ( ( rule__Event__EventNameAssignment_0_0 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1485:1: ( ( ( rule__Event__EventNameAssignment_0_0 ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1486:1: ( ( rule__Event__EventNameAssignment_0_0 ) )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1316:1: ( ( rule__Event__EventNameAssignment_0_0 ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1317:1: ( rule__Event__EventNameAssignment_0_0 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1486:1: ( ( rule__Event__EventNameAssignment_0_0 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1487:1: ( rule__Event__EventNameAssignment_0_0 )
             {
              before(grammarAccess.getEventAccess().getEventNameAssignment_0_0()); 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1318:1: ( rule__Event__EventNameAssignment_0_0 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1318:2: rule__Event__EventNameAssignment_0_0
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1488:1: ( rule__Event__EventNameAssignment_0_0 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1488:2: rule__Event__EventNameAssignment_0_0
             {
-            pushFollow(FOLLOW_rule__Event__EventNameAssignment_0_0_in_rule__Event__Group_0__0__Impl2658);
+            pushFollow(FOLLOW_rule__Event__EventNameAssignment_0_0_in_rule__Event__Group_0__0__Impl3012);
             rule__Event__EventNameAssignment_0_0();
 
             state._fsp--;
@@ -3608,21 +4130,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Event__Group_0__1"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1328:1: rule__Event__Group_0__1 : rule__Event__Group_0__1__Impl rule__Event__Group_0__2 ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1498:1: rule__Event__Group_0__1 : rule__Event__Group_0__1__Impl rule__Event__Group_0__2 ;
     public final void rule__Event__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1332:1: ( rule__Event__Group_0__1__Impl rule__Event__Group_0__2 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1333:2: rule__Event__Group_0__1__Impl rule__Event__Group_0__2
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1502:1: ( rule__Event__Group_0__1__Impl rule__Event__Group_0__2 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1503:2: rule__Event__Group_0__1__Impl rule__Event__Group_0__2
             {
-            pushFollow(FOLLOW_rule__Event__Group_0__1__Impl_in_rule__Event__Group_0__12688);
+            pushFollow(FOLLOW_rule__Event__Group_0__1__Impl_in_rule__Event__Group_0__13042);
             rule__Event__Group_0__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Event__Group_0__2_in_rule__Event__Group_0__12691);
+            pushFollow(FOLLOW_rule__Event__Group_0__2_in_rule__Event__Group_0__13045);
             rule__Event__Group_0__2();
 
             state._fsp--;
@@ -3646,20 +4168,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Event__Group_0__1__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1340:1: rule__Event__Group_0__1__Impl : ( '.' ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1510:1: rule__Event__Group_0__1__Impl : ( '.' ) ;
     public final void rule__Event__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1344:1: ( ( '.' ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1345:1: ( '.' )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1514:1: ( ( '.' ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1515:1: ( '.' )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1345:1: ( '.' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1346:1: '.'
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1515:1: ( '.' )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1516:1: '.'
             {
              before(grammarAccess.getEventAccess().getFullStopKeyword_0_1()); 
-            match(input,30,FOLLOW_30_in_rule__Event__Group_0__1__Impl2719); 
+            match(input,31,FOLLOW_31_in_rule__Event__Group_0__1__Impl3073); 
              after(grammarAccess.getEventAccess().getFullStopKeyword_0_1()); 
 
             }
@@ -3683,16 +4205,16 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Event__Group_0__2"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1359:1: rule__Event__Group_0__2 : rule__Event__Group_0__2__Impl ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1529:1: rule__Event__Group_0__2 : rule__Event__Group_0__2__Impl ;
     public final void rule__Event__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1363:1: ( rule__Event__Group_0__2__Impl )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1364:2: rule__Event__Group_0__2__Impl
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1533:1: ( rule__Event__Group_0__2__Impl )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1534:2: rule__Event__Group_0__2__Impl
             {
-            pushFollow(FOLLOW_rule__Event__Group_0__2__Impl_in_rule__Event__Group_0__22750);
+            pushFollow(FOLLOW_rule__Event__Group_0__2__Impl_in_rule__Event__Group_0__23104);
             rule__Event__Group_0__2__Impl();
 
             state._fsp--;
@@ -3716,23 +4238,23 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Event__Group_0__2__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1370:1: rule__Event__Group_0__2__Impl : ( ( rule__Event__EventExtensionAssignment_0_2 ) ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1540:1: rule__Event__Group_0__2__Impl : ( ( rule__Event__EventExtensionAssignment_0_2 ) ) ;
     public final void rule__Event__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1374:1: ( ( ( rule__Event__EventExtensionAssignment_0_2 ) ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1375:1: ( ( rule__Event__EventExtensionAssignment_0_2 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1544:1: ( ( ( rule__Event__EventExtensionAssignment_0_2 ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1545:1: ( ( rule__Event__EventExtensionAssignment_0_2 ) )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1375:1: ( ( rule__Event__EventExtensionAssignment_0_2 ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1376:1: ( rule__Event__EventExtensionAssignment_0_2 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1545:1: ( ( rule__Event__EventExtensionAssignment_0_2 ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1546:1: ( rule__Event__EventExtensionAssignment_0_2 )
             {
              before(grammarAccess.getEventAccess().getEventExtensionAssignment_0_2()); 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1377:1: ( rule__Event__EventExtensionAssignment_0_2 )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1377:2: rule__Event__EventExtensionAssignment_0_2
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1547:1: ( rule__Event__EventExtensionAssignment_0_2 )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1547:2: rule__Event__EventExtensionAssignment_0_2
             {
-            pushFollow(FOLLOW_rule__Event__EventExtensionAssignment_0_2_in_rule__Event__Group_0__2__Impl2777);
+            pushFollow(FOLLOW_rule__Event__EventExtensionAssignment_0_2_in_rule__Event__Group_0__2__Impl3131);
             rule__Event__EventExtensionAssignment_0_2();
 
             state._fsp--;
@@ -3763,20 +4285,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Model__ExpressionAssignment"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1394:1: rule__Model__ExpressionAssignment : ( ruleOrExpression ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1564:1: rule__Model__ExpressionAssignment : ( ruleOrExpression ) ;
     public final void rule__Model__ExpressionAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1398:1: ( ( ruleOrExpression ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1399:1: ( ruleOrExpression )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1568:1: ( ( ruleOrExpression ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1569:1: ( ruleOrExpression )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1399:1: ( ruleOrExpression )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1400:1: ruleOrExpression
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1569:1: ( ruleOrExpression )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1570:1: ruleOrExpression
             {
              before(grammarAccess.getModelAccess().getExpressionOrExpressionParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleOrExpression_in_rule__Model__ExpressionAssignment2818);
+            pushFollow(FOLLOW_ruleOrExpression_in_rule__Model__ExpressionAssignment3172);
             ruleOrExpression();
 
             state._fsp--;
@@ -3804,20 +4326,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__OrExpression__LeftExpressionAssignment_0"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1409:1: rule__OrExpression__LeftExpressionAssignment_0 : ( ruleAndExpression ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1579:1: rule__OrExpression__LeftExpressionAssignment_0 : ( ruleAndExpression ) ;
     public final void rule__OrExpression__LeftExpressionAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1413:1: ( ( ruleAndExpression ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1414:1: ( ruleAndExpression )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1583:1: ( ( ruleAndExpression ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1584:1: ( ruleAndExpression )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1414:1: ( ruleAndExpression )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1415:1: ruleAndExpression
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1584:1: ( ruleAndExpression )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1585:1: ruleAndExpression
             {
              before(grammarAccess.getOrExpressionAccess().getLeftExpressionAndExpressionParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleAndExpression_in_rule__OrExpression__LeftExpressionAssignment_02849);
+            pushFollow(FOLLOW_ruleAndExpression_in_rule__OrExpression__LeftExpressionAssignment_03203);
             ruleAndExpression();
 
             state._fsp--;
@@ -3845,20 +4367,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__OrExpression__OrAssignment_1_0"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1424:1: rule__OrExpression__OrAssignment_1_0 : ( RULE_OR ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1594:1: rule__OrExpression__OrAssignment_1_0 : ( RULE_OR ) ;
     public final void rule__OrExpression__OrAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1428:1: ( ( RULE_OR ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1429:1: ( RULE_OR )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1598:1: ( ( RULE_OR ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1599:1: ( RULE_OR )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1429:1: ( RULE_OR )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1430:1: RULE_OR
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1599:1: ( RULE_OR )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1600:1: RULE_OR
             {
              before(grammarAccess.getOrExpressionAccess().getOrORTerminalRuleCall_1_0_0()); 
-            match(input,RULE_OR,FOLLOW_RULE_OR_in_rule__OrExpression__OrAssignment_1_02880); 
+            match(input,RULE_OR,FOLLOW_RULE_OR_in_rule__OrExpression__OrAssignment_1_03234); 
              after(grammarAccess.getOrExpressionAccess().getOrORTerminalRuleCall_1_0_0()); 
 
             }
@@ -3882,20 +4404,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__OrExpression__RightExpressionAssignment_1_1"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1439:1: rule__OrExpression__RightExpressionAssignment_1_1 : ( ruleOrExpression ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1609:1: rule__OrExpression__RightExpressionAssignment_1_1 : ( ruleOrExpression ) ;
     public final void rule__OrExpression__RightExpressionAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1443:1: ( ( ruleOrExpression ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1444:1: ( ruleOrExpression )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1613:1: ( ( ruleOrExpression ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1614:1: ( ruleOrExpression )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1444:1: ( ruleOrExpression )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1445:1: ruleOrExpression
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1614:1: ( ruleOrExpression )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1615:1: ruleOrExpression
             {
              before(grammarAccess.getOrExpressionAccess().getRightExpressionOrExpressionParserRuleCall_1_1_0()); 
-            pushFollow(FOLLOW_ruleOrExpression_in_rule__OrExpression__RightExpressionAssignment_1_12911);
+            pushFollow(FOLLOW_ruleOrExpression_in_rule__OrExpression__RightExpressionAssignment_1_13265);
             ruleOrExpression();
 
             state._fsp--;
@@ -3923,20 +4445,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AndExpression__LeftExpressionAssignment_0"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1454:1: rule__AndExpression__LeftExpressionAssignment_0 : ( ruleBaseExpression ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1624:1: rule__AndExpression__LeftExpressionAssignment_0 : ( ruleBaseExpression ) ;
     public final void rule__AndExpression__LeftExpressionAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1458:1: ( ( ruleBaseExpression ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1459:1: ( ruleBaseExpression )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1628:1: ( ( ruleBaseExpression ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1629:1: ( ruleBaseExpression )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1459:1: ( ruleBaseExpression )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1460:1: ruleBaseExpression
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1629:1: ( ruleBaseExpression )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1630:1: ruleBaseExpression
             {
              before(grammarAccess.getAndExpressionAccess().getLeftExpressionBaseExpressionParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleBaseExpression_in_rule__AndExpression__LeftExpressionAssignment_02942);
+            pushFollow(FOLLOW_ruleBaseExpression_in_rule__AndExpression__LeftExpressionAssignment_03296);
             ruleBaseExpression();
 
             state._fsp--;
@@ -3964,20 +4486,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AndExpression__AndAssignment_1_0"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1469:1: rule__AndExpression__AndAssignment_1_0 : ( RULE_AND ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1639:1: rule__AndExpression__AndAssignment_1_0 : ( RULE_AND ) ;
     public final void rule__AndExpression__AndAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1473:1: ( ( RULE_AND ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1474:1: ( RULE_AND )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1643:1: ( ( RULE_AND ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1644:1: ( RULE_AND )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1474:1: ( RULE_AND )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1475:1: RULE_AND
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1644:1: ( RULE_AND )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1645:1: RULE_AND
             {
              before(grammarAccess.getAndExpressionAccess().getAndANDTerminalRuleCall_1_0_0()); 
-            match(input,RULE_AND,FOLLOW_RULE_AND_in_rule__AndExpression__AndAssignment_1_02973); 
+            match(input,RULE_AND,FOLLOW_RULE_AND_in_rule__AndExpression__AndAssignment_1_03327); 
              after(grammarAccess.getAndExpressionAccess().getAndANDTerminalRuleCall_1_0_0()); 
 
             }
@@ -4001,20 +4523,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AndExpression__RightExpressionAssignment_1_1"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1484:1: rule__AndExpression__RightExpressionAssignment_1_1 : ( ruleAndExpression ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1654:1: rule__AndExpression__RightExpressionAssignment_1_1 : ( ruleAndExpression ) ;
     public final void rule__AndExpression__RightExpressionAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1488:1: ( ( ruleAndExpression ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1489:1: ( ruleAndExpression )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1658:1: ( ( ruleAndExpression ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1659:1: ( ruleAndExpression )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1489:1: ( ruleAndExpression )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1490:1: ruleAndExpression
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1659:1: ( ruleAndExpression )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1660:1: ruleAndExpression
             {
              before(grammarAccess.getAndExpressionAccess().getRightExpressionAndExpressionParserRuleCall_1_1_0()); 
-            pushFollow(FOLLOW_ruleAndExpression_in_rule__AndExpression__RightExpressionAssignment_1_13004);
+            pushFollow(FOLLOW_ruleAndExpression_in_rule__AndExpression__RightExpressionAssignment_1_13358);
             ruleAndExpression();
 
             state._fsp--;
@@ -4042,20 +4564,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__NotAssignment_0"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1499:1: rule__BaseExpression__NotAssignment_0 : ( RULE_NOT ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1669:1: rule__BaseExpression__NotAssignment_0 : ( RULE_NOT ) ;
     public final void rule__BaseExpression__NotAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1503:1: ( ( RULE_NOT ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1504:1: ( RULE_NOT )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1673:1: ( ( RULE_NOT ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1674:1: ( RULE_NOT )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1504:1: ( RULE_NOT )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1505:1: RULE_NOT
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1674:1: ( RULE_NOT )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1675:1: RULE_NOT
             {
              before(grammarAccess.getBaseExpressionAccess().getNotNOTTerminalRuleCall_0_0()); 
-            match(input,RULE_NOT,FOLLOW_RULE_NOT_in_rule__BaseExpression__NotAssignment_03035); 
+            match(input,RULE_NOT,FOLLOW_RULE_NOT_in_rule__BaseExpression__NotAssignment_03389); 
              after(grammarAccess.getBaseExpressionAccess().getNotNOTTerminalRuleCall_0_0()); 
 
             }
@@ -4079,20 +4601,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__BooleanTermAssignment_1_0"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1514:1: rule__BaseExpression__BooleanTermAssignment_1_0 : ( rulebooleanTerm ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1684:1: rule__BaseExpression__BooleanTermAssignment_1_0 : ( rulebooleanTerm ) ;
     public final void rule__BaseExpression__BooleanTermAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1518:1: ( ( rulebooleanTerm ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1519:1: ( rulebooleanTerm )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1688:1: ( ( rulebooleanTerm ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1689:1: ( rulebooleanTerm )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1519:1: ( rulebooleanTerm )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1520:1: rulebooleanTerm
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1689:1: ( rulebooleanTerm )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1690:1: rulebooleanTerm
             {
              before(grammarAccess.getBaseExpressionAccess().getBooleanTermBooleanTermParserRuleCall_1_0_0()); 
-            pushFollow(FOLLOW_rulebooleanTerm_in_rule__BaseExpression__BooleanTermAssignment_1_03066);
+            pushFollow(FOLLOW_rulebooleanTerm_in_rule__BaseExpression__BooleanTermAssignment_1_03420);
             rulebooleanTerm();
 
             state._fsp--;
@@ -4120,20 +4642,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__RootExpressionAssignment_1_1_1"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1529:1: rule__BaseExpression__RootExpressionAssignment_1_1_1 : ( ruleOrExpression ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1699:1: rule__BaseExpression__RootExpressionAssignment_1_1_1 : ( ruleOrExpression ) ;
     public final void rule__BaseExpression__RootExpressionAssignment_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1533:1: ( ( ruleOrExpression ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1534:1: ( ruleOrExpression )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1703:1: ( ( ruleOrExpression ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1704:1: ( ruleOrExpression )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1534:1: ( ruleOrExpression )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1535:1: ruleOrExpression
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1704:1: ( ruleOrExpression )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1705:1: ruleOrExpression
             {
              before(grammarAccess.getBaseExpressionAccess().getRootExpressionOrExpressionParserRuleCall_1_1_1_0()); 
-            pushFollow(FOLLOW_ruleOrExpression_in_rule__BaseExpression__RootExpressionAssignment_1_1_13097);
+            pushFollow(FOLLOW_ruleOrExpression_in_rule__BaseExpression__RootExpressionAssignment_1_1_13451);
             ruleOrExpression();
 
             state._fsp--;
@@ -4161,20 +4683,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BooleanTerm__TimeConstraintAssignment_0"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1544:1: rule__BooleanTerm__TimeConstraintAssignment_0 : ( ruleTimeConstraint ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1714:1: rule__BooleanTerm__TimeConstraintAssignment_0 : ( ruleTimeConstraint ) ;
     public final void rule__BooleanTerm__TimeConstraintAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1548:1: ( ( ruleTimeConstraint ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1549:1: ( ruleTimeConstraint )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1718:1: ( ( ruleTimeConstraint ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1719:1: ( ruleTimeConstraint )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1549:1: ( ruleTimeConstraint )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1550:1: ruleTimeConstraint
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1719:1: ( ruleTimeConstraint )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1720:1: ruleTimeConstraint
             {
              before(grammarAccess.getBooleanTermAccess().getTimeConstraintTimeConstraintParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleTimeConstraint_in_rule__BooleanTerm__TimeConstraintAssignment_03128);
+            pushFollow(FOLLOW_ruleTimeConstraint_in_rule__BooleanTerm__TimeConstraintAssignment_03482);
             ruleTimeConstraint();
 
             state._fsp--;
@@ -4202,20 +4724,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BooleanTerm__BooleanVariableAssignment_1"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1559:1: rule__BooleanTerm__BooleanVariableAssignment_1 : ( ruleBooleanVariable ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1729:1: rule__BooleanTerm__BooleanVariableAssignment_1 : ( ruleBooleanVariable ) ;
     public final void rule__BooleanTerm__BooleanVariableAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1563:1: ( ( ruleBooleanVariable ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1564:1: ( ruleBooleanVariable )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1733:1: ( ( ruleBooleanVariable ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1734:1: ( ruleBooleanVariable )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1564:1: ( ruleBooleanVariable )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1565:1: ruleBooleanVariable
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1734:1: ( ruleBooleanVariable )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1735:1: ruleBooleanVariable
             {
              before(grammarAccess.getBooleanTermAccess().getBooleanVariableBooleanVariableParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleBooleanVariable_in_rule__BooleanTerm__BooleanVariableAssignment_13159);
+            pushFollow(FOLLOW_ruleBooleanVariable_in_rule__BooleanTerm__BooleanVariableAssignment_13513);
             ruleBooleanVariable();
 
             state._fsp--;
@@ -4243,20 +4765,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BooleanTerm__VariableConditionAssignment_2"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1574:1: rule__BooleanTerm__VariableConditionAssignment_2 : ( ruleVariableCondition ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1744:1: rule__BooleanTerm__VariableConditionAssignment_2 : ( ruleVariableCondition ) ;
     public final void rule__BooleanTerm__VariableConditionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1578:1: ( ( ruleVariableCondition ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1579:1: ( ruleVariableCondition )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1748:1: ( ( ruleVariableCondition ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1749:1: ( ruleVariableCondition )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1579:1: ( ruleVariableCondition )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1580:1: ruleVariableCondition
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1749:1: ( ruleVariableCondition )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1750:1: ruleVariableCondition
             {
              before(grammarAccess.getBooleanTermAccess().getVariableConditionVariableConditionParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleVariableCondition_in_rule__BooleanTerm__VariableConditionAssignment_23190);
+            pushFollow(FOLLOW_ruleVariableCondition_in_rule__BooleanTerm__VariableConditionAssignment_23544);
             ruleVariableCondition();
 
             state._fsp--;
@@ -4284,20 +4806,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Event2Assignment_1"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1589:1: rule__TimeConstraint__Event2Assignment_1 : ( ruleEvent ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1759:1: rule__TimeConstraint__Event2Assignment_1 : ( ruleEvent ) ;
     public final void rule__TimeConstraint__Event2Assignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1593:1: ( ( ruleEvent ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1594:1: ( ruleEvent )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1763:1: ( ( ruleEvent ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1764:1: ( ruleEvent )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1594:1: ( ruleEvent )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1595:1: ruleEvent
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1764:1: ( ruleEvent )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1765:1: ruleEvent
             {
              before(grammarAccess.getTimeConstraintAccess().getEvent2EventParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleEvent_in_rule__TimeConstraint__Event2Assignment_13221);
+            pushFollow(FOLLOW_ruleEvent_in_rule__TimeConstraint__Event2Assignment_13575);
             ruleEvent();
 
             state._fsp--;
@@ -4325,20 +4847,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Event1Assignment_4"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1604:1: rule__TimeConstraint__Event1Assignment_4 : ( ruleEvent ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1774:1: rule__TimeConstraint__Event1Assignment_4 : ( ruleEvent ) ;
     public final void rule__TimeConstraint__Event1Assignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1608:1: ( ( ruleEvent ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1609:1: ( ruleEvent )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1778:1: ( ( ruleEvent ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1779:1: ( ruleEvent )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1609:1: ( ruleEvent )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1610:1: ruleEvent
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1779:1: ( ruleEvent )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1780:1: ruleEvent
             {
              before(grammarAccess.getTimeConstraintAccess().getEvent1EventParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleEvent_in_rule__TimeConstraint__Event1Assignment_43252);
+            pushFollow(FOLLOW_ruleEvent_in_rule__TimeConstraint__Event1Assignment_43606);
             ruleEvent();
 
             state._fsp--;
@@ -4366,20 +4888,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__OpAssignment_5"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1619:1: rule__TimeConstraint__OpAssignment_5 : ( RULE_RELATIONS ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1789:1: rule__TimeConstraint__OpAssignment_5 : ( RULE_RELATIONS ) ;
     public final void rule__TimeConstraint__OpAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1623:1: ( ( RULE_RELATIONS ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1624:1: ( RULE_RELATIONS )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1793:1: ( ( RULE_RELATIONS ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1794:1: ( RULE_RELATIONS )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1624:1: ( RULE_RELATIONS )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1625:1: RULE_RELATIONS
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1794:1: ( RULE_RELATIONS )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1795:1: RULE_RELATIONS
             {
              before(grammarAccess.getTimeConstraintAccess().getOpRELATIONSTerminalRuleCall_5_0()); 
-            match(input,RULE_RELATIONS,FOLLOW_RULE_RELATIONS_in_rule__TimeConstraint__OpAssignment_53283); 
+            match(input,RULE_RELATIONS,FOLLOW_RULE_RELATIONS_in_rule__TimeConstraint__OpAssignment_53637); 
              after(grammarAccess.getTimeConstraintAccess().getOpRELATIONSTerminalRuleCall_5_0()); 
 
             }
@@ -4403,20 +4925,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__ValueAssignment_6"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1634:1: rule__TimeConstraint__ValueAssignment_6 : ( RULE_INT ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1804:1: rule__TimeConstraint__ValueAssignment_6 : ( RULE_INT ) ;
     public final void rule__TimeConstraint__ValueAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1638:1: ( ( RULE_INT ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1639:1: ( RULE_INT )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1808:1: ( ( RULE_INT ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1809:1: ( RULE_INT )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1639:1: ( RULE_INT )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1640:1: RULE_INT
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1809:1: ( RULE_INT )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1810:1: RULE_INT
             {
              before(grammarAccess.getTimeConstraintAccess().getValueINTTerminalRuleCall_6_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__TimeConstraint__ValueAssignment_63314); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__TimeConstraint__ValueAssignment_63668); 
              after(grammarAccess.getTimeConstraintAccess().getValueINTTerminalRuleCall_6_0()); 
 
             }
@@ -4440,20 +4962,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BooleanVariable__VariableAssignment"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1649:1: rule__BooleanVariable__VariableAssignment : ( RULE_ID ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1819:1: rule__BooleanVariable__VariableAssignment : ( RULE_ID ) ;
     public final void rule__BooleanVariable__VariableAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1653:1: ( ( RULE_ID ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1654:1: ( RULE_ID )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1823:1: ( ( RULE_ID ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1824:1: ( RULE_ID )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1654:1: ( RULE_ID )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1655:1: RULE_ID
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1824:1: ( RULE_ID )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1825:1: RULE_ID
             {
              before(grammarAccess.getBooleanVariableAccess().getVariableIDTerminalRuleCall_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__BooleanVariable__VariableAssignment3345); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__BooleanVariable__VariableAssignment3699); 
              after(grammarAccess.getBooleanVariableAccess().getVariableIDTerminalRuleCall_0()); 
 
             }
@@ -4476,22 +4998,26 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
     // $ANTLR end "rule__BooleanVariable__VariableAssignment"
 
 
-    // $ANTLR start "rule__VariableCondition__VariableAssignment_1"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1664:1: rule__VariableCondition__VariableAssignment_1 : ( RULE_ID ) ;
-    public final void rule__VariableCondition__VariableAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__VariableCondition__Expression_leftAssignment_1"
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1834:1: rule__VariableCondition__Expression_leftAssignment_1 : ( ruleEXPRESSION ) ;
+    public final void rule__VariableCondition__Expression_leftAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1668:1: ( ( RULE_ID ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1669:1: ( RULE_ID )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1838:1: ( ( ruleEXPRESSION ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1839:1: ( ruleEXPRESSION )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1669:1: ( RULE_ID )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1670:1: RULE_ID
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1839:1: ( ruleEXPRESSION )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1840:1: ruleEXPRESSION
             {
-             before(grammarAccess.getVariableConditionAccess().getVariableIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__VariableCondition__VariableAssignment_13376); 
-             after(grammarAccess.getVariableConditionAccess().getVariableIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getVariableConditionAccess().getExpression_leftEXPRESSIONParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_ruleEXPRESSION_in_rule__VariableCondition__Expression_leftAssignment_13730);
+            ruleEXPRESSION();
+
+            state._fsp--;
+
+             after(grammarAccess.getVariableConditionAccess().getExpression_leftEXPRESSIONParserRuleCall_1_0()); 
 
             }
 
@@ -4510,24 +5036,24 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
         }
         return ;
     }
-    // $ANTLR end "rule__VariableCondition__VariableAssignment_1"
+    // $ANTLR end "rule__VariableCondition__Expression_leftAssignment_1"
 
 
     // $ANTLR start "rule__VariableCondition__RelationAssignment_2"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1679:1: rule__VariableCondition__RelationAssignment_2 : ( RULE_RELATIONS ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1849:1: rule__VariableCondition__RelationAssignment_2 : ( RULE_RELATIONS ) ;
     public final void rule__VariableCondition__RelationAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1683:1: ( ( RULE_RELATIONS ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1684:1: ( RULE_RELATIONS )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1853:1: ( ( RULE_RELATIONS ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1854:1: ( RULE_RELATIONS )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1684:1: ( RULE_RELATIONS )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1685:1: RULE_RELATIONS
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1854:1: ( RULE_RELATIONS )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1855:1: RULE_RELATIONS
             {
              before(grammarAccess.getVariableConditionAccess().getRelationRELATIONSTerminalRuleCall_2_0()); 
-            match(input,RULE_RELATIONS,FOLLOW_RULE_RELATIONS_in_rule__VariableCondition__RelationAssignment_23407); 
+            match(input,RULE_RELATIONS,FOLLOW_RULE_RELATIONS_in_rule__VariableCondition__RelationAssignment_23761); 
              after(grammarAccess.getVariableConditionAccess().getRelationRELATIONSTerminalRuleCall_2_0()); 
 
             }
@@ -4550,22 +5076,26 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
     // $ANTLR end "rule__VariableCondition__RelationAssignment_2"
 
 
-    // $ANTLR start "rule__VariableCondition__ValueAssignment_3_0"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1694:1: rule__VariableCondition__ValueAssignment_3_0 : ( RULE_INT ) ;
-    public final void rule__VariableCondition__ValueAssignment_3_0() throws RecognitionException {
+    // $ANTLR start "rule__VariableCondition__Expression_rightAssignment_3"
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1864:1: rule__VariableCondition__Expression_rightAssignment_3 : ( ruleEXPRESSION ) ;
+    public final void rule__VariableCondition__Expression_rightAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1698:1: ( ( RULE_INT ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1699:1: ( RULE_INT )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1868:1: ( ( ruleEXPRESSION ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1869:1: ( ruleEXPRESSION )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1699:1: ( RULE_INT )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1700:1: RULE_INT
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1869:1: ( ruleEXPRESSION )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1870:1: ruleEXPRESSION
             {
-             before(grammarAccess.getVariableConditionAccess().getValueINTTerminalRuleCall_3_0_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__VariableCondition__ValueAssignment_3_03438); 
-             after(grammarAccess.getVariableConditionAccess().getValueINTTerminalRuleCall_3_0_0()); 
+             before(grammarAccess.getVariableConditionAccess().getExpression_rightEXPRESSIONParserRuleCall_3_0()); 
+            pushFollow(FOLLOW_ruleEXPRESSION_in_rule__VariableCondition__Expression_rightAssignment_33792);
+            ruleEXPRESSION();
+
+            state._fsp--;
+
+             after(grammarAccess.getVariableConditionAccess().getExpression_rightEXPRESSIONParserRuleCall_3_0()); 
 
             }
 
@@ -4584,25 +5114,29 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
         }
         return ;
     }
-    // $ANTLR end "rule__VariableCondition__ValueAssignment_3_0"
+    // $ANTLR end "rule__VariableCondition__Expression_rightAssignment_3"
 
 
-    // $ANTLR start "rule__VariableCondition__RightVariableAssignment_3_1"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1709:1: rule__VariableCondition__RightVariableAssignment_3_1 : ( RULE_ID ) ;
-    public final void rule__VariableCondition__RightVariableAssignment_3_1() throws RecognitionException {
+    // $ANTLR start "rule__EXPRESSION__FirstTermAssignment_0_0"
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1879:1: rule__EXPRESSION__FirstTermAssignment_0_0 : ( ruleTERM ) ;
+    public final void rule__EXPRESSION__FirstTermAssignment_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1713:1: ( ( RULE_ID ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1714:1: ( RULE_ID )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1883:1: ( ( ruleTERM ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1884:1: ( ruleTERM )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1714:1: ( RULE_ID )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1715:1: RULE_ID
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1884:1: ( ruleTERM )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1885:1: ruleTERM
             {
-             before(grammarAccess.getVariableConditionAccess().getRightVariableIDTerminalRuleCall_3_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__VariableCondition__RightVariableAssignment_3_13469); 
-             after(grammarAccess.getVariableConditionAccess().getRightVariableIDTerminalRuleCall_3_1_0()); 
+             before(grammarAccess.getEXPRESSIONAccess().getFirstTermTERMParserRuleCall_0_0_0()); 
+            pushFollow(FOLLOW_ruleTERM_in_rule__EXPRESSION__FirstTermAssignment_0_03823);
+            ruleTERM();
+
+            state._fsp--;
+
+             after(grammarAccess.getEXPRESSIONAccess().getFirstTermTERMParserRuleCall_0_0_0()); 
 
             }
 
@@ -4621,24 +5155,217 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
         }
         return ;
     }
-    // $ANTLR end "rule__VariableCondition__RightVariableAssignment_3_1"
+    // $ANTLR end "rule__EXPRESSION__FirstTermAssignment_0_0"
+
+
+    // $ANTLR start "rule__EXPRESSION__OperatorAssignment_0_1"
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1894:1: rule__EXPRESSION__OperatorAssignment_0_1 : ( RULE_OPERATOR ) ;
+    public final void rule__EXPRESSION__OperatorAssignment_0_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1898:1: ( ( RULE_OPERATOR ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1899:1: ( RULE_OPERATOR )
+            {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1899:1: ( RULE_OPERATOR )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1900:1: RULE_OPERATOR
+            {
+             before(grammarAccess.getEXPRESSIONAccess().getOperatorOPERATORTerminalRuleCall_0_1_0()); 
+            match(input,RULE_OPERATOR,FOLLOW_RULE_OPERATOR_in_rule__EXPRESSION__OperatorAssignment_0_13854); 
+             after(grammarAccess.getEXPRESSIONAccess().getOperatorOPERATORTerminalRuleCall_0_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__EXPRESSION__OperatorAssignment_0_1"
+
+
+    // $ANTLR start "rule__EXPRESSION__SecondTermAssignment_0_2"
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1909:1: rule__EXPRESSION__SecondTermAssignment_0_2 : ( ruleTERM ) ;
+    public final void rule__EXPRESSION__SecondTermAssignment_0_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1913:1: ( ( ruleTERM ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1914:1: ( ruleTERM )
+            {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1914:1: ( ruleTERM )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1915:1: ruleTERM
+            {
+             before(grammarAccess.getEXPRESSIONAccess().getSecondTermTERMParserRuleCall_0_2_0()); 
+            pushFollow(FOLLOW_ruleTERM_in_rule__EXPRESSION__SecondTermAssignment_0_23885);
+            ruleTERM();
+
+            state._fsp--;
+
+             after(grammarAccess.getEXPRESSIONAccess().getSecondTermTERMParserRuleCall_0_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__EXPRESSION__SecondTermAssignment_0_2"
+
+
+    // $ANTLR start "rule__EXPRESSION__AloneAssignment_1"
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1924:1: rule__EXPRESSION__AloneAssignment_1 : ( ruleTERM ) ;
+    public final void rule__EXPRESSION__AloneAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1928:1: ( ( ruleTERM ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1929:1: ( ruleTERM )
+            {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1929:1: ( ruleTERM )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1930:1: ruleTERM
+            {
+             before(grammarAccess.getEXPRESSIONAccess().getAloneTERMParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_ruleTERM_in_rule__EXPRESSION__AloneAssignment_13916);
+            ruleTERM();
+
+            state._fsp--;
+
+             after(grammarAccess.getEXPRESSIONAccess().getAloneTERMParserRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__EXPRESSION__AloneAssignment_1"
+
+
+    // $ANTLR start "rule__TERM__VariableAssignment_0"
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1939:1: rule__TERM__VariableAssignment_0 : ( RULE_ID ) ;
+    public final void rule__TERM__VariableAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1943:1: ( ( RULE_ID ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1944:1: ( RULE_ID )
+            {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1944:1: ( RULE_ID )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1945:1: RULE_ID
+            {
+             before(grammarAccess.getTERMAccess().getVariableIDTerminalRuleCall_0_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__TERM__VariableAssignment_03947); 
+             after(grammarAccess.getTERMAccess().getVariableIDTerminalRuleCall_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__TERM__VariableAssignment_0"
+
+
+    // $ANTLR start "rule__TERM__ConstantAssignment_1"
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1954:1: rule__TERM__ConstantAssignment_1 : ( RULE_INT ) ;
+    public final void rule__TERM__ConstantAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1958:1: ( ( RULE_INT ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1959:1: ( RULE_INT )
+            {
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1959:1: ( RULE_INT )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1960:1: RULE_INT
+            {
+             before(grammarAccess.getTERMAccess().getConstantINTTerminalRuleCall_1_0()); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__TERM__ConstantAssignment_13978); 
+             after(grammarAccess.getTERMAccess().getConstantINTTerminalRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__TERM__ConstantAssignment_1"
 
 
     // $ANTLR start "rule__Event__EventNameAssignment_0_0"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1724:1: rule__Event__EventNameAssignment_0_0 : ( RULE_ID ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1969:1: rule__Event__EventNameAssignment_0_0 : ( RULE_ID ) ;
     public final void rule__Event__EventNameAssignment_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1728:1: ( ( RULE_ID ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1729:1: ( RULE_ID )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1973:1: ( ( RULE_ID ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1974:1: ( RULE_ID )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1729:1: ( RULE_ID )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1730:1: RULE_ID
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1974:1: ( RULE_ID )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1975:1: RULE_ID
             {
              before(grammarAccess.getEventAccess().getEventNameIDTerminalRuleCall_0_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Event__EventNameAssignment_0_03500); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Event__EventNameAssignment_0_04009); 
              after(grammarAccess.getEventAccess().getEventNameIDTerminalRuleCall_0_0_0()); 
 
             }
@@ -4662,20 +5389,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Event__EventExtensionAssignment_0_2"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1739:1: rule__Event__EventExtensionAssignment_0_2 : ( ruleEventExtensions ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1984:1: rule__Event__EventExtensionAssignment_0_2 : ( ruleEventExtensions ) ;
     public final void rule__Event__EventExtensionAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1743:1: ( ( ruleEventExtensions ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1744:1: ( ruleEventExtensions )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1988:1: ( ( ruleEventExtensions ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1989:1: ( ruleEventExtensions )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1744:1: ( ruleEventExtensions )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1745:1: ruleEventExtensions
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1989:1: ( ruleEventExtensions )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1990:1: ruleEventExtensions
             {
              before(grammarAccess.getEventAccess().getEventExtensionEventExtensionsParserRuleCall_0_2_0()); 
-            pushFollow(FOLLOW_ruleEventExtensions_in_rule__Event__EventExtensionAssignment_0_23531);
+            pushFollow(FOLLOW_ruleEventExtensions_in_rule__Event__EventExtensionAssignment_0_24040);
             ruleEventExtensions();
 
             state._fsp--;
@@ -4703,24 +5430,24 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Event__NowEventAssignment_1"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1754:1: rule__Event__NowEventAssignment_1 : ( ( 'now' ) ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1999:1: rule__Event__NowEventAssignment_1 : ( ( 'now' ) ) ;
     public final void rule__Event__NowEventAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1758:1: ( ( ( 'now' ) ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1759:1: ( ( 'now' ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2003:1: ( ( ( 'now' ) ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2004:1: ( ( 'now' ) )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1759:1: ( ( 'now' ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1760:1: ( 'now' )
-            {
-             before(grammarAccess.getEventAccess().getNowEventNowKeyword_1_0()); 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1761:1: ( 'now' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1762:1: 'now'
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2004:1: ( ( 'now' ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2005:1: ( 'now' )
             {
              before(grammarAccess.getEventAccess().getNowEventNowKeyword_1_0()); 
-            match(input,31,FOLLOW_31_in_rule__Event__NowEventAssignment_13567); 
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2006:1: ( 'now' )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2007:1: 'now'
+            {
+             before(grammarAccess.getEventAccess().getNowEventNowKeyword_1_0()); 
+            match(input,32,FOLLOW_32_in_rule__Event__NowEventAssignment_14076); 
              after(grammarAccess.getEventAccess().getNowEventNowKeyword_1_0()); 
 
             }
@@ -4775,129 +5502,150 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
     public static final BitSet FOLLOW_ruleVariableCondition_in_entryRuleVariableCondition481 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleVariableCondition488 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__VariableCondition__Group__0_in_ruleVariableCondition514 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEvent_in_entryRuleEvent541 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEvent548 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__Alternatives_in_ruleEvent574 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEventExtensions_in_entryRuleEventExtensions601 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEventExtensions608 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventExtensions__Alternatives_in_ruleEventExtensions634 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BaseExpression__BooleanTermAssignment_1_0_in_rule__BaseExpression__Alternatives_1670 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BaseExpression__Group_1_1__0_in_rule__BaseExpression__Alternatives_1688 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BooleanTerm__TimeConstraintAssignment_0_in_rule__BooleanTerm__Alternatives721 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BooleanTerm__BooleanVariableAssignment_1_in_rule__BooleanTerm__Alternatives739 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BooleanTerm__VariableConditionAssignment_2_in_rule__BooleanTerm__Alternatives757 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__VariableCondition__ValueAssignment_3_0_in_rule__VariableCondition__Alternatives_3790 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__VariableCondition__RightVariableAssignment_3_1_in_rule__VariableCondition__Alternatives_3808 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__Group_0__0_in_rule__Event__Alternatives841 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__NowEventAssignment_1_in_rule__Event__Alternatives859 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__EventExtensions__Alternatives893 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__EventExtensions__Alternatives913 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__EventExtensions__Alternatives933 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__EventExtensions__Alternatives953 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__EventExtensions__Alternatives973 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__EventExtensions__Alternatives993 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__EventExtensions__Alternatives1013 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__EventExtensions__Alternatives1033 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__EventExtensions__Alternatives1053 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OrExpression__Group__0__Impl_in_rule__OrExpression__Group__01085 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__OrExpression__Group__1_in_rule__OrExpression__Group__01088 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OrExpression__LeftExpressionAssignment_0_in_rule__OrExpression__Group__0__Impl1115 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OrExpression__Group__1__Impl_in_rule__OrExpression__Group__11145 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OrExpression__Group_1__0_in_rule__OrExpression__Group__1__Impl1172 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OrExpression__Group_1__0__Impl_in_rule__OrExpression__Group_1__01207 = new BitSet(new long[]{0x0000000015000240L});
-    public static final BitSet FOLLOW_rule__OrExpression__Group_1__1_in_rule__OrExpression__Group_1__01210 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OrExpression__OrAssignment_1_0_in_rule__OrExpression__Group_1__0__Impl1237 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OrExpression__Group_1__1__Impl_in_rule__OrExpression__Group_1__11267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OrExpression__RightExpressionAssignment_1_1_in_rule__OrExpression__Group_1__1__Impl1294 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AndExpression__Group__0__Impl_in_rule__AndExpression__Group__01328 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__AndExpression__Group__1_in_rule__AndExpression__Group__01331 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AndExpression__LeftExpressionAssignment_0_in_rule__AndExpression__Group__0__Impl1358 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AndExpression__Group__1__Impl_in_rule__AndExpression__Group__11388 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AndExpression__Group_1__0_in_rule__AndExpression__Group__1__Impl1415 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AndExpression__Group_1__0__Impl_in_rule__AndExpression__Group_1__01450 = new BitSet(new long[]{0x0000000015000240L});
-    public static final BitSet FOLLOW_rule__AndExpression__Group_1__1_in_rule__AndExpression__Group_1__01453 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AndExpression__AndAssignment_1_0_in_rule__AndExpression__Group_1__0__Impl1480 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AndExpression__Group_1__1__Impl_in_rule__AndExpression__Group_1__11510 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AndExpression__RightExpressionAssignment_1_1_in_rule__AndExpression__Group_1__1__Impl1537 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BaseExpression__Group__0__Impl_in_rule__BaseExpression__Group__01571 = new BitSet(new long[]{0x0000000015000240L});
-    public static final BitSet FOLLOW_rule__BaseExpression__Group__1_in_rule__BaseExpression__Group__01574 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BaseExpression__NotAssignment_0_in_rule__BaseExpression__Group__0__Impl1601 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BaseExpression__Group__1__Impl_in_rule__BaseExpression__Group__11632 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BaseExpression__Alternatives_1_in_rule__BaseExpression__Group__1__Impl1659 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BaseExpression__Group_1_1__0__Impl_in_rule__BaseExpression__Group_1_1__01693 = new BitSet(new long[]{0x0000000015000240L});
-    public static final BitSet FOLLOW_rule__BaseExpression__Group_1_1__1_in_rule__BaseExpression__Group_1_1__01696 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__BaseExpression__Group_1_1__0__Impl1724 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BaseExpression__Group_1_1__1__Impl_in_rule__BaseExpression__Group_1_1__11755 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__BaseExpression__Group_1_1__2_in_rule__BaseExpression__Group_1_1__11758 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BaseExpression__RootExpressionAssignment_1_1_1_in_rule__BaseExpression__Group_1_1__1__Impl1785 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BaseExpression__Group_1_1__2__Impl_in_rule__BaseExpression__Group_1_1__21815 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__BaseExpression__Group_1_1__2__Impl1843 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TimeConstraint__Group__0__Impl_in_rule__TimeConstraint__Group__01880 = new BitSet(new long[]{0x0000000080000200L});
-    public static final BitSet FOLLOW_rule__TimeConstraint__Group__1_in_rule__TimeConstraint__Group__01883 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__TimeConstraint__Group__0__Impl1911 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TimeConstraint__Group__1__Impl_in_rule__TimeConstraint__Group__11942 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__TimeConstraint__Group__2_in_rule__TimeConstraint__Group__11945 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TimeConstraint__Event2Assignment_1_in_rule__TimeConstraint__Group__1__Impl1972 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TimeConstraint__Group__2__Impl_in_rule__TimeConstraint__Group__22002 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__TimeConstraint__Group__3_in_rule__TimeConstraint__Group__22005 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__TimeConstraint__Group__2__Impl2033 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TimeConstraint__Group__3__Impl_in_rule__TimeConstraint__Group__32064 = new BitSet(new long[]{0x0000000080000200L});
-    public static final BitSet FOLLOW_rule__TimeConstraint__Group__4_in_rule__TimeConstraint__Group__32067 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__TimeConstraint__Group__3__Impl2095 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TimeConstraint__Group__4__Impl_in_rule__TimeConstraint__Group__42126 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_rule__TimeConstraint__Group__5_in_rule__TimeConstraint__Group__42129 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TimeConstraint__Event1Assignment_4_in_rule__TimeConstraint__Group__4__Impl2156 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TimeConstraint__Group__5__Impl_in_rule__TimeConstraint__Group__52186 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_rule__TimeConstraint__Group__6_in_rule__TimeConstraint__Group__52189 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TimeConstraint__OpAssignment_5_in_rule__TimeConstraint__Group__5__Impl2216 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TimeConstraint__Group__6__Impl_in_rule__TimeConstraint__Group__62246 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TimeConstraint__ValueAssignment_6_in_rule__TimeConstraint__Group__6__Impl2273 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__VariableCondition__Group__0__Impl_in_rule__VariableCondition__Group__02317 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_rule__VariableCondition__Group__1_in_rule__VariableCondition__Group__02320 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__VariableCondition__Group__0__Impl2348 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__VariableCondition__Group__1__Impl_in_rule__VariableCondition__Group__12379 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_rule__VariableCondition__Group__2_in_rule__VariableCondition__Group__12382 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__VariableCondition__VariableAssignment_1_in_rule__VariableCondition__Group__1__Impl2409 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__VariableCondition__Group__2__Impl_in_rule__VariableCondition__Group__22439 = new BitSet(new long[]{0x0000000000000300L});
-    public static final BitSet FOLLOW_rule__VariableCondition__Group__3_in_rule__VariableCondition__Group__22442 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__VariableCondition__RelationAssignment_2_in_rule__VariableCondition__Group__2__Impl2469 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__VariableCondition__Group__3__Impl_in_rule__VariableCondition__Group__32499 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_rule__VariableCondition__Group__4_in_rule__VariableCondition__Group__32502 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__VariableCondition__Alternatives_3_in_rule__VariableCondition__Group__3__Impl2529 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__VariableCondition__Group__4__Impl_in_rule__VariableCondition__Group__42559 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_rule__VariableCondition__Group__4__Impl2587 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__Group_0__0__Impl_in_rule__Event__Group_0__02628 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_rule__Event__Group_0__1_in_rule__Event__Group_0__02631 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__EventNameAssignment_0_0_in_rule__Event__Group_0__0__Impl2658 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__Group_0__1__Impl_in_rule__Event__Group_0__12688 = new BitSet(new long[]{0x0000000000FF8000L});
-    public static final BitSet FOLLOW_rule__Event__Group_0__2_in_rule__Event__Group_0__12691 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_rule__Event__Group_0__1__Impl2719 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__Group_0__2__Impl_in_rule__Event__Group_0__22750 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__EventExtensionAssignment_0_2_in_rule__Event__Group_0__2__Impl2777 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOrExpression_in_rule__Model__ExpressionAssignment2818 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAndExpression_in_rule__OrExpression__LeftExpressionAssignment_02849 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_OR_in_rule__OrExpression__OrAssignment_1_02880 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOrExpression_in_rule__OrExpression__RightExpressionAssignment_1_12911 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBaseExpression_in_rule__AndExpression__LeftExpressionAssignment_02942 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_AND_in_rule__AndExpression__AndAssignment_1_02973 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAndExpression_in_rule__AndExpression__RightExpressionAssignment_1_13004 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_NOT_in_rule__BaseExpression__NotAssignment_03035 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulebooleanTerm_in_rule__BaseExpression__BooleanTermAssignment_1_03066 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOrExpression_in_rule__BaseExpression__RootExpressionAssignment_1_1_13097 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTimeConstraint_in_rule__BooleanTerm__TimeConstraintAssignment_03128 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBooleanVariable_in_rule__BooleanTerm__BooleanVariableAssignment_13159 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariableCondition_in_rule__BooleanTerm__VariableConditionAssignment_23190 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEvent_in_rule__TimeConstraint__Event2Assignment_13221 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEvent_in_rule__TimeConstraint__Event1Assignment_43252 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_RELATIONS_in_rule__TimeConstraint__OpAssignment_53283 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__TimeConstraint__ValueAssignment_63314 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__BooleanVariable__VariableAssignment3345 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__VariableCondition__VariableAssignment_13376 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_RELATIONS_in_rule__VariableCondition__RelationAssignment_23407 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__VariableCondition__ValueAssignment_3_03438 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__VariableCondition__RightVariableAssignment_3_13469 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Event__EventNameAssignment_0_03500 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEventExtensions_in_rule__Event__EventExtensionAssignment_0_23531 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__Event__NowEventAssignment_13567 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEXPRESSION_in_entryRuleEXPRESSION541 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEXPRESSION548 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EXPRESSION__Alternatives_in_ruleEXPRESSION574 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTERM_in_entryRuleTERM601 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTERM608 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TERM__Alternatives_in_ruleTERM634 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEvent_in_entryRuleEvent661 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEvent668 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__Alternatives_in_ruleEvent694 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEventExtensions_in_entryRuleEventExtensions721 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEventExtensions728 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventExtensions__Alternatives_in_ruleEventExtensions754 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BaseExpression__BooleanTermAssignment_1_0_in_rule__BaseExpression__Alternatives_1790 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BaseExpression__Group_1_1__0_in_rule__BaseExpression__Alternatives_1808 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BooleanTerm__TimeConstraintAssignment_0_in_rule__BooleanTerm__Alternatives841 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BooleanTerm__BooleanVariableAssignment_1_in_rule__BooleanTerm__Alternatives859 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BooleanTerm__VariableConditionAssignment_2_in_rule__BooleanTerm__Alternatives877 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EXPRESSION__Group_0__0_in_rule__EXPRESSION__Alternatives910 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EXPRESSION__AloneAssignment_1_in_rule__EXPRESSION__Alternatives928 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TERM__VariableAssignment_0_in_rule__TERM__Alternatives961 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TERM__ConstantAssignment_1_in_rule__TERM__Alternatives979 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__Group_0__0_in_rule__Event__Alternatives1012 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__NowEventAssignment_1_in_rule__Event__Alternatives1030 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__EventExtensions__Alternatives1064 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__EventExtensions__Alternatives1084 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_rule__EventExtensions__Alternatives1104 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__EventExtensions__Alternatives1124 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__EventExtensions__Alternatives1144 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__EventExtensions__Alternatives1164 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_rule__EventExtensions__Alternatives1184 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__EventExtensions__Alternatives1204 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__EventExtensions__Alternatives1224 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OrExpression__Group__0__Impl_in_rule__OrExpression__Group__01256 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__OrExpression__Group__1_in_rule__OrExpression__Group__01259 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OrExpression__LeftExpressionAssignment_0_in_rule__OrExpression__Group__0__Impl1286 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OrExpression__Group__1__Impl_in_rule__OrExpression__Group__11316 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OrExpression__Group_1__0_in_rule__OrExpression__Group__1__Impl1343 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OrExpression__Group_1__0__Impl_in_rule__OrExpression__Group_1__01378 = new BitSet(new long[]{0x000000002A000240L});
+    public static final BitSet FOLLOW_rule__OrExpression__Group_1__1_in_rule__OrExpression__Group_1__01381 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OrExpression__OrAssignment_1_0_in_rule__OrExpression__Group_1__0__Impl1408 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OrExpression__Group_1__1__Impl_in_rule__OrExpression__Group_1__11438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OrExpression__RightExpressionAssignment_1_1_in_rule__OrExpression__Group_1__1__Impl1465 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AndExpression__Group__0__Impl_in_rule__AndExpression__Group__01499 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__AndExpression__Group__1_in_rule__AndExpression__Group__01502 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AndExpression__LeftExpressionAssignment_0_in_rule__AndExpression__Group__0__Impl1529 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AndExpression__Group__1__Impl_in_rule__AndExpression__Group__11559 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AndExpression__Group_1__0_in_rule__AndExpression__Group__1__Impl1586 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AndExpression__Group_1__0__Impl_in_rule__AndExpression__Group_1__01621 = new BitSet(new long[]{0x000000002A000240L});
+    public static final BitSet FOLLOW_rule__AndExpression__Group_1__1_in_rule__AndExpression__Group_1__01624 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AndExpression__AndAssignment_1_0_in_rule__AndExpression__Group_1__0__Impl1651 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AndExpression__Group_1__1__Impl_in_rule__AndExpression__Group_1__11681 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AndExpression__RightExpressionAssignment_1_1_in_rule__AndExpression__Group_1__1__Impl1708 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BaseExpression__Group__0__Impl_in_rule__BaseExpression__Group__01742 = new BitSet(new long[]{0x000000002A000240L});
+    public static final BitSet FOLLOW_rule__BaseExpression__Group__1_in_rule__BaseExpression__Group__01745 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BaseExpression__NotAssignment_0_in_rule__BaseExpression__Group__0__Impl1772 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BaseExpression__Group__1__Impl_in_rule__BaseExpression__Group__11803 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BaseExpression__Alternatives_1_in_rule__BaseExpression__Group__1__Impl1830 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BaseExpression__Group_1_1__0__Impl_in_rule__BaseExpression__Group_1_1__01864 = new BitSet(new long[]{0x000000002A000240L});
+    public static final BitSet FOLLOW_rule__BaseExpression__Group_1_1__1_in_rule__BaseExpression__Group_1_1__01867 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__BaseExpression__Group_1_1__0__Impl1895 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BaseExpression__Group_1_1__1__Impl_in_rule__BaseExpression__Group_1_1__11926 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_rule__BaseExpression__Group_1_1__2_in_rule__BaseExpression__Group_1_1__11929 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BaseExpression__RootExpressionAssignment_1_1_1_in_rule__BaseExpression__Group_1_1__1__Impl1956 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BaseExpression__Group_1_1__2__Impl_in_rule__BaseExpression__Group_1_1__21986 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__BaseExpression__Group_1_1__2__Impl2014 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TimeConstraint__Group__0__Impl_in_rule__TimeConstraint__Group__02051 = new BitSet(new long[]{0x0000000100000200L});
+    public static final BitSet FOLLOW_rule__TimeConstraint__Group__1_in_rule__TimeConstraint__Group__02054 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__TimeConstraint__Group__0__Impl2082 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TimeConstraint__Group__1__Impl_in_rule__TimeConstraint__Group__12113 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_rule__TimeConstraint__Group__2_in_rule__TimeConstraint__Group__12116 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TimeConstraint__Event2Assignment_1_in_rule__TimeConstraint__Group__1__Impl2143 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TimeConstraint__Group__2__Impl_in_rule__TimeConstraint__Group__22173 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__TimeConstraint__Group__3_in_rule__TimeConstraint__Group__22176 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__TimeConstraint__Group__2__Impl2204 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TimeConstraint__Group__3__Impl_in_rule__TimeConstraint__Group__32235 = new BitSet(new long[]{0x0000000100000200L});
+    public static final BitSet FOLLOW_rule__TimeConstraint__Group__4_in_rule__TimeConstraint__Group__32238 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__TimeConstraint__Group__3__Impl2266 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TimeConstraint__Group__4__Impl_in_rule__TimeConstraint__Group__42297 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_rule__TimeConstraint__Group__5_in_rule__TimeConstraint__Group__42300 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TimeConstraint__Event1Assignment_4_in_rule__TimeConstraint__Group__4__Impl2327 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TimeConstraint__Group__5__Impl_in_rule__TimeConstraint__Group__52357 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_rule__TimeConstraint__Group__6_in_rule__TimeConstraint__Group__52360 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TimeConstraint__OpAssignment_5_in_rule__TimeConstraint__Group__5__Impl2387 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TimeConstraint__Group__6__Impl_in_rule__TimeConstraint__Group__62417 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TimeConstraint__ValueAssignment_6_in_rule__TimeConstraint__Group__6__Impl2444 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__VariableCondition__Group__0__Impl_in_rule__VariableCondition__Group__02488 = new BitSet(new long[]{0x0000000000000300L});
+    public static final BitSet FOLLOW_rule__VariableCondition__Group__1_in_rule__VariableCondition__Group__02491 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_rule__VariableCondition__Group__0__Impl2519 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__VariableCondition__Group__1__Impl_in_rule__VariableCondition__Group__12550 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_rule__VariableCondition__Group__2_in_rule__VariableCondition__Group__12553 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__VariableCondition__Expression_leftAssignment_1_in_rule__VariableCondition__Group__1__Impl2580 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__VariableCondition__Group__2__Impl_in_rule__VariableCondition__Group__22610 = new BitSet(new long[]{0x0000000000000300L});
+    public static final BitSet FOLLOW_rule__VariableCondition__Group__3_in_rule__VariableCondition__Group__22613 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__VariableCondition__RelationAssignment_2_in_rule__VariableCondition__Group__2__Impl2640 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__VariableCondition__Group__3__Impl_in_rule__VariableCondition__Group__32670 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_rule__VariableCondition__Group__4_in_rule__VariableCondition__Group__32673 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__VariableCondition__Expression_rightAssignment_3_in_rule__VariableCondition__Group__3__Impl2700 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__VariableCondition__Group__4__Impl_in_rule__VariableCondition__Group__42730 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_rule__VariableCondition__Group__4__Impl2758 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EXPRESSION__Group_0__0__Impl_in_rule__EXPRESSION__Group_0__02799 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_rule__EXPRESSION__Group_0__1_in_rule__EXPRESSION__Group_0__02802 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EXPRESSION__FirstTermAssignment_0_0_in_rule__EXPRESSION__Group_0__0__Impl2829 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EXPRESSION__Group_0__1__Impl_in_rule__EXPRESSION__Group_0__12859 = new BitSet(new long[]{0x0000000000000300L});
+    public static final BitSet FOLLOW_rule__EXPRESSION__Group_0__2_in_rule__EXPRESSION__Group_0__12862 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EXPRESSION__OperatorAssignment_0_1_in_rule__EXPRESSION__Group_0__1__Impl2889 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EXPRESSION__Group_0__2__Impl_in_rule__EXPRESSION__Group_0__22919 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EXPRESSION__SecondTermAssignment_0_2_in_rule__EXPRESSION__Group_0__2__Impl2946 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__Group_0__0__Impl_in_rule__Event__Group_0__02982 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_rule__Event__Group_0__1_in_rule__Event__Group_0__02985 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__EventNameAssignment_0_0_in_rule__Event__Group_0__0__Impl3012 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__Group_0__1__Impl_in_rule__Event__Group_0__13042 = new BitSet(new long[]{0x0000000001FF0000L});
+    public static final BitSet FOLLOW_rule__Event__Group_0__2_in_rule__Event__Group_0__13045 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_rule__Event__Group_0__1__Impl3073 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__Group_0__2__Impl_in_rule__Event__Group_0__23104 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__EventExtensionAssignment_0_2_in_rule__Event__Group_0__2__Impl3131 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOrExpression_in_rule__Model__ExpressionAssignment3172 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAndExpression_in_rule__OrExpression__LeftExpressionAssignment_03203 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_OR_in_rule__OrExpression__OrAssignment_1_03234 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOrExpression_in_rule__OrExpression__RightExpressionAssignment_1_13265 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBaseExpression_in_rule__AndExpression__LeftExpressionAssignment_03296 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_AND_in_rule__AndExpression__AndAssignment_1_03327 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAndExpression_in_rule__AndExpression__RightExpressionAssignment_1_13358 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_NOT_in_rule__BaseExpression__NotAssignment_03389 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulebooleanTerm_in_rule__BaseExpression__BooleanTermAssignment_1_03420 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOrExpression_in_rule__BaseExpression__RootExpressionAssignment_1_1_13451 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTimeConstraint_in_rule__BooleanTerm__TimeConstraintAssignment_03482 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBooleanVariable_in_rule__BooleanTerm__BooleanVariableAssignment_13513 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariableCondition_in_rule__BooleanTerm__VariableConditionAssignment_23544 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEvent_in_rule__TimeConstraint__Event2Assignment_13575 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEvent_in_rule__TimeConstraint__Event1Assignment_43606 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_RELATIONS_in_rule__TimeConstraint__OpAssignment_53637 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__TimeConstraint__ValueAssignment_63668 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__BooleanVariable__VariableAssignment3699 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEXPRESSION_in_rule__VariableCondition__Expression_leftAssignment_13730 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_RELATIONS_in_rule__VariableCondition__RelationAssignment_23761 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEXPRESSION_in_rule__VariableCondition__Expression_rightAssignment_33792 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTERM_in_rule__EXPRESSION__FirstTermAssignment_0_03823 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_OPERATOR_in_rule__EXPRESSION__OperatorAssignment_0_13854 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTERM_in_rule__EXPRESSION__SecondTermAssignment_0_23885 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTERM_in_rule__EXPRESSION__AloneAssignment_13916 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__TERM__VariableAssignment_03947 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__TERM__ConstantAssignment_13978 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Event__EventNameAssignment_0_04009 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEventExtensions_in_rule__Event__EventExtensionAssignment_0_24040 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__Event__NowEventAssignment_14076 = new BitSet(new long[]{0x0000000000000002L});
 
 }

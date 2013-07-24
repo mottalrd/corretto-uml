@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_OR", "RULE_AND", "RULE_NOT", "RULE_RELATIONS", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'('", "')'", "'@'", "'-'", "'{'", "'}'", "'.'", "'now'", "'exit'", "'enter'", "'start'", "'end'", "'tick'", "'sig'", "'call'", "'send'", "'receive'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_OR", "RULE_AND", "RULE_NOT", "RULE_RELATIONS", "RULE_INT", "RULE_ID", "RULE_OPERATOR", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'('", "')'", "'@'", "'-'", "'{'", "'}'", "'.'", "'now'", "'exit'", "'enter'", "'start'", "'end'", "'tick'", "'sig'", "'call'", "'send'", "'receive'"
     };
     public static final int RULE_ID=9;
     public static final int T__29=29;
@@ -32,26 +32,27 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
     public static final int T__24=24;
     public static final int T__23=23;
     public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=14;
+    public static final int RULE_ANY_OTHER=15;
     public static final int T__21=21;
     public static final int T__20=20;
     public static final int RULE_OR=4;
     public static final int RULE_RELATIONS=7;
     public static final int RULE_AND=5;
-    public static final int RULE_SL_COMMENT=12;
+    public static final int RULE_SL_COMMENT=13;
     public static final int EOF=-1;
     public static final int RULE_NOT=6;
-    public static final int RULE_ML_COMMENT=11;
-    public static final int T__30=30;
+    public static final int RULE_ML_COMMENT=12;
     public static final int T__19=19;
+    public static final int T__30=30;
     public static final int T__31=31;
-    public static final int RULE_STRING=10;
+    public static final int RULE_STRING=11;
+    public static final int T__32=32;
     public static final int T__16=16;
-    public static final int T__15=15;
     public static final int T__18=18;
     public static final int T__17=17;
     public static final int RULE_INT=8;
-    public static final int RULE_WS=13;
+    public static final int RULE_OPERATOR=10;
+    public static final int RULE_WS=14;
 
     // delegates
     // delegators
@@ -650,10 +651,10 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==RULE_ID||LA4_0==17||LA4_0==19) ) {
+            if ( (LA4_0==RULE_ID||LA4_0==18||LA4_0==20) ) {
                 alt4=1;
             }
-            else if ( (LA4_0==15) ) {
+            else if ( (LA4_0==16) ) {
                 alt4=2;
             }
             else {
@@ -706,7 +707,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
                     // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:306:6: (otherlv_2= '(' ( (lv_rootExpression_3_0= ruleOrExpression ) ) otherlv_4= ')' )
                     // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:306:8: otherlv_2= '(' ( (lv_rootExpression_3_0= ruleOrExpression ) ) otherlv_4= ')'
                     {
-                    otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleBaseExpression540); 
+                    otherlv_2=(Token)match(input,16,FOLLOW_16_in_ruleBaseExpression540); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getBaseExpressionAccess().getLeftParenthesisKeyword_1_1_0());
                         
@@ -741,7 +742,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
 
                     }
 
-                    otherlv_4=(Token)match(input,16,FOLLOW_16_in_ruleBaseExpression573); 
+                    otherlv_4=(Token)match(input,17,FOLLOW_17_in_ruleBaseExpression573); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getBaseExpressionAccess().getRightParenthesisKeyword_1_1_2());
                         
@@ -831,7 +832,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
             // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:353:1: ( ( (lv_timeConstraint_0_0= ruleTimeConstraint ) ) | ( (lv_booleanVariable_1_0= ruleBooleanVariable ) ) | ( (lv_variableCondition_2_0= ruleVariableCondition ) ) )
             int alt5=3;
             switch ( input.LA(1) ) {
-            case 17:
+            case 18:
                 {
                 alt5=1;
                 }
@@ -841,7 +842,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
                 alt5=2;
                 }
                 break;
-            case 19:
+            case 20:
                 {
                 alt5=3;
                 }
@@ -1045,7 +1046,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
             // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:430:1: (otherlv_0= '@' ( (lv_event2_1_0= ruleEvent ) ) otherlv_2= '-' otherlv_3= '@' ( (lv_event1_4_0= ruleEvent ) ) ( (lv_op_5_0= RULE_RELATIONS ) ) ( (lv_value_6_0= RULE_INT ) ) )
             // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:430:3: otherlv_0= '@' ( (lv_event2_1_0= ruleEvent ) ) otherlv_2= '-' otherlv_3= '@' ( (lv_event1_4_0= ruleEvent ) ) ( (lv_op_5_0= RULE_RELATIONS ) ) ( (lv_value_6_0= RULE_INT ) )
             {
-            otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleTimeConstraint804); 
+            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleTimeConstraint804); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getTimeConstraintAccess().getCommercialAtKeyword_0());
                 
@@ -1080,11 +1081,11 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_2=(Token)match(input,18,FOLLOW_18_in_ruleTimeConstraint837); 
+            otherlv_2=(Token)match(input,19,FOLLOW_19_in_ruleTimeConstraint837); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getTimeConstraintAccess().getHyphenMinusKeyword_2());
                 
-            otherlv_3=(Token)match(input,17,FOLLOW_17_in_ruleTimeConstraint849); 
+            otherlv_3=(Token)match(input,18,FOLLOW_18_in_ruleTimeConstraint849); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getTimeConstraintAccess().getCommercialAtKeyword_3());
                 
@@ -1320,49 +1321,55 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleVariableCondition"
-    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:570:1: ruleVariableCondition returns [EObject current=null] : (otherlv_0= '{' ( (lv_variable_1_0= RULE_ID ) ) ( (lv_relation_2_0= RULE_RELATIONS ) ) ( ( (lv_value_3_0= RULE_INT ) ) | ( (lv_rightVariable_4_0= RULE_ID ) ) ) otherlv_5= '}' ) ;
+    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:570:1: ruleVariableCondition returns [EObject current=null] : (otherlv_0= '{' ( (lv_expression_left_1_0= ruleEXPRESSION ) ) ( (lv_relation_2_0= RULE_RELATIONS ) ) ( (lv_expression_right_3_0= ruleEXPRESSION ) ) otherlv_4= '}' ) ;
     public final EObject ruleVariableCondition() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_variable_1_0=null;
         Token lv_relation_2_0=null;
-        Token lv_value_3_0=null;
-        Token lv_rightVariable_4_0=null;
-        Token otherlv_5=null;
+        Token otherlv_4=null;
+        EObject lv_expression_left_1_0 = null;
+
+        EObject lv_expression_right_3_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:573:28: ( (otherlv_0= '{' ( (lv_variable_1_0= RULE_ID ) ) ( (lv_relation_2_0= RULE_RELATIONS ) ) ( ( (lv_value_3_0= RULE_INT ) ) | ( (lv_rightVariable_4_0= RULE_ID ) ) ) otherlv_5= '}' ) )
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:574:1: (otherlv_0= '{' ( (lv_variable_1_0= RULE_ID ) ) ( (lv_relation_2_0= RULE_RELATIONS ) ) ( ( (lv_value_3_0= RULE_INT ) ) | ( (lv_rightVariable_4_0= RULE_ID ) ) ) otherlv_5= '}' )
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:573:28: ( (otherlv_0= '{' ( (lv_expression_left_1_0= ruleEXPRESSION ) ) ( (lv_relation_2_0= RULE_RELATIONS ) ) ( (lv_expression_right_3_0= ruleEXPRESSION ) ) otherlv_4= '}' ) )
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:574:1: (otherlv_0= '{' ( (lv_expression_left_1_0= ruleEXPRESSION ) ) ( (lv_relation_2_0= RULE_RELATIONS ) ) ( (lv_expression_right_3_0= ruleEXPRESSION ) ) otherlv_4= '}' )
             {
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:574:1: (otherlv_0= '{' ( (lv_variable_1_0= RULE_ID ) ) ( (lv_relation_2_0= RULE_RELATIONS ) ) ( ( (lv_value_3_0= RULE_INT ) ) | ( (lv_rightVariable_4_0= RULE_ID ) ) ) otherlv_5= '}' )
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:574:3: otherlv_0= '{' ( (lv_variable_1_0= RULE_ID ) ) ( (lv_relation_2_0= RULE_RELATIONS ) ) ( ( (lv_value_3_0= RULE_INT ) ) | ( (lv_rightVariable_4_0= RULE_ID ) ) ) otherlv_5= '}'
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:574:1: (otherlv_0= '{' ( (lv_expression_left_1_0= ruleEXPRESSION ) ) ( (lv_relation_2_0= RULE_RELATIONS ) ) ( (lv_expression_right_3_0= ruleEXPRESSION ) ) otherlv_4= '}' )
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:574:3: otherlv_0= '{' ( (lv_expression_left_1_0= ruleEXPRESSION ) ) ( (lv_relation_2_0= RULE_RELATIONS ) ) ( (lv_expression_right_3_0= ruleEXPRESSION ) ) otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleVariableCondition1088); 
+            otherlv_0=(Token)match(input,20,FOLLOW_20_in_ruleVariableCondition1088); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getVariableConditionAccess().getLeftCurlyBracketKeyword_0());
                 
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:578:1: ( (lv_variable_1_0= RULE_ID ) )
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:579:1: (lv_variable_1_0= RULE_ID )
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:578:1: ( (lv_expression_left_1_0= ruleEXPRESSION ) )
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:579:1: (lv_expression_left_1_0= ruleEXPRESSION )
             {
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:579:1: (lv_variable_1_0= RULE_ID )
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:580:3: lv_variable_1_0= RULE_ID
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:579:1: (lv_expression_left_1_0= ruleEXPRESSION )
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:580:3: lv_expression_left_1_0= ruleEXPRESSION
             {
-            lv_variable_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVariableCondition1105); 
+             
+            	        newCompositeNode(grammarAccess.getVariableConditionAccess().getExpression_leftEXPRESSIONParserRuleCall_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleEXPRESSION_in_ruleVariableCondition1109);
+            lv_expression_left_1_0=ruleEXPRESSION();
 
-            			newLeafNode(lv_variable_1_0, grammarAccess.getVariableConditionAccess().getVariableIDTerminalRuleCall_1_0()); 
-            		
+            state._fsp--;
+
 
             	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getVariableConditionRule());
+            	            current = createModelElementForParent(grammarAccess.getVariableConditionRule());
             	        }
-                   		setWithLastConsumed(
+                   		set(
                    			current, 
-                   			"variable",
-                    		lv_variable_1_0, 
-                    		"ID");
+                   			"expression_left",
+                    		lv_expression_left_1_0, 
+                    		"EXPRESSION");
+            	        afterParserOrEnumRuleCall();
             	    
 
             }
@@ -1376,7 +1383,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
             // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:597:1: (lv_relation_2_0= RULE_RELATIONS )
             // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:598:3: lv_relation_2_0= RULE_RELATIONS
             {
-            lv_relation_2_0=(Token)match(input,RULE_RELATIONS,FOLLOW_RULE_RELATIONS_in_ruleVariableCondition1127); 
+            lv_relation_2_0=(Token)match(input,RULE_RELATIONS,FOLLOW_RULE_RELATIONS_in_ruleVariableCondition1126); 
 
             			newLeafNode(lv_relation_2_0, grammarAccess.getVariableConditionAccess().getRelationRELATIONSTerminalRuleCall_2_0()); 
             		
@@ -1396,93 +1403,40 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:614:2: ( ( (lv_value_3_0= RULE_INT ) ) | ( (lv_rightVariable_4_0= RULE_ID ) ) )
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:614:2: ( (lv_expression_right_3_0= ruleEXPRESSION ) )
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:615:1: (lv_expression_right_3_0= ruleEXPRESSION )
+            {
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:615:1: (lv_expression_right_3_0= ruleEXPRESSION )
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:616:3: lv_expression_right_3_0= ruleEXPRESSION
+            {
+             
+            	        newCompositeNode(grammarAccess.getVariableConditionAccess().getExpression_rightEXPRESSIONParserRuleCall_3_0()); 
+            	    
+            pushFollow(FOLLOW_ruleEXPRESSION_in_ruleVariableCondition1152);
+            lv_expression_right_3_0=ruleEXPRESSION();
 
-            if ( (LA6_0==RULE_INT) ) {
-                alt6=1;
-            }
-            else if ( (LA6_0==RULE_ID) ) {
-                alt6=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 6, 0, input);
-
-                throw nvae;
-            }
-            switch (alt6) {
-                case 1 :
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:614:3: ( (lv_value_3_0= RULE_INT ) )
-                    {
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:614:3: ( (lv_value_3_0= RULE_INT ) )
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:615:1: (lv_value_3_0= RULE_INT )
-                    {
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:615:1: (lv_value_3_0= RULE_INT )
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:616:3: lv_value_3_0= RULE_INT
-                    {
-                    lv_value_3_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleVariableCondition1150); 
-
-                    			newLeafNode(lv_value_3_0, grammarAccess.getVariableConditionAccess().getValueINTTerminalRuleCall_3_0_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getVariableConditionRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"value",
-                            		lv_value_3_0, 
-                            		"INT");
-                    	    
-
-                    }
+            state._fsp--;
 
 
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:633:6: ( (lv_rightVariable_4_0= RULE_ID ) )
-                    {
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:633:6: ( (lv_rightVariable_4_0= RULE_ID ) )
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:634:1: (lv_rightVariable_4_0= RULE_ID )
-                    {
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:634:1: (lv_rightVariable_4_0= RULE_ID )
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:635:3: lv_rightVariable_4_0= RULE_ID
-                    {
-                    lv_rightVariable_4_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVariableCondition1178); 
-
-                    			newLeafNode(lv_rightVariable_4_0, grammarAccess.getVariableConditionAccess().getRightVariableIDTerminalRuleCall_3_1_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getVariableConditionRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"rightVariable",
-                            		lv_rightVariable_4_0, 
-                            		"ID");
-                    	    
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getVariableConditionRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"expression_right",
+                    		lv_expression_right_3_0, 
+                    		"EXPRESSION");
+            	        afterParserOrEnumRuleCall();
+            	    
 
             }
 
-            otherlv_5=(Token)match(input,20,FOLLOW_20_in_ruleVariableCondition1196); 
 
-                	newLeafNode(otherlv_5, grammarAccess.getVariableConditionAccess().getRightCurlyBracketKeyword_4());
+            }
+
+            otherlv_4=(Token)match(input,21,FOLLOW_21_in_ruleVariableCondition1164); 
+
+                	newLeafNode(otherlv_4, grammarAccess.getVariableConditionAccess().getRightCurlyBracketKeyword_4());
                 
 
             }
@@ -1504,8 +1458,414 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
     // $ANTLR end "ruleVariableCondition"
 
 
+    // $ANTLR start "entryRuleEXPRESSION"
+    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:644:1: entryRuleEXPRESSION returns [EObject current=null] : iv_ruleEXPRESSION= ruleEXPRESSION EOF ;
+    public final EObject entryRuleEXPRESSION() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleEXPRESSION = null;
+
+
+        try {
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:645:2: (iv_ruleEXPRESSION= ruleEXPRESSION EOF )
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:646:2: iv_ruleEXPRESSION= ruleEXPRESSION EOF
+            {
+             newCompositeNode(grammarAccess.getEXPRESSIONRule()); 
+            pushFollow(FOLLOW_ruleEXPRESSION_in_entryRuleEXPRESSION1200);
+            iv_ruleEXPRESSION=ruleEXPRESSION();
+
+            state._fsp--;
+
+             current =iv_ruleEXPRESSION; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEXPRESSION1210); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleEXPRESSION"
+
+
+    // $ANTLR start "ruleEXPRESSION"
+    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:653:1: ruleEXPRESSION returns [EObject current=null] : ( ( ( (lv_firstTerm_0_0= ruleTERM ) ) ( (lv_operator_1_0= RULE_OPERATOR ) ) ( (lv_secondTerm_2_0= ruleTERM ) ) ) | ( (lv_alone_3_0= ruleTERM ) ) ) ;
+    public final EObject ruleEXPRESSION() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_operator_1_0=null;
+        EObject lv_firstTerm_0_0 = null;
+
+        EObject lv_secondTerm_2_0 = null;
+
+        EObject lv_alone_3_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:656:28: ( ( ( ( (lv_firstTerm_0_0= ruleTERM ) ) ( (lv_operator_1_0= RULE_OPERATOR ) ) ( (lv_secondTerm_2_0= ruleTERM ) ) ) | ( (lv_alone_3_0= ruleTERM ) ) ) )
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:657:1: ( ( ( (lv_firstTerm_0_0= ruleTERM ) ) ( (lv_operator_1_0= RULE_OPERATOR ) ) ( (lv_secondTerm_2_0= ruleTERM ) ) ) | ( (lv_alone_3_0= ruleTERM ) ) )
+            {
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:657:1: ( ( ( (lv_firstTerm_0_0= ruleTERM ) ) ( (lv_operator_1_0= RULE_OPERATOR ) ) ( (lv_secondTerm_2_0= ruleTERM ) ) ) | ( (lv_alone_3_0= ruleTERM ) ) )
+            int alt6=2;
+            int LA6_0 = input.LA(1);
+
+            if ( (LA6_0==RULE_ID) ) {
+                int LA6_1 = input.LA(2);
+
+                if ( (LA6_1==RULE_OPERATOR) ) {
+                    alt6=1;
+                }
+                else if ( (LA6_1==EOF||LA6_1==RULE_RELATIONS||LA6_1==21) ) {
+                    alt6=2;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 6, 1, input);
+
+                    throw nvae;
+                }
+            }
+            else if ( (LA6_0==RULE_INT) ) {
+                int LA6_2 = input.LA(2);
+
+                if ( (LA6_2==EOF||LA6_2==RULE_RELATIONS||LA6_2==21) ) {
+                    alt6=2;
+                }
+                else if ( (LA6_2==RULE_OPERATOR) ) {
+                    alt6=1;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 6, 2, input);
+
+                    throw nvae;
+                }
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 6, 0, input);
+
+                throw nvae;
+            }
+            switch (alt6) {
+                case 1 :
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:657:2: ( ( (lv_firstTerm_0_0= ruleTERM ) ) ( (lv_operator_1_0= RULE_OPERATOR ) ) ( (lv_secondTerm_2_0= ruleTERM ) ) )
+                    {
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:657:2: ( ( (lv_firstTerm_0_0= ruleTERM ) ) ( (lv_operator_1_0= RULE_OPERATOR ) ) ( (lv_secondTerm_2_0= ruleTERM ) ) )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:657:3: ( (lv_firstTerm_0_0= ruleTERM ) ) ( (lv_operator_1_0= RULE_OPERATOR ) ) ( (lv_secondTerm_2_0= ruleTERM ) )
+                    {
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:657:3: ( (lv_firstTerm_0_0= ruleTERM ) )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:658:1: (lv_firstTerm_0_0= ruleTERM )
+                    {
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:658:1: (lv_firstTerm_0_0= ruleTERM )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:659:3: lv_firstTerm_0_0= ruleTERM
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getEXPRESSIONAccess().getFirstTermTERMParserRuleCall_0_0_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleTERM_in_ruleEXPRESSION1257);
+                    lv_firstTerm_0_0=ruleTERM();
+
+                    state._fsp--;
+
+
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getEXPRESSIONRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"firstTerm",
+                            		lv_firstTerm_0_0, 
+                            		"TERM");
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:675:2: ( (lv_operator_1_0= RULE_OPERATOR ) )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:676:1: (lv_operator_1_0= RULE_OPERATOR )
+                    {
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:676:1: (lv_operator_1_0= RULE_OPERATOR )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:677:3: lv_operator_1_0= RULE_OPERATOR
+                    {
+                    lv_operator_1_0=(Token)match(input,RULE_OPERATOR,FOLLOW_RULE_OPERATOR_in_ruleEXPRESSION1274); 
+
+                    			newLeafNode(lv_operator_1_0, grammarAccess.getEXPRESSIONAccess().getOperatorOPERATORTerminalRuleCall_0_1_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getEXPRESSIONRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"operator",
+                            		lv_operator_1_0, 
+                            		"OPERATOR");
+                    	    
+
+                    }
+
+
+                    }
+
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:693:2: ( (lv_secondTerm_2_0= ruleTERM ) )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:694:1: (lv_secondTerm_2_0= ruleTERM )
+                    {
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:694:1: (lv_secondTerm_2_0= ruleTERM )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:695:3: lv_secondTerm_2_0= ruleTERM
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getEXPRESSIONAccess().getSecondTermTERMParserRuleCall_0_2_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleTERM_in_ruleEXPRESSION1300);
+                    lv_secondTerm_2_0=ruleTERM();
+
+                    state._fsp--;
+
+
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getEXPRESSIONRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"secondTerm",
+                            		lv_secondTerm_2_0, 
+                            		"TERM");
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:712:6: ( (lv_alone_3_0= ruleTERM ) )
+                    {
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:712:6: ( (lv_alone_3_0= ruleTERM ) )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:713:1: (lv_alone_3_0= ruleTERM )
+                    {
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:713:1: (lv_alone_3_0= ruleTERM )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:714:3: lv_alone_3_0= ruleTERM
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getEXPRESSIONAccess().getAloneTERMParserRuleCall_1_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleTERM_in_ruleEXPRESSION1328);
+                    lv_alone_3_0=ruleTERM();
+
+                    state._fsp--;
+
+
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getEXPRESSIONRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"alone",
+                            		lv_alone_3_0, 
+                            		"TERM");
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleEXPRESSION"
+
+
+    // $ANTLR start "entryRuleTERM"
+    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:738:1: entryRuleTERM returns [EObject current=null] : iv_ruleTERM= ruleTERM EOF ;
+    public final EObject entryRuleTERM() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleTERM = null;
+
+
+        try {
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:739:2: (iv_ruleTERM= ruleTERM EOF )
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:740:2: iv_ruleTERM= ruleTERM EOF
+            {
+             newCompositeNode(grammarAccess.getTERMRule()); 
+            pushFollow(FOLLOW_ruleTERM_in_entryRuleTERM1364);
+            iv_ruleTERM=ruleTERM();
+
+            state._fsp--;
+
+             current =iv_ruleTERM; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTERM1374); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleTERM"
+
+
+    // $ANTLR start "ruleTERM"
+    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:747:1: ruleTERM returns [EObject current=null] : ( ( (lv_variable_0_0= RULE_ID ) ) | ( (lv_constant_1_0= RULE_INT ) ) ) ;
+    public final EObject ruleTERM() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_variable_0_0=null;
+        Token lv_constant_1_0=null;
+
+         enterRule(); 
+            
+        try {
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:750:28: ( ( ( (lv_variable_0_0= RULE_ID ) ) | ( (lv_constant_1_0= RULE_INT ) ) ) )
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:751:1: ( ( (lv_variable_0_0= RULE_ID ) ) | ( (lv_constant_1_0= RULE_INT ) ) )
+            {
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:751:1: ( ( (lv_variable_0_0= RULE_ID ) ) | ( (lv_constant_1_0= RULE_INT ) ) )
+            int alt7=2;
+            int LA7_0 = input.LA(1);
+
+            if ( (LA7_0==RULE_ID) ) {
+                alt7=1;
+            }
+            else if ( (LA7_0==RULE_INT) ) {
+                alt7=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 7, 0, input);
+
+                throw nvae;
+            }
+            switch (alt7) {
+                case 1 :
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:751:2: ( (lv_variable_0_0= RULE_ID ) )
+                    {
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:751:2: ( (lv_variable_0_0= RULE_ID ) )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:752:1: (lv_variable_0_0= RULE_ID )
+                    {
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:752:1: (lv_variable_0_0= RULE_ID )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:753:3: lv_variable_0_0= RULE_ID
+                    {
+                    lv_variable_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTERM1416); 
+
+                    			newLeafNode(lv_variable_0_0, grammarAccess.getTERMAccess().getVariableIDTerminalRuleCall_0_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTERMRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"variable",
+                            		lv_variable_0_0, 
+                            		"ID");
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:770:6: ( (lv_constant_1_0= RULE_INT ) )
+                    {
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:770:6: ( (lv_constant_1_0= RULE_INT ) )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:771:1: (lv_constant_1_0= RULE_INT )
+                    {
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:771:1: (lv_constant_1_0= RULE_INT )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:772:3: lv_constant_1_0= RULE_INT
+                    {
+                    lv_constant_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTERM1444); 
+
+                    			newLeafNode(lv_constant_1_0, grammarAccess.getTERMAccess().getConstantINTTerminalRuleCall_1_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTERMRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"constant",
+                            		lv_constant_1_0, 
+                            		"INT");
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleTERM"
+
+
     // $ANTLR start "entryRuleEvent"
-    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:663:1: entryRuleEvent returns [EObject current=null] : iv_ruleEvent= ruleEvent EOF ;
+    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:796:1: entryRuleEvent returns [EObject current=null] : iv_ruleEvent= ruleEvent EOF ;
     public final EObject entryRuleEvent() throws RecognitionException {
         EObject current = null;
 
@@ -1513,17 +1873,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:664:2: (iv_ruleEvent= ruleEvent EOF )
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:665:2: iv_ruleEvent= ruleEvent EOF
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:797:2: (iv_ruleEvent= ruleEvent EOF )
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:798:2: iv_ruleEvent= ruleEvent EOF
             {
              newCompositeNode(grammarAccess.getEventRule()); 
-            pushFollow(FOLLOW_ruleEvent_in_entryRuleEvent1232);
+            pushFollow(FOLLOW_ruleEvent_in_entryRuleEvent1485);
             iv_ruleEvent=ruleEvent();
 
             state._fsp--;
 
              current =iv_ruleEvent; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEvent1242); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEvent1495); 
 
             }
 
@@ -1541,7 +1901,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleEvent"
-    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:672:1: ruleEvent returns [EObject current=null] : ( ( ( (lv_eventName_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_eventExtension_2_0= ruleEventExtensions ) ) ) | ( (lv_nowEvent_3_0= 'now' ) ) ) ;
+    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:805:1: ruleEvent returns [EObject current=null] : ( ( ( (lv_eventName_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_eventExtension_2_0= ruleEventExtensions ) ) ) | ( (lv_nowEvent_3_0= 'now' ) ) ) ;
     public final EObject ruleEvent() throws RecognitionException {
         EObject current = null;
 
@@ -1554,39 +1914,39 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:675:28: ( ( ( ( (lv_eventName_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_eventExtension_2_0= ruleEventExtensions ) ) ) | ( (lv_nowEvent_3_0= 'now' ) ) ) )
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:676:1: ( ( ( (lv_eventName_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_eventExtension_2_0= ruleEventExtensions ) ) ) | ( (lv_nowEvent_3_0= 'now' ) ) )
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:808:28: ( ( ( ( (lv_eventName_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_eventExtension_2_0= ruleEventExtensions ) ) ) | ( (lv_nowEvent_3_0= 'now' ) ) ) )
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:809:1: ( ( ( (lv_eventName_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_eventExtension_2_0= ruleEventExtensions ) ) ) | ( (lv_nowEvent_3_0= 'now' ) ) )
             {
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:676:1: ( ( ( (lv_eventName_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_eventExtension_2_0= ruleEventExtensions ) ) ) | ( (lv_nowEvent_3_0= 'now' ) ) )
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:809:1: ( ( ( (lv_eventName_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_eventExtension_2_0= ruleEventExtensions ) ) ) | ( (lv_nowEvent_3_0= 'now' ) ) )
+            int alt8=2;
+            int LA8_0 = input.LA(1);
 
-            if ( (LA7_0==RULE_ID) ) {
-                alt7=1;
+            if ( (LA8_0==RULE_ID) ) {
+                alt8=1;
             }
-            else if ( (LA7_0==22) ) {
-                alt7=2;
+            else if ( (LA8_0==23) ) {
+                alt8=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
+                    new NoViableAltException("", 8, 0, input);
 
                 throw nvae;
             }
-            switch (alt7) {
+            switch (alt8) {
                 case 1 :
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:676:2: ( ( (lv_eventName_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_eventExtension_2_0= ruleEventExtensions ) ) )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:809:2: ( ( (lv_eventName_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_eventExtension_2_0= ruleEventExtensions ) ) )
                     {
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:676:2: ( ( (lv_eventName_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_eventExtension_2_0= ruleEventExtensions ) ) )
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:676:3: ( (lv_eventName_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_eventExtension_2_0= ruleEventExtensions ) )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:809:2: ( ( (lv_eventName_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_eventExtension_2_0= ruleEventExtensions ) ) )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:809:3: ( (lv_eventName_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_eventExtension_2_0= ruleEventExtensions ) )
                     {
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:676:3: ( (lv_eventName_0_0= RULE_ID ) )
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:677:1: (lv_eventName_0_0= RULE_ID )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:809:3: ( (lv_eventName_0_0= RULE_ID ) )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:810:1: (lv_eventName_0_0= RULE_ID )
                     {
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:677:1: (lv_eventName_0_0= RULE_ID )
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:678:3: lv_eventName_0_0= RULE_ID
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:810:1: (lv_eventName_0_0= RULE_ID )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:811:3: lv_eventName_0_0= RULE_ID
                     {
-                    lv_eventName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEvent1285); 
+                    lv_eventName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEvent1538); 
 
                     			newLeafNode(lv_eventName_0_0, grammarAccess.getEventAccess().getEventNameIDTerminalRuleCall_0_0_0()); 
                     		
@@ -1606,20 +1966,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
 
                     }
 
-                    otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleEvent1302); 
+                    otherlv_1=(Token)match(input,22,FOLLOW_22_in_ruleEvent1555); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getEventAccess().getFullStopKeyword_0_1());
                         
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:698:1: ( (lv_eventExtension_2_0= ruleEventExtensions ) )
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:699:1: (lv_eventExtension_2_0= ruleEventExtensions )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:831:1: ( (lv_eventExtension_2_0= ruleEventExtensions ) )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:832:1: (lv_eventExtension_2_0= ruleEventExtensions )
                     {
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:699:1: (lv_eventExtension_2_0= ruleEventExtensions )
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:700:3: lv_eventExtension_2_0= ruleEventExtensions
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:832:1: (lv_eventExtension_2_0= ruleEventExtensions )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:833:3: lv_eventExtension_2_0= ruleEventExtensions
                     {
                      
                     	        newCompositeNode(grammarAccess.getEventAccess().getEventExtensionEventExtensionsParserRuleCall_0_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleEventExtensions_in_ruleEvent1323);
+                    pushFollow(FOLLOW_ruleEventExtensions_in_ruleEvent1576);
                     lv_eventExtension_2_0=ruleEventExtensions();
 
                     state._fsp--;
@@ -1648,15 +2008,15 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 2 :
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:717:6: ( (lv_nowEvent_3_0= 'now' ) )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:850:6: ( (lv_nowEvent_3_0= 'now' ) )
                     {
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:717:6: ( (lv_nowEvent_3_0= 'now' ) )
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:718:1: (lv_nowEvent_3_0= 'now' )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:850:6: ( (lv_nowEvent_3_0= 'now' ) )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:851:1: (lv_nowEvent_3_0= 'now' )
                     {
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:718:1: (lv_nowEvent_3_0= 'now' )
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:719:3: lv_nowEvent_3_0= 'now'
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:851:1: (lv_nowEvent_3_0= 'now' )
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:852:3: lv_nowEvent_3_0= 'now'
                     {
-                    lv_nowEvent_3_0=(Token)match(input,22,FOLLOW_22_in_ruleEvent1348); 
+                    lv_nowEvent_3_0=(Token)match(input,23,FOLLOW_23_in_ruleEvent1601); 
 
                             newLeafNode(lv_nowEvent_3_0, grammarAccess.getEventAccess().getNowEventNowKeyword_1_0());
                         
@@ -1696,7 +2056,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleEventExtensions"
-    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:740:1: entryRuleEventExtensions returns [String current=null] : iv_ruleEventExtensions= ruleEventExtensions EOF ;
+    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:873:1: entryRuleEventExtensions returns [String current=null] : iv_ruleEventExtensions= ruleEventExtensions EOF ;
     public final String entryRuleEventExtensions() throws RecognitionException {
         String current = null;
 
@@ -1704,17 +2064,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:741:2: (iv_ruleEventExtensions= ruleEventExtensions EOF )
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:742:2: iv_ruleEventExtensions= ruleEventExtensions EOF
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:874:2: (iv_ruleEventExtensions= ruleEventExtensions EOF )
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:875:2: iv_ruleEventExtensions= ruleEventExtensions EOF
             {
              newCompositeNode(grammarAccess.getEventExtensionsRule()); 
-            pushFollow(FOLLOW_ruleEventExtensions_in_entryRuleEventExtensions1398);
+            pushFollow(FOLLOW_ruleEventExtensions_in_entryRuleEventExtensions1651);
             iv_ruleEventExtensions=ruleEventExtensions();
 
             state._fsp--;
 
              current =iv_ruleEventExtensions.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEventExtensions1409); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEventExtensions1662); 
 
             }
 
@@ -1732,7 +2092,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleEventExtensions"
-    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:749:1: ruleEventExtensions returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'send' | kw= 'receive' ) ;
+    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:882:1: ruleEventExtensions returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'send' | kw= 'receive' ) ;
     public final AntlrDatatypeRuleToken ruleEventExtensions() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1741,69 +2101,69 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:752:28: ( (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'send' | kw= 'receive' ) )
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:753:1: (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'send' | kw= 'receive' )
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:885:28: ( (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'send' | kw= 'receive' ) )
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:886:1: (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'send' | kw= 'receive' )
             {
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:753:1: (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'send' | kw= 'receive' )
-            int alt8=9;
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:886:1: (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'send' | kw= 'receive' )
+            int alt9=9;
             switch ( input.LA(1) ) {
-            case 23:
-                {
-                alt8=1;
-                }
-                break;
             case 24:
                 {
-                alt8=2;
+                alt9=1;
                 }
                 break;
             case 25:
                 {
-                alt8=3;
+                alt9=2;
                 }
                 break;
             case 26:
                 {
-                alt8=4;
+                alt9=3;
                 }
                 break;
             case 27:
                 {
-                alt8=5;
+                alt9=4;
                 }
                 break;
             case 28:
                 {
-                alt8=6;
+                alt9=5;
                 }
                 break;
             case 29:
                 {
-                alt8=7;
+                alt9=6;
                 }
                 break;
             case 30:
                 {
-                alt8=8;
+                alt9=7;
                 }
                 break;
             case 31:
                 {
-                alt8=9;
+                alt9=8;
+                }
+                break;
+            case 32:
+                {
+                alt9=9;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 8, 0, input);
+                    new NoViableAltException("", 9, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt8) {
+            switch (alt9) {
                 case 1 :
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:754:2: kw= 'exit'
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:887:2: kw= 'exit'
                     {
-                    kw=(Token)match(input,23,FOLLOW_23_in_ruleEventExtensions1447); 
+                    kw=(Token)match(input,24,FOLLOW_24_in_ruleEventExtensions1700); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getExitKeyword_0()); 
@@ -1812,9 +2172,9 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 2 :
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:761:2: kw= 'enter'
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:894:2: kw= 'enter'
                     {
-                    kw=(Token)match(input,24,FOLLOW_24_in_ruleEventExtensions1466); 
+                    kw=(Token)match(input,25,FOLLOW_25_in_ruleEventExtensions1719); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getEnterKeyword_1()); 
@@ -1823,9 +2183,9 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 3 :
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:768:2: kw= 'start'
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:901:2: kw= 'start'
                     {
-                    kw=(Token)match(input,25,FOLLOW_25_in_ruleEventExtensions1485); 
+                    kw=(Token)match(input,26,FOLLOW_26_in_ruleEventExtensions1738); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getStartKeyword_2()); 
@@ -1834,9 +2194,9 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 4 :
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:775:2: kw= 'end'
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:908:2: kw= 'end'
                     {
-                    kw=(Token)match(input,26,FOLLOW_26_in_ruleEventExtensions1504); 
+                    kw=(Token)match(input,27,FOLLOW_27_in_ruleEventExtensions1757); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getEndKeyword_3()); 
@@ -1845,9 +2205,9 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 5 :
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:782:2: kw= 'tick'
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:915:2: kw= 'tick'
                     {
-                    kw=(Token)match(input,27,FOLLOW_27_in_ruleEventExtensions1523); 
+                    kw=(Token)match(input,28,FOLLOW_28_in_ruleEventExtensions1776); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getTickKeyword_4()); 
@@ -1856,9 +2216,9 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 6 :
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:789:2: kw= 'sig'
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:922:2: kw= 'sig'
                     {
-                    kw=(Token)match(input,28,FOLLOW_28_in_ruleEventExtensions1542); 
+                    kw=(Token)match(input,29,FOLLOW_29_in_ruleEventExtensions1795); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getSigKeyword_5()); 
@@ -1867,9 +2227,9 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 7 :
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:796:2: kw= 'call'
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:929:2: kw= 'call'
                     {
-                    kw=(Token)match(input,29,FOLLOW_29_in_ruleEventExtensions1561); 
+                    kw=(Token)match(input,30,FOLLOW_30_in_ruleEventExtensions1814); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getCallKeyword_6()); 
@@ -1878,9 +2238,9 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 8 :
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:803:2: kw= 'send'
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:936:2: kw= 'send'
                     {
-                    kw=(Token)match(input,30,FOLLOW_30_in_ruleEventExtensions1580); 
+                    kw=(Token)match(input,31,FOLLOW_31_in_ruleEventExtensions1833); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getSendKeyword_7()); 
@@ -1889,9 +2249,9 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 9 :
-                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:810:2: kw= 'receive'
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:943:2: kw= 'receive'
                     {
-                    kw=(Token)match(input,31,FOLLOW_31_in_ruleEventExtensions1599); 
+                    kw=(Token)match(input,32,FOLLOW_32_in_ruleEventExtensions1852); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getReceiveKeyword_8()); 
@@ -1929,20 +2289,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
     public static final BitSet FOLLOW_ruleOrExpression_in_entryRuleOrExpression165 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOrExpression175 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAndExpression_in_ruleOrExpression221 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_RULE_OR_in_ruleOrExpression239 = new BitSet(new long[]{0x00000000000A8240L});
+    public static final BitSet FOLLOW_RULE_OR_in_ruleOrExpression239 = new BitSet(new long[]{0x0000000000150240L});
     public static final BitSet FOLLOW_ruleOrExpression_in_ruleOrExpression265 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAndExpression_in_entryRuleAndExpression303 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAndExpression313 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBaseExpression_in_ruleAndExpression359 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_RULE_AND_in_ruleAndExpression377 = new BitSet(new long[]{0x00000000000A8240L});
+    public static final BitSet FOLLOW_RULE_AND_in_ruleAndExpression377 = new BitSet(new long[]{0x0000000000150240L});
     public static final BitSet FOLLOW_ruleAndExpression_in_ruleAndExpression403 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBaseExpression_in_entryRuleBaseExpression441 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBaseExpression451 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_NOT_in_ruleBaseExpression493 = new BitSet(new long[]{0x00000000000A8200L});
+    public static final BitSet FOLLOW_RULE_NOT_in_ruleBaseExpression493 = new BitSet(new long[]{0x0000000000150200L});
     public static final BitSet FOLLOW_rulebooleanTerm_in_ruleBaseExpression521 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_ruleBaseExpression540 = new BitSet(new long[]{0x00000000000A8240L});
-    public static final BitSet FOLLOW_ruleOrExpression_in_ruleBaseExpression561 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleBaseExpression573 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_ruleBaseExpression540 = new BitSet(new long[]{0x0000000000150240L});
+    public static final BitSet FOLLOW_ruleOrExpression_in_ruleBaseExpression561 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleBaseExpression573 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulebooleanTerm_in_entryRulebooleanTerm611 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRulebooleanTerm621 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleTimeConstraint_in_rulebooleanTerm667 = new BitSet(new long[]{0x0000000000000002L});
@@ -1950,10 +2310,10 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
     public static final BitSet FOLLOW_ruleVariableCondition_in_rulebooleanTerm721 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleTimeConstraint_in_entryRuleTimeConstraint757 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleTimeConstraint767 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_ruleTimeConstraint804 = new BitSet(new long[]{0x0000000000400200L});
-    public static final BitSet FOLLOW_ruleEvent_in_ruleTimeConstraint825 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleTimeConstraint837 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleTimeConstraint849 = new BitSet(new long[]{0x0000000000400200L});
+    public static final BitSet FOLLOW_18_in_ruleTimeConstraint804 = new BitSet(new long[]{0x0000000000800200L});
+    public static final BitSet FOLLOW_ruleEvent_in_ruleTimeConstraint825 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleTimeConstraint837 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleTimeConstraint849 = new BitSet(new long[]{0x0000000000800200L});
     public static final BitSet FOLLOW_ruleEvent_in_ruleTimeConstraint870 = new BitSet(new long[]{0x0000000000000080L});
     public static final BitSet FOLLOW_RULE_RELATIONS_in_ruleTimeConstraint887 = new BitSet(new long[]{0x0000000000000100L});
     public static final BitSet FOLLOW_RULE_INT_in_ruleTimeConstraint909 = new BitSet(new long[]{0x0000000000000002L});
@@ -1962,28 +2322,37 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
     public static final BitSet FOLLOW_RULE_ID_in_ruleBooleanVariable1001 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleVariableCondition_in_entryRuleVariableCondition1041 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleVariableCondition1051 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_ruleVariableCondition1088 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleVariableCondition1105 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_RULE_RELATIONS_in_ruleVariableCondition1127 = new BitSet(new long[]{0x0000000000000300L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleVariableCondition1150 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleVariableCondition1178 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleVariableCondition1196 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEvent_in_entryRuleEvent1232 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEvent1242 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEvent1285 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleEvent1302 = new BitSet(new long[]{0x00000000FF800000L});
-    public static final BitSet FOLLOW_ruleEventExtensions_in_ruleEvent1323 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_ruleEvent1348 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEventExtensions_in_entryRuleEventExtensions1398 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEventExtensions1409 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_ruleEventExtensions1447 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleEventExtensions1466 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleEventExtensions1485 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_ruleEventExtensions1504 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_ruleEventExtensions1523 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_ruleEventExtensions1542 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_ruleEventExtensions1561 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_ruleEventExtensions1580 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_ruleEventExtensions1599 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_ruleVariableCondition1088 = new BitSet(new long[]{0x0000000000000300L});
+    public static final BitSet FOLLOW_ruleEXPRESSION_in_ruleVariableCondition1109 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_RULE_RELATIONS_in_ruleVariableCondition1126 = new BitSet(new long[]{0x0000000000000300L});
+    public static final BitSet FOLLOW_ruleEXPRESSION_in_ruleVariableCondition1152 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleVariableCondition1164 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEXPRESSION_in_entryRuleEXPRESSION1200 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEXPRESSION1210 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTERM_in_ruleEXPRESSION1257 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_RULE_OPERATOR_in_ruleEXPRESSION1274 = new BitSet(new long[]{0x0000000000000300L});
+    public static final BitSet FOLLOW_ruleTERM_in_ruleEXPRESSION1300 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTERM_in_ruleEXPRESSION1328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTERM_in_entryRuleTERM1364 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTERM1374 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTERM1416 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleTERM1444 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEvent_in_entryRuleEvent1485 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEvent1495 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEvent1538 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleEvent1555 = new BitSet(new long[]{0x00000001FF000000L});
+    public static final BitSet FOLLOW_ruleEventExtensions_in_ruleEvent1576 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_ruleEvent1601 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEventExtensions_in_entryRuleEventExtensions1651 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEventExtensions1662 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_ruleEventExtensions1700 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleEventExtensions1719 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_ruleEventExtensions1738 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_ruleEventExtensions1757 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_ruleEventExtensions1776 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_ruleEventExtensions1795 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_ruleEventExtensions1814 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_ruleEventExtensions1833 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_ruleEventExtensions1852 = new BitSet(new long[]{0x0000000000000002L});
 
 }

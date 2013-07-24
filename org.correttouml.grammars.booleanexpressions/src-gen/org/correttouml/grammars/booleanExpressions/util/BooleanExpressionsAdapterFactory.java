@@ -115,6 +115,16 @@ public class BooleanExpressionsAdapterFactory extends AdapterFactoryImpl
         return createVariableConditionAdapter();
       }
       @Override
+      public Adapter caseEXPRESSION(EXPRESSION object)
+      {
+        return createEXPRESSIONAdapter();
+      }
+      @Override
+      public Adapter caseTERM(TERM object)
+      {
+        return createTERMAdapter();
+      }
+      @Override
       public Adapter caseEvent(Event object)
       {
         return createEventAdapter();
@@ -257,6 +267,36 @@ public class BooleanExpressionsAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createVariableConditionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.correttouml.grammars.booleanExpressions.EXPRESSION <em>EXPRESSION</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.correttouml.grammars.booleanExpressions.EXPRESSION
+   * @generated
+   */
+  public Adapter createEXPRESSIONAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.correttouml.grammars.booleanExpressions.TERM <em>TERM</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.correttouml.grammars.booleanExpressions.TERM
+   * @generated
+   */
+  public Adapter createTERMAdapter()
   {
     return null;
   }

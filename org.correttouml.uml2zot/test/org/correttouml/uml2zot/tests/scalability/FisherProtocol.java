@@ -120,7 +120,7 @@ public class FisherProtocol {
 		Property pid_attr = UML2Helper.createAttribute(processClass, "pid",
 				integer);
 		//The following two are static attributes
-		UML2Helper.createAttribute(processClass, "id", integer, true).setIntegerDefaultValue(0);
+		UML2Helper.createAttribute(processClass, "id", integer, true).setIntegerDefaultValue(-1);
 		UML2Helper.createAttribute(processClass, "counter", integer, true).setIntegerDefaultValue(0);
 
 		ArrayList<InstanceSpecification> processes = new ArrayList<InstanceSpecification>();
@@ -153,23 +153,81 @@ public class FisherProtocol {
 				process_SM, "EXIT");
 		
 		UML2Helper.addStateInvariant(STATE_REQ, "@now - @REQ.enter <= 3");
-		UML2Helper.addStateInvariant(STATE_UPDATED, "@now - @UPDATED.enter <= 4");
+		//TODO: spiegato nella nota del 16/07/2013
+		//UML2Helper.addStateInvariant(STATE_UPDATED, "@now - @UPDATED.enter <= 4");
 
 		// initial transition
 		UML2Helper.createTransition(process_SM, STATE_0, STATE_FISHERP, "");
 		UML2Helper.createTransition(process_SM, STATE_FISHERP, STATE_REQ,
-				"[{id==-1}]");
+				"[{id==0--1}]");
 		UML2Helper.createTransition(process_SM, STATE_REQ, STATE_UPDATED,
 				"/id=pid");
 		UML2Helper.createTransition(process_SM, STATE_UPDATED, STATE_WAIT,
-				"");
+				"@now - @UPDATED.enter == 4");
 		UML2Helper.createTransition(process_SM, STATE_WAIT, STATE_CS,
 				"[{id==pid}]");
 		UML2Helper.createTransition(process_SM, STATE_WAIT, STATE_FISHERP,
 				"[{id!=pid}]");
-		UML2Helper.createTransition(process_SM, STATE_CS, STATE_EXIT, "/counter=counter+1");
-		UML2Helper.createTransition(process_SM, STATE_EXIT, STATE_FISHERP, "/id=0-1, counter=counter-1");
+		UML2Helper.createTransition(process_SM, STATE_CS, STATE_EXIT, "/counter=<P>counter+1");
+		UML2Helper.createTransition(process_SM, STATE_EXIT, STATE_FISHERP, "/id=0-1, counter=<P>counter-1");
 		
 	}
+	
+	//TODO: remove me
+//	private void test_model(int num_process) {
+//		// Preparazione modello e package
+//		myModel = UML2Helper.createModel("Fisher Protocol Model");
+//		madesProfile = UML2Helper
+//				.loadProfile(TestConfiguration.MADES_PROFILE_PATH);
+//		myModel.createElementImport(madesProfile);
+//		myModel.applyProfile(madesProfile);
+//
+//		// Creazione <<System>> package
+//		org.eclipse.uml2.uml.Package systemPackage = UML2Helper.createPackage(
+//				myModel, "System");
+//		org.eclipse.uml2.uml.Stereotype systemStereotype = UML2Helper
+//				.getMADESVerificationTagsStereotype(madesProfile, "System");
+//		systemPackage.applyStereotype(systemStereotype);
+//
+//		// Class diagram
+//		PrimitiveType integer = UML2Helper.createPrimitiveType(myModel,
+//				"Integer");
+//
+//		org.eclipse.uml2.uml.Class processClass = UML2Helper.createClass(
+//				systemPackage, "Process", false);
+//
+//		Property pid_attr = UML2Helper.createAttribute(processClass, "pid",
+//				integer);
+//		//The following two are static attributes
+//		UML2Helper.createAttribute(processClass, "id", integer, true).setIntegerDefaultValue(0);
+//
+//		ArrayList<InstanceSpecification> processes = new ArrayList<InstanceSpecification>();
+//		for (int i = 0; i < num_process; i++) {
+//			int id = i;
+//
+//			InstanceSpecification tmp = UML2Helper.createInstanceSpecification(
+//					systemPackage, processClass, "proc_" + id);
+//			UML2Helper.createIntegerSlot(tmp, pid_attr, id);
+//			processes.add(tmp);
+//		}
+//
+//		// STD PROCESS
+//		process_SM = UML2Helper
+//				.createStateMachine(processClass, "Process_SM");
+//		UML2Helper.createRegion(process_SM);
+//		org.eclipse.uml2.uml.Pseudostate STATE_0 = UML2Helper
+//				.createInitialState(process_SM, "start");
+//		org.eclipse.uml2.uml.State STATE_ONE = UML2Helper.createState(
+//				process_SM, "ONE");
+//		org.eclipse.uml2.uml.State STATE_TWO = UML2Helper.createState(
+//				process_SM, "TWO");
+//
+//		// initial transition
+//		UML2Helper.createTransition(process_SM, STATE_0, STATE_ONE, "");
+//		UML2Helper.createTransition(process_SM, STATE_ONE, STATE_TWO,
+//				"/id=<P>id+1");
+//		UML2Helper.createTransition(process_SM, STATE_TWO, STATE_ONE,
+//				"/id=<P>id-1");		
+//	}
 
 }

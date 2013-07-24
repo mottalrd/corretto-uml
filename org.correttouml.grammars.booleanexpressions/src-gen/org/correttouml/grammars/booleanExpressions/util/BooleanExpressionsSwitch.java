@@ -128,6 +128,20 @@ public class BooleanExpressionsSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case BooleanExpressionsPackage.EXPRESSION:
+      {
+        EXPRESSION expression = (EXPRESSION)theEObject;
+        T result = caseEXPRESSION(expression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case BooleanExpressionsPackage.TERM:
+      {
+        TERM term = (TERM)theEObject;
+        T result = caseTERM(term);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case BooleanExpressionsPackage.EVENT:
       {
         Event event = (Event)theEObject;
@@ -263,6 +277,38 @@ public class BooleanExpressionsSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseVariableCondition(VariableCondition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>EXPRESSION</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>EXPRESSION</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEXPRESSION(EXPRESSION object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>TERM</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>TERM</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTERM(TERM object)
   {
     return null;
   }

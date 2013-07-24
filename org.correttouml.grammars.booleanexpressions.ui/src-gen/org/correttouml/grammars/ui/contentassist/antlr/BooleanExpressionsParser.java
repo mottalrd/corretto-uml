@@ -39,7 +39,8 @@ public class BooleanExpressionsParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getBaseExpressionAccess().getAlternatives_1(), "rule__BaseExpression__Alternatives_1");
 					put(grammarAccess.getBooleanTermAccess().getAlternatives(), "rule__BooleanTerm__Alternatives");
-					put(grammarAccess.getVariableConditionAccess().getAlternatives_3(), "rule__VariableCondition__Alternatives_3");
+					put(grammarAccess.getEXPRESSIONAccess().getAlternatives(), "rule__EXPRESSION__Alternatives");
+					put(grammarAccess.getTERMAccess().getAlternatives(), "rule__TERM__Alternatives");
 					put(grammarAccess.getEventAccess().getAlternatives(), "rule__Event__Alternatives");
 					put(grammarAccess.getEventExtensionsAccess().getAlternatives(), "rule__EventExtensions__Alternatives");
 					put(grammarAccess.getOrExpressionAccess().getGroup(), "rule__OrExpression__Group__0");
@@ -50,6 +51,7 @@ public class BooleanExpressionsParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBaseExpressionAccess().getGroup_1_1(), "rule__BaseExpression__Group_1_1__0");
 					put(grammarAccess.getTimeConstraintAccess().getGroup(), "rule__TimeConstraint__Group__0");
 					put(grammarAccess.getVariableConditionAccess().getGroup(), "rule__VariableCondition__Group__0");
+					put(grammarAccess.getEXPRESSIONAccess().getGroup_0(), "rule__EXPRESSION__Group_0__0");
 					put(grammarAccess.getEventAccess().getGroup_0(), "rule__Event__Group_0__0");
 					put(grammarAccess.getModelAccess().getExpressionAssignment(), "rule__Model__ExpressionAssignment");
 					put(grammarAccess.getOrExpressionAccess().getLeftExpressionAssignment_0(), "rule__OrExpression__LeftExpressionAssignment_0");
@@ -69,10 +71,15 @@ public class BooleanExpressionsParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTimeConstraintAccess().getOpAssignment_5(), "rule__TimeConstraint__OpAssignment_5");
 					put(grammarAccess.getTimeConstraintAccess().getValueAssignment_6(), "rule__TimeConstraint__ValueAssignment_6");
 					put(grammarAccess.getBooleanVariableAccess().getVariableAssignment(), "rule__BooleanVariable__VariableAssignment");
-					put(grammarAccess.getVariableConditionAccess().getVariableAssignment_1(), "rule__VariableCondition__VariableAssignment_1");
+					put(grammarAccess.getVariableConditionAccess().getExpression_leftAssignment_1(), "rule__VariableCondition__Expression_leftAssignment_1");
 					put(grammarAccess.getVariableConditionAccess().getRelationAssignment_2(), "rule__VariableCondition__RelationAssignment_2");
-					put(grammarAccess.getVariableConditionAccess().getValueAssignment_3_0(), "rule__VariableCondition__ValueAssignment_3_0");
-					put(grammarAccess.getVariableConditionAccess().getRightVariableAssignment_3_1(), "rule__VariableCondition__RightVariableAssignment_3_1");
+					put(grammarAccess.getVariableConditionAccess().getExpression_rightAssignment_3(), "rule__VariableCondition__Expression_rightAssignment_3");
+					put(grammarAccess.getEXPRESSIONAccess().getFirstTermAssignment_0_0(), "rule__EXPRESSION__FirstTermAssignment_0_0");
+					put(grammarAccess.getEXPRESSIONAccess().getOperatorAssignment_0_1(), "rule__EXPRESSION__OperatorAssignment_0_1");
+					put(grammarAccess.getEXPRESSIONAccess().getSecondTermAssignment_0_2(), "rule__EXPRESSION__SecondTermAssignment_0_2");
+					put(grammarAccess.getEXPRESSIONAccess().getAloneAssignment_1(), "rule__EXPRESSION__AloneAssignment_1");
+					put(grammarAccess.getTERMAccess().getVariableAssignment_0(), "rule__TERM__VariableAssignment_0");
+					put(grammarAccess.getTERMAccess().getConstantAssignment_1(), "rule__TERM__ConstantAssignment_1");
 					put(grammarAccess.getEventAccess().getEventNameAssignment_0_0(), "rule__Event__EventNameAssignment_0_0");
 					put(grammarAccess.getEventAccess().getEventExtensionAssignment_0_2(), "rule__Event__EventExtensionAssignment_0_2");
 					put(grammarAccess.getEventAccess().getNowEventAssignment_1(), "rule__Event__NowEventAssignment_1");

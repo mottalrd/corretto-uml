@@ -281,32 +281,29 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VariableCondition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cVariableAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cVariableIDTerminalRuleCall_1_0 = (RuleCall)cVariableAssignment_1.eContents().get(0);
+		private final Assignment cExpression_leftAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cExpression_leftEXPRESSIONParserRuleCall_1_0 = (RuleCall)cExpression_leftAssignment_1.eContents().get(0);
 		private final Assignment cRelationAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cRelationRELATIONSTerminalRuleCall_2_0 = (RuleCall)cRelationAssignment_2.eContents().get(0);
-		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Assignment cValueAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
-		private final RuleCall cValueINTTerminalRuleCall_3_0_0 = (RuleCall)cValueAssignment_3_0.eContents().get(0);
-		private final Assignment cRightVariableAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
-		private final RuleCall cRightVariableIDTerminalRuleCall_3_1_0 = (RuleCall)cRightVariableAssignment_3_1.eContents().get(0);
+		private final Assignment cExpression_rightAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cExpression_rightEXPRESSIONParserRuleCall_3_0 = (RuleCall)cExpression_rightAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//VariableCondition:
-		//	"{" variable=ID relation=RELATIONS (value=INT | rightVariable=ID) "}";
+		//	"{" expression_left=EXPRESSION relation=RELATIONS expression_right=EXPRESSION "}";
 		public ParserRule getRule() { return rule; }
 
-		//"{" variable=ID relation=RELATIONS (value=INT | rightVariable=ID) "}"
+		//"{" expression_left=EXPRESSION relation=RELATIONS expression_right=EXPRESSION "}"
 		public Group getGroup() { return cGroup; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
 
-		//variable=ID
-		public Assignment getVariableAssignment_1() { return cVariableAssignment_1; }
+		//expression_left=EXPRESSION
+		public Assignment getExpression_leftAssignment_1() { return cExpression_leftAssignment_1; }
 
-		//ID
-		public RuleCall getVariableIDTerminalRuleCall_1_0() { return cVariableIDTerminalRuleCall_1_0; }
+		//EXPRESSION
+		public RuleCall getExpression_leftEXPRESSIONParserRuleCall_1_0() { return cExpression_leftEXPRESSIONParserRuleCall_1_0; }
 
 		//relation=RELATIONS
 		public Assignment getRelationAssignment_2() { return cRelationAssignment_2; }
@@ -314,23 +311,90 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 		//RELATIONS
 		public RuleCall getRelationRELATIONSTerminalRuleCall_2_0() { return cRelationRELATIONSTerminalRuleCall_2_0; }
 
-		//value=INT | rightVariable=ID
-		public Alternatives getAlternatives_3() { return cAlternatives_3; }
+		//expression_right=EXPRESSION
+		public Assignment getExpression_rightAssignment_3() { return cExpression_rightAssignment_3; }
 
-		//value=INT
-		public Assignment getValueAssignment_3_0() { return cValueAssignment_3_0; }
-
-		//INT
-		public RuleCall getValueINTTerminalRuleCall_3_0_0() { return cValueINTTerminalRuleCall_3_0_0; }
-
-		//rightVariable=ID
-		public Assignment getRightVariableAssignment_3_1() { return cRightVariableAssignment_3_1; }
-
-		//ID
-		public RuleCall getRightVariableIDTerminalRuleCall_3_1_0() { return cRightVariableIDTerminalRuleCall_3_1_0; }
+		//EXPRESSION
+		public RuleCall getExpression_rightEXPRESSIONParserRuleCall_3_0() { return cExpression_rightEXPRESSIONParserRuleCall_3_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+
+	public class EXPRESSIONElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EXPRESSION");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Assignment cFirstTermAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final RuleCall cFirstTermTERMParserRuleCall_0_0_0 = (RuleCall)cFirstTermAssignment_0_0.eContents().get(0);
+		private final Assignment cOperatorAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cOperatorOPERATORTerminalRuleCall_0_1_0 = (RuleCall)cOperatorAssignment_0_1.eContents().get(0);
+		private final Assignment cSecondTermAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cSecondTermTERMParserRuleCall_0_2_0 = (RuleCall)cSecondTermAssignment_0_2.eContents().get(0);
+		private final Assignment cAloneAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cAloneTERMParserRuleCall_1_0 = (RuleCall)cAloneAssignment_1.eContents().get(0);
+		
+		//EXPRESSION:
+		//	firstTerm=TERM operator=OPERATOR secondTerm=TERM | alone=TERM;
+		public ParserRule getRule() { return rule; }
+
+		//firstTerm=TERM operator=OPERATOR secondTerm=TERM | alone=TERM
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//firstTerm=TERM operator=OPERATOR secondTerm=TERM
+		public Group getGroup_0() { return cGroup_0; }
+
+		//firstTerm=TERM
+		public Assignment getFirstTermAssignment_0_0() { return cFirstTermAssignment_0_0; }
+
+		//TERM
+		public RuleCall getFirstTermTERMParserRuleCall_0_0_0() { return cFirstTermTERMParserRuleCall_0_0_0; }
+
+		//operator=OPERATOR
+		public Assignment getOperatorAssignment_0_1() { return cOperatorAssignment_0_1; }
+
+		//OPERATOR
+		public RuleCall getOperatorOPERATORTerminalRuleCall_0_1_0() { return cOperatorOPERATORTerminalRuleCall_0_1_0; }
+
+		//secondTerm=TERM
+		public Assignment getSecondTermAssignment_0_2() { return cSecondTermAssignment_0_2; }
+
+		//TERM
+		public RuleCall getSecondTermTERMParserRuleCall_0_2_0() { return cSecondTermTERMParserRuleCall_0_2_0; }
+
+		//alone=TERM
+		public Assignment getAloneAssignment_1() { return cAloneAssignment_1; }
+
+		//TERM
+		public RuleCall getAloneTERMParserRuleCall_1_0() { return cAloneTERMParserRuleCall_1_0; }
+	}
+
+	public class TERMElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TERM");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cVariableAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cVariableIDTerminalRuleCall_0_0 = (RuleCall)cVariableAssignment_0.eContents().get(0);
+		private final Assignment cConstantAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cConstantINTTerminalRuleCall_1_0 = (RuleCall)cConstantAssignment_1.eContents().get(0);
+		
+		//TERM:
+		//	variable=ID | constant=INT;
+		public ParserRule getRule() { return rule; }
+
+		//variable=ID | constant=INT
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//variable=ID
+		public Assignment getVariableAssignment_0() { return cVariableAssignment_0; }
+
+		//ID
+		public RuleCall getVariableIDTerminalRuleCall_0_0() { return cVariableIDTerminalRuleCall_0_0; }
+
+		//constant=INT
+		public Assignment getConstantAssignment_1() { return cConstantAssignment_1; }
+
+		//INT
+		public RuleCall getConstantINTTerminalRuleCall_1_0() { return cConstantINTTerminalRuleCall_1_0; }
 	}
 
 	public class EventElements extends AbstractParserRuleElementFinder {
@@ -434,6 +498,9 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 	private TimeConstraintElements pTimeConstraint;
 	private BooleanVariableElements pBooleanVariable;
 	private VariableConditionElements pVariableCondition;
+	private EXPRESSIONElements pEXPRESSION;
+	private TERMElements pTERM;
+	private TerminalRule tOPERATOR;
 	private EventElements pEvent;
 	private EventExtensionsElements pEventExtensions;
 	private TerminalRule tRELATIONS;
@@ -553,7 +620,7 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//VariableCondition:
-	//	"{" variable=ID relation=RELATIONS (value=INT | rightVariable=ID) "}";
+	//	"{" expression_left=EXPRESSION relation=RELATIONS expression_right=EXPRESSION "}";
 	public VariableConditionElements getVariableConditionAccess() {
 		return (pVariableCondition != null) ? pVariableCondition : (pVariableCondition = new VariableConditionElements());
 	}
@@ -561,6 +628,32 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 	public ParserRule getVariableConditionRule() {
 		return getVariableConditionAccess().getRule();
 	}
+
+	//EXPRESSION:
+	//	firstTerm=TERM operator=OPERATOR secondTerm=TERM | alone=TERM;
+	public EXPRESSIONElements getEXPRESSIONAccess() {
+		return (pEXPRESSION != null) ? pEXPRESSION : (pEXPRESSION = new EXPRESSIONElements());
+	}
+	
+	public ParserRule getEXPRESSIONRule() {
+		return getEXPRESSIONAccess().getRule();
+	}
+
+	//TERM:
+	//	variable=ID | constant=INT;
+	public TERMElements getTERMAccess() {
+		return (pTERM != null) ? pTERM : (pTERM = new TERMElements());
+	}
+	
+	public ParserRule getTERMRule() {
+		return getTERMAccess().getRule();
+	}
+
+	//terminal OPERATOR:
+	//	"+" | "*" | "--";
+	public TerminalRule getOPERATORRule() {
+		return (tOPERATOR != null) ? tOPERATOR : (tOPERATOR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "OPERATOR"));
+	} 
 
 	//Event:
 	//	eventName=ID "." eventExtension=EventExtensions | nowEvent?="now";

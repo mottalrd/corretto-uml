@@ -90,6 +90,20 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass expressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass termEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass eventEClass = null;
 
   /**
@@ -420,9 +434,9 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVariableCondition_Variable()
+  public EReference getVariableCondition_Expression_left()
   {
-    return (EAttribute)variableConditionEClass.getEStructuralFeatures().get(0);
+    return (EReference)variableConditionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -440,9 +454,9 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVariableCondition_Value()
+  public EReference getVariableCondition_Expression_right()
   {
-    return (EAttribute)variableConditionEClass.getEStructuralFeatures().get(2);
+    return (EReference)variableConditionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -450,9 +464,79 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVariableCondition_RightVariable()
+  public EClass getEXPRESSION()
   {
-    return (EAttribute)variableConditionEClass.getEStructuralFeatures().get(3);
+    return expressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEXPRESSION_FirstTerm()
+  {
+    return (EReference)expressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEXPRESSION_Operator()
+  {
+    return (EAttribute)expressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEXPRESSION_SecondTerm()
+  {
+    return (EReference)expressionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEXPRESSION_Alone()
+  {
+    return (EReference)expressionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTERM()
+  {
+    return termEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTERM_Variable()
+  {
+    return (EAttribute)termEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTERM_Constant()
+  {
+    return (EAttribute)termEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -558,10 +642,19 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
     createEAttribute(booleanVariableEClass, BOOLEAN_VARIABLE__VARIABLE);
 
     variableConditionEClass = createEClass(VARIABLE_CONDITION);
-    createEAttribute(variableConditionEClass, VARIABLE_CONDITION__VARIABLE);
+    createEReference(variableConditionEClass, VARIABLE_CONDITION__EXPRESSION_LEFT);
     createEAttribute(variableConditionEClass, VARIABLE_CONDITION__RELATION);
-    createEAttribute(variableConditionEClass, VARIABLE_CONDITION__VALUE);
-    createEAttribute(variableConditionEClass, VARIABLE_CONDITION__RIGHT_VARIABLE);
+    createEReference(variableConditionEClass, VARIABLE_CONDITION__EXPRESSION_RIGHT);
+
+    expressionEClass = createEClass(EXPRESSION);
+    createEReference(expressionEClass, EXPRESSION__FIRST_TERM);
+    createEAttribute(expressionEClass, EXPRESSION__OPERATOR);
+    createEReference(expressionEClass, EXPRESSION__SECOND_TERM);
+    createEReference(expressionEClass, EXPRESSION__ALONE);
+
+    termEClass = createEClass(TERM);
+    createEAttribute(termEClass, TERM__VARIABLE);
+    createEAttribute(termEClass, TERM__CONSTANT);
 
     eventEClass = createEClass(EVENT);
     createEAttribute(eventEClass, EVENT__EVENT_NAME);
@@ -633,10 +726,19 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
     initEAttribute(getBooleanVariable_Variable(), ecorePackage.getEString(), "variable", null, 0, 1, BooleanVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableConditionEClass, VariableCondition.class, "VariableCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVariableCondition_Variable(), ecorePackage.getEString(), "variable", null, 0, 1, VariableCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariableCondition_Expression_left(), this.getEXPRESSION(), null, "expression_left", null, 0, 1, VariableCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVariableCondition_Relation(), ecorePackage.getEString(), "relation", null, 0, 1, VariableCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVariableCondition_Value(), ecorePackage.getEInt(), "value", null, 0, 1, VariableCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVariableCondition_RightVariable(), ecorePackage.getEString(), "rightVariable", null, 0, 1, VariableCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariableCondition_Expression_right(), this.getEXPRESSION(), null, "expression_right", null, 0, 1, VariableCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(expressionEClass, org.correttouml.grammars.booleanExpressions.EXPRESSION.class, "EXPRESSION", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEXPRESSION_FirstTerm(), this.getTERM(), null, "firstTerm", null, 0, 1, org.correttouml.grammars.booleanExpressions.EXPRESSION.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEXPRESSION_Operator(), ecorePackage.getEString(), "operator", null, 0, 1, org.correttouml.grammars.booleanExpressions.EXPRESSION.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEXPRESSION_SecondTerm(), this.getTERM(), null, "secondTerm", null, 0, 1, org.correttouml.grammars.booleanExpressions.EXPRESSION.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEXPRESSION_Alone(), this.getTERM(), null, "alone", null, 0, 1, org.correttouml.grammars.booleanExpressions.EXPRESSION.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(termEClass, org.correttouml.grammars.booleanExpressions.TERM.class, "TERM", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTERM_Variable(), ecorePackage.getEString(), "variable", null, 0, 1, org.correttouml.grammars.booleanExpressions.TERM.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTERM_Constant(), ecorePackage.getEInt(), "constant", null, 0, 1, org.correttouml.grammars.booleanExpressions.TERM.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(eventEClass, Event.class, "Event", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEvent_EventName(), ecorePackage.getEString(), "eventName", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -362,13 +362,13 @@ public interface BooleanExpressionsPackage extends EPackage
   int VARIABLE_CONDITION = 7;
 
   /**
-   * The feature id for the '<em><b>Variable</b></em>' attribute.
+   * The feature id for the '<em><b>Expression left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE_CONDITION__VARIABLE = 0;
+  int VARIABLE_CONDITION__EXPRESSION_LEFT = 0;
 
   /**
    * The feature id for the '<em><b>Relation</b></em>' attribute.
@@ -380,22 +380,13 @@ public interface BooleanExpressionsPackage extends EPackage
   int VARIABLE_CONDITION__RELATION = 1;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Expression right</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE_CONDITION__VALUE = 2;
-
-  /**
-   * The feature id for the '<em><b>Right Variable</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_CONDITION__RIGHT_VARIABLE = 3;
+  int VARIABLE_CONDITION__EXPRESSION_RIGHT = 2;
 
   /**
    * The number of structural features of the '<em>Variable Condition</em>' class.
@@ -404,7 +395,99 @@ public interface BooleanExpressionsPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_CONDITION_FEATURE_COUNT = 4;
+  int VARIABLE_CONDITION_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.correttouml.grammars.booleanExpressions.impl.EXPRESSIONImpl <em>EXPRESSION</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.correttouml.grammars.booleanExpressions.impl.EXPRESSIONImpl
+   * @see org.correttouml.grammars.booleanExpressions.impl.BooleanExpressionsPackageImpl#getEXPRESSION()
+   * @generated
+   */
+  int EXPRESSION = 8;
+
+  /**
+   * The feature id for the '<em><b>First Term</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__FIRST_TERM = 0;
+
+  /**
+   * The feature id for the '<em><b>Operator</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__OPERATOR = 1;
+
+  /**
+   * The feature id for the '<em><b>Second Term</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__SECOND_TERM = 2;
+
+  /**
+   * The feature id for the '<em><b>Alone</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__ALONE = 3;
+
+  /**
+   * The number of structural features of the '<em>EXPRESSION</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link org.correttouml.grammars.booleanExpressions.impl.TERMImpl <em>TERM</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.correttouml.grammars.booleanExpressions.impl.TERMImpl
+   * @see org.correttouml.grammars.booleanExpressions.impl.BooleanExpressionsPackageImpl#getTERM()
+   * @generated
+   */
+  int TERM = 9;
+
+  /**
+   * The feature id for the '<em><b>Variable</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__VARIABLE = 0;
+
+  /**
+   * The feature id for the '<em><b>Constant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__CONSTANT = 1;
+
+  /**
+   * The number of structural features of the '<em>TERM</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.correttouml.grammars.booleanExpressions.impl.EventImpl <em>Event</em>}' class.
@@ -414,7 +497,7 @@ public interface BooleanExpressionsPackage extends EPackage
    * @see org.correttouml.grammars.booleanExpressions.impl.BooleanExpressionsPackageImpl#getEvent()
    * @generated
    */
-  int EVENT = 8;
+  int EVENT = 10;
 
   /**
    * The feature id for the '<em><b>Event Name</b></em>' attribute.
@@ -732,15 +815,15 @@ public interface BooleanExpressionsPackage extends EPackage
   EClass getVariableCondition();
 
   /**
-   * Returns the meta object for the attribute '{@link org.correttouml.grammars.booleanExpressions.VariableCondition#getVariable <em>Variable</em>}'.
+   * Returns the meta object for the containment reference '{@link org.correttouml.grammars.booleanExpressions.VariableCondition#getExpression_left <em>Expression left</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Variable</em>'.
-   * @see org.correttouml.grammars.booleanExpressions.VariableCondition#getVariable()
+   * @return the meta object for the containment reference '<em>Expression left</em>'.
+   * @see org.correttouml.grammars.booleanExpressions.VariableCondition#getExpression_left()
    * @see #getVariableCondition()
    * @generated
    */
-  EAttribute getVariableCondition_Variable();
+  EReference getVariableCondition_Expression_left();
 
   /**
    * Returns the meta object for the attribute '{@link org.correttouml.grammars.booleanExpressions.VariableCondition#getRelation <em>Relation</em>}'.
@@ -754,26 +837,101 @@ public interface BooleanExpressionsPackage extends EPackage
   EAttribute getVariableCondition_Relation();
 
   /**
-   * Returns the meta object for the attribute '{@link org.correttouml.grammars.booleanExpressions.VariableCondition#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link org.correttouml.grammars.booleanExpressions.VariableCondition#getExpression_right <em>Expression right</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.correttouml.grammars.booleanExpressions.VariableCondition#getValue()
+   * @return the meta object for the containment reference '<em>Expression right</em>'.
+   * @see org.correttouml.grammars.booleanExpressions.VariableCondition#getExpression_right()
    * @see #getVariableCondition()
    * @generated
    */
-  EAttribute getVariableCondition_Value();
+  EReference getVariableCondition_Expression_right();
 
   /**
-   * Returns the meta object for the attribute '{@link org.correttouml.grammars.booleanExpressions.VariableCondition#getRightVariable <em>Right Variable</em>}'.
+   * Returns the meta object for class '{@link org.correttouml.grammars.booleanExpressions.EXPRESSION <em>EXPRESSION</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Right Variable</em>'.
-   * @see org.correttouml.grammars.booleanExpressions.VariableCondition#getRightVariable()
-   * @see #getVariableCondition()
+   * @return the meta object for class '<em>EXPRESSION</em>'.
+   * @see org.correttouml.grammars.booleanExpressions.EXPRESSION
    * @generated
    */
-  EAttribute getVariableCondition_RightVariable();
+  EClass getEXPRESSION();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.correttouml.grammars.booleanExpressions.EXPRESSION#getFirstTerm <em>First Term</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>First Term</em>'.
+   * @see org.correttouml.grammars.booleanExpressions.EXPRESSION#getFirstTerm()
+   * @see #getEXPRESSION()
+   * @generated
+   */
+  EReference getEXPRESSION_FirstTerm();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.correttouml.grammars.booleanExpressions.EXPRESSION#getOperator <em>Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Operator</em>'.
+   * @see org.correttouml.grammars.booleanExpressions.EXPRESSION#getOperator()
+   * @see #getEXPRESSION()
+   * @generated
+   */
+  EAttribute getEXPRESSION_Operator();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.correttouml.grammars.booleanExpressions.EXPRESSION#getSecondTerm <em>Second Term</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Second Term</em>'.
+   * @see org.correttouml.grammars.booleanExpressions.EXPRESSION#getSecondTerm()
+   * @see #getEXPRESSION()
+   * @generated
+   */
+  EReference getEXPRESSION_SecondTerm();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.correttouml.grammars.booleanExpressions.EXPRESSION#getAlone <em>Alone</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Alone</em>'.
+   * @see org.correttouml.grammars.booleanExpressions.EXPRESSION#getAlone()
+   * @see #getEXPRESSION()
+   * @generated
+   */
+  EReference getEXPRESSION_Alone();
+
+  /**
+   * Returns the meta object for class '{@link org.correttouml.grammars.booleanExpressions.TERM <em>TERM</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>TERM</em>'.
+   * @see org.correttouml.grammars.booleanExpressions.TERM
+   * @generated
+   */
+  EClass getTERM();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.correttouml.grammars.booleanExpressions.TERM#getVariable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Variable</em>'.
+   * @see org.correttouml.grammars.booleanExpressions.TERM#getVariable()
+   * @see #getTERM()
+   * @generated
+   */
+  EAttribute getTERM_Variable();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.correttouml.grammars.booleanExpressions.TERM#getConstant <em>Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Constant</em>'.
+   * @see org.correttouml.grammars.booleanExpressions.TERM#getConstant()
+   * @see #getTERM()
+   * @generated
+   */
+  EAttribute getTERM_Constant();
 
   /**
    * Returns the meta object for class '{@link org.correttouml.grammars.booleanExpressions.Event <em>Event</em>}'.
@@ -1066,12 +1224,12 @@ public interface BooleanExpressionsPackage extends EPackage
     EClass VARIABLE_CONDITION = eINSTANCE.getVariableCondition();
 
     /**
-     * The meta object literal for the '<em><b>Variable</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Expression left</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VARIABLE_CONDITION__VARIABLE = eINSTANCE.getVariableCondition_Variable();
+    EReference VARIABLE_CONDITION__EXPRESSION_LEFT = eINSTANCE.getVariableCondition_Expression_left();
 
     /**
      * The meta object literal for the '<em><b>Relation</b></em>' attribute feature.
@@ -1082,20 +1240,80 @@ public interface BooleanExpressionsPackage extends EPackage
     EAttribute VARIABLE_CONDITION__RELATION = eINSTANCE.getVariableCondition_Relation();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Expression right</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VARIABLE_CONDITION__VALUE = eINSTANCE.getVariableCondition_Value();
+    EReference VARIABLE_CONDITION__EXPRESSION_RIGHT = eINSTANCE.getVariableCondition_Expression_right();
 
     /**
-     * The meta object literal for the '<em><b>Right Variable</b></em>' attribute feature.
+     * The meta object literal for the '{@link org.correttouml.grammars.booleanExpressions.impl.EXPRESSIONImpl <em>EXPRESSION</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.correttouml.grammars.booleanExpressions.impl.EXPRESSIONImpl
+     * @see org.correttouml.grammars.booleanExpressions.impl.BooleanExpressionsPackageImpl#getEXPRESSION()
+     * @generated
+     */
+    EClass EXPRESSION = eINSTANCE.getEXPRESSION();
+
+    /**
+     * The meta object literal for the '<em><b>First Term</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VARIABLE_CONDITION__RIGHT_VARIABLE = eINSTANCE.getVariableCondition_RightVariable();
+    EReference EXPRESSION__FIRST_TERM = eINSTANCE.getEXPRESSION_FirstTerm();
+
+    /**
+     * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSION__OPERATOR = eINSTANCE.getEXPRESSION_Operator();
+
+    /**
+     * The meta object literal for the '<em><b>Second Term</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION__SECOND_TERM = eINSTANCE.getEXPRESSION_SecondTerm();
+
+    /**
+     * The meta object literal for the '<em><b>Alone</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION__ALONE = eINSTANCE.getEXPRESSION_Alone();
+
+    /**
+     * The meta object literal for the '{@link org.correttouml.grammars.booleanExpressions.impl.TERMImpl <em>TERM</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.correttouml.grammars.booleanExpressions.impl.TERMImpl
+     * @see org.correttouml.grammars.booleanExpressions.impl.BooleanExpressionsPackageImpl#getTERM()
+     * @generated
+     */
+    EClass TERM = eINSTANCE.getTERM();
+
+    /**
+     * The meta object literal for the '<em><b>Variable</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TERM__VARIABLE = eINSTANCE.getTERM_Variable();
+
+    /**
+     * The meta object literal for the '<em><b>Constant</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TERM__CONSTANT = eINSTANCE.getTERM_Constant();
 
     /**
      * The meta object literal for the '{@link org.correttouml.grammars.booleanExpressions.impl.EventImpl <em>Event</em>}' class.

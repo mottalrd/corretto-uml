@@ -37,8 +37,20 @@ BooleanVariable:
 ;
 
 VariableCondition:
-	'{' variable=ID  relation=RELATIONS (value=INT | rightVariable=ID) '}'
+	'{' expression_left=EXPRESSION relation=RELATIONS expression_right=EXPRESSION '}'
 ;
+
+EXPRESSION:
+	firstTerm=TERM operator=OPERATOR secondTerm=TERM | alone=TERM
+;
+
+TERM:
+	variable=ID | constant=INT
+;
+
+terminal OPERATOR:
+	//TODO: the minus does not work
+	'+' | '*' | '--';
 
 Event:
 	(eventName=ID '.' eventExtension=EventExtensions) | (nowEvent ?= 'now') 
