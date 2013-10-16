@@ -57,6 +57,18 @@ public class Predicate implements Atom{
         return predicatename;
     }
 
+    public Predicate getPredicateStart(){
+    	return new Predicate(getPredicateName()+"_Start");
+    }
+    
+    public Predicate getPredicateEnd(){
+    	return new Predicate(getPredicateName()+"_End");
+    }
+    
+    public Predicate getPredicateStop(){
+    	return new Predicate(getPredicateName()+"_Stop");
+    }
+    
     @Override
     public String toString() {
         return "(-P- " +predicatename+ ")";

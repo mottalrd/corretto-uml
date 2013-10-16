@@ -46,7 +46,7 @@ public class STimeConstraint{
 		if(mades_ti.getContext() instanceof SequenceDiagram){
 			SSequenceDiagram sd = new SSequenceDiagram((SequenceDiagram) mades_ti.getContext());
 			Predicate sd_Predicate = sd.getPredicate();
-			Predicate sd_Start_Predicate = sd.getPredicateStart();
+			Predicate sd_Start_Predicate = sd.getPredicate().getPredicateStart();
 			if(!mades_ti.isEvent2Now()){
 				switch(mades_ti.getTimeOperator()){
 				case EQ:{

@@ -12,11 +12,12 @@ import org.correttouml.uml.helpers.UML2ModelHelper;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.uml2.uml.InstanceSpecification;
+import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.MessageOccurrenceSpecification;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
-public class Message implements PTermElement{
+public class Message implements PTermElement {
 
 	private org.eclipse.uml2.uml.Message uml_message;
 
@@ -60,8 +61,16 @@ public class Message implements PTermElement{
 	}
 	
 	public SequenceDiagram getSequenceDiagram() {
-		return new SequenceDiagram(this.uml_message.getInteraction());
+		org.eclipse.uml2.uml.InteractionFragment tempif = (org.eclipse.uml2.uml.InteractionFragment)uml_message.getInteraction();
+		while (tempif.getEnclosingInteraction() != null){
+			tempif = tempif.getEnclosingInteraction();
+		}
+		return new SequenceDiagram((Interaction)tempif);
 	}
+	
+//	public SequenceDiagram getSequenceDiagram() {
+//		return new SequenceDiagram(this.uml_message.getInteraction());
+//	}
 	
 	public boolean hasTimedEventStereotype() {
 		return UML2ModelHelper.hasStereotype(this.uml_message, "TimedEvent");

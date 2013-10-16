@@ -1,5 +1,6 @@
 package org.correttouml.uml2zot.semantics.sequencediagram;
 
+import org.correttouml.uml.diagrams.sequencediagram.CombinedFragment;
 import org.correttouml.uml.diagrams.sequencediagram.ExecutionOccurrenceEnd;
 import org.correttouml.uml.diagrams.sequencediagram.ExecutionOccurrenceStart;
 import org.correttouml.uml.diagrams.sequencediagram.InteractionFragment;
@@ -21,6 +22,8 @@ public class SInteractionFragmentFactory {
 		if(mades_if instanceof ExecutionOccurrenceEnd){
 			return new SExecutionOccurrenceEnd((ExecutionOccurrenceEnd)mades_if);
 		}
+		if(mades_if instanceof CombinedFragment) ////###test me
+			return new SCombinedFragment((CombinedFragment) mades_if);
 		return null;
 	}
 	

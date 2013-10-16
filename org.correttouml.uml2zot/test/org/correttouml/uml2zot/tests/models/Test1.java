@@ -5,22 +5,36 @@ import static org.junit.Assert.assertTrue;
 import java.io.File;
 
 import org.apache.log4j.Logger;
+import org.correttouml.uml.diagrams.sequencediagram.CombinedFragment;
 import org.correttouml.uml2zot.UML2Zot;
+import org.correttouml.uml2zot.semantics.sequencediagram.SBorders;
+import org.correttouml.uml2zot.semantics.sequencediagram.SOrder;
+import org.correttouml.uml2zot.semantics.util.bool.Atom;
+import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
+import org.correttouml.uml2zot.semantics.util.bool.Or;
 import org.correttouml.uml2zot.tests.TestHelper;
 import org.junit.Test;
 
-public class Test1 {
+import org.correttouml.uml2zot.semantics.util.bool.Or;
+import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 
+
+public class Test1 {
 	private static final Logger LOGGER = Logger.getLogger(Test1.class); 
-	
 	/** THE CCAS MODEL */
 	//private String MODEL_FILE="testmodels/ccas/v0.1/model.uml";
 	//private String MODEL_FILE="testmodels/ccas/v0.2/model.uml";
 	//private String MODEL_FILE="testmodels/plugin/model.uml";
 	
-	/** Mehdi */
+	//###<del me>
+//	String concurrent=new SOrder(new Predicate("ev1"),new Predicate("ev2"), new Or(new Predicate("sd_stop"),new Predicate("sd_end")), true).toString();
+//	String noConcurrent=new SOrder(new Predicate("ev1"),new Predicate("ev2"), new Or(new Predicate("sd_stop"),new Predicate("sd_end")), false).toString();
+//	String borders = new SBorders(new Predicate("sd1"), new Or(new Predicate("sd1_Stop"),new Predicate("sd1_end"))).toString();
+	//###</del me>
+	
+	/** SD_CF */
 //	private String MODEL_FILE="testmodels/MehdiTest6/model.uml";
-	private String MODEL_FILE="testmodels/SD_IF/model.uml";
+	private String MODEL_FILE="testmodels/SD_CF/SD_IF/model.uml";
 	
 	
 	/** SEQUENCE DIAGRAM TESTING */
@@ -65,6 +79,13 @@ public class Test1 {
 
 	@Test
 	public void TestModel() throws Exception {
+//		<test del>
+//		String prdID = UML2Zot.Utility.umlIDtoPrdID("_Ab~C-");
+//		String aaaa = UML2Zot.Utility.prdIDtoUMLID(prdID);
+//		SOrder so = new SOrder(new Predicate("ev1"), new Predicate("ev2"), new Predicate("guard"), new Predicate("exception"), true);
+//		aaaa = so.toString();
+//		</test del>
+				
 		LOGGER.info("Testing "+this.MODEL_FILE);
 		
 		LOGGER.info("Generate the ZOT File");

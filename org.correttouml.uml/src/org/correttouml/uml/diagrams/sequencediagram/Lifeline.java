@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.correttouml.uml.diagrams.classdiagram.Object;
+import org.eclipse.uml2.uml.GeneralOrdering;
 
 public class Lifeline {
 
@@ -23,14 +24,30 @@ public class Lifeline {
 		for(org.eclipse.uml2.uml.InteractionFragment ifr: sd_fragment){
 			if(uml_lifeline.getCoveredBys().contains(ifr)){
 				//FIXME: Please do not ignore ActionExecutionSpecification and BehaviorExecutionSpecification
-				if(!(ifr instanceof org.eclipse.uml2.uml.ActionExecutionSpecification) && !(ifr instanceof org.eclipse.uml2.uml.BehaviorExecutionSpecification)){
-					events.add(InteractionFragmentFactory.getInstance(ifr));			
-				}
+				//
+				////<##del me>
+//				if (ifr instanceof org.eclipse.uml2.uml.CombinedFragment){
+//					CombinedFragment cf = new CombinedFragment((org.eclipse.uml2.uml.CombinedFragment)ifr);
+//					org.eclipse.uml2.uml.Interaction fffff= cf.getEnclosingFragment();
+//					fffff.getFragments();
+//					String adsfs = "sfd";
+//				}
+				////</###del me>
+				events.add(InteractionFragmentFactory.getInstance(ifr)); //keep only this for new version
+				//
+				//if(!(ifr instanceof org.eclipse.uml2.uml.ActionExecutionSpecification) && !(ifr instanceof org.eclipse.uml2.uml.BehaviorExecutionSpecification)){ 
+//				<old version>
+//					if (!(ifr instanceof org.eclipse.uml2.uml.CombinedFragment)
+//						&& !(ifr instanceof org.eclipse.uml2.uml.ActionExecutionSpecification)
+//						&& !(ifr instanceof org.eclipse.uml2.uml.BehaviorExecutionSpecification)) {
+//					events.add(InteractionFragmentFactory.getInstance(ifr));
+//				}
+//					</old version>
 			}
 		}
-		
 		return events;
 	}
+	
 
 	public SequenceDiagram getSequenceDiagram() {
 		return new SequenceDiagram(uml_lifeline.getInteraction());

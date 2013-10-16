@@ -4,6 +4,7 @@ package org.correttouml.uml2zot.semantics.iod;
 import java.util.Collection;
 import java.util.Iterator;
 
+import org.correttouml.uml.MadesModel;
 import org.correttouml.uml.diagrams.events.Event;
 import org.correttouml.uml.diagrams.iod.AcceptEventAction;
 import org.correttouml.uml.diagrams.iod.ControlFlow;
@@ -17,6 +18,7 @@ import org.correttouml.uml.diagrams.iod.JoinNode;
 import org.correttouml.uml.diagrams.iod.MergeNode;
 import org.correttouml.uml.diagrams.iod.Node;
 import org.correttouml.uml.diagrams.iod.SequenceDiagramNode;
+import org.correttouml.uml2zot.UML2Zot;
 import org.correttouml.uml2zot.semantics.SMadesModel;
 import org.correttouml.uml2zot.semantics.events.SEvent;
 import org.correttouml.uml2zot.semantics.events.SEventFactory;
@@ -46,7 +48,8 @@ public class SIOD {
 	}
 	
 	public Predicate getEndPredicate(){
-		return new Predicate("IOD"+mades_iod.getUMLId().replace("-", "_")+"_END");
+	//	return new Predicate("IOD"+mades_iod.getUMLId().replace("-", "_")+"_END");
+		return new Predicate("IOD"+ UML2Zot.Utility.umlIDtoPrdID(mades_iod.getUMLId()) + "_END");
 	}
 	
     private BooleanFormulae RC(Node curr, Node prec) {
