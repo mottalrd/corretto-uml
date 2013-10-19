@@ -21,7 +21,7 @@ public class InteractionOperand implements InteractionFragment, PTermElement {
 	}
 
 	public String getPredicateName() {// ####test me
-		return new CombinedFragment((org.eclipse.uml2.uml.CombinedFragment)uml_interactionoperand.getOwner()).getPredicateName();
+		return new CombinedFragment((org.eclipse.uml2.uml.CombinedFragment)uml_interactionoperand.getOwner()).getPredicateName() + "_" + uml_interactionoperand.getName();
 	}
 	
 	public String getSDName(){
@@ -59,10 +59,14 @@ public class InteractionOperand implements InteractionFragment, PTermElement {
 		ArrayList<InteractionFragment> events = new ArrayList<InteractionFragment>();
 		List<org.eclipse.uml2.uml.InteractionFragment> f = uml_interactionoperand.getFragments();
 		for (org.eclipse.uml2.uml.InteractionFragment ifr : f) 
-//			if (ifr.getCovereds().contains (getLifelines().get(index)))
 			for (org.eclipse.uml2.uml.Lifeline l : ifr.getCovereds())
 				if (getLifelinesNames().get(index) == l.getName())
 					events.add(InteractionFragmentFactory.getInstance(ifr));
 		return events;
 	}
+
+	public String getGuard(){
+		return (uml_interactionoperand.getGuard().getName() == null) ? "": uml_interactionoperand.getGuard().getName();
+	}
+	
 }

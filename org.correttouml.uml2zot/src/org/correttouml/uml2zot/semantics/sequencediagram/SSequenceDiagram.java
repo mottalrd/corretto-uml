@@ -38,29 +38,15 @@ import org.correttouml.uml2zot.semantics.util.trio.Since_ei;
 import org.correttouml.uml2zot.semantics.util.trio.Until_ei;
 
 public class SSequenceDiagram {
-	public enum combine{SYNC, WS}
-	public enum loop{SYNC, WS}
-	public enum what{NONDETERMINISTICALLY, FIRSTOP}
+	
 	public Config config;
-	public static class Config {
-		public combine combine = SSequenceDiagram.combine.SYNC;
-		public loop loop = SSequenceDiagram.loop.SYNC;
-		public what what = SSequenceDiagram.what.NONDETERMINISTICALLY;
-		
-		public Config(combine combine, loop loop, what what){
-			this.combine = combine;
-			this.loop = loop;
-			this.what = what;
-		}
-	}
 	private SequenceDiagram mades_sd;
 
 	public SSequenceDiagram(SequenceDiagram mades_sd, Config config) {
 		this.mades_sd = mades_sd;
 		this.config = config;
-//		new SCombine(this.mades_sd, config).getFormula();
-//		ArrayList<SCombinedFragment> aaaaaaa = this.getSCombinedFragments();
 	}
+	
 	public SSequenceDiagram(SequenceDiagram mades_sd) {
 		this.mades_sd = mades_sd;
 	}
@@ -105,12 +91,12 @@ public class SSequenceDiagram {
 		ArrayList<CombinedFragment> cfs = mades_sd.getCombinedFragments();
 		ArrayList<SCombinedFragment> scfs = new ArrayList<SCombinedFragment>();
 		for(CombinedFragment cf : cfs){
-			scfs.add(new SCombinedFragment(cf));
+			scfs.add(new SCombinedFragment(cf, config));
 		}
 
 		return scfs;
 	}
-	
+
 	public String getSemantics() {
 		String sem = "";
 
@@ -119,9 +105,10 @@ public class SSequenceDiagram {
 		Predicate sd_stop=new Predicate(this.mades_sd.getName()).getPredicateStop();
 		Predicate sd = new Predicate(this.mades_sd.getName());
 		
+	/*<before CF>	
 		// Inside sequence diagram definition
 		sem = sem + new Iff(sd, new Or(sd_start, new Since_ei(new And(new Not(sd_stop), new Not(sd_end)), sd_start))) + "\n";
-
+		</before CF>*/
 		// Close world assumption semantics
 		sem = sem + SMadesModel.printSeparatorSmall("SD CONNECTIONS SEMANTICS");
 		sem = sem + this.getConnectionsSemantics(sd_start, sd_end);
@@ -131,13 +118,13 @@ public class SSequenceDiagram {
 		sem = sem + SMadesModel.printSeparatorSmall("MULTI SEQUENCE DIAGRAM INSTANCE SEMANTICS");
 		sem = sem + new Implies(sd_start, new Until_ei(new Not(sd_start), new Or(sd_stop, sd_end)))+"\n";
 
-		////###old version
+		/*<before CF>
 		// Get start semantics
 		sem = sem + SMadesModel.printSeparatorSmall("START SEMANTICS");
 		for (Lifeline l : this.mades_sd.getLifelines()) {
 			if (l.getEvents().size() > 0) {
 				Predicate firstEvent = SInteractionFragmentFactory.getInstance(
-						l.getEvents().get(0)).getPredicate();
+						l.getEvents().get(0), config).getPredicate();
 				sem = sem
 						+ buildOrderingSemanticsLTEAxiom(sd_start, firstEvent,
 								sd_stop) + "\n";
@@ -152,7 +139,7 @@ public class SSequenceDiagram {
 		HashSet<Predicate> lastevents = new HashSet<Predicate>();
 		for (Lifeline l : this.mades_sd.getLifelines()) {
 			if(l.getEvents().size()>0){
-				Predicate lastEvent=SInteractionFragmentFactory.getInstance(l.getEvents().get(l.getEvents().size()-1)).getPredicate();
+				Predicate lastEvent=SInteractionFragmentFactory.getInstance(l.getEvents().get(l.getEvents().size()-1), config).getPredicate();
 				lastevents.add(lastEvent);
 				sem = sem + buildOrderingSemanticsLTEAxiom(lastEvent, sd_end, sd_stop) + "\n";
 				sem = sem + buildOrderingSemanticsBackwardAxiom(lastEvent, sd_end, sd_stop) + "\n";
@@ -165,8 +152,15 @@ public class SSequenceDiagram {
 		for (Lifeline l : this.mades_sd.getLifelines()) {
 			sem = sem + new SLifeline(l).getSemantics();
 		}
+		}
+		</before CF>*/
 
-		// get messages semantics
+		
+		//get sequence diagram fragments semantics
+		sem = sem + SMadesModel.printSeparatorSmall("FRAGMENTS SEMANTICS");
+		sem += new SCombine(this.mades_sd, config).toString();
+
+		//get messages semantics
 		sem = sem + SMadesModel.printSeparatorSmall("MESSAGES SEMANTICS");
 		for (Message m : this.mades_sd.getMessages()) {
 			sem = sem + new SMessage(m).getSemantics();
@@ -289,38 +283,39 @@ public class SSequenceDiagram {
 		return sem;
 	}
 
-	protected static BooleanFormulae buildOrderingSemanticsLTEAxiom(Predicate e_i,
+
+	/*protected static BooleanFormulae buildOrderingSemanticsLTEAxiom(Predicate e_i,
 			Predicate e_j, Predicate sd_stop) {
 		And sem = new And();
-		
+
 		// Axiom Event1
-		/*
+		
 		 * @AXIOM If the first event occurs now then either the sequence diagram
 		 * stops before the second event, or the second events occurs
 		 * \begin{align} \label{ax:LTEAxiom} prova \end{align}
-		 */
+		 
 		sem.addFormulae(new Implies(e_i, new Or(new And(new Until_ei(new And(
 				new Not(e_i), new Not(e_j)), sd_stop), new Not(e_j)),
 				new Until_ei(new Not(sd_stop), e_j))));
 
 		return sem;
-	}
+	}*/
 
-	protected static BooleanFormulae buildOrderingSemanticsBackwardAxiom(Predicate e_i,
+	/*protected static BooleanFormulae buildOrderingSemanticsBackwardAxiom(Predicate e_i,
 			Predicate e_j, Predicate sd_stop) {
 		And sem = new And();
 		
 		// Axiom Event2
-		/*
+		
 		 * @AXIOM Given two events in a lifeline this could be separated by an
 		 * arbitrary amount of time\\ The events may happen at the same time
 		 * instant \begin{align} \label{ax:BackwardAxiom} prova \end{align}
-		 */
+		 
 		sem.addFormulae(new Implies(e_j, new Since_ei(new And(new Not(sd_stop),
 				new Not(e_j)), e_i)));
 
 		return sem;
-	}
+	}*/
 
 	protected static BooleanFormulae buildOrderingSemanticsSDEndAxiom(Predicate e_z, Set<Predicate> lastevents) {
 		And sem = new And();
@@ -367,7 +362,7 @@ public class SSequenceDiagram {
 		int counter=0;
 		for (TimeConstraint t : mades_sd.getTimeConstraints()) {
 			counter++;
-			SSequenceDiagram sd = new SSequenceDiagram(mades_sd);
+			SSequenceDiagram sd = new SSequenceDiagram(mades_sd, config);
 			sem += new Iff(new Predicate(mades_sd.getName() + "_TIMECONSTRAINT_" + counter), new STimeConstraint(t).getSemantics()) +"\n";
 			sem += new Implies(sd.getPredicate(), new Predicate(mades_sd.getName() + "_TIMECONSTRAINT_" + counter)) + "\n";
 		}

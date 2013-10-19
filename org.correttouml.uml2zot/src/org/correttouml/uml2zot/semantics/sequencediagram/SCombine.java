@@ -4,13 +4,12 @@ package org.correttouml.uml2zot.semantics.sequencediagram;
 import java.util.ArrayList;
 
 import org.correttouml.uml.diagrams.sequencediagram.*;
-import org.correttouml.uml.diagrams.sequencediagram.InteractionOperand;
-import org.correttouml.uml2zot.semantics.sequencediagram.SSequenceDiagram.Config;
 import org.correttouml.uml2zot.semantics.sequencediagram.SInteractionOperand;
 import org.correttouml.uml2zot.semantics.util.bool.And;
 import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
 import org.correttouml.uml2zot.semantics.util.bool.Iff;
 import org.correttouml.uml2zot.semantics.util.bool.Implies;
+import org.correttouml.uml2zot.semantics.util.bool.MetaBooleanFormulae;
 import org.correttouml.uml2zot.semantics.util.bool.Or;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 
@@ -20,6 +19,7 @@ import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 
 public class SCombine implements BooleanFormulae{
 	//[documentation]: \Dropbox\SharePolimi\Documentation\Sequence Diagram\Combined_Fragment\Modular_Semantics\[combine].docx
+	private String comment="";
 	private SSequenceDiagram ssd;
 	private SequenceDiagram sd;
 	private InteractionOperand module;
@@ -32,30 +32,45 @@ public class SCombine implements BooleanFormulae{
         this.config = config;
     }
 
+	public SCombine(SequenceDiagram sd, Config config, String comment){
+        this.sd = sd;
+        this.ssd = new SSequenceDiagram(sd, config);
+        this.config = config;
+        this.comment = comment;
+    }
+
 	public SCombine(InteractionOperand module, Config config){
         this.module = module;
         this.smodule = new SInteractionOperand(module);
         this.config = config;
     }
-
+	
+	public SCombine(InteractionOperand module, Config config, String comment){
+        this.module = module;
+        this.smodule = new SInteractionOperand(module);
+        this.config = config;
+        this.comment = comment;
+    }
+	
 	public SCombine(InteractionOperand module){
         this.module = module;
         this.smodule = new SInteractionOperand(module);
     }
 
-	/*
-	 * module <=> (module_Start || since_ei(!!(module_End || exception), module_Start))  //Assures that we have (module = True) when it is active, i.e. some events are happening inside its borders.
-	 * module_Start => until_ei(!!module_Start, (module_End || exception)) //Assures that we cannot have more than one module_Start, when module is true.
-	 */
-
     @Override
 	public String toString() {
-    	return getFormula().toString();
+    	String s = "";
+    	for (BooleanFormulae f: getFormulae()) {
+    		if (f instanceof MetaBooleanFormulae && ((MetaBooleanFormulae) f).getComment()!="")
+    			s += ";;[SCombine]" + ((MetaBooleanFormulae)f).getComment() + "\n";
+    		s += f.toString() + "\n";
+    	}
+    	return s;
 	}
-
-	public ArrayList<BooleanFormulae> getFormula() {
+	
+	public ArrayList<MetaBooleanFormulae> getFormulae() {
 		try {
-			ArrayList<BooleanFormulae> f = new ArrayList<BooleanFormulae>();
+			ArrayList<MetaBooleanFormulae> f = new ArrayList<MetaBooleanFormulae>();
 			// first we consider algorithm for module SD and repeat same algorithm
 			// for module CF_X_Op
 			// //if (module == SD){
@@ -67,9 +82,18 @@ public class SCombine implements BooleanFormulae{
 				Predicate SD_Stop = ssd.getPredicate().getPredicateStop();
 				int n = ssd.getLifelinesPredicates().size(); //n: number of lifelines in the module(or SD)
 				// //borders(module, SD_Stop)
-				// //SD_Start => &&i=1 to nSD_Li_Start
-				f.addAll(new SBorders(SD, SD_Stop).getFormulae());
-				f.add(new Implies(SD_Start, new And(ssd.getLifelinesPredicateStarts())));
+//				f.addAll(new SBorders(SD, SD_Stop).getFormulae());
+				for (BooleanFormulae bf:new SBorders(SD, SD_Stop).getFormulae())
+					f.add((MetaBooleanFormulae)bf);
+				// //&&i=1 to n (SD_Start <=> SD_Li_Start)
+				for (Predicate p : ssd.getLifelinesPredicateStarts())
+					f.add(new Iff(SD_Start, p));
+				// // order(module_Start, module_End, true, SD_Stop, True)
+				f.add((MetaBooleanFormulae)new SOrder(SD_Start, SD_End, SD_Stop, true).getFormula());
+				// // &&i=1 to n (order(module_Li_Start, module_Li_End, True, SD_Stop, True))
+				for (int i = 0; i < n; i++) {
+					f.add((MetaBooleanFormulae)new SOrder(ssd.getLifelinePredicate(i).getPredicateStart(), ssd.getLifelinePredicate(i).getPredicateEnd(), SD_Stop, true).getFormula());
+				}
 
 				for (int i = 0; i < n; i++) {
 					InteractionFragment liFirstEv = null;
@@ -84,7 +108,7 @@ public class SCombine implements BooleanFormulae{
 					Predicate liEvjp1Prd = null;
 					int evSize = sd.getLifelines().get(i).getEvents().size();
 					// // borders(SD_Li, SD_End || SD_Stop)
-					f.add(new SBorders(ssd.getLifelinePredicate(i), new Or(SD_End, SD_Stop)));
+					f.add(new SBorders(ssd.getLifelinePredicate(i), new Or(SD_End, SD_Stop), "Borders of SD lifeline."));
 					// //if (Ev[i].length == 0)
 					if (evSize == 0)
 						// // module_Li_Start <=> module_Li_End
@@ -95,13 +119,13 @@ public class SCombine implements BooleanFormulae{
 						// //gathering information for next line
 						liFirstEv = sd.getLifelines().get(i).getEvents().get(0);
 						if(liFirstEv instanceof MessageStart)
-							liFirstEvPrd = new SMessageStart((MessageStart)liFirstEv).getPredicate().getPredicateStart();
+							liFirstEvPrd = new SMessageStart((MessageStart)liFirstEv).getPredicate();
 						if(liFirstEv instanceof MessageEnd)
-							liFirstEvPrd = new SMessageEnd((MessageEnd)liFirstEv).getPredicate().getPredicateEnd();
+							liFirstEvPrd = new SMessageEnd((MessageEnd)liFirstEv).getPredicate();
 						// // if (Ev[i][0] is message)
 						// // order(module_Li_Start, Ev[i][0], True, SD_Stop, True)
 						if (liFirstEvPrd != null)
-							f.add(new SOrder(ssd.getLifelinePredicate(i).getPredicateStart(), liFirstEvPrd, SD_Stop, true));
+							f.add((MetaBooleanFormulae)new SOrder(ssd.getLifelinePredicate(i).getPredicateStart(), liFirstEvPrd, SD_Stop, true, "[SOrder] order(SD_Li_Start, Ev[i][0] true, SD_Stop, true)").getFormula());
 						// if ((EV[i].length > 1) && (EV[i][1] is message) && (EV[i][0] is message))
 						// order(EV[i][0], EV[i][1], True, SD_Stop, False)
 						if ((evSize > 1) && (liFirstEvPrd != null) && (liSecondEvPrd != null)) {
@@ -110,16 +134,16 @@ public class SCombine implements BooleanFormulae{
 								liSecondEvPrd = new SMessageStart((MessageStart) liSecondEv).getPredicate();
 							if (liSecondEv instanceof MessageEnd)
 								liSecondEvPrd = new SMessageEnd((MessageEnd) liSecondEv).getPredicate();
-							f.add(new SOrder(liFirstEvPrd, liSecondEvPrd,SD_Stop, false));
+							f.add((MetaBooleanFormulae)new SOrder(liFirstEvPrd, liSecondEvPrd,SD_Stop, false, "[SOrder] order(Ev[i][0], Ev[i][1], true, SD_Stop, false)").getFormula());
 						}
-						// // module_Li_End <=> EV[i][EV[i].length-1]	
+						// // module_Li_End <=> EV[i][EV[i].length-1] // in WS and last event = CF_X module_Li_End <=> CF_X_Li_End
 						liLastEv = sd.getLifelines().get(i).getEvents().get(evSize - 1);
 						if(liLastEv instanceof MessageStart)
-							liLastEvPrd = new SMessageStart((MessageStart)liFirstEv).getPredicate().getPredicateStart();
+							liLastEvPrd = new SMessageStart((MessageStart)liFirstEv).getPredicate();
 						if(liLastEv instanceof MessageEnd)
-							liLastEvPrd = new SMessageEnd((MessageEnd)liFirstEv).getPredicate().getPredicateEnd();
+							liLastEvPrd = new SMessageEnd((MessageEnd)liFirstEv).getPredicate();
 						if(liLastEv instanceof CombinedFragment)
-							liLastEvPrd = new SCombinedFragment((CombinedFragment)liLastEv).getPredicate().getPredicateEnd();
+							liLastEvPrd = new SCombinedFragment((CombinedFragment)liLastEv, config).getLifelinesEndPredicates().get(i);
 						f.add(new Iff(ssd.getLifelinePredicate(i).getPredicateEnd(), liLastEvPrd));
 					}
 					// // for (j = 1; j < EV[i].length - 1; j++){
@@ -137,7 +161,7 @@ public class SCombine implements BooleanFormulae{
 						// // if ((EV[i][j] is message) && (EV[i][j + 1] is message))
 						// // order(EV[i][j], EV[i][j + 1], True, (enclosingFragmentPrd_End || SD_Stop || SD_End), False)
 						if (liEvjPrd != null && liEvjp1Prd != null)
-							f.add(new SOrder(liEvjPrd, liEvjp1Prd, SD_Stop, false));
+							f.add((MetaBooleanFormulae)new SOrder(liEvjPrd, liEvjp1Prd, SD_Stop, false, "[SOrder]order(Ev[i][j], Ev[i][j+1], true, SD_Stop, false)").getFormula());
 					}
 				}
 				// // module_End => ((||i=1 to nmodule_Li_End) && (&&i=1 to nsomPIn_i(module_Li_End, module)))
@@ -145,30 +169,38 @@ public class SCombine implements BooleanFormulae{
 				for (int i = 0; i < n; i++) {
 					tmpAnd.addFormulae(new SSomPIn_i(ssd.getLifelinePredicate(i).getPredicateEnd(), ssd.getPredicate()));
 				}
-				f.add(new Implies(SD_End, new And(new Or(ssd.getLifelinesPredicateEnds()), tmpAnd)));
+				f.add(new Implies(SD_End, new And(new Or(ssd.getLifelinesPredicateEnds()), tmpAnd), "module_End => ((||i=1 to nmodule_Li_End) && (&&i=1 to nsomPIn_i(module_Li_End, module)))"));
 				// //for (i = 0; i < n; i++){
 				    // //for (j = 0; j < EV[i].length; j++){
 				        // //if ((EV[i][j] == CF_X) && (history.indexOF != -1)){
 				            // //history.add(CF_X)
 				            // //CF_X(CF_X, enclosingFragmentPrd, CF_X_L_Pre, CF_X_L_Post, config)
 				        // //}}}
-				ArrayList<Integer> history = new ArrayList<Integer>();
+				ArrayList<String> history = new ArrayList<String>();
 				for (int i = 0; i < n; i++){
 					int evSize = sd.getLifelines().get(i).getEvents().size();
 					for (int j = 0; j < evSize ; j++){
-						if (sd.getLifelines().get(i).getEvents().get(j) instanceof CombinedFragment && history.contains(sd.getLifelines().get(i).getEvents().get(j).hashCode())){
+						if (SInteractionFragmentFactory.getInstance(sd.getLifelines().get(i).getEvents().get(j), config) instanceof SCombinedFragment && !history.contains(SInteractionFragmentFactory.getInstance(sd.getLifelines().get(i).getEvents().get(j), config).getPredicate().toString())){
 //							f.addAll(new SCombinedFragment((CombinedFragment)(sd.getLifelines().get(i).getEvents().get(j)), config).getSemantics());
-//							SCombinedFragmentItf SCFItf = (SCombinedFragmentItf)new SCombinedFragment((CombinedFragment)(sd.getLifelines().get(i).getEvents().get(j)), config);
-							
-							f.addAll(SCombinedFragmentFactory.getInstance(CombinedFragmentFactory.getInstance(uml_combinedfragment)) .getSemantics());
-							history.add(sd.getLifelines().get(i).getEvents().get(j).hashCode());
+//							f.addAll(SCombinedFragmentFactory.getInstance((CombinedFragmentItf)sd.getLifelines().get(i).getEvents().get(j), config).getSemantics());
+							for (BooleanFormulae bf: SCombinedFragmentFactory.getInstance((CombinedFragmentItf)sd.getLifelines().get(i).getEvents().get(j), config).getSemantics()) 
+								f.add((MetaBooleanFormulae)bf);
+							history.add(SInteractionFragmentFactory.getInstance(sd.getLifelines().get(i).getEvents().get(j), config).getPredicate().toString());
 						}
 				   	}
 				}
 			}
 			
 			if(module != null) {///////////////////////////////////////////////////////////////////////////////////////////////////////////
+				Predicate SD_Stop = smodule.getSDPredicate().getPredicateStop();
 				int n = module.getLifelines().size(); //n: number of lifelines in the module(or SD)
+				// // order(module_Start, module_End, true, SD_Stop, True)
+				f.add((MetaBooleanFormulae)new SOrder(smodule.getPredicate().getPredicateStart(), smodule.getPredicate().getPredicateEnd(), SD_Stop, true).getFormula());
+				// // &&i=1 to n (order(module_Li_Start, module_Li_End, True, SD_Stop, True))
+				for (int i = 0; i < n; i++) {
+					f.add((MetaBooleanFormulae)new SOrder(smodule.getLifelinePredicate(i).getPredicateStart(), smodule.getLifelinePredicate(i).getPredicateEnd(), SD_Stop, true).getFormula());
+				}
+
 				for (int i = 0; i < n; i++) {
 					InteractionFragment liFirstEv = null;
 					InteractionFragment liSecondEv = null;
@@ -180,7 +212,6 @@ public class SCombine implements BooleanFormulae{
 					Predicate liLastEvPrd = null;
 					Predicate liEvjPrd = null;
 					Predicate liEvjp1Prd = null;
-					Predicate SD_Stop = smodule.getSDPredicate().getPredicateStop();
 					int evSize = module.getLifelineEvents(i).size();
 					// //if (Ev[i].length == 0)
 					if (evSize == 0)
@@ -200,7 +231,7 @@ public class SCombine implements BooleanFormulae{
 						// // if (Ev[i][0] is message)
 						// // order(module_Li_Start, Ev[i][0], True, SD_Stop, True)
 						if (liFirstEvPrd != null)
-							f.add(new SOrder(smodule.getLifelinePredicate(i).getPredicateStart(), liFirstEvPrd, SD_Stop, true));
+							f.add((MetaBooleanFormulae)new SOrder(smodule.getLifelinePredicate(i).getPredicateStart(), liFirstEvPrd, SD_Stop, true, "[SOrder] order(SD_Li_Start, Ev[i][0] true, SD_Stop, true)").getFormula());
 						// if ((EV[i].length > 1) && (EV[i][1] is message) && (EV[i][0] is message))
 						// order(EV[i][0], EV[i][1], True, SD_Stop, False)
 						if ((evSize > 1) && (liFirstEvPrd != null) && (liSecondEvPrd != null)){
@@ -209,16 +240,16 @@ public class SCombine implements BooleanFormulae{
 								liSecondEvPrd = new SMessageStart((MessageStart)liSecondEv).getPredicate().getPredicateStart();
 							if(liSecondEv instanceof MessageEnd)
 								liSecondEvPrd = new SMessageEnd((MessageEnd)liSecondEv).getPredicate().getPredicateEnd();
-							f.add(new SOrder(liFirstEvPrd, liSecondEvPrd, SD_Stop, false));
+							f.add((MetaBooleanFormulae)new SOrder(liFirstEvPrd, liSecondEvPrd, SD_Stop, false, "[SOrder] order(Ev[i][0], Ev[i][1], true, SD_Stop, false)").getFormula());
 						}
-						// // module_Li_End <=> EV[i][EV[i].length-1]	
+						// // module_Li_End <=> EV[i][EV[i].length-1]	//in SYNC and last event = CF_X module_Li_End <=> CF_X_End 
 						liLastEv = module.getLifelineEvents(i).get(evSize - 1);
 						if(liLastEv instanceof MessageStart)
 							liLastEvPrd = new SMessageStart((MessageStart)liFirstEv).getPredicate();
 						if(liLastEv instanceof MessageEnd)
 							liLastEvPrd = new SMessageEnd((MessageEnd)liFirstEv).getPredicate();
 						if(liLastEv instanceof CombinedFragment)
-							liLastEvPrd = new SCombinedFragment((CombinedFragment)liLastEv).getPredicate().getPredicateEnd();
+							liLastEvPrd = new SCombinedFragment((CombinedFragment)liLastEv, config).getPredicate().getPredicateEnd();
 						f.add(new Iff(smodule.getLifelinePredicate(i).getPredicateEnd(), liLastEvPrd));
 					}
 					// // for (j = 1; j < EV[i].length - 1; j++){
@@ -236,7 +267,7 @@ public class SCombine implements BooleanFormulae{
 						// // if ((EV[i][j] is message) && (EV[i][j + 1] is message))
 						// // order(EV[i][j], EV[i][j + 1], True, (enclosingFragmentPrd_End || SD_Stop || SD_End), False)
 						if (liEvjPrd != null && liEvjp1Prd != null)
-							f.add(new SOrder(liEvjPrd, liEvjp1Prd, SD_Stop, false));
+							f.add((MetaBooleanFormulae)new SOrder(liEvjPrd, liEvjp1Prd, SD_Stop, false, "[SOrder]order(Ev[i][j], Ev[i][j+1], true, SD_Stop, false)").getFormula());
 					}
 				}
 				// // module_End => ((||i=1 to nmodule_Li_End) && (&&i=1 to nsomPIn_i(module_Li_End, module)))
@@ -244,20 +275,23 @@ public class SCombine implements BooleanFormulae{
 				for (int i = 0; i < n; i++) {
 					tmpAnd.addFormulae(new SSomPIn_i(smodule.getLifelinePredicate(i).getPredicateEnd(), smodule.getPredicate()));
 				}
-				f.add(new Implies(smodule.getPredicate().getPredicateEnd(), new And(new Or(smodule.getLifelinesPredicateEnds()), tmpAnd)));
+				f.add(new Implies(smodule.getPredicate().getPredicateEnd(), new And(new Or(smodule.getLifelinesPredicateEnds()), tmpAnd), "module_End => ((||i=1 to nmodule_Li_End) && (&&i=1 to nsomPIn_i(module_Li_End, module)))"));
 				// //for (i = 0; i < n; i++){
 				    // //for (j = 0; j < EV[i].length; j++){
 				        // //if ((EV[i][j] == CF_X) && (history.indexOF != -1)){
 				            // //history.add(CF_X)
 				            // //CF_X(CF_X, enclosingFragmentPrd, CF_X_L_Pre, CF_X_L_Post, config)
 				        // //}}}
-				ArrayList<Integer> history = new ArrayList<Integer>();
+				ArrayList<String> history = new ArrayList<String>();
 				for (int i = 0; i < n; i++){
 					int evSize = module.getLifelineEvents(i).size();
 					for (int j = 0; j < evSize ; j++){
-						if (module.getLifelineEvents(i).get(j) instanceof CombinedFragment && history.contains(module.getLifelineEvents(i).get(j).hashCode())){
-							f.addAll(new SCombinedFragment((CombinedFragment)module.getLifelineEvents(i).get(j), config).getSemantics());
-							history.add(module.getLifelineEvents(i).get(j).hashCode());
+						if (SInteractionFragmentFactory.getInstance(module.getLifelineEvents(i).get(j), config) instanceof SCombinedFragment && !history.contains(SInteractionFragmentFactory.getInstance(module.getLifelineEvents(i).get(j), config).getPredicate().toString())){
+//							f.addAll(new SCombinedFragment((CombinedFragment)(module.getLifelineEvents(i).get(j)), config).getSemantics());
+//							f.addAll(SCombinedFragmentFactory.getInstance((CombinedFragmentItf)sd.getLifelines().get(i).getEvents().get(j), config).getSemantics());
+							for (BooleanFormulae bf: SCombinedFragmentFactory.getInstance((CombinedFragmentItf)sd.getLifelines().get(i).getEvents().get(j), config).getSemantics()) 
+								f.add((MetaBooleanFormulae)bf);
+							history.add(SInteractionFragmentFactory.getInstance(module.getLifelineEvents(i).get(j), config).getPredicate().toString());
 						}
 				   	}
 				}

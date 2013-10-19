@@ -4,7 +4,6 @@ import org.correttouml.uml.diagrams.classdiagram.Clock;
 import org.correttouml.uml.diagrams.sequencediagram.*;
 import org.correttouml.uml2zot.UML2Zot;
 import org.correttouml.uml2zot.semantics.events.SClockTickEvent;
-import org.correttouml.uml2zot.semantics.sequencediagram.SSequenceDiagram.Config;
 import org.correttouml.uml2zot.semantics.util.bool.Iff;
 import org.correttouml.uml2zot.semantics.util.bool.Not;
 import org.correttouml.uml2zot.semantics.util.bool.Or;
@@ -29,7 +28,8 @@ public class SMessage {
 	
 	public Predicate getPredicate(){
 		//return new Predicate("MESSAGE"+this.mades_message.getUMLId().replace("-", "_"));
-		return new Predicate("MESSAGE"+UML2Zot.Utility.umlIDtoPrdID(this.mades_message.getUMLId()));
+//		return new Predicate("MESSAGE"+UML2Zot.Utility.umlIDtoPrdID(this.mades_message.getUMLId())); ////####uncomment me
+		return new Predicate(mades_message.getName());
 	}
 
 	public Predicate getmosPredicate(MessageOccurrenceSpecification mos){
@@ -48,8 +48,8 @@ public class SMessage {
         Predicate message_end=new SMessageEnd(this.mades_message.getMessageEndEvent()).getPredicate();
         
         //Message predicate definition
-        sem = sem + new Iff(message, new Or(message_start, new Since_ei(new Not(message_end), message_start))) + "\n";
-        sem += new SOrder(message_start, message_end, new Or(getSSequenceDiagram().getPredicate().getPredicateStop(),getSSequenceDiagram().getPredicate().getPredicateEnd()), true);
+        sem = sem + new Iff(message, new Or(message_start, new Since_ei(new Not(message_end), message_start))) + "\n"; //####check for CF_Break ... (SD_Stop, SD_End)
+        sem += new SOrder(message_start, message_end, getSSequenceDiagram().getPredicate().getPredicateStop(), true).toString();
         //Message parameter semantics
         for (MessageParameter mp : this.mades_message.getParameters()) {
         	sem=sem+new SMessageParameter(mp).getSemantics(mades_message.getMessageEndEvent().getLifeline().getObject())+"\n";

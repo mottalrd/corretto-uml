@@ -4,23 +4,20 @@ import java.util.ArrayList;
 
 import org.correttouml.uml.MadesModel;
 import org.correttouml.uml.diagrams.iod.IOD;
-import org.correttouml.uml.diagrams.sequencediagram.InteractionOperand;
 import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagram;
 import org.correttouml.uml2zot.semantics.classdiagram.SClassDiagram;
 import org.correttouml.uml2zot.semantics.iod.SIOD;
 import org.correttouml.uml2zot.semantics.property.SProperty;
+import org.correttouml.uml2zot.semantics.sequencediagram.*;
 import org.correttouml.uml2zot.semantics.sequencediagram.SCombine;
 import org.correttouml.uml2zot.semantics.sequencediagram.SSequenceDiagram;
-import org.correttouml.uml2zot.semantics.sequencediagram.SSequenceDiagram.Config;
-import org.correttouml.uml2zot.semantics.sequencediagram.SSequenceDiagram.combine;
-import org.correttouml.uml2zot.semantics.sequencediagram.SSequenceDiagram.loop;
-import org.correttouml.uml2zot.semantics.sequencediagram.SSequenceDiagram.what;
 import org.correttouml.uml2zot.semantics.util.bool.And;
 import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
 import org.correttouml.uml2zot.semantics.util.bool.Not;
 import org.correttouml.uml2zot.semantics.util.trio.AlwF_e;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 import org.correttouml.uml2zot.semantics.util.trio.Yesterday;
+import org.correttouml.uml2zot.semantics.sequencediagram.Config;
 
 
 public class SMadesModel {
@@ -44,11 +41,9 @@ public class SMadesModel {
         
         //Sequence Diagram semantics
         s=s+printSeparator("SEQUENCE DIAGRAMS");
-        Config config = new Config(combine.WS, loop.WS, what.NONDETERMINISTICALLY);
+        Config config = new Config(ConfigCombine.WS, ConfigLoop.SYNC, ConfigWhat.NONDETERMINISTICALLY);/////////////////////////////
         for(SequenceDiagram sd: this.mm.getSequenceDiagrams()){
         	s=s+printSeparator("SD " + sd.getName());
-        	SCombine scf = new SCombine(new InteractionOperand(sd.getCombinedFragments().get(0).getOperands().get(0)));////////////////////////////////////////////////////////////////####del me
-        	ArrayList<BooleanFormulae> bf = scf.getFormula();
         	s=s+new SSequenceDiagram(sd, config).getSemantics();
         }
         

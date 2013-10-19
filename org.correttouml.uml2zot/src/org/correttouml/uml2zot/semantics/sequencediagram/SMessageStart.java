@@ -18,13 +18,15 @@ public class SMessageStart implements SInteractionFragment, SEvent{
 	@Override
 	public Predicate getPredicate(){
 		//return new Predicate("MESSAGE"+this.mades_messageStartEvent.getMessage().getUMLId().replace("-", "_")+"_Start");
-		return new Predicate("MESSAGE"+UML2Zot.Utility.umlIDtoPrdID(this.mades_messageStartEvent.getMessage().getUMLId())).getPredicateStart();
+//		return new Predicate("MESSAGE"+UML2Zot.Utility.umlIDtoPrdID(this.mades_messageStartEvent.getMessage().getUMLId())).getPredicateStart();////####uncomment me
+		return new Predicate(mades_messageStartEvent.getMessage().getName()+"_Start");
 	}
 
 	@Override
 	public Predicate getPredicate(Object... optObject) {
 		//return new Predicate("MESSAGE"+this.mades_messageStartEvent.getMessage().getUMLId().replace("-", "_")+"_Start");
-		return new Predicate("MESSAGE"+UML2Zot.Utility.umlIDtoPrdID(this.mades_messageStartEvent.getMessage().getUMLId())).getPredicateEnd();
+//		return new Predicate("MESSAGE"+UML2Zot.Utility.umlIDtoPrdID(this.mades_messageStartEvent.getMessage().getUMLId())).getPredicateStart();////####uncomment me
+		return new Predicate(mades_messageStartEvent.getMessage().getName()+"_Start");
 	}
 
 }

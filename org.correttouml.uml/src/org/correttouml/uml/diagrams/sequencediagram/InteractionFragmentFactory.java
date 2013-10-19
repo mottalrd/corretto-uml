@@ -17,8 +17,8 @@ public class InteractionFragmentFactory {
 				if(ocs.getExecution().getFinish().equals(ocs)) return new ExecutionOccurrenceEnd(ocs);
 			}
 			if(uml_interactionfragment instanceof org.eclipse.uml2.uml.CombinedFragment)
-				return new CombinedFragment((org.eclipse.uml2.uml.CombinedFragment)uml_interactionfragment);
-			
+//				return new CombinedFragment((org.eclipse.uml2.uml.CombinedFragment)uml_interactionfragment);
+				return (CombinedFragmentFactory.getInstance((org.eclipse.uml2.uml.CombinedFragment)uml_interactionfragment));
 			throw new Exception("Event not found");
 		}catch(Exception e){
 			e.printStackTrace();

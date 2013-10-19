@@ -9,7 +9,7 @@ import org.correttouml.uml.diagrams.sequencediagram.MessageStart;
 
 public class SInteractionFragmentFactory {
 
-	public static SInteractionFragment getInstance(InteractionFragment mades_if){
+	public static SInteractionFragment getInstance(InteractionFragment mades_if, Config config){
 		if(mades_if instanceof MessageStart){
 			return new SMessageStart((MessageStart) mades_if);
 		}
@@ -23,7 +23,7 @@ public class SInteractionFragmentFactory {
 			return new SExecutionOccurrenceEnd((ExecutionOccurrenceEnd)mades_if);
 		}
 		if(mades_if instanceof CombinedFragment) ////###test me
-			return new SCombinedFragment((CombinedFragment) mades_if);
+			return new SCombinedFragment((CombinedFragment) mades_if, config);
 		return null;
 	}
 	

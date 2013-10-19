@@ -5,9 +5,9 @@ import org.correttouml.uml.diagrams.sequencediagram.CombinedFragment;
 import org.correttouml.uml.diagrams.sequencediagram.CombinedFragmentItf;
 
 public class SCombinedFragmentFactory {
-	public static SCombinedFragmentItf getInstance(CombinedFragmentItf mades_combinedfragment){
+	public static SCombinedFragmentItf getInstance(CombinedFragmentItf mades_combinedfragment, Config config){
 		if (mades_combinedfragment instanceof CF_Opt)
-			return new SCF_Opt((CF_Opt)mades_combinedfragment);
+			return new SCF_Opt((CF_Opt)mades_combinedfragment, config);
 		return null;
 	}
 	

@@ -82,6 +82,12 @@ public class Predicate implements Atom{
     }    
 
     public int hashCode(){
-      return this.predicatename.toUpperCase().hashCode();
+      try {
+		return this.predicatename.toUpperCase().hashCode();
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+      return 0;
     }
 }

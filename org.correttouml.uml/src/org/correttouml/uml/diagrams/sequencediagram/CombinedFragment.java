@@ -2,29 +2,14 @@ package org.correttouml.uml.diagrams.sequencediagram;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
-
-import javax.swing.text.html.HTMLDocument.HTMLReader.PreAction;
-
-import org.correttouml.uml.MadesModel;
-import org.correttouml.uml.diagrams.classdiagram.Clock;
-import org.correttouml.uml.diagrams.classdiagram.Operation;
 import org.correttouml.uml.diagrams.property.PTermElement;
-import org.correttouml.uml.helpers.UML2ModelHelper;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.xmi.XMLResource;
-import org.eclipse.uml2.uml.InstanceSpecification;
-import org.eclipse.uml2.uml.InteractionOperand;
-import org.eclipse.uml2.uml.MessageOccurrenceSpecification;
-import org.eclipse.uml2.uml.Stereotype;
-import org.eclipse.uml2.uml.util.UMLUtil;
+//import org.eclipse.uml2.uml.InteractionOperand;
+import org.correttouml.uml.diagrams.sequencediagram.*;
 
 /**
 *@author Mohammad Mehdi Pourhashem Kallehbasti 
 */
-public class CombinedFragment implements InteractionFragment, PTermElement{
+public class CombinedFragment implements CombinedFragmentItf, InteractionFragment, PTermElement{
 
 	private org.eclipse.uml2.uml.CombinedFragment uml_combinedFragment;
 	
@@ -61,20 +46,26 @@ public class CombinedFragment implements InteractionFragment, PTermElement{
 	public ArrayList<InteractionOperand> getOperands(){
 		ArrayList<InteractionOperand> ios = new ArrayList<InteractionOperand>();
 		for (int i = 0; i < uml_combinedFragment.getOperands().toArray().length; i++) {
-			ios.add((InteractionOperand)uml_combinedFragment.getOperands().toArray()[i]);
+			ios.add(new InteractionOperand(uml_combinedFragment.getOperands().get(i)));
 		}
 		return ios;
 	}
 	
+	public ArrayList<String> getOperandsNames(){
+		ArrayList<String> operandsnames = new ArrayList<String>();
+		for (InteractionOperand io: getOperands())
+			operandsnames.add(io.getName());
+		return operandsnames;
+	}
+	
 	public ArrayList<Lifeline> getLifelines(){
 		ArrayList<Lifeline> lifelines = new ArrayList<Lifeline>();
-		for (int i = 0; i < uml_combinedFragment.getCovereds().toArray().length; i++) {
-			lifelines.add((Lifeline)uml_combinedFragment.getCovereds().toArray()[i]);
-		}
+		for (org.eclipse.uml2.uml.Lifeline l : uml_combinedFragment.getCovereds())
+			lifelines.add(new Lifeline(l));
 		return lifelines;
 	}
 	
-	public ArrayList<InteractionFragment> getCFPreIFs(){ ////###test when a lifeline is not included in CF
+	public ArrayList<InteractionFragment> getPreIFs(){ ////###test when a lifeline is not included in CF
 		ArrayList<InteractionFragment> CFPreIFs = new ArrayList<InteractionFragment>();
 		org.eclipse.uml2.uml.Interaction enclosingfragment = uml_combinedFragment.getEnclosingInteraction();
 		for (org.eclipse.uml2.uml.Lifeline l : uml_combinedFragment.getCovereds()) {
@@ -88,7 +79,8 @@ public class CombinedFragment implements InteractionFragment, PTermElement{
 			
 			for(int i=0;i<lifelineifs.size();i++){
 				if (lifelineifs.get(i) instanceof CombinedFragment){
-					CombinedFragment cf = new CombinedFragment((org.eclipse.uml2.uml.CombinedFragment)lifelineifs.get(i));
+//					CombinedFragment cf = new CombinedFragment((org.eclipse.uml2.uml.CombinedFragment)lifelineifs.get(i));
+					CombinedFragment cf = (CombinedFragment) lifelineifs.get(i);
 					if (cf.getName() == this.getName())
 						if (i == 0)
 							CFPreIFs.add(null);
@@ -100,7 +92,7 @@ public class CombinedFragment implements InteractionFragment, PTermElement{
 		return CFPreIFs;
 	}
 	
-	public ArrayList<InteractionFragment> getCFPostIFs(){ ////###test when a lifeline is not included in CF
+	public ArrayList<InteractionFragment> getPostIFs(){ ////###test when a lifeline is not included in CF
 		ArrayList<InteractionFragment> CFPostIFs = new ArrayList<InteractionFragment>();
 		org.eclipse.uml2.uml.Interaction enclosingfragment = uml_combinedFragment.getEnclosingInteraction();
 		for (org.eclipse.uml2.uml.Lifeline l : uml_combinedFragment.getCovereds()) {
@@ -114,7 +106,8 @@ public class CombinedFragment implements InteractionFragment, PTermElement{
 			
 			for(int i=0;i<lifelineifs.size();i++){
 				if (lifelineifs.get(i) instanceof CombinedFragment){
-					CombinedFragment cf = new CombinedFragment((org.eclipse.uml2.uml.CombinedFragment)lifelineifs.get(i));
+//					CombinedFragment cf = new CombinedFragment((org.eclipse.uml2.uml.CombinedFragment)lifelineifs.get(i));
+					CombinedFragment cf = (CombinedFragment)lifelineifs.get(i);
 					if (cf.getName() == this.getName())
 						if (i < lifelineifs.size() - 1)
 							CFPostIFs.add(lifelineifs.get(i + 1));
