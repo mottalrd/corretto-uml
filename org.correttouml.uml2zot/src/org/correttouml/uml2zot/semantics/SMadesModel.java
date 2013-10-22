@@ -9,11 +9,10 @@ import org.correttouml.uml2zot.semantics.classdiagram.SClassDiagram;
 import org.correttouml.uml2zot.semantics.iod.SIOD;
 import org.correttouml.uml2zot.semantics.property.SProperty;
 import org.correttouml.uml2zot.semantics.sequencediagram.*;
-import org.correttouml.uml2zot.semantics.sequencediagram.SCombine;
-import org.correttouml.uml2zot.semantics.sequencediagram.SSequenceDiagram;
 import org.correttouml.uml2zot.semantics.util.bool.And;
 import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
 import org.correttouml.uml2zot.semantics.util.bool.Not;
+import org.correttouml.uml2zot.semantics.util.fun.*;
 import org.correttouml.uml2zot.semantics.util.trio.AlwF_e;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 import org.correttouml.uml2zot.semantics.util.trio.Yesterday;
@@ -34,14 +33,13 @@ public class SMadesModel {
 	
     public String getSemantics() {
         String s = "";
-        
         //Class diagram semantics
         s=s+printSeparator("CLASS DIAGRAM");
         s = s + new SClassDiagram(this.mm.getClassdiagram()).getSemantics();
         
         //Sequence Diagram semantics
         s=s+printSeparator("SEQUENCE DIAGRAMS");
-        Config config = new Config(ConfigCombine.WS, ConfigLoop.SYNC, ConfigWhat.NONDETERMINISTICALLY);/////////////////////////////
+        Config config = new Config(ConfigCombine.SYNC, ConfigLoop.SYNC, ConfigWhat.NONDETERMINISTICALLY);/////////////////////////////
         for(SequenceDiagram sd: this.mm.getSequenceDiagrams()){
         	s=s+printSeparator("SD " + sd.getName());
         	s=s+new SSequenceDiagram(sd, config).getSemantics();
@@ -99,7 +97,29 @@ public class SMadesModel {
 		
 		return sem;
 	}
+	
+	public String getDefun() {
+		String s = new Borders().getDefun() +"\n" +
+		new OrderCon().getDefun() +"\n" +
+		new OrderGCon().getDefun() +"\n" +
+		new OrderGnoCon().getDefun() +"\n" +
+		new OrdernoCon().getDefun() +"\n" +
+		new SomFIn_i().getDefun() +"\n" +
+		new SomPIn_i().getDefun() +"\n" +
+		new Borders().getDefun() +"\n" +
+		new OrderConMonoD().getDefun() +"\n" +
+		new OrderGConMonoD().getDefun() +"\n" +
+		new OrderGnoConMonoD().getDefun() +"\n" +
+		new OrdernoConMonoD().getDefun() +"\n";
+		return s;
+	}
 
+	public String getDeclarations() {
+	    //Predicate based modular semantics
+        String s = printSeparator("Predicate based modular semantics\n");
+		return s + getDefun();
+	}
+	
 	public boolean hasProperty() {
 		return this.mm.hasProperty();
 	}

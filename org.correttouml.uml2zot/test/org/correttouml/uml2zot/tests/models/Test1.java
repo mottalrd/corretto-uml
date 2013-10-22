@@ -82,7 +82,7 @@ public class Test1 {
 //		<test del>
 //		String prdID = UML2Zot.Utility.umlIDtoPrdID("_Ab~C-");
 //		String aaaa = UML2Zot.Utility.prdIDtoUMLID(prdID);
-//		SOrder so = new SOrder(new Predicate("ev1"), new Predicate("ev2"), new Predicate("guard"), new Predicate("exception"), true);
+//		SOrder so = `"), new Predicate("exception"), true);
 //		aaaa = so.toString();
 //		</test del>
 				
@@ -93,7 +93,7 @@ public class Test1 {
 		LOGGER.info("Generate the Mappings File");
 		t.generateMappingsFile(new File("tmp/model.mappings"));
 		
-		assertTrue("Il file di ZOT contiene degli errori",testHelper.isZOTFileValid());
+		assertTrue("The ZOT file contains errors ",testHelper.isZOTFileValid());
 		
 		testHelper.cleanUp();
 	}

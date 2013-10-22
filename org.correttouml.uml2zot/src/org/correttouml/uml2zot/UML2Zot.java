@@ -112,7 +112,7 @@ public class UML2Zot {
 
 	public void generateZOTFile(String zot_file) {
 		LOGGER.info("Build the ZOT file");
-		ZOTConf zot = new ZOTConf(100, "ae2zot", "z3", this.s_mades_model);
+		ZOTConf zot = new ZOTConf(10, "ae2zot", "z3", this.s_mades_model);//////////////////////
 		try {
 			zot.writeVerificationZOTFile(zot_file);
 		} catch (Exception e) {

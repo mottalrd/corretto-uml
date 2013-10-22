@@ -65,12 +65,16 @@ public class SSequenceDiagram {
 
 	public ArrayList<Predicate> getLifelinesPredicates() {
 		ArrayList<Predicate> lifelinesPredicates = new ArrayList<Predicate>();
-		for (Lifeline l : mades_sd.getLifelines()) {
-			lifelinesPredicates.add((Predicate) (getLifelinePredicate(l
-					.getName())));
-			l.getEvents();
-		}
+		for (String lname : getLifelinesNames())
+			lifelinesPredicates.add(getLifelinePredicate(lname));
 		return lifelinesPredicates;
+	}
+	
+	public ArrayList<String> getLifelinesNames(){
+		ArrayList<String> lifelinesnames = new ArrayList<String>();
+		for (Lifeline l : mades_sd.getLifelines())
+			lifelinesnames.add(l.getName());
+		return lifelinesnames;
 	}
 	
 	public ArrayList<Predicate> getLifelinesPredicateStarts(){

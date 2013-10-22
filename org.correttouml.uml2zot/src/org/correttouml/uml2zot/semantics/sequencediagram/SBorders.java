@@ -2,8 +2,8 @@
 package org.correttouml.uml2zot.semantics.sequencediagram;
 
 import java.util.ArrayList;
-
 import org.correttouml.uml2zot.semantics.util.bool.*;
+import org.correttouml.uml2zot.semantics.util.fun.*;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 import org.correttouml.uml2zot.semantics.util.trio.Since_ei;
 import org.correttouml.uml2zot.semantics.util.trio.Until_ei;
@@ -14,9 +14,9 @@ import org.correttouml.uml2zot.semantics.util.trio.Until_ei;
 
 public class SBorders implements BooleanFormulae, MetaBooleanFormulae{
 	//[documentation]: \Dropbox\SharePolimi\Documentation\Sequence Diagram\Combined_Fragment\Modular_Semantics\[borders].docx
-	Predicate module; //ev1 (which can be more complex than atomic event(m1_Start), like (m1_Start && SDX_CF_X_Op1_Start))
+	Predicate module;
 	private String comment = "";
-    BooleanFormulae exception; //if ev1 happens it has to be followed by ev2 and if ev2 happens it has to be preceded by ev1 except we have exception between them.  
+    BooleanFormulae exception;  
 
     public SBorders(Predicate module, BooleanFormulae exception){
         this.module = module;
@@ -55,6 +55,10 @@ public class SBorders implements BooleanFormulae, MetaBooleanFormulae{
 	public BooleanFormulae getFormula() {
 		return new And(getFormulae());
 	}
+	
+	public BooleanFormulae getFun() {
+    	return new Borders(module, module.getPredicateStart(), module.getPredicateEnd(), exception);
+    }
 	
 	public ArrayList<BooleanFormulae> getFormulae() {
 		ArrayList<BooleanFormulae> f = new ArrayList<BooleanFormulae>();

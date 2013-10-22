@@ -49,7 +49,7 @@ public class SMessage {
         
         //Message predicate definition
         sem = sem + new Iff(message, new Or(message_start, new Since_ei(new Not(message_end), message_start))) + "\n"; //####check for CF_Break ... (SD_Stop, SD_End)
-        sem += new SOrder(message_start, message_end, getSSequenceDiagram().getPredicate().getPredicateStop(), true).toString();
+        sem += new SOrder(message_start, message_end, getSSequenceDiagram().getPredicate().getPredicateStop(), true).getFun().toString();
         //Message parameter semantics
         for (MessageParameter mp : this.mades_message.getParameters()) {
         	sem=sem+new SMessageParameter(mp).getSemantics(mades_message.getMessageEndEvent().getLifeline().getObject())+"\n";

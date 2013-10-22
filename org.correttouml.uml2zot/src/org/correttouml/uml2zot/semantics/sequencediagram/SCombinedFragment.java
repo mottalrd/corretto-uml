@@ -85,6 +85,10 @@ public class SCombinedFragment implements SInteractionFragment {
 		return new Predicate(this.mades_combinedfragment.getPredicateName() + '_' + mades_combinedfragment.getLifelines().get(index).getName());
 	}
 	
+	public Predicate getLifelinePredicate(String lifelinename){
+		return new Predicate(this.mades_combinedfragment.getPredicateName() + '_' + lifelinename);
+	}
+	
 	public ArrayList<MetaPredicate> getLifelinesPreMetaPredicates(){
 		ArrayList<MetaPredicate> CFLifelinesPreMetaPredicates = new ArrayList<MetaPredicate>();
 		ArrayList<InteractionFragment> CFPreIFs = new ArrayList<InteractionFragment>();
@@ -94,14 +98,15 @@ public class SCombinedFragment implements SInteractionFragment {
 				org.eclipse.uml2.uml.Interaction enclosinginteraction = mades_combinedfragment
 						.getEnclosingFragment();
 				if (enclosinginteraction.getEnclosingInteraction() == null) // if enclosingfragment is a SD
-					CFLifelinesPreMetaPredicates.add(new MetaPredicate(new SSequenceDiagram(new org.correttouml.uml.diagrams.sequencediagram.SequenceDiagram(enclosinginteraction)).getPredicate().getPredicateStart(), PredicateType.SDStart));
+					CFLifelinesPreMetaPredicates.add(new MetaPredicate(new SSequenceDiagram(new org.correttouml.uml.diagrams.sequencediagram.SequenceDiagram(
+							enclosinginteraction)).getLifelinePredicate(mades_combinedfragment.getLifelines().get(i).getName()).getPredicateStart(), PredicateType.SDStart));
 				else
 					// if enclosingfragment is a CF
 					CFLifelinesPreMetaPredicates
 							.add(new MetaPredicate(new SCombinedFragment(
 									new CombinedFragment(
 											(org.eclipse.uml2.uml.CombinedFragment) enclosinginteraction), config)
-									.getPredicate().getPredicateStart(), PredicateType.CFStart));
+							.getLifelinePredicate(mades_combinedfragment.getLifelines().get(i).getName()).getPredicateStart(), PredicateType.CFStart));
 			} else {
 //				if (CFPreIFs.get(i) instanceof org.eclipse.uml2.uml.MessageOccurrenceSpecification){// message
 ////					if (CFPreIFs.get(i) instanceof org.eclipse. uml .MessageOccurrenceSpecification){// message
@@ -154,15 +159,13 @@ public class SCombinedFragment implements SInteractionFragment {
 					CFLifelinesPostMetaPredicates
 							.add(new MetaPredicate(new SSequenceDiagram(
 									new org.correttouml.uml.diagrams.sequencediagram.SequenceDiagram(
-											enclosinginteraction))
-									.getPredicate().getPredicateEnd(), PredicateType.SDEnd));
+											enclosinginteraction)).getLifelinePredicate(mades_combinedfragment.getLifelines().get(i).getName()).getPredicateEnd(), PredicateType.SDEnd));
 				else
 					// if enclosingfragment is a CF
 					CFLifelinesPostMetaPredicates
 							.add(new MetaPredicate(new SCombinedFragment(
 									new CombinedFragment(
-											(org.eclipse.uml2.uml.CombinedFragment) enclosinginteraction), config)
-									.getPredicate().getPredicateEnd(), PredicateType.CFEnd));
+											(org.eclipse.uml2.uml.CombinedFragment) enclosinginteraction), config).getLifelinePredicate(mades_combinedfragment.getLifelines().get(i).getName()).getPredicateEnd(), PredicateType.CFEnd));
 			} else {
 				if (CFPostIFs.get(i) instanceof org.eclipse.uml2.uml.MessageOccurrenceSpecification) {// message
 					org.eclipse.uml2.uml.MessageOccurrenceSpecification mof = (org.eclipse.uml2.uml.MessageOccurrenceSpecification) CFPostIFs.get(i);
@@ -205,10 +208,11 @@ public class SCombinedFragment implements SInteractionFragment {
 	}
 	
 	public ArrayList<BooleanFormulae> getGuards(){
-		ArrayList<BooleanFormulae> guards = new ArrayList<BooleanFormulae>();
-		for (int i=0;i<getOperandsPredicates().size();i++){
-			guards.add(new SInteractionOperand(mades_combinedfragment.getOperands().get(i)).getGuard());
-		}
+		ArrayList<BooleanFormulae> guards = new ArrayList<BooleanFormulae>(); 
+//		for (int i=0;i<getOperandsPredicates().size();i++){                            ////#### uncomment me
+//			guards.add(new SInteractionOperand(mades_combinedfragment.getOperands().get(i)).getGuard());
+//		}
+		guards.add(new Predicate("guard"));
 		return guards;
 	}
 	

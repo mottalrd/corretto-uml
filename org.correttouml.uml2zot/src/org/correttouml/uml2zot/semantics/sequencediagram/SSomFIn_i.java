@@ -2,8 +2,8 @@ package org.correttouml.uml2zot.semantics.sequencediagram;
 
 import java.util.ArrayList;
 
-import org.correttouml.grammars.booleanExpressions.booleanExpression;
 import org.correttouml.uml2zot.semantics.util.bool.*;
+import org.correttouml.uml2zot.semantics.util.fun.*;
 import org.correttouml.uml2zot.semantics.util.trio.*;
 
 /**
@@ -43,7 +43,10 @@ public class SSomFIn_i implements BooleanFormulae, MetaBooleanFormulae{
 		return this.comment;
 	}
     
-    // // !!since_ii(!!ev1, enclosingCF_Start)
+	public BooleanFormulae getFun() {
+    	return new SomFIn_i(ev1, enclosingFragment.getPredicateEnd());
+    }
+	
     // // !!until _ii(!!ev1, enclosingCF_End)
 	public BooleanFormulae getFormula() {
 		return new Not(new Until_ii(new Not(ev1), enclosingFragment.getPredicateEnd()));

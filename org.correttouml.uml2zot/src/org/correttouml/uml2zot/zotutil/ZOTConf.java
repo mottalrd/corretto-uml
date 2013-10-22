@@ -60,6 +60,7 @@ public class ZOTConf {
         BooleanFormulae property_formulae=null;
         if (model.hasProperty()) property_formulae=model.getProperty();
         String ae2zotVariables = model.getVariableDeclarationsForae2zot();
+        String declarations = model.getDeclarations();
         String definemodel = "(defvar AX1 \n (&& \n" + sem + "\n)) ;;END AX1 \n\n\n";
         String smtsolverparameter = "";
 
@@ -115,6 +116,7 @@ public class ZOTConf {
                 + ""
                 + ae2zotVariables
                 + ""
+                + declarations
                 + definemodel
                 + property
                 + initaxiom
