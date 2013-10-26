@@ -1,9 +1,13 @@
 
 package org.correttouml.uml2zot.semantics.sequencediagram;
 
+import java.util.ArrayList;
+
 import org.correttouml.uml2zot.semantics.util.bool.*;
 import org.correttouml.uml2zot.semantics.util.fun.*;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
+import org.correttouml.uml2zot.semantics.util.trio.Since_ei;
+import org.correttouml.uml2zot.semantics.util.trio.Until_ei;
 
 /**
 *@author Mohammad Mehdi Pourhashem Kallehbasti 
@@ -32,18 +36,23 @@ public class SBorders implements BooleanFormulae{
     	return getFun().toString();
 	}
     
-//	public BooleanFormulae getFormula() {
-//		return new And(getFormulae());
-//	}
+    @Deprecated
+	public BooleanFormulae getFormula() {
+		return new And(getFormulae());
+	}
 	
 	public BooleanFormulae getFun() {
     	return new Borders(module, module.getPredicateStart(), module.getPredicateEnd(), exception);
     }
 	
-//	public ArrayList<BooleanFormulae> getFormulae() {
-//		ArrayList<BooleanFormulae> f = new ArrayList<BooleanFormulae>();
-//		f.add(new Iff(module, new Or(module.getPredicateStart(), new Since_ei(new Not(new Or(module.getPredicateEnd(), exception)), module.getPredicateStart()))));
-//		f.add(new Implies(module.getPredicateStart(), new Until_ei(new Not(module.getPredicateStart()), new Or(module.getPredicateEnd(), exception))));
-//		return f;
-//	}
+	/**
+	 * @deprecated use {@link #getFun()} instead.  
+	 */
+	@Deprecated
+	public ArrayList<BooleanFormulae> getFormulae() {
+		ArrayList<BooleanFormulae> f = new ArrayList<BooleanFormulae>();
+		f.add(new Iff(module, new Or(module.getPredicateStart(), new Since_ei(new Not(new Or(module.getPredicateEnd(), exception)), module.getPredicateStart()))));
+		f.add(new Implies(module.getPredicateStart(), new Until_ei(new Not(module.getPredicateStart()), new Or(module.getPredicateEnd(), exception))));
+		return f;
+	}
 }

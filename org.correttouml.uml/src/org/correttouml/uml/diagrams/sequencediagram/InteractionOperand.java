@@ -30,7 +30,7 @@ public class InteractionOperand implements InteractionFragment, PTermElement {
 
 	public ArrayList<Lifeline> getLifelines() {// ####test me
 		ArrayList<Lifeline> lifelines = new ArrayList<Lifeline>();
-		for (int i = 0; i < uml_interactionoperand.getCovereds().toArray().length; i++) {
+		for (int i = 0; i < uml_interactionoperand.getCovereds().size(); i++) {
 			lifelines.add(new Lifeline(uml_interactionoperand.getCovereds().get(i)));
 		}
 		return lifelines;
@@ -38,7 +38,7 @@ public class InteractionOperand implements InteractionFragment, PTermElement {
 	
 	public ArrayList<String> getLifelinesNames() {// ####test me
 		ArrayList<String> lifelinesnames = new ArrayList<String>();
-		for (int i = 0; i < uml_interactionoperand.getCovereds().toArray().length; i++) 
+		for (int i = 0; i < uml_interactionoperand.getCovereds().size(); i++) 
 			lifelinesnames.add(uml_interactionoperand.getCovereds().get(i).getName());
 		return lifelinesnames;
 	}
@@ -55,12 +55,12 @@ public class InteractionOperand implements InteractionFragment, PTermElement {
 		return events;
 	}
 
-	public ArrayList<InteractionFragment> getLifelineEvents(int index) {// //####test
+	public ArrayList<InteractionFragment> getLifelineEvents(int lifelineIndex) {// //####test
 		ArrayList<InteractionFragment> events = new ArrayList<InteractionFragment>();
 		List<org.eclipse.uml2.uml.InteractionFragment> f = uml_interactionoperand.getFragments();
 		for (org.eclipse.uml2.uml.InteractionFragment ifr : f) 
 			for (org.eclipse.uml2.uml.Lifeline l : ifr.getCovereds())
-				if (getLifelinesNames().get(index) == l.getName())
+				if (getLifelinesNames().get(lifelineIndex) == l.getName())
 					events.add(InteractionFragmentFactory.getInstance(ifr));
 		return events;
 	}

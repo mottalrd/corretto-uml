@@ -68,7 +68,7 @@ public class CombinedFragment implements CombinedFragmentItf, InteractionFragmen
 	
 	public ArrayList<InteractionOperand> getOperands(){
 		ArrayList<InteractionOperand> ios = new ArrayList<InteractionOperand>();
-		for (int i = 0; i < uml_combinedFragment.getOperands().toArray().length; i++) {
+		for (int i = 0; i < uml_combinedFragment.getOperands().size(); i++) {
 			ios.add(new InteractionOperand(uml_combinedFragment.getOperands().get(i)));
 		}
 		return ios;

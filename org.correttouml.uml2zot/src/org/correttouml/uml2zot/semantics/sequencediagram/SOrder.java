@@ -1,8 +1,12 @@
 
 package org.correttouml.uml2zot.semantics.sequencediagram;
 
+import java.util.ArrayList;
+
 import org.correttouml.uml2zot.semantics.util.bool.*;
 import org.correttouml.uml2zot.semantics.util.fun.*;
+import org.correttouml.uml2zot.semantics.util.trio.Since_ei;
+import org.correttouml.uml2zot.semantics.util.trio.Until_ei;
 
 /**
 *@author Mohammad Mehdi Pourhashem Kallehbasti 
@@ -67,20 +71,24 @@ public class SOrder implements BooleanFormulae{
     	}
     }
     
-//    public ArrayList<BooleanFormulae> getFormulae() {
-//    	// return set of formulae
-//		ArrayList<BooleanFormulae> f = new ArrayList<BooleanFormulae>();
-//		if (guard != null) {
-//			f.add((new Implies(new And(f1, guard), new Or(new Until_ei(new And(new Not(f1), new Not(f2)), exception), new Until_ei(new And(new Not(f1), new Not(exception)), f2)))));
-//			f.add(new Implies(f2, new Since_ei(new And(new Not(f2), new Not(exception)), new And(f1, guard))));
-//			if (!isConcurrent)
-//				f.add(new Implies(new And(f1, guard), new Not(f2)));
-//		} else {
-//			f.add(new Implies(f1, new Or(new Until_ei(new And(new Not(f1), new Not(f2)), exception), new Until_ei(new And(new Not(f1), new Not(exception)), f2))));
-//			f.add(new Implies(f2, new Since_ei(new And(new Not(f2), new Not(exception)), f1)));
-//			if (!isConcurrent)
-//				f.add(new Implies(f1, new Not(f2)));
-//		}
-//		return f;
-//	}
+    /**
+	 * @deprecated use {@link #getFun()} instead.  
+	 */
+    @Deprecated
+    public ArrayList<BooleanFormulae> getFormulae() {
+    	// return set of formulae
+		ArrayList<BooleanFormulae> f = new ArrayList<BooleanFormulae>();
+		if (guard != null) {
+			f.add((new Implies(new And(f1, guard), new Or(new Until_ei(new And(new Not(f1), new Not(f2)), exception), new Until_ei(new And(new Not(f1), new Not(exception)), f2)))));
+			f.add(new Implies(f2, new Since_ei(new And(new Not(f2), new Not(exception)), new And(f1, guard))));
+			if (!isConcurrent)
+				f.add(new Implies(new And(f1, guard), new Not(f2)));
+		} else {
+			f.add(new Implies(f1, new Or(new Until_ei(new And(new Not(f1), new Not(f2)), exception), new Until_ei(new And(new Not(f1), new Not(exception)), f2))));
+			f.add(new Implies(f2, new Since_ei(new And(new Not(f2), new Not(exception)), f1)));
+			if (!isConcurrent)
+				f.add(new Implies(f1, new Not(f2)));
+		}
+		return f;
+	}
 }

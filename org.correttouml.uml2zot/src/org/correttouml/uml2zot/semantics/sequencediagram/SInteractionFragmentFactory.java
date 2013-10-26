@@ -22,7 +22,7 @@ public class SInteractionFragmentFactory {
 		if(mades_if instanceof ExecutionOccurrenceEnd){
 			return new SExecutionOccurrenceEnd((ExecutionOccurrenceEnd)mades_if);
 		}
-		if(mades_if instanceof CombinedFragment) ////###test me
+		if(mades_if instanceof CombinedFragment)
 			return new SCombinedFragment((CombinedFragment) mades_if, config);
 		return null;
 	}

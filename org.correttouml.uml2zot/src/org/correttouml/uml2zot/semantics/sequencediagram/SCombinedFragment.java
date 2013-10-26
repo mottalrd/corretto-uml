@@ -259,4 +259,31 @@ public class SCombinedFragment implements SInteractionFragment {
 		return this.mades_combinedfragment.getOperatorName();
 	}
 	
+	public ArrayList<Predicate> getFirstMessages(String lifelineName){//returns predicate of messages that can possibly be first message of CombinedFragment.
+		ArrayList<Predicate> firstMessages = new ArrayList<Predicate>();
+		for (int i = 0; i < getLifelines().size(); i++) {
+			if (getLifelines().get(i).getName() == lifelineName)
+				for (InteractionOperand operand:mades_combinedfragment.getOperands()) {
+					if (new SInteractionOperand(operand).getFirstMessages(i) != null)
+						firstMessages.addAll(new SInteractionOperand(operand).getFirstMessages(i));
+				}
+		}
+		if (firstMessages.size() == 0)
+			return null;
+		return firstMessages;
+	}
+
+	public ArrayList<Predicate> getLastMessages(String lifelineName){//returns predicate of messages that can possibly be last message of CombinedFragment.
+		ArrayList<Predicate> lastMessages = new ArrayList<Predicate>();
+		for (int i = 0; i < getLifelines().size(); i++) {
+			if (getLifelines().get(i).getName() == lifelineName)
+				for (InteractionOperand operand:mades_combinedfragment.getOperands()) {
+					if (new SInteractionOperand(operand).getLastMessages(i) != null)
+						lastMessages.addAll(new SInteractionOperand(operand).getLastMessages(i));
+				}
+		}
+		if (lastMessages.size() == 0)
+			return null;
+		return lastMessages;
+	}
 }

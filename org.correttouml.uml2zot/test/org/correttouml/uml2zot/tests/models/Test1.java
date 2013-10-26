@@ -34,7 +34,7 @@ public class Test1 {
 	
 	/** SD_CF */
 //	private String MODEL_FILE="testmodels/MehdiTest6/model.uml";
-	private String MODEL_FILE="testmodels/SD_CF/SD_IF/model.uml";
+	private String MODEL_FILE="testmodels/SD_CF/CF_Opt/model.uml";
 	
 	
 	/** SEQUENCE DIAGRAM TESTING */

@@ -74,10 +74,65 @@ public class SInteractionOperand implements SInteractionFragment {
 		if (mades_interactionoperand.getGuard() == null)
 			return null;
 		String guard = mades_interactionoperand.getGuard();
-		if (guard == "" || guard=="t"||guard=="true")
+		if (guard.equals("") || guard.equals("t") || guard.equals("true"))
 			return new Predicate("t");//means implicit True 
-		if (guard == "f" || guard == "false")
+		if (guard.equals("f") || guard.equals("false"))
 			return new Not(new Predicate("t")); //(!!(-P- t)) is False// predicate t is reserved and stands for True 
 		return new Predicate(mades_interactionoperand.getGuard());
 	}
+
+	public ArrayList<Predicate> getFirstMessages(int lifelineIndex){//returns predicate of messages that can possibly be first message of CombinedFragment.
+		ArrayList<Predicate> firstMessages = new ArrayList<Predicate>();
+		int evSize =  mades_interactionoperand.getLifelineEvents(lifelineIndex).size();
+		for (int j = 0; j < evSize; j++) {
+			InteractionFragment sepliEvj = null;
+			SCombinedFragment sepliCFj = null;
+			Predicate sepliEvjPrd = null;
+			sepliEvj = mades_interactionoperand.getLifelineEvents(lifelineIndex).get(j);
+			if(sepliEvj instanceof MessageStart) 
+				sepliEvjPrd = new SMessageStart((MessageStart)sepliEvj).getPredicate();
+			if(sepliEvj instanceof MessageEnd)
+				sepliEvjPrd = new SMessageEnd((MessageEnd)sepliEvj).getPredicate();
+			if (SInteractionFragmentFactory.getInstance(sepliEvj, config) instanceof SCombinedFragment)
+				sepliCFj = (SCombinedFragment)SInteractionFragmentFactory.getInstance(sepliEvj, config);
+
+			if (sepliEvjPrd != null) { // if event is M 
+				firstMessages.add(sepliEvjPrd);
+				return firstMessages;
+			}
+			if (sepliCFj != null) { // if event is CF_Y, we add its first messages to "firstMessages" and move forward, because CF_Y may get ignored and there is a possible first message after that. 
+				if (sepliCFj.getFirstMessages(mades_interactionoperand.getLifelinesNames().get(lifelineIndex)) != null)
+					firstMessages.addAll(sepliCFj.getFirstMessages(mades_interactionoperand.getLifelinesNames().get(lifelineIndex)));
+			}
+		}
+		return firstMessages;
+	}
+	
+	public ArrayList<Predicate> getLastMessages(int lifelineIndex){//returns predicate of messages that can possibly be last message of CombinedFragment.
+		ArrayList<Predicate> lastMessages = new ArrayList<Predicate>();
+		int evSize =  mades_interactionoperand.getLifelineEvents(lifelineIndex).size();
+		for (int j = evSize - 1; j >= 0 ; j--) {
+			InteractionFragment sepliEvj = null;
+			SCombinedFragment sepliCFj = null;
+			Predicate sepliEvjPrd = null;
+			sepliEvj = mades_interactionoperand.getLifelineEvents(lifelineIndex).get(j);
+			if(sepliEvj instanceof MessageStart) 
+				sepliEvjPrd = new SMessageStart((MessageStart)sepliEvj).getPredicate();
+			if(sepliEvj instanceof MessageEnd)
+				sepliEvjPrd = new SMessageEnd((MessageEnd)sepliEvj).getPredicate();
+			if (SInteractionFragmentFactory.getInstance(sepliEvj, config) instanceof SCombinedFragment)
+				sepliCFj = (SCombinedFragment)SInteractionFragmentFactory.getInstance(sepliEvj, config);
+
+			if (sepliEvjPrd != null) { // if event is M 
+				lastMessages.add(sepliEvjPrd);
+				return lastMessages;
+			}
+			if (sepliCFj != null) { // if event is CF_Y, we add its last messages to "lastMessages" and move backward, because CF_Y may get ignored and there is a possible last message before that. 
+				if (sepliCFj.getLastMessages(mades_interactionoperand.getLifelinesNames().get(lifelineIndex)) != null)
+					lastMessages.addAll(sepliCFj.getLastMessages(mades_interactionoperand.getLifelinesNames().get(lifelineIndex)));
+			}
+		}
+		return lastMessages;
+	}
+	
 }
