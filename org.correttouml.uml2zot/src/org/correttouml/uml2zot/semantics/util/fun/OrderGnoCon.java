@@ -1,13 +1,12 @@
 package org.correttouml.uml2zot.semantics.util.fun;
 
 import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
-import org.correttouml.uml2zot.semantics.util.bool.MetaBooleanFormulae;
 
 /**
 *@author Mohammad Mehdi Pourhashem Kallehbasti 
 */
 
-public class OrderGnoCon implements BooleanFormulae, MetaBooleanFormulae {
+public class OrderGnoCon implements BooleanFormulae{
 	BooleanFormulae f1;
 	BooleanFormulae f2;
 	BooleanFormulae guard;
@@ -40,17 +39,5 @@ public class OrderGnoCon implements BooleanFormulae, MetaBooleanFormulae {
 				"\t(-> f2 (since_ei (&& (!! f2) (!! exception)) (&& f1 guard)))\n" +
 				"\t(-> (&& f1 guard) (!! f2))\n" +
 				"))";
-	}
-
-	@Override
-	public void setComment(String comment) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public String getComment() {
-		// TODO Auto-generated method stub
-		return "";
 	}
 }

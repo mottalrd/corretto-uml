@@ -3,6 +3,7 @@ package org.correttouml.uml2zot.semantics.sequencediagram;
 import java.util.ArrayList;
 import org.correttouml.uml.diagrams.sequencediagram.*;
 import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
+import org.correttouml.uml2zot.semantics.util.bool.Not;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 
 /**
@@ -69,8 +70,14 @@ public class SInteractionOperand implements SInteractionFragment {
 		return new Predicate(this.mades_interactionoperand.getPredicateName() + '_' + lifelineName);
 	}
 	
-	public BooleanFormulae getGuard(){
+	public BooleanFormulae getGuard(){////####incomplete
+		if (mades_interactionoperand.getGuard() == null)
+			return null;
 		String guard = mades_interactionoperand.getGuard();
-		return (guard != "") ? new Predicate(mades_interactionoperand.getGuard()) : null;
+		if (guard == "" || guard=="t"||guard=="true")
+			return new Predicate("t");//means implicit True 
+		if (guard == "f" || guard == "false")
+			return new Not(new Predicate("t")); //(!!(-P- t)) is False// predicate t is reserved and stands for True 
+		return new Predicate(mades_interactionoperand.getGuard());
 	}
 }

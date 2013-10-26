@@ -66,7 +66,7 @@ public class InteractionOperand implements InteractionFragment, PTermElement {
 	}
 
 	public String getGuard(){
-		return (uml_interactionoperand.getGuard().getName() == null) ? "": uml_interactionoperand.getGuard().getName();
+		return (uml_interactionoperand.getGuard() == null) ? null: uml_interactionoperand.getGuard().getName();
 	}
 	
 }

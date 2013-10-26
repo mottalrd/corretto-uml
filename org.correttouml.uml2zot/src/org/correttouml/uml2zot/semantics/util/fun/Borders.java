@@ -1,13 +1,12 @@
 package org.correttouml.uml2zot.semantics.util.fun;
 
 import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
-import org.correttouml.uml2zot.semantics.util.bool.MetaBooleanFormulae;
 
 /**
 *@author Mohammad Mehdi Pourhashem Kallehbasti 
 */
 
-public class Borders implements BooleanFormulae, MetaBooleanFormulae {
+public class Borders implements BooleanFormulae{
 	BooleanFormulae f1;
 	BooleanFormulae f1_Start;
 	BooleanFormulae f1_End;
@@ -38,17 +37,5 @@ public class Borders implements BooleanFormulae, MetaBooleanFormulae {
 				"\t(<-> f1 (|| f1_Start (since_ei (!! (|| f1_End exception)) f1_Start)))\n" +
 				"\t(-> f1_Start (until_ei (!! f1_Start) (|| f1_End exception)))\n" +
 				"))";
-	}
-
-	@Override
-	public void setComment(String comment) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public String getComment() {
-		// TODO Auto-generated method stub
-		return "";
 	}
 }

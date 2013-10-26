@@ -1,10 +1,7 @@
 package org.correttouml.uml2zot.semantics.sequencediagram;
 
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
 import org.correttouml.uml.diagrams.classdiagram.Object;
@@ -167,7 +164,7 @@ public class SSequenceDiagram {
 		//get messages semantics
 		sem = sem + SMadesModel.printSeparatorSmall("MESSAGES SEMANTICS");
 		for (Message m : this.mades_sd.getMessages()) {
-			sem = sem + new SMessage(m).getSemantics();
+			sem = sem + new SMessage(m).getSemantics() + "\n";
 		}
 		
 		// Get execution occurrences semantics
@@ -212,7 +209,7 @@ public class SSequenceDiagram {
 //		for (sequencediagram.Assignment a : this.getAssignments()) {
 //			sem = sem + a.getSemantics();
 //		}
-
+		sem += "(->  (-P- MADESYSTEMSTART) (next (-P- sd1_start)))\n(->  (-P- sd1_start) (yesterday (-P- MADESYSTEMSTART) ))\n\n\n\n\n\n\n"; ////#### Del me
 		return sem;
 	}
 

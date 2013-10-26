@@ -22,21 +22,44 @@ public class CombinedFragment implements CombinedFragmentItf, InteractionFragmen
 	}
 	
 	public String getPredicateName(){
-		//PrdName of an opt1, which enclosed by par1, which is enclosed by SD1 is "SD1_par1_opt1"
-		String prefix = "";
-		org.eclipse.uml2.uml.InteractionFragment tempif = (org.eclipse.uml2.uml.InteractionFragment)uml_combinedFragment;
-		while (tempif.getEnclosingInteraction() != null){
-			prefix = tempif.getEnclosingInteraction().getName() + '_' + prefix;
-			tempif = tempif.getEnclosingInteraction();
+		//PrdName of  opt1, which is enclosed by par1, which is enclosed by SD1 is "SD1_par1_opt1"
+		String predicatename = uml_combinedFragment.getName();
+		org.eclipse.uml2.uml.Element element = (org.eclipse.uml2.uml.Element)uml_combinedFragment;//###
+		while (!(element.getOwner() instanceof org.eclipse.uml2.uml.Package)) {
+			if (element.getOwner() instanceof org.eclipse.uml2.uml.CombinedFragment) {
+				element = (org.eclipse.uml2.uml.CombinedFragment) element.getOwner();
+				predicatename = ((org.eclipse.uml2.uml.CombinedFragment) element).getName() + '_' + predicatename;
+			} else if (element.getOwner() instanceof org.eclipse.uml2.uml.InteractionOperand){
+				element = element.getOwner();
+				predicatename = ((org.eclipse.uml2.uml.InteractionOperand) element).getName() + '_' + predicatename;
+			} else if (element.getOwner() instanceof org.eclipse.uml2.uml.Interaction) {
+				element = element.getOwner();
+				predicatename = ((org.eclipse.uml2.uml.Interaction) element).getName() + '_' + predicatename;
+			}
 		}
-		return prefix + uml_combinedFragment.getName();
-	}
+		return predicatename;
+
+//		//PrdName of  opt1, which is enclosed by par1, which is enclosed by SD1 is "SD1_par1_opt1"
+//		String prefix = "";
+//		org.eclipse.uml2.uml.InteractionFragment tempif = (org.eclipse.uml2.uml.InteractionFragment)uml_combinedFragment;//###
+//		while (tempif.getEnclosingInteraction() != null){
+//			prefix = tempif.getEnclosingInteraction().getName() + '_' + prefix;
+//			tempif = tempif.getEnclosingInteraction();
+//		}
+//		return prefix + uml_combinedFragment.getName();
+}
 	
 	public String getSDName(){
-		org.eclipse.uml2.uml.InteractionFragment tempif = (org.eclipse.uml2.uml.InteractionFragment)uml_combinedFragment;
-		while (tempif.getEnclosingInteraction() != null)
-			tempif = tempif.getEnclosingInteraction();
-		return tempif.getName();
+		org.eclipse.uml2.uml.Element element = uml_combinedFragment;
+		while (!(element.getOwner() instanceof org.eclipse.uml2.uml.Package)) {
+			element = element.getOwner();
+		}
+		return ((org.eclipse.uml2.uml.Interaction) element).getName();
+//		org.eclipse.uml2.uml.internal.impl.ElementImpl element = (org.eclipse.uml2.uml.internal.impl.ElementImpl)uml_combinedFragment;
+//		while (!(element.getOwner() instanceof org.eclipse.uml2.uml.internal.impl.PackageImpl)) {
+//			element = (org.eclipse.uml2.uml.internal.impl.ElementImpl)element.getOwner();
+//		}
+//		return ((org.eclipse.uml2.uml.Interaction)element).getName();
 	}
 	
 	public String getOperatorName(){
@@ -68,33 +91,60 @@ public class CombinedFragment implements CombinedFragmentItf, InteractionFragmen
 	public ArrayList<InteractionFragment> getPreIFs(){ ////###test when a lifeline is not included in CF
 		ArrayList<InteractionFragment> CFPreIFs = new ArrayList<InteractionFragment>();
 		org.eclipse.uml2.uml.Interaction enclosingfragment = uml_combinedFragment.getEnclosingInteraction();
-		for (org.eclipse.uml2.uml.Lifeline l : uml_combinedFragment.getCovereds()) {
-			//<get lifeline's events (InteractionFragment)>
-			ArrayList<InteractionFragment> lifelineifs = new ArrayList<InteractionFragment>();
-			for (org.eclipse.uml2.uml.InteractionFragment ifr : enclosingfragment.getFragments()) {
-				if (l.getCoveredBys().contains(ifr)) 
-					lifelineifs.add(InteractionFragmentFactory.getInstance(ifr));
+		if (enclosingfragment != null) { 
+			for (org.eclipse.uml2.uml.Lifeline l : uml_combinedFragment.getCovereds()) {
+				//<get lifeline's events (InteractionFragment)>
+				ArrayList<InteractionFragment> lifelineifs = new ArrayList<InteractionFragment>();
+				for (org.eclipse.uml2.uml.InteractionFragment ifr : enclosingfragment.getFragments()) {
+					if (l.getCoveredBys().contains(ifr)) 
+						lifelineifs.add(InteractionFragmentFactory.getInstance(ifr));
+				}
+				//</get lifeline's events (InteractionFragment)>
+
+				for(int i=0;i<lifelineifs.size();i++){
+					if (lifelineifs.get(i) instanceof CombinedFragment){
+						//					CombinedFragment cf = new CombinedFragment((org.eclipse.uml2.uml.CombinedFragment)lifelineifs.get(i));
+						CombinedFragment cf = (CombinedFragment) lifelineifs.get(i);
+						if (cf.getName() == this.getName())
+							if (i == 0)
+								CFPreIFs.add(null);
+							else
+								CFPreIFs.add(lifelineifs.get(i - 1));
+					}
+				}
 			}
-			//</get lifeline's events (InteractionFragment)>
-			
-			for(int i=0;i<lifelineifs.size();i++){
-				if (lifelineifs.get(i) instanceof CombinedFragment){
-//					CombinedFragment cf = new CombinedFragment((org.eclipse.uml2.uml.CombinedFragment)lifelineifs.get(i));
-					CombinedFragment cf = (CombinedFragment) lifelineifs.get(i);
-					if (cf.getName() == this.getName())
-						if (i == 0)
-							CFPreIFs.add(null);
-						else
-							CFPreIFs.add(lifelineifs.get(i - 1));
+		} else {
+			org.eclipse.uml2.uml.InteractionOperand enclosingoperand = uml_combinedFragment.getEnclosingOperand();
+			for (org.eclipse.uml2.uml.Lifeline l : uml_combinedFragment.getCovereds()) {
+				//<get lifeline's events (InteractionFragment)>
+				ArrayList<InteractionFragment> lifelineifs = new ArrayList<InteractionFragment>();
+				for (org.eclipse.uml2.uml.InteractionFragment ifr : enclosingoperand.getFragments()) {
+					if (l.getCoveredBys().contains(ifr)) 
+						lifelineifs.add(InteractionFragmentFactory.getInstance(ifr));
+				}
+				//</get lifeline's events (InteractionFragment)>
+
+				for(int i=0;i<lifelineifs.size();i++){
+					if (lifelineifs.get(i) instanceof CombinedFragment){
+						//					CombinedFragment cf = new CombinedFragment((org.eclipse.uml2.uml.CombinedFragment)lifelineifs.get(i));
+						CombinedFragment cf = (CombinedFragment) lifelineifs.get(i);
+						if (cf.getName() == this.getName())
+							if (i == 0)
+								CFPreIFs.add(null);
+							else
+								CFPreIFs.add(lifelineifs.get(i - 1));
+					}
 				}
 			}
 		}
+		
 		return CFPreIFs;
 	}
 	
 	public ArrayList<InteractionFragment> getPostIFs(){ ////###test when a lifeline is not included in CF
 		ArrayList<InteractionFragment> CFPostIFs = new ArrayList<InteractionFragment>();
 		org.eclipse.uml2.uml.Interaction enclosingfragment = uml_combinedFragment.getEnclosingInteraction();
+		if (enclosingfragment != null) {
 		for (org.eclipse.uml2.uml.Lifeline l : uml_combinedFragment.getCovereds()) {
 			//<get lifeline's events (InteractionFragment)>
 			ArrayList<InteractionFragment> lifelineifs = new ArrayList<InteractionFragment>();
@@ -116,6 +166,31 @@ public class CombinedFragment implements CombinedFragmentItf, InteractionFragmen
 				}
 			}
 		}
+		}else {
+			org.eclipse.uml2.uml.InteractionOperand enclosingoperand = uml_combinedFragment.getEnclosingOperand();
+			for (org.eclipse.uml2.uml.Lifeline l : uml_combinedFragment.getCovereds()) {
+				//<get lifeline's events (InteractionFragment)>
+				ArrayList<InteractionFragment> lifelineifs = new ArrayList<InteractionFragment>();
+				for (org.eclipse.uml2.uml.InteractionFragment ifr : enclosingoperand.getFragments()) {
+					if (l.getCoveredBys().contains(ifr)) 
+						lifelineifs.add(InteractionFragmentFactory.getInstance(ifr));
+				}
+				//</get lifeline's events (InteractionFragment)>
+				
+				for(int i=0;i<lifelineifs.size();i++){
+					if (lifelineifs.get(i) instanceof CombinedFragment){
+//						CombinedFragment cf = new CombinedFragment((org.eclipse.uml2.uml.CombinedFragment)lifelineifs.get(i));
+						CombinedFragment cf = (CombinedFragment)lifelineifs.get(i);
+						if (cf.getName() == this.getName())
+							if (i < lifelineifs.size() - 1)
+								CFPostIFs.add(lifelineifs.get(i + 1));
+							else
+								CFPostIFs.add(null);
+					}
+				}
+			}
+		}
+			
 		return CFPostIFs;
 	}
 	
@@ -123,6 +198,9 @@ public class CombinedFragment implements CombinedFragmentItf, InteractionFragmen
 		return uml_combinedFragment.getEnclosingInteraction();
 	}
 	
+	public org.eclipse.uml2.uml.InteractionOperand getEnclosingOperand(){ ////###test for enclosingF is CF and when it is CF_Op
+		return uml_combinedFragment.getEnclosingOperand();
+	}
 	
 /*
 	

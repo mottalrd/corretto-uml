@@ -13,7 +13,7 @@ public class CombinedFragmentFactory {
 //			case InteractionOperatorKind.ALT:
 //				 return new CF_Alt(uml_combinedfragment);
 //				break;
-			case InteractionOperatorKind.OPT:
+			case InteractionOperatorKind.OPT://///////////////////////////////////////////
 				return new CF_Opt(uml_combinedfragment);
 			}
 			throw new Exception("Event not found");

@@ -11,8 +11,7 @@ import java.util.Collection;
 
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 
-public class Or implements BooleanFormulae, MetaBooleanFormulae{
-	private String comment="";
+public class Or implements BooleanFormulae{
     ArrayList<BooleanFormulae> f = new ArrayList<BooleanFormulae>();
 
     public Or() {
@@ -20,11 +19,6 @@ public class Or implements BooleanFormulae, MetaBooleanFormulae{
     
     public Or(ArrayList<BooleanFormulae> fList) {
         f.addAll(fList);
-    }
-    
-    public Or(ArrayList<BooleanFormulae> fList, String comment) {
-        f.addAll(fList);
-        this.comment = comment;
     }
     
     public Or(BooleanFormulae... fList) {
@@ -36,12 +30,6 @@ public class Or implements BooleanFormulae, MetaBooleanFormulae{
         	f.add((BooleanFormulae)p);
     }
     
-    public Or(Collection<Predicate> pList, String comment) {
-        this.comment = comment;
-    	for(Predicate p : pList)
-        	f.add((BooleanFormulae)p);
-    }
-
     public void addFormulae(BooleanFormulae fIn) {
         f.add(fIn);
     }
@@ -65,15 +53,5 @@ public class Or implements BooleanFormulae, MetaBooleanFormulae{
         s = s + ")";
         return s;
     }
-    
-	@Override
-	public void setComment(String comment) {
-		this.comment = comment;
-	}
-
-	@Override
-	public String getComment() {
-		return this.comment;
-	}
     
 }

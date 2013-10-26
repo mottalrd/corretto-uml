@@ -8,12 +8,10 @@ package org.correttouml.uml2zot.semantics.util.bool;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Iterator;
 
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 
-public class And implements BooleanFormulae, MetaBooleanFormulae {
-	private String comment="";
+public class And implements BooleanFormulae{
     ArrayList<BooleanFormulae> f = new ArrayList<BooleanFormulae>();
 
     public And(BooleanFormulae... fList) {
@@ -24,19 +22,8 @@ public class And implements BooleanFormulae, MetaBooleanFormulae {
         f.addAll(fList);
     }
 
-    public And(ArrayList<BooleanFormulae> fList, String comment) {
-        f.addAll(fList);
-        this.comment = comment;
-    }
-    
     public And(Collection<Predicate> pList) {
         for(Predicate p : pList)
-        	f.add((BooleanFormulae)p);
-    }
-    
-    public And(Collection<Predicate> pList, String comment) {
-        this.comment = comment;
-    	for(Predicate p : pList)
         	f.add((BooleanFormulae)p);
     }
     
@@ -62,15 +49,4 @@ public class And implements BooleanFormulae, MetaBooleanFormulae {
         }
         return s + ")";
     }
-    
-	@Override
-	public void setComment(String comment) {
-		this.comment = comment;
-	}
-
-	@Override
-	public String getComment() {
-		return this.comment;
-	}
-    
 }

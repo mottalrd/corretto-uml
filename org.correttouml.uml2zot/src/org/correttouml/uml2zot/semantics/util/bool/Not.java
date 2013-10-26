@@ -6,7 +6,6 @@
 package org.correttouml.uml2zot.semantics.util.bool;
 
 public class Not implements BooleanFormulae {
-	private String comment="";
     BooleanFormulae f;
 
     public Not(BooleanFormulae f) {

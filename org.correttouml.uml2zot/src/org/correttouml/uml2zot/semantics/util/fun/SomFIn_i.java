@@ -1,13 +1,12 @@
 package org.correttouml.uml2zot.semantics.util.fun;
 
 import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
-import org.correttouml.uml2zot.semantics.util.bool.MetaBooleanFormulae;
 
 /**
 *@author Mohammad Mehdi Pourhashem Kallehbasti 
 */
 
-public class SomFIn_i implements BooleanFormulae, MetaBooleanFormulae {
+public class SomFIn_i implements BooleanFormulae{
 	BooleanFormulae f1;
 	BooleanFormulae f2;
 
@@ -31,17 +30,5 @@ public class SomFIn_i implements BooleanFormulae, MetaBooleanFormulae {
 		return "(defun SomFIn_i (f1 f2)\n" +
 				"\t(!! (until_ii (!! f1) f2))\n" +
 				")";
-	}
-
-	@Override
-	public void setComment(String comment) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public String getComment() {
-		// TODO Auto-generated method stub
-		return "";
 	}
 }
