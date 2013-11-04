@@ -2,8 +2,8 @@ package org.correttouml.uml2zot.semantics.sequencediagram;
 
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Set;
-
 import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.iod.IOD;
 import org.correttouml.uml.diagrams.iod.InterruptibleRegion;
@@ -13,6 +13,7 @@ import org.correttouml.uml.diagrams.sequencediagram.CombinedFragment;
 import org.correttouml.uml.diagrams.sequencediagram.ExecutionOccurrence;
 import org.correttouml.uml.diagrams.sequencediagram.Lifeline;
 import org.correttouml.uml.diagrams.sequencediagram.Message;
+import org.correttouml.uml.diagrams.sequencediagram.RepetitiousMessage;
 import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagram;
 import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagramParameter;
 import org.correttouml.uml.diagrams.statediagram.StateDiagram;
@@ -77,14 +78,14 @@ public class SSequenceDiagram {
 	public ArrayList<Predicate> getLifelinesPredicateStarts(){
 		ArrayList<Predicate> lifelinesPredicateStarts = new ArrayList<Predicate>();
 		for(Predicate p : getLifelinesPredicates())
-			lifelinesPredicateStarts.add(p.getPredicateStart());
+			lifelinesPredicateStarts.add(p.getStartPredicate());
 		return lifelinesPredicateStarts;
 	}
 	
 	public ArrayList<Predicate> getLifelinesPredicateEnds(){
 		ArrayList<Predicate> lifelinesPredicateEnds = new ArrayList<Predicate>();
 		for(Predicate p : getLifelinesPredicates())
-			lifelinesPredicateEnds.add(p.getPredicateEnd());
+			lifelinesPredicateEnds.add(p.getEndPredicate());
 		return lifelinesPredicateEnds;
 	}
 	
@@ -101,9 +102,9 @@ public class SSequenceDiagram {
 	public String getSemantics() {
 		String sem = "";
 
-		Predicate sd_start= new Predicate(this.mades_sd.getName()).getPredicateStart();
-		Predicate sd_end=new Predicate(this.mades_sd.getName()).getPredicateEnd();
-		Predicate sd_stop=new Predicate(this.mades_sd.getName()).getPredicateStop();
+		Predicate sd_start= new Predicate(this.mades_sd.getName()).getStartPredicate();
+		Predicate sd_end=new Predicate(this.mades_sd.getName()).getEndPredicate();
+		Predicate sd_stop=new Predicate(this.mades_sd.getName()).getStopPredicate();
 		Predicate sd = new Predicate(this.mades_sd.getName());
 		
 	/*<before CF>	
@@ -119,52 +120,28 @@ public class SSequenceDiagram {
 		sem = sem + SMadesModel.printSeparatorSmall("MULTI SEQUENCE DIAGRAM INSTANCE SEMANTICS");
 		sem = sem + new Implies(sd_start, new Until_ei(new Not(sd_start), new Or(sd_stop, sd_end)))+"\n";
 
-		/*<before CF>
-		// Get start semantics
-		sem = sem + SMadesModel.printSeparatorSmall("START SEMANTICS");
-		for (Lifeline l : this.mades_sd.getLifelines()) {
-			if (l.getEvents().size() > 0) {
-				Predicate firstEvent = SInteractionFragmentFactory.getInstance(
-						l.getEvents().get(0), config).getPredicate();
-				sem = sem
-						+ buildOrderingSemanticsLTEAxiom(sd_start, firstEvent,
-								sd_stop) + "\n";
-				sem = sem
-						+ buildOrderingSemanticsBackwardAxiom(sd_start,
-								firstEvent, sd_stop) + "\n";
-			}
-		}
-
-		// Get end semantics
-		sem = sem + SMadesModel.printSeparatorSmall("END SEMANTICS");
-		HashSet<Predicate> lastevents = new HashSet<Predicate>();
-		for (Lifeline l : this.mades_sd.getLifelines()) {
-			if(l.getEvents().size()>0){
-				Predicate lastEvent=SInteractionFragmentFactory.getInstance(l.getEvents().get(l.getEvents().size()-1), config).getPredicate();
-				lastevents.add(lastEvent);
-				sem = sem + buildOrderingSemanticsLTEAxiom(lastEvent, sd_end, sd_stop) + "\n";
-				sem = sem + buildOrderingSemanticsBackwardAxiom(lastEvent, sd_end, sd_stop) + "\n";
-			}
-		}
-		sem = sem + buildOrderingSemanticsSDEndAxiom(sd_end, lastevents) + "\n";
-
-		// Get lifelines semantics
-		sem = sem + SMadesModel.printSeparatorSmall("LIFELINES SEMANTICS");
-		for (Lifeline l : this.mades_sd.getLifelines()) {
-			sem = sem + new SLifeline(l).getSemantics();
-		}
-		}
-		</before CF>*/
-
-		
 		//get sequence diagram fragments semantics
 		sem = sem + SMadesModel.printSeparatorSmall("FRAGMENTS SEMANTICS");
 		sem += new SCombine(this.mades_sd, config).toString();
 
 		//get messages semantics
 		sem = sem + SMadesModel.printSeparatorSmall("MESSAGES SEMANTICS");
+		/*
 		for (Message m : this.mades_sd.getMessages()) {
 			sem = sem + new SMessage(m).getSemantics() + "\n";
+		}*/
+		ArrayList<String> addedMessagesUmlID = new ArrayList<String>();
+	    for(String name:RepetitiousMessage.instances.keySet()) {
+	    	org.eclipse.uml2.uml.Message tempm = RepetitiousMessage.instances.get(name);
+	    	String preName = tempm.getName();
+	    	tempm.setName(name);
+	    	sem = sem + new SMessage(new Message(tempm)).getSemantics() + "\n";
+	    	tempm.setName(preName);
+	    	addedMessagesUmlID.add((new Message(tempm)).getUMLId());
+	    }
+		for (Message m : this.mades_sd.getMessages()) {
+			if(addedMessagesUmlID ==null || !addedMessagesUmlID.contains(m.getUMLId()))
+				sem = sem + new SMessage(m).getSemantics() + "\n";
 		}
 		
 		// Get execution occurrences semantics
@@ -209,7 +186,7 @@ public class SSequenceDiagram {
 //		for (sequencediagram.Assignment a : this.getAssignments()) {
 //			sem = sem + a.getSemantics();
 //		}
-		sem += "(->  (-P- MADESYSTEMSTART) (next (-P- sd1_start)))\n(->  (-P- sd1_start) (yesterday (-P- MADESYSTEMSTART) ))\n\n\n\n\n\n\n"; ////#### Del me
+		sem += "(->  (-P- BigBang) (next "+ sd_start + "))\n(->  "+sd_start+"(yesterday (-P- BigBang) ))\n\n\n\n\n\n\n"; ////#### Del me
 		return sem;
 	}
 
@@ -246,8 +223,8 @@ public class SSequenceDiagram {
         		if(n instanceof SequenceDiagramNode){
         			SequenceDiagramNode sdnode=((SequenceDiagramNode) n);
         			if(sdnode.getSequenceDiagram().equals(this.mades_sd)){
-            			condStart.addFormulae(new SSequenceDiagramNode((SequenceDiagramNode) n).getPredicateStart());
-            			condEnd.addFormulae(new SSequenceDiagramNode((SequenceDiagramNode) n).getPredicateEnd());
+            			condStart.addFormulae(new SSequenceDiagramNode((SequenceDiagramNode) n).getStartPredicate());
+            			condEnd.addFormulae(new SSequenceDiagramNode((SequenceDiagramNode) n).getEndPredicate());
         			}
         		}
         	}
@@ -260,7 +237,7 @@ public class SSequenceDiagram {
         	for(InterruptibleRegion ir: iod.getInterruptibleRegions()){
         		for(SequenceDiagramNode sd_node: ir.getSequenceDiagramNodes()){
         			if(sd_node.getSequenceDiagram().equals(this.mades_sd)){
-        				condStop.addFormulae(new SSequenceDiagramNode(sd_node).getPredicateStop());
+        				condStop.addFormulae(new SSequenceDiagramNode(sd_node).getStopPredicate());
         			}
         		}
         	}
@@ -274,11 +251,11 @@ public class SSequenceDiagram {
         }
         if(condStop.size() == 0){
     		sem = sem + SMadesModel.printSeparatorSmall("STOP SEMANTICS");
-    		sem = sem + new Not(getPredicate().getPredicateStop()) + "\n";
+    		sem = sem + new Not(getPredicate().getStopPredicate()) + "\n";
         }
         if(condStop.size() > 0){
     		sem = sem + SMadesModel.printSeparatorSmall("STOP SEMANTICS");
-    		sem = sem + new Iff(getPredicate().getPredicateStop(), condStop) + "\n";
+    		sem = sem + new Iff(getPredicate().getStopPredicate(), condStop) + "\n";
         }
 		
 		return sem;

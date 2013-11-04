@@ -8,15 +8,15 @@ import org.correttouml.uml.diagrams.sequencediagram.CombinedFragment;
 import org.correttouml.uml.diagrams.sequencediagram.InteractionOperand;
 import org.correttouml.uml2zot.semantics.util.bool.*;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
+import org.omg.PortableInterceptor.NON_EXISTENT;
 
 /**
 *@author Mohammad Mehdi Pourhashem Kallehbasti 
 */
 
 public class SCF_Alt extends SCombinedFragment implements SCombinedFragmentItf{
+	//[documentation]: \Dropbox\SharePolimi\Documentation\Sequence Diagram\Combined_Fragment\Modular_Semantics\[CF_Alt].docx
 	private CF_Alt mades_cf_alt;
-	/// DONT USE getOperandsPredicates/////////////////////////=>getAltOperandsPredicates
-	// DONT USE getFormulae ::::> getFun()
 	public SCF_Alt(CF_Alt cfalt, Config config) {
 		super((CombinedFragment)cfalt, config);
 		this.mades_cf_alt = cfalt;
@@ -25,219 +25,321 @@ public class SCF_Alt extends SCombinedFragment implements SCombinedFragmentItf{
 	@Override
 	public ArrayList<BooleanFormulae> getSemantics() {
 		
-		ArrayList<BooleanFormulae> f = new ArrayList<BooleanFormulae>();
-		Predicate SD_Stop = getSDPredicate().getPredicateStop();
-		int n = getLifelines().size();
-		int m = getOperandsPredicates().size();
-		// // borders(CF_Alt, SD_End || SD_Stop)
-		// // link_Pre_Post(CF_Alt, config)
-		f.add(new SBorders(getPredicate(), getSDPredicate().getPredicateStop()).getFun());
-		f.addAll(new SLink_Pre_Post(this, config).getFormulae());
-		// // order(CF_Alt_Start, CF_Alt_End, True, SD_Stop, True)
-		f.add(new SOrder(getPredicate().getPredicateStart(), getPredicate().getPredicateEnd(), SD_Stop, true).getFun());
-		// // if (config.combine == “ws”){
-		if(config.combine == ConfigCombine.WS){
-			// // ||i=1 to n(CF_Alt_Li_Start) => CF_Alt
-			f.add(new Implies(new Or(getLifelinesStartPredicates()), getPredicate()));
-			// // CF_Alt_Start => ||i=1 to n(CF_Alt_Li_Start)
-			f.add(new Implies(getPredicate().getPredicateStart(), new Or(getLifelinesStartPredicates())));
-			// // for (i=1; i<=m; i++){ //for all operands
-			for (int i = 0; i < m; i++) { 
-			// //     &&j=1 to n order(CF_Alt_Lj_Start, CF_Alt_Opi_Lj_Start, CF_Alt_Opi, (SD_End || SD_Stop || CF_Alt_End || CF_Alt_Opi_Lj_End), True)
-				for (int j = 0; j < n; j++) {
-				f.add(new SOrder(getLifelinesStartPredicates().get(j),getAltOpiLjPredicate(i, j).getPredicateStart(),getAltOperandsPredicates().get(i), SD_Stop, true).getFun());
-				}
-			// //     &&j=1 to n orderMonoD(CF_Alt_Opi_Lj_End, CF_Alt_Lj_End, True, (SD_End || SD_Stop || CF_Alt_End || CF_Alt_Opi_Lj_End), True)
-				for (int j = 0; j < n; j++) {
-					f.add(new SOrderMonoD(getAltOpiLjPredicate(i, j).getPredicateEnd(), getLifelinesEndPredicates().get(j), SD_Stop, true).getFun());
-				}
-			// // }
-			}
-
-			// // if CF_Alt has Else operand {
-			if (getAltOpElsePredicate() != null) {
-			// //     &&j=1 to n order(CF_Alt_Lj_Start, CF_Alt_OpElse_Lj_Start, CF_Alt_OpElse, (SD_End || SD_Stop || CF_Alt_End || CF_Alt_OpElse_Lj_End), True)
-				for (int j = 0; j < n; j++) {
-					f.add(new SOrder(getLifelinesStartPredicates().get(j), getAltOpElseLjPredicate(j).getPredicateStart(), getAltOpElsePredicate(), SD_Stop, true).getFun());
-				}
-			// //     &&j=1 to n orderMonoD(CF_Alt_OpElse_Lj_End, CF_Alt_Lj_End, True, (SD_End || SD_Stop || CF_Alt_End || CF_Alt_Opi_Lj_End), True)
-				for (int j = 0; j < n; j++) {
-					f.add(new SOrderMonoD(getAltOpElseLjPredicate(j).getPredicateEnd(), getLifelinesEndPredicates().get(j), SD_Stop, true).getFun());
-				}
-			// //     CF_Alt_OpElse_Start <=> (!! (||i=1 to n CF_Alt_Guardi) && CF_Alt_Start)
-				f.add(new Iff(getAltOpElsePredicate().getPredicateStart(), new And(new Not(new Or(getAltGuards())),getPredicate().getPredicateStart())));
-			// //     if (config.what == “nondeterministically”)
-				if (config.what == ConfigWhat.NONDETERMINISTICALLY) {
-
-			// //         CF_Alt_Start => (||i=1 to m(CF_Alt_Opi_Start && !!(||j=1 to m,j!=iCF_Alt_Opj_Start))) || CF_Alt_OpElse_Start
-					if (m == 1) {//////[CF_Alt_Start => (CF_Alt_Op0_Start || CF_Alt_OpElse_Start)]
-						f.add(new Implies(getPredicate().getPredicateStart(), new Or(getAltOperandsPredicates().get(0).getPredicateStart(), getAltOpElsePredicate().getPredicateStart())));	
+		ArrayList<BooleanFormulae> f;
+		try {
+			f = new ArrayList<BooleanFormulae>();
+			Predicate SD_Stop = getSDPredicate().getStopPredicate();
+			int n = getLifelines().size();
+			int m = getOperandsPredicates().size(); //which is number of operands that have a guard. (E.g. if uml_cf_alt has 3 operands (last one is else), me is 2)
+			ArrayList<BooleanFormulae> tempf1 = new ArrayList<BooleanFormulae>();
+			// // borders(CF_Alt, SD_End || SD_Stop)
+			// // link_Pre_Post(CF_Alt, config)
+			f.add(new SBorders(getPredicate(), getSDPredicate().getStopPredicate()).getFun());
+			f.addAll(new SLink_Pre_Post(this, config.combine).getFormulae());
+			// // order(CF_Alt_Start, CF_Alt_End, True, SD_Stop, True)
+			f.add(new SOrder(getPredicate().getStartPredicate(), getPredicate().getEndPredicate(), SD_Stop, true).getFun());
+// // if (config.combine == “ws”){
+			if(config.combine == ConfigCombine.WS){
+				// // ||i=1 to n(CF_Alt_Li_Start) => CF_Alt
+				f.add(new Implies(new Or(getLifelinesStartPredicates()), getPredicate()));
+				// // CF_Alt_Start => ||i=1 to n(CF_Alt_Li_Start)
+				f.add(new Implies(getPredicate().getStartPredicate(), new Or(getLifelinesStartPredicates())));
+				// // for (i=1; i<=m; i++){ //for all operands
+				for (int i = 0; i < m; i++) { 
+					// //     &&j=1 to n order(CF_Alt_Lj_Start, CF_Alt_Opi_Lj_Start, CF_Alt_Opi, (SD_End || SD_Stop || CF_Alt_End || CF_Alt_Opi_Lj_End), True)
+					for (int j = 0; j < n; j++) {
+						f.add(new SOrder(getLifelinesStartPredicates().get(j),getOpiLjPredicate(i, j).getStartPredicate(),getOperandsPredicates().get(i), SD_Stop, true).getFun());
 					}
-					else {
-					ArrayList<BooleanFormulae> tempf1 = new ArrayList<BooleanFormulae>();
-					ArrayList<BooleanFormulae> tempf2 = new ArrayList<BooleanFormulae>();
-					for (int i = 0; i < m; i++) {
-						for (int j = 0; j < m; j++) {
-							if (i != j)
-								tempf2.add(getAltOperandsPredicates().get(j).getPredicateStart());
+					// //     &&j=1 to n orderMonoD(CF_Alt_Opi_Lj_End, CF_Alt_Lj_End, True, (SD_End || SD_Stop || CF_Alt_End || CF_Alt_Opi_Lj_End), True)
+					for (int j = 0; j < n; j++) {
+						f.add(new SOrderMonoD(getOpiLjPredicate(i, j).getEndPredicate(), getLifelinesEndPredicates().get(j), SD_Stop, true).getFun());
+					}
+					// // }
+				}
+
+				// // if CF_Alt has Else operand {
+				if (getOpElse() != null) {
+					// //     &&j=1 to n order(CF_Alt_Lj_Start, CF_Alt_OpElse_Lj_Start, CF_Alt_OpElse, (SD_End || SD_Stop || CF_Alt_End || CF_Alt_OpElse_Lj_End), True)
+					for (int j = 0; j < n; j++) {
+						f.add(new SOrder(getLifelinesStartPredicates().get(j), getOpElseLjPredicate(j).getStartPredicate(), getOpElsePredicate(), SD_Stop, true).getFun());
+					}
+					// //     &&j=1 to n orderMonoD(CF_Alt_OpElse_Lj_End, CF_Alt_Lj_End, True, (SD_End || SD_Stop || CF_Alt_End || CF_Alt_Opi_Lj_End), True)
+					for (int j = 0; j < n; j++) {
+						f.add(new SOrderMonoD(getOpElseLjPredicate(j).getEndPredicate(), getLifelinesEndPredicates().get(j), SD_Stop, true).getFun());
+					}
+					// //     CF_Alt_OpElse_Start <=> (!! (||i=1 to n CF_Alt_Guardi) && CF_Alt_Start)
+					f.add(new Iff(getOpElsePredicate().getStartPredicate(), new And(new Not(new Or(getGuards())),getPredicate().getStartPredicate())));
+					// //     if (config.what == “nondeterministically”)
+					if (config.what == ConfigWhat.NONDETERMINISTICALLY) {
+
+						// //         CF_Alt_Start => (||i=1 to m(CF_Alt_Opi_Start && !!(||j=1 to m,j!=iCF_Alt_Opj_Start))) || CF_Alt_OpElse_Start
+						if (m == 1) {//////[CF_Alt_Start => (CF_Alt_Op0_Start || CF_Alt_OpElse_Start)]
+							f.add(new Implies(getPredicate().getStartPredicate(), new Or(getOperandsPredicates().get(0).getStartPredicate(), getOpElsePredicate().getStartPredicate())));	
 						}
-						tempf1.add(new And(getAltOperandsPredicates().get(i).getPredicateStart(), new Not(new Or(tempf2))));
+						else {
+							tempf1.clear();
+							ArrayList<BooleanFormulae> tempf2 = new ArrayList<BooleanFormulae>();
+							for (int i = 0; i < m; i++) {
+								for (int j = 0; j < m; j++) {
+									if (i != j)
+									tempf2.add(getOperandsPredicates().get(j).getStartPredicate());
+							}
+							tempf1.add(new And(getOperandsPredicates().get(i).getStartPredicate(), new Not(new Or(tempf2))));
+						}
+						
+						f.add(new Implies(getPredicate().getStartPredicate(), new Or(new Or(tempf1), getOpElsePredicate().getStartPredicate())));
+						}
 					}
 					
-					f.add(new Implies(getPredicate().getPredicateStart(), new Or(new Or(tempf1), getAltOpElsePredicate().getPredicateStart())));
+				// //     (CF_Alt_OpElse_End || (||i=1 to m CF_Alt_Opi_End)) <=> CF_Alt_End
+					tempf1.clear();
+					for (int i = 0; i < m; i++) {
+						tempf1.add(getOperandsPredicates().get(i).getEndPredicate());
+					}
+					f.add(new Iff(new Or(getOpElsePredicate().getEndPredicate(), new Or(tempf1)), getPredicate().getEndPredicate()));
+				// // }
+				}
+
+				// // if CF_Alt does not have Else operand {
+				if (getOpElse() == null) { 
+					// //     (CF_Alt_Start && !!(||i=1 to m CF_Alt_Guardi)) => &&j=1 to nsomFIn_i(CF_Alt_Lj_Start && CF_Alt_Lj_End, CF_Alt)
+					tempf1.clear();
+					for(int j=0;j<n;j++) {
+						tempf1.add(new SSomFIn_i(new And(getLifelinePredicate(j).getStartPredicate(), getLifelinePredicate(j).getEndPredicate()), getPredicate()).getFun());
+					}
+					f.add(new Implies(new And(getPredicate().getStartPredicate(), new Not(new Or(getGuards()))), new And(tempf1)));
+					// //     if (config.what == “nondeterministically”)
+					if (config.what == ConfigWhat.NONDETERMINISTICALLY) {
+						// //         (CF_Alt_Start && (||i=1 to m CF_Alt_Guardi)) => (||j=1 to m(CF_Alt_Opj_Start && !!(||k=1 to m,k!=jCF_Alt_Opk_Start)))
+						tempf1.clear();
+						if (m == 1)
+							tempf1.add(getOperandsPredicates().get(0).getStartPredicate());
+						else
+							for (int j = 0; j < m; j++) {
+								ArrayList<BooleanFormulae> tempf2 = new ArrayList<BooleanFormulae>();
+								for (int k = 0; k < m; k++) {
+									if (k != j)
+										tempf2.add(getOperandsPredicates().get(k).getStartPredicate());
+								}
+								tempf1.add(new And(getOperandsPredicates().get(j).getStartPredicate(), new Not(new Or(tempf2))));
+
+							}
+						f.add(new Implies(new And(getPredicate().getStartPredicate(), new Or(getGuards())), new Or(tempf1)));
+					}
+					// //     (||i=1 to m CF_Alt_Opi_End) => CF_Alt_End
+						tempf1.clear();
+						for (int i = 0; i < m; i++) {
+							tempf1.add(getOperandsPredicates().get(i).getEndPredicate());
+						}
+						f.add(new Implies(new Or(tempf1), getPredicate().getEndPredicate()));
+				// // }
+				}
+
+				// // for (i = 0; i<m; i++){
+					for (int i = 0; i < m; i++) {
+				// //     if (config.what == “nondeterministically”)
+						if (config.what == ConfigWhat.NONDETERMINISTICALLY) {
+				// //         CF_Alt_Opi_Start => (CF_Alt_Start && CF_Alt_Guardi)
+							f.add(new Implies(getOperandsPredicates().get(i).getStartPredicate(), new And(getPredicate().getStartPredicate(), getGuards().get(i))));
+						}
+				// //     if (config.what == “firstOp”)
+						if (config.what == ConfigWhat.FIRSTOP) { // check for m= 0 m =1 ...
+				// //         CF_Alt_Opi_Start <=> (CF_Alt_Start && CF_Alt_Guardi && !!(||j=1 to i-1 CF_Alt_Guardj))
+							tempf1.clear();
+							for (int j = 0; j < i; j++) {
+								tempf1.add(getGuards().get(j));
+							}
+							if (m == 1) //if we have only one operand [// // CF_Alt_Opi_Start <=> (CF_Alt_Start && CF_Alt_Guardi)]
+								f.add(new Iff(getOperandsPredicates().get(i).getStartPredicate(), new And(getPredicate().getStartPredicate(), getGuards().get(i))));
+							else {
+								if (tempf1.size() > 0)
+									f.add(new Iff(getOperandsPredicates().get(i).getStartPredicate(), new And(getPredicate().getStartPredicate(), getGuards().get(i), new Not(new Or(tempf1)))));
+								else// in order to avoid [CF_Alt_Op0_Start <=> (CF_Alt_Start && CF_Alt_Guard0 && !!(||  ))]
+									f.add(new Iff(getOperandsPredicates().get(i).getStartPredicate(), new And(getPredicate().getStartPredicate(), getGuards().get(i))));
+							}
+						}
+				// // 	}// end of "ws"
 					}
 				}
-				
-			// //     (CF_Alt_OpElse_End || (||i=1 to m CF_Alt_Opi_End)) <=> CF_Alt_End
-				ArrayList<BooleanFormulae> tempf1 = new ArrayList<BooleanFormulae>();
-				for (int i = 0; i < m; i++) {
-					tempf1.add(getAltOperandsPredicates().get(i).getPredicateEnd());
-				}
-				f.add(new Iff(new Or(getAltOpElsePredicate().getPredicateEnd(), new Or(tempf1)), getPredicate().getPredicateEnd()));
-			// // }
-			}
-			//####
-			
-			
-			
-			
-			// //  &&j=1 to n order(CF_Alt_Lj_Start, CF_Alt_Op_Lj_Start, CF_Alt_Op, (SD_End || SD_Stop || CF_Alt_End || CF_Alt_Op_Lj_End), True)
-			for (int i = 0; i < n; i++) 
-				f.add(new SOrder(getLifelinesStartPredicates().get(i), getOpiLjPredicate(0, i).getPredicateStart(), getOperandsPredicates().get(0), SD_Stop, true).getFun());
-			// // &&j=1 to n orderMonoD(CF_Alt_Op_Lj_End, CF_Alt_Lj_End, True, (SD_End || SD_Stop || CF_Alt_End || CF_Alt_Op_Lj_End), True)
-			for (int i = 0; i < n; i++) 
-				f.add(new SOrderMonoD(getOpiLjPredicate(0, i).getPredicateEnd(), getLifelinesEndPredicates().get(i), SD_Stop, true).getFun());
-			// // CF_Alt_Op_End => ((||j=1 to nCF_Alt_Op_Li_End) && (&&j=1 to nsomPIn_i(CF_Alt_Op_Lj_End, CF_Alt_Op)))
-			ArrayList<BooleanFormulae> tempf1 = new ArrayList<BooleanFormulae>();
-			ArrayList<BooleanFormulae> tempf2 = new ArrayList<BooleanFormulae>();
-			for (int i = 0; i < n; i++){
-				tempf1.add(getOpiLjPredicate(0, i).getPredicateEnd());
-				tempf2.add(new SSomPIn_i(getOpiLjPredicate(0, i).getPredicateEnd(), getOperandsPredicates().get(0)).getFun());
-			}
-			f.add(new Implies(getOperandsPredicates().get(0).getPredicateEnd(), new And(new Or(tempf1), new And(tempf2))));
-			// // (CF_Alt_Start && !!CF_Alt_Guard)  => &&j=1 to nsomFIn_i(CF_Alt_Lj_Start && CF_Alt_Lj_End, CF_Alt)
-			if (getGuards().get(0) != null){
-			tempf1.clear();
-			for (int i = 0; i < n; i++)
-				tempf1.add(new SSomFIn_i(new And(getLifelinesStartPredicates().get(i), getLifelinesEndPredicates().get(i)), getPredicate()).getFun());
-			f.add(new Implies(
-					new And(getPredicate().getPredicateStart(), new Not(getGuards().get(0))),
-					new And(tempf1)));
-			}
-			// // (CF_Alt_Start && CF_Alt_Guard) => (CF_Alt_Op_Start || (!!CF_Alt_Op_Start && &&j=1 to nsomFIn_i(CF_Alt_Lj_Start && CF_Alt_Lj_End, CF_Alt)))
-			tempf1.clear();
-			for (int i = 0; i < n; i++)
-				tempf1.add(new SSomFIn_i(new And(getLifelinesStartPredicates().get(i), getLifelinesEndPredicates().get(i)), getPredicate()).getFun());
-			if (getGuards().get(0) != null) {
-				f.add(new Implies(
-						new And(getPredicate().getPredicateStart(), getGuards().get(0)),
-						new Or(
-								getOperandsPredicates().get(0).getPredicateStart(), 
-								new And(new Not(getOperandsPredicates().get(0).getPredicateStart()), new And(tempf1)))));
-			}else {// // in case of no guard (implicit true) this formula will be added.
-				// // CF_Alt_Start => (CF_Alt_Op_Start || (!!CF_Alt_Op_Start && &&j=1 to nsomFIn_i(CF_Alt_Lj_Start && CF_Alt_Lj_End, CF_Alt)))
-				f.add(new Implies(
-						getPredicate().getPredicateStart(),
-						new Or(
-								getOperandsPredicates().get(0).getPredicateStart(), 
-								new And(new Not(getOperandsPredicates().get(0).getPredicateStart()), new And(tempf1)))));
-				}
-			// // CF_Alt_Op_End => CF_Alt_End
-			f.add(new Implies(getOperandsPredicates().get(0).getPredicateEnd(), getPredicate().getPredicateEnd()));
-			// // CF_Alt_End => ((||j=1 to nCF_Alt_Li_End) && (&&j=1 to nsomPIn_i(CF_Alt_Lj_End, CF_Alt)))
-			tempf1.clear();
-			for (int i = 0; i < n; i++)
-				tempf1.add(new SSomPIn_i(getLifelinePredicate(i).getPredicateEnd(), getPredicate()));
-			f.add(new Implies(getPredicate().getPredicateEnd(), new And(new Or(getLifelinesEndPredicates()), new And(tempf1))));
-			//we have this axiom in scombine
-			/*// // CF_Alt_Op_Start => ||j=1 to n (CF_Alt_Op_Lj_Start) 
-			tempf1.clear();
-			for (int i = 0; i < n; i++)
-				tempf1.add(getOpiLjPredicate(0, i).getPredicateStart());
-			f.add(new Implies(getOperandsPredicates().get(0).getPredicateStart(), new Or(tempf1)));*/
-			
-//			// // borders(CF_Alt_Op, SD_End || SD_Stop) //// we have this axiom in scombine
-//			f.add(new SBorders(getOperandsPredicates().get(0), SD_Stop).getFun());
-			// // CF_Alt_Op_Start => CF_Alt_Guard && CF_Alt_Start
-			if (getGuards().get(0) != null)
-				f.add(new Implies(getOperandsPredicates().get(0).getPredicateStart(), new And(getGuards().get(0), getPredicate().getPredicateStart())));
-			else
-				f.add(new Implies(getOperandsPredicates().get(0).getPredicateStart(), getPredicate().getPredicateStart()));
-//			for (int i = 0; i < n; i++)//// we have this axiom in scombine
-//			// // borders(CF_Alt_Op_Li, SD_End || SD_Stop)
-//				f.add(new SBorders(getOpiLjPredicate(0, i), SD_Stop).getFun());
-			
-		
-		}//end "ws"
-		// // if (config.combine == “sync”){
-		else if (config.combine == ConfigCombine.SYNC){
-//			// // borders(CF_Alt, SD_End || SD_Stop) //// we have these axiom in scombine
-//			f.add(new SBorders(getPredicate(), SD_Stop).getFun());
-//			// // borders(CF_Alt_Op, SD_End || SD_Stop)
-//			f.add(new SBorders(getOperandsPredicates().get(0), SD_Stop).getFun());
-			
-			// // (CF_Alt_Start && !! CF_Alt_Guard) => CF_Alt_End
-			if (getGuards().get(0) != null)
-				f.add(new Implies(new And(getPredicate().getPredicateStart(), new Not(getGuards().get(0))), getPredicate().getPredicateEnd()));
-			// // (CF_Alt_Start && CF_Alt_Guard) => (CF_Alt_Op_Start || (!!CF_Alt_Op_Start && CF_Alt_End))
-			BooleanFormulae tempf1;
-			if (getGuards().get(0) != null)
-				tempf1 = new And(getPredicate().getPredicateStart(),getGuards().get(0));
-			else
-				tempf1 = getPredicate().getPredicateStart();
-			f.add(new Implies(
-					tempf1, 
-					new Or(getOperandsPredicates().get(0).getPredicateStart(), new And(new Not(getOperandsPredicates().get(0).getPredicateStart()), getPredicate().getPredicateEnd()))));
-			// // CF_Alt_End => (CF_Alt_Start  || CF_Alt_Op_End)
-			f.add(new Implies(getPredicate().getPredicateEnd(), new Or(getPredicate().getPredicateStart(), getOperandsPredicates().get(0).getPredicateEnd())));
-			// // CF_Alt_Op_Start => (CF_Alt_Start && CF_Alt_Guard)
-			if (getGuards().get(0) != null)
-				f.add(new Implies(getOperandsPredicates().get(0).getPredicateStart(), new And(getGuards().get(0), getPredicate().getPredicateStart())));
-			else
-				f.add(new Implies(getOperandsPredicates().get(0).getPredicateStart(), getPredicate().getPredicateStart()));
-			// // CF_Alt_Op_End => CF_Alt_End
-			f.add(new Implies(getOperandsPredicates().get(0).getPredicateEnd(), getPredicate().getPredicateEnd()));
-		}
-		// // combine(CF_Alt_Op, config)
-		f.addAll(new SCombine(mades_combinedfragment.getOperands().get(0), config).getFormulae());
-		
-		return f;
-	}
-	
-	public ArrayList<Predicate> getAltOperandsPredicates(){
-		ArrayList<Predicate> altoperandspredicates = new ArrayList<Predicate>();
-		for (InteractionOperand io: mades_combinedfragment.getOperands()) {
-			if (io.getGuard() != null)
-				altoperandspredicates.add(new Predicate(mades_combinedfragment.getPredicateName() + '_' + io.getName()));
-		}
-		return altoperandspredicates;
-	}
-	
-	public Predicate getAltOpElsePredicate(){
-		for (InteractionOperand io: mades_combinedfragment.getOperands()) {
-			if (io.getGuard() == null)
-				new Predicate(mades_combinedfragment.getPredicateName() + '_' + io.getName());
+// // if (config.combine == “sync”){
+					if (config.combine == ConfigCombine.SYNC) {
+						// // 	if CF_Alt has Else operand {
+						if (getOpElse() != null) {
+							// // 	    CF_Alt_OpElse_Start <=> (!! (||i=1 to m Guardi) && CF_Alt_Start)
+							f.add(new Iff(getOpElsePredicate().getStartPredicate(), new And(new Not(new Or(getGuards())), getPredicate().getStartPredicate())));	
+							// // 	    if (config.what == “nondeterministically”)
+							if (config.what == ConfigWhat.NONDETERMINISTICALLY) {
+								// // 	        CF_Alt_Start => (||j=1 to m(CF_Alt_Opj_Start && !!(||k=1 to m,k!=jCF_Alt_Opk_Start))) || CF_Alt_OpElse_Start
+								tempf1.clear();
+								if (m == 1)
+									tempf1.add(getOperandsPredicates().get(0).getStartPredicate());
+								else
+									for (int j = 0; j < m; j++) {
+										ArrayList<BooleanFormulae> tempf2 = new ArrayList<BooleanFormulae>();
+										for (int k = 0; k < m; k++) {
+											if (k != j)
+												tempf2.add(getOperandsPredicates().get(k).getStartPredicate());
+										}
+										tempf1.add(new And(getOperandsPredicates().get(j).getStartPredicate(), new Not(new Or(tempf2))));
+
+									}
+								f.add(new Implies(getPredicate().getStartPredicate(), new Or(new Or(tempf1), getOpElsePredicate().getStartPredicate())));
+							}
+							// // 	    CF_Alt_OpElse_End || (||i=1 to m CF_Alt_Opi_End) <=> CF_Alt_End
+							tempf1.clear();
+							for (int i = 0; i < m; i++) {
+								tempf1.add(getOperandsPredicates().get(i).getEndPredicate());
+							}
+							f.add(new Iff(new Or(getOpElsePredicate().getEndPredicate(), new Or(tempf1)), getPredicate().getEndPredicate()));
+					// // 	}
+						}
+					
+						// // If CF_Alt does not have Else operand {
+						if (getOpElse() == null) {
+						// //     (CF_Alt_Start && (||i=1 to m CF_Alt_Guardi)) => (||j=1 to m(CF_Alt_Opj_Start && !!(||k=1 to m,k!=jCF_Alt_Opk_Start)))
+							tempf1.clear();
+							if (m == 1)
+								tempf1.add(getOperandsPredicates().get(0).getStartPredicate());
+							else
+								for (int j = 0; j < m; j++) {
+									ArrayList<BooleanFormulae> tempf2 = new ArrayList<BooleanFormulae>();
+									for (int k = 0; k < m; k++) {
+										if (k != j)
+											tempf2.add(getOperandsPredicates().get(k).getStartPredicate());
+									}
+									tempf1.add(new And(getOperandsPredicates().get(j).getStartPredicate(), new Not(new Or(tempf2))));
+
+								}
+							f.add(new Implies(new And(getPredicate().getStartPredicate(), new Or(getGuards())), new Or(tempf1)));
+						
+						// //     ((CF_Alt_Start && !!(||i=1 to m Guardi)) || (||i=1 to m CF_Alt_Opi_End)) <=> CF_Alt_End
+							tempf1.clear();
+							for (int i = 0; i < m; i++) {
+								tempf1.add(getOperandsPredicates().get(i).getEndPredicate());
+							}//i=1 to m CF_Alt_Opi_End
+							f.add(new Iff(
+									new Or(
+											new And(getPredicate().getStartPredicate(), new Not(new Or(getGuards()))), 
+											new Or(tempf1)), 
+									getPredicate().getEndPredicate()));
+						// //     if (config.what == “nondeterministically”)
+							if (config.what == ConfigWhat.NONDETERMINISTICALLY) {
+						// //         CF_Alt_Start => ((||j=1 to m(CF_Alt_Opj_Start && !!(||k=1 to m,k!=jCF_Alt_Opk_Start))) || CF_Alt_End)
+								tempf1.clear();
+								if (m == 1)
+									tempf1.add(getOperandsPredicates().get(0).getStartPredicate());
+								else
+									for (int j = 0; j < m; j++) {
+										ArrayList<BooleanFormulae> tempf2 = new ArrayList<BooleanFormulae>();
+										for (int k = 0; k < m; k++) {
+											if (k != j)
+												tempf2.add(getOperandsPredicates().get(k).getStartPredicate());
+										}//k=1 to m,k!=jCF_Alt_Opk_Start
+										tempf1.add(new And(getOperandsPredicates().get(j).getStartPredicate(), new Not(new Or(tempf2))));
+									}//i=j to m(CF_Alt_Opj_Start && !!(||k=1 to m,k!=jCF_Alt_Opk_Start))
+								f.add(new Implies(getPredicate().getStartPredicate(), new Or(new Or(tempf1), getPredicate().getEndPredicate())));
+							}
+						// //     if (config.what == “firstOp”)
+							if (config.what == ConfigWhat.FIRSTOP) {
+						// //         CF_Alt_Start => (||i=1 to m(CF_Alt_Opi_Start) || CF_Alt_End )
+								tempf1.clear();
+								for (int i = 0; i < m; i++) {
+			 						tempf1.add(getOperandsPredicates().get(i).getStartPredicate());
+			 					}//i=1 to m CF_Alt_Opi_Start
+								f.add(new Implies(getPredicate().getStartPredicate(), new Or(new Or(tempf1), getPredicate().getEndPredicate())));
+							}
+						// // }
+						}
+					
+						// // for (i = 0; i<m; i++){
+						for (int i = 0; i < m; i++) {
+						// //     if (config.what == “nondeterministically”)
+							if (config.what == ConfigWhat.NONDETERMINISTICALLY) {
+						// //         CF_Alt_Opi_Start => CF_Alt_Guardi && CF_Alt_Start
+								f.add(new Implies(getOperandsPredicates().get(i).getStartPredicate(), new And(getGuards().get(i), getPredicate().getStartPredicate())));
+							}
+							// //     if (config.what == “firstOp”)
+							if (config.what == ConfigWhat.FIRSTOP) {
+								// //         CF_Alt_Opi_Start <=> (CF_Alt_Start && CF_Alt_Guardi && !!(||j=1 to i-1 CF_Alt_Guardj))
+								tempf1.clear();
+								for (int j = 0; j < i; j++) {
+									tempf1.add(getGuards().get(j));
+								}
+								if (m == 1) //if we have only one operand [// // CF_Alt_Opi_Start <=> (CF_Alt_Start && CF_Alt_Guardi)]
+									f.add(new Iff(getOperandsPredicates().get(i).getStartPredicate(), new And(getPredicate().getStartPredicate(), getGuards().get(i))));
+								else {
+									if (tempf1.size() > 0)
+										f.add(new Iff(getOperandsPredicates().get(i).getStartPredicate(), new And(getPredicate().getStartPredicate(), getGuards().get(i), new Not(new Or(tempf1)))));
+									else// in order to avoid [CF_Alt_Op0_Start <=> (CF_Alt_Start && CF_Alt_Guard0 && !!(||  ))]
+										f.add(new Iff(getOperandsPredicates().get(i).getStartPredicate(), new And(getPredicate().getStartPredicate(), getGuards().get(i))));
+								}
+
+							}
+							// // }
+						}
+
+						// // if CF_Alt has Else operand {
+						if (getOpElse() != null) {
+							// //     CF_Alt_OpElse_Start => (!! (||i=1 to m Guardi) && CF_Alt_Start)
+							f.add(new Implies(
+									getOpElsePredicate().getStartPredicate(), 
+									new And(
+											new Not(new Or(getGuards())),
+											getPredicate().getStartPredicate())));
+							// // }
+						}
+					}// end of sync
+					// // 	for (i = 0; i<m; i++)
+					for (int i = 0; i < m; i++) 
+						// // 	    combine(CF_Alt_Opi, config)
+						f.addAll(new SCombine(mades_cf_alt.getOperands().get(i), config).getFormulae());
+					// // 	if CF_Alt has Else operand
+					if (getOpElse() != null)
+						// // 	    combine(CF_Alt_OpElse, config)
+						f.addAll(new SCombine(mades_cf_alt.getElseOperand(), config).getFormulae());
+					return f;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		return null;
 	}
 	
-	public Predicate getAltOpiLjPredicate(int i, int j){ // returns predicate of Lifeline_j of Operand_i
-		return new Predicate(getAltOperandsPredicates().get(i).getPredicateName() + '_' + mades_combinedfragment.getLifelines().get(j).getName());
+	@Override
+	public Predicate getOpiLjPredicate(int i, int j){ // returns predicate of Lifeline_j of Operand_i
+		return new Predicate(getOperandsPredicates().get(i).getPredicateName() + '_' + mades_combinedfragment.getLifelines().get(j).getName());
+	}
+
+	@Override
+	public ArrayList<Predicate> getOperandsPredicates(){
+		ArrayList<Predicate> operandspredicates = new ArrayList<Predicate>();
+		for (String on: mades_cf_alt.getOperandsNames())
+			operandspredicates.add(new Predicate(mades_combinedfragment.getPredicateName() + '_' + on));
+		return operandspredicates;
 	}
 	
-	public Predicate getAltOpElseLjPredicate(int j){ // returns predicate of Lifeline_j of OpElse
-		if (getAltOpElsePredicate() == null)
-			return null;
-		return new Predicate(getAltOpElsePredicate().getPredicateName() + '_' + mades_combinedfragment.getLifelines().get(j).getName());
-	}
-	
-	public ArrayList<BooleanFormulae> getAltGuards(){
-		ArrayList<BooleanFormulae> altguards = new ArrayList<BooleanFormulae>(); 
-		for (int i=0;i<getAltOperandsPredicates().size();i++){                           
-			altguards.add(new SInteractionOperand(mades_combinedfragment.getOperands().get(i)).getGuard());
+	@Override
+	public ArrayList<BooleanFormulae> getGuards(){// if CF_Alt UMLM number of operands that does not have any guard (guard = null), we assume that first (UMLM - 1) operands are CF_Alt_Op and their guard is implicit true ((-P- t)) and last operand is CF_Alt_OpElse. 
+		ArrayList<BooleanFormulae> guards = new ArrayList<BooleanFormulae>(); 
+		for(InteractionOperand operand:mades_cf_alt.getOperands()) {
+			guards.add(new SInteractionOperand(operand).getGuard());
 		}
-//		guards.add(new Predicate("guard"));
-		return altguards;
+			
+		return guards;
+	}
+
+	public SInteractionOperand getOpElse(){
+		if (mades_cf_alt.getElseOperand() == null)
+				return null;
+		return new SInteractionOperand(mades_cf_alt.getElseOperand());
+	}
+	
+	public Predicate getOpElsePredicate(){
+		return getOpElse().getPredicate();
+	}
+	
+	public Predicate getOpElseLjPredicate(int j){ // returns predicate of Lifeline_j of Else operand // // CF_Alt_OpElse_Lj
+		return new Predicate(getOpElsePredicate().getPredicateName() + '_' + mades_combinedfragment.getLifelines().get(j).getName());
 	}
 	
 }

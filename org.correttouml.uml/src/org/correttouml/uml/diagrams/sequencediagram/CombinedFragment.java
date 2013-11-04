@@ -1,10 +1,7 @@
 package org.correttouml.uml.diagrams.sequencediagram;
 
-
 import java.util.ArrayList;
 import org.correttouml.uml.diagrams.property.PTermElement;
-//import org.eclipse.uml2.uml.InteractionOperand;
-import org.correttouml.uml.diagrams.sequencediagram.*;
 
 /**
 *@author Mohammad Mehdi Pourhashem Kallehbasti 
@@ -55,11 +52,14 @@ public class CombinedFragment implements CombinedFragmentItf, InteractionFragmen
 			element = element.getOwner();
 		}
 		return ((org.eclipse.uml2.uml.Interaction) element).getName();
-//		org.eclipse.uml2.uml.internal.impl.ElementImpl element = (org.eclipse.uml2.uml.internal.impl.ElementImpl)uml_combinedFragment;
-//		while (!(element.getOwner() instanceof org.eclipse.uml2.uml.internal.impl.PackageImpl)) {
-//			element = (org.eclipse.uml2.uml.internal.impl.ElementImpl)element.getOwner();
-//		}
-//		return ((org.eclipse.uml2.uml.Interaction)element).getName();
+	}
+	
+	public org.eclipse.uml2.uml.Interaction getSD(){
+		org.eclipse.uml2.uml.Element element = uml_combinedFragment;
+		while (!(element.getOwner() instanceof org.eclipse.uml2.uml.Package)) {
+			element = element.getOwner();
+		}
+		return ((org.eclipse.uml2.uml.Interaction) element);
 	}
 	
 	public String getOperatorName(){
@@ -67,6 +67,14 @@ public class CombinedFragment implements CombinedFragmentItf, InteractionFragmen
 	}
 	
 	public ArrayList<InteractionOperand> getOperands(){
+		ArrayList<InteractionOperand> ios = new ArrayList<InteractionOperand>();
+		for (int i = 0; i < uml_combinedFragment.getOperands().size(); i++) {
+			ios.add(new InteractionOperand(uml_combinedFragment.getOperands().get(i)));
+		}
+		return ios;
+	}
+
+	public ArrayList<InteractionOperand> getUMLOperands(){//It is excactly getOperands(). Since this getOperands() method is overridden in subclass (CF_Alt), super.getOperand() is not accessible. 
 		ArrayList<InteractionOperand> ios = new ArrayList<InteractionOperand>();
 		for (int i = 0; i < uml_combinedFragment.getOperands().size(); i++) {
 			ios.add(new InteractionOperand(uml_combinedFragment.getOperands().get(i)));
@@ -202,25 +210,12 @@ public class CombinedFragment implements CombinedFragmentItf, InteractionFragmen
 		return uml_combinedFragment.getEnclosingOperand();
 	}
 	
-/*
-	
-	@Override
-	public boolean equals(java.lang.Object object){
-		if(object instanceof Message){
-			Message other=(Message) object;
-			return other.uml_message.equals(this.uml_message);
+	public ArrayList<String> getGuards(){
+		ArrayList<String> guards = new ArrayList<String>();
+		for (org.eclipse.uml2.uml.InteractionOperand operand:uml_combinedFragment.getOperands()) {
+			guards.add(new InteractionOperand(operand).getGuard());
 		}
-		return false;
+		return guards;
 	}
 	
-	@Override
-	public int hashCode(){
-		return this.uml_message.hashCode();
-	}
-
-	public String getUMLId() {
-		String id=((XMLResource) this.uml_message.eResource()).getID(uml_message);
-		return id;
-	}
-*/
 }

@@ -25,7 +25,7 @@ public class SExecutionOccurrence {
 
 	public String getSemantics() {
         String sem = "";
-        Predicate sdstop=new SSequenceDiagram(this.mades_exocc.getSequenceDiagram()).getPredicate().getPredicateStop();
+        Predicate sdstop=new SSequenceDiagram(this.mades_exocc.getSequenceDiagram()).getPredicate().getStopPredicate();
         Predicate exoccstart=new SExecutionOccurrenceStart(this.mades_exocc.getExecutionOccurrenceStart()).getPredicate();
         Predicate exoccend=new SExecutionOccurrenceEnd(this.mades_exocc.getExecutionOccurrenceEnd()).getPredicate();
         Predicate exocc=this.getPredicate();

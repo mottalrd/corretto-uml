@@ -12,17 +12,17 @@ public class SSequenceDiagramNode {
 		this.mades_sequencediagramnode=curr;
 	}
 
-	public Predicate getPredicateStart(){
+	public Predicate getStartPredicate(){
 		String iod_id=this.mades_sequencediagramnode.getIOD().getUMLId();
 		return new Predicate("IOD_" + iod_id + "_" + this.mades_sequencediagramnode.getSequenceDiagram().getName() + "_START");
 	}
 
-	public Predicate getPredicateEnd() {
+	public Predicate getEndPredicate() {
 		String iod_id=this.mades_sequencediagramnode.getIOD().getUMLId();
 		return new Predicate("IOD_" + iod_id + "_" + this.mades_sequencediagramnode.getSequenceDiagram().getName() + "_END");
 	}
 
-	public Predicate getPredicateStop() {
+	public Predicate getStopPredicate() {
 		String iod_id=this.mades_sequencediagramnode.getIOD().getUMLId();
 		return new Predicate("IOD_" + iod_id + "_" + this.mades_sequencediagramnode.getSequenceDiagram().getName() + "_STOP");
 	}

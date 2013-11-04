@@ -26,15 +26,14 @@ public class Test1 {
 	//private String MODEL_FILE="testmodels/ccas/v0.2/model.uml";
 	//private String MODEL_FILE="testmodels/plugin/model.uml";
 	
-	//###<del me>
-//	String concurrent=new SOrder(new Predicate("ev1"),new Predicate("ev2"), new Or(new Predicate("sd_stop"),new Predicate("sd_end")), true).toString();
-//	String noConcurrent=new SOrder(new Predicate("ev1"),new Predicate("ev2"), new Or(new Predicate("sd_stop"),new Predicate("sd_end")), false).toString();
-//	String borders = new SBorders(new Predicate("sd1"), new Or(new Predicate("sd1_Stop"),new Predicate("sd1_end"))).toString();
-	//###</del me>
-	
 	/** SD_CF */
-//	private String MODEL_FILE="testmodels/MehdiTest6/model.uml";
-	private String MODEL_FILE="testmodels/SD_CF/CF_Opt/model.uml";
+//	private String MODEL_FILE="testmodels/SD_CF/CF_Alt/model.uml";
+	private String MODEL_FILE="testmodels/SD_CF/SD_IF/model.uml";
+//	private String MODEL_FILE="testmodels/SD_CF/CF_Opt/model.uml";
+//	private String MODEL_FILE="testmodels/SD_CF/CF_Par/model.uml";
+//	private String MODEL_FILE="testmodels/SD_CF/CF_Loop/model.uml";
+//	private String MODEL_FILE="testmodels/SD_CF/Ex1/model.uml";
+//	private String MODEL_FILE="testmodels/SD_CF/CF_Break/model.uml";
 	
 	
 	/** SEQUENCE DIAGRAM TESTING */
@@ -79,13 +78,6 @@ public class Test1 {
 
 	@Test
 	public void TestModel() throws Exception {
-//		<test del>
-//		String prdID = UML2Zot.Utility.umlIDtoPrdID("_Ab~C-");
-//		String aaaa = UML2Zot.Utility.prdIDtoUMLID(prdID);
-//		SOrder so = `"), new Predicate("exception"), true);
-//		aaaa = so.toString();
-//		</test del>
-				
 		LOGGER.info("Testing "+this.MODEL_FILE);
 		
 		LOGGER.info("Generate the ZOT File");

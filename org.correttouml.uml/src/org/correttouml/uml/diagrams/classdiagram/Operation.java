@@ -41,7 +41,7 @@ public class Operation implements PTermElement {
 	
 	public Set<Message> getMessages(){
 		Set<Message> messages=new HashSet<Message>();
-		
+		////#### repetitious messages should be considered <Mehdi>
 		MadesModel mm=new MadesModel(uml_operation.getModel());
 		for(SequenceDiagram sd: mm.getSequenceDiagrams()){
 			for(Message m:sd.getMessages()){

@@ -1,4 +1,3 @@
-
 package org.correttouml.uml2zot.semantics.sequencediagram;
 
 import java.util.ArrayList;
@@ -42,7 +41,7 @@ public class SBorders implements BooleanFormulae{
 	}
 	
 	public BooleanFormulae getFun() {
-    	return new Borders(module, module.getPredicateStart(), module.getPredicateEnd(), exception);
+    	return new Borders(module, module.getStartPredicate(), module.getEndPredicate(), exception);
     }
 	
 	/**
@@ -51,8 +50,8 @@ public class SBorders implements BooleanFormulae{
 	@Deprecated
 	public ArrayList<BooleanFormulae> getFormulae() {
 		ArrayList<BooleanFormulae> f = new ArrayList<BooleanFormulae>();
-		f.add(new Iff(module, new Or(module.getPredicateStart(), new Since_ei(new Not(new Or(module.getPredicateEnd(), exception)), module.getPredicateStart()))));
-		f.add(new Implies(module.getPredicateStart(), new Until_ei(new Not(module.getPredicateStart()), new Or(module.getPredicateEnd(), exception))));
+		f.add(new Iff(module, new Or(module.getStartPredicate(), new Since_ei(new Not(new Or(module.getEndPredicate(), exception)), module.getStartPredicate()))));
+		f.add(new Implies(module.getStartPredicate(), new Until_ei(new Not(module.getStartPredicate()), new Or(module.getEndPredicate(), exception))));
 		return f;
 	}
 }

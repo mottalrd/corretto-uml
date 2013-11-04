@@ -1,5 +1,6 @@
 package org.correttouml.uml.diagrams.sequencediagram;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,8 +9,8 @@ import org.correttouml.uml.diagrams.property.PTermElement;
 /**
  * @author Mohammad Mehdi Pourhashem Kallehbasti
  */
-public class InteractionOperand implements InteractionFragment, PTermElement {
-	private org.eclipse.uml2.uml.InteractionOperand uml_interactionoperand;
+public class InteractionOperand implements InteractionFragment, PTermElement , Serializable{
+	public org.eclipse.uml2.uml.InteractionOperand uml_interactionoperand;
 
 	public InteractionOperand(
 			org.eclipse.uml2.uml.InteractionOperand interactionoperand) {
@@ -20,7 +21,11 @@ public class InteractionOperand implements InteractionFragment, PTermElement {
 		return uml_interactionoperand.getName();
 	}
 
-	public String getPredicateName() {// ####test me
+	public void setName(String name) {
+		uml_interactionoperand.setName(name);
+	}
+	
+	public String getPredicateName() {
 		return new CombinedFragment((org.eclipse.uml2.uml.CombinedFragment)uml_interactionoperand.getOwner()).getPredicateName() + "_" + uml_interactionoperand.getName();
 	}
 	
@@ -28,7 +33,7 @@ public class InteractionOperand implements InteractionFragment, PTermElement {
 			return new CombinedFragment((org.eclipse.uml2.uml.CombinedFragment)uml_interactionoperand.getOwner()).getSDName();
 	}
 
-	public ArrayList<Lifeline> getLifelines() {// ####test me
+	public ArrayList<Lifeline> getLifelines() {
 		ArrayList<Lifeline> lifelines = new ArrayList<Lifeline>();
 		for (int i = 0; i < uml_interactionoperand.getCovereds().size(); i++) {
 			lifelines.add(new Lifeline(uml_interactionoperand.getCovereds().get(i)));
@@ -36,18 +41,18 @@ public class InteractionOperand implements InteractionFragment, PTermElement {
 		return lifelines;
 	}
 	
-	public ArrayList<String> getLifelinesNames() {// ####test me
+	public ArrayList<String> getLifelinesNames() {
 		ArrayList<String> lifelinesnames = new ArrayList<String>();
 		for (int i = 0; i < uml_interactionoperand.getCovereds().size(); i++) 
 			lifelinesnames.add(uml_interactionoperand.getCovereds().get(i).getName());
 		return lifelinesnames;
 	}
 	
-	public org.eclipse.uml2.uml.Interaction getEnclosingFragment(){ ////###test me
+	public org.eclipse.uml2.uml.Interaction getEnclosingFragment(){
 		return uml_interactionoperand.getEnclosingInteraction();
 	}
 
-	public ArrayList<InteractionFragment> getEvents() {// //####test
+	public ArrayList<InteractionFragment> getEvents() {
 		ArrayList<InteractionFragment> events = new ArrayList<InteractionFragment>();
 		List<org.eclipse.uml2.uml.InteractionFragment> sd_fragment = uml_interactionoperand.getFragments();
 		for (org.eclipse.uml2.uml.InteractionFragment ifr : sd_fragment)
@@ -55,7 +60,7 @@ public class InteractionOperand implements InteractionFragment, PTermElement {
 		return events;
 	}
 
-	public ArrayList<InteractionFragment> getLifelineEvents(int lifelineIndex) {// //####test
+	public ArrayList<InteractionFragment> getLifelineEvents(int lifelineIndex) {
 		ArrayList<InteractionFragment> events = new ArrayList<InteractionFragment>();
 		List<org.eclipse.uml2.uml.InteractionFragment> f = uml_interactionoperand.getFragments();
 		for (org.eclipse.uml2.uml.InteractionFragment ifr : f) 
@@ -66,7 +71,11 @@ public class InteractionOperand implements InteractionFragment, PTermElement {
 	}
 
 	public String getGuard(){
-		return (uml_interactionoperand.getGuard() == null) ? null: uml_interactionoperand.getGuard().getName();
+		if (uml_interactionoperand.getGuard() == null)
+			return "";
+		if (uml_interactionoperand.getGuard().getName() == null)
+			return "";
+		return uml_interactionoperand.getGuard().getName();
 	}
 	
 }

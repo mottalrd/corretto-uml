@@ -21,4 +21,5 @@ Require-Bundle: org.eclipse.ui,
  org.correttouml.uml2zot;bundle-version="1.0.0",
  org.eclipse.ui.console;bundle-version="3.5.100"
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6,
+ JavaSE-1.7

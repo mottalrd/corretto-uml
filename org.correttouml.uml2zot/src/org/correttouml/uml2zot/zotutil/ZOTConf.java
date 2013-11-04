@@ -114,8 +114,6 @@ public class ZOTConf {
                 + ""
                 + definetimebound
                 + ""
-                + ae2zotVariables
-                + ""
                 + declarations
                 + definemodel
                 + property

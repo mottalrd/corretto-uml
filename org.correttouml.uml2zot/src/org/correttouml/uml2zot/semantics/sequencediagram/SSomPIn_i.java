@@ -24,7 +24,7 @@ public class SSomPIn_i implements BooleanFormulae {
 	}
 
     public BooleanFormulae getFun() {
-    	return new SomPIn_i(ev1, enclosingFragment.getPredicateStart());
+    	return new SomPIn_i(ev1, enclosingFragment.getStartPredicate());
     }
 	
     // // !!since_ii(!!ev1, enclosingCF_Start)    

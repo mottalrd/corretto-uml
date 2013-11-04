@@ -32,7 +32,8 @@ public class OrderCon implements BooleanFormulae{
 	public String getDefun() {
 		return "(defun OrderCon (f1 f2 exception)\n" +
 				"(&&\n"+
-				"\t(-> f1 (|| (until_ei (&& (!! f1) (!! f2)) exception) (until_ei (&& (!! f1) (!! exception)) f2)))\n" +
+//				"\t(-> f1 (|| (until_ei (&& (!! f1) (!! f2)) exception) (until_ei (&& (!! f1) (!! exception)) f2)))\n" + version of order before break
+"\t(-> f1 (|| (until_ee (&& (!! f1) (!! f2)) exception) (until_ee (&& (!! f1) (!! exception)) f2)))\n" +
 				"\t(-> f2 (since_ei (&& (!! f2) (!! exception)) f1))\n" +
 				"))";
 	}

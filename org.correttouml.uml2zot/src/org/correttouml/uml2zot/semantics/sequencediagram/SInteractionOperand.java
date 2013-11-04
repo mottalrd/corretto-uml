@@ -42,17 +42,17 @@ public class SInteractionOperand implements SInteractionFragment {
 		return new Predicate(mades_interactionoperand.getSDName());
 	}
 	
-	public ArrayList<Predicate> getLifelinesPredicateStarts(){
+	public ArrayList<Predicate> getLifelinesStartPredicates(){
 		ArrayList<Predicate> lifelinesPredicateStarts = new ArrayList<Predicate>();
 		for(Predicate p : getLifelinesPredicates())
-			lifelinesPredicateStarts.add(p.getPredicateStart());
+			lifelinesPredicateStarts.add(p.getStartPredicate());
 		return lifelinesPredicateStarts;
 	}
 	
-	public ArrayList<Predicate> getLifelinesPredicateEnds(){
+	public ArrayList<Predicate> getLifelinesEndPredicates(){
 		ArrayList<Predicate> lifelinesPredicateEnds = new ArrayList<Predicate>();
 		for(Predicate p : getLifelinesPredicates())
-			lifelinesPredicateEnds.add(p.getPredicateEnd());
+			lifelinesPredicateEnds.add(p.getEndPredicate());
 		return lifelinesPredicateEnds;
 	}
 	
@@ -72,7 +72,7 @@ public class SInteractionOperand implements SInteractionFragment {
 	
 	public BooleanFormulae getGuard(){////####incomplete
 		if (mades_interactionoperand.getGuard() == null)
-			return null;
+			return new Predicate("t");
 		String guard = mades_interactionoperand.getGuard();
 		if (guard.equals("") || guard.equals("t") || guard.equals("true"))
 			return new Predicate("t");//means implicit True 

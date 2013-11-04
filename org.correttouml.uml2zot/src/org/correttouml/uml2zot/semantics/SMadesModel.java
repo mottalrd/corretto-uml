@@ -1,7 +1,5 @@
 package org.correttouml.uml2zot.semantics;
 
-import java.util.ArrayList;
-
 import org.correttouml.uml.MadesModel;
 import org.correttouml.uml.diagrams.iod.IOD;
 import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagram;
@@ -15,13 +13,15 @@ import org.correttouml.uml2zot.semantics.util.bool.Not;
 import org.correttouml.uml2zot.semantics.util.fun.*;
 import org.correttouml.uml2zot.semantics.util.trio.AlwF_e;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
+import org.correttouml.uml2zot.semantics.util.trio.TrioConstant;
+import org.correttouml.uml2zot.semantics.util.trio.TrioVar;
 import org.correttouml.uml2zot.semantics.util.trio.Yesterday;
 import org.correttouml.uml2zot.semantics.sequencediagram.Config;
 
 
 public class SMadesModel {
 
-	public static final Predicate SYSTEMSTART = new Predicate("MADESYSTEMSTART");
+	public static final Predicate SYSTEMSTART = new Predicate("BigBang");
 	
 	/** The semantic decorators */
 	private MadesModel mm;
@@ -39,7 +39,7 @@ public class SMadesModel {
         
         //Sequence Diagram semantics
         s=s+printSeparator("SEQUENCE DIAGRAMS");
-        Config config = new Config(ConfigCombine.WS, ConfigLoop.SYNC, ConfigWhat.NONDETERMINISTICALLY);/////////////////////////////
+        Config config = new Config(ConfigCombine.SYNC, ConfigCombine.SYNC, ConfigWhat.FIRSTOP);
         for(SequenceDiagram sd: this.mm.getSequenceDiagrams()){
         	s=s+printSeparator("SD " + sd.getName());
         	s=s+new SSequenceDiagram(sd, config).getSemantics();
@@ -74,17 +74,6 @@ public class SMadesModel {
     	return r;
     }
 
-    public String getVariableDeclarationsForae2zot() {
-        String s="";
-        for(org.correttouml.uml2zot.semantics.util.trio.TrioVar t: org.correttouml.uml2zot.semantics.util.trio.TrioVar.instances){
-            if(t.getType()==org.correttouml.uml.diagrams.expressions.PrimitiveType.INTEGER)
-                s = s + "(define-tvar '" + t.getVariableName() + " *int*)" + "\n";
-            else if(t.getType()==org.correttouml.uml.diagrams.expressions.PrimitiveType.REAL)
-                s = s + "(define-tvar '" + t.getVariableName() + " *real*)" + "\n";
-        }
-        return s;
-    }
-
 	public String getInitAxiom() {
 		String sem="";
 		
@@ -115,8 +104,35 @@ public class SMadesModel {
 
 	public String getDeclarations() {
 	    //Predicate based modular semantics
-        String s = printSeparator("Predicate based modular semantics\n");
-		return s + getDefun();
+        String s ="";
+        s += ";; Variables:\n";
+		s += getVariableDeclarationsForae2zot();
+        s += ";; Constants:\n";
+        s += getConstants();
+		s += ";; <Predicate based modular semantics>\n";
+		s += getDefun();
+		s += ";; </Predicate based modular semantics>\n";
+        return s;
+	}
+	
+	public String getConstants() {
+		String s = "";
+		//E.g. (defvar SD1_Loop_Min 2)
+		for (TrioConstant tc:TrioConstant.instances)
+			s += "(defvar " + tc.getConstantName() + " " + tc.getValue() + ")\n"; 
+		return s;
+	}
+	
+	public String getVariableDeclarationsForae2zot() {
+		String s="";
+		//E.g. (define-tvar SD1_Loop_C *int*)
+		for(org.correttouml.uml2zot.semantics.util.trio.TrioVar t: org.correttouml.uml2zot.semantics.util.trio.TrioVar.instances){
+			if(t.getType()==org.correttouml.uml.diagrams.expressions.PrimitiveType.INTEGER)
+				s = s + "(define-tvar " + t.getVariableName() + " *int*)" + "\n";
+			else if(t.getType()==org.correttouml.uml.diagrams.expressions.PrimitiveType.REAL)
+				s = s + "(define-tvar " + t.getVariableName() + " *real*)" + "\n";
+		}
+		return s;
 	}
 	
 	public boolean hasProperty() {
@@ -126,6 +142,5 @@ public class SMadesModel {
 	public BooleanFormulae getProperty() {
 		return new SProperty(this.mm.getProperty()).getSemantics();
 	}    
-	
 	
 }

@@ -25,7 +25,7 @@ public class SSomFIn_i implements BooleanFormulae{
 	}
     
 	public BooleanFormulae getFun() {
-    	return new SomFIn_i(ev1, enclosingFragment.getPredicateEnd());
+    	return new SomFIn_i(ev1, enclosingFragment.getEndPredicate());
     }
 	
     // // !!until _ii(!!ev1, enclosingCF_End)

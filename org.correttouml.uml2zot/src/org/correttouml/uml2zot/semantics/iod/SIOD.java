@@ -74,7 +74,7 @@ public class SIOD {
             return new SInitialNode(((InitialNode) prec)).getPredicate();
         }
         if (prec instanceof SequenceDiagramNode) {
-        	Predicate sd_end=new SSequenceDiagramNode(((SequenceDiagramNode) prec)).getPredicateEnd();
+        	Predicate sd_end=new SSequenceDiagramNode(((SequenceDiagramNode) prec)).getEndPredicate();
             return sd_end;
         }
         if (prec instanceof MergeNode) {
@@ -123,7 +123,7 @@ public class SIOD {
                 //ASSUMPION: The sequence diagram is preceded by only one node
                 Node prev = (Node) n.getIncomingNodes().iterator().next();
 
-                Predicate sd_start=new SSequenceDiagramNode(curr).getPredicateStart();
+                Predicate sd_start=new SSequenceDiagramNode(curr).getStartPredicate();
                 sem = sem + new Iff(sd_start, new Past(RC(curr, prev),1)) + "\n";
                 //sem = sem + new Iff(sd_start, RC(curr, prev) ) + "\n";
             }
@@ -188,9 +188,9 @@ public class SIOD {
         	Or insideCond=new Or();
         	Predicate inside_int_region=new SInterruptibleRegion(ir).getPredicate();
         	for(SequenceDiagramNode sdn: ir.getSequenceDiagramNodes()){
-        		Predicate sdn_stop=new SSequenceDiagramNode(sdn).getPredicateStop();
-        		Predicate sdn_end=new SSequenceDiagramNode(sdn).getPredicateEnd();
-        		Predicate sdn_start=new SSequenceDiagramNode(sdn).getPredicateStart();
+        		Predicate sdn_stop=new SSequenceDiagramNode(sdn).getStopPredicate();
+        		Predicate sdn_end=new SSequenceDiagramNode(sdn).getEndPredicate();
+        		Predicate sdn_start=new SSequenceDiagramNode(sdn).getStartPredicate();
         		Predicate interrupt=SEventFactory.getInstance(ir.getInterrupt().getEvent()).getPredicate();
         		sem = sem + new Iff(new And(interrupt, inside_int_region), sdn_stop)+"\n";
         		insideCond.addFormulae(new Or(sdn_start, new Since(new And(new Not(sdn_end), new Not(sdn_stop)),sdn_start)));

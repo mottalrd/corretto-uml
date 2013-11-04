@@ -15,13 +15,4 @@ public class CF_Opt extends org.correttouml.uml.diagrams.sequencediagram.Combine
 		this.uml_cf_opt = uml_cf_opt;
 	}
 
-//	public Message getMessage() {
-//		return new Message(uml_mof.getMessage());
-//	}
-//	
-//	public Lifeline getLifeline(){
-//		org.eclipse.uml2.uml.Lifeline l=uml_mof.getCovereds().get(0);;
-//		return new Lifeline(l);
-//	}
-
 }

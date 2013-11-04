@@ -16,7 +16,7 @@ public class SSequenceDiagramStart implements SEvent {
 
 	@Override
 	public Predicate getPredicate(Object... optObject) {
-		Predicate sd_start=new SSequenceDiagram(mades_event.getSequenceDiagram()).getPredicate().getPredicateStart();
+		Predicate sd_start=new SSequenceDiagram(mades_event.getSequenceDiagram()).getPredicate().getStartPredicate();
 		return sd_start;
 	}
 
