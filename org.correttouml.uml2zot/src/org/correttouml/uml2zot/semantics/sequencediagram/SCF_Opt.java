@@ -38,21 +38,24 @@ public class SCF_Opt extends SCombinedFragment implements SCombinedFragmentItf{
 				f.add(new Implies(new Or(getLifelinesStartPredicates()), getPredicate()));
 				// // CF_Opt_Start => ||i=1 to n(CF_Opt_Li_Start) 
 				f.add(new Implies(getPredicate().getStartPredicate(), new Or(getLifelinesStartPredicates())));
-				// //  &&j=1 to n order(CF_Opt_Lj_Start, CF_Opt_Op_Lj_Start, CF_Opt_Op, (SD_End || SD_Stop || CF_Opt_End || CF_Opt_Op_Lj_End), True)
+				// //  &&j=1 to n order(CF_Opt_Lj_Start, CF_Opt_Op_Lj_Start, CF_Opt_Op, (SD_Stop || CF_Opt_Op_Lj_End), True)
 				for (int i = 0; i < n; i++) 
-					f.add(new SOrder(getLifelinesStartPredicates().get(i), getOpiLjPredicate(0, i).getStartPredicate(), getOperandsPredicates().get(0), SD_Stop, true).getFun());
-				// // &&j=1 to n orderMonoD(CF_Opt_Op_Lj_End, CF_Opt_Lj_End, True, (SD_End || SD_Stop || CF_Opt_End || CF_Opt_Op_Lj_End), True)
+					f.add(new SOrder(getLifelinesStartPredicates().get(i), getOpiLjPredicate(0, i).getStartPredicate(), getOperandsPredicates().get(0), SD_Stop, true).getFun());////#### before break
+//					f.add(new SOrder(getLifelinesStartPredicates().get(i), getOpiLjPredicate(0, i).getStartPredicate(), getOperandsPredicates().get(0),new Or(getOpiLjPredicate(0, i).getEndPredicate(), SD_Stop), true).getFun());
+				// // &&j=1 to n orderMonoD(CF_Opt_Op_Lj_End, CF_Opt_Lj_End, True, (SD_Stop), True)
 				for (int i = 0; i < n; i++) 
 					f.add(new SOrderMonoD(getOpiLjPredicate(0, i).getEndPredicate(), getLifelinesEndPredicates().get(i), SD_Stop, true).getFun());
-				// // CF_Opt_Op_End => ((||j=1 to nCF_Opt_Op_Li_End) && (&&j=1 to nsomPIn_i(CF_Opt_Op_Lj_End, CF_Opt_Op)))
+				
 				ArrayList<BooleanFormulae> tempf1 = new ArrayList<BooleanFormulae>();
 				ArrayList<BooleanFormulae> tempf2 = new ArrayList<BooleanFormulae>();
-				for (int i = 0; i < n; i++){
-					tempf1.add(getOpiLjPredicate(0, i).getEndPredicate());
-					tempf2.add(new SSomPIn_i(getOpiLjPredicate(0, i).getEndPredicate(), getOperandsPredicates().get(0)).getFun());
-				}
-				f.add(new Implies(getOperandsPredicates().get(0).getEndPredicate(), new And(new Or(tempf1), new And(tempf2))));
 				
+//				CF_Opt_Op_End => ((||j=1 to nCF_Opt_Op_Li_End) && (&&j=1 to nsomPIn_i(CF_Opt_Op_Lj_End, CF_Opt_Op)))//already implemented in [combine] 
+//				for (int i = 0; i < n; i++){
+//					tempf1.add(getOpiLjPredicate(0, i).getEndPredicate());
+//					tempf2.add(new SSomPIn_i(getOpiLjPredicate(0, i).getEndPredicate(), getOperandsPredicates().get(0)).getFun());
+//				}
+//				f.add(new Implies(getOperandsPredicates().get(0).getEndPredicate(), new And(new Or(tempf1), new And(tempf2))));
+//				
 				// // (CF_Opt_Start && !!CF_Opt_Guard)  => &&j=1 to nsomFIn_i(CF_Opt_Lj_Start && CF_Opt_Lj_End, CF_Opt)
 				if (getGuards().get(0) == null) {
 					throw new Exception("CF_Opt's guard cannot be null, it should be \"true\" or \"false\"");

@@ -18,6 +18,8 @@ public class CombinedFragmentFactory {
 				return new CF_Par(uml_combinedfragment);
 			case InteractionOperatorKind.LOOP:
 				return new CF_Loop(uml_combinedfragment);
+			case InteractionOperatorKind.BREAK:
+				return new CF_Break(uml_combinedfragment);
 			}
 			throw new Exception("Event not found");
 		} catch (Exception e) {

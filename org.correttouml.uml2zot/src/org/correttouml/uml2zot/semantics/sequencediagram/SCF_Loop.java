@@ -6,19 +6,14 @@ import java.util.Map;
 
 import org.correttouml.uml.diagrams.expressions.PrimitiveType;
 import org.correttouml.uml.diagrams.sequencediagram.*;
-import org.correttouml.uml.helpers.UML2ModelHelper;
 import org.correttouml.uml2zot.semantics.util.bool.*;
+import org.correttouml.uml2zot.semantics.util.fun.SomPIn_i;
 import org.correttouml.uml2zot.semantics.util.trio.*;
-import org.correttouml.uml2zot.tests.helpers.UML2Helper;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Message;
 import org.eclipse.uml2.uml.MessageOccurrenceSpecification;
-import org.eclipse.uml2.uml.Model;
-//import org.modelmapper.ModelMapper.*;
+//import org.eclipse.uml2.uml.Model;
 //import org.modelmapper.ModelMapper;
-import org.eclipse.uml2.uml.NamedElement;
 
 
 
@@ -33,6 +28,7 @@ public class SCF_Loop extends SCombinedFragment  implements SCombinedFragmentItf
 	private String operndName;
 	private Map<String, String> mUmlIDName;
 	private org.eclipse.uml2.uml.InteractionOperand uml_operand;
+//	private org.eclipse.uml2.uml.InteractionOperand uml_operand_copy;
 	
 	public SCF_Loop(CF_Loop cfloop, Config config) {
 		super((CombinedFragment)cfloop, config);
@@ -40,6 +36,16 @@ public class SCF_Loop extends SCombinedFragment  implements SCombinedFragmentItf
 		this.operndName = mades_cf_loop.getOperands().get(0).getName();
 		uml_operand = mades_cf_loop.getOperands().get(0).uml_interactionoperand;
 		saveMessagesName();
+/*
+ * //		uml_operand_copy = uml_operand;
+//		ModelMapper mapper = new ModelMapper();
+//		mapper.map(uml_operand, uml_operand_copy);
+//		uml_operand.setName("test1");
+//		String s = uml_operand.getName();
+//		String ss = uml_operand_copy.getName();
+//		String ssss="dddddd";
+ * 
+*/		
 	}
 	
 	private void saveMessagesName() {
@@ -145,16 +151,33 @@ public class SCF_Loop extends SCombinedFragment  implements SCombinedFragmentItf
 //				    &&j=1 to nCF_Loop_Lj_Start <=> CF_Loop_Op1_Lj_Start
 					for (int j = 0; j < n; j++)
 						f.add(new Iff(getLifelinesStartPredicates().get(j), getOpi(1).getLifelinesStartPredicates().get(j)));
-//				    &&j=1 to norder(CF_Loop_Opmin_Lj_End, CF_Loop_Lj_End, True, SD_Stop, True)
+//				    &&j=1 to norderMonoD(CF_Loop_Opmin_Lj_End, CF_Loop_Lj_End, True, SD_Stop, True)
 					for (int j = 0; j < n; j++)
-						f.add(new SOrder(getOpi(getMINValue()).getLifelinesEndPredicates().get(j), getLifelinesEndPredicates().get(j), SD_Stop, true));
+						f.add(new SOrderMonoD(getOpi(getMINValue()).getLifelinesEndPredicates().get(j), getLifelinesEndPredicates().get(j), SD_Stop, true));
+					
+//				    &&j=1 to n((CF_Loop_Lj_End && !!CF_Loop_Lj_Skip) => somPIn_i(CF_Loop_Opmin_Lj_End, CF_Loop_Lj)
+					for (int j = 0; j < n; j++){
+						f.add(new Implies(new And(getLifelinePredicate(j).getEndPredicate(), new Not(getLifelinePredicate(j).getSkipPredicate())), new SomPIn_i(getOpi(getMINValue()).getLifelinesEndPredicates().get(j), getLifelinePredicate(j))));
+					}
 //				}
 				}
+//				for (int i = 1; i < max; i++)
+				for (int i = 1; i < max; i++)
+					for (int j = 0; j < n; j++)
+//				    	&&j=1 to n(CF_Loop_Opi_Lj_Start => !!CF_Loop_Lj_Skip)
+						f.add(new Implies(getOpi(i).getLifelinesStartPredicates().get(j), new Not(getLifelinePredicate(j).getSkipPredicate())));
+
+				
+				
+				
 //				for (i = 1; i < min; i++){
 				for (int i = 1; i < min; i++){
-//				    &&j=1 to n(CF_Loop_Opi_Lj_End <=> next(CF_Loop_Opi+1_Lj_Start))
+//				    &&j=1 to n(CF_Loop_Opi_Lj_End => (CF_Loop_Lj_End || next(CF_Loop_Opi+1_Lj_Start)))
 					for (int j = 0; j < n; j++)
-						f.add(new Iff(getOpi(i).getLifelinesEndPredicates().get(j), new Next(getOpi(i + 1).getLifelinesStartPredicates().get(j))));
+						f.add(new Implies(getOpi(i).getLifelinesEndPredicates().get(j), new Or(getLifelinesEndPredicates().get(j), new Next(getOpi(i + 1).getLifelinesStartPredicates().get(j)))));
+//				    &&j=1 to n(CF_Loop_Opi+1_Lj_Start => yesterday(CF_Loop_Opi_Lj_End))
+					for (int j = 0; j < n; j++)
+						f.add(new Implies(getOpi(i + 1).getLifelinesStartPredicates().get(j), new Yesterday(getOpi(i).getLifelinesEndPredicates().get(j))));
 //				}
 				}
 
@@ -188,8 +211,9 @@ public class SCF_Loop extends SCombinedFragment  implements SCombinedFragmentItf
 					if (i > 1) {
 //						for (int j = 0; j < n; j++){
 						for (int j = 0; j < n; j++) {
-//						    order(CF_Loop_Opi-1_Lj_End, CF_Loop_Opi_Lj_Start, next(CF_Loop_Opi), SD_Stop, False)
-							f.add(new SOrder(getOpi(i - 1).getLifelinesEndPredicates().get(j), getOpi(i).getLifelinesStartPredicates().get(j), new Next(getOpi(i).getPredicate()), SD_Stop, false));
+//						    order(CF_Loop_Opi-1_Lj_End, CF_Loop_Opi_Lj_Start, next(CF_Loop_Opi), (CF_Loop_Lj_End || SD_Stop), False)
+//							f.add(new SOrder(getOpi(i - 1).getLifelinesEndPredicates().get(j), getOpi(i).getLifelinesStartPredicates().get(j), new Next(getOpi(i).getPredicate()), SD_Stop, false));////#### before break
+							f.add(new SOrder(getOpi(i - 1).getLifelinesEndPredicates().get(j), getOpi(i).getLifelinesStartPredicates().get(j), new Next(getOpi(i).getPredicate()), new Or(SD_Stop, getPredicate().getEndPredicate()), false));
 //							(CF_Loop_Opi-1_Lj_End && yesterday(!!CF_Loop_Opi) && !!CF_Loop_Guard) => !!somFIn_i(CF_Loop_Opi, CF_Loop)
 							f.add(new Implies(new And(getOpi(i - 1).getLifelinesEndPredicates().get(j), new Yesterday(new Not(getOpi(i).getPredicate())), new Not(getGuard())), new Not(new SSomFIn_i(getOpi(i).getPredicate(), getPredicate()))));
 //						    (CF_Loop_Opi-1_Lj_End && yesterday(!!CF_Loop_Opi) && CF_Loop_Guard) => (next(CF_Loop_Opi_Start) || !!somFIn_i(CF_Loop_Opi_Start, CF_Loop)))
@@ -244,8 +268,8 @@ public class SCF_Loop extends SCombinedFragment  implements SCombinedFragmentItf
 				f.add(new Implies(new And(opEnd, new Not(end)), new EQ(new Next(counter), new Plus(counter, one))));
 //				!!(CF_Loop_Op_End || CF_Loop_End) => (next(CF_Loop_C) = CF_Loop_C)
 				f.add(new Implies(new Not(new Or(opEnd, end)), new EQ(new Next(counter), counter)));
-//				(CF_Loop_Op_End && ((CF_Loop_C + 1) < CF_Loop_Min)) => next(CF_Loop_Op_Start)
-				f.add(new Implies(new And(opEnd, new LT(new Plus(counter, one), min)), new Next(opStart)));
+//				(CF_Loop_Op_End && ((CF_Loop_C + 1) < CF_Loop_Min) && !!CF_Loop_Skip) => next(CF_Loop_Op_Start)
+				f.add(new Implies(new And(opEnd, new LT(new Plus(counter, one), min), new Not(getPredicate().getSkipPredicate())), new Next(opStart)));
 //				(CF_Loop_Op_End && ((CF_Loop_C + 1) >= CF_Loop_Min) && !!CF_Loop_Guard) => CF_Loop_End
 				f.add(new Implies(new And(opEnd, new GTE(new Plus(counter, one), min), new Not(getGuard())), end));
 //				(CF_Loop_Op_End && ((CF_Loop_C + 1) >= CF_Loop_Min) && CF_Loop_Guard) => ((next(CF_Loop_Op_Start) && !!CF_Loop_End) || (next(!!CF_Loop_Op_Start) && CF_Loop_End))
@@ -262,7 +286,6 @@ public class SCF_Loop extends SCombinedFragment  implements SCombinedFragmentItf
 			
 			return f;
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
@@ -289,8 +312,14 @@ public class SCF_Loop extends SCombinedFragment  implements SCombinedFragmentItf
 		ArrayList<Predicate> firstMessages = new ArrayList<Predicate>();
 		for (int i = 0; i < getLifelines().size(); i++) {
 			if (getLifelines().get(i).getName() == lifelineName) {
-				ArrayList<Predicate> tempPrdArr = new SInteractionOperand(getMadesOperand(1)).getFirstMessages(i);
-				restoreOperand();
+//				ArrayList<Predicate> tempPrdArr = new SInteractionOperand(getMadesOperand(1)).getFirstMessages(i); //ver1
+				ArrayList<Predicate> tempPrdArr = new ArrayList<Predicate>();
+				if (config.loop == ConfigCombine.WS) {
+					tempPrdArr = new SInteractionOperand(getMadesOperand(1)).getFirstMessages(i);
+					restoreOperand();
+				}else if (config.loop == ConfigCombine.SYNC) {
+					tempPrdArr = new SInteractionOperand(mades_cf_loop.getOperands().get(0)).getFirstMessages(i);
+				}
 				if (tempPrdArr != null)
 					firstMessages.addAll(tempPrdArr);
 			}

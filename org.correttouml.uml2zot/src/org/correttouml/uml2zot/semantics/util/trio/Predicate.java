@@ -64,6 +64,10 @@ public class Predicate implements Atom{
     public Predicate getEndPredicate(){
     	return new Predicate(getPredicateName()+"_End");
     }
+
+    public Predicate getSkipPredicate(){
+    	return new Predicate(getPredicateName()+"_Skip");
+    }
     
     public Predicate getStopPredicate(){
     	return new Predicate(getPredicateName()+"_Stop");
@@ -72,8 +76,8 @@ public class Predicate implements Atom{
     @Override
     public String toString() {
     	String s;
-        if (predicatename.contains("LOOPOP1GETNEXT_END_END"))////####del me
-        	s= "ss";
+//        if (predicatename.contains("_Start_Start"))////####del me
+//        	s= "ss";
     	return "(-P- " +predicatename+ ")";
     }
     

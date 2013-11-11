@@ -5,18 +5,9 @@ import static org.junit.Assert.assertTrue;
 import java.io.File;
 
 import org.apache.log4j.Logger;
-import org.correttouml.uml.diagrams.sequencediagram.CombinedFragment;
 import org.correttouml.uml2zot.UML2Zot;
-import org.correttouml.uml2zot.semantics.sequencediagram.SBorders;
-import org.correttouml.uml2zot.semantics.sequencediagram.SOrder;
-import org.correttouml.uml2zot.semantics.util.bool.Atom;
-import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
-import org.correttouml.uml2zot.semantics.util.bool.Or;
 import org.correttouml.uml2zot.tests.TestHelper;
 import org.junit.Test;
-
-import org.correttouml.uml2zot.semantics.util.bool.Or;
-import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 
 
 public class Test1 {
@@ -28,10 +19,10 @@ public class Test1 {
 	
 	/** SD_CF */
 //	private String MODEL_FILE="testmodels/SD_CF/CF_Alt/model.uml";
-	private String MODEL_FILE="testmodels/SD_CF/SD_IF/model.uml";
+//	private String MODEL_FILE="testmodels/SD_CF/SD_IF/model.uml";
 //	private String MODEL_FILE="testmodels/SD_CF/CF_Opt/model.uml";
 //	private String MODEL_FILE="testmodels/SD_CF/CF_Par/model.uml";
-//	private String MODEL_FILE="testmodels/SD_CF/CF_Loop/model.uml";
+	private String MODEL_FILE="testmodels/SD_CF/CF_Loop/model.uml";
 //	private String MODEL_FILE="testmodels/SD_CF/Ex1/model.uml";
 //	private String MODEL_FILE="testmodels/SD_CF/CF_Break/model.uml";
 	

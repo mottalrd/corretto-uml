@@ -12,6 +12,8 @@ public class SCombinedFragmentFactory {
 			return new SCF_Par((CF_Par)mades_combinedfragment, config);
 		if (mades_combinedfragment instanceof CF_Loop)
 			return new SCF_Loop((CF_Loop)mades_combinedfragment, config);
+		if (mades_combinedfragment instanceof CF_Break)
+			return new SCF_Break((CF_Break)mades_combinedfragment, config);
 		return null;
 	}
 	

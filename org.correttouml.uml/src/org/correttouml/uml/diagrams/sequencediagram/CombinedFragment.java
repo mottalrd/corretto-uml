@@ -2,6 +2,7 @@ package org.correttouml.uml.diagrams.sequencediagram;
 
 import java.util.ArrayList;
 import org.correttouml.uml.diagrams.property.PTermElement;
+import org.eclipse.uml2.uml.Element;
 
 /**
 *@author Mohammad Mehdi Pourhashem Kallehbasti 
@@ -216,6 +217,16 @@ public class CombinedFragment implements CombinedFragmentItf, InteractionFragmen
 			guards.add(new InteractionOperand(operand).getGuard());
 		}
 		return guards;
+	}
+	
+	public ArrayList<Element> getEnclosingFragments(){ // returns sequence enclosing fragments, whose first element is operand and next elements are operands or CFs and last element is SD. 
+		org.eclipse.uml2.uml.Element element = uml_combinedFragment;
+		ArrayList<Element> elements = new ArrayList<Element>();
+		while (!(element.getOwner() instanceof org.eclipse.uml2.uml.Package)) {
+			element = element.getOwner();
+			elements.add(element);
+		}
+		return elements;
 	}
 	
 }

@@ -35,7 +35,7 @@ public class OrderGCon implements BooleanFormulae{
 		return "(defun OrderGCon (f1 f2 guard exception)\n" +
 				"(&&\n"+
 //				"\t(-> (&& f1 guard) (|| (until_ei (&& (!! f1) (!! f2)) exception) (until_ei (&& (!! f1) (!! exception)) f2)))\n" +
-"\t(-> (&& f1 guard) (|| (until_ee (&& (!! f1) (!! f2)) exception) (until_ee (&& (!! f1) (!! exception)) f2)))\n" +
+"\t(-> (&& f1 guard) (|| (until_ei (&& (!! f1) (!! f2)) exception) (until_ei (&& (!! f1) (!! exception)) f2)))\n" +
 				"\t(-> f2 (since_ei (&& (!! f2) (!! exception)) (&& f1 guard)))\n" +
 				"))";
 	}

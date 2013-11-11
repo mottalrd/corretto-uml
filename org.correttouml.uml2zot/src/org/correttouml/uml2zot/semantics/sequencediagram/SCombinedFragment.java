@@ -2,13 +2,12 @@ package org.correttouml.uml2zot.semantics.sequencediagram;
 
 import java.util.ArrayList;
 
-import org.correttouml.grammars.booleanExpressions.booleanExpression;
-import org.correttouml.uml.diagrams.property.PTermElement;
 import org.correttouml.uml.diagrams.sequencediagram.*;
-import org.correttouml.uml2zot.semantics.util.bool.And;
 import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
 import org.correttouml.uml2zot.semantics.util.bool.Not;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Interaction;
 
 /**
 *@author Mohammad Mehdi Pourhashem Kallehbasti 
@@ -16,26 +15,12 @@ import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 public class SCombinedFragment implements SInteractionFragment {
 	protected CombinedFragment mades_combinedfragment;
 	protected Config config;
-	public enum PredicateType{SDStart, SDEnd, CFStart, CFEnd, MStart, MEnd}
-	public class MetaPredicate{
-		private Predicate predicate;
-		private PredicateType predicatetype;
-		public MetaPredicate(Predicate predicate, PredicateType predicatetype){
-			this.predicate = predicate;
-			this.predicatetype = predicatetype;
-		}
-		
-	}
 	
 	public SCombinedFragment(CombinedFragment cf, Config config) {
 		this.mades_combinedfragment = cf;
 		this.config = config;
 	}
 	
-//	public SCombinedFragment(CombinedFragment cf) {
-//		this.mades_combinedfragment = cf;
-//	}
-
 	@Override
 	public Predicate getPredicate() {
 		return new Predicate(this.mades_combinedfragment.getPredicateName());
@@ -145,14 +130,14 @@ public class SCombinedFragment implements SInteractionFragment {
 	public ArrayList<Predicate> getLifelinesPrePredicates(){
 		ArrayList<Predicate> CFLifelinesPrePredicates = new ArrayList<Predicate>();
 		for(MetaPredicate metap : getLifelinesPreMetaPredicates())
-			CFLifelinesPrePredicates.add(metap.predicate);
+			CFLifelinesPrePredicates.add(metap.getPredicate());
 		return CFLifelinesPrePredicates;
 	}
 	
 	public ArrayList<PredicateType> getLifelinesPrePredicateTypes(){
 		ArrayList<PredicateType> CFLifelinesPrePredicateTypes = new ArrayList<PredicateType>();
 		for(MetaPredicate metap : getLifelinesPreMetaPredicates())
-			CFLifelinesPrePredicateTypes.add(metap.predicatetype);
+			CFLifelinesPrePredicateTypes.add(metap.getPredicatetype());
 		return CFLifelinesPrePredicateTypes;
 	}
 	
@@ -212,14 +197,14 @@ public class SCombinedFragment implements SInteractionFragment {
 	public ArrayList<Predicate> getLifelinesPostPredicates(){
 		ArrayList<Predicate> CFLifelinesPostPredicates = new ArrayList<Predicate>();
 		for(MetaPredicate metap : getLifelinesPostMetaPredicates())
-			CFLifelinesPostPredicates.add(metap.predicate);
+			CFLifelinesPostPredicates.add(metap.getPredicate());
 		return CFLifelinesPostPredicates;
 	}
 	
 	public ArrayList<PredicateType> getLifelinesPostPredicateTypes(){
 		ArrayList<PredicateType> CFLifelinesPostPredicateTypes = new ArrayList<PredicateType>();
 		for(MetaPredicate metap : getLifelinesPostMetaPredicates())
-			CFLifelinesPostPredicateTypes.add(metap.predicatetype);
+			CFLifelinesPostPredicateTypes.add(metap.getPredicatetype());
 		return CFLifelinesPostPredicateTypes;
 	}
 	
@@ -264,6 +249,7 @@ public class SCombinedFragment implements SInteractionFragment {
 	}
 
 	public ArrayList<Predicate> getLastMessages(String lifelineName){//returns predicate of messages that can possibly be last message of CombinedFragment.
+
 		ArrayList<Predicate> lastMessages = new ArrayList<Predicate>();
 		for (int i = 0; i < getLifelines().size(); i++) {
 			if (getLifelines().get(i).getName() == lifelineName)
@@ -276,4 +262,30 @@ public class SCombinedFragment implements SInteractionFragment {
 			return null;
 		return lastMessages;
 	}
+
+	public ArrayList<Predicate> getEnclosingFragmentsPredicates() {
+		ArrayList<Predicate> predicates = new ArrayList<Predicate>();
+		ArrayList<Element> enclosingFragments = mades_combinedfragment.getEnclosingFragments();
+		for (int i = 0; i < enclosingFragments.size(); i++) {
+			Element e = enclosingFragments.get(i);
+			if (e instanceof org.eclipse.uml2.uml.Interaction)
+				predicates.add(new SSequenceDiagram(new SequenceDiagram((Interaction)e)).getPredicate());
+			else if (e instanceof org.eclipse.uml2.uml.CombinedFragment)
+				predicates.add(new SCombinedFragment(new CombinedFragment((org.eclipse.uml2.uml.CombinedFragment)e), config).getPredicate());
+			else if (e instanceof org.eclipse.uml2.uml.InteractionOperand)
+				predicates.add(new SInteractionOperand(new InteractionOperand((org.eclipse.uml2.uml.InteractionOperand)e)).getPredicate());
+		}
+		return predicates;
+	}
+
+	public Predicate getEnclosingFLifelineEnd(int index) {
+		String lifelineName = getLifelines().get(index).getName();
+		 Interaction enclosingInteraction = mades_combinedfragment.getEnclosingFragment();
+		 if (enclosingInteraction != null)
+			 if (enclosingInteraction.getOwner() instanceof org.eclipse.uml2.uml.Package)
+				 return new SSequenceDiagram(new SequenceDiagram(enclosingInteraction)).getLifelinePredicate(lifelineName).getEndPredicate();
+		 org.eclipse.uml2.uml.InteractionOperand enclosingOperand = mades_combinedfragment.getEnclosingOperand();
+		 return new SInteractionOperand(new org.correttouml.uml.diagrams.sequencediagram.InteractionOperand(enclosingOperand)).getLifelinePredicate(lifelineName).getEndPredicate();
+	}
+	
 }

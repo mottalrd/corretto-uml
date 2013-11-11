@@ -39,7 +39,7 @@ public class SMadesModel {
         
         //Sequence Diagram semantics
         s=s+printSeparator("SEQUENCE DIAGRAMS");
-        Config config = new Config(ConfigCombine.SYNC, ConfigCombine.SYNC, ConfigWhat.FIRSTOP);
+        Config config = new Config(ConfigCombine.WS, ConfigCombine.WS, ConfigWhat.NONDETERMINISTICALLY);
         for(SequenceDiagram sd: this.mm.getSequenceDiagrams()){
         	s=s+printSeparator("SD " + sd.getName());
         	s=s+new SSequenceDiagram(sd, config).getSemantics();
@@ -98,7 +98,11 @@ public class SMadesModel {
 		new OrderConMonoD().getDefun() +"\n" +
 		new OrderGConMonoD().getDefun() +"\n" +
 		new OrderGnoConMonoD().getDefun() +"\n" +
-		new OrdernoConMonoD().getDefun() +"\n";
+		new OrdernoConMonoD().getDefun() +"\n"+
+		new OrderConMonoDRev().getDefun() +"\n" +
+		new OrderGConMonoDRev().getDefun() +"\n" +
+		new OrderGnoConMonoDRev().getDefun() +"\n" +
+		new OrdernoConMonoDRev().getDefun() +"\n";
 		return s;
 	}
 

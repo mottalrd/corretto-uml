@@ -1,10 +1,11 @@
 package org.correttouml.uml2zot.semantics.sequencediagram;
 
 import java.util.ArrayList;
-
-import org.correttouml.uml2zot.semantics.util.bool.And;
-import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
+import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagram;
+import org.correttouml.uml2zot.semantics.util.bool.*;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
+import org.eclipse.uml2.uml.Interaction;
+import org.eclipse.uml2.uml.InteractionOperand;
 
 /**
  *@author Mohammad Mehdi Pourhashem Kallehbasti 
@@ -38,29 +39,62 @@ public class SLink_Pre_Post implements BooleanFormulae{
 				if(configCombine == ConfigCombine.WS){
 					for (int i = 0; i < n; i++){
 						// // borders(CF_X_Li, SD_End || SD_Stop)
-						f.add(new SBorders(smodule.getLifelinePredicate(i), SD_Stop).getFun());
+						f.add(new SBorders(smodule.getLifelinePredicate(i), SD_Stop));
 						
-						Predicate pre = smodule.getLifelinesPrePredicates().get(i);
+						MetaPredicate preMPrd = smodule.getLifelinesPreMetaPredicates().get(i);
+						Predicate pre = preMPrd.getPredicate();
+						PredicateType pretype = preMPrd.getPredicatetype();
+//						Predicate pre = smodule.getLifelinesPrePredicates().get(i);
 						Predicate start = smodule.getLifelinePredicate(i).getStartPredicate();
 						Predicate end = smodule.getLifelinePredicate(i).getEndPredicate();
-						Predicate post = smodule.getLifelinesPostPredicates().get(i);
-						
-						// // order(CF_X_Li_Pre, CF_X_Li_Start, True , (SD_End || SD_Stop || CF_X_End), True)
-						f.add(new SOrder(pre, start, SD_Stop, true).getFun());
-						// // 	order(CF_X_Li_End, CF_X_Li_Post, True , (SD_End || SD_Stop || CF_X_End), True)
-						f.add(new SOrder(end, post, SD_Stop, true).getFun());
+						MetaPredicate postMPrd = smodule.getLifelinesPostMetaPredicates().get(i);
+						Predicate post = postMPrd.getPredicate();
+						PredicateType posttype = postMPrd.getPredicatetype();
+//						Predicate post = smodule.getLifelinesPostPredicates().get(i);
+						BooleanFormulae exception = SD_Stop;
+						BooleanFormulae guard = new Not(getEnclosingFLifelineSkip(i));
+//						BooleanFormulae exception = new Or(SD_Stop, getEnclosingFLifelineSkip(i));
+//						BooleanFormulae NOexception = new Not(new Or(SD_Stop, getEnclosingFLifelineSkip(i)));
+
+/////////////////update me in [scombine.docx]// // order(CF_X_Li_Pre, CF_X_Li_Start, True , (SD_End || SD_Stop || CF_X_End), True)
+						if (pretype == PredicateType.SDStart || pretype == PredicateType.CFStart)
+							f.add(new SOrder(pre, start, exception, true));
+						else 
+							f.add(new SOrder(pre, start, guard, exception, true));
+
+						///////////////update me in [scombine.docx]//// // 	order(CF_X_Li_End, CF_X_Li_Post, True , (SD_End || SD_Stop || CF_X_End), True)
+						if (posttype == PredicateType.SDEnd || posttype == PredicateType.CFEnd)
+							f.add(new SOrderMonoD(end, post, exception, true));
+						else if (posttype == PredicateType.MStart || posttype == PredicateType.MEnd || posttype == PredicateType.CFStart)
+							f.add(new SOrder(end, post, guard, exception, true));
 					}
 				}else if(configCombine == ConfigCombine.SYNC){
 					for (int i = 0; i < n; i++){
-						Predicate pre = smodule.getLifelinesPrePredicates().get(i);
+						MetaPredicate preMPrd = smodule.getLifelinesPreMetaPredicates().get(i);
+						Predicate pre = preMPrd.getPredicate();
+						PredicateType pretype = preMPrd.getPredicatetype();
+//						Predicate pre = smodule.getLifelinesPrePredicates().get(i);
 						Predicate start = smodule.getPredicate().getStartPredicate();
 						Predicate end = smodule.getPredicate().getEndPredicate();
-						Predicate post = smodule.getLifelinesPostPredicates().get(i);
-						
+						MetaPredicate postMPrd = smodule.getLifelinesPostMetaPredicates().get(i);
+						Predicate post = postMPrd.getPredicate();
+						PredicateType posttype = postMPrd.getPredicatetype();
+//						Predicate post = smodule.getLifelinesPostPredicates().get(i);
+						BooleanFormulae exception = SD_Stop;
+						BooleanFormulae guard = new Not(getEnclosingFLifelineSkip(i));
+//						BooleanFormulae exception = new Or(SD_Stop, getEnclosingFLifelineSkip(i));
+//						BooleanFormulae Noexception = new Not( new Or(SD_Stop, getEnclosingFLifelineSkip(i)));
+
 						// // order(CF_X_Li_Pre, CF_X_Start, True , (SD_End || SD_Stop || CF_X_End), True)
-						f.add(new SOrder(pre, start, SD_Stop, true).getFun());
+						if (pretype == PredicateType.SDStart || pretype == PredicateType.CFStart)
+							f.add(new SOrder(pre, start, exception, true));
+						else 
+							f.add(new SOrder(pre, start, guard, exception, true));
 						// // order(CF_X_End, CF_X_Li_Post, True , (SD_End || SD_Stop || CF_X_End), True)
-						f.add(new SOrder(end, post, SD_Stop, true).getFun());
+						if (posttype == PredicateType.SDEnd || posttype == PredicateType.CFEnd)
+							f.add(new SOrderMonoD(end, post, exception, true));
+						else if (posttype == PredicateType.MStart || posttype == PredicateType.MEnd || posttype == PredicateType.CFStart)
+							f.add(new SOrder(end, post, guard, exception, true));
 					}
 				}
 				return f;
@@ -70,5 +104,15 @@ public class SLink_Pre_Post implements BooleanFormulae{
 		}
 		return null;
 	}
+	
+	public Predicate getEnclosingFLifelineSkip(int index) {
+		String lifelineName = smodule.getLifelines().get(index).getName();
+		 Interaction enclosingInteraction = smodule.mades_combinedfragment.getEnclosingFragment();
+		 if (enclosingInteraction != null)
+			 if (enclosingInteraction.getOwner() instanceof org.eclipse.uml2.uml.Package)
+				 return new SSequenceDiagram(new SequenceDiagram(enclosingInteraction)).getLifelinePredicate(lifelineName).getSkipPredicate();
+		 InteractionOperand enclosingOperand = smodule.mades_combinedfragment.getEnclosingOperand();
+		 return new SInteractionOperand(new org.correttouml.uml.diagrams.sequencediagram.InteractionOperand(enclosingOperand)).getLifelinePredicate(lifelineName).getSkipPredicate();
+	}
+	
 }
-

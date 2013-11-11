@@ -34,7 +34,7 @@ public class OrdernoConMonoD implements BooleanFormulae{
 		return "(defun OrdernoConMonoD (f1 f2 exception)\n" +
 				"(&&\n"+
 //				"\t(-> f1 (|| (until_ei (&& (!! f1) (!! f2)) exception) (until_ei (&& (!! f1) (!! exception)) f2)))\n" +
-"\t(-> f1 (|| (until_ee (&& (!! f1) (!! f2)) exception) (until_ee (&& (!! f1) (!! exception)) f2)))\n" +
+"\t(-> f1 (|| (until_ei (&& (!! f1) (!! f2)) exception) (until_ei (&& (!! f1) (!! exception)) f2)))\n" +
 				"\t(-> f1 (!! f2))\n" +
 				"))";
 	}
