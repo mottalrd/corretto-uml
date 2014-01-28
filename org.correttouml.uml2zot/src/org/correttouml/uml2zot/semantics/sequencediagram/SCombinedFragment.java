@@ -3,6 +3,7 @@ package org.correttouml.uml2zot.semantics.sequencediagram;
 import java.util.ArrayList;
 
 import org.correttouml.uml.diagrams.sequencediagram.*;
+import org.correttouml.uml2zot.semantics.SMadesModel;
 import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
 import org.correttouml.uml2zot.semantics.util.bool.Not;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
@@ -50,6 +51,14 @@ public class SCombinedFragment implements SInteractionFragment {
 		ArrayList<Predicate> lifelinesstartpredicates = new ArrayList<Predicate>();
 		for (int i = 0; i < getLifelines().size(); i++) {
 			lifelinesstartpredicates.add(getLifelinePredicate(i).getStartPredicate());
+		}
+		return lifelinesstartpredicates;
+	}
+	
+	public ArrayList<Predicate> getLifelinesSkipPredicates(){
+		ArrayList<Predicate> lifelinesstartpredicates = new ArrayList<Predicate>();
+		for (int i = 0; i < getLifelines().size(); i++) {
+			lifelinesstartpredicates.add(getLifelinePredicate(i).getSkipPredicate());
 		}
 		return lifelinesstartpredicates;
 	}
@@ -233,21 +242,46 @@ public class SCombinedFragment implements SInteractionFragment {
 	public String getOperator() {
 		return this.mades_combinedfragment.getOperatorName();
 	}
-	
+
+	//2014-01-21
+//	public ArrayList<Predicate> getFirstMessages(String lifelineName){//returns predicate of messages that can possibly be first message of CombinedFragment.
+//		ArrayList<Predicate> firstMessages = new ArrayList<Predicate>();
+//		for (int i = 0; i < getLifelines().size(); i++) {
+//			if (getLifelines().get(i).getName() == lifelineName)
+//				for (InteractionOperand operand: mades_combinedfragment.getUMLOperands()) {
+//					//if CF is loop then ... add LOOPOP1 as a prefix to message name
+//					if (new SInteractionOperand(operand).getFirstMessages(i) != null)
+//						firstMessages.addAll(new SInteractionOperand(operand).getFirstMessages(i));
+//				}
+//		}
+//		if (firstMessages.size() == 0)
+//			return null;
+//		return firstMessages;
+//	}
 	public ArrayList<Predicate> getFirstMessages(String lifelineName){//returns predicate of messages that can possibly be first message of CombinedFragment.
 		ArrayList<Predicate> firstMessages = new ArrayList<Predicate>();
 		for (int i = 0; i < getLifelines().size(); i++) {
 			if (getLifelines().get(i).getName() == lifelineName)
 				for (InteractionOperand operand: mades_combinedfragment.getUMLOperands()) {
+					//if CF is loop then ... add LOOPOP1 as a prefix to message name
 					if (new SInteractionOperand(operand).getFirstMessages(i) != null)
 						firstMessages.addAll(new SInteractionOperand(operand).getFirstMessages(i));
 				}
+		}
+		if ((SMadesModel.staticConfig.loop == ConfigCombine.WS) && (mades_combinedfragment.getOperatorName() == "loop") && (firstMessages.size() > 0)){
+			String prefix = mades_combinedfragment.getName() + mades_combinedfragment.getOperands().get(0).getName()+"1";
+			ArrayList<Predicate> firstMessagesTemp = new ArrayList<Predicate>();
+			for (Predicate p:firstMessages) {
+				p.setPredicateName(prefix + p.getPredicateName());
+				firstMessagesTemp.add(p);
+			}
+			return firstMessagesTemp;
 		}
 		if (firstMessages.size() == 0)
 			return null;
 		return firstMessages;
 	}
-
+	
 	public ArrayList<Predicate> getLastMessages(String lifelineName){//returns predicate of messages that can possibly be last message of CombinedFragment.
 
 		ArrayList<Predicate> lastMessages = new ArrayList<Predicate>();

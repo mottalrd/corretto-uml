@@ -26,7 +26,7 @@ public class SInteractionOperand implements SInteractionFragment {
 		return new Predicate(this.mades_interactionoperand.getPredicateName());
 	}
 	
-	public SCombinedFragment getEnclosingCF() { ////#### it does not work for nested "ws" loops
+	public SCombinedFragment getEnclosingSCF() { ////#### it does not work for nested "ws" loops
 		return new SCombinedFragment(new CombinedFragment((org.eclipse.uml2.uml.CombinedFragment)mades_interactionoperand.uml_interactionoperand.getOwner()), config);
 	}
 	

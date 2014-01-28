@@ -16,5 +16,4 @@ public class SCombinedFragmentFactory {
 			return new SCF_Break((CF_Break)mades_combinedfragment, config);
 		return null;
 	}
-	
 }

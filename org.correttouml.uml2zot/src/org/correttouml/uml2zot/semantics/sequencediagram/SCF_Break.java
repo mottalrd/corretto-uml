@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import org.correttouml.uml.diagrams.sequencediagram.CF_Break;
 import org.correttouml.uml.diagrams.sequencediagram.CombinedFragment;
 import org.correttouml.uml.diagrams.sequencediagram.CombinedFragmentFactory;
-import org.correttouml.uml.diagrams.sequencediagram.InteractionFragmentFactory;
 import org.correttouml.uml.diagrams.sequencediagram.InteractionOperand;
 import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagram;
 import org.correttouml.uml2zot.semantics.util.bool.*;

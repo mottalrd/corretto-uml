@@ -1,6 +1,10 @@
 package org.correttouml.uml2zot.semantics.sequencediagram;
 
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
@@ -99,7 +103,7 @@ public class SSequenceDiagram {
 		return scfs;
 	}
 
-	public String getSemantics() {
+	public String getSemantics() throws IOException {
 		String sem = "";
 
 		Predicate sd_start= new Predicate(this.mades_sd.getName()).getStartPredicate();
@@ -130,6 +134,7 @@ public class SSequenceDiagram {
 		for (Message m : this.mades_sd.getMessages()) {
 			sem = sem + new SMessage(m).getSemantics() + "\n";
 		}*/
+		String tempfile = "";
 		ArrayList<String> addedMessagesUmlID = new ArrayList<String>();
 	    for(String name:RepetitiousMessage.instances.keySet()) {
 	    	org.eclipse.uml2.uml.Message tempm = RepetitiousMessage.instances.get(name);
@@ -137,13 +142,29 @@ public class SSequenceDiagram {
 	    	tempm.setName(name);
 	    	sem = sem + new SMessage(new Message(tempm)).getSemantics() + "\n";
 	    	tempm.setName(preName);
+	    	//
+	    	tempfile += new Predicate(name).getPredicateName() + "\n";
+	    	tempfile += new Predicate(name).getStartPredicate().getPredicateName() + "\n";
+	    	tempfile += new Predicate(name).getEndPredicate().getPredicateName() + "\n";
+	    	//
 	    	addedMessagesUmlID.add((new Message(tempm)).getUMLId());
 	    }
 		for (Message m : this.mades_sd.getMessages()) {
-			if(addedMessagesUmlID ==null || !addedMessagesUmlID.contains(m.getUMLId()))
+			if(addedMessagesUmlID ==null || !addedMessagesUmlID.contains(m.getUMLId())) {
 				sem = sem + new SMessage(m).getSemantics() + "\n";
+				//
+				tempfile += new SMessage(m).getPredicate().getPredicateName() + "\n";
+				tempfile += new SMessage(m).getPredicate().getStartPredicate().getPredicateName() + "\n";
+				tempfile += new SMessage(m).getPredicate().getEndPredicate().getPredicateName() + "\n";
+				//
+			}
 		}
-		
+		//write to file
+		FileWriter msgsfile = new FileWriter(new File("D:/education/project back up/CorrettoUML/CorrettoUML/org.correttouml.uml2zot/tmp/MessagesNames.txt"));
+		BufferedWriter msgsfileout = new BufferedWriter(msgsfile);
+		msgsfileout.append(tempfile);
+		msgsfileout.close();
+		//
 		// Get execution occurrences semantics
 		sem = sem + SMadesModel.printSeparatorSmall("EXOCCS SEMANTICS");
 		for (ExecutionOccurrence exocc : this.mades_sd.getExecutionOccurrences()) {

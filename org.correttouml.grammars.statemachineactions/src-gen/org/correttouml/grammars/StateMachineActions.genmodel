@@ -5,7 +5,7 @@
     modelPluginID="org.correttouml.grammars.statemachineactions" forceOverwrite="true"
     modelName="StateMachineActions" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="org.correttouml.grammars.statemachineactions.edit"
-    editorPluginID="org.correttouml.grammars.statemachineactions.editor" runtimeVersion="2.8">
+    editorPluginID="org.correttouml.grammars.statemachineactions.editor" runtimeVersion="2.9">
   <genPackages prefix="StateMachineActions" basePackage="org.correttouml.grammars"
       disposableProviderFactory="true" ecorePackage="StateMachineActions.ecore#/">
     <genClasses ecoreClass="StateMachineActions.ecore#//Model">

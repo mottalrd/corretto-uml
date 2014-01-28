@@ -3,7 +3,6 @@ package org.correttouml.uml2zot.tests.models;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
-
 import org.apache.log4j.Logger;
 import org.correttouml.uml2zot.UML2Zot;
 import org.correttouml.uml2zot.tests.TestHelper;
@@ -22,10 +21,11 @@ public class Test1 {
 //	private String MODEL_FILE="testmodels/SD_CF/SD_IF/model.uml";
 //	private String MODEL_FILE="testmodels/SD_CF/CF_Opt/model.uml";
 //	private String MODEL_FILE="testmodels/SD_CF/CF_Par/model.uml";
-	private String MODEL_FILE="testmodels/SD_CF/CF_Loop/model.uml";
+//	private String MODEL_FILE="testmodels/SD_CF/CF_Loop/model.uml";
 //	private String MODEL_FILE="testmodels/SD_CF/Ex1/model.uml";
 //	private String MODEL_FILE="testmodels/SD_CF/CF_Break/model.uml";
-	
+//	private String MODEL_FILE="testmodels/SD_CF/CF_Loop/model.uml";
+	private String MODEL_FILE="testmodels/SD_CF/Server/model.uml";
 	
 	/** SEQUENCE DIAGRAM TESTING */
 	//private String MODEL_FILE="testmodels/sequencediagram/test1/model.uml";

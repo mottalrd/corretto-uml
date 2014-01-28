@@ -1,5 +1,7 @@
 package org.correttouml.uml2zot.semantics;
 
+import java.io.IOException;
+
 import org.correttouml.uml.MadesModel;
 import org.correttouml.uml.diagrams.iod.IOD;
 import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagram;
@@ -14,7 +16,6 @@ import org.correttouml.uml2zot.semantics.util.fun.*;
 import org.correttouml.uml2zot.semantics.util.trio.AlwF_e;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 import org.correttouml.uml2zot.semantics.util.trio.TrioConstant;
-import org.correttouml.uml2zot.semantics.util.trio.TrioVar;
 import org.correttouml.uml2zot.semantics.util.trio.Yesterday;
 import org.correttouml.uml2zot.semantics.sequencediagram.Config;
 
@@ -22,7 +23,8 @@ import org.correttouml.uml2zot.semantics.sequencediagram.Config;
 public class SMadesModel {
 
 	public static final Predicate SYSTEMSTART = new Predicate("BigBang");
-	
+	// set configuration
+	public static Config staticConfig = new Config(ConfigCombine.WS, ConfigCombine.WS, ConfigWhat.FIRSTOP);
 	/** The semantic decorators */
 	private MadesModel mm;
 	
@@ -31,7 +33,7 @@ public class SMadesModel {
 		this.mm=mm;
 	}
 	
-    public String getSemantics() {
+    public String getSemantics() throws IOException {
         String s = "";
         //Class diagram semantics
         s=s+printSeparator("CLASS DIAGRAM");
@@ -39,7 +41,7 @@ public class SMadesModel {
         
         //Sequence Diagram semantics
         s=s+printSeparator("SEQUENCE DIAGRAMS");
-        Config config = new Config(ConfigCombine.WS, ConfigCombine.WS, ConfigWhat.NONDETERMINISTICALLY);
+        Config config = staticConfig;
         for(SequenceDiagram sd: this.mm.getSequenceDiagrams()){
         	s=s+printSeparator("SD " + sd.getName());
         	s=s+new SSequenceDiagram(sd, config).getSemantics();

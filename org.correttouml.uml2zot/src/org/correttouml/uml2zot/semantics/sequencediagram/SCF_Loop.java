@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.correttouml.uml.diagrams.expressions.PrimitiveType;
 import org.correttouml.uml.diagrams.sequencediagram.*;
+import org.correttouml.uml2zot.semantics.SMadesModel;
 import org.correttouml.uml2zot.semantics.util.bool.*;
 import org.correttouml.uml2zot.semantics.util.fun.SomPIn_i;
 import org.correttouml.uml2zot.semantics.util.trio.*;
@@ -92,7 +93,8 @@ public class SCF_Loop extends SCombinedFragment  implements SCombinedFragmentItf
 					String umlMessageName = mUmlIDName.get(new org.correttouml.uml.diagrams.sequencediagram.Message(tempm).getUMLId());
 					String umlMessageNameInNewOp = mades_cf_loop.getName()+operndName+i+umlMessageName; 
 					tempm.setName(umlMessageNameInNewOp);
-					RepetitiousMessage.instances.put(umlMessageNameInNewOp, tempm);
+					if (SMadesModel.staticConfig.loop == ConfigCombine.WS)
+						RepetitiousMessage.instances.put(umlMessageNameInNewOp, tempm);
 				}
 			}
 		}
@@ -270,6 +272,10 @@ public class SCF_Loop extends SCombinedFragment  implements SCombinedFragmentItf
 				f.add(new Implies(new Not(new Or(opEnd, end)), new EQ(new Next(counter), counter)));
 //				(CF_Loop_Op_End && ((CF_Loop_C + 1) < CF_Loop_Min) && !!CF_Loop_Skip) => next(CF_Loop_Op_Start)
 				f.add(new Implies(new And(opEnd, new LT(new Plus(counter, one), min), new Not(getPredicate().getSkipPredicate())), new Next(opStart)));
+				
+				//CF_Loop_Skip <=> ||i=1 to nCF_Loop_Li_Skip
+				f.add(new Iff(getPredicate().getSkipPredicate(), new Or(getLifelinesSkipPredicates())));
+				
 //				(CF_Loop_Op_End && ((CF_Loop_C + 1) >= CF_Loop_Min) && !!CF_Loop_Guard) => CF_Loop_End
 				f.add(new Implies(new And(opEnd, new GTE(new Plus(counter, one), min), new Not(getGuard())), end));
 //				(CF_Loop_Op_End && ((CF_Loop_C + 1) >= CF_Loop_Min) && CF_Loop_Guard) => ((next(CF_Loop_Op_Start) && !!CF_Loop_End) || (next(!!CF_Loop_Op_Start) && CF_Loop_End))

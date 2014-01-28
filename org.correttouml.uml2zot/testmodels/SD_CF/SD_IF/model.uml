@@ -71,6 +71,32 @@
         <message xmi:id="_PknkgEV_EeO2S6YC00rIrw" name="mopt" messageSort="asynchCall" receiveEvent="_PkoyoEV_EeO2S6YC00rIrw" sendEvent="_PkoLkEV_EeO2S6YC00rIrw" signature="_nQZIUL2uEeKKSenVvntNZQ"/>
         <message xmi:id="_cI0ygEWsEeOI8pqIUmebbw" name="M2_5" messageSort="asynchCall" receiveEvent="_cJGfUEWsEeOI8pqIUmebbw" sendEvent="_cJF4QEWsEeOI8pqIUmebbw" signature="_nQZIUL2uEeKKSenVvntNZQ"/>
       </packagedElement>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_oa9H0GlhEeObHaP-4IdSWQ" name="SD1">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_4_WuQGlhEeObHaP-4IdSWQ" name="MessageSend" covered="_r4MDsGlhEeObHaP-4IdSWQ" message="_4_VgIGlhEeObHaP-4IdSWQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_4_XVUGlhEeObHaP-4IdSWQ" name="MessageRecv" covered="_tE9_4GlhEeObHaP-4IdSWQ" message="_4_VgIGlhEeObHaP-4IdSWQ"/>
+        <fragment xmi:type="uml:CombinedFragment" xmi:id="_8Ya70GlhEeObHaP-4IdSWQ" name="CF_Loop" covered="_tE9_4GlhEeObHaP-4IdSWQ _r4MDsGlhEeObHaP-4IdSWQ _tYf_4GlhEeObHaP-4IdSWQ _tpvg4GlhEeObHaP-4IdSWQ" interactionOperator="loop">
+          <operand xmi:id="_8YcJ8GlhEeObHaP-4IdSWQ" name="InteractionOperand" covered="_tE9_4GlhEeObHaP-4IdSWQ _r4MDsGlhEeObHaP-4IdSWQ _tYf_4GlhEeObHaP-4IdSWQ _tpvg4GlhEeObHaP-4IdSWQ">
+            <guard xmi:id="_EG5qcGliEeObHaP-4IdSWQ">
+              <maxint xmi:type="uml:LiteralInteger" xmi:id="_EG5qcWliEeObHaP-4IdSWQ" name="" value="3"/>
+              <minint xmi:type="uml:LiteralInteger" xmi:id="_EG5qcmliEeObHaP-4IdSWQ" name="" value="2"/>
+            </guard>
+            <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_IhUAQGliEeObHaP-4IdSWQ" name="MessageSend" covered="_tE9_4GlhEeObHaP-4IdSWQ" message="_IhTZMGliEeObHaP-4IdSWQ"/>
+            <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_IhUAQWliEeObHaP-4IdSWQ" name="MessageRecv" covered="_tYf_4GlhEeObHaP-4IdSWQ" message="_IhTZMGliEeObHaP-4IdSWQ"/>
+            <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_J00PgGliEeObHaP-4IdSWQ" name="MessageSend0" covered="_tE9_4GlhEeObHaP-4IdSWQ" message="_J0zocGliEeObHaP-4IdSWQ"/>
+            <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_J00PgWliEeObHaP-4IdSWQ" name="MessageRecv0" covered="_tYf_4GlhEeObHaP-4IdSWQ" message="_J0zocGliEeObHaP-4IdSWQ"/>
+          </operand>
+        </fragment>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_LSzQcWliEeObHaP-4IdSWQ" name="MessageSend0" covered="_tpvg4GlhEeObHaP-4IdSWQ" message="_LSzQcGliEeObHaP-4IdSWQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_LSz3gGliEeObHaP-4IdSWQ" name="MessageRecv0" covered="_tYf_4GlhEeObHaP-4IdSWQ" message="_LSzQcGliEeObHaP-4IdSWQ"/>
+        <lifeline xmi:id="_r4MDsGlhEeObHaP-4IdSWQ" name="L1" coveredBy="_4_WuQGlhEeObHaP-4IdSWQ _8Ya70GlhEeObHaP-4IdSWQ _8YcJ8GlhEeObHaP-4IdSWQ"/>
+        <lifeline xmi:id="_tE9_4GlhEeObHaP-4IdSWQ" name="L2" coveredBy="_4_XVUGlhEeObHaP-4IdSWQ _8Ya70GlhEeObHaP-4IdSWQ _8YcJ8GlhEeObHaP-4IdSWQ _IhUAQGliEeObHaP-4IdSWQ _J00PgGliEeObHaP-4IdSWQ"/>
+        <lifeline xmi:id="_tYf_4GlhEeObHaP-4IdSWQ" name="L3" coveredBy="_8Ya70GlhEeObHaP-4IdSWQ _8YcJ8GlhEeObHaP-4IdSWQ _IhUAQWliEeObHaP-4IdSWQ _J00PgWliEeObHaP-4IdSWQ _LSz3gGliEeObHaP-4IdSWQ"/>
+        <lifeline xmi:id="_tpvg4GlhEeObHaP-4IdSWQ" name="L4" coveredBy="_LSzQcWliEeObHaP-4IdSWQ _8Ya70GlhEeObHaP-4IdSWQ _8YcJ8GlhEeObHaP-4IdSWQ"/>
+        <message xmi:id="_4_VgIGlhEeObHaP-4IdSWQ" name="m1" messageSort="asynchCall" receiveEvent="_4_XVUGlhEeObHaP-4IdSWQ" sendEvent="_4_WuQGlhEeObHaP-4IdSWQ"/>
+        <message xmi:id="_IhTZMGliEeObHaP-4IdSWQ" name="m2" messageSort="asynchCall" receiveEvent="_IhUAQWliEeObHaP-4IdSWQ" sendEvent="_IhUAQGliEeObHaP-4IdSWQ"/>
+        <message xmi:id="_J0zocGliEeObHaP-4IdSWQ" name="m3" messageSort="asynchCall" receiveEvent="_J00PgWliEeObHaP-4IdSWQ" sendEvent="_J00PgGliEeObHaP-4IdSWQ"/>
+        <message xmi:id="_LSzQcGliEeObHaP-4IdSWQ" name="m4" messageSort="asynchCall" receiveEvent="_LSz3gGliEeObHaP-4IdSWQ" sendEvent="_LSzQcWliEeObHaP-4IdSWQ"/>
+      </packagedElement>
     </packagedElement>
     <profileApplication xmi:id="_7CWFUL2tEeKKSenVvntNZQ">
       <eAnnotations xmi:id="_7CpAQL2tEeKKSenVvntNZQ" source="http://www.eclipse.org/uml2/2.0.0/UML">

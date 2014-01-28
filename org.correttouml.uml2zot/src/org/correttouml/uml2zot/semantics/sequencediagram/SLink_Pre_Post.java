@@ -35,7 +35,39 @@ public class SLink_Pre_Post implements BooleanFormulae{
 			int n = smodule.getLifelines().size();
 			Predicate SD_Stop = smodule.getSDPredicate().getStopPredicate();
 			Predicate SD_Start = smodule.getSDPredicate().getStartPredicate();
-			// // if (configCombine == “ws”){
+// [Link_Pre_Post.docs]
+//			if (config.combine == “ws”){
+//				for (i = 0; i<n; i++){
+//						borders(CF_X_Li, SD_End || SD_Stop)
+//				if (pretype == PredicateType.SDStart || pretype == PredicateType.CFStart)
+//						order(CF_X_Li_Pre, CF_X_Li_Start, True , SD_Stop, True)
+//				else
+//						order(CF_X_Li_Pre, CF_X_Li_Start, !!EnclosingF_Li_Skip, SD_Stop, True)
+//
+//				if (posttype == PredicateType.SDEnd || posttype == PredicateType.CFEnd)
+//						orderMonoD(CF_X_Li_End, CF_X_Li_Post, True , SD_Stop, True)
+//				else
+//						order(CF_X_Li_End, CF_X_Li_Post, !!EnclosingF_Li_Skip , SD_Stop, True)
+//				}//end for
+//				}//end ws
+//				if (config.combine == “sync”){
+//				for (i = 0; i<n; i++){
+//				if (pretype == PredicateType.SDStart || pretype == PredicateType.CFStart)
+//						order(CF_X_Li_Pre, CF_X_Start, True , SD_Stop, True)
+//				else
+//						order(CF_X_Li_Pre, CF_X_Li_Start, !!EnclosingF_Li_Skip, SD_Stop, True)
+//
+//				if (posttype == PredicateType.SDEnd || posttype == PredicateType.CFEnd)
+//						orderMonoD(CF_X_End, CF_X_Li_Post, True , SD_Stop, True)
+//				else
+//						order(CF_X_End, CF_X_Li_Post, !!EnclosingF_Li_Skip, SD_Stop, True)
+//
+//				}//end for
+//				}//end sync
+
+			
+			// 
+			// if (configCombine == “ws”){
 				if(configCombine == ConfigCombine.WS){
 					for (int i = 0; i < n; i++){
 						// // borders(CF_X_Li, SD_End || SD_Stop)
@@ -56,13 +88,12 @@ public class SLink_Pre_Post implements BooleanFormulae{
 //						BooleanFormulae exception = new Or(SD_Stop, getEnclosingFLifelineSkip(i));
 //						BooleanFormulae NOexception = new Not(new Or(SD_Stop, getEnclosingFLifelineSkip(i)));
 
-/////////////////update me in [scombine.docx]// // order(CF_X_Li_Pre, CF_X_Li_Start, True , (SD_End || SD_Stop || CF_X_End), True)
+
 						if (pretype == PredicateType.SDStart || pretype == PredicateType.CFStart)
 							f.add(new SOrder(pre, start, exception, true));
 						else 
 							f.add(new SOrder(pre, start, guard, exception, true));
 
-						///////////////update me in [scombine.docx]//// // 	order(CF_X_Li_End, CF_X_Li_Post, True , (SD_End || SD_Stop || CF_X_End), True)
 						if (posttype == PredicateType.SDEnd || posttype == PredicateType.CFEnd)
 							f.add(new SOrderMonoD(end, post, exception, true));
 						else if (posttype == PredicateType.MStart || posttype == PredicateType.MEnd || posttype == PredicateType.CFStart)

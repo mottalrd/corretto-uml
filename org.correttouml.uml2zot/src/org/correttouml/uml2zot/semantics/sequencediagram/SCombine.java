@@ -342,20 +342,40 @@ public class SCombine implements BooleanFormulae{
 				for (int i = 0; i < n; i++)
 					{comments.add(null);
 					f.add(new Implies(smodule.getLifelinePredicate(i), smodule.getPredicate()));}
-				// // if (config.combine == “ws”)
-				if (config.combine == ConfigCombine.WS)
-		        // // 	CF_X_Op_Start => ||j=1 to n (CF_X_Op_Lj_Start)
-					{comments.add(null);
-					f.add(new Implies(smodule.getPredicate().getStartPredicate(), new Or(smodule.getLifelinesStartPredicates())));}
-				// // if (config.combine == “sync”)
-				if (config.combine == ConfigCombine.SYNC) {
-					// // for (int i = 0; i < n; i++){
-					for (int i = 0; i < n; i++) {
-			        // //     CF_X_Op_Start <=> (CF_X_Op_Li_Start)}
-						comments.add(null);
-						f.add(new Iff(smodule.getPredicate().getStartPredicate(), smodule.getLifelinePredicate(i).getStartPredicate()));
-					}
 
+				// // if (config.combine == “ws”)
+				//if OP belongs to a CF_Loop then it follows config.loop (WS or SYNC), otherwise follows the config.combine
+				SCombinedFragment tempSCF = smodule.getEnclosingSCF();
+				if (tempSCF.getOperator().equals("loop")){
+					if (config.loop == ConfigCombine.WS){
+				        // // 	CF_X_Op_Start => ||j=1 to n (CF_X_Op_Lj_Start)
+							comments.add(null);
+							f.add(new Implies(smodule.getPredicate().getStartPredicate(), new Or(smodule.getLifelinesStartPredicates())));
+						}
+						// // if (config.combine == “sync”)
+						if (config.loop == ConfigCombine.SYNC){
+							// // for (int i = 0; i < n; i++){
+							for (int i = 0; i < n; i++) {
+					        // //     CF_X_Op_Start <=> (CF_X_Op_Li_Start)}
+								comments.add(null);
+								f.add(new Iff(smodule.getPredicate().getStartPredicate(), smodule.getLifelinePredicate(i).getStartPredicate()));
+							}
+						}
+				}else{
+					if (config.combine == ConfigCombine.WS){
+			        // // 	CF_X_Op_Start => ||j=1 to n (CF_X_Op_Lj_Start)
+						comments.add(null);
+						f.add(new Implies(smodule.getPredicate().getStartPredicate(), new Or(smodule.getLifelinesStartPredicates())));
+					}
+					// // if (config.combine == “sync”)
+					if (config.combine == ConfigCombine.SYNC){
+						// // for (int i = 0; i < n; i++){
+						for (int i = 0; i < n; i++) {
+				        // //     CF_X_Op_Start <=> (CF_X_Op_Li_Start)}
+							comments.add(null);
+							f.add(new Iff(smodule.getPredicate().getStartPredicate(), smodule.getLifelinePredicate(i).getStartPredicate()));
+						}
+					}
 				}
 				// // order(module_Start, module_End, true, SD_Stop, True)
 				comments.add(null);
@@ -548,7 +568,7 @@ public class SCombine implements BooleanFormulae{
 						if(liEvjp1 instanceof MessageEnd)
 							liEvjp1Prd = new SMessageEnd((MessageEnd)liEvjp1).getPredicate();
 						// // if ((EV[i][j] is message) && (EV[i][j + 1] is message))
-						// // order(EV[i][j], EV[i][j + 1], True, (enclosingFragmentPrd_End || SD_Stop || SD_End), False)
+						// // order(EV[i][j], EV[i][j + 1], True, SD_Stop, False)
 						if (liEvjPrd != null && liEvjp1Prd != null)
 							{comments.add(null);
 //							f.add(new SOrder(liEvjPrd, liEvjp1Prd, SD_Stop, false).getFun());}////#### before break
@@ -597,20 +617,20 @@ public class SCombine implements BooleanFormulae{
 //				for (i = 0; i < n; i++){
 					for (int i = 0; i < n; i++){
 //						module_Li_Skip <=> ||for all module.enclosingCF_Li_SkipTriggers
-						if (PredicateSkip.instances.containsKey(smodule.getEnclosingCF().getLifelinePredicate(i).getSkipPredicate())){
-							if(PredicateSkip.instances.get(smodule.getEnclosingCF().getLifelinePredicate(i).getSkipPredicate()).size() > 0)
-								f.add(new Iff(smodule.getEnclosingCF().getLifelinePredicate(i).getSkipPredicate(), new Or(PredicateSkip.instances.get(smodule.getEnclosingCF().getLifelinePredicate(i).getSkipPredicate()))));
+						if (PredicateSkip.instances.containsKey(smodule.getEnclosingSCF().getLifelinePredicate(i).getSkipPredicate())){
+							if(PredicateSkip.instances.get(smodule.getEnclosingSCF().getLifelinePredicate(i).getSkipPredicate()).size() > 0)
+								f.add(new Iff(smodule.getEnclosingSCF().getLifelinePredicate(i).getSkipPredicate(), new Or(PredicateSkip.instances.get(smodule.getEnclosingSCF().getLifelinePredicate(i).getSkipPredicate()))));
 						}else
-							f.add(new Not(smodule.getEnclosingCF().getLifelinePredicate(i).getSkipPredicate()));
+							f.add(new Not(smodule.getEnclosingSCF().getLifelinePredicate(i).getSkipPredicate()));
 //						}
 					}
 				}
 				else if (config.combine == ConfigCombine.SYNC) {//module.eclosingCF_Skip <=> ||for all module.enclosingCF_SkipTriggers
-					if (PredicateSkip.instances.containsKey(smodule.getEnclosingCF().getPredicate().getSkipPredicate())){
-						if(PredicateSkip.instances.get(smodule.getEnclosingCF().getPredicate().getSkipPredicate()).size() > 0)
-							f.add(new Iff(smodule.getEnclosingCF().getPredicate().getSkipPredicate(), new Or(PredicateSkip.instances.get(smodule.getEnclosingCF().getPredicate().getSkipPredicate()))));
+					if (PredicateSkip.instances.containsKey(smodule.getEnclosingSCF().getPredicate().getSkipPredicate())){
+						if(PredicateSkip.instances.get(smodule.getEnclosingSCF().getPredicate().getSkipPredicate()).size() > 0)
+							f.add(new Iff(smodule.getEnclosingSCF().getPredicate().getSkipPredicate(), new Or(PredicateSkip.instances.get(smodule.getEnclosingSCF().getPredicate().getSkipPredicate()))));
 					}else
-						f.add(new Not(smodule.getEnclosingCF().getPredicate().getSkipPredicate()));
+						f.add(new Not(smodule.getEnclosingSCF().getPredicate().getSkipPredicate()));
 				}
 					
 //</Skip semantics>
