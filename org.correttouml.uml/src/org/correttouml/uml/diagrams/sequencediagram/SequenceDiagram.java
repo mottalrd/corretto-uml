@@ -111,6 +111,28 @@ public class SequenceDiagram implements ExpressionContext, PTermElement{
 		return tcs;
 	}
 	
+	public String [] getConfig() {
+		String [] strConfig = new String[3];
+		for(Comment c: this.uml_interaction.getOwnedComments()){
+			if(!UML2ModelHelper.hasStereotype(c, "TimeConstraint")){
+				String [] cText = c.getBody().split("\n");
+				for(String s :cText){
+					s=s.replace(" ", "");
+					String [] cPar = s.split(":");
+					cPar[1]=cPar[1].replaceAll("\r", "");
+					if (cPar[0].toLowerCase().equals("combine"))
+						strConfig[0] = cPar[1].toUpperCase();
+					if (cPar[0].toLowerCase().equals("loop"))
+						strConfig[1] = cPar[1].toUpperCase();
+					if (cPar[0].toLowerCase().equals("choice"))
+						strConfig[2] = cPar[1].toUpperCase();
+				}
+				return strConfig;
+			}
+		}
+		return null;
+	}
+	
 	@Override
 	public MadesModel getMadesModel() {
 		return new MadesModel(this.uml_interaction.getModel());

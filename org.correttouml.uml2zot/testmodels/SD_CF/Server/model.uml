@@ -117,6 +117,11 @@
         <eAnnotations xmi:id="_w20XUD_UEeONDO0Fs8C2Yg" source="InstanceEnd" references="_aCENID_UEeONDO0Fs8C2Yg _acb08T_UEeONDO0Fs8C2Yg"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Interaction" xmi:id="_5IG4ED_UEeONDO0Fs8C2Yg" name="SDSearch">
+        <ownedComment xmi:id="_C6V8wJZ9EeOjMbnMmAcp1g">
+          <body>Combine: WS&#xD;
+Loop: WS&#xD;
+Choice: ND</body>
+        </ownedComment>
         <fragment xmi:type="uml:CombinedFragment" xmi:id="_peS5YHcxEeOhw7RR-UbvSQ" name="Par" covered="_Av1ecD_VEeONDO0Fs8C2Yg _E6FRUD_VEeONDO0Fs8C2Yg _EEoQAD_VEeONDO0Fs8C2Yg" interactionOperator="par">
           <operand xmi:id="_peS5YXcxEeOhw7RR-UbvSQ" name="OP1" covered="_Av1ecD_VEeONDO0Fs8C2Yg _E6FRUD_VEeONDO0Fs8C2Yg _EEoQAD_VEeONDO0Fs8C2Yg">
             <guard xmi:id="_peS5YncxEeOhw7RR-UbvSQ">

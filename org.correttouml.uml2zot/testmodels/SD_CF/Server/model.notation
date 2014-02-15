@@ -714,6 +714,20 @@
           <element xmi:type="uml:CombinedFragment" href="model.uml#_KDqCAHcyEeOhw7RR-UbvSQ"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KDzzAXcyEeOhw7RR-UbvSQ" x="2" y="220" width="458" height="578"/>
         </children>
+        <children xmi:type="notation:Shape" xmi:id="_C8_oIJZ9EeOjMbnMmAcp1g" type="3009" fontName="Segoe UI" lineColor="0">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_C9CrcJZ9EeOjMbnMmAcp1g" source="ShadowFigure">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_C9CrcZZ9EeOjMbnMmAcp1g" key="ShadowFigure_Value" value="false"/>
+          </eAnnotations>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_C9DSgJZ9EeOjMbnMmAcp1g" source="displayNameLabelIcon">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_C9DSgZZ9EeOjMbnMmAcp1g" key="displayNameLabelIcon_value" value="false"/>
+          </eAnnotations>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_C9DSgpZ9EeOjMbnMmAcp1g" source="QualifiedName">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_C9DSg5Z9EeOjMbnMmAcp1g" key="QualifiedNameDepth" value="1000"/>
+          </eAnnotations>
+          <children xmi:type="notation:DecorationNode" xmi:id="_C9DShJZ9EeOjMbnMmAcp1g" type="5006"/>
+          <element xmi:type="uml:Comment" href="model.uml#_C6V8wJZ9EeOjMbnMmAcp1g"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C8_oIZZ9EeOjMbnMmAcp1g" x="457" y="146"/>
+        </children>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5UH62j_UEeONDO0Fs8C2Yg"/>
       </children>
       <element xmi:type="uml:Interaction" href="model.uml#_5IG4ED_UEeONDO0Fs8C2Yg"/>

@@ -24,7 +24,7 @@ public class SMadesModel {
 
 	public static final Predicate SYSTEMSTART = new Predicate("BigBang");
 	// set configuration
-	public static Config staticConfig = new Config(ConfigCombine.WS, ConfigCombine.WS, ConfigWhat.FIRSTOP);
+	public static Config staticConfig = new Config(ConfigCombine.WS, ConfigCombine.WS, ConfigWhat.NONDETERMINISTICALLY);
 	/** The semantic decorators */
 	private MadesModel mm;
 	
@@ -44,7 +44,7 @@ public class SMadesModel {
         Config config = staticConfig;
         for(SequenceDiagram sd: this.mm.getSequenceDiagrams()){
         	s=s+printSeparator("SD " + sd.getName());
-        	s=s+new SSequenceDiagram(sd, config).getSemantics();
+        	s=s+new SSequenceDiagram(sd, staticConfig).getSemantics();
         }
         
         //IODs semantics

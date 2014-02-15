@@ -47,6 +47,7 @@ public class SSequenceDiagram {
 	public SSequenceDiagram(SequenceDiagram mades_sd, Config config) {
 		this.mades_sd = mades_sd;
 		this.config = config;
+		setConfig();
 	}
 	
 	public SSequenceDiagram(SequenceDiagram mades_sd) {
@@ -354,9 +355,6 @@ public class SSequenceDiagram {
 	}
 
 	protected String getAllTimeConstraintsSemantics(){
-		//Give a predicate to the current time constraint
-		//SD_TIMECONSTRAINT_i <=> STimeConstraint(t).getSemantics().toString()
-		//SD => TIMECONSTRAINT_SDname_i
 		String sem = "";
 		int counter=0;
 		for (TimeConstraint t : mades_sd.getTimeConstraints()) {
@@ -367,4 +365,37 @@ public class SSequenceDiagram {
 		}
 		return sem;
 	}
+	protected void setConfig(){
+	try {
+		String [] s = null;
+		if (mades_sd.getConfig() != null)
+			s = mades_sd.getConfig();
+		else
+			return;
+			
+		if (s[0].equals("SYNC"))
+			SMadesModel.staticConfig.combine = ConfigCombine.SYNC;
+		else if (s[0].equals("WS"))
+			SMadesModel.staticConfig.combine = ConfigCombine.WS;
+		else
+			throw new Exception("Error in configuration input for Combine parameter. It must be either Combine:WS or Combine:SYNC.");
+		if (s[1].equals("SYNC"))
+			SMadesModel.staticConfig.loop = ConfigCombine.SYNC;
+		else if (s[1].equals("WS"))
+			SMadesModel.staticConfig.loop = ConfigCombine.WS;
+		else
+			throw new Exception("Error in configuration input for Loop parameter. It must me either \"Loop:WS\" or \"Loop:SYNC\".");
+		if (s[2].equals("FFT"))
+			SMadesModel.staticConfig.what = ConfigWhat.FIRSTOP;
+		else if (s[2].equals("ND"))
+			SMadesModel.staticConfig.what = ConfigWhat.NONDETERMINISTICALLY;
+		else
+			throw new Exception("Error in configuration input for Loop parameter. It must me either \"Choice:ND\" or \"Choice:FFT\".");
+		
+		this.config = SMadesModel.staticConfig;
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+}
 }
