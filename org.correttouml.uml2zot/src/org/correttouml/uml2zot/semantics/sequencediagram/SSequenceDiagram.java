@@ -161,10 +161,10 @@ public class SSequenceDiagram {
 			}
 		}
 		//write to file
-		FileWriter msgsfile = new FileWriter(new File("D:/education/project back up/CorrettoUML/CorrettoUML/org.correttouml.uml2zot/tmp/MessagesNames.txt"));
-		BufferedWriter msgsfileout = new BufferedWriter(msgsfile);
-		msgsfileout.append(tempfile);
-		msgsfileout.close();
+//		FileWriter msgsfile = new FileWriter(new File("D:/education/project back up/CorrettoUML/CorrettoUML/org.correttouml.uml2zot/tmp/MessagesNames.txt"));
+//		BufferedWriter msgsfileout = new BufferedWriter(msgsfile);
+//		msgsfileout.append(tempfile);
+//		msgsfileout.close();
 		//
 		// Get execution occurrences semantics
 		sem = sem + SMadesModel.printSeparatorSmall("EXOCCS SEMANTICS");
