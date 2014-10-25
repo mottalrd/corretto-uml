@@ -6,7 +6,7 @@ _CorrettoUML_ is a prototype research tool developed at Politecnico di Milano to
 This picture presents an overview of the tool:
 <img src="https://raw.githubusercontent.com/mottalrd/CorrettoUML/master/docs/images/mvf_overview.png"/>
 
-The user creates a UML models using <a href="http://www.eclipse.org/papyrus/">Papyrus</a>. Corretto supports both static and behavioral diagrams of different types. The different views communicates by means of a shared set of events enabling the possibility to define complex behaviors. Also, dedicated time concepts have been included to predicate on the time dimension of the system.  
+The user creates a UML models using <a href="http://www.eclipse.org/papyrus/">Papyrus</a>. Corretto supports both static and behavioral diagrams of different types. The different views communicates by means of a shared set of events enabling the possibility to define complex behaviors. Also, dedicated time concepts borrowed from <a href="http://www.omgmarte.org/">UML/MARTE</a> have been included to predicate on the time dimension of the system.  
 
 Once the UML model is completed the user can use _Corretto_ to formally verify its correctness with two types of checks:
 
