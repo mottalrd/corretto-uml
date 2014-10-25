@@ -5,7 +5,7 @@ _CorrettoUML_ is a prototype research tool developed at Politecnico di Milano to
 
 <img src="https://raw.githubusercontent.com/mottalrd/CorrettoUML/master/docs/images/Corretto_1.png" width="250"/> <img src="https://raw.githubusercontent.com/mottalrd/CorrettoUML/master/docs/images/Corretto_2.png" width="250"/>
 
-A more detailed description
+Detailed description
 ===========
 
 The following diagrams describe in more details how _Corretto_ works.
