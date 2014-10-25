@@ -1,7 +1,7 @@
 CorrettoUML
 ===========
 
-_CorrettoUML_ is a prototype research tool developed at Politecnico di Milano to translate UML models into the <a href="http://risorse.dei.polimi.it/TRIO/">TRIO<a/> temporal logic formalism which is suitable to be formally verified using the _Zot_ bounded model/satisfiability checker https://code.google.com/p/zot/. 
+_CorrettoUML_ is a prototype research tool developed at Politecnico di Milano to translate UML models into the <a href="http://risorse.dei.polimi.it/TRIO/">_TRIO_<a/> temporal logic formalism which is suitable to be formally verified using the _Zot_ bounded model/satisfiability checker https://code.google.com/p/zot/. 
 
 This picture presents an overview of the tool:
 <img src="https://raw.githubusercontent.com/mottalrd/CorrettoUML/master/docs/images/mvf_overview.png"/>
@@ -13,4 +13,9 @@ Once the UML model is completed the user can use _Corretto_ to formally verify i
 * Model consistency: A UML model is consistent if the different views do not contradict each other. Formally this is translated into the fact that the underlying formal model has at least one execution trace. 
 
 * User defined properties. The user can define a property that must be true for the model using Time Property Diagrams (TPDs) included in the MADES UML profile. Time properties usually refer to the relation of different events in the system with some time constraint. A simple example is if messsage _x_ occurs now, then within 10 time instants object _y_ will be inside state _z_. TPDs are an extesion of CDs used to build temporal logic formulae in UML. 
+
+Once the user decides to run the formal verification, the UML models are first exported in the XMI format, and then translated into their corresponding _TRIO_ metric temporal logic semantics with a suitable transformation tool. Zot is then feeded by the formal model. Zot relies on both the Satisfiability solvers (SAT) and the Satisfiability Modulo Theories solvers (SMT) to verify if the property specified by the user holds or not. If the property holds no action is required on the model and the user is just notified of the result. If the property does not hold, a counterexample is returned. Counterexamples in Zot are simple text traces representing an execution of the system that violates the property.
+
+_Corretto_ automatically associate each element in the _ZOT_ trace to its corresponding element in the UML model. Navigating the trace resume closely the debugging paradigm of well know programming languages. The image that follows presents an example of a model formally verified using _Corretto_.
+
 
