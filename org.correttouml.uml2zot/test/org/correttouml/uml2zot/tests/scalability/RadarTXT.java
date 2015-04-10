@@ -11,8 +11,10 @@ import org.eclipse.uml2.uml.resource.UMLResource;
 
 public class RadarTXT {
 
-	public static String MADES_PROFILE_PATH="C:/Users/motta/Desktop/Dottorato/CorrettoUML/org.correttouml.profiles/resources/model.profile.uml";
-	public static String MODEL_SAVE_PATH="C:/Users/motta/Desktop/Dottorato/CorrettoUML/org.correttouml.uml2zot/tmp";
+//	public static String MADES_PROFILE_PATH="C:/Users/motta/Desktop/Dottorato/CorrettoUML/org.correttouml.profiles/resources/model.profile.uml";
+//	public static String MODEL_SAVE_PATH="C:/Users/motta/Desktop/Dottorato/CorrettoUML/org.correttouml.uml2zot/tmp";
+	public static String MADES_PROFILE_PATH="/Users/admin/Documents/Other/corretto-uml-master/org.correttouml.profiles/resources/model.profile.uml";
+	public static String MODEL_SAVE_PATH="/Users/admin/Documents/Other/corretto-uml-master/org.correttouml.uml2zot/tmp";
 	public static String MODEL_SAVE_NAME="model";
 
 	
@@ -25,15 +27,18 @@ public class RadarTXT {
 	private static final Logger LOGGER = Logger.getLogger(SequenceDiagram.class); 
 	
 	public static void main(String[] args){
-		for(int num_processi=1; num_processi<=5; num_processi++){
+		for(int num_processi=1; num_processi<=4; num_processi++){
 			LOGGER.info("Creating the UML model");
-			create_txt_model(num_processi, false);
+			String modeltype = "sat";
+			Boolean prop= true;
+			if (prop) {modeltype = "p1";}
+			create_txt_model(num_processi, prop);
 			
 			LOGGER.info("Building the MADES UML representation");
 			t=new UML2Zot(new File(MODEL_FILE).getAbsolutePath());
 			
 			LOGGER.info("Generate the ZOT File");
-			t.generateZOTFile(100, "meezot", "minisat", new File("output/txt_model_"+num_processi+".lisp").getAbsolutePath());
+			t.generateZOTFile(100, "meezot", "minisat", new File("output/txt_"+modeltype+"-"+num_processi+".lisp").getAbsolutePath());
 			//t.generateZOTFile(100, "ae2zot", "z3", new File("output/txt_model_"+i+".lisp").getAbsolutePath());
 		}
 	}
