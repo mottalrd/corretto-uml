@@ -4,9 +4,10 @@ import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.expressions.PrimitiveType;
 import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagramParameter;
 import org.correttouml.uml2zot.semantics.expressions.SVariable;
-import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
-import org.correttouml.uml2zot.semantics.util.bool.Iff;
-import org.correttouml.uml2zot.semantics.util.bool.Implies;
+import org.correttouml.uml2zot.semantics.util.bool.*;
+//import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
+//import org.correttouml.uml2zot.semantics.util.bool.Iff;
+//import org.correttouml.uml2zot.semantics.util.bool.Implies;
 import org.correttouml.uml2zot.semantics.util.trio.EQ;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 import org.correttouml.uml2zot.semantics.util.trio.TrioVar;
@@ -23,8 +24,8 @@ public class SSequenceDiagramParameter implements SVariable{
 
 	public String getSemantics() {
 		String sem="";
-		Predicate sd_inside=new SSequenceDiagram(this.mades_sdp.getSequenceDiagram()).getPredicate();
-		
+//		Predicate sd_inside=new SSequenceDiagram(this.mades_sdp.getSequenceDiagram()).getPredicate();
+		BooleanFormulae sd_insideNotFirstTI = new And (new SSequenceDiagram(this.mades_sdp.getSequenceDiagram()).getPredicate(), new Not(new SSequenceDiagram(this.mades_sdp.getSequenceDiagram()).getPredicateStart()));
 		//TODO: Put back assignments for sequence diagrams parameters
 //		// The sequence diagram parameter has always the same value
 //		// if we do not make any assignment to it
@@ -44,7 +45,7 @@ public class SSequenceDiagramParameter implements SVariable{
 			eq = new EQ(this.getPredicate(), new Yesterday(this.getPredicate()));
 		}
 		
-		sem=sem+new Implies(sd_inside,eq) + "\n";
+		sem=sem+new Implies(sd_insideNotFirstTI,eq) + "\n";
 		
 		return sem;
 	}
