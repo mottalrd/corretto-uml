@@ -45,7 +45,7 @@ public class LeaderElection {
 		LOGGER.info("Creating the UML model");
 		String modeltype = "";
 //		for(int i=5; i<=20; i=i+5){
-		int i = 20;
+		int i = 5;
 		modeltype = "sat"; create_leader_election_model(i);
 //		modeltype = "p1"; create_alw_somf_monitor_state_winner();
 //		modeltype = "p2"; create_alw_not_monitor_state_error();
@@ -150,7 +150,9 @@ public class LeaderElection {
 		// the slots
 		Property mynumber_attr = UML2Helper.createAttribute(processClass,
 				"mynumber", integer);
-		UML2Helper.createAttribute(processClass, "max", integer).setIntegerDefaultValue(0);
+//		UML2Helper.createAttribute(processClass, "max", integer).setIntegerDefaultValue(0);
+		//Max should not be initialized by 0, but mynumber.
+		Property max_attr = UML2Helper.createAttribute(processClass, "max", integer);
 		UML2Helper.createAttribute(processClass, "neighbourR", integer).setIntegerDefaultValue(0);
 		
 		//This guy is going to monitor if we have a winner
@@ -193,15 +195,14 @@ public class LeaderElection {
 		ArrayList<InstanceSpecification> processes=new ArrayList<InstanceSpecification>();
 		IdGenerator gen=new IdGenerator(0, num_process*3); //it was inside the loop in Alfredo's version
 		for(int i=0; i<num_process; i++){
-			//TODO: id generator not working
-			
 			int id=gen.getNextId();
 			
 			InstanceSpecification tmp=UML2Helper
 			.createInstanceSpecification(systemPackage, processClass,
 					"proc_"+id);
 			UML2Helper.createIntegerSlot(tmp, mynumber_attr, id);
-//			UML2Helper.createIntegerSlot(tmp, max_attr, id);
+			//Max should not be initialized by 0, but mynumber.
+			UML2Helper.createIntegerSlot(tmp, max_attr, id);
 //			UML2Helper.createIntegerSlot(tmp, neighbourR_attr, id);
 			processes.add(tmp);
 		}
@@ -286,7 +287,6 @@ public class LeaderElection {
 						process_SM,
 						STATE_MAIN,
 						STATE_MAIN,
-//						"@two.call[{active==1} && ({neighbourR<=two_nr} || {neighbourR<=max})]/active=0, #link.out@one(<P>neighbourR).call"); //Alfredo
 						"@two.call[{active==1} && ({neighbourR<=two_nr} || {neighbourR<=max})]/active=0");
 		// winner found, communicate the winner
 		UML2Helper
@@ -319,9 +319,6 @@ public class LeaderElection {
 		}
 		
 		public int getNextId(){
-			
-			//TODO: this is wrong
-//			int r=ids.get(this.getRandom(0, ids.size())); //Alfredo
 			int r=ids.get(this.getRandom(0, ids.size() - 1)); 
 			ids.remove(ids.indexOf(r));
 						
@@ -329,9 +326,7 @@ public class LeaderElection {
 		}
 		
 		private int getRandom(int min, int max){
-//			return min + (int)(Math.random() * ((max - min) + 1)); //Alfredo
 			return min + (int)(Math.random() * ((max - min)));
 		}
-		
 	}
 }
