@@ -44,9 +44,8 @@ public class LeaderElection {
 	public void start() {
 		LOGGER.info("Creating the UML model");
 		String modeltype = "";
-//		for(int i=5; i<=20; i=i+5){
-		int i = 5;
-		modeltype = "sat"; create_leader_election_model(i);
+		int numOfProcesses = 5;
+		modeltype = "sat"; create_leader_election_model(numOfProcesses);
 //		modeltype = "p1"; create_alw_somf_monitor_state_winner();
 //		modeltype = "p2"; create_alw_not_monitor_state_error();
 
@@ -62,9 +61,7 @@ public class LeaderElection {
 
 		LOGGER.info("Generate the ZOT File");
 		t.generateZOTFile(75, "ae2zot", "z3",
-//					new File("output/zot_model_"+i+"_proc.lisp").getAbsolutePath());
-				new File("output/Leader-"+modeltype+"-"+i+".lisp").getAbsolutePath());
-//		}
+				new File("output/Leader-"+modeltype+"-"+numOfProcesses+".lisp").getAbsolutePath());
 			
 	}
 	
@@ -124,7 +121,7 @@ public class LeaderElection {
 	}
 
 	private void create_leader_election_model(int num_process) {
-		// Preparazione modello e package
+		// Prepare the model and the package
 		myModel = UML2Helper.createModel("ScalabilityModel");
 		madesProfile = UML2Helper
 				.loadProfile(TestConfiguration.MADES_PROFILE_PATH);
@@ -150,8 +147,6 @@ public class LeaderElection {
 		// the slots
 		Property mynumber_attr = UML2Helper.createAttribute(processClass,
 				"mynumber", integer);
-//		UML2Helper.createAttribute(processClass, "max", integer).setIntegerDefaultValue(0);
-		//Max should not be initialized by 0, but mynumber.
 		Property max_attr = UML2Helper.createAttribute(processClass, "max", integer);
 		UML2Helper.createAttribute(processClass, "neighbourR", integer).setIntegerDefaultValue(0);
 		
@@ -184,7 +179,8 @@ public class LeaderElection {
 				win_parametersType);
 
 		// TODO[mottalrd] the XMI generated is different from the one of
-		// papyrus. But I don't need it for the zot generation, so who cares
+		// papyrus. ZOT is not taking this information into consideration so
+		// this is still acceptable
 		org.eclipse.uml2.uml.Association processClass_processClass = UML2Helper
 				.createAssociation("link",
 						(org.eclipse.uml2.uml.Type) processClass, true,
@@ -193,7 +189,7 @@ public class LeaderElection {
 						AggregationKind.NONE_LITERAL, "out", 1, 1);
 
 		ArrayList<InstanceSpecification> processes=new ArrayList<InstanceSpecification>();
-		IdGenerator gen=new IdGenerator(0, num_process*3); //it was inside the loop in Alfredo's version
+		IdGenerator gen=new IdGenerator(0, num_process*3);
 		for(int i=0; i<num_process; i++){
 			int id=gen.getNextId();
 			
@@ -201,9 +197,7 @@ public class LeaderElection {
 			.createInstanceSpecification(systemPackage, processClass,
 					"proc_"+id);
 			UML2Helper.createIntegerSlot(tmp, mynumber_attr, id);
-			//Max should not be initialized by 0, but mynumber.
 			UML2Helper.createIntegerSlot(tmp, max_attr, id);
-//			UML2Helper.createIntegerSlot(tmp, neighbourR_attr, id);
 			processes.add(tmp);
 		}
 		org.eclipse.uml2.uml.InstanceSpecification monitor = UML2Helper

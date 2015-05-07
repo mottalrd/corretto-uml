@@ -43,7 +43,8 @@ public class UML2Helper {
 	private static final Logger LOGGER = Logger.getLogger(UML2Helper.class); 
 	
 	//Double check that this is updated when running
-	public static String UML_LIBRARY_PATH="jar:file:/opt/eclipse/2012-11-eclipse-modeling-juno/plugins/org.eclipse.uml2.uml.resources_4.0.1.v20120913-1441.jar!/";
+	//[TODO]: This has to be in a configuration file
+	public static String UML_LIBRARY_PATH="jar:file:/Applications/eclipse/plugins/org.eclipse.uml2.uml.resources_4.0.1.v20120913-1441.jar!/";
 	
 	public static org.eclipse.uml2.uml.Class createNot(org.eclipse.uml2.uml.Profile madesProfile, org.eclipse.uml2.uml.Package package_, EObject formulae){
 		//<<Alw>>
@@ -362,40 +363,6 @@ public class UML2Helper {
 		return slot;
     }
     
-    //TODO[mottalrd] clear me
-//    public static org.eclipse.uml2.uml.Association createAssociation(org.eclipse.uml2.uml.Package package_, org.eclipse.uml2.uml.Class class_1, org.eclipse.uml2.uml.Class class_2, String name) {
-//        //org.eclipse.uml2.uml.Association association = UMLFactory.eINSTANCE.createAssociation();
-//    	org.eclipse.uml2.uml.Association association=org.eclipse.uml2.uml.Association.createAssociation(true, AggregationKind.NONE, 
-//    			class_1.getName(), 
-//    			1, 
-//    			1, 
-//    			class_1, 
-//    			true, 
-//    			AggregationKind.NONE, 
-//    			class_2.getName(), 
-//    			1, 
-//    			1);
-//        
-//        //First end
-//        org.eclipse.uml2.uml.Property end_class_1=UMLFactory.eINSTANCE.createProperty();
-//        end_class_1.setAssociation(association);
-//        //TODO[mottalrd][bug?] not sure about this. I was for setDataType but wasn't ok
-//        end_class_1.setType(class_1);
-//        
-//        //Second end
-//        org.eclipse.uml2.uml.Property end_class_2=UMLFactory.eINSTANCE.createProperty();
-//        end_class_2.setAssociation(association);
-//        //TODO[mottalrd][bug?] not sure about this. I was for setDataType but wasn't ok
-//        end_class_2.setType(class_2);
-//        
-//        //Add to the parent package
-//        package_.getPackagedElements().add(association);
-//        
-//        LOGGER.info("Associaction '" + association.getQualifiedName() + "' created.");
-//
-//        return association;
-//    }
-    
     public static org.eclipse.uml2.uml.Association createAssociation(String name, org.eclipse.uml2.uml.Type type1, boolean end1IsNavigable, AggregationKind end1Aggregation,
             String end1Name, int end1LowerBound, int end1UpperBound,
             org.eclipse.uml2.uml.Type type2, boolean end2IsNavigable, AggregationKind end2Aggregation,
@@ -644,7 +611,7 @@ public class UML2Helper {
 		
 		//libraries
 		Map<URI,URI> uriMap = set.getURIConverter().getURIMap();
-		URI uml_resource_uri = URI.createURI(UML_LIBRARY_PATH); // for example
+		URI uml_resource_uri = URI.createURI(UML_LIBRARY_PATH);
 		uriMap.put(URI.createURI(UMLResource.LIBRARIES_PATHMAP), uml_resource_uri.appendSegment("libraries").appendSegment(""));
 		uriMap.put(URI.createURI(UMLResource.METAMODELS_PATHMAP), uml_resource_uri.appendSegment("metamodels").appendSegment(""));
 		uriMap.put(URI.createURI(UMLResource.PROFILES_PATHMAP), uml_resource_uri.appendSegment("profiles").appendSegment(""));
@@ -656,10 +623,5 @@ public class UML2Helper {
 		
 		Profile m=(Profile)EcoreUtil.getObjectByType(r.getContents(), UMLPackage.eINSTANCE.getProfile());
 		return m;
-	}
-
-
-
-	
-	
+	}	
 }
