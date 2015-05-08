@@ -73,10 +73,6 @@ public class ActionFactory {
 		// let's find the guy we are looking for
 		Object objToInvoke = null;
 		for (AssociationInstance ai : object.getAssociationInstances()) {
-			String tmp1 = ai.getAssociation().getName();
-			boolean tmp2 = ai.hasMemberEnd(associationEnd);
-			boolean tmp3 = !ai.getMemberEnd(associationEnd).equals(object);
-			
 			if (ai.getAssociation().getName().equals(linkName) && ai.hasMemberEnd(associationEnd) && !ai.getMemberEnd(associationEnd).equals(object)) {
 				objToInvoke = ai.getMemberEnd(associationEnd);
 			}
