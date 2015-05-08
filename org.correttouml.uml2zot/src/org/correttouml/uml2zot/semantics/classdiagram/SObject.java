@@ -53,11 +53,13 @@ public class SObject {
 			Slot s=null;
 			if((s=mades_obj.getSlot(att))!=null){
 				value=s.getValueSpecification();
+				sem=sem+new SAttribute(att).getInitializationSemantics(mades_obj, value);
 			}else{
 				//use the default attribute value
-				value=att.getDefaultValue();
+				//value=att.getDefaultValue();
+				//[TODO]: No semantics when the valus is not specified
 			}
-			sem=sem+new SAttribute(att).getInitializationSemantics(mades_obj, value);
+			
 		}
 		
 		return sem;

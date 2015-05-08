@@ -70,14 +70,20 @@ public class ActionFactory {
 		String linkName = curr.getEventAction().getLink().getLinkName();
 		String associationEnd = curr.getEventAction().getLink().getAssociationEnd();
 
-		// let's the guy we are looking for
+		// let's find the guy we are looking for
 		Object objToInvoke = null;
 		for (AssociationInstance ai : object.getAssociationInstances()) {
+			String tmp1 = ai.getAssociation().getName();
+			boolean tmp2 = ai.hasMemberEnd(associationEnd);
+			boolean tmp3 = !ai.getMemberEnd(associationEnd).equals(object);
+			
 			if (ai.getAssociation().getName().equals(linkName) && ai.hasMemberEnd(associationEnd) && !ai.getMemberEnd(associationEnd).equals(object)) {
 				objToInvoke = ai.getMemberEnd(associationEnd);
 			}
 		}
-		if (objToInvoke == null) throw new Exception("Object to invoke not found");
+		if (objToInvoke == null) {
+			throw new Exception("Object to invoke not found");
+		}
 
 
 		// let's find the operation we are willing to invoke
