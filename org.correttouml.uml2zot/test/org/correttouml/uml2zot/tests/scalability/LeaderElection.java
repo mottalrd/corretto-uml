@@ -47,7 +47,7 @@ public class LeaderElection {
 		String modeltype = "";
 		int numOfProcesses = 3;
 		modeltype = "sat"; create_leader_election_model(numOfProcesses);
-//		modeltype = "p1"; create_alw_somf_monitor_state_winner();
+		modeltype = "p1"; create_alw_somf_monitor_state_winner();
 //		modeltype = "p2"; create_alw_not_monitor_state_error();
 
 		// Save it to disk
@@ -62,7 +62,7 @@ public class LeaderElection {
 
 		LOGGER.info("Generate the ZOT File");
 		t.generateZOTFile(75, "ae2zot", "z3",
-				new File("output/Leader-"+modeltype+"-"+numOfProcesses+".lisp").getAbsolutePath());
+				new File("output/leader-"+modeltype+"-"+numOfProcesses+".lisp").getAbsolutePath());
 			
 	}
 	
@@ -261,14 +261,15 @@ public class LeaderElection {
 				.createStateMachine(idGeneratorClass, "IdGenerator_SM");
 		UML2Helper.createRegion(idGenerator_SM);
 
-		org.eclipse.uml2.uml.Pseudostate GENERATOR_START = UML2Helper
-				.createInitialState(idGenerator_SM, "START");
-		org.eclipse.uml2.uml.State GENERATOR_END = UML2Helper.createState(
-				idGenerator_SM, "END");
-		// [TODO]: This link string has to be automatically generated
-		UML2Helper.createTransition(idGenerator_SM, GENERATOR_START, GENERATOR_END, 
-				"@now - @START.enter > 1[{idattr1!=idattr2} && {idattr1!=idattr3} && {idattr2!=idattr3}]/#gen_link_proc0.out@setId(idattr1).call, #gen_link_proc1.out@setId(idattr2).call, #gen_link_proc2.out@setId(idattr3).call");
+		org.eclipse.uml2.uml.Pseudostate GENERATOR_START = UML2Helper.createInitialState(idGenerator_SM, "START");
+		org.eclipse.uml2.uml.State GENERATOR_SETID = UML2Helper.createState(idGenerator_SM, "SETID");
+		org.eclipse.uml2.uml.State GENERATOR_END = UML2Helper.createState(idGenerator_SM, "END");
 		
+		UML2Helper.createTransition(idGenerator_SM, GENERATOR_START, GENERATOR_SETID, 
+				"@now - @START.enter > 0");
+		// [TODO]: This link string has to be automatically generated
+		UML2Helper.createTransition(idGenerator_SM, GENERATOR_SETID, GENERATOR_END, 
+				"@now - @SETID.enter == 0[{idattr0!=idattr1} && {idattr0!=idattr2} && {idattr1!=idattr2}]/#gen_link_proc0.out@setId(idattr0).call, #gen_link_proc1.out@setId(idattr1).call, #gen_link_proc2.out@setId(idattr2).call");
 		// STATE DIAGRAM - MONITOR
 		org.eclipse.uml2.uml.StateMachine monitor_SM = UML2Helper
 				.createStateMachine(monitorClass, "Monitor_SM");
@@ -303,12 +304,20 @@ public class LeaderElection {
 
 		// initial transition
 		UML2Helper.createTransition(process_SM, STATE_0, STATE_INIT, "");
+//		UML2Helper
+//				.createTransition(process_SM, STATE_INIT, STATE_MAIN,
+//						"@now - @INIT.enter > 1/#link.out@one(mynumber).call, max=mynumber");
+		
 		// [TODO] Change the transition to receive the setId() operation
 		// the transition must look like: @setId.call / mynumber=<P>myId, #link.out@one(mynumber).call, max=mynumber
 		// at the beginning send your number to the neighbour
-		UML2Helper
-				.createTransition(process_SM, STATE_INIT, STATE_MAIN,
-						"@now - @INIT.enter > 1/#link.out@one(mynumber).call, max=mynumber");
+
+//		UML2Helper.createTransition(process_SM, STATE_INIT, STATE_MAIN,
+//				"@setId.call / mynumber=<P>myId, #link.out@one(mynumber).call, max=mynumber");
+		UML2Helper.createTransition(process_SM, STATE_INIT, STATE_MAIN,//main
+				"@setId.call / mynumber=<P>myId, #link.out@one(mynumber).call, max=mynumber");
+//		UML2Helper.createTransition(process_SM, STATE_INIT, STATE_MAIN,
+//				"@now - @INIT.enter == 0 / #link.out@setId(myId).call, mynumber=<P>myId, #link.out@one(mynumber).call, max=mynumber");
 		// no active, just pass the message
 		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN,
 				"@one.call[{active==0}]/#link.out@one(<P>one_nr).call");
