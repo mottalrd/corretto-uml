@@ -48,7 +48,7 @@ public class LeaderElection {
 		String modeltype = "";
 		int numOfProcesses = 3;
 		modeltype = "sat"; create_leader_election_model(numOfProcesses);
-		modeltype = "p1"; create_alw_somf_monitor_state_winner();
+		modeltype = "p1"; create_alw_somf_idgenerator_stateend_implies_somf_monitor_state_winner();
 //		modeltype = "p2"; create_alw_not_monitor_state_error();
 
 		// Save it to disk
@@ -67,8 +67,8 @@ public class LeaderElection {
 			
 	}
 	
-	//Alw(SomF(MONITOR_STATE_WINNER))
-	private void create_alw_somf_monitor_state_winner() {
+	//Alw(SomF(IDGENERATOR_STATE_END) => SomF(MONITOR_STATE_WINNER))
+	private void create_alw_somf_idgenerator_stateend_implies_somf_monitor_state_winner() {
 
 		// Creazione <<Property>> package
 		org.eclipse.uml2.uml.Package propertyPackage = UML2Helper.createPackage(myModel, "Property");
