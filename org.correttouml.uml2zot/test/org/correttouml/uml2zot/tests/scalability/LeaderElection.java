@@ -33,6 +33,7 @@ public class LeaderElection {
 	private State STATE_NO_WINNER;
 	private State STATE_WINNER;
 	private State STATE_ERROR;
+	private State GENERATOR_END;
 
 	private static final Logger LOGGER = Logger
 			.getLogger(SequenceDiagram.class);
@@ -75,15 +76,24 @@ public class LeaderElection {
 		propertyPackage.applyStereotype(propertyStereotype);
 
 		// Time Property diagram
-
+		
 		// <<Term>>
 		org.eclipse.uml2.uml.Class MONITOR_STATE_WINNER = UML2Helper.createTerm(madesProfile, propertyPackage, STATE_WINNER);
 
 		// <<SomF>>
-		org.eclipse.uml2.uml.Class somf = UML2Helper.createSomF(madesProfile, propertyPackage, MONITOR_STATE_WINNER.getStereotypeApplications().get(0));
+		org.eclipse.uml2.uml.Class somf2 = UML2Helper.createSomF(madesProfile, propertyPackage, MONITOR_STATE_WINNER.getStereotypeApplications().get(0));
 
+		// <<Term>>
+		org.eclipse.uml2.uml.Class IDGENERATOR_STATE_END = UML2Helper.createTerm(madesProfile, propertyPackage, GENERATOR_END);
+		
+		// <<SomF>>
+		org.eclipse.uml2.uml.Class somf1 = UML2Helper.createSomF(madesProfile, propertyPackage, IDGENERATOR_STATE_END.getStereotypeApplications().get(0));
+		
+		// <<Implies>>
+		org.eclipse.uml2.uml.Class implies = UML2Helper.createImplies(madesProfile, propertyPackage, somf1.getStereotypeApplications().get(0), somf2.getStereotypeApplications().get(0));
+		
 		// <<Alw>>
-		org.eclipse.uml2.uml.Class alw = UML2Helper.createAlw(madesProfile,propertyPackage, somf.getStereotypeApplications().get(0));
+		org.eclipse.uml2.uml.Class alw = UML2Helper.createAlw(madesProfile,propertyPackage, implies.getStereotypeApplications().get(0));
 
 		// <<Property>>
 		UML2Helper.createProperty(madesProfile, propertyPackage, alw.getStereotypeApplications().get(0));
@@ -263,13 +273,13 @@ public class LeaderElection {
 
 		org.eclipse.uml2.uml.Pseudostate GENERATOR_START = UML2Helper.createInitialState(idGenerator_SM, "START");
 		org.eclipse.uml2.uml.State GENERATOR_SETID = UML2Helper.createState(idGenerator_SM, "SETID");
-		org.eclipse.uml2.uml.State GENERATOR_END = UML2Helper.createState(idGenerator_SM, "END");
+		GENERATOR_END = UML2Helper.createState(idGenerator_SM, "END");
 		
 		UML2Helper.createTransition(idGenerator_SM, GENERATOR_START, GENERATOR_SETID, 
-				"@now - @START.enter > 0");
+				"@now - @START.enter > 1");
 		// [TODO]: This link string has to be automatically generated
 		UML2Helper.createTransition(idGenerator_SM, GENERATOR_SETID, GENERATOR_END, 
-				"@now - @SETID.enter == 0[{idattr0!=idattr1} && {idattr0!=idattr2} && {idattr1!=idattr2}]/#gen_link_proc0.out@setId(idattr0).call, #gen_link_proc1.out@setId(idattr1).call, #gen_link_proc2.out@setId(idattr2).call");
+				"[{idattr0!=idattr1} && {idattr0!=idattr2} && {idattr1!=idattr2}]/#gen_link_proc0.out@setId(idattr0).call, #gen_link_proc1.out@setId(idattr1).call, #gen_link_proc2.out@setId(idattr2).call");
 		// STATE DIAGRAM - MONITOR
 		org.eclipse.uml2.uml.StateMachine monitor_SM = UML2Helper
 				.createStateMachine(monitorClass, "Monitor_SM");
@@ -304,21 +314,8 @@ public class LeaderElection {
 
 		// initial transition
 		UML2Helper.createTransition(process_SM, STATE_0, STATE_INIT, "");
-//		UML2Helper
-//				.createTransition(process_SM, STATE_INIT, STATE_MAIN,
-//						"@now - @INIT.enter > 1/#link.out@one(mynumber).call, max=mynumber");
-		
-		// [TODO] Change the transition to receive the setId() operation
-		// the transition must look like: @setId.call / mynumber=<P>myId, #link.out@one(mynumber).call, max=mynumber
-		// at the beginning send your number to the neighbour
-
-//		UML2Helper.createTransition(process_SM, STATE_INIT, STATE_MAIN,
-//				"@setId.call / mynumber=<P>myId, #link.out@one(mynumber).call, max=mynumber");
 		UML2Helper.createTransition(process_SM, STATE_INIT, STATE_MAIN,//main
 				"@setId.call / mynumber=<P>myId, #link.out@one(mynumber).call, max=mynumber");
-//		UML2Helper.createTransition(process_SM, STATE_INIT, STATE_MAIN,
-//				"@now - @INIT.enter == 0 / #link.out@setId(myId).call, mynumber=<P>myId, #link.out@one(mynumber).call, max=mynumber");
-		// no active, just pass the message
 		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN,
 				"@one.call[{active==0}]/#link.out@one(<P>one_nr).call");
 		// no active, just pass the message
@@ -359,37 +356,18 @@ public class LeaderElection {
 						"@winner.call[{win_nr!=mynumber}]/#link.out@winner(<P>win_nr).call");
 
 	}
-	
 
-	private class IdGenerator{
-		/** 
-		 * Given a set of adiacent ids
-		 * returns each of them in random order
-		 * @author motta
-		 *
-		 */
-		
-		ArrayList<Integer> ids=new ArrayList<Integer>();
+	private class IdGenerator{		
+		private ArrayList<Integer> ids=new ArrayList<Integer>();
 		
 		public IdGenerator(int min, int max){
 			for(int i=min; i<=max; i++) ids.add(i);
 		}
 		
-		public IdGenerator(){
-			// NOthing to do
-		}
-		
-		int i = 0;
-		
 		public int getNextId(){
-			return i++;
-//			int r=ids.get(this.getRandom(0, ids.size() - 1)); 
-//			ids.remove(ids.indexOf(r));		
-//			return r;
-		}
-		
-		private int getRandom(int min, int max){
-			return min + (int)(Math.random() * ((max - min)));
+			int r=ids.get(0); 
+			ids.remove(ids.indexOf(r));		
+			return r;
 		}
 	}
 }
