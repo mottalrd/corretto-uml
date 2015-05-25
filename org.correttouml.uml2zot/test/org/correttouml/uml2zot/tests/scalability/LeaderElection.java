@@ -46,9 +46,10 @@ public class LeaderElection {
 	public void start() {
 		LOGGER.info("Creating the UML model");
 		String modeltype = "";
-		int numOfProcesses = 3;
-		modeltype = "sat"; create_leader_election_model(numOfProcesses);
-		modeltype = "p1"; create_alw_somf_idgenerator_stateend_implies_somf_monitor_state_winner();
+		int numOfProcesses = 5;
+		modeltype = "sat"; create_leader_election_model(numOfProcesses); 
+		create_invariant_for_sat();
+//		modeltype = "p1"; create_alw_somf_idgenerator_stateend_implies_somf_monitor_state_winner();
 //		modeltype = "p2"; create_alw_not_monitor_state_error();
 
 		// Save it to disk
@@ -131,6 +132,32 @@ public class LeaderElection {
 
 	}
 
+	private void create_invariant_for_sat() {
+
+		// Creazione <<Property>> package
+		org.eclipse.uml2.uml.Package propertyPackage = UML2Helper.createPackage(myModel, "Property");
+		org.eclipse.uml2.uml.Stereotype propertyStereotype = UML2Helper.getMADESVerificationTagsStereotype(madesProfile, "Property");
+		propertyPackage.applyStereotype(propertyStereotype);
+
+		// Time Property diagram
+		
+		// <<Term>>
+		org.eclipse.uml2.uml.Class IDGENERATOR_STATE_END = UML2Helper.createTerm(madesProfile, propertyPackage, GENERATOR_END);
+		
+		// <<SomF>>
+		org.eclipse.uml2.uml.Class somf1 = UML2Helper.createSomF(madesProfile, propertyPackage, IDGENERATOR_STATE_END.getStereotypeApplications().get(0));
+		
+		// <<Implies>>
+		org.eclipse.uml2.uml.Class not = UML2Helper.createNot(madesProfile, propertyPackage, somf1.getStereotypeApplications().get(0));
+		
+		// <<Alw>>
+		org.eclipse.uml2.uml.Class alw = UML2Helper.createAlw(madesProfile,propertyPackage, not.getStereotypeApplications().get(0));
+
+		// <<Property>>
+		UML2Helper.createProperty(madesProfile, propertyPackage, alw.getStereotypeApplications().get(0));
+
+	}
+	
 	private void create_leader_election_model(int num_process) {
 		// Prepare the model and the package
 		myModel = UML2Helper.createModel("ScalabilityModel");
@@ -277,9 +304,23 @@ public class LeaderElection {
 		
 		UML2Helper.createTransition(idGenerator_SM, GENERATOR_START, GENERATOR_SETID, 
 				"@now - @START.enter > 1");
-		// [TODO]: This link string has to be automatically generated
-		UML2Helper.createTransition(idGenerator_SM, GENERATOR_SETID, GENERATOR_END, 
-				"[{idattr0!=idattr1} && {idattr0!=idattr2} && {idattr1!=idattr2}]/#gen_link_proc0.out@setId(idattr0).call, #gen_link_proc1.out@setId(idattr1).call, #gen_link_proc2.out@setId(idattr2).call");
+
+		String transition_guard = "";
+		String transition_action = "";
+		for (int i = 0; i < num_process - 1 ; i++) {
+			for (int j = i + 1; j < num_process ; j++) {
+				transition_guard += "{idattr" + i + "!=idattr" + j + "} && ";
+			}
+		}
+		for (int i = 0; i < num_process; i++) {
+			transition_action += "#gen_link_proc" + i + ".out@setId(idattr" + i + ").call, ";
+		}
+		transition_guard = transition_guard.substring(0, transition_guard.length() - 4);
+		transition_action = transition_action.substring(0, transition_action.length() - 2);
+//		For 3 processes:
+//		UML2Helper.createTransition(idGenerator_SM, GENERATOR_SETID, GENERATOR_END, 
+//				"[{idattr0!=idattr1} && {idattr0!=idattr2} && {idattr1!=idattr2}]/#gen_link_proc0.out@setId(idattr0).call, #gen_link_proc1.out@setId(idattr1).call, #gen_link_proc2.out@setId(idattr2).call");
+		UML2Helper.createTransition(idGenerator_SM, GENERATOR_SETID, GENERATOR_END, "[" + transition_guard + "]/" + transition_action);
 		// STATE DIAGRAM - MONITOR
 		org.eclipse.uml2.uml.StateMachine monitor_SM = UML2Helper
 				.createStateMachine(monitorClass, "Monitor_SM");
