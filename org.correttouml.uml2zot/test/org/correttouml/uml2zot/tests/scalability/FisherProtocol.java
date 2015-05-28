@@ -120,8 +120,8 @@ public class FisherProtocol {
 		Property pid_attr = UML2Helper.createAttribute(processClass, "pid",
 				integer);
 		//The following two are static attributes
-		UML2Helper.createAttribute(processClass, "id", integer, true).setIntegerDefaultValue(-1);
-		UML2Helper.createAttribute(processClass, "counter", integer, true).setIntegerDefaultValue(0);
+		Property id_attr = UML2Helper.createAttribute(processClass, "id", integer, true);
+		Property counter = UML2Helper.createAttribute(processClass, "counter", integer, true);
 
 		ArrayList<InstanceSpecification> processes = new ArrayList<InstanceSpecification>();
 		for (int i = 0; i < num_process; i++) {
@@ -130,6 +130,8 @@ public class FisherProtocol {
 			InstanceSpecification tmp = UML2Helper.createInstanceSpecification(
 					systemPackage, processClass, "proc_" + id);
 			UML2Helper.createIntegerSlot(tmp, pid_attr, id);
+			UML2Helper.createIntegerSlot(tmp, id_attr, -1);
+			UML2Helper.createIntegerSlot(tmp, counter, 0);
 			processes.add(tmp);
 		}
 
