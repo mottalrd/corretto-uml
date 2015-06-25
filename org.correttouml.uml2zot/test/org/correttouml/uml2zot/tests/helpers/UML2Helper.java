@@ -71,6 +71,19 @@ public class UML2Helper {
 		return implies;
 	}
 	
+	public static org.eclipse.uml2.uml.Class createAnd(org.eclipse.uml2.uml.Profile madesProfile, org.eclipse.uml2.uml.Package package_, EObject left, EObject right){
+		//<<Implies>>
+		org.eclipse.uml2.uml.Class and=createClass(package_, "And", false);
+		org.eclipse.uml2.uml.Stereotype andStereotype=getMADESPropertiesStereotype(madesProfile, "And");
+		org.eclipse.uml2.uml.Stereotype booleanFormulaeStereotype=getMADESPropertiesStereotype(madesProfile, "BooleanFormulae");
+		and.applyStereotype(booleanFormulaeStereotype);
+		and.applyStereotype(andStereotype);
+		and.setValue(andStereotype,"left", left);	
+		and.setValue(andStereotype,"right", right);		
+		
+		return and;
+	}
+	
 	public static org.eclipse.uml2.uml.Class createTerm(org.eclipse.uml2.uml.Profile madesProfile, org.eclipse.uml2.uml.Package package_, org.eclipse.uml2.uml.Element element){
 		//<<Term>>
 		org.eclipse.uml2.uml.Class term=createClass(package_, "Term", false);
@@ -94,6 +107,32 @@ public class UML2Helper {
 		booleanExpression.setValue(booleanExpressionStereotype, "exp", expression);
 		
 		return booleanExpression;
+	}
+	
+	public static org.eclipse.uml2.uml.Class createFutr(org.eclipse.uml2.uml.Profile madesProfile, org.eclipse.uml2.uml.Package package_, EObject formulae, EObject constant){
+		//<<Futr>>
+		org.eclipse.uml2.uml.Class futr=createClass(package_, "Futr", false);
+		org.eclipse.uml2.uml.Stereotype futrStereotype=getMADESPropertiesStereotype(madesProfile, "Futr");
+		org.eclipse.uml2.uml.Stereotype booleanFormulaeStereotype=getMADESPropertiesStereotype(madesProfile, "BooleanFormulae");
+		futr.applyStereotype(booleanFormulaeStereotype);
+		futr.applyStereotype(futrStereotype);
+		futr.setValue(futrStereotype, "formulae", formulae);
+		futr.setValue(futrStereotype, "t", constant);
+		
+		return futr;
+	}
+	
+	public static org.eclipse.uml2.uml.Class createLasts(org.eclipse.uml2.uml.Profile madesProfile, org.eclipse.uml2.uml.Package package_, EObject formulae, EObject constant){
+		//<<Futr>>
+		org.eclipse.uml2.uml.Class lasts=createClass(package_, "Lasts", false);
+		org.eclipse.uml2.uml.Stereotype lastsStereotype=getMADESPropertiesStereotype(madesProfile, "Lasts");
+		org.eclipse.uml2.uml.Stereotype booleanFormulaeStereotype=getMADESPropertiesStereotype(madesProfile, "BooleanFormulae");
+		lasts.applyStereotype(booleanFormulaeStereotype);
+		lasts.applyStereotype(lastsStereotype);
+		lasts.setValue(lastsStereotype, "formulae", formulae);
+		lasts.setValue(lastsStereotype, "t", constant);
+		
+		return lasts;
 	}
 	
 	public static org.eclipse.uml2.uml.Class createNext(org.eclipse.uml2.uml.Profile madesProfile, org.eclipse.uml2.uml.Package package_, EObject formulae){

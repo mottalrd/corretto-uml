@@ -32,6 +32,11 @@ public class FisherProtocol {
 	private Profile madesProfile;
 
 	private StateMachine process_SM;
+	private State STATE_CS;
+	private State STATE_REQ;
+	private State STATE_UPDATED;
+	private State STATE_WAIT;
+	private State STATE_EXIT;
 
 	private static final Logger LOGGER = Logger
 			.getLogger(SequenceDiagram.class);
@@ -47,6 +52,8 @@ public class FisherProtocol {
 		for (int i = 2; i <= 10; i++) {
 			create_fisher_model(i);
 			//create_alw_not_counter_greater_than_one();
+			//create_alw_not_some_state(STATE_UPDATED);
+			//create_state_future_exit_check(STATE_UPDATED, 4);
 
 			// Save it to disk
 			UML2Helper.save(myModel,
@@ -59,7 +66,7 @@ public class FisherProtocol {
 					new File(TestConfiguration.MODEL_FILE).getAbsolutePath());
 
 			LOGGER.info("Generate the ZOT File");
-			t.generateZOTFile(75, "ae2zot", "z3", new File("output/zot_model_"
+			t.generateZOTFile(30, "ae2zot", "z3", new File("output/zot_model_"
 					+ i + "_proc.lisp").getAbsolutePath());
 		}
 
@@ -84,6 +91,70 @@ public class FisherProtocol {
 		org.eclipse.uml2.uml.Class not = UML2Helper.createNot(madesProfile,
 				propertyPackage, COUNTER_EXP
 						.getStereotypeApplications().get(0));
+
+		// <<Alw>>
+		org.eclipse.uml2.uml.Class alw = UML2Helper.createAlw(madesProfile,
+				propertyPackage, not.getStereotypeApplications().get(0));
+
+		// <<Property>>
+		UML2Helper.createProperty(madesProfile, propertyPackage, alw
+				.getStereotypeApplications().get(0));
+
+	}
+	
+	private void create_alw_not_some_state(State someState) {
+
+		// Creazione <<Property>> package
+		org.eclipse.uml2.uml.Package propertyPackage = UML2Helper
+				.createPackage(myModel, "Property");
+		org.eclipse.uml2.uml.Stereotype propertyStereotype = UML2Helper
+				.getMADESVerificationTagsStereotype(madesProfile, "Property");
+		propertyPackage.applyStereotype(propertyStereotype);
+
+		// Time Property diagram
+
+		// <<Term>>
+		org.eclipse.uml2.uml.Class P_SOME_STATE = UML2Helper.createTerm(madesProfile, propertyPackage, someState);
+
+		// <<Not>>
+		org.eclipse.uml2.uml.Class not = UML2Helper.createNot(madesProfile,
+				propertyPackage, P_SOME_STATE
+						.getStereotypeApplications().get(0));
+
+		// <<Alw>>
+		org.eclipse.uml2.uml.Class alw = UML2Helper.createAlw(madesProfile,
+				propertyPackage, not.getStereotypeApplications().get(0));
+
+		// <<Property>>
+		UML2Helper.createProperty(madesProfile, propertyPackage, alw
+				.getStereotypeApplications().get(0));
+
+	}
+	
+	private void create_state_future_exit_check(State someState, int t) {
+
+		// Creazione <<Property>> package
+		org.eclipse.uml2.uml.Package propertyPackage = UML2Helper
+				.createPackage(myModel, "Property");
+		org.eclipse.uml2.uml.Stereotype propertyStereotype = UML2Helper
+				.getMADESVerificationTagsStereotype(madesProfile, "Property");
+		propertyPackage.applyStereotype(propertyStereotype);
+
+		// Time Property diagram
+
+		//<<Constant>
+		org.eclipse.uml2.uml.Class constant = UML2Helper.createConstant(madesProfile, propertyPackage, t);
+		
+		// <<Term>>
+		org.eclipse.uml2.uml.Class P_SOME_STATE = UML2Helper.createTerm(madesProfile, propertyPackage, someState);
+		
+		// <<Lasts>>
+		org.eclipse.uml2.uml.Class lasts = UML2Helper.createLasts(madesProfile, propertyPackage, 
+				P_SOME_STATE.getStereotypeApplications().get(0), constant.getStereotypeApplications().get(0));
+
+		// <<Not>>
+		org.eclipse.uml2.uml.Class not = UML2Helper.createNot(madesProfile,
+				propertyPackage, lasts.getStereotypeApplications().get(0));
 
 		// <<Alw>>
 		org.eclipse.uml2.uml.Class alw = UML2Helper.createAlw(madesProfile,
@@ -122,6 +193,8 @@ public class FisherProtocol {
 		//The following two are static attributes
 		Property id_attr = UML2Helper.createAttribute(processClass, "id", integer, true);
 		Property counter = UML2Helper.createAttribute(processClass, "counter", integer, true);
+		org.eclipse.uml2.uml.Operation takeLock=UML2Helper.createOperation(processClass, "takeLock");
+		org.eclipse.uml2.uml.Operation goWait=UML2Helper.createOperation(processClass, "goWait");
 
 		ArrayList<InstanceSpecification> processes = new ArrayList<InstanceSpecification>();
 		for (int i = 0; i < num_process; i++) {
@@ -143,93 +216,33 @@ public class FisherProtocol {
 				.createInitialState(process_SM, "start");
 		org.eclipse.uml2.uml.State STATE_FISHERP = UML2Helper.createState(
 				process_SM, "FISHERP");
-		org.eclipse.uml2.uml.State STATE_REQ = UML2Helper.createState(
+		STATE_REQ = UML2Helper.createState(
 				process_SM, "REQ");
-		org.eclipse.uml2.uml.State STATE_UPDATED = UML2Helper.createState(
+		STATE_UPDATED = UML2Helper.createState(
 				process_SM, "UPDATED");
-		org.eclipse.uml2.uml.State STATE_WAIT = UML2Helper.createState(
+		STATE_WAIT = UML2Helper.createState(
 				process_SM, "WAIT");
-		org.eclipse.uml2.uml.State STATE_CS = UML2Helper.createState(
+		STATE_CS = UML2Helper.createState(
 				process_SM, "CS");
-		org.eclipse.uml2.uml.State STATE_EXIT = UML2Helper.createState(
+		STATE_EXIT = UML2Helper.createState(
 				process_SM, "EXIT");
 		
 		UML2Helper.addStateInvariant(STATE_REQ, "@now - @REQ.enter <= 3");
-		//TODO: spiegato nella nota del 16/07/2013
-		//UML2Helper.addStateInvariant(STATE_UPDATED, "@now - @UPDATED.enter <= 4");
+		UML2Helper.addStateInvariant(STATE_UPDATED, "@now - @UPDATED.enter <= 4");
 
 		// initial transition
 		UML2Helper.createTransition(process_SM, STATE_0, STATE_FISHERP, "");
 		UML2Helper.createTransition(process_SM, STATE_FISHERP, STATE_REQ,
-				"[{id==0--1}]");
+				"@takeLock.call [{id==0--1}]");
 		UML2Helper.createTransition(process_SM, STATE_REQ, STATE_UPDATED,
 				"/id=pid");
 		UML2Helper.createTransition(process_SM, STATE_UPDATED, STATE_WAIT,
-				"@now - @UPDATED.enter == 4");
+				"@goWait.call[@now - @UPDATED.enter >= 3]");
 		UML2Helper.createTransition(process_SM, STATE_WAIT, STATE_CS,
 				"[{id==pid}]");
 		UML2Helper.createTransition(process_SM, STATE_WAIT, STATE_FISHERP,
 				"[{id!=pid}]");
 		UML2Helper.createTransition(process_SM, STATE_CS, STATE_EXIT, "/counter=<P>counter+1");
 		UML2Helper.createTransition(process_SM, STATE_EXIT, STATE_FISHERP, "/id=0-1, counter=<P>counter-1");
-		
 	}
-	
-	//TODO: remove me
-//	private void test_model(int num_process) {
-//		// Preparazione modello e package
-//		myModel = UML2Helper.createModel("Fisher Protocol Model");
-//		madesProfile = UML2Helper
-//				.loadProfile(TestConfiguration.MADES_PROFILE_PATH);
-//		myModel.createElementImport(madesProfile);
-//		myModel.applyProfile(madesProfile);
-//
-//		// Creazione <<System>> package
-//		org.eclipse.uml2.uml.Package systemPackage = UML2Helper.createPackage(
-//				myModel, "System");
-//		org.eclipse.uml2.uml.Stereotype systemStereotype = UML2Helper
-//				.getMADESVerificationTagsStereotype(madesProfile, "System");
-//		systemPackage.applyStereotype(systemStereotype);
-//
-//		// Class diagram
-//		PrimitiveType integer = UML2Helper.createPrimitiveType(myModel,
-//				"Integer");
-//
-//		org.eclipse.uml2.uml.Class processClass = UML2Helper.createClass(
-//				systemPackage, "Process", false);
-//
-//		Property pid_attr = UML2Helper.createAttribute(processClass, "pid",
-//				integer);
-//		//The following two are static attributes
-//		UML2Helper.createAttribute(processClass, "id", integer, true).setIntegerDefaultValue(0);
-//
-//		ArrayList<InstanceSpecification> processes = new ArrayList<InstanceSpecification>();
-//		for (int i = 0; i < num_process; i++) {
-//			int id = i;
-//
-//			InstanceSpecification tmp = UML2Helper.createInstanceSpecification(
-//					systemPackage, processClass, "proc_" + id);
-//			UML2Helper.createIntegerSlot(tmp, pid_attr, id);
-//			processes.add(tmp);
-//		}
-//
-//		// STD PROCESS
-//		process_SM = UML2Helper
-//				.createStateMachine(processClass, "Process_SM");
-//		UML2Helper.createRegion(process_SM);
-//		org.eclipse.uml2.uml.Pseudostate STATE_0 = UML2Helper
-//				.createInitialState(process_SM, "start");
-//		org.eclipse.uml2.uml.State STATE_ONE = UML2Helper.createState(
-//				process_SM, "ONE");
-//		org.eclipse.uml2.uml.State STATE_TWO = UML2Helper.createState(
-//				process_SM, "TWO");
-//
-//		// initial transition
-//		UML2Helper.createTransition(process_SM, STATE_0, STATE_ONE, "");
-//		UML2Helper.createTransition(process_SM, STATE_ONE, STATE_TWO,
-//				"/id=<P>id+1");
-//		UML2Helper.createTransition(process_SM, STATE_TWO, STATE_ONE,
-//				"/id=<P>id-1");		
-//	}
-
 }
