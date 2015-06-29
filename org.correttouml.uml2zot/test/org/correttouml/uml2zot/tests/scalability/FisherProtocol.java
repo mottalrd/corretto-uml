@@ -236,7 +236,7 @@ public class FisherProtocol {
 		UML2Helper.createTransition(process_SM, STATE_REQ, STATE_UPDATED,
 				"/id=pid");
 		UML2Helper.createTransition(process_SM, STATE_UPDATED, STATE_WAIT,
-				"@goWait.call[@now - @UPDATED.enter >= 3]");
+				"@goWait.call[@now - @UPDATED.enter >= 4]");
 		UML2Helper.createTransition(process_SM, STATE_WAIT, STATE_CS,
 				"[{id==pid}]");
 		UML2Helper.createTransition(process_SM, STATE_WAIT, STATE_FISHERP,
