@@ -48,12 +48,12 @@ public class FisherProtocol {
 
 	public void start() {
 		LOGGER.info("Creating the UML model");
-
+		String modeltype = "sat";
 		for (int i = 2; i <= 10; i++) {
 			create_fisher_model(i);
-			//create_alw_not_counter_greater_than_one();
-			//create_alw_not_some_state(STATE_UPDATED);
-			//create_state_future_exit_check(STATE_UPDATED, 4);
+			//create_alw_not_counter_greater_than_one(); modeltype = "p";
+			//create_alw_not_some_state(STATE_UPDATED); modeltype = "test";
+			//create_state_future_exit_check(STATE_UPDATED, 4); modeltype = "test";
 
 			// Save it to disk
 			UML2Helper.save(myModel,
@@ -66,12 +66,11 @@ public class FisherProtocol {
 					new File(TestConfiguration.MODEL_FILE).getAbsolutePath());
 
 			LOGGER.info("Generate the ZOT File");
-			t.generateZOTFile(30, "ae2zot", "z3", new File("output/zot_model_"
-					+ i + "_proc.lisp").getAbsolutePath());
+			t.generateZOTFile(75, "ae2zot", "z3", new File("output/fischer-" + modeltype + "-" + i + ".lisp").getAbsolutePath());
 		}
 
 	}
-
+	
 	private void create_alw_not_counter_greater_than_one() {
 
 		// Creazione <<Property>> package
