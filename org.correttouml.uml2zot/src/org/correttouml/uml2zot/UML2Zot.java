@@ -27,7 +27,6 @@ import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 import org.correttouml.uml2zot.zotutil.ZOTConf;
 import org.eclipse.uml2.uml.Model;
 
-
 public class UML2Zot {
 	
 	private static final Logger LOGGER = Logger.getLogger(UML2Zot.class); 
@@ -53,14 +52,16 @@ public class UML2Zot {
 		int transitionsN = 0;
 		int messagesN = 0;
 		int sdTimeConstraintsN = 0;
+		int sdParametersN = 0;
 		int arithVarsN = 0;
+		int clocksN = this.mades_model.getClassdiagram().getClocks().size();
+		int lifelinesN = 0;
+		int iodNodesN = 0;
 		for(org.correttouml.uml.diagrams.classdiagram.Class c: this.mades_model.getClassdiagram().getClasses()){
-			for(org.correttouml.uml.diagrams.classdiagram.Object obj: c.getObjects()){
-				objectsN++;
-			}
+			objectsN += c.getObjects().size();
 			for(org.correttouml.uml.diagrams.statediagram.StateDiagram std: c.getStateDiagrams()){
-				for(Transition t : std.getTransitions()){
-					transitionsN++;
+				for(org.correttouml.uml.diagrams.classdiagram.Object obj: c.getObjects()){
+					transitionsN += std.getTransitions().size();
 				}
 				for(org.correttouml.uml.diagrams.statediagram.State s: std.getStates()){
 					for(org.correttouml.uml.diagrams.classdiagram.Object obj: c.getObjects()){
@@ -70,12 +71,13 @@ public class UML2Zot {
 			}
 		}
 		for(SequenceDiagram sd: this.mades_model.getSequenceDiagrams()){
-			for (Message m : sd.getMessages()) {
-				messagesN++;
-				}
-			for (TimeConstraint t : sd.getTimeConstraints()) {
-				sdTimeConstraintsN++;
-			}
+			messagesN += sd.getMessages().size();
+			sdTimeConstraintsN += sd.getTimeConstraints().size();
+			sdParametersN += sd.getSequenceDiagramParameters().size();
+			lifelinesN += sd.getLifelines().size();
+		}
+		for(org.correttouml.uml.diagrams.iod.IOD i: this.mades_model.getIODs()){
+			iodNodesN += i.getNodes().size();
 		}
 		FileInputStream fstream = new FileInputStream(uml_model_file);
 		BufferedReader in = new BufferedReader(new InputStreamReader(fstream));
@@ -85,13 +87,18 @@ public class UML2Zot {
 		String[] words = readLine.split(" ");
 		for(String s : words) {
 			if(s.startsWith("xmi:id=")) umlElementsN++;}}
-		
-			
+
 		return ";  Model statistics:\n;  "
-		+ Integer.toString(umlElementsN) + "\t:Number of UML elements\n;  " 
-		+ Integer.toString(objectsN) + "\t:Number of objects\n;  " + Integer.toString(statesN) + "\t:Number of states\n;  "  
-		+ Integer.toString(transitionsN) + "\t:Number of transitions\n;  " + Integer.toString(messagesN) + "\t:Number of messages in sequence diagrams\n;  " + Integer.toString(sdTimeConstraintsN) 
-		+ "\t:Number of time contraints in sequence diagrams\n";
+		+ Integer.toString(umlElementsN) + "\t:Number of UML elements\n;  "  
+		+ Integer.toString(objectsN) + "\t:Number of objects\n;  " 
+		+ Integer.toString(statesN) + "\t:Number of states\n;  " 
+		+ Integer.toString(transitionsN) + "\t:Number of transitions\n;  "
+		+ Integer.toString(lifelinesN) + "\t:Number of lifelines in sequence diagrams\n;  "
+		+ Integer.toString(messagesN) + "\t:Number of messages in sequence diagrams\n;  " 
+		+ Integer.toString(sdParametersN) + "\t:Number of parameters in sequence diagrams\n;  "
+		+ Integer.toString(sdTimeConstraintsN) + "\t:Number of time contraints in sequence diagrams\n;  " 
+		+ Integer.toString(clocksN) + "\t:Number of clocks\n;  "
+		+ Integer.toString(iodNodesN) + "\t:Number of nodes in interaction overview diagrams\n";
 	}
 	
 	public void generateMappingsFile(File mappings_file){
