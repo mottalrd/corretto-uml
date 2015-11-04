@@ -1,10 +1,12 @@
 package org.correttouml.uml2zot.semantics.sequencediagram;
 
+import org.correttouml.uml.diagrams.sequencediagram.ExecutionOccurrence;
 import org.correttouml.uml.diagrams.sequencediagram.ExecutionOccurrenceEnd;
 import org.correttouml.uml.diagrams.sequencediagram.ExecutionOccurrenceStart;
 import org.correttouml.uml.diagrams.sequencediagram.InteractionFragment;
 import org.correttouml.uml.diagrams.sequencediagram.MessageEnd;
 import org.correttouml.uml.diagrams.sequencediagram.MessageStart;
+import org.eclipse.uml2.uml.ExecutionSpecification;
 
 public class SInteractionFragmentFactory {
 
@@ -14,6 +16,9 @@ public class SInteractionFragmentFactory {
 		}
 		if(mades_if instanceof MessageEnd){
 			return new SMessageEnd((MessageEnd) mades_if);
+		}
+		if(mades_if instanceof ExecutionOccurrence){
+			return new SExecutionOccurrence((ExecutionOccurrence) mades_if);
 		}
 		if(mades_if instanceof ExecutionOccurrenceStart){
 			return new SExecutionOccurrenceStart((ExecutionOccurrenceStart)mades_if);

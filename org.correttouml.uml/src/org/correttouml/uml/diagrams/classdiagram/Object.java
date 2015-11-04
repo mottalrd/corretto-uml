@@ -3,17 +3,21 @@ package org.correttouml.uml.diagrams.classdiagram;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.correttouml.uml.MadesModel;
+import org.correttouml.uml.diagrams.sequencediagram.ExecutionOccurrence;
+import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagram;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.ExecutionSpecification;
 import org.eclipse.uml2.uml.InstanceSpecification;
 
 public class Object {
 
 	/** The UML2 object we are decorating */
 	private InstanceSpecification uml_object;
-	
+
 	/** Takes a UML2 object instance */
 	public Object(InstanceSpecification uml_obj){
 		this.uml_object=uml_obj;
@@ -77,7 +81,27 @@ public class Object {
 	public int hashCode(){
 		return this.uml_object.hashCode();
 	}
-
-
+	
+	public HashSet<ExecutionOccurrence> getEOs(){
+		HashSet<ExecutionOccurrence> eoSet = new HashSet<ExecutionOccurrence>();
+		for (SequenceDiagram sd : new MadesModel(this.uml_object.getModel()).getSequenceDiagrams())
+			for (ExecutionOccurrence eo: sd.getExecutionOccurrences()){
+//				if (this.uml_object.equals(eo.getObject()))
+				if (this.uml_object.getName() == (eo.getObject().getName()))
+					eoSet.add(eo);
+			}
+		return eoSet;
+	}
+	
+//	public HashSet<ExecutionSpecification> getESs(){
+//		HashSet<ExecutionSpecification> esSet = new HashSet<ExecutionSpecification>();
+//		for (SequenceDiagram sd : new MadesModel(this.uml_object.getModel()).getSequenceDiagrams())
+//			for (ExecutionSpecification es: sd.getExecutionSpecifications()){
+//				Object o= new ExecutionOccurrence(es).getObject();
+//				if (this.uml_object.hashCode() == new ExecutionOccurrence(es).getObject().hashCode())
+//					esSet.add(es);
+//			}
+//		return esSet;
+//	}
 	
 }

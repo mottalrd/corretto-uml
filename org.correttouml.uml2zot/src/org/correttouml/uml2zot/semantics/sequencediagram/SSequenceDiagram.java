@@ -32,6 +32,7 @@ import org.correttouml.uml2zot.semantics.util.bool.Or;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 import org.correttouml.uml2zot.semantics.util.trio.Since_ei;
 import org.correttouml.uml2zot.semantics.util.trio.Until_ei;
+import org.eclipse.uml2.uml.ExecutionSpecification;
 
 public class SSequenceDiagram {
 
@@ -81,7 +82,11 @@ public class SSequenceDiagram {
 		sem = sem + SMadesModel.printSeparatorSmall("START SEMANTICS");
 		for (Lifeline l : this.mades_sd.getLifelines()) {
 			if(l.getEvents().size()>0){
-				Predicate firstEvent=SInteractionFragmentFactory.getInstance(l.getEvents().get(0)).getPredicate();
+				Predicate firstEvent;
+				if (SInteractionFragmentFactory.getInstance(l.getEvents().get(0)) instanceof SExecutionOccurrence)
+					firstEvent = ((SExecutionOccurrence) SInteractionFragmentFactory.getInstance(l.getEvents().get(0))).getPredicateStart();
+				else
+					firstEvent=SInteractionFragmentFactory.getInstance(l.getEvents().get(0)).getPredicate();
 				sem = sem + buildOrderingSemanticsLTEAxiom(sd_start, firstEvent, sd_stop) + "\n";
 				sem = sem + buildOrderingSemanticsBackwardAxiom(sd_start, firstEvent,sd_stop) + "\n";
 			}
@@ -114,9 +119,23 @@ public class SSequenceDiagram {
 		
 		// Get execution occurrences semantics
 		sem = sem + SMadesModel.printSeparatorSmall("EXOCCS SEMANTICS");
-		for (ExecutionOccurrence exocc : this.mades_sd.getExecutionOccurrences()) {
-			sem = sem + new SExecutionOccurrence(exocc).getSemantics();
-		}
+//		HashSet<Predicate> pSet = new HashSet<Predicate>();
+        HashSet<ExecutionOccurrence> eoSet = (HashSet<ExecutionOccurrence>) this.mades_sd.getExecutionOccurrences();
+//        for (ExecutionOccurrence eo: eoSet)
+//        	pSet.add(new SExecutionOccurrence(eo).getPredicate());
+//        HashSet<ExecutionSpecification> esSet = (HashSet<ExecutionSpecification>) this.mades_sd.getExecutionSpecifications();
+//        for (ExecutionSpecification es:esSet)
+//        	if (! pSet.contains(new SExecutionOccurrence(new ExecutionOccurrence(es)).getPredicate()))
+//    			eoSet.add(new ExecutionOccurrence(es));
+        for (ExecutionOccurrence eo: eoSet)
+        	sem += new SExecutionOccurrence(eo).getSemantics();
+//		for (ExecutionOccurrence exocc : this.mades_sd.getExecutionOccurrences()) {
+//			sem = sem + new SExecutionOccurrence(exocc).getSemantics();
+//		}
+//		for (ExecutionSpecification exs : this.mades_sd.getExecutionSpecifications()) {
+//			sem += new SExecutionOccurrence(new ExecutionOccurrence(exs)).getSemantics();
+//		}
+		
 		
 		// get time constraint semantics
 		sem = sem + SMadesModel.printSeparatorSmall("TIME CONSTRAINTS SEMANTICS");

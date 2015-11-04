@@ -14,6 +14,10 @@ public class InteractionFragmentFactory {
 				if(ocs.getExecution().getStart().equals(ocs)) return new ExecutionOccurrenceStart(ocs);
 				if(ocs.getExecution().getFinish().equals(ocs)) return new ExecutionOccurrenceEnd(ocs);
 			}
+			if(uml_interactionfragment instanceof org.eclipse.uml2.uml.ExecutionSpecification){
+//				org.eclipse.uml2.uml.ExecutionSpecification es = (org.eclipse.uml2.uml.ExecutionSpecification) uml_interactionfragment;
+				return new ExecutionOccurrence((org.eclipse.uml2.uml.ExecutionSpecification) uml_interactionfragment);
+			}
 			throw new Exception("Event not found");
 		}catch(Exception e){
 			e.printStackTrace();

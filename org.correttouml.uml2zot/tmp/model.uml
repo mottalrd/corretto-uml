@@ -1,0 +1,1073 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CorrettoUML.Properties="http:///CorrettoUML/Properties.ecore" xmlns:CorrettoUML.Time="http:///CorrettoUML/Time.ecore" xmlns:CorrettoUML.VerificationTags="http:///CorrettoUML/VerificationTags.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///CorrettoUML/Properties.ecore ../../org.correttouml.profiles/resources/model.profile.uml#_YfVc6YvzEeKLvcTv2F9FYg http:///CorrettoUML/Time.ecore ../../org.correttouml.profiles/resources/model.profile.uml#_YfVcwYvzEeKLvcTv2F9FYg http:///CorrettoUML/VerificationTags.ecore ../../org.correttouml.profiles/resources/model.profile.uml#_YfVc14vzEeKLvcTv2F9FYg">
+  <uml:Model xmi:id="_7ON3UG6ZEeWRVse7xW7FOw" name="Radar TXT">
+    <elementImport xmi:id="_7ON3UW6ZEeWRVse7xW7FOw">
+      <importedElement xmi:type="uml:Profile" href="../../org.correttouml.profiles/resources/model.profile.uml#_DCylYIJgEeKaWIAr5_BKMw"/>
+    </elementImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_7ON3Um6ZEeWRVse7xW7FOw" name="System">
+      <packagedElement xmi:type="uml:Class" xmi:id="_7ON3U26ZEeWRVse7xW7FOw" name="ClockTypeMainMMI"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7ON3VG6ZEeWRVse7xW7FOw" name="ClockTypePanelData"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7ON3VW6ZEeWRVse7xW7FOw" name="ClockTypeRadar"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7ON3Vm6ZEeWRVse7xW7FOw" name="ClockTypeWeather"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7ON3V26ZEeWRVse7xW7FOw" name="ClockTypeNavigation"/>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7ON3WG6ZEeWRVse7xW7FOw" name="ckMainMMI" classifier="_7ON3U26ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7ON3WW6ZEeWRVse7xW7FOw" name="ckPanelData" classifier="_7ON3VG6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7ON3Wm6ZEeWRVse7xW7FOw" name="ckRadar" classifier="_7ON3VW6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7ON3W26ZEeWRVse7xW7FOw" name="ckWeather" classifier="_7ON3Vm6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7ON3XG6ZEeWRVse7xW7FOw" name="ckNavigation" classifier="_7ON3V26ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7ON3XW6ZEeWRVse7xW7FOw" name="swEnvironment">
+        <ownedOperation xmi:id="_7ON3Xm6ZEeWRVse7xW7FOw" name="main_panel_getButton"/>
+        <ownedOperation xmi:id="_7ON3X26ZEeWRVse7xW7FOw" name="main_radar_getSts"/>
+        <ownedOperation xmi:id="_7ON3YG6ZEeWRVse7xW7FOw" name="main_nav_getLatitude"/>
+        <ownedOperation xmi:id="_7ON3YW6ZEeWRVse7xW7FOw" name="main_nav_getLongitude"/>
+        <ownedOperation xmi:id="_7ON3Ym6ZEeWRVse7xW7FOw" name="main_weather_getStatus"/>
+        <ownedOperation xmi:id="_7ON3Y26ZEeWRVse7xW7FOw" name="main_panel_setLed"/>
+        <ownedOperation xmi:id="_7ON3ZG6ZEeWRVse7xW7FOw" name="main_radar_setCmd"/>
+        <ownedOperation xmi:id="_7ON3ZW6ZEeWRVse7xW7FOw" name="main_weather_setNewImage"/>
+        <ownedOperation xmi:id="_7ON3Zm6ZEeWRVse7xW7FOw" name="main_weather_setImage"/>
+        <ownedOperation xmi:id="_7ON3Z26ZEeWRVse7xW7FOw" name="main_radar_getResult"/>
+        <ownedOperation xmi:id="_7ON3aG6ZEeWRVse7xW7FOw" name="nav_setLatitude"/>
+        <ownedOperation xmi:id="_7OOeYG6ZEeWRVse7xW7FOw" name="nav_setLongitude"/>
+        <ownedOperation xmi:id="_7OOeYW6ZEeWRVse7xW7FOw" name="panel_getLed"/>
+        <ownedOperation xmi:id="_7OOeYm6ZEeWRVse7xW7FOw" name="panel_setButton"/>
+        <ownedOperation xmi:id="_7OOeY26ZEeWRVse7xW7FOw" name="weather_getNewImage"/>
+        <ownedOperation xmi:id="_7OOeZG6ZEeWRVse7xW7FOw" name="weather_getImage"/>
+        <ownedOperation xmi:id="_7OOeZW6ZEeWRVse7xW7FOw" name="weather_setStatus"/>
+        <ownedOperation xmi:id="_7OOeZm6ZEeWRVse7xW7FOw" name="radar_getCmd"/>
+        <ownedOperation xmi:id="_7OOeZ26ZEeWRVse7xW7FOw" name="radar_setSts"/>
+        <ownedOperation xmi:id="_7OOeaG6ZEeWRVse7xW7FOw" name="radar_setResult"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OOeaW6ZEeWRVse7xW7FOw" name="environment" classifier="_7ON3XW6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OOeam6ZEeWRVse7xW7FOw" name="swMainMMI">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OOea26ZEeWRVse7xW7FOw" name="smMainMMI">
+          <region xmi:id="_7OOebG6ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OOebW6ZEeWRVse7xW7FOw" name="initial" source="_7OOeb26ZEeWRVse7xW7FOw" target="_7OOecG6ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OOebm6ZEeWRVse7xW7FOw" name="@ckMainMMI.tick/@MainMMIToEnvironment.start" source="_7OOecG6ZEeWRVse7xW7FOw" target="_7OOecG6ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OOeb26ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OOecG6ZEeWRVse7xW7FOw" name="MainMMIState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OOecW6ZEeWRVse7xW7FOw" name="activeMainMMI"/>
+        <ownedOperation xmi:id="_7OOecm6ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OOec26ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OOedG6ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OOedW6ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OOedm6ZEeWRVse7xW7FOw" name="mainMMI" classifier="_7OOeam6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OOed26ZEeWRVse7xW7FOw" name="MainMMIToEnvironment">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OOeeG6ZEeWRVse7xW7FOw" covered="_7OOejm6ZEeWRVse7xW7FOw" message="_7OOekG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OOeeW6ZEeWRVse7xW7FOw" covered="_7OOej26ZEeWRVse7xW7FOw" message="_7OOekG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OOeem6ZEeWRVse7xW7FOw" covered="_7OOejm6ZEeWRVse7xW7FOw" message="_7OOekW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OOee26ZEeWRVse7xW7FOw" covered="_7OOej26ZEeWRVse7xW7FOw" message="_7OOekW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OOefG6ZEeWRVse7xW7FOw" covered="_7OOejm6ZEeWRVse7xW7FOw" message="_7OOekm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OOefW6ZEeWRVse7xW7FOw" covered="_7OOej26ZEeWRVse7xW7FOw" message="_7OOekm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OOefm6ZEeWRVse7xW7FOw" covered="_7OOejm6ZEeWRVse7xW7FOw" message="_7OOek26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OOef26ZEeWRVse7xW7FOw" covered="_7OOej26ZEeWRVse7xW7FOw" message="_7OOek26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OOegG6ZEeWRVse7xW7FOw" covered="_7OOejm6ZEeWRVse7xW7FOw" message="_7OOelG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OOegW6ZEeWRVse7xW7FOw" covered="_7OOej26ZEeWRVse7xW7FOw" message="_7OOelG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OOegm6ZEeWRVse7xW7FOw" covered="_7OOejm6ZEeWRVse7xW7FOw" message="_7OOelW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OOeg26ZEeWRVse7xW7FOw" covered="_7OOejm6ZEeWRVse7xW7FOw" message="_7OOelW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OOehG6ZEeWRVse7xW7FOw" covered="_7OOejm6ZEeWRVse7xW7FOw" message="_7OOelm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OOehW6ZEeWRVse7xW7FOw" covered="_7OOej26ZEeWRVse7xW7FOw" message="_7OOelm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OOehm6ZEeWRVse7xW7FOw" covered="_7OOejm6ZEeWRVse7xW7FOw" message="_7OOel26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OOeh26ZEeWRVse7xW7FOw" covered="_7OOej26ZEeWRVse7xW7FOw" message="_7OOel26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OOeiG6ZEeWRVse7xW7FOw" covered="_7OOejm6ZEeWRVse7xW7FOw" message="_7OOemG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OOeiW6ZEeWRVse7xW7FOw" covered="_7OOej26ZEeWRVse7xW7FOw" message="_7OOemG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OOeim6ZEeWRVse7xW7FOw" covered="_7OOejm6ZEeWRVse7xW7FOw" message="_7OOemW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OOei26ZEeWRVse7xW7FOw" covered="_7OOej26ZEeWRVse7xW7FOw" message="_7OOemW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OOejG6ZEeWRVse7xW7FOw" covered="_7OOejm6ZEeWRVse7xW7FOw" message="_7OOemm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OOejW6ZEeWRVse7xW7FOw" covered="_7OOejm6ZEeWRVse7xW7FOw" message="_7OOemm6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OOejm6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OOeeG6ZEeWRVse7xW7FOw _7OOeem6ZEeWRVse7xW7FOw _7OOefG6ZEeWRVse7xW7FOw _7OOefm6ZEeWRVse7xW7FOw _7OOegG6ZEeWRVse7xW7FOw _7OOegm6ZEeWRVse7xW7FOw _7OOeg26ZEeWRVse7xW7FOw _7OOehG6ZEeWRVse7xW7FOw _7OOehm6ZEeWRVse7xW7FOw _7OOeiG6ZEeWRVse7xW7FOw _7OOeim6ZEeWRVse7xW7FOw _7OOejG6ZEeWRVse7xW7FOw _7OOejW6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OOej26ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OOeeW6ZEeWRVse7xW7FOw _7OOee26ZEeWRVse7xW7FOw _7OOefW6ZEeWRVse7xW7FOw _7OOef26ZEeWRVse7xW7FOw _7OOegW6ZEeWRVse7xW7FOw _7OOehW6ZEeWRVse7xW7FOw _7OOeh26ZEeWRVse7xW7FOw _7OOeiW6ZEeWRVse7xW7FOw _7OOei26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OOekG6ZEeWRVse7xW7FOw" name="main_panel_getButton_message" receiveEvent="_7OOeeW6ZEeWRVse7xW7FOw" sendEvent="_7OOeeG6ZEeWRVse7xW7FOw" signature="_7ON3Xm6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OOekW6ZEeWRVse7xW7FOw" name="main_radar_getSts" receiveEvent="_7OOee26ZEeWRVse7xW7FOw" sendEvent="_7OOeem6ZEeWRVse7xW7FOw" signature="_7ON3X26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OOekm6ZEeWRVse7xW7FOw" name="main_radar_getResult" receiveEvent="_7OOefW6ZEeWRVse7xW7FOw" sendEvent="_7OOefG6ZEeWRVse7xW7FOw" signature="_7ON3Z26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OOek26ZEeWRVse7xW7FOw" name="main_nav_getLatitude" receiveEvent="_7OOef26ZEeWRVse7xW7FOw" sendEvent="_7OOefm6ZEeWRVse7xW7FOw" signature="_7ON3YG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OOelG6ZEeWRVse7xW7FOw" name="main_nav_getLongitude" receiveEvent="_7OOegW6ZEeWRVse7xW7FOw" sendEvent="_7OOegG6ZEeWRVse7xW7FOw" signature="_7ON3YW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OOelW6ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OOeg26ZEeWRVse7xW7FOw" sendEvent="_7OOegm6ZEeWRVse7xW7FOw" signature="_7OOec26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OOelm6ZEeWRVse7xW7FOw" name="main_panel_setLed" receiveEvent="_7OOehW6ZEeWRVse7xW7FOw" sendEvent="_7OOehG6ZEeWRVse7xW7FOw" signature="_7ON3Y26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OOel26ZEeWRVse7xW7FOw" name="main_panel_setCmd" receiveEvent="_7OOeh26ZEeWRVse7xW7FOw" sendEvent="_7OOehm6ZEeWRVse7xW7FOw" signature="_7ON3ZG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OOemG6ZEeWRVse7xW7FOw" name="main_weather_setNewImage" receiveEvent="_7OOeiW6ZEeWRVse7xW7FOw" sendEvent="_7OOeiG6ZEeWRVse7xW7FOw" signature="_7ON3ZW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OOemW6ZEeWRVse7xW7FOw" name="main_weather_setImage" receiveEvent="_7OOei26ZEeWRVse7xW7FOw" sendEvent="_7OOeim6ZEeWRVse7xW7FOw" signature="_7ON3Zm6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OOemm6ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OOejW6ZEeWRVse7xW7FOw" sendEvent="_7OOejG6ZEeWRVse7xW7FOw" signature="_7OOedW6ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OPFcG6ZEeWRVse7xW7FOw" name="swPanelData0">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OPFcW6ZEeWRVse7xW7FOw" name="SMPanelData0">
+          <region xmi:id="_7OPFcm6ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OPFc26ZEeWRVse7xW7FOw" name="initial" source="_7OPFdW6ZEeWRVse7xW7FOw" target="_7OPFdm6ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OPFdG6ZEeWRVse7xW7FOw" name="@ckPanelData.tick/@PanelDataToEnvironment0.start" source="_7OPFdm6ZEeWRVse7xW7FOw" target="_7OPFdm6ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OPFdW6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OPFdm6ZEeWRVse7xW7FOw" name="PanelDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OPFd26ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OPFeG6ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OPFeW6ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OPFem6ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OPFe26ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OPFfG6ZEeWRVse7xW7FOw" name="panelData0" classifier="_7OPFcG6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OPFfW6ZEeWRVse7xW7FOw" name="PanelDataToEnvironment0">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OPFfm6ZEeWRVse7xW7FOw" covered="_7OPFhm6ZEeWRVse7xW7FOw" message="_7OPFiG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OPFf26ZEeWRVse7xW7FOw" covered="_7OPFh26ZEeWRVse7xW7FOw" message="_7OPFiG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OPFgG6ZEeWRVse7xW7FOw" covered="_7OPFhm6ZEeWRVse7xW7FOw" message="_7OPFiW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OPFgW6ZEeWRVse7xW7FOw" covered="_7OPFhm6ZEeWRVse7xW7FOw" message="_7OPFiW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OPFgm6ZEeWRVse7xW7FOw" covered="_7OPFhm6ZEeWRVse7xW7FOw" message="_7OPFim6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OPFg26ZEeWRVse7xW7FOw" covered="_7OPFh26ZEeWRVse7xW7FOw" message="_7OPFim6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OPFhG6ZEeWRVse7xW7FOw" covered="_7OPFhm6ZEeWRVse7xW7FOw" message="_7OPFi26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OPFhW6ZEeWRVse7xW7FOw" covered="_7OPFhm6ZEeWRVse7xW7FOw" message="_7OPFi26ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OPFhm6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OPFfm6ZEeWRVse7xW7FOw _7OPFgG6ZEeWRVse7xW7FOw _7OPFgW6ZEeWRVse7xW7FOw _7OPFgm6ZEeWRVse7xW7FOw _7OPFhG6ZEeWRVse7xW7FOw _7OPFhW6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OPFh26ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OPFf26ZEeWRVse7xW7FOw _7OPFg26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OPFiG6ZEeWRVse7xW7FOw" name="panel_getLed" receiveEvent="_7OPFf26ZEeWRVse7xW7FOw" sendEvent="_7OPFfm6ZEeWRVse7xW7FOw" signature="_7OOeYW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OPFiW6ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OPFgW6ZEeWRVse7xW7FOw" sendEvent="_7OPFgG6ZEeWRVse7xW7FOw" signature="_7OPFeW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OPFim6ZEeWRVse7xW7FOw" name="panel_setButton" receiveEvent="_7OPFg26ZEeWRVse7xW7FOw" sendEvent="_7OPFgm6ZEeWRVse7xW7FOw" signature="_7OOeYm6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OPFi26ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OPFhW6ZEeWRVse7xW7FOw" sendEvent="_7OPFhG6ZEeWRVse7xW7FOw" signature="_7OPFe26ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OPFjG6ZEeWRVse7xW7FOw" name="swPanelData1">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OPFjW6ZEeWRVse7xW7FOw" name="SMPanelData1">
+          <region xmi:id="_7OPFjm6ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OPFj26ZEeWRVse7xW7FOw" name="initial" source="_7OPFkW6ZEeWRVse7xW7FOw" target="_7OPFkm6ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OPFkG6ZEeWRVse7xW7FOw" name="@ckPanelData.tick/@PanelDataToEnvironment1.start" source="_7OPFkm6ZEeWRVse7xW7FOw" target="_7OPFkm6ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OPFkW6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OPFkm6ZEeWRVse7xW7FOw" name="PanelDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OPFk26ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OPFlG6ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OPFlW6ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OPFlm6ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OPFl26ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OPFmG6ZEeWRVse7xW7FOw" name="panelData1" classifier="_7OPFjG6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OPFmW6ZEeWRVse7xW7FOw" name="PanelDataToEnvironment1">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OPFmm6ZEeWRVse7xW7FOw" covered="_7OPFom6ZEeWRVse7xW7FOw" message="_7OPFpG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OPFm26ZEeWRVse7xW7FOw" covered="_7OPFo26ZEeWRVse7xW7FOw" message="_7OPFpG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OPFnG6ZEeWRVse7xW7FOw" covered="_7OPFom6ZEeWRVse7xW7FOw" message="_7OPFpW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OPFnW6ZEeWRVse7xW7FOw" covered="_7OPFom6ZEeWRVse7xW7FOw" message="_7OPFpW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OPFnm6ZEeWRVse7xW7FOw" covered="_7OPFom6ZEeWRVse7xW7FOw" message="_7OPFpm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OPFn26ZEeWRVse7xW7FOw" covered="_7OPFo26ZEeWRVse7xW7FOw" message="_7OPFpm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OPFoG6ZEeWRVse7xW7FOw" covered="_7OPFom6ZEeWRVse7xW7FOw" message="_7OPFp26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OPFoW6ZEeWRVse7xW7FOw" covered="_7OPFom6ZEeWRVse7xW7FOw" message="_7OPFp26ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OPFom6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OPFmm6ZEeWRVse7xW7FOw _7OPFnG6ZEeWRVse7xW7FOw _7OPFnW6ZEeWRVse7xW7FOw _7OPFnm6ZEeWRVse7xW7FOw _7OPFoG6ZEeWRVse7xW7FOw _7OPFoW6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OPFo26ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OPFm26ZEeWRVse7xW7FOw _7OPFn26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OPFpG6ZEeWRVse7xW7FOw" name="panel_getLed" receiveEvent="_7OPFm26ZEeWRVse7xW7FOw" sendEvent="_7OPFmm6ZEeWRVse7xW7FOw" signature="_7OOeYW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OPFpW6ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OPFnW6ZEeWRVse7xW7FOw" sendEvent="_7OPFnG6ZEeWRVse7xW7FOw" signature="_7OPFlW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OPFpm6ZEeWRVse7xW7FOw" name="panel_setButton" receiveEvent="_7OPFn26ZEeWRVse7xW7FOw" sendEvent="_7OPFnm6ZEeWRVse7xW7FOw" signature="_7OOeYm6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OPFp26ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OPFoW6ZEeWRVse7xW7FOw" sendEvent="_7OPFoG6ZEeWRVse7xW7FOw" signature="_7OPFl26ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OPFqG6ZEeWRVse7xW7FOw" name="swPanelData2">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OPFqW6ZEeWRVse7xW7FOw" name="SMPanelData2">
+          <region xmi:id="_7OPFqm6ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OPFq26ZEeWRVse7xW7FOw" name="initial" source="_7OPsgG6ZEeWRVse7xW7FOw" target="_7OPsgW6ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OPFrG6ZEeWRVse7xW7FOw" name="@ckPanelData.tick/@PanelDataToEnvironment2.start" source="_7OPsgW6ZEeWRVse7xW7FOw" target="_7OPsgW6ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OPsgG6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OPsgW6ZEeWRVse7xW7FOw" name="PanelDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OPsgm6ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OPsg26ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OPshG6ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OPshW6ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OPshm6ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OPsh26ZEeWRVse7xW7FOw" name="panelData2" classifier="_7OPFqG6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OPsiG6ZEeWRVse7xW7FOw" name="PanelDataToEnvironment2">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OPsiW6ZEeWRVse7xW7FOw" covered="_7OPskW6ZEeWRVse7xW7FOw" message="_7OPsk26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OPsim6ZEeWRVse7xW7FOw" covered="_7OPskm6ZEeWRVse7xW7FOw" message="_7OPsk26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OPsi26ZEeWRVse7xW7FOw" covered="_7OPskW6ZEeWRVse7xW7FOw" message="_7OPslG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OPsjG6ZEeWRVse7xW7FOw" covered="_7OPskW6ZEeWRVse7xW7FOw" message="_7OPslG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OPsjW6ZEeWRVse7xW7FOw" covered="_7OPskW6ZEeWRVse7xW7FOw" message="_7OPslW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OPsjm6ZEeWRVse7xW7FOw" covered="_7OPskm6ZEeWRVse7xW7FOw" message="_7OPslW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OPsj26ZEeWRVse7xW7FOw" covered="_7OPskW6ZEeWRVse7xW7FOw" message="_7OPslm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OPskG6ZEeWRVse7xW7FOw" covered="_7OPskW6ZEeWRVse7xW7FOw" message="_7OPslm6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OPskW6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OPsiW6ZEeWRVse7xW7FOw _7OPsi26ZEeWRVse7xW7FOw _7OPsjG6ZEeWRVse7xW7FOw _7OPsjW6ZEeWRVse7xW7FOw _7OPsj26ZEeWRVse7xW7FOw _7OPskG6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OPskm6ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OPsim6ZEeWRVse7xW7FOw _7OPsjm6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OPsk26ZEeWRVse7xW7FOw" name="panel_getLed" receiveEvent="_7OPsim6ZEeWRVse7xW7FOw" sendEvent="_7OPsiW6ZEeWRVse7xW7FOw" signature="_7OOeYW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OPslG6ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OPsjG6ZEeWRVse7xW7FOw" sendEvent="_7OPsi26ZEeWRVse7xW7FOw" signature="_7OPshG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OPslW6ZEeWRVse7xW7FOw" name="panel_setButton" receiveEvent="_7OPsjm6ZEeWRVse7xW7FOw" sendEvent="_7OPsjW6ZEeWRVse7xW7FOw" signature="_7OOeYm6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OPslm6ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OPskG6ZEeWRVse7xW7FOw" sendEvent="_7OPsj26ZEeWRVse7xW7FOw" signature="_7OPshm6ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OPsl26ZEeWRVse7xW7FOw" name="swPanelData3">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OPsmG6ZEeWRVse7xW7FOw" name="SMPanelData3">
+          <region xmi:id="_7OPsmW6ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OPsmm6ZEeWRVse7xW7FOw" name="initial" source="_7OQTkW6ZEeWRVse7xW7FOw" target="_7OQTkm6ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OQTkG6ZEeWRVse7xW7FOw" name="@ckPanelData.tick/@PanelDataToEnvironment3.start" source="_7OQTkm6ZEeWRVse7xW7FOw" target="_7OQTkm6ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OQTkW6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OQTkm6ZEeWRVse7xW7FOw" name="PanelDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OQTk26ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OQTlG6ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OQTlW6ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OQTlm6ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OQTl26ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OQTmG6ZEeWRVse7xW7FOw" name="panelData3" classifier="_7OPsl26ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OQTmW6ZEeWRVse7xW7FOw" name="PanelDataToEnvironment3">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQTmm6ZEeWRVse7xW7FOw" covered="_7OQTom6ZEeWRVse7xW7FOw" message="_7OQTpG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQTm26ZEeWRVse7xW7FOw" covered="_7OQTo26ZEeWRVse7xW7FOw" message="_7OQTpG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQTnG6ZEeWRVse7xW7FOw" covered="_7OQTom6ZEeWRVse7xW7FOw" message="_7OQTpW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQTnW6ZEeWRVse7xW7FOw" covered="_7OQTom6ZEeWRVse7xW7FOw" message="_7OQTpW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQTnm6ZEeWRVse7xW7FOw" covered="_7OQTom6ZEeWRVse7xW7FOw" message="_7OQTpm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQTn26ZEeWRVse7xW7FOw" covered="_7OQTo26ZEeWRVse7xW7FOw" message="_7OQTpm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQToG6ZEeWRVse7xW7FOw" covered="_7OQTom6ZEeWRVse7xW7FOw" message="_7OQTp26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQToW6ZEeWRVse7xW7FOw" covered="_7OQTom6ZEeWRVse7xW7FOw" message="_7OQTp26ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OQTom6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OQTmm6ZEeWRVse7xW7FOw _7OQTnG6ZEeWRVse7xW7FOw _7OQTnW6ZEeWRVse7xW7FOw _7OQTnm6ZEeWRVse7xW7FOw _7OQToG6ZEeWRVse7xW7FOw _7OQToW6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OQTo26ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OQTm26ZEeWRVse7xW7FOw _7OQTn26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OQTpG6ZEeWRVse7xW7FOw" name="panel_getLed" receiveEvent="_7OQTm26ZEeWRVse7xW7FOw" sendEvent="_7OQTmm6ZEeWRVse7xW7FOw" signature="_7OOeYW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OQTpW6ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OQTnW6ZEeWRVse7xW7FOw" sendEvent="_7OQTnG6ZEeWRVse7xW7FOw" signature="_7OQTlW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OQTpm6ZEeWRVse7xW7FOw" name="panel_setButton" receiveEvent="_7OQTn26ZEeWRVse7xW7FOw" sendEvent="_7OQTnm6ZEeWRVse7xW7FOw" signature="_7OOeYm6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OQTp26ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OQToW6ZEeWRVse7xW7FOw" sendEvent="_7OQToG6ZEeWRVse7xW7FOw" signature="_7OQTl26ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OQTqG6ZEeWRVse7xW7FOw" name="swPanelData4">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OQTqW6ZEeWRVse7xW7FOw" name="SMPanelData4">
+          <region xmi:id="_7OQTqm6ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OQTq26ZEeWRVse7xW7FOw" name="initial" source="_7OQTrW6ZEeWRVse7xW7FOw" target="_7OQTrm6ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OQTrG6ZEeWRVse7xW7FOw" name="@ckPanelData.tick/@PanelDataToEnvironment4.start" source="_7OQTrm6ZEeWRVse7xW7FOw" target="_7OQTrm6ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OQTrW6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OQTrm6ZEeWRVse7xW7FOw" name="PanelDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OQTr26ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OQTsG6ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OQTsW6ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OQTsm6ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OQTs26ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OQTtG6ZEeWRVse7xW7FOw" name="panelData4" classifier="_7OQTqG6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OQTtW6ZEeWRVse7xW7FOw" name="PanelDataToEnvironment4">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQTtm6ZEeWRVse7xW7FOw" covered="_7OQTvm6ZEeWRVse7xW7FOw" message="_7OQTwG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQTt26ZEeWRVse7xW7FOw" covered="_7OQTv26ZEeWRVse7xW7FOw" message="_7OQTwG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQTuG6ZEeWRVse7xW7FOw" covered="_7OQTvm6ZEeWRVse7xW7FOw" message="_7OQTwW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQTuW6ZEeWRVse7xW7FOw" covered="_7OQTvm6ZEeWRVse7xW7FOw" message="_7OQTwW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQTum6ZEeWRVse7xW7FOw" covered="_7OQTvm6ZEeWRVse7xW7FOw" message="_7OQTwm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQTu26ZEeWRVse7xW7FOw" covered="_7OQTv26ZEeWRVse7xW7FOw" message="_7OQTwm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQTvG6ZEeWRVse7xW7FOw" covered="_7OQTvm6ZEeWRVse7xW7FOw" message="_7OQTw26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQTvW6ZEeWRVse7xW7FOw" covered="_7OQTvm6ZEeWRVse7xW7FOw" message="_7OQTw26ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OQTvm6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OQTtm6ZEeWRVse7xW7FOw _7OQTuG6ZEeWRVse7xW7FOw _7OQTuW6ZEeWRVse7xW7FOw _7OQTum6ZEeWRVse7xW7FOw _7OQTvG6ZEeWRVse7xW7FOw _7OQTvW6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OQTv26ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OQTt26ZEeWRVse7xW7FOw _7OQTu26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OQTwG6ZEeWRVse7xW7FOw" name="panel_getLed" receiveEvent="_7OQTt26ZEeWRVse7xW7FOw" sendEvent="_7OQTtm6ZEeWRVse7xW7FOw" signature="_7OOeYW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OQTwW6ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OQTuW6ZEeWRVse7xW7FOw" sendEvent="_7OQTuG6ZEeWRVse7xW7FOw" signature="_7OQTsW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OQTwm6ZEeWRVse7xW7FOw" name="panel_setButton" receiveEvent="_7OQTu26ZEeWRVse7xW7FOw" sendEvent="_7OQTum6ZEeWRVse7xW7FOw" signature="_7OOeYm6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OQTw26ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OQTvW6ZEeWRVse7xW7FOw" sendEvent="_7OQTvG6ZEeWRVse7xW7FOw" signature="_7OQTs26ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OQTxG6ZEeWRVse7xW7FOw" name="swPanelData5">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OQTxW6ZEeWRVse7xW7FOw" name="SMPanelData5">
+          <region xmi:id="_7OQTxm6ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OQTx26ZEeWRVse7xW7FOw" name="initial" source="_7OQTyW6ZEeWRVse7xW7FOw" target="_7OQTym6ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OQTyG6ZEeWRVse7xW7FOw" name="@ckPanelData.tick/@PanelDataToEnvironment5.start" source="_7OQTym6ZEeWRVse7xW7FOw" target="_7OQTym6ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OQTyW6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OQTym6ZEeWRVse7xW7FOw" name="PanelDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OQTy26ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OQTzG6ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OQTzW6ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OQTzm6ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OQTz26ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OQT0G6ZEeWRVse7xW7FOw" name="panelData5" classifier="_7OQTxG6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OQT0W6ZEeWRVse7xW7FOw" name="PanelDataToEnvironment5">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQT0m6ZEeWRVse7xW7FOw" covered="_7OQ6pm6ZEeWRVse7xW7FOw" message="_7OQ6qG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQT026ZEeWRVse7xW7FOw" covered="_7OQ6p26ZEeWRVse7xW7FOw" message="_7OQ6qG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQ6oG6ZEeWRVse7xW7FOw" covered="_7OQ6pm6ZEeWRVse7xW7FOw" message="_7OQ6qW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQ6oW6ZEeWRVse7xW7FOw" covered="_7OQ6pm6ZEeWRVse7xW7FOw" message="_7OQ6qW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQ6om6ZEeWRVse7xW7FOw" covered="_7OQ6pm6ZEeWRVse7xW7FOw" message="_7OQ6qm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQ6o26ZEeWRVse7xW7FOw" covered="_7OQ6p26ZEeWRVse7xW7FOw" message="_7OQ6qm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQ6pG6ZEeWRVse7xW7FOw" covered="_7OQ6pm6ZEeWRVse7xW7FOw" message="_7OQ6q26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQ6pW6ZEeWRVse7xW7FOw" covered="_7OQ6pm6ZEeWRVse7xW7FOw" message="_7OQ6q26ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OQ6pm6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OQT0m6ZEeWRVse7xW7FOw _7OQ6oG6ZEeWRVse7xW7FOw _7OQ6oW6ZEeWRVse7xW7FOw _7OQ6om6ZEeWRVse7xW7FOw _7OQ6pG6ZEeWRVse7xW7FOw _7OQ6pW6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OQ6p26ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OQT026ZEeWRVse7xW7FOw _7OQ6o26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OQ6qG6ZEeWRVse7xW7FOw" name="panel_getLed" receiveEvent="_7OQT026ZEeWRVse7xW7FOw" sendEvent="_7OQT0m6ZEeWRVse7xW7FOw" signature="_7OOeYW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OQ6qW6ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OQ6oW6ZEeWRVse7xW7FOw" sendEvent="_7OQ6oG6ZEeWRVse7xW7FOw" signature="_7OQTzW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OQ6qm6ZEeWRVse7xW7FOw" name="panel_setButton" receiveEvent="_7OQ6o26ZEeWRVse7xW7FOw" sendEvent="_7OQ6om6ZEeWRVse7xW7FOw" signature="_7OOeYm6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OQ6q26ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OQ6pW6ZEeWRVse7xW7FOw" sendEvent="_7OQ6pG6ZEeWRVse7xW7FOw" signature="_7OQTz26ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OQ6rG6ZEeWRVse7xW7FOw" name="swPanelData6">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OQ6rW6ZEeWRVse7xW7FOw" name="SMPanelData6">
+          <region xmi:id="_7OQ6rm6ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OQ6r26ZEeWRVse7xW7FOw" name="initial" source="_7OQ6sW6ZEeWRVse7xW7FOw" target="_7OQ6sm6ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OQ6sG6ZEeWRVse7xW7FOw" name="@ckPanelData.tick/@PanelDataToEnvironment6.start" source="_7OQ6sm6ZEeWRVse7xW7FOw" target="_7OQ6sm6ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OQ6sW6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OQ6sm6ZEeWRVse7xW7FOw" name="PanelDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OQ6s26ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OQ6tG6ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OQ6tW6ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OQ6tm6ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OQ6t26ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OQ6uG6ZEeWRVse7xW7FOw" name="panelData6" classifier="_7OQ6rG6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OQ6uW6ZEeWRVse7xW7FOw" name="PanelDataToEnvironment6">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQ6um6ZEeWRVse7xW7FOw" covered="_7OQ6wm6ZEeWRVse7xW7FOw" message="_7OQ6xG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQ6u26ZEeWRVse7xW7FOw" covered="_7OQ6w26ZEeWRVse7xW7FOw" message="_7OQ6xG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQ6vG6ZEeWRVse7xW7FOw" covered="_7OQ6wm6ZEeWRVse7xW7FOw" message="_7OQ6xW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQ6vW6ZEeWRVse7xW7FOw" covered="_7OQ6wm6ZEeWRVse7xW7FOw" message="_7OQ6xW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQ6vm6ZEeWRVse7xW7FOw" covered="_7OQ6wm6ZEeWRVse7xW7FOw" message="_7OQ6xm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQ6v26ZEeWRVse7xW7FOw" covered="_7OQ6w26ZEeWRVse7xW7FOw" message="_7OQ6xm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQ6wG6ZEeWRVse7xW7FOw" covered="_7OQ6wm6ZEeWRVse7xW7FOw" message="_7OQ6x26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQ6wW6ZEeWRVse7xW7FOw" covered="_7OQ6wm6ZEeWRVse7xW7FOw" message="_7OQ6x26ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OQ6wm6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OQ6um6ZEeWRVse7xW7FOw _7OQ6vG6ZEeWRVse7xW7FOw _7OQ6vW6ZEeWRVse7xW7FOw _7OQ6vm6ZEeWRVse7xW7FOw _7OQ6wG6ZEeWRVse7xW7FOw _7OQ6wW6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OQ6w26ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OQ6u26ZEeWRVse7xW7FOw _7OQ6v26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OQ6xG6ZEeWRVse7xW7FOw" name="panel_getLed" receiveEvent="_7OQ6u26ZEeWRVse7xW7FOw" sendEvent="_7OQ6um6ZEeWRVse7xW7FOw" signature="_7OOeYW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OQ6xW6ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OQ6vW6ZEeWRVse7xW7FOw" sendEvent="_7OQ6vG6ZEeWRVse7xW7FOw" signature="_7OQ6tW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OQ6xm6ZEeWRVse7xW7FOw" name="panel_setButton" receiveEvent="_7OQ6v26ZEeWRVse7xW7FOw" sendEvent="_7OQ6vm6ZEeWRVse7xW7FOw" signature="_7OOeYm6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OQ6x26ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OQ6wW6ZEeWRVse7xW7FOw" sendEvent="_7OQ6wG6ZEeWRVse7xW7FOw" signature="_7OQ6t26ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OQ6yG6ZEeWRVse7xW7FOw" name="swRadarData">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OQ6yW6ZEeWRVse7xW7FOw" name="SMRadarData">
+          <region xmi:id="_7OQ6ym6ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OQ6y26ZEeWRVse7xW7FOw" name="initial" source="_7OQ6zW6ZEeWRVse7xW7FOw" target="_7OQ6zm6ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OQ6zG6ZEeWRVse7xW7FOw" name="@ckRadar.tick/@RadarDataToEnvironment.start" source="_7OQ6zm6ZEeWRVse7xW7FOw" target="_7OQ6zm6ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OQ6zW6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OQ6zm6ZEeWRVse7xW7FOw" name="RadarDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OQ6z26ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OQ60G6ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OQ60W6ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OQ60m6ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OQ6026ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OQ61G6ZEeWRVse7xW7FOw" name="radarData" classifier="_7OQ6yG6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OQ61W6ZEeWRVse7xW7FOw" name="RadarDataToEnvironment">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQ61m6ZEeWRVse7xW7FOw" covered="_7OQ64G6ZEeWRVse7xW7FOw" message="_7OQ64m6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQ6126ZEeWRVse7xW7FOw" covered="_7OQ64W6ZEeWRVse7xW7FOw" message="_7OQ64m6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQ62G6ZEeWRVse7xW7FOw" covered="_7OQ64G6ZEeWRVse7xW7FOw" message="_7OQ6426ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQ62W6ZEeWRVse7xW7FOw" covered="_7OQ64G6ZEeWRVse7xW7FOw" message="_7OQ6426ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQ62m6ZEeWRVse7xW7FOw" covered="_7OQ64G6ZEeWRVse7xW7FOw" message="_7OQ65G6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQ6226ZEeWRVse7xW7FOw" covered="_7OQ64W6ZEeWRVse7xW7FOw" message="_7OQ65G6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQ63G6ZEeWRVse7xW7FOw" covered="_7OQ64G6ZEeWRVse7xW7FOw" message="_7OQ65W6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQ63W6ZEeWRVse7xW7FOw" covered="_7OQ64W6ZEeWRVse7xW7FOw" message="_7OQ65W6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQ63m6ZEeWRVse7xW7FOw" covered="_7OQ64G6ZEeWRVse7xW7FOw" message="_7OQ65m6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OQ6326ZEeWRVse7xW7FOw" covered="_7OQ64G6ZEeWRVse7xW7FOw" message="_7OQ65m6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OQ64G6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OQ61m6ZEeWRVse7xW7FOw _7OQ62G6ZEeWRVse7xW7FOw _7OQ62W6ZEeWRVse7xW7FOw _7OQ62m6ZEeWRVse7xW7FOw _7OQ63G6ZEeWRVse7xW7FOw _7OQ63m6ZEeWRVse7xW7FOw _7OQ6326ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OQ64W6ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OQ6126ZEeWRVse7xW7FOw _7OQ6226ZEeWRVse7xW7FOw _7OQ63W6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OQ64m6ZEeWRVse7xW7FOw" name="radar_getCmd" receiveEvent="_7OQ6126ZEeWRVse7xW7FOw" sendEvent="_7OQ61m6ZEeWRVse7xW7FOw" signature="_7OOeZm6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OQ6426ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OQ62W6ZEeWRVse7xW7FOw" sendEvent="_7OQ62G6ZEeWRVse7xW7FOw" signature="_7OQ60W6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OQ65G6ZEeWRVse7xW7FOw" name="radar_setSts" receiveEvent="_7OQ6226ZEeWRVse7xW7FOw" sendEvent="_7OQ62m6ZEeWRVse7xW7FOw" signature="_7OOeZ26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OQ65W6ZEeWRVse7xW7FOw" name="radar_setResult" receiveEvent="_7OQ63W6ZEeWRVse7xW7FOw" sendEvent="_7OQ63G6ZEeWRVse7xW7FOw" signature="_7OOeaG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OQ65m6ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OQ6326ZEeWRVse7xW7FOw" sendEvent="_7OQ63m6ZEeWRVse7xW7FOw" signature="_7OQ6026ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OQ6526ZEeWRVse7xW7FOw" name="swRadarData">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OQ66G6ZEeWRVse7xW7FOw" name="SMRadarData">
+          <region xmi:id="_7OQ66W6ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7ORhsG6ZEeWRVse7xW7FOw" name="initial" source="_7ORhsm6ZEeWRVse7xW7FOw" target="_7ORhs26ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7ORhsW6ZEeWRVse7xW7FOw" name="@ckRadar.tick/@RadarDataToEnvironment.start" source="_7ORhs26ZEeWRVse7xW7FOw" target="_7ORhs26ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7ORhsm6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7ORhs26ZEeWRVse7xW7FOw" name="RadarDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7ORhtG6ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7ORhtW6ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7ORhtm6ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7ORht26ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7ORhuG6ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7ORhuW6ZEeWRVse7xW7FOw" name="radarData" classifier="_7OQ6526ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7ORhum6ZEeWRVse7xW7FOw" name="RadarDataToEnvironment">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7ORhu26ZEeWRVse7xW7FOw" covered="_7ORhxW6ZEeWRVse7xW7FOw" message="_7ORhx26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7ORhvG6ZEeWRVse7xW7FOw" covered="_7ORhxm6ZEeWRVse7xW7FOw" message="_7ORhx26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7ORhvW6ZEeWRVse7xW7FOw" covered="_7ORhxW6ZEeWRVse7xW7FOw" message="_7ORhyG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7ORhvm6ZEeWRVse7xW7FOw" covered="_7ORhxW6ZEeWRVse7xW7FOw" message="_7ORhyG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7ORhv26ZEeWRVse7xW7FOw" covered="_7ORhxW6ZEeWRVse7xW7FOw" message="_7ORhyW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7ORhwG6ZEeWRVse7xW7FOw" covered="_7ORhxm6ZEeWRVse7xW7FOw" message="_7ORhyW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7ORhwW6ZEeWRVse7xW7FOw" covered="_7ORhxW6ZEeWRVse7xW7FOw" message="_7ORhym6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7ORhwm6ZEeWRVse7xW7FOw" covered="_7ORhxm6ZEeWRVse7xW7FOw" message="_7ORhym6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7ORhw26ZEeWRVse7xW7FOw" covered="_7ORhxW6ZEeWRVse7xW7FOw" message="_7ORhy26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7ORhxG6ZEeWRVse7xW7FOw" covered="_7ORhxW6ZEeWRVse7xW7FOw" message="_7ORhy26ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7ORhxW6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7ORhu26ZEeWRVse7xW7FOw _7ORhvW6ZEeWRVse7xW7FOw _7ORhvm6ZEeWRVse7xW7FOw _7ORhv26ZEeWRVse7xW7FOw _7ORhwW6ZEeWRVse7xW7FOw _7ORhw26ZEeWRVse7xW7FOw _7ORhxG6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7ORhxm6ZEeWRVse7xW7FOw" name="l2" coveredBy="_7ORhvG6ZEeWRVse7xW7FOw _7ORhwG6ZEeWRVse7xW7FOw _7ORhwm6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7ORhx26ZEeWRVse7xW7FOw" name="radar_getCmd" receiveEvent="_7ORhvG6ZEeWRVse7xW7FOw" sendEvent="_7ORhu26ZEeWRVse7xW7FOw" signature="_7OOeZm6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7ORhyG6ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7ORhvm6ZEeWRVse7xW7FOw" sendEvent="_7ORhvW6ZEeWRVse7xW7FOw" signature="_7ORhtm6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7ORhyW6ZEeWRVse7xW7FOw" name="radar_setSts" receiveEvent="_7ORhwG6ZEeWRVse7xW7FOw" sendEvent="_7ORhv26ZEeWRVse7xW7FOw" signature="_7OOeZ26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7ORhym6ZEeWRVse7xW7FOw" name="radar_setResult" receiveEvent="_7ORhwm6ZEeWRVse7xW7FOw" sendEvent="_7ORhwW6ZEeWRVse7xW7FOw" signature="_7OOeaG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7ORhy26ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7ORhxG6ZEeWRVse7xW7FOw" sendEvent="_7ORhw26ZEeWRVse7xW7FOw" signature="_7ORhuG6ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7ORhzG6ZEeWRVse7xW7FOw" name="swRadarData">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7ORhzW6ZEeWRVse7xW7FOw" name="SMRadarData">
+          <region xmi:id="_7ORhzm6ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7ORhz26ZEeWRVse7xW7FOw" name="initial" source="_7ORh0W6ZEeWRVse7xW7FOw" target="_7ORh0m6ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7ORh0G6ZEeWRVse7xW7FOw" name="@ckRadar.tick/@RadarDataToEnvironment.start" source="_7ORh0m6ZEeWRVse7xW7FOw" target="_7ORh0m6ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7ORh0W6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7ORh0m6ZEeWRVse7xW7FOw" name="RadarDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7ORh026ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7ORh1G6ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7ORh1W6ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7ORh1m6ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7ORh126ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7ORh2G6ZEeWRVse7xW7FOw" name="radarData" classifier="_7ORhzG6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7ORh2W6ZEeWRVse7xW7FOw" name="RadarDataToEnvironment">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7ORh2m6ZEeWRVse7xW7FOw" covered="_7ORh5G6ZEeWRVse7xW7FOw" message="_7ORh5m6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7ORh226ZEeWRVse7xW7FOw" covered="_7ORh5W6ZEeWRVse7xW7FOw" message="_7ORh5m6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7ORh3G6ZEeWRVse7xW7FOw" covered="_7ORh5G6ZEeWRVse7xW7FOw" message="_7ORh526ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7ORh3W6ZEeWRVse7xW7FOw" covered="_7ORh5G6ZEeWRVse7xW7FOw" message="_7ORh526ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7ORh3m6ZEeWRVse7xW7FOw" covered="_7ORh5G6ZEeWRVse7xW7FOw" message="_7ORh6G6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7ORh326ZEeWRVse7xW7FOw" covered="_7ORh5W6ZEeWRVse7xW7FOw" message="_7ORh6G6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7ORh4G6ZEeWRVse7xW7FOw" covered="_7ORh5G6ZEeWRVse7xW7FOw" message="_7ORh6W6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7ORh4W6ZEeWRVse7xW7FOw" covered="_7ORh5W6ZEeWRVse7xW7FOw" message="_7ORh6W6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7ORh4m6ZEeWRVse7xW7FOw" covered="_7ORh5G6ZEeWRVse7xW7FOw" message="_7ORh6m6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7ORh426ZEeWRVse7xW7FOw" covered="_7ORh5G6ZEeWRVse7xW7FOw" message="_7ORh6m6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7ORh5G6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7ORh2m6ZEeWRVse7xW7FOw _7ORh3G6ZEeWRVse7xW7FOw _7ORh3W6ZEeWRVse7xW7FOw _7ORh3m6ZEeWRVse7xW7FOw _7ORh4G6ZEeWRVse7xW7FOw _7ORh4m6ZEeWRVse7xW7FOw _7ORh426ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7ORh5W6ZEeWRVse7xW7FOw" name="l2" coveredBy="_7ORh226ZEeWRVse7xW7FOw _7ORh326ZEeWRVse7xW7FOw _7ORh4W6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7ORh5m6ZEeWRVse7xW7FOw" name="radar_getCmd" receiveEvent="_7ORh226ZEeWRVse7xW7FOw" sendEvent="_7ORh2m6ZEeWRVse7xW7FOw" signature="_7OOeZm6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7ORh526ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7ORh3W6ZEeWRVse7xW7FOw" sendEvent="_7ORh3G6ZEeWRVse7xW7FOw" signature="_7ORh1W6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7ORh6G6ZEeWRVse7xW7FOw" name="radar_setSts" receiveEvent="_7ORh326ZEeWRVse7xW7FOw" sendEvent="_7ORh3m6ZEeWRVse7xW7FOw" signature="_7OOeZ26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7ORh6W6ZEeWRVse7xW7FOw" name="radar_setResult" receiveEvent="_7ORh4W6ZEeWRVse7xW7FOw" sendEvent="_7ORh4G6ZEeWRVse7xW7FOw" signature="_7OOeaG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7ORh6m6ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7ORh426ZEeWRVse7xW7FOw" sendEvent="_7ORh4m6ZEeWRVse7xW7FOw" signature="_7ORh126ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7ORh626ZEeWRVse7xW7FOw" name="swRadarData">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7ORh7G6ZEeWRVse7xW7FOw" name="SMRadarData">
+          <region xmi:id="_7ORh7W6ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7ORh7m6ZEeWRVse7xW7FOw" name="initial" source="_7ORh8G6ZEeWRVse7xW7FOw" target="_7OSIwG6ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7ORh726ZEeWRVse7xW7FOw" name="@ckRadar.tick/@RadarDataToEnvironment.start" source="_7OSIwG6ZEeWRVse7xW7FOw" target="_7OSIwG6ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7ORh8G6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OSIwG6ZEeWRVse7xW7FOw" name="RadarDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OSIwW6ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OSIwm6ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OSIw26ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OSIxG6ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OSIxW6ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OSIxm6ZEeWRVse7xW7FOw" name="radarData" classifier="_7ORh626ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OSIx26ZEeWRVse7xW7FOw" name="RadarDataToEnvironment">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSIyG6ZEeWRVse7xW7FOw" covered="_7OSI0m6ZEeWRVse7xW7FOw" message="_7OSI1G6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSIyW6ZEeWRVse7xW7FOw" covered="_7OSI026ZEeWRVse7xW7FOw" message="_7OSI1G6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSIym6ZEeWRVse7xW7FOw" covered="_7OSI0m6ZEeWRVse7xW7FOw" message="_7OSI1W6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSIy26ZEeWRVse7xW7FOw" covered="_7OSI0m6ZEeWRVse7xW7FOw" message="_7OSI1W6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSIzG6ZEeWRVse7xW7FOw" covered="_7OSI0m6ZEeWRVse7xW7FOw" message="_7OSI1m6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSIzW6ZEeWRVse7xW7FOw" covered="_7OSI026ZEeWRVse7xW7FOw" message="_7OSI1m6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSIzm6ZEeWRVse7xW7FOw" covered="_7OSI0m6ZEeWRVse7xW7FOw" message="_7OSI126ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSIz26ZEeWRVse7xW7FOw" covered="_7OSI026ZEeWRVse7xW7FOw" message="_7OSI126ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSI0G6ZEeWRVse7xW7FOw" covered="_7OSI0m6ZEeWRVse7xW7FOw" message="_7OSI2G6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSI0W6ZEeWRVse7xW7FOw" covered="_7OSI0m6ZEeWRVse7xW7FOw" message="_7OSI2G6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OSI0m6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OSIyG6ZEeWRVse7xW7FOw _7OSIym6ZEeWRVse7xW7FOw _7OSIy26ZEeWRVse7xW7FOw _7OSIzG6ZEeWRVse7xW7FOw _7OSIzm6ZEeWRVse7xW7FOw _7OSI0G6ZEeWRVse7xW7FOw _7OSI0W6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OSI026ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OSIyW6ZEeWRVse7xW7FOw _7OSIzW6ZEeWRVse7xW7FOw _7OSIz26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OSI1G6ZEeWRVse7xW7FOw" name="radar_getCmd" receiveEvent="_7OSIyW6ZEeWRVse7xW7FOw" sendEvent="_7OSIyG6ZEeWRVse7xW7FOw" signature="_7OOeZm6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OSI1W6ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OSIy26ZEeWRVse7xW7FOw" sendEvent="_7OSIym6ZEeWRVse7xW7FOw" signature="_7OSIw26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OSI1m6ZEeWRVse7xW7FOw" name="radar_setSts" receiveEvent="_7OSIzW6ZEeWRVse7xW7FOw" sendEvent="_7OSIzG6ZEeWRVse7xW7FOw" signature="_7OOeZ26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OSI126ZEeWRVse7xW7FOw" name="radar_setResult" receiveEvent="_7OSIz26ZEeWRVse7xW7FOw" sendEvent="_7OSIzm6ZEeWRVse7xW7FOw" signature="_7OOeaG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OSI2G6ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OSI0W6ZEeWRVse7xW7FOw" sendEvent="_7OSI0G6ZEeWRVse7xW7FOw" signature="_7OSIxW6ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OSI2W6ZEeWRVse7xW7FOw" name="swRadarData">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OSI2m6ZEeWRVse7xW7FOw" name="SMRadarData">
+          <region xmi:id="_7OSI226ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OSI3G6ZEeWRVse7xW7FOw" name="initial" source="_7OSI3m6ZEeWRVse7xW7FOw" target="_7OSI326ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OSI3W6ZEeWRVse7xW7FOw" name="@ckRadar.tick/@RadarDataToEnvironment.start" source="_7OSI326ZEeWRVse7xW7FOw" target="_7OSI326ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OSI3m6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OSI326ZEeWRVse7xW7FOw" name="RadarDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OSI4G6ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OSI4W6ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OSI4m6ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OSI426ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OSI5G6ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OSI5W6ZEeWRVse7xW7FOw" name="radarData" classifier="_7OSI2W6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OSI5m6ZEeWRVse7xW7FOw" name="RadarDataToEnvironment">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSI526ZEeWRVse7xW7FOw" covered="_7OSI8W6ZEeWRVse7xW7FOw" message="_7OSI826ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSI6G6ZEeWRVse7xW7FOw" covered="_7OSI8m6ZEeWRVse7xW7FOw" message="_7OSI826ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSI6W6ZEeWRVse7xW7FOw" covered="_7OSI8W6ZEeWRVse7xW7FOw" message="_7OSI9G6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSI6m6ZEeWRVse7xW7FOw" covered="_7OSI8W6ZEeWRVse7xW7FOw" message="_7OSI9G6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSI626ZEeWRVse7xW7FOw" covered="_7OSI8W6ZEeWRVse7xW7FOw" message="_7OSI9W6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSI7G6ZEeWRVse7xW7FOw" covered="_7OSI8m6ZEeWRVse7xW7FOw" message="_7OSI9W6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSI7W6ZEeWRVse7xW7FOw" covered="_7OSI8W6ZEeWRVse7xW7FOw" message="_7OSI9m6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSI7m6ZEeWRVse7xW7FOw" covered="_7OSI8m6ZEeWRVse7xW7FOw" message="_7OSI9m6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSI726ZEeWRVse7xW7FOw" covered="_7OSI8W6ZEeWRVse7xW7FOw" message="_7OSI926ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSI8G6ZEeWRVse7xW7FOw" covered="_7OSI8W6ZEeWRVse7xW7FOw" message="_7OSI926ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OSI8W6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OSI526ZEeWRVse7xW7FOw _7OSI6W6ZEeWRVse7xW7FOw _7OSI6m6ZEeWRVse7xW7FOw _7OSI626ZEeWRVse7xW7FOw _7OSI7W6ZEeWRVse7xW7FOw _7OSI726ZEeWRVse7xW7FOw _7OSI8G6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OSI8m6ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OSI6G6ZEeWRVse7xW7FOw _7OSI7G6ZEeWRVse7xW7FOw _7OSI7m6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OSI826ZEeWRVse7xW7FOw" name="radar_getCmd" receiveEvent="_7OSI6G6ZEeWRVse7xW7FOw" sendEvent="_7OSI526ZEeWRVse7xW7FOw" signature="_7OOeZm6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OSI9G6ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OSI6m6ZEeWRVse7xW7FOw" sendEvent="_7OSI6W6ZEeWRVse7xW7FOw" signature="_7OSI4m6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OSI9W6ZEeWRVse7xW7FOw" name="radar_setSts" receiveEvent="_7OSI7G6ZEeWRVse7xW7FOw" sendEvent="_7OSI626ZEeWRVse7xW7FOw" signature="_7OOeZ26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OSI9m6ZEeWRVse7xW7FOw" name="radar_setResult" receiveEvent="_7OSI7m6ZEeWRVse7xW7FOw" sendEvent="_7OSI7W6ZEeWRVse7xW7FOw" signature="_7OOeaG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OSI926ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OSI8G6ZEeWRVse7xW7FOw" sendEvent="_7OSI726ZEeWRVse7xW7FOw" signature="_7OSI5G6ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OSI-G6ZEeWRVse7xW7FOw" name="swRadarData">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OSI-W6ZEeWRVse7xW7FOw" name="SMRadarData">
+          <region xmi:id="_7OSI-m6ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OSI-26ZEeWRVse7xW7FOw" name="initial" source="_7OSI_W6ZEeWRVse7xW7FOw" target="_7OSI_m6ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OSI_G6ZEeWRVse7xW7FOw" name="@ckRadar.tick/@RadarDataToEnvironment.start" source="_7OSI_m6ZEeWRVse7xW7FOw" target="_7OSI_m6ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OSI_W6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OSI_m6ZEeWRVse7xW7FOw" name="RadarDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OSv0G6ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OSv0W6ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OSv0m6ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OSv026ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OSv1G6ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OSv1W6ZEeWRVse7xW7FOw" name="radarData" classifier="_7OSI-G6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OSv1m6ZEeWRVse7xW7FOw" name="RadarDataToEnvironment">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSv126ZEeWRVse7xW7FOw" covered="_7OSv4W6ZEeWRVse7xW7FOw" message="_7OSv426ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSv2G6ZEeWRVse7xW7FOw" covered="_7OSv4m6ZEeWRVse7xW7FOw" message="_7OSv426ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSv2W6ZEeWRVse7xW7FOw" covered="_7OSv4W6ZEeWRVse7xW7FOw" message="_7OSv5G6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSv2m6ZEeWRVse7xW7FOw" covered="_7OSv4W6ZEeWRVse7xW7FOw" message="_7OSv5G6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSv226ZEeWRVse7xW7FOw" covered="_7OSv4W6ZEeWRVse7xW7FOw" message="_7OSv5W6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSv3G6ZEeWRVse7xW7FOw" covered="_7OSv4m6ZEeWRVse7xW7FOw" message="_7OSv5W6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSv3W6ZEeWRVse7xW7FOw" covered="_7OSv4W6ZEeWRVse7xW7FOw" message="_7OSv5m6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSv3m6ZEeWRVse7xW7FOw" covered="_7OSv4m6ZEeWRVse7xW7FOw" message="_7OSv5m6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSv326ZEeWRVse7xW7FOw" covered="_7OSv4W6ZEeWRVse7xW7FOw" message="_7OSv526ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSv4G6ZEeWRVse7xW7FOw" covered="_7OSv4W6ZEeWRVse7xW7FOw" message="_7OSv526ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OSv4W6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OSv126ZEeWRVse7xW7FOw _7OSv2W6ZEeWRVse7xW7FOw _7OSv2m6ZEeWRVse7xW7FOw _7OSv226ZEeWRVse7xW7FOw _7OSv3W6ZEeWRVse7xW7FOw _7OSv326ZEeWRVse7xW7FOw _7OSv4G6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OSv4m6ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OSv2G6ZEeWRVse7xW7FOw _7OSv3G6ZEeWRVse7xW7FOw _7OSv3m6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OSv426ZEeWRVse7xW7FOw" name="radar_getCmd" receiveEvent="_7OSv2G6ZEeWRVse7xW7FOw" sendEvent="_7OSv126ZEeWRVse7xW7FOw" signature="_7OOeZm6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OSv5G6ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OSv2m6ZEeWRVse7xW7FOw" sendEvent="_7OSv2W6ZEeWRVse7xW7FOw" signature="_7OSv0m6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OSv5W6ZEeWRVse7xW7FOw" name="radar_setSts" receiveEvent="_7OSv3G6ZEeWRVse7xW7FOw" sendEvent="_7OSv226ZEeWRVse7xW7FOw" signature="_7OOeZ26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OSv5m6ZEeWRVse7xW7FOw" name="radar_setResult" receiveEvent="_7OSv3m6ZEeWRVse7xW7FOw" sendEvent="_7OSv3W6ZEeWRVse7xW7FOw" signature="_7OOeaG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OSv526ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OSv4G6ZEeWRVse7xW7FOw" sendEvent="_7OSv326ZEeWRVse7xW7FOw" signature="_7OSv1G6ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OSv6G6ZEeWRVse7xW7FOw" name="swRadarData">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OSv6W6ZEeWRVse7xW7FOw" name="SMRadarData">
+          <region xmi:id="_7OSv6m6ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OSv626ZEeWRVse7xW7FOw" name="initial" source="_7OSv7W6ZEeWRVse7xW7FOw" target="_7OSv7m6ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OSv7G6ZEeWRVse7xW7FOw" name="@ckRadar.tick/@RadarDataToEnvironment.start" source="_7OSv7m6ZEeWRVse7xW7FOw" target="_7OSv7m6ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OSv7W6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OSv7m6ZEeWRVse7xW7FOw" name="RadarDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OSv726ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OSv8G6ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OSv8W6ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OSv8m6ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OSv826ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OSv9G6ZEeWRVse7xW7FOw" name="radarData" classifier="_7OSv6G6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OSv9W6ZEeWRVse7xW7FOw" name="RadarDataToEnvironment">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSv9m6ZEeWRVse7xW7FOw" covered="_7OSwAG6ZEeWRVse7xW7FOw" message="_7OSwAm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSv926ZEeWRVse7xW7FOw" covered="_7OSwAW6ZEeWRVse7xW7FOw" message="_7OSwAm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSv-G6ZEeWRVse7xW7FOw" covered="_7OSwAG6ZEeWRVse7xW7FOw" message="_7OSwA26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSv-W6ZEeWRVse7xW7FOw" covered="_7OSwAG6ZEeWRVse7xW7FOw" message="_7OSwA26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSv-m6ZEeWRVse7xW7FOw" covered="_7OSwAG6ZEeWRVse7xW7FOw" message="_7OSwBG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSv-26ZEeWRVse7xW7FOw" covered="_7OSwAW6ZEeWRVse7xW7FOw" message="_7OSwBG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSv_G6ZEeWRVse7xW7FOw" covered="_7OSwAG6ZEeWRVse7xW7FOw" message="_7OSwBW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSv_W6ZEeWRVse7xW7FOw" covered="_7OSwAW6ZEeWRVse7xW7FOw" message="_7OSwBW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSv_m6ZEeWRVse7xW7FOw" covered="_7OSwAG6ZEeWRVse7xW7FOw" message="_7OSwBm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OSv_26ZEeWRVse7xW7FOw" covered="_7OSwAG6ZEeWRVse7xW7FOw" message="_7OSwBm6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OSwAG6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OSv9m6ZEeWRVse7xW7FOw _7OSv-G6ZEeWRVse7xW7FOw _7OSv-W6ZEeWRVse7xW7FOw _7OSv-m6ZEeWRVse7xW7FOw _7OSv_G6ZEeWRVse7xW7FOw _7OSv_m6ZEeWRVse7xW7FOw _7OSv_26ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OSwAW6ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OSv926ZEeWRVse7xW7FOw _7OSv-26ZEeWRVse7xW7FOw _7OSv_W6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OSwAm6ZEeWRVse7xW7FOw" name="radar_getCmd" receiveEvent="_7OSv926ZEeWRVse7xW7FOw" sendEvent="_7OSv9m6ZEeWRVse7xW7FOw" signature="_7OOeZm6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OSwA26ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OSv-W6ZEeWRVse7xW7FOw" sendEvent="_7OSv-G6ZEeWRVse7xW7FOw" signature="_7OSv8W6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OSwBG6ZEeWRVse7xW7FOw" name="radar_setSts" receiveEvent="_7OSv-26ZEeWRVse7xW7FOw" sendEvent="_7OSv-m6ZEeWRVse7xW7FOw" signature="_7OOeZ26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OSwBW6ZEeWRVse7xW7FOw" name="radar_setResult" receiveEvent="_7OSv_W6ZEeWRVse7xW7FOw" sendEvent="_7OSv_G6ZEeWRVse7xW7FOw" signature="_7OOeaG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OSwBm6ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OSv_26ZEeWRVse7xW7FOw" sendEvent="_7OSv_m6ZEeWRVse7xW7FOw" signature="_7OSv826ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OSwB26ZEeWRVse7xW7FOw" name="swNavData">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OSwCG6ZEeWRVse7xW7FOw" name="SMNavData">
+          <region xmi:id="_7OSwCW6ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OSwCm6ZEeWRVse7xW7FOw" name="initial" source="_7OTW4G6ZEeWRVse7xW7FOw" target="_7OTW4W6ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OSwC26ZEeWRVse7xW7FOw" name="@ckNavigation.tick/@NavigationToEnvironment.start" source="_7OTW4W6ZEeWRVse7xW7FOw" target="_7OTW4W6ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OTW4G6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OTW4W6ZEeWRVse7xW7FOw" name="NavDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OTW4m6ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OTW426ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OTW5G6ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OTW5W6ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OTW5m6ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OTW526ZEeWRVse7xW7FOw" name="navData" classifier="_7OSwB26ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OTW6G6ZEeWRVse7xW7FOw" name="NavigationToEnvironment">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OTW6W6ZEeWRVse7xW7FOw" covered="_7OTW826ZEeWRVse7xW7FOw" message="_7OTW9W6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OTW6m6ZEeWRVse7xW7FOw" covered="_7OTW826ZEeWRVse7xW7FOw" message="_7OTW9W6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OTW626ZEeWRVse7xW7FOw" covered="_7OTW826ZEeWRVse7xW7FOw" message="_7OTW9m6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OTW7G6ZEeWRVse7xW7FOw" covered="_7OTW826ZEeWRVse7xW7FOw" message="_7OTW9m6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OTW7W6ZEeWRVse7xW7FOw" covered="_7OTW826ZEeWRVse7xW7FOw" message="_7OTW926ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OTW7m6ZEeWRVse7xW7FOw" covered="_7OTW9G6ZEeWRVse7xW7FOw" message="_7OTW926ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OTW726ZEeWRVse7xW7FOw" covered="_7OTW826ZEeWRVse7xW7FOw" message="_7OTW-G6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OTW8G6ZEeWRVse7xW7FOw" covered="_7OTW9G6ZEeWRVse7xW7FOw" message="_7OTW-G6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OTW8W6ZEeWRVse7xW7FOw" covered="_7OTW826ZEeWRVse7xW7FOw" message="_7OTW-W6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OTW8m6ZEeWRVse7xW7FOw" covered="_7OTW826ZEeWRVse7xW7FOw" message="_7OTW-W6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OTW826ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OTW6W6ZEeWRVse7xW7FOw _7OTW6m6ZEeWRVse7xW7FOw _7OTW626ZEeWRVse7xW7FOw _7OTW7G6ZEeWRVse7xW7FOw _7OTW7W6ZEeWRVse7xW7FOw _7OTW726ZEeWRVse7xW7FOw _7OTW8W6ZEeWRVse7xW7FOw _7OTW8m6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OTW9G6ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OTW7m6ZEeWRVse7xW7FOw _7OTW8G6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OTW9W6ZEeWRVse7xW7FOw" name="getData" receiveEvent="_7OTW6m6ZEeWRVse7xW7FOw" sendEvent="_7OTW6W6ZEeWRVse7xW7FOw" signature="_7OTW426ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OTW9m6ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OTW7G6ZEeWRVse7xW7FOw" sendEvent="_7OTW626ZEeWRVse7xW7FOw" signature="_7OTW5G6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OTW926ZEeWRVse7xW7FOw" name="radar_setLatitude" receiveEvent="_7OTW7m6ZEeWRVse7xW7FOw" sendEvent="_7OTW7W6ZEeWRVse7xW7FOw" signature="_7ON3aG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OTW-G6ZEeWRVse7xW7FOw" name="radar_setLongitude" receiveEvent="_7OTW8G6ZEeWRVse7xW7FOw" sendEvent="_7OTW726ZEeWRVse7xW7FOw" signature="_7OOeYG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OTW-W6ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OTW8m6ZEeWRVse7xW7FOw" sendEvent="_7OTW8W6ZEeWRVse7xW7FOw" signature="_7OTW5m6ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OTW-m6ZEeWRVse7xW7FOw" name="swNavData">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OTW-26ZEeWRVse7xW7FOw" name="SMNavData">
+          <region xmi:id="_7OTW_G6ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OTW_W6ZEeWRVse7xW7FOw" name="initial" source="_7OTW_26ZEeWRVse7xW7FOw" target="_7OTXAG6ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OTW_m6ZEeWRVse7xW7FOw" name="@ckNavigation.tick/@NavigationToEnvironment.start" source="_7OTXAG6ZEeWRVse7xW7FOw" target="_7OTXAG6ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OTW_26ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OTXAG6ZEeWRVse7xW7FOw" name="NavDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OTXAW6ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OTXAm6ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OTXA26ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OTXBG6ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OTXBW6ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OTXBm6ZEeWRVse7xW7FOw" name="navData" classifier="_7OTW-m6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OTXB26ZEeWRVse7xW7FOw" name="NavigationToEnvironment">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OTXCG6ZEeWRVse7xW7FOw" covered="_7OTXEm6ZEeWRVse7xW7FOw" message="_7OTXFG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OTXCW6ZEeWRVse7xW7FOw" covered="_7OTXEm6ZEeWRVse7xW7FOw" message="_7OTXFG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OTXCm6ZEeWRVse7xW7FOw" covered="_7OTXEm6ZEeWRVse7xW7FOw" message="_7OTXFW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OTXC26ZEeWRVse7xW7FOw" covered="_7OTXEm6ZEeWRVse7xW7FOw" message="_7OTXFW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OTXDG6ZEeWRVse7xW7FOw" covered="_7OTXEm6ZEeWRVse7xW7FOw" message="_7OTXFm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OTXDW6ZEeWRVse7xW7FOw" covered="_7OTXE26ZEeWRVse7xW7FOw" message="_7OTXFm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OTXDm6ZEeWRVse7xW7FOw" covered="_7OTXEm6ZEeWRVse7xW7FOw" message="_7OTXF26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OTXD26ZEeWRVse7xW7FOw" covered="_7OTXE26ZEeWRVse7xW7FOw" message="_7OTXF26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OTXEG6ZEeWRVse7xW7FOw" covered="_7OTXEm6ZEeWRVse7xW7FOw" message="_7OTXGG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OTXEW6ZEeWRVse7xW7FOw" covered="_7OTXEm6ZEeWRVse7xW7FOw" message="_7OTXGG6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OTXEm6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OTXCG6ZEeWRVse7xW7FOw _7OTXCW6ZEeWRVse7xW7FOw _7OTXCm6ZEeWRVse7xW7FOw _7OTXC26ZEeWRVse7xW7FOw _7OTXDG6ZEeWRVse7xW7FOw _7OTXDm6ZEeWRVse7xW7FOw _7OTXEG6ZEeWRVse7xW7FOw _7OTXEW6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OTXE26ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OTXDW6ZEeWRVse7xW7FOw _7OTXD26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OTXFG6ZEeWRVse7xW7FOw" name="getData" receiveEvent="_7OTXCW6ZEeWRVse7xW7FOw" sendEvent="_7OTXCG6ZEeWRVse7xW7FOw" signature="_7OTXAm6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OTXFW6ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OTXC26ZEeWRVse7xW7FOw" sendEvent="_7OTXCm6ZEeWRVse7xW7FOw" signature="_7OTXA26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OTXFm6ZEeWRVse7xW7FOw" name="radar_setLatitude" receiveEvent="_7OTXDW6ZEeWRVse7xW7FOw" sendEvent="_7OTXDG6ZEeWRVse7xW7FOw" signature="_7ON3aG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OTXF26ZEeWRVse7xW7FOw" name="radar_setLongitude" receiveEvent="_7OTXD26ZEeWRVse7xW7FOw" sendEvent="_7OTXDm6ZEeWRVse7xW7FOw" signature="_7OOeYG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OTXGG6ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OTXEW6ZEeWRVse7xW7FOw" sendEvent="_7OTXEG6ZEeWRVse7xW7FOw" signature="_7OTXBW6ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OTXGW6ZEeWRVse7xW7FOw" name="swNavData">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OTXGm6ZEeWRVse7xW7FOw" name="SMNavData">
+          <region xmi:id="_7OTXG26ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OTXHG6ZEeWRVse7xW7FOw" name="initial" source="_7OTXHm6ZEeWRVse7xW7FOw" target="_7OT98G6ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OTXHW6ZEeWRVse7xW7FOw" name="@ckNavigation.tick/@NavigationToEnvironment.start" source="_7OT98G6ZEeWRVse7xW7FOw" target="_7OT98G6ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OTXHm6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OT98G6ZEeWRVse7xW7FOw" name="NavDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OT98W6ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OT98m6ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OT9826ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OT99G6ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OT99W6ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OT99m6ZEeWRVse7xW7FOw" name="navData" classifier="_7OTXGW6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OT9926ZEeWRVse7xW7FOw" name="NavigationToEnvironment">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OT9-G6ZEeWRVse7xW7FOw" covered="_7OT-Am6ZEeWRVse7xW7FOw" message="_7OT-BG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OT9-W6ZEeWRVse7xW7FOw" covered="_7OT-Am6ZEeWRVse7xW7FOw" message="_7OT-BG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OT9-m6ZEeWRVse7xW7FOw" covered="_7OT-Am6ZEeWRVse7xW7FOw" message="_7OT-BW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OT9-26ZEeWRVse7xW7FOw" covered="_7OT-Am6ZEeWRVse7xW7FOw" message="_7OT-BW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OT9_G6ZEeWRVse7xW7FOw" covered="_7OT-Am6ZEeWRVse7xW7FOw" message="_7OT-Bm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OT9_W6ZEeWRVse7xW7FOw" covered="_7OT-A26ZEeWRVse7xW7FOw" message="_7OT-Bm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OT9_m6ZEeWRVse7xW7FOw" covered="_7OT-Am6ZEeWRVse7xW7FOw" message="_7OT-B26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OT9_26ZEeWRVse7xW7FOw" covered="_7OT-A26ZEeWRVse7xW7FOw" message="_7OT-B26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OT-AG6ZEeWRVse7xW7FOw" covered="_7OT-Am6ZEeWRVse7xW7FOw" message="_7OT-CG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OT-AW6ZEeWRVse7xW7FOw" covered="_7OT-Am6ZEeWRVse7xW7FOw" message="_7OT-CG6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OT-Am6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OT9-G6ZEeWRVse7xW7FOw _7OT9-W6ZEeWRVse7xW7FOw _7OT9-m6ZEeWRVse7xW7FOw _7OT9-26ZEeWRVse7xW7FOw _7OT9_G6ZEeWRVse7xW7FOw _7OT9_m6ZEeWRVse7xW7FOw _7OT-AG6ZEeWRVse7xW7FOw _7OT-AW6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OT-A26ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OT9_W6ZEeWRVse7xW7FOw _7OT9_26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OT-BG6ZEeWRVse7xW7FOw" name="getData" receiveEvent="_7OT9-W6ZEeWRVse7xW7FOw" sendEvent="_7OT9-G6ZEeWRVse7xW7FOw" signature="_7OT98m6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OT-BW6ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OT9-26ZEeWRVse7xW7FOw" sendEvent="_7OT9-m6ZEeWRVse7xW7FOw" signature="_7OT9826ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OT-Bm6ZEeWRVse7xW7FOw" name="radar_setLatitude" receiveEvent="_7OT9_W6ZEeWRVse7xW7FOw" sendEvent="_7OT9_G6ZEeWRVse7xW7FOw" signature="_7ON3aG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OT-B26ZEeWRVse7xW7FOw" name="radar_setLongitude" receiveEvent="_7OT9_26ZEeWRVse7xW7FOw" sendEvent="_7OT9_m6ZEeWRVse7xW7FOw" signature="_7OOeYG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OT-CG6ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OT-AW6ZEeWRVse7xW7FOw" sendEvent="_7OT-AG6ZEeWRVse7xW7FOw" signature="_7OT99W6ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OT-CW6ZEeWRVse7xW7FOw" name="swNavData">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OT-Cm6ZEeWRVse7xW7FOw" name="SMNavData">
+          <region xmi:id="_7OT-C26ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OT-DG6ZEeWRVse7xW7FOw" name="initial" source="_7OT-Dm6ZEeWRVse7xW7FOw" target="_7OT-D26ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OT-DW6ZEeWRVse7xW7FOw" name="@ckNavigation.tick/@NavigationToEnvironment.start" source="_7OT-D26ZEeWRVse7xW7FOw" target="_7OT-D26ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OT-Dm6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OT-D26ZEeWRVse7xW7FOw" name="NavDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OT-EG6ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OT-EW6ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OT-Em6ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OT-E26ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OT-FG6ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OT-FW6ZEeWRVse7xW7FOw" name="navData" classifier="_7OT-CW6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OT-Fm6ZEeWRVse7xW7FOw" name="NavigationToEnvironment">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OT-F26ZEeWRVse7xW7FOw" covered="_7OT-IW6ZEeWRVse7xW7FOw" message="_7OT-I26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OT-GG6ZEeWRVse7xW7FOw" covered="_7OT-IW6ZEeWRVse7xW7FOw" message="_7OT-I26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OT-GW6ZEeWRVse7xW7FOw" covered="_7OT-IW6ZEeWRVse7xW7FOw" message="_7OT-JG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OT-Gm6ZEeWRVse7xW7FOw" covered="_7OT-IW6ZEeWRVse7xW7FOw" message="_7OT-JG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OT-G26ZEeWRVse7xW7FOw" covered="_7OT-IW6ZEeWRVse7xW7FOw" message="_7OT-JW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OT-HG6ZEeWRVse7xW7FOw" covered="_7OT-Im6ZEeWRVse7xW7FOw" message="_7OT-JW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OT-HW6ZEeWRVse7xW7FOw" covered="_7OT-IW6ZEeWRVse7xW7FOw" message="_7OT-Jm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OT-Hm6ZEeWRVse7xW7FOw" covered="_7OT-Im6ZEeWRVse7xW7FOw" message="_7OT-Jm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OT-H26ZEeWRVse7xW7FOw" covered="_7OT-IW6ZEeWRVse7xW7FOw" message="_7OT-J26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OT-IG6ZEeWRVse7xW7FOw" covered="_7OT-IW6ZEeWRVse7xW7FOw" message="_7OT-J26ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OT-IW6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OT-F26ZEeWRVse7xW7FOw _7OT-GG6ZEeWRVse7xW7FOw _7OT-GW6ZEeWRVse7xW7FOw _7OT-Gm6ZEeWRVse7xW7FOw _7OT-G26ZEeWRVse7xW7FOw _7OT-HW6ZEeWRVse7xW7FOw _7OT-H26ZEeWRVse7xW7FOw _7OT-IG6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OT-Im6ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OT-HG6ZEeWRVse7xW7FOw _7OT-Hm6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OT-I26ZEeWRVse7xW7FOw" name="getData" receiveEvent="_7OT-GG6ZEeWRVse7xW7FOw" sendEvent="_7OT-F26ZEeWRVse7xW7FOw" signature="_7OT-EW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OT-JG6ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OT-Gm6ZEeWRVse7xW7FOw" sendEvent="_7OT-GW6ZEeWRVse7xW7FOw" signature="_7OT-Em6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OT-JW6ZEeWRVse7xW7FOw" name="radar_setLatitude" receiveEvent="_7OT-HG6ZEeWRVse7xW7FOw" sendEvent="_7OT-G26ZEeWRVse7xW7FOw" signature="_7ON3aG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OT-Jm6ZEeWRVse7xW7FOw" name="radar_setLongitude" receiveEvent="_7OT-Hm6ZEeWRVse7xW7FOw" sendEvent="_7OT-HW6ZEeWRVse7xW7FOw" signature="_7OOeYG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OT-J26ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OT-IG6ZEeWRVse7xW7FOw" sendEvent="_7OT-H26ZEeWRVse7xW7FOw" signature="_7OT-FG6ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OT-KG6ZEeWRVse7xW7FOw" name="swNavData">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OT-KW6ZEeWRVse7xW7FOw" name="SMNavData">
+          <region xmi:id="_7OT-Km6ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OT-K26ZEeWRVse7xW7FOw" name="initial" source="_7OT-LW6ZEeWRVse7xW7FOw" target="_7OT-Lm6ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OT-LG6ZEeWRVse7xW7FOw" name="@ckNavigation.tick/@NavigationToEnvironment.start" source="_7OT-Lm6ZEeWRVse7xW7FOw" target="_7OT-Lm6ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OT-LW6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OT-Lm6ZEeWRVse7xW7FOw" name="NavDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OT-L26ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OT-MG6ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OUlAG6ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OUlAW6ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OUlAm6ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OUlA26ZEeWRVse7xW7FOw" name="navData" classifier="_7OT-KG6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OUlBG6ZEeWRVse7xW7FOw" name="NavigationToEnvironment">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OUlBW6ZEeWRVse7xW7FOw" covered="_7OUlD26ZEeWRVse7xW7FOw" message="_7OUlEW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OUlBm6ZEeWRVse7xW7FOw" covered="_7OUlD26ZEeWRVse7xW7FOw" message="_7OUlEW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OUlB26ZEeWRVse7xW7FOw" covered="_7OUlD26ZEeWRVse7xW7FOw" message="_7OUlEm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OUlCG6ZEeWRVse7xW7FOw" covered="_7OUlD26ZEeWRVse7xW7FOw" message="_7OUlEm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OUlCW6ZEeWRVse7xW7FOw" covered="_7OUlD26ZEeWRVse7xW7FOw" message="_7OUlE26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OUlCm6ZEeWRVse7xW7FOw" covered="_7OUlEG6ZEeWRVse7xW7FOw" message="_7OUlE26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OUlC26ZEeWRVse7xW7FOw" covered="_7OUlD26ZEeWRVse7xW7FOw" message="_7OUlFG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OUlDG6ZEeWRVse7xW7FOw" covered="_7OUlEG6ZEeWRVse7xW7FOw" message="_7OUlFG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OUlDW6ZEeWRVse7xW7FOw" covered="_7OUlD26ZEeWRVse7xW7FOw" message="_7OUlFW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OUlDm6ZEeWRVse7xW7FOw" covered="_7OUlD26ZEeWRVse7xW7FOw" message="_7OUlFW6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OUlD26ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OUlBW6ZEeWRVse7xW7FOw _7OUlBm6ZEeWRVse7xW7FOw _7OUlB26ZEeWRVse7xW7FOw _7OUlCG6ZEeWRVse7xW7FOw _7OUlCW6ZEeWRVse7xW7FOw _7OUlC26ZEeWRVse7xW7FOw _7OUlDW6ZEeWRVse7xW7FOw _7OUlDm6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OUlEG6ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OUlCm6ZEeWRVse7xW7FOw _7OUlDG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OUlEW6ZEeWRVse7xW7FOw" name="getData" receiveEvent="_7OUlBm6ZEeWRVse7xW7FOw" sendEvent="_7OUlBW6ZEeWRVse7xW7FOw" signature="_7OT-MG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OUlEm6ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OUlCG6ZEeWRVse7xW7FOw" sendEvent="_7OUlB26ZEeWRVse7xW7FOw" signature="_7OUlAG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OUlE26ZEeWRVse7xW7FOw" name="radar_setLatitude" receiveEvent="_7OUlCm6ZEeWRVse7xW7FOw" sendEvent="_7OUlCW6ZEeWRVse7xW7FOw" signature="_7ON3aG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OUlFG6ZEeWRVse7xW7FOw" name="radar_setLongitude" receiveEvent="_7OUlDG6ZEeWRVse7xW7FOw" sendEvent="_7OUlC26ZEeWRVse7xW7FOw" signature="_7OOeYG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OUlFW6ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OUlDm6ZEeWRVse7xW7FOw" sendEvent="_7OUlDW6ZEeWRVse7xW7FOw" signature="_7OUlAm6ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OUlFm6ZEeWRVse7xW7FOw" name="swNavData">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OUlF26ZEeWRVse7xW7FOw" name="SMNavData">
+          <region xmi:id="_7OUlGG6ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OUlGW6ZEeWRVse7xW7FOw" name="initial" source="_7OUlG26ZEeWRVse7xW7FOw" target="_7OUlHG6ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OUlGm6ZEeWRVse7xW7FOw" name="@ckNavigation.tick/@NavigationToEnvironment.start" source="_7OUlHG6ZEeWRVse7xW7FOw" target="_7OUlHG6ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OUlG26ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OUlHG6ZEeWRVse7xW7FOw" name="NavDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OUlHW6ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OUlHm6ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OUlH26ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OUlIG6ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OUlIW6ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OUlIm6ZEeWRVse7xW7FOw" name="navData" classifier="_7OUlFm6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OUlI26ZEeWRVse7xW7FOw" name="NavigationToEnvironment">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OUlJG6ZEeWRVse7xW7FOw" covered="_7OUlLm6ZEeWRVse7xW7FOw" message="_7OUlMG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OUlJW6ZEeWRVse7xW7FOw" covered="_7OUlLm6ZEeWRVse7xW7FOw" message="_7OUlMG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OUlJm6ZEeWRVse7xW7FOw" covered="_7OUlLm6ZEeWRVse7xW7FOw" message="_7OUlMW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OUlJ26ZEeWRVse7xW7FOw" covered="_7OUlLm6ZEeWRVse7xW7FOw" message="_7OUlMW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OUlKG6ZEeWRVse7xW7FOw" covered="_7OUlLm6ZEeWRVse7xW7FOw" message="_7OUlMm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OUlKW6ZEeWRVse7xW7FOw" covered="_7OUlL26ZEeWRVse7xW7FOw" message="_7OUlMm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OUlKm6ZEeWRVse7xW7FOw" covered="_7OUlLm6ZEeWRVse7xW7FOw" message="_7OUlM26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OUlK26ZEeWRVse7xW7FOw" covered="_7OUlL26ZEeWRVse7xW7FOw" message="_7OUlM26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OUlLG6ZEeWRVse7xW7FOw" covered="_7OUlLm6ZEeWRVse7xW7FOw" message="_7OUlNG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OUlLW6ZEeWRVse7xW7FOw" covered="_7OUlLm6ZEeWRVse7xW7FOw" message="_7OUlNG6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OUlLm6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OUlJG6ZEeWRVse7xW7FOw _7OUlJW6ZEeWRVse7xW7FOw _7OUlJm6ZEeWRVse7xW7FOw _7OUlJ26ZEeWRVse7xW7FOw _7OUlKG6ZEeWRVse7xW7FOw _7OUlKm6ZEeWRVse7xW7FOw _7OUlLG6ZEeWRVse7xW7FOw _7OUlLW6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OUlL26ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OUlKW6ZEeWRVse7xW7FOw _7OUlK26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OUlMG6ZEeWRVse7xW7FOw" name="getData" receiveEvent="_7OUlJW6ZEeWRVse7xW7FOw" sendEvent="_7OUlJG6ZEeWRVse7xW7FOw" signature="_7OUlHm6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OUlMW6ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OUlJ26ZEeWRVse7xW7FOw" sendEvent="_7OUlJm6ZEeWRVse7xW7FOw" signature="_7OUlH26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OUlMm6ZEeWRVse7xW7FOw" name="radar_setLatitude" receiveEvent="_7OUlKW6ZEeWRVse7xW7FOw" sendEvent="_7OUlKG6ZEeWRVse7xW7FOw" signature="_7ON3aG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OUlM26ZEeWRVse7xW7FOw" name="radar_setLongitude" receiveEvent="_7OUlK26ZEeWRVse7xW7FOw" sendEvent="_7OUlKm6ZEeWRVse7xW7FOw" signature="_7OOeYG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OUlNG6ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OUlLW6ZEeWRVse7xW7FOw" sendEvent="_7OUlLG6ZEeWRVse7xW7FOw" signature="_7OUlIW6ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OUlNW6ZEeWRVse7xW7FOw" name="swNavData">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OUlNm6ZEeWRVse7xW7FOw" name="SMNavData">
+          <region xmi:id="_7OUlN26ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OUlOG6ZEeWRVse7xW7FOw" name="initial" source="_7OUlOm6ZEeWRVse7xW7FOw" target="_7OUlO26ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OUlOW6ZEeWRVse7xW7FOw" name="@ckNavigation.tick/@NavigationToEnvironment.start" source="_7OUlO26ZEeWRVse7xW7FOw" target="_7OUlO26ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OUlOm6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OUlO26ZEeWRVse7xW7FOw" name="NavDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OUlPG6ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OUlPW6ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OUlPm6ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OUlP26ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OUlQG6ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OVMEG6ZEeWRVse7xW7FOw" name="navData" classifier="_7OUlNW6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OVMEW6ZEeWRVse7xW7FOw" name="NavigationToEnvironment">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVMEm6ZEeWRVse7xW7FOw" covered="_7OVMHG6ZEeWRVse7xW7FOw" message="_7OVMHm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVME26ZEeWRVse7xW7FOw" covered="_7OVMHG6ZEeWRVse7xW7FOw" message="_7OVMHm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVMFG6ZEeWRVse7xW7FOw" covered="_7OVMHG6ZEeWRVse7xW7FOw" message="_7OVMH26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVMFW6ZEeWRVse7xW7FOw" covered="_7OVMHG6ZEeWRVse7xW7FOw" message="_7OVMH26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVMFm6ZEeWRVse7xW7FOw" covered="_7OVMHG6ZEeWRVse7xW7FOw" message="_7OVMIG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVMF26ZEeWRVse7xW7FOw" covered="_7OVMHW6ZEeWRVse7xW7FOw" message="_7OVMIG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVMGG6ZEeWRVse7xW7FOw" covered="_7OVMHG6ZEeWRVse7xW7FOw" message="_7OVMIW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVMGW6ZEeWRVse7xW7FOw" covered="_7OVMHW6ZEeWRVse7xW7FOw" message="_7OVMIW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVMGm6ZEeWRVse7xW7FOw" covered="_7OVMHG6ZEeWRVse7xW7FOw" message="_7OVMIm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVMG26ZEeWRVse7xW7FOw" covered="_7OVMHG6ZEeWRVse7xW7FOw" message="_7OVMIm6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OVMHG6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OVMEm6ZEeWRVse7xW7FOw _7OVME26ZEeWRVse7xW7FOw _7OVMFG6ZEeWRVse7xW7FOw _7OVMFW6ZEeWRVse7xW7FOw _7OVMFm6ZEeWRVse7xW7FOw _7OVMGG6ZEeWRVse7xW7FOw _7OVMGm6ZEeWRVse7xW7FOw _7OVMG26ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OVMHW6ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OVMF26ZEeWRVse7xW7FOw _7OVMGW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OVMHm6ZEeWRVse7xW7FOw" name="getData" receiveEvent="_7OVME26ZEeWRVse7xW7FOw" sendEvent="_7OVMEm6ZEeWRVse7xW7FOw" signature="_7OUlPW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OVMH26ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OVMFW6ZEeWRVse7xW7FOw" sendEvent="_7OVMFG6ZEeWRVse7xW7FOw" signature="_7OUlPm6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OVMIG6ZEeWRVse7xW7FOw" name="radar_setLatitude" receiveEvent="_7OVMF26ZEeWRVse7xW7FOw" sendEvent="_7OVMFm6ZEeWRVse7xW7FOw" signature="_7ON3aG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OVMIW6ZEeWRVse7xW7FOw" name="radar_setLongitude" receiveEvent="_7OVMGW6ZEeWRVse7xW7FOw" sendEvent="_7OVMGG6ZEeWRVse7xW7FOw" signature="_7OOeYG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OVMIm6ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OVMG26ZEeWRVse7xW7FOw" sendEvent="_7OVMGm6ZEeWRVse7xW7FOw" signature="_7OUlQG6ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OVMI26ZEeWRVse7xW7FOw" name="swWeatherData">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OVMJG6ZEeWRVse7xW7FOw" name="SMWeatherData">
+          <region xmi:id="_7OVMJW6ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OVMJm6ZEeWRVse7xW7FOw" name="initial" source="_7OVMKG6ZEeWRVse7xW7FOw" target="_7OVMKW6ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OVMJ26ZEeWRVse7xW7FOw" name="@ckWeather.tick/@WeatherDataToEnvironment.start" source="_7OVMKW6ZEeWRVse7xW7FOw" target="_7OVMKW6ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OVMKG6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OVMKW6ZEeWRVse7xW7FOw" name="WeatherDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OVMKm6ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OVMK26ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OVMLG6ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OVMLW6ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OVMLm6ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OVML26ZEeWRVse7xW7FOw" name="weatherData" classifier="_7OVMI26ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OVMMG6ZEeWRVse7xW7FOw" name="WeatherDataToEnvironment">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVMMW6ZEeWRVse7xW7FOw" covered="_7OVMOW6ZEeWRVse7xW7FOw" message="_7OVMO26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVMMm6ZEeWRVse7xW7FOw" covered="_7OVMOm6ZEeWRVse7xW7FOw" message="_7OVMO26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVMM26ZEeWRVse7xW7FOw" covered="_7OVMOW6ZEeWRVse7xW7FOw" message="_7OVMPG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVMNG6ZEeWRVse7xW7FOw" covered="_7OVMOW6ZEeWRVse7xW7FOw" message="_7OVMPG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVMNW6ZEeWRVse7xW7FOw" covered="_7OVMOW6ZEeWRVse7xW7FOw" message="_7OVMPW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVMNm6ZEeWRVse7xW7FOw" covered="_7OVMOm6ZEeWRVse7xW7FOw" message="_7OVMPW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVMN26ZEeWRVse7xW7FOw" covered="_7OVMOW6ZEeWRVse7xW7FOw" message="_7OVMPm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVMOG6ZEeWRVse7xW7FOw" covered="_7OVMOW6ZEeWRVse7xW7FOw" message="_7OVMPm6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OVMOW6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OVMMW6ZEeWRVse7xW7FOw _7OVMM26ZEeWRVse7xW7FOw _7OVMNG6ZEeWRVse7xW7FOw _7OVMNW6ZEeWRVse7xW7FOw _7OVMN26ZEeWRVse7xW7FOw _7OVMOG6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OVMOm6ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OVMMm6ZEeWRVse7xW7FOw _7OVMNm6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OVMO26ZEeWRVse7xW7FOw" name="weather_getNewImage" receiveEvent="_7OVMMm6ZEeWRVse7xW7FOw" sendEvent="_7OVMMW6ZEeWRVse7xW7FOw" signature="_7OOeY26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OVMPG6ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OVMNG6ZEeWRVse7xW7FOw" sendEvent="_7OVMM26ZEeWRVse7xW7FOw" signature="_7OVMLG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OVMPW6ZEeWRVse7xW7FOw" name="weather_setStatus" receiveEvent="_7OVMNm6ZEeWRVse7xW7FOw" sendEvent="_7OVMNW6ZEeWRVse7xW7FOw" signature="_7OOeZW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OVMPm6ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OVMOG6ZEeWRVse7xW7FOw" sendEvent="_7OVMN26ZEeWRVse7xW7FOw" signature="_7OVMLm6ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OVMP26ZEeWRVse7xW7FOw" name="swWeatherData">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OVMQG6ZEeWRVse7xW7FOw" name="SMWeatherData">
+          <region xmi:id="_7OVMQW6ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OVMQm6ZEeWRVse7xW7FOw" name="initial" source="_7OVMRG6ZEeWRVse7xW7FOw" target="_7OVMRW6ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OVMQ26ZEeWRVse7xW7FOw" name="@ckWeather.tick/@WeatherDataToEnvironment.start" source="_7OVMRW6ZEeWRVse7xW7FOw" target="_7OVMRW6ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OVMRG6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OVMRW6ZEeWRVse7xW7FOw" name="WeatherDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OVMRm6ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OVMR26ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OVMSG6ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OVMSW6ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OVMSm6ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OVMS26ZEeWRVse7xW7FOw" name="weatherData" classifier="_7OVMP26ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OVMTG6ZEeWRVse7xW7FOw" name="WeatherDataToEnvironment">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVMTW6ZEeWRVse7xW7FOw" covered="_7OVzIm6ZEeWRVse7xW7FOw" message="_7OVzJG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVMTm6ZEeWRVse7xW7FOw" covered="_7OVzI26ZEeWRVse7xW7FOw" message="_7OVzJG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVMT26ZEeWRVse7xW7FOw" covered="_7OVzIm6ZEeWRVse7xW7FOw" message="_7OVzJW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVMUG6ZEeWRVse7xW7FOw" covered="_7OVzIm6ZEeWRVse7xW7FOw" message="_7OVzJW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVMUW6ZEeWRVse7xW7FOw" covered="_7OVzIm6ZEeWRVse7xW7FOw" message="_7OVzJm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVMUm6ZEeWRVse7xW7FOw" covered="_7OVzI26ZEeWRVse7xW7FOw" message="_7OVzJm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVzIG6ZEeWRVse7xW7FOw" covered="_7OVzIm6ZEeWRVse7xW7FOw" message="_7OVzJ26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVzIW6ZEeWRVse7xW7FOw" covered="_7OVzIm6ZEeWRVse7xW7FOw" message="_7OVzJ26ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OVzIm6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OVMTW6ZEeWRVse7xW7FOw _7OVMT26ZEeWRVse7xW7FOw _7OVMUG6ZEeWRVse7xW7FOw _7OVMUW6ZEeWRVse7xW7FOw _7OVzIG6ZEeWRVse7xW7FOw _7OVzIW6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OVzI26ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OVMTm6ZEeWRVse7xW7FOw _7OVMUm6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OVzJG6ZEeWRVse7xW7FOw" name="weather_getNewImage" receiveEvent="_7OVMTm6ZEeWRVse7xW7FOw" sendEvent="_7OVMTW6ZEeWRVse7xW7FOw" signature="_7OOeY26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OVzJW6ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OVMUG6ZEeWRVse7xW7FOw" sendEvent="_7OVMT26ZEeWRVse7xW7FOw" signature="_7OVMSG6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OVzJm6ZEeWRVse7xW7FOw" name="weather_setStatus" receiveEvent="_7OVMUm6ZEeWRVse7xW7FOw" sendEvent="_7OVMUW6ZEeWRVse7xW7FOw" signature="_7OOeZW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OVzJ26ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OVzIW6ZEeWRVse7xW7FOw" sendEvent="_7OVzIG6ZEeWRVse7xW7FOw" signature="_7OVMSm6ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OVzKG6ZEeWRVse7xW7FOw" name="swWeatherData">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OVzKW6ZEeWRVse7xW7FOw" name="SMWeatherData">
+          <region xmi:id="_7OVzKm6ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OVzK26ZEeWRVse7xW7FOw" name="initial" source="_7OVzLW6ZEeWRVse7xW7FOw" target="_7OVzLm6ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OVzLG6ZEeWRVse7xW7FOw" name="@ckWeather.tick/@WeatherDataToEnvironment.start" source="_7OVzLm6ZEeWRVse7xW7FOw" target="_7OVzLm6ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OVzLW6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OVzLm6ZEeWRVse7xW7FOw" name="WeatherDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OVzL26ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OVzMG6ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OVzMW6ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OVzMm6ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OVzM26ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OVzNG6ZEeWRVse7xW7FOw" name="weatherData" classifier="_7OVzKG6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OVzNW6ZEeWRVse7xW7FOw" name="WeatherDataToEnvironment">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVzNm6ZEeWRVse7xW7FOw" covered="_7OVzPm6ZEeWRVse7xW7FOw" message="_7OVzQG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVzN26ZEeWRVse7xW7FOw" covered="_7OVzP26ZEeWRVse7xW7FOw" message="_7OVzQG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVzOG6ZEeWRVse7xW7FOw" covered="_7OVzPm6ZEeWRVse7xW7FOw" message="_7OVzQW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVzOW6ZEeWRVse7xW7FOw" covered="_7OVzPm6ZEeWRVse7xW7FOw" message="_7OVzQW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVzOm6ZEeWRVse7xW7FOw" covered="_7OVzPm6ZEeWRVse7xW7FOw" message="_7OVzQm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVzO26ZEeWRVse7xW7FOw" covered="_7OVzP26ZEeWRVse7xW7FOw" message="_7OVzQm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVzPG6ZEeWRVse7xW7FOw" covered="_7OVzPm6ZEeWRVse7xW7FOw" message="_7OVzQ26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVzPW6ZEeWRVse7xW7FOw" covered="_7OVzPm6ZEeWRVse7xW7FOw" message="_7OVzQ26ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OVzPm6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OVzNm6ZEeWRVse7xW7FOw _7OVzOG6ZEeWRVse7xW7FOw _7OVzOW6ZEeWRVse7xW7FOw _7OVzOm6ZEeWRVse7xW7FOw _7OVzPG6ZEeWRVse7xW7FOw _7OVzPW6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OVzP26ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OVzN26ZEeWRVse7xW7FOw _7OVzO26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OVzQG6ZEeWRVse7xW7FOw" name="weather_getNewImage" receiveEvent="_7OVzN26ZEeWRVse7xW7FOw" sendEvent="_7OVzNm6ZEeWRVse7xW7FOw" signature="_7OOeY26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OVzQW6ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OVzOW6ZEeWRVse7xW7FOw" sendEvent="_7OVzOG6ZEeWRVse7xW7FOw" signature="_7OVzMW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OVzQm6ZEeWRVse7xW7FOw" name="weather_setStatus" receiveEvent="_7OVzO26ZEeWRVse7xW7FOw" sendEvent="_7OVzOm6ZEeWRVse7xW7FOw" signature="_7OOeZW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OVzQ26ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OVzPW6ZEeWRVse7xW7FOw" sendEvent="_7OVzPG6ZEeWRVse7xW7FOw" signature="_7OVzM26ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OVzRG6ZEeWRVse7xW7FOw" name="swWeatherData">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OVzRW6ZEeWRVse7xW7FOw" name="SMWeatherData">
+          <region xmi:id="_7OVzRm6ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OVzR26ZEeWRVse7xW7FOw" name="initial" source="_7OVzSW6ZEeWRVse7xW7FOw" target="_7OVzSm6ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OVzSG6ZEeWRVse7xW7FOw" name="@ckWeather.tick/@WeatherDataToEnvironment.start" source="_7OVzSm6ZEeWRVse7xW7FOw" target="_7OVzSm6ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OVzSW6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OVzSm6ZEeWRVse7xW7FOw" name="WeatherDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OVzS26ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OVzTG6ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OVzTW6ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OVzTm6ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OVzT26ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OVzUG6ZEeWRVse7xW7FOw" name="weatherData" classifier="_7OVzRG6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OVzUW6ZEeWRVse7xW7FOw" name="WeatherDataToEnvironment">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVzUm6ZEeWRVse7xW7FOw" covered="_7OVzWm6ZEeWRVse7xW7FOw" message="_7OVzXG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVzU26ZEeWRVse7xW7FOw" covered="_7OVzW26ZEeWRVse7xW7FOw" message="_7OVzXG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVzVG6ZEeWRVse7xW7FOw" covered="_7OVzWm6ZEeWRVse7xW7FOw" message="_7OVzXW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVzVW6ZEeWRVse7xW7FOw" covered="_7OVzWm6ZEeWRVse7xW7FOw" message="_7OVzXW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVzVm6ZEeWRVse7xW7FOw" covered="_7OVzWm6ZEeWRVse7xW7FOw" message="_7OVzXm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVzV26ZEeWRVse7xW7FOw" covered="_7OVzW26ZEeWRVse7xW7FOw" message="_7OVzXm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVzWG6ZEeWRVse7xW7FOw" covered="_7OVzWm6ZEeWRVse7xW7FOw" message="_7OVzX26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OVzWW6ZEeWRVse7xW7FOw" covered="_7OVzWm6ZEeWRVse7xW7FOw" message="_7OVzX26ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OVzWm6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OVzUm6ZEeWRVse7xW7FOw _7OVzVG6ZEeWRVse7xW7FOw _7OVzVW6ZEeWRVse7xW7FOw _7OVzVm6ZEeWRVse7xW7FOw _7OVzWG6ZEeWRVse7xW7FOw _7OVzWW6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OVzW26ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OVzU26ZEeWRVse7xW7FOw _7OVzV26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OVzXG6ZEeWRVse7xW7FOw" name="weather_getNewImage" receiveEvent="_7OVzU26ZEeWRVse7xW7FOw" sendEvent="_7OVzUm6ZEeWRVse7xW7FOw" signature="_7OOeY26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OVzXW6ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OVzVW6ZEeWRVse7xW7FOw" sendEvent="_7OVzVG6ZEeWRVse7xW7FOw" signature="_7OVzTW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OVzXm6ZEeWRVse7xW7FOw" name="weather_setStatus" receiveEvent="_7OVzV26ZEeWRVse7xW7FOw" sendEvent="_7OVzVm6ZEeWRVse7xW7FOw" signature="_7OOeZW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OVzX26ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OVzWW6ZEeWRVse7xW7FOw" sendEvent="_7OVzWG6ZEeWRVse7xW7FOw" signature="_7OVzT26ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OWaMG6ZEeWRVse7xW7FOw" name="swWeatherData">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OWaMW6ZEeWRVse7xW7FOw" name="SMWeatherData">
+          <region xmi:id="_7OWaMm6ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OWaM26ZEeWRVse7xW7FOw" name="initial" source="_7OWaNW6ZEeWRVse7xW7FOw" target="_7OWaNm6ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OWaNG6ZEeWRVse7xW7FOw" name="@ckWeather.tick/@WeatherDataToEnvironment.start" source="_7OWaNm6ZEeWRVse7xW7FOw" target="_7OWaNm6ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OWaNW6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OWaNm6ZEeWRVse7xW7FOw" name="WeatherDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OWaN26ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OWaOG6ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OWaOW6ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OWaOm6ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OWaO26ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OWaPG6ZEeWRVse7xW7FOw" name="weatherData" classifier="_7OWaMG6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OWaPW6ZEeWRVse7xW7FOw" name="WeatherDataToEnvironment">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OWaPm6ZEeWRVse7xW7FOw" covered="_7OWaRm6ZEeWRVse7xW7FOw" message="_7OWaSG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OWaP26ZEeWRVse7xW7FOw" covered="_7OWaR26ZEeWRVse7xW7FOw" message="_7OWaSG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OWaQG6ZEeWRVse7xW7FOw" covered="_7OWaRm6ZEeWRVse7xW7FOw" message="_7OWaSW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OWaQW6ZEeWRVse7xW7FOw" covered="_7OWaRm6ZEeWRVse7xW7FOw" message="_7OWaSW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OWaQm6ZEeWRVse7xW7FOw" covered="_7OWaRm6ZEeWRVse7xW7FOw" message="_7OWaSm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OWaQ26ZEeWRVse7xW7FOw" covered="_7OWaR26ZEeWRVse7xW7FOw" message="_7OWaSm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OWaRG6ZEeWRVse7xW7FOw" covered="_7OWaRm6ZEeWRVse7xW7FOw" message="_7OWaS26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OWaRW6ZEeWRVse7xW7FOw" covered="_7OWaRm6ZEeWRVse7xW7FOw" message="_7OWaS26ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OWaRm6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OWaPm6ZEeWRVse7xW7FOw _7OWaQG6ZEeWRVse7xW7FOw _7OWaQW6ZEeWRVse7xW7FOw _7OWaQm6ZEeWRVse7xW7FOw _7OWaRG6ZEeWRVse7xW7FOw _7OWaRW6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OWaR26ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OWaP26ZEeWRVse7xW7FOw _7OWaQ26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OWaSG6ZEeWRVse7xW7FOw" name="weather_getNewImage" receiveEvent="_7OWaP26ZEeWRVse7xW7FOw" sendEvent="_7OWaPm6ZEeWRVse7xW7FOw" signature="_7OOeY26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OWaSW6ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OWaQW6ZEeWRVse7xW7FOw" sendEvent="_7OWaQG6ZEeWRVse7xW7FOw" signature="_7OWaOW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OWaSm6ZEeWRVse7xW7FOw" name="weather_setStatus" receiveEvent="_7OWaQ26ZEeWRVse7xW7FOw" sendEvent="_7OWaQm6ZEeWRVse7xW7FOw" signature="_7OOeZW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OWaS26ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OWaRW6ZEeWRVse7xW7FOw" sendEvent="_7OWaRG6ZEeWRVse7xW7FOw" signature="_7OWaO26ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OWaTG6ZEeWRVse7xW7FOw" name="swWeatherData">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OWaTW6ZEeWRVse7xW7FOw" name="SMWeatherData">
+          <region xmi:id="_7OWaTm6ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OWaT26ZEeWRVse7xW7FOw" name="initial" source="_7OWaUW6ZEeWRVse7xW7FOw" target="_7OWaUm6ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OWaUG6ZEeWRVse7xW7FOw" name="@ckWeather.tick/@WeatherDataToEnvironment.start" source="_7OWaUm6ZEeWRVse7xW7FOw" target="_7OWaUm6ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OWaUW6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OWaUm6ZEeWRVse7xW7FOw" name="WeatherDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OWaU26ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OWaVG6ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OWaVW6ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OWaVm6ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OWaV26ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OWaWG6ZEeWRVse7xW7FOw" name="weatherData" classifier="_7OWaTG6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OWaWW6ZEeWRVse7xW7FOw" name="WeatherDataToEnvironment">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OWaWm6ZEeWRVse7xW7FOw" covered="_7OWaYm6ZEeWRVse7xW7FOw" message="_7OWaZG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OWaW26ZEeWRVse7xW7FOw" covered="_7OWaY26ZEeWRVse7xW7FOw" message="_7OWaZG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OWaXG6ZEeWRVse7xW7FOw" covered="_7OWaYm6ZEeWRVse7xW7FOw" message="_7OWaZW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OWaXW6ZEeWRVse7xW7FOw" covered="_7OWaYm6ZEeWRVse7xW7FOw" message="_7OWaZW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OWaXm6ZEeWRVse7xW7FOw" covered="_7OWaYm6ZEeWRVse7xW7FOw" message="_7OWaZm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OWaX26ZEeWRVse7xW7FOw" covered="_7OWaY26ZEeWRVse7xW7FOw" message="_7OWaZm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OWaYG6ZEeWRVse7xW7FOw" covered="_7OWaYm6ZEeWRVse7xW7FOw" message="_7OWaZ26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OWaYW6ZEeWRVse7xW7FOw" covered="_7OWaYm6ZEeWRVse7xW7FOw" message="_7OWaZ26ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OWaYm6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OWaWm6ZEeWRVse7xW7FOw _7OWaXG6ZEeWRVse7xW7FOw _7OWaXW6ZEeWRVse7xW7FOw _7OWaXm6ZEeWRVse7xW7FOw _7OWaYG6ZEeWRVse7xW7FOw _7OWaYW6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OWaY26ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OWaW26ZEeWRVse7xW7FOw _7OWaX26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OWaZG6ZEeWRVse7xW7FOw" name="weather_getNewImage" receiveEvent="_7OWaW26ZEeWRVse7xW7FOw" sendEvent="_7OWaWm6ZEeWRVse7xW7FOw" signature="_7OOeY26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OWaZW6ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OWaXW6ZEeWRVse7xW7FOw" sendEvent="_7OWaXG6ZEeWRVse7xW7FOw" signature="_7OWaVW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OWaZm6ZEeWRVse7xW7FOw" name="weather_setStatus" receiveEvent="_7OWaX26ZEeWRVse7xW7FOw" sendEvent="_7OWaXm6ZEeWRVse7xW7FOw" signature="_7OOeZW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OWaZ26ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OWaYW6ZEeWRVse7xW7FOw" sendEvent="_7OWaYG6ZEeWRVse7xW7FOw" signature="_7OWaV26ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OWaaG6ZEeWRVse7xW7FOw" name="swWeatherData">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_7OWaaW6ZEeWRVse7xW7FOw" name="SMWeatherData">
+          <region xmi:id="_7OWaam6ZEeWRVse7xW7FOw">
+            <transition xmi:id="_7OWaa26ZEeWRVse7xW7FOw" name="initial" source="_7OWabW6ZEeWRVse7xW7FOw" target="_7OXBQG6ZEeWRVse7xW7FOw"/>
+            <transition xmi:id="_7OWabG6ZEeWRVse7xW7FOw" name="@ckWeather.tick/@WeatherDataToEnvironment.start" source="_7OXBQG6ZEeWRVse7xW7FOw" target="_7OXBQG6ZEeWRVse7xW7FOw"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_7OWabW6ZEeWRVse7xW7FOw" name="initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_7OXBQG6ZEeWRVse7xW7FOw" name="WeatherDataState"/>
+          </region>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_7OXBQW6ZEeWRVse7xW7FOw" name="activePanelData"/>
+        <ownedOperation xmi:id="_7OXBQm6ZEeWRVse7xW7FOw" name="getData"/>
+        <ownedOperation xmi:id="_7OXBQ26ZEeWRVse7xW7FOw" name="processData"/>
+        <ownedOperation xmi:id="_7OXBRG6ZEeWRVse7xW7FOw" name="setData"/>
+        <ownedOperation xmi:id="_7OXBRW6ZEeWRVse7xW7FOw" name="showData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7OXBRm6ZEeWRVse7xW7FOw" name="weatherData" classifier="_7OWaaG6ZEeWRVse7xW7FOw"/>
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_7OXBR26ZEeWRVse7xW7FOw" name="WeatherDataToEnvironment">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OXBSG6ZEeWRVse7xW7FOw" covered="_7OXBUG6ZEeWRVse7xW7FOw" message="_7OXBUm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OXBSW6ZEeWRVse7xW7FOw" covered="_7OXBUW6ZEeWRVse7xW7FOw" message="_7OXBUm6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OXBSm6ZEeWRVse7xW7FOw" covered="_7OXBUG6ZEeWRVse7xW7FOw" message="_7OXBU26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OXBS26ZEeWRVse7xW7FOw" covered="_7OXBUG6ZEeWRVse7xW7FOw" message="_7OXBU26ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OXBTG6ZEeWRVse7xW7FOw" covered="_7OXBUG6ZEeWRVse7xW7FOw" message="_7OXBVG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OXBTW6ZEeWRVse7xW7FOw" covered="_7OXBUW6ZEeWRVse7xW7FOw" message="_7OXBVG6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OXBTm6ZEeWRVse7xW7FOw" covered="_7OXBUG6ZEeWRVse7xW7FOw" message="_7OXBVW6ZEeWRVse7xW7FOw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7OXBT26ZEeWRVse7xW7FOw" covered="_7OXBUG6ZEeWRVse7xW7FOw" message="_7OXBVW6ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OXBUG6ZEeWRVse7xW7FOw" name="l1" coveredBy="_7OXBSG6ZEeWRVse7xW7FOw _7OXBSm6ZEeWRVse7xW7FOw _7OXBS26ZEeWRVse7xW7FOw _7OXBTG6ZEeWRVse7xW7FOw _7OXBTm6ZEeWRVse7xW7FOw _7OXBT26ZEeWRVse7xW7FOw"/>
+        <lifeline xmi:id="_7OXBUW6ZEeWRVse7xW7FOw" name="l2" coveredBy="_7OXBSW6ZEeWRVse7xW7FOw _7OXBTW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OXBUm6ZEeWRVse7xW7FOw" name="weather_getNewImage" receiveEvent="_7OXBSW6ZEeWRVse7xW7FOw" sendEvent="_7OXBSG6ZEeWRVse7xW7FOw" signature="_7OOeY26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OXBU26ZEeWRVse7xW7FOw" name="processData" receiveEvent="_7OXBS26ZEeWRVse7xW7FOw" sendEvent="_7OXBSm6ZEeWRVse7xW7FOw" signature="_7OXBQ26ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OXBVG6ZEeWRVse7xW7FOw" name="weather_setStatus" receiveEvent="_7OXBTW6ZEeWRVse7xW7FOw" sendEvent="_7OXBTG6ZEeWRVse7xW7FOw" signature="_7OOeZW6ZEeWRVse7xW7FOw"/>
+        <message xmi:id="_7OXBVW6ZEeWRVse7xW7FOw" name="showData" receiveEvent="_7OXBT26ZEeWRVse7xW7FOw" sendEvent="_7OXBTm6ZEeWRVse7xW7FOw" signature="_7OXBRW6ZEeWRVse7xW7FOw"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_7OXBVm6ZEeWRVse7xW7FOw" name="Property">
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OXBV26ZEeWRVse7xW7FOw" name="Term"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OXBWG6ZEeWRVse7xW7FOw" name="constant"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OXBWW6ZEeWRVse7xW7FOw" name="WithinF"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OXBWm6ZEeWRVse7xW7FOw" name="Term"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OXBW26ZEeWRVse7xW7FOw" name="Implies"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OXBXG6ZEeWRVse7xW7FOw" name="Alw"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7OXBXW6ZEeWRVse7xW7FOw" name="Property"/>
+    </packagedElement>
+    <profileApplication xmi:id="_7OXBXm6ZEeWRVse7xW7FOw">
+      <eAnnotations xmi:id="_7OXBX26ZEeWRVse7xW7FOw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../../org.correttouml.profiles/resources/model.profile.uml#_YfVcwIvzEeKLvcTv2F9FYg"/>
+      </eAnnotations>
+      <appliedProfile href="../../org.correttouml.profiles/resources/model.profile.uml#_DCylYIJgEeKaWIAr5_BKMw"/>
+    </profileApplication>
+  </uml:Model>
+  <CorrettoUML.VerificationTags:System xmi:id="_7OXBYG6ZEeWRVse7xW7FOw" base_Package="_7ON3Um6ZEeWRVse7xW7FOw"/>
+  <CorrettoUML.Time:ClockType xmi:id="_7OXoUG6ZEeWRVse7xW7FOw" base_Class="_7ON3U26ZEeWRVse7xW7FOw" period="15"/>
+  <CorrettoUML.Time:ClockType xmi:id="_7OXoUW6ZEeWRVse7xW7FOw" base_Class="_7ON3VG6ZEeWRVse7xW7FOw" period="15"/>
+  <CorrettoUML.Time:ClockType xmi:id="_7OXoUm6ZEeWRVse7xW7FOw" base_Class="_7ON3VW6ZEeWRVse7xW7FOw" period="15"/>
+  <CorrettoUML.Time:ClockType xmi:id="_7OXoU26ZEeWRVse7xW7FOw" base_Class="_7ON3Vm6ZEeWRVse7xW7FOw" period="15"/>
+  <CorrettoUML.Time:ClockType xmi:id="_7OXoVG6ZEeWRVse7xW7FOw" base_Class="_7ON3V26ZEeWRVse7xW7FOw" period="15"/>
+  <CorrettoUML.Time:Clock xmi:id="_7OYPYG6ZEeWRVse7xW7FOw" base_InstanceSpecification="_7ON3WG6ZEeWRVse7xW7FOw"/>
+  <CorrettoUML.Time:Clock xmi:id="_7OYPYW6ZEeWRVse7xW7FOw" base_InstanceSpecification="_7ON3WW6ZEeWRVse7xW7FOw"/>
+  <CorrettoUML.Time:Clock xmi:id="_7OYPYm6ZEeWRVse7xW7FOw" base_InstanceSpecification="_7ON3Wm6ZEeWRVse7xW7FOw"/>
+  <CorrettoUML.Time:Clock xmi:id="_7OYPY26ZEeWRVse7xW7FOw" base_InstanceSpecification="_7ON3W26ZEeWRVse7xW7FOw"/>
+  <CorrettoUML.Time:Clock xmi:id="_7OYPZG6ZEeWRVse7xW7FOw" base_InstanceSpecification="_7ON3XG6ZEeWRVse7xW7FOw"/>
+  <CorrettoUML.VerificationTags:Property xmi:id="_7PAhgG6ZEeWRVse7xW7FOw" base_Package="_7OXBVm6ZEeWRVse7xW7FOw"/>
+  <CorrettoUML.Properties:BooleanFormulae xmi:id="_7PAhgW6ZEeWRVse7xW7FOw" base_Class="_7OXBV26ZEeWRVse7xW7FOw"/>
+  <CorrettoUML.Properties:Term xmi:id="_7PAhgm6ZEeWRVse7xW7FOw" base_Class="_7OXBV26ZEeWRVse7xW7FOw" element="_7ON3Xm6ZEeWRVse7xW7FOw"/>
+  <CorrettoUML.Properties:constant xmi:id="_7PAhg26ZEeWRVse7xW7FOw" value="15" base_Class="_7OXBWG6ZEeWRVse7xW7FOw"/>
+  <CorrettoUML.Properties:BooleanFormulae xmi:id="_7PAhhG6ZEeWRVse7xW7FOw" base_Class="_7OXBWW6ZEeWRVse7xW7FOw"/>
+  <CorrettoUML.Properties:WithinF xmi:id="_7PAhhW6ZEeWRVse7xW7FOw" base_Class="_7OXBWW6ZEeWRVse7xW7FOw" formulae="_7PAhgW6ZEeWRVse7xW7FOw" t="_7PAhg26ZEeWRVse7xW7FOw"/>
+  <CorrettoUML.Properties:BooleanFormulae xmi:id="_7PAhhm6ZEeWRVse7xW7FOw" base_Class="_7OXBWm6ZEeWRVse7xW7FOw"/>
+  <CorrettoUML.Properties:Term xmi:id="_7PAhh26ZEeWRVse7xW7FOw" base_Class="_7OXBWm6ZEeWRVse7xW7FOw" element="_7OOeYm6ZEeWRVse7xW7FOw"/>
+  <CorrettoUML.Properties:BooleanFormulae xmi:id="_7PAhiG6ZEeWRVse7xW7FOw" base_Class="_7OXBW26ZEeWRVse7xW7FOw"/>
+  <CorrettoUML.Properties:Implies xmi:id="_7PAhiW6ZEeWRVse7xW7FOw" base_Class="_7OXBW26ZEeWRVse7xW7FOw" left="_7PAhhm6ZEeWRVse7xW7FOw" right="_7PAhhG6ZEeWRVse7xW7FOw"/>
+  <CorrettoUML.Properties:BooleanFormulae xmi:id="_7PBIkG6ZEeWRVse7xW7FOw" base_Class="_7OXBXG6ZEeWRVse7xW7FOw"/>
+  <CorrettoUML.Properties:Alw xmi:id="_7PBIkW6ZEeWRVse7xW7FOw" base_Class="_7OXBXG6ZEeWRVse7xW7FOw" formulae="_7PAhiG6ZEeWRVse7xW7FOw"/>
+  <CorrettoUML.Properties:Property xmi:id="_7PBIkm6ZEeWRVse7xW7FOw" formulae="_7PBIkG6ZEeWRVse7xW7FOw" base_Class="_7OXBXW6ZEeWRVse7xW7FOw"/>
+</xmi:XMI>

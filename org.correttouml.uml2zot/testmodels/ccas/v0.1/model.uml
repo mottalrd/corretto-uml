@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CorrettoUML.Properties="http:///CorrettoUML/Properties.ecore" xmlns:CorrettoUML.Time="http:///CorrettoUML/Time.ecore" xmlns:CorrettoUML.VerificationTags="http:///CorrettoUML/VerificationTags.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///CorrettoUML/Properties.ecore pathmap://resources/model.profile.uml#_YfVc6YvzEeKLvcTv2F9FYg http:///CorrettoUML/Time.ecore pathmap://resources/model.profile.uml#_YfVcwYvzEeKLvcTv2F9FYg http:///CorrettoUML/VerificationTags.ecore pathmap://resources/model.profile.uml#_YfVc14vzEeKLvcTv2F9FYg">
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CorrettoUML.Properties="http:///CorrettoUML/Properties.ecore" xmlns:CorrettoUML.Time="http:///CorrettoUML/Time.ecore" xmlns:CorrettoUML.VerificationTags="http:///CorrettoUML/VerificationTags.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///CorrettoUML/Properties.ecore pathmap://resources/model.profile.uml#_YfVc6YvzEeKLvcTv2F9FYg http:///CorrettoUML/Time.ecore pathmap://resources/model.profile.uml#_YfVcwYvzEeKLvcTv2F9FYg http:///CorrettoUML/VerificationTags.ecore ../../../../org.correttouml.profiles/resources/model.profile.uml#_YfVc14vzEeKLvcTv2F9FYg">
   <uml:Model xmi:id="_x9J08AN9EeKTXbQztILh3g" name="Model">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_WzoyAATSEeK-BP_vUyAIxQ">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
@@ -151,6 +151,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         </ownedParameter>
         <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_IkBpQAOAEeKTXbQztILh3g" name="MessageSend" covered="_vsB08AN_EeKTXbQztILh3g" message="_Ijqc4AOAEeKTXbQztILh3g"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_kOOywIFLEeWcpJ7mzo9fnw" name="BehaviorExecSpec" covered="_wXKcoAN_EeKTXbQztILh3g" finish="_lZSH4AOBEeKTXbQztILh3g" start="_IkCQUAOAEeKTXbQztILh3g"/>
         <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_IkCQUAOAEeKTXbQztILh3g" name="MessageRecv" covered="_wXKcoAN_EeKTXbQztILh3g" message="_Ijqc4AOAEeKTXbQztILh3g"/>
         <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_lZSH4AOBEeKTXbQztILh3g" name="Message0Send" covered="_wXKcoAN_EeKTXbQztILh3g" message="_lZQ5wAOBEeKTXbQztILh3g"/>
         <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_lZSH4QOBEeKTXbQztILh3g" name="Message0Recv" covered="_wDkLMAN_EeKTXbQztILh3g" message="_lZQ5wAOBEeKTXbQztILh3g"/>
@@ -160,7 +161,7 @@
         <lifeline xmi:type="uml:Lifeline" xmi:id="_wDkLMAN_EeKTXbQztILh3g" name="ctrl:Controller" coveredBy="_lZSH4QOBEeKTXbQztILh3g">
           <selector xmi:type="uml:InstanceValue" xmi:id="_5MamEAN_EeKTXbQztILh3g" name="ctrl" instance="_RaYbYAN_EeKTXbQztILh3g"/>
         </lifeline>
-        <lifeline xmi:type="uml:Lifeline" xmi:id="_wXKcoAN_EeKTXbQztILh3g" name="bus:Bus" coveredBy="_IkCQUAOAEeKTXbQztILh3g _lZSH4AOBEeKTXbQztILh3g">
+        <lifeline xmi:type="uml:Lifeline" xmi:id="_wXKcoAN_EeKTXbQztILh3g" name="bus:Bus" coveredBy="_IkCQUAOAEeKTXbQztILh3g _lZSH4AOBEeKTXbQztILh3g _kOOywIFLEeWcpJ7mzo9fnw">
           <selector xmi:type="uml:InstanceValue" xmi:id="_-RqBkAN_EeKTXbQztILh3g" name="bus" instance="_TFEbkAN_EeKTXbQztILh3g"/>
         </lifeline>
         <message xmi:type="uml:Message" xmi:id="_Ijqc4AOAEeKTXbQztILh3g" name="sendSensorDistance" messageSort="asynchCall" receiveEvent="_IkCQUAOAEeKTXbQztILh3g" sendEvent="_IkBpQAOAEeKTXbQztILh3g" signature="_3ooUkAN-EeKTXbQztILh3g">
@@ -175,13 +176,14 @@
           <body>@sendBrakeCommand.end - @sendBrakeCommand.start == 2</body>
         </ownedComment>
         <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_FoW3cAOCEeKTXbQztILh3g" name="MessageSend" covered="_58qFUAOBEeKTXbQztILh3g" message="_FoVpUAOCEeKTXbQztILh3g"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_81Ih8IFJEeWcpJ7mzo9fnw" name="BehaviorExecSpec" covered="_7a_rkAOBEeKTXbQztILh3g" finish="_I37x0AOCEeKTXbQztILh3g" start="_FoYFkAOCEeKTXbQztILh3g"/>
         <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_FoYFkAOCEeKTXbQztILh3g" name="MessageRecv" covered="_7a_rkAOBEeKTXbQztILh3g" message="_FoVpUAOCEeKTXbQztILh3g"/>
         <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_I37x0AOCEeKTXbQztILh3g" name="Message0Send" covered="_7a_rkAOBEeKTXbQztILh3g" message="_I36jsAOCEeKTXbQztILh3g"/>
         <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_I38Y4AOCEeKTXbQztILh3g" name="Message0Recv" covered="_80IBsAOBEeKTXbQztILh3g" message="_I36jsAOCEeKTXbQztILh3g"/>
         <lifeline xmi:type="uml:Lifeline" xmi:id="_58qFUAOBEeKTXbQztILh3g" name="ctrl:Controller" coveredBy="_FoW3cAOCEeKTXbQztILh3g">
           <selector xmi:type="uml:InstanceValue" xmi:id="_BzPAAAOCEeKTXbQztILh3g" name="" instance="_RaYbYAN_EeKTXbQztILh3g"/>
         </lifeline>
-        <lifeline xmi:type="uml:Lifeline" xmi:id="_7a_rkAOBEeKTXbQztILh3g" name="bus:Bus" coveredBy="_FoYFkAOCEeKTXbQztILh3g _I37x0AOCEeKTXbQztILh3g">
+        <lifeline xmi:type="uml:Lifeline" xmi:id="_7a_rkAOBEeKTXbQztILh3g" name="bus:Bus" coveredBy="_FoYFkAOCEeKTXbQztILh3g _I37x0AOCEeKTXbQztILh3g _81Ih8IFJEeWcpJ7mzo9fnw">
           <selector xmi:type="uml:InstanceValue" xmi:id="_DXirYAOCEeKTXbQztILh3g" name="" instance="_TFEbkAN_EeKTXbQztILh3g"/>
         </lifeline>
         <lifeline xmi:type="uml:Lifeline" xmi:id="_80IBsAOBEeKTXbQztILh3g" name="brakeS:BrakingSystem" coveredBy="_I38Y4AOCEeKTXbQztILh3g">

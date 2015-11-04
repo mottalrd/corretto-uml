@@ -3,6 +3,7 @@ package org.correttouml.uml2zot.semantics.sequencediagram;
 
 import java.util.Iterator;
 
+import org.correttouml.uml.diagrams.sequencediagram.ExecutionOccurrence;
 import org.correttouml.uml.diagrams.sequencediagram.InteractionFragment;
 import org.correttouml.uml.diagrams.sequencediagram.Lifeline;
 import org.correttouml.uml.diagrams.sequencediagram.MessageEnd;
@@ -31,10 +32,20 @@ public class SLifeline {
         Predicate prec_predicate=null;
         if(it.hasNext()){
         	prec_event=it.next();
+        	if (prec_event instanceof ExecutionOccurrence){
+        		sem += new SExecutionOccurrence((ExecutionOccurrence) prec_event).getSyncSemantics() + "\n";
+        		if(it.hasNext())
+        			prec_event = it.next();
+        	}
         	prec_predicate=SInteractionFragmentFactory.getInstance(prec_event).getPredicate();
         }
         while(it.hasNext()){
         	InteractionFragment curr_event=it.next();
+        	if (curr_event instanceof ExecutionOccurrence){
+        		sem += new SExecutionOccurrence((ExecutionOccurrence) curr_event).getSyncSemantics() + "\n";
+        		if(it.hasNext())
+        			curr_event = it.next();
+        	}
         	Predicate curr_predicate=SInteractionFragmentFactory.getInstance(curr_event).getPredicate();
         	
         	                      

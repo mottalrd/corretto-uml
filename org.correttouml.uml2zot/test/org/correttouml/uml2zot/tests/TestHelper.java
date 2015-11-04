@@ -73,17 +73,18 @@ public class TestHelper {
 		} catch (IOException e) {
 			LOGGER.warn("Moving "+model.getName()+" to output folder failed");
 		}
-		try {
-			FileUtils.copyFileToDirectory(output, destinationDir);
-		} catch (IOException e) {
-			LOGGER.warn("Moving "+output.getName()+" to output folder failed");
-		}
+//		try {
+//			FileUtils.copyFileToDirectory(output, destinationDir);
+//		} catch (IOException e) {
+//			LOGGER.warn("Moving "+output.getName()+" to output folder failed");
+//		}
 		try {
 			FileUtils.copyFileToDirectory(mappings, destinationDir);
 		} catch (IOException e) {
 			LOGGER.warn("Moving "+mappings.getName()+" to output folder failed");
 			e.printStackTrace();
 		}
+		LOGGER.warn("The Zot model is generated.");
 	}
 	
 	public boolean isUnsat() throws Exception{

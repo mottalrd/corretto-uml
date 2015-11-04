@@ -22,12 +22,14 @@ public class Lifeline {
 		//NOTA: in Papyrus la lista coveredbys non sembra essere ordinata
 		for(org.eclipse.uml2.uml.InteractionFragment ifr: sd_fragment){
 			if(uml_lifeline.getCoveredBys().contains(ifr)){
-				//FIXME: Please do not ignore ActionExecutionSpecification and BehaviorExecutionSpecification
-				if(!(ifr instanceof org.eclipse.uml2.uml.ActionExecutionSpecification) && !(ifr instanceof org.eclipse.uml2.uml.BehaviorExecutionSpecification)){
-					events.add(InteractionFragmentFactory.getInstance(ifr));			
-				}
+				events.add(InteractionFragmentFactory.getInstance(ifr));
 			}
 		}
+		
+// the following code seems to return ordered events.		
+//		for(org.eclipse.uml2.uml.InteractionFragment ifr: uml_lifeline.getCoveredBys()){
+//			events.add(InteractionFragmentFactory.getInstance(ifr));
+//		}
 		
 		return events;
 	}
