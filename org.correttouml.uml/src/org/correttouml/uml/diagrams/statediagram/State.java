@@ -67,6 +67,11 @@ public class State implements PTermElement{
 		String id=((XMLResource) this.uml_state.eResource()).getID(uml_state);
 		return id;
 	}
+	
+	@Override
+	public String toString(){
+		return this.uml_state.getName();
+	}
 		
 	@Override
 	public boolean equals(java.lang.Object o){

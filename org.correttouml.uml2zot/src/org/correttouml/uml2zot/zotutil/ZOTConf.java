@@ -55,7 +55,7 @@ public class ZOTConf {
     
     public void writeVerificationZOTFile(String filename, String modelStats) throws IOException, Exception {
         String sem=model.getSemantics();
-    	String loadplugin = "(asdf:operate 'asdf:load-op '" + plugin + ")\n";
+        String loadplugin = "(asdf:operate 'asdf:load-op '" + plugin + ")\n";
         String loadtrioutils = "(use-package :trio-utils)\n";
         String loadsatsolverinterface = "";
         String definetimebound = "(defvar TSPACE " + timebound + ")\n";
@@ -108,8 +108,8 @@ public class ZOTConf {
         thesystem = thesystem + "\n\n\n" + "(" + plugin + ":zot TSPACE (&& the_system) " + smtsolverparameter + " )";
         int arithVarsN=0;
         for(org.correttouml.uml2zot.semantics.util.trio.TrioVar t: org.correttouml.uml2zot.semantics.util.trio.TrioVar.instances){
-			arithVarsN++;
-		}
+            arithVarsN++;
+        }
         String zot = modelStats + ";  " + Integer.toString(arithVarsN) + "\t:Number of arithmetic variables\n"
                 + ""
                 + loadplugin

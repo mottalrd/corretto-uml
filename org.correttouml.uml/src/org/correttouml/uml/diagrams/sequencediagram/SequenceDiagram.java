@@ -77,7 +77,7 @@ public class SequenceDiagram implements ExpressionContext, PTermElement{
 		for(Comment c: this.uml_interaction.getOwnedComments()){
 			if(UML2ModelHelper.hasStereotype(c, "TimeConstraint")){
 				org.correttouml.grammars.booleanExpressions.Model m=BooleanExpressionsParser.parse(c.getBody());
-				org.correttouml.grammars.booleanExpressions.TimeConstraint tc=(org.correttouml.grammars.booleanExpressions.TimeConstraint)m.getExpression().getBooleanTerm();
+				org.correttouml.grammars.booleanExpressions.TimeConstraint tc=m.getExpression().getLeftExpression().getLeftExpression().getBooleanTerm().getTimeConstraint();
 				tcs.add(new TimeConstraint(tc, this));
 			}
 			

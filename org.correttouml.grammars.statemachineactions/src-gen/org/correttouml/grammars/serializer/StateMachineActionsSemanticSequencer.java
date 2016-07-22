@@ -6,7 +6,9 @@ import org.correttouml.grammars.services.StateMachineActionsGrammarAccess;
 import org.correttouml.grammars.stateMachineActions.Action;
 import org.correttouml.grammars.stateMachineActions.Assignment;
 import org.correttouml.grammars.stateMachineActions.EXPRESSION;
+import org.correttouml.grammars.stateMachineActions.Event;
 import org.correttouml.grammars.stateMachineActions.EventAction;
+import org.correttouml.grammars.stateMachineActions.Link;
 import org.correttouml.grammars.stateMachineActions.Model;
 import org.correttouml.grammars.stateMachineActions.Parameters;
 import org.correttouml.grammars.stateMachineActions.StateMachineActionsPackage;
@@ -49,9 +51,21 @@ public class StateMachineActionsSemanticSequencer extends AbstractDelegatingSema
 					return; 
 				}
 				else break;
+			case StateMachineActionsPackage.EVENT:
+				if(context == grammarAccess.getEventRule()) {
+					sequence_Event(context, (Event) semanticObject); 
+					return; 
+				}
+				else break;
 			case StateMachineActionsPackage.EVENT_ACTION:
 				if(context == grammarAccess.getEventActionRule()) {
 					sequence_EventAction(context, (EventAction) semanticObject); 
+					return; 
+				}
+				else break;
+			case StateMachineActionsPackage.LINK:
+				if(context == grammarAccess.getLinkRule()) {
+					sequence_Link(context, (Link) semanticObject); 
 					return; 
 				}
 				else break;
@@ -116,7 +130,7 @@ public class StateMachineActionsSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Constraint:
-	 *     (eventName=ID parameters=Parameters? eventExtension=EventExtensions)
+	 *     (link=Link? event=Event)
 	 */
 	protected void sequence_EventAction(EObject context, EventAction semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -125,23 +139,34 @@ public class StateMachineActionsSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Constraint:
-	 *     action=Action
+	 *     (eventName=ID parameters=Parameters? eventExtension=EventExtensions)
 	 */
-	protected void sequence_Model(EObject context, Model semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, StateMachineActionsPackage.Literals.MODEL__ACTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateMachineActionsPackage.Literals.MODEL__ACTION));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getModelAccess().getActionActionParserRuleCall_0(), semanticObject.getAction());
-		feeder.finish();
+	protected void sequence_Event(EObject context, Event semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (param=ID | (param=ID parameters=Parameters))
+	 *     ((linkName=ID associationEnd=ID) | self='self')
+	 */
+	protected void sequence_Link(EObject context, Link semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (action=Action actions=Model?)
+	 */
+	protected void sequence_Model(EObject context, Model semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (((isPast='<P>' | isFuture='<F>')? param=ID) | ((isPast='<P>' | isFuture='<F>')? param=ID parameters=Parameters))
 	 */
 	protected void sequence_Parameters(EObject context, Parameters semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -150,7 +175,7 @@ public class StateMachineActionsSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Constraint:
-	 *     (variable=ID | constant=INT)
+	 *     ((isPast='<P>' | isFuture='<F>')? (variable=ID | constant=INT))
 	 */
 	protected void sequence_TERM(EObject context, TERM semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

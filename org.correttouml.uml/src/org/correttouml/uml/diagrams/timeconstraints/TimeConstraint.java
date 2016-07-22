@@ -15,11 +15,9 @@ public class TimeConstraint{
 		this.context=context;
 	}
 	
-		
 	public ExpressionContext getContext(){
 		return this.context;
-	}
- 
+	}	
 
 	public Event getEvent2() {
 		String eventName=this.time_constraint.getEvent2().getEventName();

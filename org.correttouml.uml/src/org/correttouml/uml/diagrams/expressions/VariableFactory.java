@@ -43,7 +43,7 @@ public class VariableFactory {
 					if(op_par.getName().equals(varname)) return op_par;
 				}
 			}
-			throw new Exception("Attribute not found in state diagram");
+			throw new Exception("Attribute " +varname+ " not found in state diagram");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

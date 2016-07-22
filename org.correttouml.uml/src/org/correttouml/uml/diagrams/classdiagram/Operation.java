@@ -54,6 +54,11 @@ public class Operation implements PTermElement {
 	}
 	
 	@Override
+	public String toString(){
+		return this.uml_operation.getName();
+	}
+	
+	@Override
 	public boolean equals(java.lang.Object o){
 		Operation other_operation=(Operation) o;
 		return this.uml_operation.equals((org.eclipse.uml2.uml.Operation) other_operation.uml_operation);

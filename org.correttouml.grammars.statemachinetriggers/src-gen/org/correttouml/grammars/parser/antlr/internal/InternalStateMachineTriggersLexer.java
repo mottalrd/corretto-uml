@@ -14,8 +14,8 @@ import java.util.ArrayList;
 public class InternalStateMachineTriggersLexer extends Lexer {
     public static final int RULE_ID=6;
     public static final int T__22=22;
-    public static final int T__21=21;
     public static final int RULE_ANY_OTHER=11;
+    public static final int T__21=21;
     public static final int T__20=20;
     public static final int RULE_RELATIONS=4;
     public static final int EOF=-1;
@@ -1045,8 +1045,8 @@ public class InternalStateMachineTriggersLexer extends Lexer {
 
     protected DFA13 dfa13 = new DFA13(this);
     static final String DFA13_eotS =
-        "\4\uffff\5\31\2\uffff\3\24\2\uffff\3\24\5\uffff\1\31\1\uffff\6"+
-        "\31\6\uffff\1\56\2\31\1\61\1\31\1\63\2\31\1\uffff\1\66\1\31\1\uffff"+
+        "\4\uffff\5\31\2\uffff\3\24\2\uffff\3\24\5\uffff\1\31\1\uffff\6\31"+
+        "\6\uffff\1\56\2\31\1\61\1\31\1\63\2\31\1\uffff\1\66\1\31\1\uffff"+
         "\1\31\1\uffff\1\71\1\72\1\uffff\1\73\1\74\4\uffff";
     static final String DFA13_eofS =
         "\75\uffff";

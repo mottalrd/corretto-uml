@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +31,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class TimeConstraintImpl extends booleanTermImpl implements TimeConstraint
+public class TimeConstraintImpl extends MinimalEObjectImpl.Container implements TimeConstraint
 {
   /**
    * The cached value of the '{@link #getEvent2() <em>Event2</em>}' containment reference.

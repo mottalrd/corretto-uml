@@ -14,8 +14,8 @@ import java.util.ArrayList;
 public class InternalStateMachineTriggersLexer extends Lexer {
     public static final int RULE_ID=6;
     public static final int T__22=22;
-    public static final int T__21=21;
     public static final int RULE_ANY_OTHER=11;
+    public static final int T__21=21;
     public static final int T__20=20;
     public static final int RULE_RELATIONS=4;
     public static final int EOF=-1;
@@ -1045,10 +1045,9 @@ public class InternalStateMachineTriggersLexer extends Lexer {
 
     protected DFA13 dfa13 = new DFA13(this);
     static final String DFA13_eotS =
-        "\1\uffff\4\27\3\uffff\1\27\2\uffff\3\24\2\uffff\3\24\2\uffff\2"+
-        "\27\1\uffff\4\27\3\uffff\1\27\6\uffff\2\27\1\60\1\27\1\62\2\27\1"+
-        "\65\1\66\1\27\1\uffff\1\27\1\uffff\1\71\1\72\2\uffff\1\73\1\74\4"+
-        "\uffff";
+        "\1\uffff\4\27\3\uffff\1\27\2\uffff\3\24\2\uffff\3\24\2\uffff\2\27"+
+        "\1\uffff\4\27\3\uffff\1\27\6\uffff\2\27\1\60\1\27\1\62\2\27\1\65"+
+        "\1\66\1\27\1\uffff\1\27\1\uffff\1\71\1\72\2\uffff\1\73\1\74\4\uffff";
     static final String DFA13_eofS =
         "\75\uffff";
     static final String DFA13_minS =
@@ -1063,10 +1062,10 @@ public class InternalStateMachineTriggersLexer extends Lexer {
         "\153\1\154\2\172\1\162\1\uffff\1\164\1\uffff\2\172\2\uffff\2\172"+
         "\4\uffff";
     static final String DFA13_acceptS =
-        "\5\uffff\1\10\1\11\1\12\1\uffff\2\14\3\uffff\1\15\1\16\3\uffff"+
-        "\1\22\1\23\2\uffff\1\15\4\uffff\1\10\1\11\1\12\1\uffff\1\14\1\16"+
-        "\1\17\1\20\1\21\1\22\12\uffff\1\4\1\uffff\1\6\2\uffff\1\13\1\1\2"+
-        "\uffff\1\5\1\7\1\2\1\3";
+        "\5\uffff\1\10\1\11\1\12\1\uffff\2\14\3\uffff\1\15\1\16\3\uffff\1"+
+        "\22\1\23\2\uffff\1\15\4\uffff\1\10\1\11\1\12\1\uffff\1\14\1\16\1"+
+        "\17\1\20\1\21\1\22\12\uffff\1\4\1\uffff\1\6\2\uffff\1\13\1\1\2\uffff"+
+        "\1\5\1\7\1\2\1\3";
     static final String DFA13_specialS =
         "\1\1\17\uffff\1\0\1\2\53\uffff}>";
     static final String[] DFA13_transitionS = {

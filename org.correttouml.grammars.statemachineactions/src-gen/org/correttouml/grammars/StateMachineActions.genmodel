@@ -10,6 +10,7 @@
       disposableProviderFactory="true" ecorePackage="StateMachineActions.ecore#/">
     <genClasses ecoreClass="StateMachineActions.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachineActions.ecore#//Model/action"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachineActions.ecore#//Model/actions"/>
     </genClasses>
     <genClasses ecoreClass="StateMachineActions.ecore#//Action">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachineActions.ecore#//Action/assignment"/>
@@ -26,15 +27,28 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachineActions.ecore#//EXPRESSION/alone"/>
     </genClasses>
     <genClasses ecoreClass="StateMachineActions.ecore#//TERM">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//TERM/isPast"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//TERM/isFuture"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//TERM/variable"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//TERM/constant"/>
     </genClasses>
     <genClasses ecoreClass="StateMachineActions.ecore#//EventAction">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//EventAction/eventName"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachineActions.ecore#//EventAction/parameters"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//EventAction/eventExtension"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachineActions.ecore#//EventAction/link"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachineActions.ecore#//EventAction/event"/>
+    </genClasses>
+    <genClasses ecoreClass="StateMachineActions.ecore#//Link">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//Link/linkName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//Link/associationEnd"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//Link/self"/>
+    </genClasses>
+    <genClasses ecoreClass="StateMachineActions.ecore#//Event">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//Event/eventName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachineActions.ecore#//Event/parameters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//Event/eventExtension"/>
     </genClasses>
     <genClasses ecoreClass="StateMachineActions.ecore#//Parameters">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//Parameters/isPast"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//Parameters/isFuture"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//Parameters/param"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachineActions.ecore#//Parameters/parameters"/>
     </genClasses>

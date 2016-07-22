@@ -4,8 +4,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.correttouml.uml.MadesModel;
-import org.correttouml.uml.diagrams.sequencediagram.ExecutionOccurrence;
-import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagram;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.uml2.uml.Classifier;
@@ -17,7 +15,7 @@ public class Object {
 
 	/** The UML2 object we are decorating */
 	private InstanceSpecification uml_object;
-
+	
 	/** Takes a UML2 object instance */
 	public Object(InstanceSpecification uml_obj){
 		this.uml_object=uml_obj;
@@ -34,7 +32,32 @@ public class Object {
 		return uml_object.getName();
 	}
 	
+	public Slot getSlot(Attribute attr){
+		
+		for(org.eclipse.uml2.uml.Slot slot: uml_object.getSlots()){
+			Attribute tmp=new Attribute((org.eclipse.uml2.uml.Property) slot.getDefiningFeature());
+			if(tmp.equals(attr)) return new Slot(slot);
+		}
+		
+		return null;
+	}
+	
+	public MadesModel getMadesModel(){
+		return new MadesModel(this.uml_object.getModel());
+	}
+	
+	public Set<AssociationInstance> getAssociationInstances(){
+		HashSet<AssociationInstance> associationInstances=new HashSet<AssociationInstance>();
+		
+		for(AssociationInstance a: this.getMadesModel().getClassdiagram().getAssociationInstances()){
+			if(a.isMemberEnd(this)) associationInstances.add(a);
+		}
+		
+		return associationInstances;
+	}
+	
 	public Set<Object> getAssociatedObjects() {
+		//TODO[mottalrd] questo fa veramente schifo
 		//TODO: Verificare se tra gli insiemi degli oggetti associati a un certo oggetto
 		//esisten l'oggetto stesso o meno
 		Set<Object> ass_objects=new HashSet<Object>();
@@ -43,6 +66,7 @@ public class Object {
 		for(Element c: this.uml_object.getModel().allOwnedElements()){
 			if(c instanceof org.eclipse.uml2.uml.InstanceSpecification){
 				org.eclipse.uml2.uml.InstanceSpecification ass=(org.eclipse.uml2.uml.InstanceSpecification) c;
+				//TODO verificare che l'instance specification è un instance specification link guardando il suo classifier
 				for(EAnnotation e: ass.getEAnnotations()){
 					for(EObject eobj: e.getReferences()){
 						if(eobj instanceof org.eclipse.uml2.uml.InstanceSpecification){
@@ -72,6 +96,11 @@ public class Object {
 	}
 	
 	@Override
+	public String toString(){
+		return this.getName();
+	}
+	
+	@Override
 	public boolean equals(java.lang.Object o){
 		Object other_object=(Object) o;
 		return this.uml_object.equals((org.eclipse.uml2.uml.InstanceSpecification) other_object.uml_object);
@@ -81,27 +110,7 @@ public class Object {
 	public int hashCode(){
 		return this.uml_object.hashCode();
 	}
-	
-	public HashSet<ExecutionOccurrence> getEOs(){
-		HashSet<ExecutionOccurrence> eoSet = new HashSet<ExecutionOccurrence>();
-		for (SequenceDiagram sd : new MadesModel(this.uml_object.getModel()).getSequenceDiagrams())
-			for (ExecutionOccurrence eo: sd.getExecutionOccurrences()){
-//				if (this.uml_object.equals(eo.getObject()))
-				if (this.uml_object.getName() == (eo.getObject().getName()))
-					eoSet.add(eo);
-			}
-		return eoSet;
-	}
-	
-//	public HashSet<ExecutionSpecification> getESs(){
-//		HashSet<ExecutionSpecification> esSet = new HashSet<ExecutionSpecification>();
-//		for (SequenceDiagram sd : new MadesModel(this.uml_object.getModel()).getSequenceDiagrams())
-//			for (ExecutionSpecification es: sd.getExecutionSpecifications()){
-//				Object o= new ExecutionOccurrence(es).getObject();
-//				if (this.uml_object.hashCode() == new ExecutionOccurrence(es).getObject().hashCode())
-//					esSet.add(es);
-//			}
-//		return esSet;
-//	}
+
+
 	
 }

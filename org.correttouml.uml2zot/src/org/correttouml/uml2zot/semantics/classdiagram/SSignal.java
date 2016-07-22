@@ -4,11 +4,14 @@ import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.classdiagram.Signal;
 import org.correttouml.uml.diagrams.statediagram.StateDiagram;
 import org.correttouml.uml.diagrams.statediagram.Transition;
+import org.correttouml.uml.diagrams.statediagram.actions.Action;
 import org.correttouml.uml.diagrams.statediagram.actions.SignalAction;
 import org.correttouml.uml2zot.semantics.statediagram.STransition;
+import org.correttouml.uml2zot.semantics.statediagram.actions.SSignalAction;
 import org.correttouml.uml2zot.semantics.util.bool.Iff;
 import org.correttouml.uml2zot.semantics.util.bool.Or;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
+import org.correttouml.uml2zot.semantics.util.trio.Yesterday;
 
 
 public class SSignal {
@@ -30,16 +33,7 @@ public class SSignal {
         
         //Connection semantics
         //Actions can generate signal
-        for (Object obj: mades_signal.getMadesModel().getClassdiagram().getObjects()) {
-            for(StateDiagram std: obj.getOwningClass().getStateDiagrams()){
-            	for(Transition t: std.getTransitions()){
-            		if(!t.isInitialTransition() && t.hasAction() && t.getAction() instanceof SignalAction){
-            			SignalAction s= (SignalAction)t.getAction();
-            			if(s.equals(new SignalAction(this.mades_signal))) orCond.addFormulae(new STransition(t).getPredicate(obj));
-            		}
-            	}
-            }
-        }
+        addActionsInvokingThisSignal(orCond);
         
         //Connection semantics
         //TODO: Interruptible regions can generate signals
@@ -47,6 +41,25 @@ public class SSignal {
         if(orCond.size()>0) sem=sem+new Iff(this.getPredicate(), orCond)+"\n";
         
         return sem;
+	}
+
+	private void addActionsInvokingThisSignal(Or orCond) {
+        for (Object obj: mades_signal.getMadesModel().getClassdiagram().getObjects()) {
+            for(StateDiagram std: obj.getOwningClass().getStateDiagrams()){
+            	for(Transition t: std.getTransitions()){
+            		if(!t.isInitialTransition() && t.hasActions()){
+            			for(Action act: t.getActions(obj)){
+            				if(act instanceof SignalAction){
+                    			SignalAction s= (SignalAction)act;
+                    			if(s.getSignal().equals(this.mades_signal)){
+                    				orCond.addFormulae(new SSignalAction(s).getPredicate((Object[])null));
+                    			}
+            				}
+            			}
+            		}
+            	}
+            }
+        }
 	}
 	
 }

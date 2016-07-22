@@ -186,44 +186,15 @@ public class SSequenceDiagram {
 		//Get all the actions
 		Or condStart = new Or();
 		Or condEnd = new Or();
-        for (Object mades_object : this.mades_sd.getMadesModel().getClassdiagram().getObjects()) {
-            for (StateDiagram std : mades_object.getOwningClass().getStateDiagrams()) {
-                for(Transition t: std.getTransitions()){
-                	if(t.hasAction()){
-	                	Action act=t.getAction();
-	                	if(act instanceof SequenceDiagramAction && ((SequenceDiagramAction) act).getSequenceDiagram().equals(this.mades_sd)){
-	                		condStart.addFormulae(new STransition(t).getPredicate(mades_object));
-	                	}
-                	}
-                }  
-            }
-        }
+		addStateMachineInvocations(condStart);
         
         //Get all the IOD nodes
-        for(IOD iod: this.mades_sd.getMadesModel().getIODs()){
-        	for(Node n: iod.getNodes()){
-        		if(n instanceof SequenceDiagramNode){
-        			SequenceDiagramNode sdnode=((SequenceDiagramNode) n);
-        			if(sdnode.getSequenceDiagram().equals(this.mades_sd)){
-            			condStart.addFormulae(new SSequenceDiagramNode((SequenceDiagramNode) n).getPredicateStart());
-            			condEnd.addFormulae(new SSequenceDiagramNode((SequenceDiagramNode) n).getPredicateEnd());
-        			}
-        		}
-        	}
-        }
+		addIODInvocations(condStart, condEnd);
         
         Or condStop=new Or();
         //The stop is connected to the interruptible regions
-        //TODO: connect to the transitions that use @sd.stop
-        for(IOD iod:this.mades_sd.getMadesModel().getIODs()){
-        	for(InterruptibleRegion ir: iod.getInterruptibleRegions()){
-        		for(SequenceDiagramNode sd_node: ir.getSequenceDiagramNodes()){
-        			if(sd_node.getSequenceDiagram().equals(this.mades_sd)){
-        				condStop.addFormulae(new SSequenceDiagramNode(sd_node).getPredicateStop());
-        			}
-        		}
-        	}
-        }
+        //TODO: connect to the transitions that use @sd.stop, i.e. addSDStopInvocations
+        addIODStopInvocations(condStop);
         
         if (condStart.size() > 0) {
             sem = sem + new Iff(sd_start, condStart) + "\n";
@@ -241,6 +212,48 @@ public class SSequenceDiagram {
         }
 		
 		return sem;
+	}
+
+	private void addIODStopInvocations(Or condStop) {
+        for(IOD iod:this.mades_sd.getMadesModel().getIODs()){
+        	for(InterruptibleRegion ir: iod.getInterruptibleRegions()){
+        		for(SequenceDiagramNode sd_node: ir.getSequenceDiagramNodes()){
+        			if(sd_node.getSequenceDiagram().equals(this.mades_sd)){
+        				condStop.addFormulae(new SSequenceDiagramNode(sd_node).getPredicateStop());
+        			}
+        		}
+        	}
+        }
+	}
+
+	private void addIODInvocations(Or condStart, Or condEnd) {
+        for(IOD iod: this.mades_sd.getMadesModel().getIODs()){
+        	for(Node n: iod.getNodes()){
+        		if(n instanceof SequenceDiagramNode){
+        			SequenceDiagramNode sdnode=((SequenceDiagramNode) n);
+        			if(sdnode.getSequenceDiagram().equals(this.mades_sd)){
+            			condStart.addFormulae(new SSequenceDiagramNode((SequenceDiagramNode) n).getPredicateStart());
+            			condEnd.addFormulae(new SSequenceDiagramNode((SequenceDiagramNode) n).getPredicateEnd());
+        			}
+        		}
+        	}
+        }
+	}
+
+	private void addStateMachineInvocations(Or condStart) {
+        for (Object mades_object : this.mades_sd.getMadesModel().getClassdiagram().getObjects()) {
+            for (StateDiagram std : mades_object.getOwningClass().getStateDiagrams()) {
+                for(Transition t: std.getTransitions()){
+                	if(t.hasActions()){
+                		for(Action act: t.getActions(null)){
+                        	if(act instanceof SequenceDiagramAction && ((SequenceDiagramAction) act).getSequenceDiagram().equals(this.mades_sd)){
+        	                	condStart.addFormulae(new STransition(t).getPredicate(mades_object));
+        	                }
+                		}
+                	}
+                }  
+            }
+        }
 	}
 
 	protected static BooleanFormulae buildOrderingSemanticsLTEAxiom(Predicate e_i,

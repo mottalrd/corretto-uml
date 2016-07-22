@@ -1,11 +1,14 @@
 package org.correttouml.uml.diagrams.statediagram;
 
 
+import java.util.List;
+
 import org.correttouml.uml.diagrams.expressions.AssignmentContext;
 import org.correttouml.uml.diagrams.statediagram.actions.Action;
 import org.correttouml.uml.diagrams.statediagram.actions.ActionFactory;
 import org.correttouml.uml.helpers.StDTransitionsParser;
 import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.correttouml.uml.diagrams.classdiagram.Object;
 
 public class Transition implements AssignmentContext{
 	
@@ -69,23 +72,28 @@ public class Transition implements AssignmentContext{
 		//return uml_transition.getTriggers().size()>0;
 	}
 
-	public boolean hasAction() {
+	public boolean hasActions() {
 		StDTransitionsParser p= new StDTransitionsParser();
 		p.parse(uml_transition.getName());
 		return p.hasAction();
 		//return uml_transition.getTriggers().size()>0;
 	}
 	
-	public Action getAction(){		
+	public List<Action> getActions(Object object){		
 		StDTransitionsParser p= new StDTransitionsParser();
 		p.parse(uml_transition.getName());
-		return ActionFactory.getInstance(p.getAction(), this.uml_transition);		
+		return ActionFactory.getInstance(p.getAction(), this, object);		
 		
 		//return ActionFactory.getInstance(uml_transition.getEffect());
 	}
 	
 	public boolean isInitialTransition(){
 		return uml_transition.getSource() instanceof org.eclipse.uml2.uml.Pseudostate;
+	}
+	
+	@Override
+	public String toString(){
+		return this.uml_transition.getName();
 	}
 	
 	@Override
