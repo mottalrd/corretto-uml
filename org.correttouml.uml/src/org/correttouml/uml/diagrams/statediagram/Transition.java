@@ -35,6 +35,7 @@ public class Transition implements AssignmentContext{
 		return new StateDiagram((org.eclipse.uml2.uml.StateMachine) this.uml_transition.getOwner().getOwner());
 	}
 
+	@Override
 	public String getUMLId() {
 		String id=((XMLResource) this.uml_transition.eResource()).getID(uml_transition);
 		return id;
@@ -99,7 +100,7 @@ public class Transition implements AssignmentContext{
 	@Override
 	public boolean equals(java.lang.Object o){
 		Transition other_transition=(Transition) o;
-		return this.uml_transition.equals((org.eclipse.uml2.uml.Transition) other_transition.uml_transition);
+		return this.uml_transition.equals(other_transition.uml_transition);
 	}
 	
 	@Override

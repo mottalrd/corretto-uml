@@ -2,18 +2,12 @@ package org.correttouml.uml2zot.semantics.statediagram;
 
 import org.correttouml.grammars.booleanExpressions.Model;
 import org.correttouml.uml.diagrams.classdiagram.Object;
-import org.correttouml.uml.diagrams.expressions.ExpressionContext;
 import org.correttouml.uml.diagrams.statediagram.Invariant;
 import org.correttouml.uml.diagrams.statediagram.State;
 import org.correttouml.uml.diagrams.timeconstraints.TimeConstraint;
 import org.correttouml.uml.helpers.BooleanExpressionsParser;
 import org.correttouml.uml2zot.semantics.timeconstraints.STimeConstraint;
-import org.correttouml.uml2zot.semantics.util.bool.And;
 import org.correttouml.uml2zot.semantics.util.bool.Implies;
-import org.correttouml.uml2zot.semantics.util.bool.Not;
-import org.correttouml.uml2zot.semantics.util.trio.Lasted;
-import org.correttouml.uml2zot.semantics.util.trio.Next;
-import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 
 
 public class SInvariant {

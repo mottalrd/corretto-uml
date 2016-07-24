@@ -1,6 +1,5 @@
 package org.correttouml.uml2zot.semantics.classdiagram;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -33,6 +32,7 @@ public class SAttribute implements SVariable {
 		this.mades_attribute = attribute;
 	}
 
+	@Override
 	public BooleanFormulae getPredicate(Object... obj) {
 		if(mades_attribute.isStatic()){
 			if (mades_attribute.getType() == PrimitiveType.INTEGER

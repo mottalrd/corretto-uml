@@ -42,6 +42,7 @@ public class MessageParameter {
         return new OperationParameter(op.getOwnedParameters().get(paramIndex));
 	}
 	
+	@Override
 	public boolean equals(java.lang.Object object){
 		MessageParameter mp=(MessageParameter) object;
 		if(mp.uml_valuespecification.equals(this.uml_valuespecification)) return true;

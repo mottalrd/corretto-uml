@@ -7,7 +7,6 @@ import org.correttouml.uml.diagrams.property.PTerm;
 import org.correttouml.uml.diagrams.sequencediagram.Message;
 import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagram;
 import org.correttouml.uml.diagrams.statediagram.State;
-import org.correttouml.uml2zot.semantics.classdiagram.SOperation;
 import org.correttouml.uml2zot.semantics.classdiagram.SSignal;
 import org.correttouml.uml2zot.semantics.sequencediagram.SMessage;
 import org.correttouml.uml2zot.semantics.sequencediagram.SSequenceDiagram;

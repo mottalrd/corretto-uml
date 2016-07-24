@@ -6,12 +6,10 @@ import org.correttouml.uml.diagrams.statediagram.StateDiagram;
 import org.correttouml.uml.diagrams.statediagram.Transition;
 import org.correttouml.uml.diagrams.statediagram.actions.Action;
 import org.correttouml.uml.diagrams.statediagram.actions.SignalAction;
-import org.correttouml.uml2zot.semantics.statediagram.STransition;
 import org.correttouml.uml2zot.semantics.statediagram.actions.SSignalAction;
 import org.correttouml.uml2zot.semantics.util.bool.Iff;
 import org.correttouml.uml2zot.semantics.util.bool.Or;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
-import org.correttouml.uml2zot.semantics.util.trio.Yesterday;
 
 
 public class SSignal {

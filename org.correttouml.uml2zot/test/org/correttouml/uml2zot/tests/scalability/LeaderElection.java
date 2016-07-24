@@ -1,3 +1,4 @@
+
 package org.correttouml.uml2zot.tests.scalability;
 
 import java.io.File;
@@ -11,7 +12,6 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.uml2.uml.AggregationKind;
-import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.PrimitiveType;
@@ -33,7 +33,6 @@ public class LeaderElection {
 	private State STATE_NO_WINNER;
 	private State STATE_WINNER;
 	private State STATE_ERROR;
-	private State GENERATOR_END;
 
 	private static final Logger LOGGER = Logger
 			.getLogger(SequenceDiagram.class);
@@ -46,10 +45,10 @@ public class LeaderElection {
 	public void start() {
 		LOGGER.info("Creating the UML model");
 		String modeltype = "";
-		int numOfProcesses = 5;
-		modeltype = "sat"; create_leader_election_model(numOfProcesses); 
-		create_invariant_for_sat();
-//		modeltype = "p1"; create_alw_somf_idgenerator_stateend_implies_somf_monitor_state_winner();
+//		for(int i=5; i<=20; i=i+5){
+		int i = 5;
+		modeltype = "sat"; create_leader_election_model(i);
+		modeltype = "p1"; create_alw_somf_monitor_state_winner();
 //		modeltype = "p2"; create_alw_not_monitor_state_error();
 
 		// Save it to disk
@@ -64,12 +63,14 @@ public class LeaderElection {
 
 		LOGGER.info("Generate the ZOT File");
 		t.generateZOTFile(75, "ae2zot", "z3",
-				new File("output/leader-"+modeltype+"-"+numOfProcesses+".lisp").getAbsolutePath());
+//					new File("output/zot_model_"+i+"_proc.lisp").getAbsolutePath());
+				new File("output/Leader-"+modeltype+"-"+i+".lisp").getAbsolutePath());
+//		}
 			
 	}
 	
-	//Alw(SomF(IDGENERATOR_STATE_END) => SomF(MONITOR_STATE_WINNER))
-	private void create_alw_somf_idgenerator_stateend_implies_somf_monitor_state_winner() {
+	//Alw(SomF(MONITOR_STATE_WINNER))
+	private void create_alw_somf_monitor_state_winner() {
 
 		// Creazione <<Property>> package
 		org.eclipse.uml2.uml.Package propertyPackage = UML2Helper.createPackage(myModel, "Property");
@@ -77,24 +78,15 @@ public class LeaderElection {
 		propertyPackage.applyStereotype(propertyStereotype);
 
 		// Time Property diagram
-		
+
 		// <<Term>>
 		org.eclipse.uml2.uml.Class MONITOR_STATE_WINNER = UML2Helper.createTerm(madesProfile, propertyPackage, STATE_WINNER);
 
 		// <<SomF>>
-		org.eclipse.uml2.uml.Class somf2 = UML2Helper.createSomF(madesProfile, propertyPackage, MONITOR_STATE_WINNER.getStereotypeApplications().get(0));
+		org.eclipse.uml2.uml.Class somf = UML2Helper.createSomF(madesProfile, propertyPackage, MONITOR_STATE_WINNER.getStereotypeApplications().get(0));
 
-		// <<Term>>
-		org.eclipse.uml2.uml.Class IDGENERATOR_STATE_END = UML2Helper.createTerm(madesProfile, propertyPackage, GENERATOR_END);
-		
-		// <<SomF>>
-		org.eclipse.uml2.uml.Class somf1 = UML2Helper.createSomF(madesProfile, propertyPackage, IDGENERATOR_STATE_END.getStereotypeApplications().get(0));
-		
-		// <<Implies>>
-		org.eclipse.uml2.uml.Class implies = UML2Helper.createImplies(madesProfile, propertyPackage, somf1.getStereotypeApplications().get(0), somf2.getStereotypeApplications().get(0));
-		
 		// <<Alw>>
-		org.eclipse.uml2.uml.Class alw = UML2Helper.createAlw(madesProfile,propertyPackage, implies.getStereotypeApplications().get(0));
+		org.eclipse.uml2.uml.Class alw = UML2Helper.createAlw(madesProfile,propertyPackage, somf.getStereotypeApplications().get(0));
 
 		// <<Property>>
 		UML2Helper.createProperty(madesProfile, propertyPackage, alw.getStereotypeApplications().get(0));
@@ -132,34 +124,8 @@ public class LeaderElection {
 
 	}
 
-	private void create_invariant_for_sat() {
-
-		// Creazione <<Property>> package
-		org.eclipse.uml2.uml.Package propertyPackage = UML2Helper.createPackage(myModel, "Property");
-		org.eclipse.uml2.uml.Stereotype propertyStereotype = UML2Helper.getMADESVerificationTagsStereotype(madesProfile, "Property");
-		propertyPackage.applyStereotype(propertyStereotype);
-
-		// Time Property diagram
-		
-		// <<Term>>
-		org.eclipse.uml2.uml.Class IDGENERATOR_STATE_END = UML2Helper.createTerm(madesProfile, propertyPackage, GENERATOR_END);
-		
-		// <<SomF>>
-		org.eclipse.uml2.uml.Class somf1 = UML2Helper.createSomF(madesProfile, propertyPackage, IDGENERATOR_STATE_END.getStereotypeApplications().get(0));
-		
-		// <<Implies>>
-		org.eclipse.uml2.uml.Class not = UML2Helper.createNot(madesProfile, propertyPackage, somf1.getStereotypeApplications().get(0));
-		
-		// <<Alw>>
-		org.eclipse.uml2.uml.Class alw = UML2Helper.createAlw(madesProfile,propertyPackage, not.getStereotypeApplications().get(0));
-
-		// <<Property>>
-		UML2Helper.createProperty(madesProfile, propertyPackage, alw.getStereotypeApplications().get(0));
-
-	}
-	
 	private void create_leader_election_model(int num_process) {
-		// Prepare the model and the package
+		// Preparazione modello e package
 		myModel = UML2Helper.createModel("ScalabilityModel");
 		madesProfile = UML2Helper
 				.loadProfile(TestConfiguration.MADES_PROFILE_PATH);
@@ -173,23 +139,20 @@ public class LeaderElection {
 				.getMADESVerificationTagsStereotype(madesProfile, "System");
 		systemPackage.applyStereotype(systemStereotype);
 
-		// CLASS DIAGRAM - classes
+		// Class diagram
 		PrimitiveType integer = UML2Helper.createPrimitiveType(myModel,
 				"Integer");
 
-		org.eclipse.uml2.uml.Class idGeneratorClass = UML2Helper.createClass(
-				systemPackage, "IdGenerator", false);
-		for(int i=0; i<num_process; i++){
-			UML2Helper.createAttribute(idGeneratorClass, "idattr" + i, integer);
-		}
-		
 		org.eclipse.uml2.uml.Class processClass = UML2Helper.createClass(
 				systemPackage, "Process", false);
+		UML2Helper.createAttribute(processClass, "active", integer).setIntegerDefaultValue(1);
 		
-		Property active_attr = UML2Helper.createAttribute(processClass, "active", integer);
-		Property mynumber_attr = UML2Helper.createAttribute(processClass, "mynumber", integer);
-		Property max_attr = UML2Helper.createAttribute(processClass, "max", integer);
-		Property neighbourR_attr = UML2Helper.createAttribute(processClass, "neighbourR", integer);
+		// this attribute has not a default value but will be initialized with
+		// the slots
+		Property mynumber_attr = UML2Helper.createAttribute(processClass,
+				"mynumber", integer);
+		UML2Helper.createAttribute(processClass, "max", integer).setIntegerDefaultValue(0);
+		UML2Helper.createAttribute(processClass, "neighbourR", integer).setIntegerDefaultValue(0);
 		
 		//This guy is going to monitor if we have a winner
 		org.eclipse.uml2.uml.Class monitorClass = UML2Helper.createClass(
@@ -211,11 +174,6 @@ public class LeaderElection {
 		EList<Type> win_parametersType = new BasicEList<Type>();
 		win_parametersName.add("win_nr");
 		win_parametersType.add(integer);
-		
-		EList<String> setId_parametersName = new BasicEList<String>();
-		EList<Type> setId_parametersType = new BasicEList<Type>();
-		setId_parametersName.add("myId");
-		setId_parametersType.add(integer);
 
 		UML2Helper.createOperation(processClass, "one", one_parametersName,
 				one_parametersType);
@@ -223,52 +181,35 @@ public class LeaderElection {
 				two_parametersType);
 		UML2Helper.createOperation(processClass, "winner", win_parametersName,
 				win_parametersType);
-		UML2Helper.createOperation(processClass, "setId", setId_parametersName,
-				setId_parametersType);
 
 		// TODO[mottalrd] the XMI generated is different from the one of
-		// papyrus. UML2Zot uses the link instances hence this is actually ignored
-		// for semantics generation
+		// papyrus. But I don't need it for the zot generation, so who cares
 		org.eclipse.uml2.uml.Association processClass_processClass = UML2Helper
 				.createAssociation("link",
 						(org.eclipse.uml2.uml.Type) processClass, true,
 						AggregationKind.NONE_LITERAL, "in", 1, 1,
 						(org.eclipse.uml2.uml.Type) processClass, true,
 						AggregationKind.NONE_LITERAL, "out", 1, 1);
-		
-		ArrayList<Association> idGeneratorAssociationList=new ArrayList<Association>();
-		for(int i=0; i<num_process; i++){
-			Association tmp = UML2Helper
-					.createAssociation("gen_link_proc"+i,
-							(org.eclipse.uml2.uml.Type) idGeneratorClass, true,
-							AggregationKind.NONE_LITERAL, "in", 1, 1,
-							(org.eclipse.uml2.uml.Type) processClass, true,
-							AggregationKind.NONE_LITERAL, "out", 1, 1);
-			idGeneratorAssociationList.add(tmp);	
-		}
 
-		// CLASS DIAGRAM - instances
 		ArrayList<InstanceSpecification> processes=new ArrayList<InstanceSpecification>();
-		IdGenerator gen=new IdGenerator(0, num_process);
+		IdGenerator gen=new IdGenerator(0, num_process*3); //it was inside the loop in Alfredo's version
 		for(int i=0; i<num_process; i++){
+			//TODO: id generator not working
+			
 			int id=gen.getNextId();
 			
 			InstanceSpecification tmp=UML2Helper
 			.createInstanceSpecification(systemPackage, processClass,
 					"proc_"+id);
-			
-			UML2Helper.createIntegerSlot(tmp, active_attr, 1);
-			UML2Helper.createIntegerSlot(tmp, neighbourR_attr, 0);
+			UML2Helper.createIntegerSlot(tmp, mynumber_attr, id);
+//			UML2Helper.createIntegerSlot(tmp, max_attr, id);
+//			UML2Helper.createIntegerSlot(tmp, neighbourR_attr, id);
 			processes.add(tmp);
 		}
 		org.eclipse.uml2.uml.InstanceSpecification monitor = UML2Helper
 				.createInstanceSpecification(systemPackage, monitorClass,
 						"monitor");
-		org.eclipse.uml2.uml.InstanceSpecification idGenerator = UML2Helper
-				.createInstanceSpecification(systemPackage, idGeneratorClass,
-						"idGenerator");
 
-		//Build the process ring
 		for(int i=0; i<num_process; i++){
 			int pos1=i % num_process;
 			int pos2=(i+1) % num_process;
@@ -280,48 +221,9 @@ public class LeaderElection {
 							systemPackage, processClass_processClass, "in", proc_1,
 							"out", proc_2);
 		}
-		
-		// Connect the idGenerator to the processes
-		for(int i=0; i<num_process; i++){
-			InstanceSpecification proc=processes.get(i);
-			Association association = idGeneratorAssociationList.get(i);
-			
-			UML2Helper.createInstanceSpecificationLink(idGenerator.getName()+"_"+proc.getName(),
-					systemPackage, association, "in", idGenerator,
-					"out", proc);
-		}
 
-		// STATE DIAGRAMS
-		
-		// STATE DIAGRAM - IDGENERATOR
-		org.eclipse.uml2.uml.StateMachine idGenerator_SM = UML2Helper
-				.createStateMachine(idGeneratorClass, "IdGenerator_SM");
-		UML2Helper.createRegion(idGenerator_SM);
 
-		org.eclipse.uml2.uml.Pseudostate GENERATOR_START = UML2Helper.createInitialState(idGenerator_SM, "START");
-		org.eclipse.uml2.uml.State GENERATOR_SETID = UML2Helper.createState(idGenerator_SM, "SETID");
-		GENERATOR_END = UML2Helper.createState(idGenerator_SM, "END");
-		
-		UML2Helper.createTransition(idGenerator_SM, GENERATOR_START, GENERATOR_SETID, 
-				"@now - @START.enter > 1");
-
-		String transition_guard = "";
-		String transition_action = "";
-		for (int i = 0; i < num_process - 1 ; i++) {
-			for (int j = i + 1; j < num_process ; j++) {
-				transition_guard += "{idattr" + i + "!=idattr" + j + "} && ";
-			}
-		}
-		for (int i = 0; i < num_process; i++) {
-			transition_action += "#gen_link_proc" + i + ".out@setId(idattr" + i + ").call, ";
-		}
-		transition_guard = transition_guard.substring(0, transition_guard.length() - 4);
-		transition_action = transition_action.substring(0, transition_action.length() - 2);
-//		For 3 processes:
-//		UML2Helper.createTransition(idGenerator_SM, GENERATOR_SETID, GENERATOR_END, 
-//				"[{idattr0!=idattr1} && {idattr0!=idattr2} && {idattr1!=idattr2}]/#gen_link_proc0.out@setId(idattr0).call, #gen_link_proc1.out@setId(idattr1).call, #gen_link_proc2.out@setId(idattr2).call");
-		UML2Helper.createTransition(idGenerator_SM, GENERATOR_SETID, GENERATOR_END, "[" + transition_guard + "]/" + transition_action);
-		// STATE DIAGRAM - MONITOR
+		// STD MONITOR
 		org.eclipse.uml2.uml.StateMachine monitor_SM = UML2Helper
 				.createStateMachine(monitorClass, "Monitor_SM");
 		UML2Helper.createRegion(monitor_SM);
@@ -338,7 +240,7 @@ public class LeaderElection {
 		UML2Helper.createTransition(monitor_SM, STATE_WINNER, STATE_ERROR, "we_have_winner.sig");
 		
 		
-		// STATE DIAGRAM - PROCESS
+		// STD PROCESS
 		org.eclipse.uml2.uml.StateMachine process_SM = UML2Helper
 				.createStateMachine(processClass, "Process_SM");
 		UML2Helper.createRegion(process_SM);
@@ -355,8 +257,11 @@ public class LeaderElection {
 
 		// initial transition
 		UML2Helper.createTransition(process_SM, STATE_0, STATE_INIT, "");
-		UML2Helper.createTransition(process_SM, STATE_INIT, STATE_MAIN,//main
-				"@setId.call / mynumber=<P>myId, #link.out@one(mynumber).call, max=mynumber");
+		// at the beginning send your number to the neighbour
+		UML2Helper
+				.createTransition(process_SM, STATE_INIT, STATE_MAIN,
+						"@now - @INIT.enter > 1/#link.out@one(mynumber).call, max=mynumber");
+		// no active, just pass the message
 		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN,
 				"@one.call[{active==0}]/#link.out@one(<P>one_nr).call");
 		// no active, just pass the message
@@ -382,6 +287,7 @@ public class LeaderElection {
 						process_SM,
 						STATE_MAIN,
 						STATE_MAIN,
+//						"@two.call[{active==1} && ({neighbourR<=two_nr} || {neighbourR<=max})]/active=0, #link.out@one(<P>neighbourR).call"); //Alfredo
 						"@two.call[{active==1} && ({neighbourR<=two_nr} || {neighbourR<=max})]/active=0");
 		// winner found, communicate the winner
 		UML2Helper
@@ -395,20 +301,23 @@ public class LeaderElection {
 		UML2Helper
 				.createTransition(process_SM, STATE_MAIN, STATE_LOST,
 						"@winner.call[{win_nr!=mynumber}]/#link.out@winner(<P>win_nr).call");
-
 	}
 
-	private class IdGenerator{		
-		private ArrayList<Integer> ids=new ArrayList<Integer>();
+	private class IdGenerator{
+		ArrayList<Integer> ids=new ArrayList<Integer>();
 		
 		public IdGenerator(int min, int max){
 			for(int i=min; i<=max; i++) ids.add(i);
 		}
 		
 		public int getNextId(){
-			int r=ids.get(0); 
-			ids.remove(ids.indexOf(r));		
+			int r=ids.get(this.getRandom(0, ids.size() - 1)); 
+			ids.remove(ids.indexOf(r));
 			return r;
+		}
+		
+		private int getRandom(int min, int max){
+			return min + (int)(Math.random() * ((max - min)));
 		}
 	}
 }

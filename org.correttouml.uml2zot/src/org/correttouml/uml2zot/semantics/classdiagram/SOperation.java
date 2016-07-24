@@ -45,7 +45,7 @@ public class SOperation {
 		
 		//ACTIONS INVOKING THIS OPERATION
 		Set<CallAction> actions=getActionsInvokingThisOperation(object);
-		for(CallAction act: actions) orCond.addFormulae(new SCallAction((CallAction)act).getPredicate(object));
+		for(CallAction act: actions) orCond.addFormulae(new SCallAction(act).getPredicate(object));
 		
 		
         if(orCond.size()!=0) sem=sem+new Iff(this.getPredicate(object),orCond) + "\n";

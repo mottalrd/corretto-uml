@@ -32,7 +32,6 @@ import org.correttouml.uml2zot.semantics.util.bool.Or;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 import org.correttouml.uml2zot.semantics.util.trio.Since_ei;
 import org.correttouml.uml2zot.semantics.util.trio.Until_ei;
-import org.eclipse.uml2.uml.ExecutionSpecification;
 
 public class SSequenceDiagram {
 

@@ -8,8 +8,6 @@ import org.correttouml.uml.diagrams.expressions.ValueSpecification;
 import org.correttouml.uml.diagrams.statediagram.StateDiagram;
 import org.correttouml.uml2zot.semantics.SMadesModel;
 import org.correttouml.uml2zot.semantics.statediagram.SStateDiagram;
-import org.correttouml.uml2zot.semantics.util.trio.Constant;
-import org.correttouml.uml2zot.semantics.util.trio.EQ;
 
 
 public class SObject {

@@ -8,7 +8,6 @@ import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.ExecutionSpecification;
 import org.eclipse.uml2.uml.InstanceSpecification;
 
 public class Object {
@@ -103,7 +102,7 @@ public class Object {
 	@Override
 	public boolean equals(java.lang.Object o){
 		Object other_object=(Object) o;
-		return this.uml_object.equals((org.eclipse.uml2.uml.InstanceSpecification) other_object.uml_object);
+		return this.uml_object.equals(other_object.uml_object);
 	}
 	
 	@Override

@@ -18,6 +18,7 @@ public class Attribute extends Variable{
 		this.uml_attribute=at;
 	}
 
+	@Override
 	public PrimitiveType getType() {
 		if(this.uml_attribute.getType() instanceof org.eclipse.uml2.uml.PrimitiveType){
 			org.eclipse.uml2.uml.PrimitiveType pt=(org.eclipse.uml2.uml.PrimitiveType) this.uml_attribute.getType();
@@ -44,7 +45,7 @@ public class Attribute extends Variable{
 	@Override
 	public boolean equals(java.lang.Object o){
 		Attribute other_attribute=(Attribute) o;
-		return this.uml_attribute.equals((org.eclipse.uml2.uml.Property) other_attribute.uml_attribute);
+		return this.uml_attribute.equals(other_attribute.uml_attribute);
 	}
 	
 	@Override

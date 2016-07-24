@@ -5,7 +5,6 @@ import java.util.Iterator;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
-import org.correttouml.uml.diagrams.expressions.ExpressionContext;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
@@ -14,6 +13,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Constraint;
@@ -29,14 +29,12 @@ import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Slot;
 import org.eclipse.uml2.uml.State;
-import org.eclipse.uml2.uml.StateInvariant;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.resource.UMLResource;
 import org.eclipse.uml2.uml.resources.util.UMLResourcesUtil;
-import org.eclipse.uml2.uml.util.UMLUtil;
 
 public class UML2Helper {
 
@@ -44,7 +42,8 @@ public class UML2Helper {
 	
 	//Double check that this is updated when running
 	//[TODO]: This has to be in a configuration file
-	public static String UML_LIBRARY_PATH="jar:file:/Applications/eclipse/plugins/org.eclipse.uml2.uml.resources_4.0.1.v20120913-1441.jar!/";
+//	public static String UML_LIBRARY_PATH="jar:file:/Applications/eclipse/plugins/org.eclipse.uml2.uml.resources_4.0.1.v20120913-1441.jar!/";
+	public static String UML_LIBRARY_PATH="jar:file:/Applications/MyEclipse/eclipse-myKepler/plugins/org.eclipse.uml2.uml.resources_4.1.0.v20140202-2055.jar!/";
 	
 	public static org.eclipse.uml2.uml.Class createNot(org.eclipse.uml2.uml.Profile madesProfile, org.eclipse.uml2.uml.Package package_, EObject formulae){
 		//<<Alw>>
@@ -570,7 +569,7 @@ public class UML2Helper {
 		Resource resource = resourceSet.createResource(uri);
 		resource.getContents().add(package_);
 		
-		for (Iterator allContents = UMLUtil.getAllContents(package_, true,
+		for (Iterator allContents = UML2Util.getAllContents(package_, true,
 				false); allContents.hasNext();) {
 
 				EObject eObject = (EObject) allContents.next();
@@ -598,7 +597,7 @@ public class UML2Helper {
 				for(org.eclipse.uml2.uml.Stereotype s: verificationTags.getOwnedStereotypes()){
 					
 					if(s.getName().equals(stereotypeName)){
-						timeStereotype= (org.eclipse.uml2.uml.Stereotype)s;
+						timeStereotype= s;
 					}
 				}
 			}
@@ -615,7 +614,7 @@ public class UML2Helper {
 				for(org.eclipse.uml2.uml.Stereotype s: verificationTags.getOwnedStereotypes()){
 					
 					if(s.getName().equals(stereotypeName)){
-						systemStereotype= (org.eclipse.uml2.uml.Stereotype)s;
+						systemStereotype= s;
 					}
 				}
 			}
@@ -632,7 +631,7 @@ public class UML2Helper {
 				for(org.eclipse.uml2.uml.Stereotype s: verificationTags.getOwnedStereotypes()){
 					
 					if(s.getName().equals(stereotypeName)){
-						systemStereotype= (org.eclipse.uml2.uml.Stereotype)s;
+						systemStereotype= s;
 					}
 				}
 			}

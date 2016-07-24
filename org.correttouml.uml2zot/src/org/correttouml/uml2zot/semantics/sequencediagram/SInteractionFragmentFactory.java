@@ -6,7 +6,6 @@ import org.correttouml.uml.diagrams.sequencediagram.ExecutionOccurrenceStart;
 import org.correttouml.uml.diagrams.sequencediagram.InteractionFragment;
 import org.correttouml.uml.diagrams.sequencediagram.MessageEnd;
 import org.correttouml.uml.diagrams.sequencediagram.MessageStart;
-import org.eclipse.uml2.uml.ExecutionSpecification;
 
 public class SInteractionFragmentFactory {
 

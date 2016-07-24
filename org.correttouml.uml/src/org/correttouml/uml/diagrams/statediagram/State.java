@@ -76,7 +76,7 @@ public class State implements PTermElement{
 	@Override
 	public boolean equals(java.lang.Object o){
 		State other_state=(org.correttouml.uml.diagrams.statediagram.State) o;
-		return this.uml_state.equals((org.eclipse.uml2.uml.State) other_state.uml_state);
+		return this.uml_state.equals(other_state.uml_state);
 	}
 	
 	@Override

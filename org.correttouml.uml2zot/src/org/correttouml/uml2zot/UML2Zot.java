@@ -3,23 +3,14 @@ package org.correttouml.uml2zot;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.Console;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.sql.Time;
-
-import javax.swing.text.html.HTMLEditorKit.Parser;
-
 import org.apache.log4j.Logger;
 import org.correttouml.uml.MadesModel;
-import org.correttouml.uml.diagrams.sequencediagram.Message;
 import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagram;
-import org.correttouml.uml.diagrams.statediagram.Transition;
-import org.correttouml.uml.diagrams.timeconstraints.TimeConstraint;
 import org.correttouml.uml.helpers.UML2ModelHelper;
 import org.correttouml.uml2zot.semantics.SMadesModel;
 import org.correttouml.uml2zot.semantics.statediagram.SState;

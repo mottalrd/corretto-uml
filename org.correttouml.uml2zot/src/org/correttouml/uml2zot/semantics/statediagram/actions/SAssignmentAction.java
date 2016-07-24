@@ -13,7 +13,6 @@ import org.correttouml.uml.diagrams.statediagram.StateDiagram;
 import org.correttouml.uml.diagrams.statediagram.Transition;
 import org.correttouml.uml.diagrams.statediagram.actions.Action;
 import org.correttouml.uml.diagrams.statediagram.actions.AssignmentAction;
-import org.correttouml.uml2zot.semantics.SMadesModel;
 import org.correttouml.uml2zot.semantics.expressions.SAssignment;
 import org.correttouml.uml2zot.semantics.util.bool.And;
 import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
@@ -31,6 +30,7 @@ public class SAssignmentAction implements SAction{
 		this.mades_assignmentAction=mades_assignmentAction;
 	}
 	
+	@Override
 	public Predicate getPredicate(Object... optObject){
 		return new SAssignment(mades_assignmentAction.getAssignment()).getPredicate(optObject[0]);
 	}

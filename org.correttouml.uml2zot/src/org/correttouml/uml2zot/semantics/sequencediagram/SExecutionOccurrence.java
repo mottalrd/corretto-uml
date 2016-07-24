@@ -1,10 +1,6 @@
 package org.correttouml.uml2zot.semantics.sequencediagram;
 
 import org.correttouml.uml.diagrams.sequencediagram.ExecutionOccurrence;
-import org.correttouml.uml.diagrams.sequencediagram.InteractionFragmentFactory;
-import org.correttouml.uml.diagrams.sequencediagram.Message;
-import org.correttouml.uml.diagrams.sequencediagram.MessageEnd;
-import org.correttouml.uml.diagrams.sequencediagram.MessageStart;
 import org.correttouml.uml2zot.semantics.util.bool.And;
 import org.correttouml.uml2zot.semantics.util.bool.Iff;
 import org.correttouml.uml2zot.semantics.util.bool.Not;
@@ -21,6 +17,7 @@ public class SExecutionOccurrence implements SInteractionFragment{
 		this.mades_exocc=mades_exocc;
 	}
 	
+	@Override
 	public Predicate getPredicate(){
 		return new Predicate("EXOCC"+this.mades_exocc.getUMLId().replace("-", "_"));
 	}
@@ -60,10 +57,14 @@ public class SExecutionOccurrence implements SInteractionFragment{
 
 	public String getSyncSemantics() {
 		String sem = "";
-		if (!(this.mades_exocc.getExecutionOccurrenceSyncStart() == null))
-			sem += new Iff(this.getPredicateStart(), new SInteractionFragmentFactory().getInstance(this.mades_exocc.getExecutionOccurrenceSyncStart()).getPredicate()) + "\n";
-		if (!(this.mades_exocc.getExecutionOccurrenceSyncFinish() == null))
-			sem += new Iff(this.getPredicateEnd(), new SInteractionFragmentFactory().getInstance(this.mades_exocc.getExecutionOccurrenceSyncFinish()).getPredicate()) + "\n";		
+		if (!(this.mades_exocc.getExecutionOccurrenceSyncStart() == null)) {
+			new SInteractionFragmentFactory();
+			sem += new Iff(this.getPredicateStart(), SInteractionFragmentFactory.getInstance(this.mades_exocc.getExecutionOccurrenceSyncStart()).getPredicate()) + "\n";
+		}
+		if (!(this.mades_exocc.getExecutionOccurrenceSyncFinish() == null)) {
+			new SInteractionFragmentFactory();
+			sem += new Iff(this.getPredicateEnd(), SInteractionFragmentFactory.getInstance(this.mades_exocc.getExecutionOccurrenceSyncFinish()).getPredicate()) + "\n";
+		}		
 		return sem;
 	}
 

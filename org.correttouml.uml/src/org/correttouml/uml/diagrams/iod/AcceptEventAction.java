@@ -43,7 +43,7 @@ public class AcceptEventAction extends Node{
 	public boolean equals(java.lang.Object o){
 		if(!(o instanceof AcceptEventAction)) return false;
 		AcceptEventAction other_aea=(AcceptEventAction) o;
-		return this.uml_activitynode.equals((org.eclipse.uml2.uml.AcceptEventAction) other_aea.uml_activitynode);
+		return this.uml_activitynode.equals(other_aea.uml_activitynode);
 	}
 	
 	@Override

@@ -31,7 +31,7 @@ public class OperationParameter extends Variable {
 	@Override
 	public boolean equals(java.lang.Object o){
 		OperationParameter other_opp=(OperationParameter) o;
-		return this.uml_parameter.equals((org.eclipse.uml2.uml.Parameter) other_opp.uml_parameter);
+		return this.uml_parameter.equals(other_opp.uml_parameter);
 	}
 	
 	@Override

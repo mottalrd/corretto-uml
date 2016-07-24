@@ -7,11 +7,7 @@ import org.apache.log4j.Logger;
 import org.correttouml.uml2zot.UML2Zot;
 import org.correttouml.uml2zot.tests.TestConfiguration;
 import org.correttouml.uml2zot.tests.helpers.UML2Helper;
-import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.uml2.uml.AggregationKind;
-import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.PrimitiveType;
@@ -19,7 +15,6 @@ import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.StateMachine;
-import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.resource.UMLResource;
 
 public class FisherProtocol {

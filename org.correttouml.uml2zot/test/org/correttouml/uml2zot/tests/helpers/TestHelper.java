@@ -73,11 +73,11 @@ public class TestHelper {
 		} catch (IOException e) {
 			LOGGER.warn("Moving "+model.getName()+" to output folder failed");
 		}
-//		try {
-//			FileUtils.copyFileToDirectory(output, destinationDir);
-//		} catch (IOException e) {
-//			LOGGER.warn("Moving "+output.getName()+" to output folder failed");
-//		}
+		try {
+			FileUtils.copyFileToDirectory(output, destinationDir);
+		} catch (IOException e) {
+			LOGGER.warn("Moving "+output.getName()+" to output folder failed");
+		}
 		try {
 			FileUtils.copyFileToDirectory(mappings, destinationDir);
 		} catch (IOException e) {

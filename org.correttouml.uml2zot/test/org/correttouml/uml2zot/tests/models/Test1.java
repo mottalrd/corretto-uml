@@ -6,7 +6,7 @@ import java.io.File;
 
 import org.apache.log4j.Logger;
 import org.correttouml.uml2zot.UML2Zot;
-import org.correttouml.uml2zot.tests.TestHelper;
+import org.correttouml.uml2zot.tests.helpers.TestHelper;
 import org.junit.Test;
 
 public class Test1 {
@@ -14,7 +14,7 @@ public class Test1 {
 	private static final Logger LOGGER = Logger.getLogger(Test1.class); 
 	
 	/** THE CCAS MODEL */
-	//private String MODEL_FILE="testmodels/ccas/v0.1/model.uml";
+	private String MODEL_FILE="testmodels/ccas/v0.1/model.uml";
 	//private String MODEL_FILE="testmodels/ccas/v0.2/model.uml";
 	//private String MODEL_FILE="testmodels/plugin/model.uml";
 	
@@ -42,7 +42,7 @@ public class Test1 {
 	//private String MODEL_FILE="testmodels/cassidian/model.uml";
 	
 	/** OMEGA ATM MODEL */
-	private String MODEL_FILE="testmodels/atm_omega/v0.1/model.uml";
+//	private String MODEL_FILE="testmodels/atm_omega/v0.1/model.uml";
 	
 	/** SD and StD **/
 	//private String MODEL_FILE="testmodels/SD_and_StD/test1/model.uml";

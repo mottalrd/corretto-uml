@@ -118,7 +118,7 @@ public class SIOD {
             if (n instanceof SequenceDiagramNode) {
                 SequenceDiagramNode curr = (SequenceDiagramNode) n;
                 //ASSUMPION: The sequence diagram is preceded by only one node
-                Node prev = (Node) n.getIncomingNodes().iterator().next();
+                Node prev = n.getIncomingNodes().iterator().next();
 
                 Predicate sd_start=new SSequenceDiagramNode(curr).getPredicateStart();
                 sem = sem + new Iff(sd_start, new Past(RC(curr, prev),1)) + "\n";

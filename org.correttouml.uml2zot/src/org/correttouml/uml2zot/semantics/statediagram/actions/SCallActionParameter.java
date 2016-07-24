@@ -1,7 +1,6 @@
 package org.correttouml.uml2zot.semantics.statediagram.actions;
 
 import org.correttouml.uml.diagrams.classdiagram.Object;
-import org.correttouml.uml.diagrams.classdiagram.Operation;
 import org.correttouml.uml.diagrams.statediagram.actions.CallActionParameter;
 import org.correttouml.uml2zot.semantics.classdiagram.SOperationParameter;
 import org.correttouml.uml2zot.semantics.expressions.SVariableFactory;

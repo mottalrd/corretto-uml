@@ -12,7 +12,6 @@ import org.correttouml.uml2zot.semantics.SMadesModel;
 import org.correttouml.uml2zot.semantics.expressions.SBooleanExpression;
 import org.correttouml.uml2zot.semantics.statediagram.actions.SAction;
 import org.correttouml.uml2zot.semantics.statediagram.actions.SActionFactory;
-import org.correttouml.uml2zot.semantics.statediagram.actions.SAssignmentAction;
 import org.correttouml.uml2zot.semantics.statediagram.triggers.STimeCondition;
 import org.correttouml.uml2zot.semantics.statediagram.triggers.STriggerEvent;
 import org.correttouml.uml2zot.semantics.statediagram.triggers.STriggerEventFactory;

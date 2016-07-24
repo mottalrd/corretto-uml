@@ -115,7 +115,7 @@ public class StateDiagram implements ExpressionContext {
 	@Override
 	public boolean equals(java.lang.Object o){
 		StateDiagram other_std=(StateDiagram) o;
-		return this.uml_std.equals((org.eclipse.uml2.uml.StateMachine) other_std.uml_std);
+		return this.uml_std.equals(other_std.uml_std);
 	}
 	
 	@Override

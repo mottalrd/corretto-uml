@@ -8,7 +8,6 @@ import org.correttouml.uml.MadesModel;
 import org.correttouml.uml.diagrams.statediagram.StateDiagram;
 import org.correttouml.uml.helpers.UML2ModelHelper;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.ExtensionEnd;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.StateMachine;
 
@@ -124,7 +123,7 @@ public class Class {
 	@Override
 	public boolean equals(java.lang.Object o){
 		Class other_class=(Class) o;
-		return this.uml_class.equals((org.eclipse.uml2.uml.Class) other_class.uml_class);
+		return this.uml_class.equals(other_class.uml_class);
 	}
 	
 	@Override

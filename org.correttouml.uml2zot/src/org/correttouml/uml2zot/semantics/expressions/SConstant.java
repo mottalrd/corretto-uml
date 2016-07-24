@@ -10,6 +10,7 @@ public class SConstant implements BooleanFormulae{
 		this.mades_constant=mades_constant;
 	}
 	
+	@Override
 	public String toString(){
 		return Integer.toString(mades_constant);
 	}

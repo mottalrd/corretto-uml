@@ -113,6 +113,7 @@ public class SampleTab extends AbstractLaunchConfigurationTab implements ModifyL
 		gd.widthHint = 200;
 		tbText.setLayoutData(gd);
 		tbText.addListener(SWT.Verify, new Listener() {
+			@Override
 			public void handleEvent(Event e) {
 				ZotSetupUtil.InputIsInt(e.text, e);
 			}
@@ -160,6 +161,7 @@ public class SampleTab extends AbstractLaunchConfigurationTab implements ModifyL
 		plugin.setItems(items);
 		plugin.setText("plugin...");
 		plugin.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				initializeSolverCombo(plugin, solver);
 			}
@@ -194,6 +196,7 @@ public class SampleTab extends AbstractLaunchConfigurationTab implements ModifyL
 		gd = new GridData(SWT.END);
 		button.setLayoutData(gd);
 		button.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
+			@Override
 			public void widgetSelected(SelectionEvent event) {
 				createDirectoryDialog(parent, location, "Zot Directory Dialog",
 						"Select a directory");
@@ -229,6 +232,7 @@ public class SampleTab extends AbstractLaunchConfigurationTab implements ModifyL
 		gd = new GridData(SWT.END);
 		button.setLayoutData(gd);
 		button.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
+			@Override
 			public void widgetSelected(SelectionEvent event) {
 				createDirectoryDialog(parent, output_location, "Output Directory Dialog",
 						"Select a directory");
@@ -320,6 +324,7 @@ public class SampleTab extends AbstractLaunchConfigurationTab implements ModifyL
 	 */
 	private SelectionAdapter getSelectionDialog(){
 		return new SelectionAdapter() {
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				FileDialog dialog = new FileDialog(shell, SWT.NULL);
 				String path = dialog.open();
