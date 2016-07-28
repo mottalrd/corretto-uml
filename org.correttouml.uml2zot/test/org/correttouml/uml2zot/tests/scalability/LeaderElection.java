@@ -186,13 +186,13 @@ public class LeaderElection {
 		// papyrus. But I don't need it for the zot generation, so who cares
 		org.eclipse.uml2.uml.Association processClass_processClass = UML2Helper
 				.createAssociation("link",
-						(org.eclipse.uml2.uml.Type) processClass, true,
+						processClass, true,
 						AggregationKind.NONE_LITERAL, "in", 1, 1,
-						(org.eclipse.uml2.uml.Type) processClass, true,
+						processClass, true,
 						AggregationKind.NONE_LITERAL, "out", 1, 1);
 
 		ArrayList<InstanceSpecification> processes=new ArrayList<InstanceSpecification>();
-		IdGenerator gen=new IdGenerator(0, num_process*3); //it was inside the loop in Alfredo's version
+		IdGenerator gen=new IdGenerator(0, num_process*3);
 		for(int i=0; i<num_process; i++){
 			//TODO: id generator not working
 			

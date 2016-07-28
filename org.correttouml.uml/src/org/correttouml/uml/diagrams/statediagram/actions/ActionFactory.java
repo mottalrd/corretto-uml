@@ -2,9 +2,12 @@ package org.correttouml.uml.diagrams.statediagram.actions;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
+import org.correttouml.grammars.stateMachineActions.Link;
 import org.correttouml.grammars.stateMachineActions.Model;
 import org.correttouml.grammars.stateMachineActions.Parameters;
+import org.correttouml.uml.diagrams.classdiagram.AssociationEnd;
 import org.correttouml.uml.diagrams.classdiagram.AssociationInstance;
 import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.classdiagram.Operation;
@@ -72,9 +75,14 @@ public class ActionFactory {
 
 		// let's find the guy we are looking for
 		Object objToInvoke = null;
+		
 		for (AssociationInstance ai : object.getAssociationInstances()) {
-			if (ai.getAssociation().getName().equals(linkName) && ai.hasMemberEnd(associationEnd) && !ai.getMemberEnd(associationEnd).equals(object)) {
-				objToInvoke = ai.getMemberEnd(associationEnd);
+			if (ai.getAssociation().getName().equals(linkName)) {
+				for (AssociationEnd ae : ai.getAssociation().getAssociationEnds()){
+					if (ae.getName().equals(associationEnd)){
+						objToInvoke = ai.getMemberEndObject(ae.getOwnerClass());
+					}
+				}
 			}
 		}
 		if (objToInvoke == null) {
@@ -131,5 +139,3 @@ public class ActionFactory {
 		return null;
 	}
 }
-
-

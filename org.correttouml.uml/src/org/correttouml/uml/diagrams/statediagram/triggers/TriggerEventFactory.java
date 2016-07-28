@@ -4,7 +4,6 @@ import org.correttouml.uml.diagrams.events.EventFactory;
 import org.correttouml.uml.diagrams.statediagram.Transition;
 import org.correttouml.uml.diagrams.timeconstraints.TimeConstraint;
 import org.correttouml.uml.helpers.StDTriggersParser;
-
 import org.correttouml.grammars.stateMachineTriggers.*;
 
 public class TriggerEventFactory {

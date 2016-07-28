@@ -131,10 +131,8 @@ public class Class {
 		return this.uml_class.hashCode();
 	}
 
-
-
-
-
-
+	public String getName(){
+		return this.uml_class.getName(); 
+	}
 
 }

@@ -1,6 +1,11 @@
 package org.correttouml.uml.diagrams.classdiagram;
 
+import java.util.List;
+
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.uml2.uml.Property;
 
 public class AssociationInstance {
 
@@ -15,6 +20,7 @@ public class AssociationInstance {
 	 * @return
 	 */
 	public Association getAssociation(){
+		org.eclipse.uml2.uml.Association as=(org.eclipse.uml2.uml.Association)this.uml_instancespecificationlink.getClassifiers().get(0);
 		return new Association((org.eclipse.uml2.uml.Association)this.uml_instancespecificationlink.getClassifiers().get(0));
 	}
 	
@@ -52,7 +58,6 @@ public class AssociationInstance {
 		
 		return null;
 	}
-	
 	/**
 	 * Tell me if this association instance has this member end name
 	 * @param memberEndName
@@ -66,5 +71,19 @@ public class AssociationInstance {
 		}
 		return false;
 	}
+
+	public Object getMemberEndObject(Class memberEndClass){
+		for (EAnnotation e:uml_instancespecificationlink.getEAnnotations()){
+			for (EObject eo : e.getReferences())
+				if (((org.eclipse.uml2.uml.InstanceSpecification) eo).getClassifiers().get(0).getName().equals(memberEndClass.getName()))
+					return new Object((org.eclipse.uml2.uml.InstanceSpecification) ((org.eclipse.uml2.uml.InstanceSpecification) eo));
+			}
+		try{
+			throw new Exception("Member end " + memberEndClass.getName() + " not found for association instance " + uml_instancespecificationlink.getName());
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return null;
+		}
 	
 }
