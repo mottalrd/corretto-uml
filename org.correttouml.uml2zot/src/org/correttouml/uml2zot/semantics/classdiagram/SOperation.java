@@ -53,14 +53,14 @@ public class SOperation {
 	}
 
 	private Set<CallAction> getActionsInvokingThisOperation(Object object) {
-		//TODO[mottalrd] cambiare il modo in cui vado a identificare queste connessioni
 		HashSet<CallAction> retactions=new HashSet<CallAction>();
-		
-		for(Object linked_to_me_obj: object.getAssociatedObjects()){
-	        for (StateDiagram std : linked_to_me_obj.getOwningClass().getStateDiagrams()) {
+		Set<Object> objects = object.getAssociatedObjects();
+		objects.add(object);
+		for(Object obj: objects){
+	        for (StateDiagram std : obj.getOwningClass().getStateDiagrams()) {
 				for(Transition t: std.getTransitions()){
 		            if(t.hasActions()){
-		                for(Action act: t.getActions(linked_to_me_obj)){
+		                for(Action act: t.getActions(obj)){
 			                if(act instanceof CallAction 
 			                		&& ((CallAction) act).getOperation().equals(this.mades_operation)
 			                		&& ((CallAction) act).getObject().equals(object)

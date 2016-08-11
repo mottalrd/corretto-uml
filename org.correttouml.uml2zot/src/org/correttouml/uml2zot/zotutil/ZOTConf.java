@@ -37,6 +37,10 @@ public class ZOTConf {
 
         //supported plugins
         zotplugins.add("ae2zot");
+        zotplugins.add("ae2bvzot");
+        zotplugins.add("ae2sbvzot");
+        zotplugins.add("bvzot");
+        zotplugins.add("sbvzot");
         zotplugins.add("eezot");
         zotplugins.add("meezot");
         zotplugins.add("smteezot");

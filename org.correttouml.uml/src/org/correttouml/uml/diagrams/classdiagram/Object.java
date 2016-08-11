@@ -49,7 +49,8 @@ public class Object {
 		HashSet<AssociationInstance> associationInstances=new HashSet<AssociationInstance>();
 		
 		for(AssociationInstance a: this.getMadesModel().getClassdiagram().getAssociationInstances()){
-			if(a.isMemberEnd(this)) associationInstances.add(a);
+			if(a.isMemberEnd(this)) 
+				associationInstances.add(a);
 		}
 		
 		return associationInstances;
@@ -65,7 +66,7 @@ public class Object {
 		for(Element c: this.uml_object.getModel().allOwnedElements()){
 			if(c instanceof org.eclipse.uml2.uml.InstanceSpecification){
 				org.eclipse.uml2.uml.InstanceSpecification ass=(org.eclipse.uml2.uml.InstanceSpecification) c;
-				//TODO verificare che l'instance specification è un instance specification link guardando il suo classifier
+				//TODO verificare che l'instance specification �� un instance specification link guardando il suo classifier
 				for(EAnnotation e: ass.getEAnnotations()){
 					for(EObject eobj: e.getReferences()){
 						if(eobj instanceof org.eclipse.uml2.uml.InstanceSpecification){

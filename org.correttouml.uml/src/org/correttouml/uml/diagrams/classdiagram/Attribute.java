@@ -20,6 +20,7 @@ public class Attribute extends Variable{
 
 	@Override
 	public PrimitiveType getType() {
+		//[corretto-man] Designer must add "Primitive Type" at the same level of system and property package, entitled "Integer", "Real", or "Boolean".
 		if(this.uml_attribute.getType() instanceof org.eclipse.uml2.uml.PrimitiveType){
 			org.eclipse.uml2.uml.PrimitiveType pt=(org.eclipse.uml2.uml.PrimitiveType) this.uml_attribute.getType();
 			if(pt.getName().equals("Boolean")) return PrimitiveType.BOOLEAN;

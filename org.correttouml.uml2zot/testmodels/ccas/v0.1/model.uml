@@ -22,9 +22,7 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jMMFkgN-EeKTXbQztILh3g" value="1"/>
         </ownedAttribute>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_3ooUkAN-EeKTXbQztILh3g" name="sendSensorDistance">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_8j3fgAN-EeKTXbQztILh3g" name="receivedDistance">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_8j3fgAN-EeKTXbQztILh3g" name="receivedDistance" type="_rMeRoF2REeaZq_6Zf2bIUA"/>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_9PDxkAN-EeKTXbQztILh3g" name="sendBrakeCommand"/>
       </packagedElement>
@@ -43,10 +41,8 @@
             <subvertex xmi:type="uml:State" xmi:id="_QrIy8AODEeKTXbQztILh3g" name="braking"/>
           </region>
         </ownedBehavior>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_tPSiMAN-EeKTXbQztILh3g" name="notifyDistance">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_xa7cMAN-EeKTXbQztILh3g" name="receivedDistance">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-          </ownedParameter>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_tPSiMAN-EeKTXbQztILh3g" name="notifyDistance" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ZM_WoF14EeaZq_6Zf2bIUA" name="receivedDistance" type="_rMeRoF2REeaZq_6Zf2bIUA"/>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_fm6A8AN-EeKTXbQztILh3g" name="BrakingSystem" classifierBehavior="_4N_uoAOCEeKTXbQztILh3g">
@@ -147,9 +143,7 @@
         <ownedComment xmi:type="uml:Comment" xmi:id="_zqY2AAOBEeKTXbQztILh3g">
           <body>  @notifyDistance.send - @sendSensorDistance.send == 2</body>
         </ownedComment>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_C7TtQAOAEeKTXbQztILh3g" name="distance">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_C7TtQAOAEeKTXbQztILh3g" name="distance" type="_rMeRoF2REeaZq_6Zf2bIUA"/>
         <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_IkBpQAOAEeKTXbQztILh3g" name="MessageSend" covered="_vsB08AN_EeKTXbQztILh3g" message="_Ijqc4AOAEeKTXbQztILh3g"/>
         <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_kOOywIFLEeWcpJ7mzo9fnw" name="BehaviorExecSpec" covered="_wXKcoAN_EeKTXbQztILh3g" finish="_lZSH4AOBEeKTXbQztILh3g" start="_IkCQUAOAEeKTXbQztILh3g"/>
         <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_IkCQUAOAEeKTXbQztILh3g" name="MessageRecv" covered="_wXKcoAN_EeKTXbQztILh3g" message="_Ijqc4AOAEeKTXbQztILh3g"/>
@@ -192,6 +186,7 @@
         <message xmi:type="uml:Message" xmi:id="_FoVpUAOCEeKTXbQztILh3g" name="sendBrakeCommand" messageSort="asynchCall" receiveEvent="_FoYFkAOCEeKTXbQztILh3g" sendEvent="_FoW3cAOCEeKTXbQztILh3g" signature="_9PDxkAN-EeKTXbQztILh3g"/>
         <message xmi:type="uml:Message" xmi:id="_I36jsAOCEeKTXbQztILh3g" name="notifyBrake" messageSort="asynchCall" receiveEvent="_I38Y4AOCEeKTXbQztILh3g" sendEvent="_I37x0AOCEeKTXbQztILh3g" signature="_EuVmkAN_EeKTXbQztILh3g"/>
       </packagedElement>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_7iFOIF2REeaZq_6Zf2bIUA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_HZO8AAN-EeKTXbQztILh3g" name="Property">
       <packagedElement xmi:type="uml:Class" xmi:id="_MwdQoAOEEeKTXbQztILh3g" name="Root">
@@ -289,14 +284,14 @@
         </ownedEnd>
       </packagedElement>
     </packagedElement>
-    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_VujkQNSQEeSh2fa_VC6TCQ">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VwI4oNSQEeSh2fa_VC6TCQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_rMeRoF2REeaZq_6Zf2bIUA" name="Integer"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_DqutsF05EeavmbBk_jnlCQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DsUCEF05EeavmbBk_jnlCQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="../../../../org.correttouml.profiles/resources/model.profile.uml#_YfVcwIvzEeKLvcTv2F9FYg"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="../../../../org.correttouml.profiles/resources/model.profile.uml#_DCylYIJgEeKaWIAr5_BKMw"/>
     </profileApplication>
   </uml:Model>
-  <CorrettoUML.VerificationTags:System xmi:id="_KRN1wAN-EeKTXbQztILh3g" base_Package="_GdyncAN-EeKTXbQztILh3g"/>
   <CorrettoUML.Time:ClockType xmi:id="_CNidwAN_EeKTXbQztILh3g" base_Class="_ajZq0AN-EeKTXbQztILh3g" period="10"/>
   <CorrettoUML.Time:Clock xmi:id="_ipuKUAOBEeKTXbQztILh3g" base_InstanceSpecification="_WORoMAN_EeKTXbQztILh3g"/>
   <CorrettoUML.Time:TimeConstraint xmi:id="_1NYSwAOBEeKTXbQztILh3g" base_Comment="_zqY2AAOBEeKTXbQztILh3g"/>
@@ -316,8 +311,7 @@
   <CorrettoUML.Properties:constant xmi:id="_4KqmcAOFEeKTXbQztILh3g" value="50" base_Class="_ya7ccAOFEeKTXbQztILh3g"/>
   <CorrettoUML.Properties:WithinP xmi:id="_E1xnIAOGEeKTXbQztILh3g" base_Class="_uQy-UAOFEeKTXbQztILh3g" formulae="_3XTP0AOFEeKTXbQztILh3g" t="_4KqmcAOFEeKTXbQztILh3g"/>
   <CorrettoUML.Properties:Property xmi:id="_bV_YgAT2EeK-BP_vUyAIxQ" formulae="_nQsOEAOEEeKTXbQztILh3g" base_Class="_MwdQoAOEEeKTXbQztILh3g"/>
-  <CorrettoUML.VerificationTags:Property xmi:id="_8ddwABSqEeKV8N8bfPPcxg" base_Package="_HZO8AAN-EeKTXbQztILh3g"/>
   <CorrettoUML.Time:TimedEvent xmi:id="_GP7QkIv0EeKproqsrXhQmw" base_Message="_Ijqc4AOAEeKTXbQztILh3g" on="_ipuKUAOBEeKTXbQztILh3g"/>
-  <CorrettoUML.VerificationTags:System xmi:id="_XzPY0NSQEeSh2fa_VC6TCQ" base_Package="_GdyncAN-EeKTXbQztILh3g"/>
-  <CorrettoUML.VerificationTags:Property xmi:id="_ZUo6INSQEeSh2fa_VC6TCQ" base_Package="_HZO8AAN-EeKTXbQztILh3g"/>
+  <CorrettoUML.VerificationTags:System xmi:id="_FsvBsF05EeavmbBk_jnlCQ" base_Package="_GdyncAN-EeKTXbQztILh3g"/>
+  <CorrettoUML.VerificationTags:Property xmi:id="_G9KHwF05EeavmbBk_jnlCQ" base_Package="_HZO8AAN-EeKTXbQztILh3g"/>
 </xmi:XMI>

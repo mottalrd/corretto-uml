@@ -120,8 +120,8 @@ public class UML2Zot {
 	}
 	
 	public void generateZOTFile(String zot_file){		
-		LOGGER.info("Build the ZOT file");
-		ZOTConf zot=new ZOTConf(100, "ae2zot", "z3", this.s_mades_model);
+		LOGGER.info("Building the ZOT file");
+		ZOTConf zot=new ZOTConf(30, "ae2sbvzot", "z3", this.s_mades_model);
 		try {
 			zot.writeVerificationZOTFile(zot_file, getModelStatistics());
 		} catch (Exception e) {
@@ -130,7 +130,7 @@ public class UML2Zot {
 	}
 	
 	public void generateZOTFile(int timebound, String plugin, String solver, String zot_file){		
-		LOGGER.info("Build the ZOT file");
+		LOGGER.info("Building the ZOT file");
 		ZOTConf zot=new ZOTConf(timebound, plugin, solver, this.s_mades_model);
 		try {
 			zot.writeVerificationZOTFile(zot_file, getModelStatistics());

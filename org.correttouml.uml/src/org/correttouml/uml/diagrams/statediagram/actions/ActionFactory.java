@@ -2,9 +2,6 @@ package org.correttouml.uml.diagrams.statediagram.actions;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-
-import org.correttouml.grammars.stateMachineActions.Link;
 import org.correttouml.grammars.stateMachineActions.Model;
 import org.correttouml.grammars.stateMachineActions.Parameters;
 import org.correttouml.uml.diagrams.classdiagram.AssociationEnd;
@@ -66,11 +63,14 @@ public class ActionFactory {
 	}
 	
 	private static CallAction getCallAction(org.correttouml.grammars.stateMachineActions.Action curr, Transition transition, Object object) throws Exception{
+		// [corretto-man] Syntax of actions in StD: #linkName.memberEndName@opName.call
 		String opname = curr.getEventAction().getEvent().getEventName();
 
 		// the association end where we are sending the invocation
 		// TODO[improvement] association ends must have unique names
 		String linkName = curr.getEventAction().getLink().getLinkName();
+		if (linkName.startsWith("user_a"))
+			linkName=linkName;
 		String associationEnd = curr.getEventAction().getLink().getAssociationEnd();
 
 		// let's find the guy we are looking for
