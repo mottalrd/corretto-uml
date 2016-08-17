@@ -18,8 +18,7 @@ public class STrigger {
         if(this.predicate==null){
             this.predicate=new Predicate();
         }
-        // MR: modified to avoid "-"
-        predicate.setPredicateName("OBJ"+object.getName()+"_STD"+this.mades_trigger.getTransition().getStateDiagram().getName()+"_TRANSITION"+this.mades_trigger.getTransition().getUMLId().replace("-", "_")+"_TRIGGER");
+        predicate.setPredicateName("OBJ"+object.getName()+"_STD"+this.mades_trigger.getTransition().getStateDiagram().getName()+"_TRANSITION"+this.mades_trigger.getTransition().getUMLId()+"_TRIGGER");
         return predicate;
 	}
 

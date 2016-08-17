@@ -69,22 +69,30 @@ public class ActionFactory {
 		// the association end where we are sending the invocation
 		// TODO[improvement] association ends must have unique names
 		String linkName = curr.getEventAction().getLink().getLinkName();
-		if (linkName.startsWith("user_a"))
-			linkName=linkName;
 		String associationEnd = curr.getEventAction().getLink().getAssociationEnd();
 
 		// let's find the guy we are looking for
 		Object objToInvoke = null;
-		
+		//<For Java Models>
 		for (AssociationInstance ai : object.getAssociationInstances()) {
-			if (ai.getAssociation().getName().equals(linkName)) {
-				for (AssociationEnd ae : ai.getAssociation().getAssociationEnds()){
-					if (ae.getName().equals(associationEnd)){
-						objToInvoke = ai.getMemberEndObject(ae.getOwnerClass());
+			if (ai.getAssociation().getName().equals(linkName) && ai.hasMemberEnd(associationEnd) && !ai.getMemberEnd(associationEnd).equals(object)) {
+				objToInvoke = ai.getMemberEnd(associationEnd);
+			}
+		}
+		//</For Java Modles>
+		//<For Papyrus Models>
+		if (objToInvoke == null) {
+			for (AssociationInstance ai : object.getAssociationInstances()) {
+				if (ai.getAssociation().getName().equals(linkName)) {
+					for (AssociationEnd ae : ai.getAssociation().getAssociationEnds()){
+						if (ae.getName().equals(associationEnd)){
+							objToInvoke = ai.getMemberEndObject(ae.getOwnerClass());
+						}
 					}
 				}
 			}
 		}
+		//</For Papyrus Models>
 		if (objToInvoke == null) {
 			throw new Exception("Object to invoke not found");
 		}

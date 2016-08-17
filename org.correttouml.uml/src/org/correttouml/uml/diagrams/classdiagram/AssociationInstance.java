@@ -37,25 +37,25 @@ public class AssociationInstance {
 		return false;
 	}
 	
-//	/**
-//	 * Give me the object corresponding to the provided member end
-//	 * @param memberEndName
-//	 * @return
-//	 */
-//	public Object getMemberEnd(String memberEndName){
-//		for(EAnnotation e:uml_instancespecificationlink.getEAnnotations()){
-//			if(e.getSource().equals("memberEnd_"+memberEndName)){
-//				return new Object((org.eclipse.uml2.uml.InstanceSpecification) e.getReferences().get(0));
-//			}
-//		}
-//		try{
-//			throw new Exception("Member end " +memberEndName+ " not found for association instance " + uml_instancespecificationlink.getName());
-//		}catch(Exception e){
-//			e.printStackTrace();
-//		}
-//		
-//		return null;
-//	}
+	/**
+	 * Give me the object corresponding to the provided member end
+	 * @param memberEndName
+	 * @return
+	 */
+	public Object getMemberEnd(String memberEndName){
+		for(EAnnotation e:uml_instancespecificationlink.getEAnnotations()){
+			if(e.getSource().equals("memberEnd_"+memberEndName)){
+				return new Object((org.eclipse.uml2.uml.InstanceSpecification) e.getReferences().get(0));
+			}
+		}
+		try{
+			throw new Exception("Member end " +memberEndName+ " not found for association instance " + uml_instancespecificationlink.getName());
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
 	/**
 	 * Tell me if this association instance has this member end name
 	 * @param memberEndName
@@ -76,12 +76,7 @@ public class AssociationInstance {
 				if (((org.eclipse.uml2.uml.InstanceSpecification) eo).getClassifiers().get(0).getName().equals(memberEndClass.getName()))
 					return new Object((org.eclipse.uml2.uml.InstanceSpecification) ((org.eclipse.uml2.uml.InstanceSpecification) eo));
 			}
-//		try{
-//			throw new Exception("Member end " + memberEndClass.getName() + " not found for association instance " + uml_instancespecificationlink.getName());
-//		}catch(Exception e){
-//			e.printStackTrace();
-//		}
 		return null;
-		}
+	}
 	
 }

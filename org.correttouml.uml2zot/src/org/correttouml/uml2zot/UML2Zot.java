@@ -19,7 +19,52 @@ import org.correttouml.uml2zot.zotutil.ZOTConf;
 import org.eclipse.uml2.uml.Model;
 
 public class UML2Zot {
-	
+	public static final class Utility {
+		public static String umlIDtoPrdID(String umlID) {
+			/*
+			 * Since predicate id in TRIO cannot contain '-' and does not
+			 * differentiate lower case and upper case, we need a conversion
+			 * which has to be reversible.
+			 * Mapping:
+			 * (A => A)
+			 * (a => ^A)
+			 * (- => ^_)
+			 * (_ => _)
+			 */
+			String prdID = "";
+			for (char ch : umlID.toCharArray()) {
+				if ((ch >= 'A' && ch <= 'Z') || (ch >= '0' && ch <= '9') || ch == '_')
+					prdID += ch;
+				else if (ch >= 'a' && ch <= 'z')
+					prdID += "^" + Character.toUpperCase(ch);
+				else if (ch == '-')
+					prdID += "^_";
+				else if (ch == '^')
+					prdID += "^^";
+			}
+			return prdID;
+		}
+
+		public static String prdIDtoUMLID(String prdID) {
+			String umlID = "";
+			for (int i = 0; i < prdID.length(); i++) {
+				char ch = prdID.charAt(i);
+				if (ch != '^')
+					umlID += ch;
+				else {
+					if (prdID.charAt(i + 1) == '_')
+						umlID += '-';
+					else if (prdID.charAt(i + 1) == '^')
+						umlID += '^';
+					else if (prdID.charAt(i + 1) >= 'A'
+							&& prdID.charAt(i + 1) <= 'Z')
+						umlID += Character.toLowerCase(prdID.charAt(i + 1));
+					i++;
+				}
+			}
+			return umlID;
+		}
+	}
 	private static final Logger LOGGER = Logger.getLogger(UML2Zot.class); 
 	
 	private Model uml_model;
@@ -106,7 +151,7 @@ public class UML2Zot {
 					for(org.correttouml.uml.diagrams.classdiagram.Object obj: c.getObjects()){
 						SState ss=new org.correttouml.uml2zot.semantics.statediagram.SState(s);
 						Predicate p=ss.getPredicate(obj);
-						out.write(p.getPredicateName()+","+s.getUMLId()+"\n");
+						out.write(p.getPredicateName()+","+Utility.prdIDtoUMLID(s.getUMLId())+"\n");
 						
 					}
 				}
@@ -124,6 +169,7 @@ public class UML2Zot {
 		ZOTConf zot=new ZOTConf(30, "ae2sbvzot", "z3", this.s_mades_model);
 		try {
 			zot.writeVerificationZOTFile(zot_file, getModelStatistics());
+			LOGGER.info("The ZOT file is created");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -134,6 +180,7 @@ public class UML2Zot {
 		ZOTConf zot=new ZOTConf(timebound, plugin, solver, this.s_mades_model);
 		try {
 			zot.writeVerificationZOTFile(zot_file, getModelStatistics());
+			LOGGER.info("The ZOT file is created");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

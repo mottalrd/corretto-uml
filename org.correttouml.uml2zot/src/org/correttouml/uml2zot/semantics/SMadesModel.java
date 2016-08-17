@@ -17,7 +17,7 @@ import org.correttouml.uml2zot.semantics.util.trio.Yesterday;
 
 public class SMadesModel {
 
-	public static final Predicate SYSTEMSTART = new Predicate("MADESYSTEMSTART");
+	public static final Predicate SYSTEMSTART = new Predicate("MADESSYSTEMSTART");
 	
 	/** The semantic decorators */
 	private MadesModel mm;

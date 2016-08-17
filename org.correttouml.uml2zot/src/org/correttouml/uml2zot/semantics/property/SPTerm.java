@@ -7,6 +7,8 @@ import org.correttouml.uml.diagrams.property.PTerm;
 import org.correttouml.uml.diagrams.sequencediagram.Message;
 import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagram;
 import org.correttouml.uml.diagrams.statediagram.State;
+import org.correttouml.uml2zot.semantics.classdiagram.SObject;
+import org.correttouml.uml2zot.semantics.classdiagram.SOperation;
 import org.correttouml.uml2zot.semantics.classdiagram.SSignal;
 import org.correttouml.uml2zot.semantics.sequencediagram.SMessage;
 import org.correttouml.uml2zot.semantics.sequencediagram.SSequenceDiagram;
@@ -47,7 +49,8 @@ public class SPTerm {
 			//If not a big OR is built with all the possibilities
 			Or orPTerm=new Or();
 			for(Object obj: ((Operation)mades_pterm.getElement()).getOwningClass().getObjects() ){
-				orPTerm.addFormulae(new SState((State)mades_pterm.getElement()).getPredicate(obj));
+//				orPTerm.addFormulae(new SState((State)mades_pterm.getElement()).getPredicate(obj));
+				orPTerm.addFormulae(new SOperation((Operation)mades_pterm.getElement()).getPredicate(obj));
 			}
 			return orPTerm;
 		}

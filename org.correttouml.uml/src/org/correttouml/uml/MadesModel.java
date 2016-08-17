@@ -31,8 +31,10 @@ public class MadesModel{
     	
     	try{
 	    	for(PackageableElement p: this.uml_model.getPackagedElements()){
-	    		if(UML2ModelHelper.hasStereotype(p, "System")) this.system_package=(org.eclipse.uml2.uml.Package) p;
-	    		if(UML2ModelHelper.hasStereotype(p, "Property")) this.property_package=(org.eclipse.uml2.uml.Package) p;
+	    		if(UML2ModelHelper.hasStereotype(p, "System")) 
+	    			this.system_package=(org.eclipse.uml2.uml.Package) p;
+	    		if(UML2ModelHelper.hasStereotype(p, "Property")) 
+	    			this.property_package=(org.eclipse.uml2.uml.Package) p;
 	    	}
 	    	if(this.system_package==null){
 	    		throw new Exception("System package not found: unable to translate the model");

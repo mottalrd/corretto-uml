@@ -1,5 +1,6 @@
 package org.correttouml.uml.diagrams.iod;
 
+import org.correttouml.uml2zot.UML2Zot;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 
 public class JoinNode extends Node {
@@ -10,7 +11,8 @@ public class JoinNode extends Node {
 
 	public String getUMLId() {
 		String id=((XMLResource) this.uml_activitynode.eResource()).getID(this.uml_activitynode);
-		return id;
+//		return id;
+		return UML2Zot.Utility.umlIDtoPrdID(id);
 	}
 
 }

@@ -407,7 +407,10 @@ public class UML2Helper {
             String end2Name, int end2LowerBound, int end2UpperBound) {
 
     	org.eclipse.uml2.uml.Association association = type1.createAssociation(end1IsNavigable, end1Aggregation, end1Name, end1LowerBound, end1UpperBound,
-            type2, end2IsNavigable, end2Aggregation, end2Name, end2LowerBound, end2UpperBound);
+                type2, end2IsNavigable, end2Aggregation, end2Name, end2LowerBound, end2UpperBound);//old
+
+//    	org.eclipse.uml2.uml.Association association = type2.createAssociation(end1IsNavigable, end1Aggregation, end1Name, end1LowerBound, end1UpperBound,
+//            type1, end2IsNavigable, end2Aggregation, end2Name, end2LowerBound, end2UpperBound);
     	
         StringBuffer sb = new StringBuffer();
 
@@ -626,7 +629,7 @@ public class UML2Helper {
 		org.eclipse.uml2.uml.Stereotype systemStereotype=null;
 		
 		for(org.eclipse.uml2.uml.Element e: madesProfile.getOwnedElements()){
-			if(e instanceof org.eclipse.uml2.uml.Package && ((org.eclipse.uml2.uml.Package)e).getName().equals("Properties")){
+			if(e instanceof org.eclipse.uml2.uml.Package && (((org.eclipse.uml2.uml.Package)e).getName().equals("Properties"))){
 				org.eclipse.uml2.uml.Package verificationTags= (org.eclipse.uml2.uml.Package)e;
 				for(org.eclipse.uml2.uml.Stereotype s: verificationTags.getOwnedStereotypes()){
 					

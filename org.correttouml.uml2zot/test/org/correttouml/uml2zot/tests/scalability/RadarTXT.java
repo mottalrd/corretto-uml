@@ -18,15 +18,19 @@ public class RadarTXT {
 	private static final Logger LOGGER = Logger.getLogger(SequenceDiagram.class); 
 	
 	public static void main(String[] args){
-		for(int num_processi=1; num_processi<=5; num_processi++){
+		for(int num_processi=1; num_processi<=1; num_processi++){
 			LOGGER.info("Creating the UML model");
-			create_txt_model(num_processi, false);
+			boolean verify = false;//SAT
+//			boolean verify = true; //Property
+			String modeltype = "sat";
+			if (verify) modeltype = "p";
+			create_txt_model(num_processi, verify);
 			
 			LOGGER.info("Building the MADES UML representation");
 			t=new UML2Zot(new File(TestConfiguration.MODEL_FILE).getAbsolutePath());
 			
 			LOGGER.info("Generate the ZOT File");
-			t.generateZOTFile(100, "meezot", "minisat", new File("output/txt_model_"+num_processi+".lisp").getAbsolutePath());
+			t.generateZOTFile(100, "bvzot", "z3", new File("output/txt-" + modeltype + "-" +num_processi+".lisp").getAbsolutePath());
 			//t.generateZOTFile(100, "ae2zot", "z3", new File("output/txt_model_"+i+".lisp").getAbsolutePath());
 		}
 	}

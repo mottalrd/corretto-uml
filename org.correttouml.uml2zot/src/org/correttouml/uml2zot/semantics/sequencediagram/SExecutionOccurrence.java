@@ -19,13 +19,14 @@ public class SExecutionOccurrence implements SInteractionFragment{
 	
 	@Override
 	public Predicate getPredicate(){
-		return new Predicate("EXOCC"+this.mades_exocc.getUMLId().replace("-", "_"));
+		return new Predicate("EXOCC"+ this.mades_exocc.getUMLId());
+
 	}
 	public Predicate getPredicateStart(){
-		return new Predicate("EXOCC" + this.mades_exocc.getUMLId().replace("-", "_") + "_START");
+		return new Predicate("EXOCC" + this.mades_exocc.getUMLId() + "_START");
 	}
 	public Predicate getPredicateEnd(){
-		return new Predicate("EXOCC" + this.mades_exocc.getUMLId().replace("-", "_") + "_End");
+		return new Predicate("EXOCC" + this.mades_exocc.getUMLId() + "_End");
 	}
 
 	public String getSemantics() {

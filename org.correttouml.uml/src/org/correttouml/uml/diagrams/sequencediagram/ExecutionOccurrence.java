@@ -2,6 +2,7 @@ package org.correttouml.uml.diagrams.sequencediagram;
 
 
 import org.correttouml.uml.diagrams.classdiagram.Object;
+import org.correttouml.uml2zot.UML2Zot;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.uml2.uml.ExecutionSpecification;
 import org.eclipse.uml2.uml.MessageOccurrenceSpecification;
@@ -40,7 +41,8 @@ public class ExecutionOccurrence implements InteractionFragment{
 	
 	public String getUMLId() {
 		String id=((XMLResource) this.uml_exocc.eResource()).getID(uml_exocc);
-		return id;
+//		return id;
+		return UML2Zot.Utility.umlIDtoPrdID(id);
 	}
 	
 	public Object getObject() {

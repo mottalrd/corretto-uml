@@ -16,12 +16,12 @@ public class SMessageEnd implements SInteractionFragment, SEvent{
 
 	@Override
 	public Predicate getPredicate(Object... optObject) {
-		return new Predicate("MESSAGE"+this.mades_messageEndEvent.getMessage().getUMLId().replace("-", "_")+"_End");
+		return new Predicate("MESSAGE"+this.mades_messageEndEvent.getMessage().getUMLId()+"_End");
 	}
 
 	@Override
 	public Predicate getPredicate() {
-		return new Predicate("MESSAGE"+this.mades_messageEndEvent.getMessage().getUMLId().replace("-", "_")+"_End");
+		return new Predicate("MESSAGE"+this.mades_messageEndEvent.getMessage().getUMLId()+"_End");
 	}
 }
 

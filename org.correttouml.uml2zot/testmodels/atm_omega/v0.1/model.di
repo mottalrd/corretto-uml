@@ -74,12 +74,6 @@
           <emfPageIdentifier href="model.notation#_rFjgADTKEeKHnb_Vy6iALg"/>
         </children>
         <children>
-          <emfPageIdentifier href="model.notation#_gLw0QDWAEeKv_Ne53cl_hA"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="model.notation#_yFsVcD3fEeKyX53VBRM0WA"/>
-        </children>
-        <children>
           <emfPageIdentifier href="model.notation#_8QU6wD8OEeKZLK_46y7FPg"/>
         </children>
       </children>

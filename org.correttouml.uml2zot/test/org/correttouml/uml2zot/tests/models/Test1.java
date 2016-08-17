@@ -14,8 +14,7 @@ public class Test1 {
 	private static final Logger LOGGER = Logger.getLogger(Test1.class); 
 	
 	/** THE CCAS MODEL */
-	private String MODEL_FILE="testmodels/ccas/v0.1/model.uml";
-	//private String MODEL_FILE="testmodels/ccas/v0.2/model.uml";
+//	private String MODEL_FILE="testmodels/ccas/v0.1/model.uml";
 	//private String MODEL_FILE="testmodels/plugin/model.uml";
 	
 	/** Mehdi */
@@ -30,7 +29,9 @@ public class Test1 {
 	//private String MODEL_FILE="testmodels/sequencediagram/test4/model.uml";
 	
 	/** STATE DIAGRAM TESTING */
-	//private String MODEL_FILE="testmodels/statediagram/test1/model.uml";
+//	private String MODEL_FILE="testmodels/statediagram/test1/model.uml";
+//	private String MODEL_FILE="testmodels/testSTD/test1/model.uml";
+//	private String MODEL_FILE="testmodels/testSTD2/model.uml";
 	
 	/** IOD TESTING */
 	//private String MODEL_FILE="testmodels/iod/test1/model.uml";
@@ -42,7 +43,7 @@ public class Test1 {
 	//private String MODEL_FILE="testmodels/cassidian/model.uml";
 	
 	/** OMEGA ATM MODEL */
-//	private String MODEL_FILE="testmodels/atm_omega/v0.1/model.uml";
+	private String MODEL_FILE="testmodels/atm_omega/v0.1/model.uml";
 	
 	/** SD and StD **/
 	//private String MODEL_FILE="testmodels/SD_and_StD/test1/model.uml";
@@ -54,7 +55,7 @@ public class Test1 {
 	//private String MODEL_FILE="testmodels/lamp/model.uml";
 	
 	/** TIME CONSTRAINTS **/
-	//private String MODEL_FILE="testmodels/timeconstraints/MehdiTest1/model.uml";
+//	private String MODEL_FILE="testmodels/timeconstraints/MehdiTest1/model.uml";
 	//private String MODEL_FILE="testmodels/timeconstraints/MehdiTest2/model.uml";
 	
 	/** The UML2ZOT entry point for making the transformation */

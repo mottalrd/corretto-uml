@@ -46,7 +46,7 @@ public class FisherProtocol {
 		String modeltype = "sat";
 		for (int i = 2; i <= 10; i++) {
 			create_fisher_model(i);
-			//create_alw_not_counter_greater_than_one(); modeltype = "p";
+			create_alw_not_counter_greater_than_one(); modeltype = "p";
 			//create_alw_not_some_state(STATE_UPDATED); modeltype = "test";
 			//create_state_future_exit_check(STATE_UPDATED, 4); modeltype = "test";
 
@@ -61,7 +61,7 @@ public class FisherProtocol {
 					new File(TestConfiguration.MODEL_FILE).getAbsolutePath());
 
 			LOGGER.info("Generate the ZOT File");
-			t.generateZOTFile(75, "ae2zot", "z3", new File("output/fischer-" + modeltype + "-" + i + ".lisp").getAbsolutePath());
+			t.generateZOTFile(75, "ae2bvzot", "z3", new File("output/fischer-" + modeltype + "-" + i + ".lisp").getAbsolutePath());
 		}
 
 	}
