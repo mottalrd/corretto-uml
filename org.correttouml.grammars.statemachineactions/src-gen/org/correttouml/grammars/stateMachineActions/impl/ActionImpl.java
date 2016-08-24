@@ -78,7 +78,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * <!-- end-user-doc -->
    * @generated
    */
-  public Assignment getAssignment()
+  @Override
+public Assignment getAssignment()
   {
     return assignment;
   }
@@ -105,7 +106,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAssignment(Assignment newAssignment)
+  @Override
+public void setAssignment(Assignment newAssignment)
   {
     if (newAssignment != assignment)
     {
@@ -126,7 +128,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * <!-- end-user-doc -->
    * @generated
    */
-  public EventAction getEventAction()
+  @Override
+public EventAction getEventAction()
   {
     return eventAction;
   }
@@ -153,7 +156,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEventAction(EventAction newEventAction)
+  @Override
+public void setEventAction(EventAction newEventAction)
   {
     if (newEventAction != eventAction)
     {

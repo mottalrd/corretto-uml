@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Uml2zot
 Bundle-SymbolicName: org.correttouml.uml2zot;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Require-Bundle: org.correttouml.uml;bundle-version="1.0.0",
  org.apache.log4j;bundle-version="1.2.15",
  org.correttouml.grammars.booleanexpressions;bundle-version="1.0.0",

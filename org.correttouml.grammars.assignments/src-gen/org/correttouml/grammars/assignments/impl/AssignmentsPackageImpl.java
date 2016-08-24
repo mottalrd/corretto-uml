@@ -117,7 +117,8 @@ public class AssignmentsPackageImpl extends EPackageImpl implements AssignmentsP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getModel()
+  @Override
+public EClass getModel()
   {
     return modelEClass;
   }
@@ -127,7 +128,8 @@ public class AssignmentsPackageImpl extends EPackageImpl implements AssignmentsP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Assignment()
+  @Override
+public EReference getModel_Assignment()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -137,7 +139,8 @@ public class AssignmentsPackageImpl extends EPackageImpl implements AssignmentsP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getASSIGNMENT()
+  @Override
+public EClass getASSIGNMENT()
   {
     return assignmentEClass;
   }
@@ -147,7 +150,8 @@ public class AssignmentsPackageImpl extends EPackageImpl implements AssignmentsP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getASSIGNMENT_Variable()
+  @Override
+public EAttribute getASSIGNMENT_Variable()
   {
     return (EAttribute)assignmentEClass.getEStructuralFeatures().get(0);
   }
@@ -157,7 +161,8 @@ public class AssignmentsPackageImpl extends EPackageImpl implements AssignmentsP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getASSIGNMENT_Expression()
+  @Override
+public EReference getASSIGNMENT_Expression()
   {
     return (EReference)assignmentEClass.getEStructuralFeatures().get(1);
   }
@@ -167,7 +172,8 @@ public class AssignmentsPackageImpl extends EPackageImpl implements AssignmentsP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getEXPRESSION()
+  @Override
+public EClass getEXPRESSION()
   {
     return expressionEClass;
   }
@@ -177,7 +183,8 @@ public class AssignmentsPackageImpl extends EPackageImpl implements AssignmentsP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEXPRESSION_FirstTerm()
+  @Override
+public EReference getEXPRESSION_FirstTerm()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(0);
   }
@@ -187,7 +194,8 @@ public class AssignmentsPackageImpl extends EPackageImpl implements AssignmentsP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEXPRESSION_Operator()
+  @Override
+public EAttribute getEXPRESSION_Operator()
   {
     return (EAttribute)expressionEClass.getEStructuralFeatures().get(1);
   }
@@ -197,7 +205,8 @@ public class AssignmentsPackageImpl extends EPackageImpl implements AssignmentsP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEXPRESSION_SecondTerm()
+  @Override
+public EReference getEXPRESSION_SecondTerm()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(2);
   }
@@ -207,7 +216,8 @@ public class AssignmentsPackageImpl extends EPackageImpl implements AssignmentsP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEXPRESSION_Alone()
+  @Override
+public EReference getEXPRESSION_Alone()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(3);
   }
@@ -217,7 +227,8 @@ public class AssignmentsPackageImpl extends EPackageImpl implements AssignmentsP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTERM()
+  @Override
+public EClass getTERM()
   {
     return termEClass;
   }
@@ -227,7 +238,8 @@ public class AssignmentsPackageImpl extends EPackageImpl implements AssignmentsP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTERM_Variable()
+  @Override
+public EAttribute getTERM_Variable()
   {
     return (EAttribute)termEClass.getEStructuralFeatures().get(0);
   }
@@ -237,7 +249,8 @@ public class AssignmentsPackageImpl extends EPackageImpl implements AssignmentsP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTERM_Constant()
+  @Override
+public EAttribute getTERM_Constant()
   {
     return (EAttribute)termEClass.getEStructuralFeatures().get(1);
   }
@@ -247,7 +260,8 @@ public class AssignmentsPackageImpl extends EPackageImpl implements AssignmentsP
    * <!-- end-user-doc -->
    * @generated
    */
-  public AssignmentsFactory getAssignmentsFactory()
+  @Override
+public AssignmentsFactory getAssignmentsFactory()
   {
     return (AssignmentsFactory)getEFactoryInstance();
   }

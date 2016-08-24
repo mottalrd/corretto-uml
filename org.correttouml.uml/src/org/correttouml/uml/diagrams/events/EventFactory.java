@@ -1,7 +1,5 @@
 package org.correttouml.uml.diagrams.events;
 
-import java.util.Set;
-
 import org.correttouml.uml.diagrams.classdiagram.Clock;
 import org.correttouml.uml.diagrams.classdiagram.Operation;
 import org.correttouml.uml.diagrams.classdiagram.Signal;

@@ -23,6 +23,7 @@ import org.correttouml.uml2zot.semantics.util.bool.Not;
 import org.correttouml.uml2zot.semantics.util.bool.Or;
 import org.correttouml.uml2zot.semantics.util.trio.Next;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
+import org.correttouml.uml2zot.semantics.util.trio.Yesterday;
 
 public class STransition {
 
@@ -107,7 +108,8 @@ public class STransition {
         }
         if (this.mades_transition.hasActions()){
             for(SAction act: actions){
-            	sem = sem + new Iff(new And(sourcestate, transition), new Next(act.getPredicate(object))) + "\n"; 
+            	sem = sem + new Implies(new And(sourcestate, transition), new Next(act.getPredicate(object))) + "\n";
+            	sem = sem + new Implies( act.getPredicate(object), new Yesterday(new And(sourcestate, transition))) + "\n";
                 if(act.getSemantics(this.mades_transition.getStateDiagram(), object)!=null) sem=sem+act.getSemantics(this.mades_transition.getStateDiagram(), object)+"\n";
             }
         }

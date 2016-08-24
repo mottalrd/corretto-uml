@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Uml
 Bundle-SymbolicName: org.correttouml.uml
 Bundle-Version: 1.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Require-Bundle: org.apache.log4j;bundle-version="1.2.15",
  org.eclipse.emf.common;bundle-version="2.8.0",
  org.eclipse.emf.ecore;bundle-version="2.8.1",
@@ -25,3 +25,4 @@ Export-Package: org.correttouml.uml,
  org.correttouml.uml.diagrams.statediagram.triggers,
  org.correttouml.uml.diagrams.timeconstraints,
  org.correttouml.uml.helpers
+Import-Package: org.correttouml.uml2zot

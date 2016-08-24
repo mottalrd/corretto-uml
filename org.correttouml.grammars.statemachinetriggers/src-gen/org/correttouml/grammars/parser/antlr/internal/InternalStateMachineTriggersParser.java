@@ -1,22 +1,13 @@
 package org.correttouml.grammars.parser.antlr.internal; 
 
-import org.eclipse.xtext.*;
-import org.eclipse.xtext.parser.*;
-import org.eclipse.xtext.parser.impl.*;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
-import org.eclipse.xtext.parser.antlr.XtextTokenStream;
-import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
 import org.eclipse.xtext.parser.antlr.AntlrDatatypeRuleToken;
 import org.correttouml.grammars.services.StateMachineTriggersGrammarAccess;
 
 
 
 import org.antlr.runtime.*;
-import java.util.Stack;
-import java.util.List;
-import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalStateMachineTriggersParser extends AbstractInternalAntlrParser {
@@ -57,8 +48,10 @@ public class InternalStateMachineTriggersParser extends AbstractInternalAntlrPar
         }
         
 
-    public String[] getTokenNames() { return InternalStateMachineTriggersParser.tokenNames; }
-    public String getGrammarFileName() { return "../org.correttouml.grammars.statemachinetriggers/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineTriggers.g"; }
+    @Override
+	public String[] getTokenNames() { return InternalStateMachineTriggersParser.tokenNames; }
+    @Override
+	public String getGrammarFileName() { return "../org.correttouml.grammars.statemachinetriggers/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineTriggers.g"; }
 
 
 

@@ -66,7 +66,8 @@ public class LeftImpl extends MinimalEObjectImpl.Container implements Left
    * <!-- end-user-doc -->
    * @generated
    */
-  public Event getEvent()
+  @Override
+public Event getEvent()
   {
     return event;
   }
@@ -93,7 +94,8 @@ public class LeftImpl extends MinimalEObjectImpl.Container implements Left
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEvent(Event newEvent)
+  @Override
+public void setEvent(Event newEvent)
   {
     if (newEvent != event)
     {

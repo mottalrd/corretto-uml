@@ -90,7 +90,8 @@ public class booleanTermImpl extends MinimalEObjectImpl.Container implements boo
    * <!-- end-user-doc -->
    * @generated
    */
-  public TimeConstraint getTimeConstraint()
+  @Override
+public TimeConstraint getTimeConstraint()
   {
     return timeConstraint;
   }
@@ -117,7 +118,8 @@ public class booleanTermImpl extends MinimalEObjectImpl.Container implements boo
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTimeConstraint(TimeConstraint newTimeConstraint)
+  @Override
+public void setTimeConstraint(TimeConstraint newTimeConstraint)
   {
     if (newTimeConstraint != timeConstraint)
     {
@@ -138,7 +140,8 @@ public class booleanTermImpl extends MinimalEObjectImpl.Container implements boo
    * <!-- end-user-doc -->
    * @generated
    */
-  public BooleanVariable getBooleanVariable()
+  @Override
+public BooleanVariable getBooleanVariable()
   {
     return booleanVariable;
   }
@@ -165,7 +168,8 @@ public class booleanTermImpl extends MinimalEObjectImpl.Container implements boo
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setBooleanVariable(BooleanVariable newBooleanVariable)
+  @Override
+public void setBooleanVariable(BooleanVariable newBooleanVariable)
   {
     if (newBooleanVariable != booleanVariable)
     {
@@ -186,7 +190,8 @@ public class booleanTermImpl extends MinimalEObjectImpl.Container implements boo
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableCondition getVariableCondition()
+  @Override
+public VariableCondition getVariableCondition()
   {
     return variableCondition;
   }
@@ -213,7 +218,8 @@ public class booleanTermImpl extends MinimalEObjectImpl.Container implements boo
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVariableCondition(VariableCondition newVariableCondition)
+  @Override
+public void setVariableCondition(VariableCondition newVariableCondition)
   {
     if (newVariableCondition != variableCondition)
     {

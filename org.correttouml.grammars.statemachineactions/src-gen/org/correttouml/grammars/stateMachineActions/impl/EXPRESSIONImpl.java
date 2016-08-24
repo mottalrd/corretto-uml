@@ -109,7 +109,8 @@ public class EXPRESSIONImpl extends MinimalEObjectImpl.Container implements EXPR
    * <!-- end-user-doc -->
    * @generated
    */
-  public TERM getFirstTerm()
+  @Override
+public TERM getFirstTerm()
   {
     return firstTerm;
   }
@@ -136,7 +137,8 @@ public class EXPRESSIONImpl extends MinimalEObjectImpl.Container implements EXPR
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFirstTerm(TERM newFirstTerm)
+  @Override
+public void setFirstTerm(TERM newFirstTerm)
   {
     if (newFirstTerm != firstTerm)
     {
@@ -157,7 +159,8 @@ public class EXPRESSIONImpl extends MinimalEObjectImpl.Container implements EXPR
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getOperator()
+  @Override
+public String getOperator()
   {
     return operator;
   }
@@ -167,7 +170,8 @@ public class EXPRESSIONImpl extends MinimalEObjectImpl.Container implements EXPR
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setOperator(String newOperator)
+  @Override
+public void setOperator(String newOperator)
   {
     String oldOperator = operator;
     operator = newOperator;
@@ -180,7 +184,8 @@ public class EXPRESSIONImpl extends MinimalEObjectImpl.Container implements EXPR
    * <!-- end-user-doc -->
    * @generated
    */
-  public TERM getSecondTerm()
+  @Override
+public TERM getSecondTerm()
   {
     return secondTerm;
   }
@@ -207,7 +212,8 @@ public class EXPRESSIONImpl extends MinimalEObjectImpl.Container implements EXPR
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSecondTerm(TERM newSecondTerm)
+  @Override
+public void setSecondTerm(TERM newSecondTerm)
   {
     if (newSecondTerm != secondTerm)
     {
@@ -228,7 +234,8 @@ public class EXPRESSIONImpl extends MinimalEObjectImpl.Container implements EXPR
    * <!-- end-user-doc -->
    * @generated
    */
-  public TERM getAlone()
+  @Override
+public TERM getAlone()
   {
     return alone;
   }
@@ -255,7 +262,8 @@ public class EXPRESSIONImpl extends MinimalEObjectImpl.Container implements EXPR
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAlone(TERM newAlone)
+  @Override
+public void setAlone(TERM newAlone)
   {
     if (newAlone != alone)
     {

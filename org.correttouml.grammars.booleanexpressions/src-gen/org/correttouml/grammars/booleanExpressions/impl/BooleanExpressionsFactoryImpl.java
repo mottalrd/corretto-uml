@@ -85,7 +85,8 @@ public class BooleanExpressionsFactoryImpl extends EFactoryImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public Model createModel()
+  @Override
+public Model createModel()
   {
     ModelImpl model = new ModelImpl();
     return model;
@@ -96,7 +97,8 @@ public class BooleanExpressionsFactoryImpl extends EFactoryImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public OrExpression createOrExpression()
+  @Override
+public OrExpression createOrExpression()
   {
     OrExpressionImpl orExpression = new OrExpressionImpl();
     return orExpression;
@@ -107,7 +109,8 @@ public class BooleanExpressionsFactoryImpl extends EFactoryImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public AndExpression createAndExpression()
+  @Override
+public AndExpression createAndExpression()
   {
     AndExpressionImpl andExpression = new AndExpressionImpl();
     return andExpression;
@@ -118,7 +121,8 @@ public class BooleanExpressionsFactoryImpl extends EFactoryImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public BaseExpression createBaseExpression()
+  @Override
+public BaseExpression createBaseExpression()
   {
     BaseExpressionImpl baseExpression = new BaseExpressionImpl();
     return baseExpression;
@@ -129,7 +133,8 @@ public class BooleanExpressionsFactoryImpl extends EFactoryImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public booleanTerm createbooleanTerm()
+  @Override
+public booleanTerm createbooleanTerm()
   {
     booleanTermImpl booleanTerm = new booleanTermImpl();
     return booleanTerm;
@@ -140,7 +145,8 @@ public class BooleanExpressionsFactoryImpl extends EFactoryImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public TimeConstraint createTimeConstraint()
+  @Override
+public TimeConstraint createTimeConstraint()
   {
     TimeConstraintImpl timeConstraint = new TimeConstraintImpl();
     return timeConstraint;
@@ -151,7 +157,8 @@ public class BooleanExpressionsFactoryImpl extends EFactoryImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public BooleanVariable createBooleanVariable()
+  @Override
+public BooleanVariable createBooleanVariable()
   {
     BooleanVariableImpl booleanVariable = new BooleanVariableImpl();
     return booleanVariable;
@@ -162,7 +169,8 @@ public class BooleanExpressionsFactoryImpl extends EFactoryImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableCondition createVariableCondition()
+  @Override
+public VariableCondition createVariableCondition()
   {
     VariableConditionImpl variableCondition = new VariableConditionImpl();
     return variableCondition;
@@ -173,7 +181,8 @@ public class BooleanExpressionsFactoryImpl extends EFactoryImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EXPRESSION createEXPRESSION()
+  @Override
+public EXPRESSION createEXPRESSION()
   {
     EXPRESSIONImpl expression = new EXPRESSIONImpl();
     return expression;
@@ -184,7 +193,8 @@ public class BooleanExpressionsFactoryImpl extends EFactoryImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public TERM createTERM()
+  @Override
+public TERM createTERM()
   {
     TERMImpl term = new TERMImpl();
     return term;
@@ -195,7 +205,8 @@ public class BooleanExpressionsFactoryImpl extends EFactoryImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public Event createEvent()
+  @Override
+public Event createEvent()
   {
     EventImpl event = new EventImpl();
     return event;
@@ -206,7 +217,8 @@ public class BooleanExpressionsFactoryImpl extends EFactoryImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public BooleanExpressionsPackage getBooleanExpressionsPackage()
+  @Override
+public BooleanExpressionsPackage getBooleanExpressionsPackage()
   {
     return (BooleanExpressionsPackage)getEPackage();
   }

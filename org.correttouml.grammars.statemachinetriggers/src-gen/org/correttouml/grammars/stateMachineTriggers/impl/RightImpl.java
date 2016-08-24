@@ -108,7 +108,8 @@ public class RightImpl extends MinimalEObjectImpl.Container implements Right
    * <!-- end-user-doc -->
    * @generated
    */
-  public Event getEvent()
+  @Override
+public Event getEvent()
   {
     return event;
   }
@@ -135,7 +136,8 @@ public class RightImpl extends MinimalEObjectImpl.Container implements Right
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEvent(Event newEvent)
+  @Override
+public void setEvent(Event newEvent)
   {
     if (newEvent != event)
     {
@@ -156,7 +158,8 @@ public class RightImpl extends MinimalEObjectImpl.Container implements Right
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getOp()
+  @Override
+public String getOp()
   {
     return op;
   }
@@ -166,7 +169,8 @@ public class RightImpl extends MinimalEObjectImpl.Container implements Right
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setOp(String newOp)
+  @Override
+public void setOp(String newOp)
   {
     String oldOp = op;
     op = newOp;
@@ -179,7 +183,8 @@ public class RightImpl extends MinimalEObjectImpl.Container implements Right
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getValue()
+  @Override
+public int getValue()
   {
     return value;
   }
@@ -189,7 +194,8 @@ public class RightImpl extends MinimalEObjectImpl.Container implements Right
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(int newValue)
+  @Override
+public void setValue(int newValue)
   {
     int oldValue = value;
     value = newValue;

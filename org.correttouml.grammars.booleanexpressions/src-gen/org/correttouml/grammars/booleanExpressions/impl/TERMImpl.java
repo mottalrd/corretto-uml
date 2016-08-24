@@ -94,7 +94,8 @@ public class TERMImpl extends MinimalEObjectImpl.Container implements TERM
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getVariable()
+  @Override
+public String getVariable()
   {
     return variable;
   }
@@ -104,7 +105,8 @@ public class TERMImpl extends MinimalEObjectImpl.Container implements TERM
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVariable(String newVariable)
+  @Override
+public void setVariable(String newVariable)
   {
     String oldVariable = variable;
     variable = newVariable;
@@ -117,7 +119,8 @@ public class TERMImpl extends MinimalEObjectImpl.Container implements TERM
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getConstant()
+  @Override
+public int getConstant()
   {
     return constant;
   }
@@ -127,7 +130,8 @@ public class TERMImpl extends MinimalEObjectImpl.Container implements TERM
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setConstant(int newConstant)
+  @Override
+public void setConstant(int newConstant)
   {
     int oldConstant = constant;
     constant = newConstant;

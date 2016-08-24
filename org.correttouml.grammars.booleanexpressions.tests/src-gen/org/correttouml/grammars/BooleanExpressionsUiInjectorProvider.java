@@ -9,6 +9,7 @@ import com.google.inject.Injector;
 
 public class BooleanExpressionsUiInjectorProvider implements IInjectorProvider {
 	
+	@Override
 	public Injector getInjector() {
 		return org.correttouml.grammars.ui.internal.BooleanExpressionsActivator.getInstance().getInjector("org.correttouml.grammars.BooleanExpressions");
 	}

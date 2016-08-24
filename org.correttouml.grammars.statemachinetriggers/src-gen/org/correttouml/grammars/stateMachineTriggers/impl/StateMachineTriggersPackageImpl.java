@@ -128,7 +128,8 @@ public class StateMachineTriggersPackageImpl extends EPackageImpl implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getModel()
+  @Override
+public EClass getModel()
   {
     return modelEClass;
   }
@@ -138,7 +139,8 @@ public class StateMachineTriggersPackageImpl extends EPackageImpl implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Trigger()
+  @Override
+public EReference getModel_Trigger()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -148,7 +150,8 @@ public class StateMachineTriggersPackageImpl extends EPackageImpl implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTrigger()
+  @Override
+public EClass getTrigger()
   {
     return triggerEClass;
   }
@@ -158,7 +161,8 @@ public class StateMachineTriggersPackageImpl extends EPackageImpl implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTrigger_Left()
+  @Override
+public EReference getTrigger_Left()
   {
     return (EReference)triggerEClass.getEStructuralFeatures().get(0);
   }
@@ -168,7 +172,8 @@ public class StateMachineTriggersPackageImpl extends EPackageImpl implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTrigger_Right()
+  @Override
+public EReference getTrigger_Right()
   {
     return (EReference)triggerEClass.getEStructuralFeatures().get(1);
   }
@@ -178,7 +183,8 @@ public class StateMachineTriggersPackageImpl extends EPackageImpl implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getLeft()
+  @Override
+public EClass getLeft()
   {
     return leftEClass;
   }
@@ -188,7 +194,8 @@ public class StateMachineTriggersPackageImpl extends EPackageImpl implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLeft_Event()
+  @Override
+public EReference getLeft_Event()
   {
     return (EReference)leftEClass.getEStructuralFeatures().get(0);
   }
@@ -198,7 +205,8 @@ public class StateMachineTriggersPackageImpl extends EPackageImpl implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getRight()
+  @Override
+public EClass getRight()
   {
     return rightEClass;
   }
@@ -208,7 +216,8 @@ public class StateMachineTriggersPackageImpl extends EPackageImpl implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRight_Event()
+  @Override
+public EReference getRight_Event()
   {
     return (EReference)rightEClass.getEStructuralFeatures().get(0);
   }
@@ -218,7 +227,8 @@ public class StateMachineTriggersPackageImpl extends EPackageImpl implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRight_Op()
+  @Override
+public EAttribute getRight_Op()
   {
     return (EAttribute)rightEClass.getEStructuralFeatures().get(1);
   }
@@ -228,7 +238,8 @@ public class StateMachineTriggersPackageImpl extends EPackageImpl implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRight_Value()
+  @Override
+public EAttribute getRight_Value()
   {
     return (EAttribute)rightEClass.getEStructuralFeatures().get(2);
   }
@@ -238,7 +249,8 @@ public class StateMachineTriggersPackageImpl extends EPackageImpl implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getEvent()
+  @Override
+public EClass getEvent()
   {
     return eventEClass;
   }
@@ -248,7 +260,8 @@ public class StateMachineTriggersPackageImpl extends EPackageImpl implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEvent_EventName()
+  @Override
+public EAttribute getEvent_EventName()
   {
     return (EAttribute)eventEClass.getEStructuralFeatures().get(0);
   }
@@ -258,7 +271,8 @@ public class StateMachineTriggersPackageImpl extends EPackageImpl implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEvent_EventExtension()
+  @Override
+public EAttribute getEvent_EventExtension()
   {
     return (EAttribute)eventEClass.getEStructuralFeatures().get(1);
   }
@@ -268,7 +282,8 @@ public class StateMachineTriggersPackageImpl extends EPackageImpl implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEvent_NowEvent()
+  @Override
+public EAttribute getEvent_NowEvent()
   {
     return (EAttribute)eventEClass.getEStructuralFeatures().get(2);
   }
@@ -278,7 +293,8 @@ public class StateMachineTriggersPackageImpl extends EPackageImpl implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public StateMachineTriggersFactory getStateMachineTriggersFactory()
+  @Override
+public StateMachineTriggersFactory getStateMachineTriggersFactory()
   {
     return (StateMachineTriggersFactory)getEFactoryInstance();
   }

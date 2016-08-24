@@ -83,7 +83,8 @@ public class StateMachineActionsFactoryImpl extends EFactoryImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public Model createModel()
+  @Override
+public Model createModel()
   {
     ModelImpl model = new ModelImpl();
     return model;
@@ -94,7 +95,8 @@ public class StateMachineActionsFactoryImpl extends EFactoryImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public Action createAction()
+  @Override
+public Action createAction()
   {
     ActionImpl action = new ActionImpl();
     return action;
@@ -105,7 +107,8 @@ public class StateMachineActionsFactoryImpl extends EFactoryImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public Assignment createAssignment()
+  @Override
+public Assignment createAssignment()
   {
     AssignmentImpl assignment = new AssignmentImpl();
     return assignment;
@@ -116,7 +119,8 @@ public class StateMachineActionsFactoryImpl extends EFactoryImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EXPRESSION createEXPRESSION()
+  @Override
+public EXPRESSION createEXPRESSION()
   {
     EXPRESSIONImpl expression = new EXPRESSIONImpl();
     return expression;
@@ -127,7 +131,8 @@ public class StateMachineActionsFactoryImpl extends EFactoryImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public TERM createTERM()
+  @Override
+public TERM createTERM()
   {
     TERMImpl term = new TERMImpl();
     return term;
@@ -138,7 +143,8 @@ public class StateMachineActionsFactoryImpl extends EFactoryImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EventAction createEventAction()
+  @Override
+public EventAction createEventAction()
   {
     EventActionImpl eventAction = new EventActionImpl();
     return eventAction;
@@ -149,7 +155,8 @@ public class StateMachineActionsFactoryImpl extends EFactoryImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public Link createLink()
+  @Override
+public Link createLink()
   {
     LinkImpl link = new LinkImpl();
     return link;
@@ -160,7 +167,8 @@ public class StateMachineActionsFactoryImpl extends EFactoryImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public Event createEvent()
+  @Override
+public Event createEvent()
   {
     EventImpl event = new EventImpl();
     return event;
@@ -171,7 +179,8 @@ public class StateMachineActionsFactoryImpl extends EFactoryImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public Parameters createParameters()
+  @Override
+public Parameters createParameters()
   {
     ParametersImpl parameters = new ParametersImpl();
     return parameters;
@@ -182,7 +191,8 @@ public class StateMachineActionsFactoryImpl extends EFactoryImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public StateMachineActionsPackage getStateMachineActionsPackage()
+  @Override
+public StateMachineActionsPackage getStateMachineActionsPackage()
   {
     return (StateMachineActionsPackage)getEPackage();
   }

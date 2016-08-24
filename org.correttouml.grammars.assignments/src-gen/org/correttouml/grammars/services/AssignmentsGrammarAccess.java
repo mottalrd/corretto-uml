@@ -31,6 +31,7 @@ public class AssignmentsGrammarAccess extends AbstractGrammarElementFinder {
 		// * This is left to future development
 		// * / Model:
 		//	assignment=ASSIGNMENT;
+		@Override
 		public ParserRule getRule() { return rule; }
 
 		//assignment=ASSIGNMENT
@@ -51,6 +52,7 @@ public class AssignmentsGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ASSIGNMENT:
 		//	variable=ID "=" expression=EXPRESSION;
+		@Override
 		public ParserRule getRule() { return rule; }
 
 		//variable=ID "=" expression=EXPRESSION
@@ -87,6 +89,7 @@ public class AssignmentsGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//EXPRESSION:
 		//	firstTerm=TERM operator=OPERATOR secondTerm=TERM | alone=TERM;
+		@Override
 		public ParserRule getRule() { return rule; }
 
 		//firstTerm=TERM operator=OPERATOR secondTerm=TERM | alone=TERM
@@ -130,6 +133,7 @@ public class AssignmentsGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//TERM:
 		//	variable=ID | constant=INT;
+		@Override
 		public ParserRule getRule() { return rule; }
 
 		//variable=ID | constant=INT
@@ -183,6 +187,7 @@ public class AssignmentsGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
+	@Override
 	public Grammar getGrammar() {
 		return grammar;
 	}

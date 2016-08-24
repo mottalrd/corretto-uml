@@ -66,7 +66,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public ASSIGNMENT getAssignment()
+  @Override
+public ASSIGNMENT getAssignment()
   {
     return assignment;
   }
@@ -93,7 +94,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAssignment(ASSIGNMENT newAssignment)
+  @Override
+public void setAssignment(ASSIGNMENT newAssignment)
   {
     if (newAssignment != assignment)
     {

@@ -174,7 +174,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getModel()
+  @Override
+public EClass getModel()
   {
     return modelEClass;
   }
@@ -184,7 +185,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Expression()
+  @Override
+public EReference getModel_Expression()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -194,7 +196,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getOrExpression()
+  @Override
+public EClass getOrExpression()
   {
     return orExpressionEClass;
   }
@@ -204,7 +207,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getOrExpression_LeftExpression()
+  @Override
+public EReference getOrExpression_LeftExpression()
   {
     return (EReference)orExpressionEClass.getEStructuralFeatures().get(0);
   }
@@ -214,7 +218,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getOrExpression_Or()
+  @Override
+public EAttribute getOrExpression_Or()
   {
     return (EAttribute)orExpressionEClass.getEStructuralFeatures().get(1);
   }
@@ -224,7 +229,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getOrExpression_RightExpression()
+  @Override
+public EReference getOrExpression_RightExpression()
   {
     return (EReference)orExpressionEClass.getEStructuralFeatures().get(2);
   }
@@ -234,7 +240,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAndExpression()
+  @Override
+public EClass getAndExpression()
   {
     return andExpressionEClass;
   }
@@ -244,7 +251,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAndExpression_LeftExpression()
+  @Override
+public EReference getAndExpression_LeftExpression()
   {
     return (EReference)andExpressionEClass.getEStructuralFeatures().get(0);
   }
@@ -254,7 +262,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAndExpression_And()
+  @Override
+public EAttribute getAndExpression_And()
   {
     return (EAttribute)andExpressionEClass.getEStructuralFeatures().get(1);
   }
@@ -264,7 +273,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAndExpression_RightExpression()
+  @Override
+public EReference getAndExpression_RightExpression()
   {
     return (EReference)andExpressionEClass.getEStructuralFeatures().get(2);
   }
@@ -274,7 +284,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBaseExpression()
+  @Override
+public EClass getBaseExpression()
   {
     return baseExpressionEClass;
   }
@@ -284,7 +295,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getBaseExpression_Not()
+  @Override
+public EAttribute getBaseExpression_Not()
   {
     return (EAttribute)baseExpressionEClass.getEStructuralFeatures().get(0);
   }
@@ -294,7 +306,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBaseExpression_BooleanTerm()
+  @Override
+public EReference getBaseExpression_BooleanTerm()
   {
     return (EReference)baseExpressionEClass.getEStructuralFeatures().get(1);
   }
@@ -304,7 +317,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBaseExpression_RootExpression()
+  @Override
+public EReference getBaseExpression_RootExpression()
   {
     return (EReference)baseExpressionEClass.getEStructuralFeatures().get(2);
   }
@@ -314,7 +328,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getbooleanTerm()
+  @Override
+public EClass getbooleanTerm()
   {
     return booleanTermEClass;
   }
@@ -324,7 +339,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getbooleanTerm_TimeConstraint()
+  @Override
+public EReference getbooleanTerm_TimeConstraint()
   {
     return (EReference)booleanTermEClass.getEStructuralFeatures().get(0);
   }
@@ -334,7 +350,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getbooleanTerm_BooleanVariable()
+  @Override
+public EReference getbooleanTerm_BooleanVariable()
   {
     return (EReference)booleanTermEClass.getEStructuralFeatures().get(1);
   }
@@ -344,7 +361,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getbooleanTerm_VariableCondition()
+  @Override
+public EReference getbooleanTerm_VariableCondition()
   {
     return (EReference)booleanTermEClass.getEStructuralFeatures().get(2);
   }
@@ -354,7 +372,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTimeConstraint()
+  @Override
+public EClass getTimeConstraint()
   {
     return timeConstraintEClass;
   }
@@ -364,7 +383,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTimeConstraint_Event2()
+  @Override
+public EReference getTimeConstraint_Event2()
   {
     return (EReference)timeConstraintEClass.getEStructuralFeatures().get(0);
   }
@@ -374,7 +394,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTimeConstraint_Event1()
+  @Override
+public EReference getTimeConstraint_Event1()
   {
     return (EReference)timeConstraintEClass.getEStructuralFeatures().get(1);
   }
@@ -384,7 +405,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTimeConstraint_Op()
+  @Override
+public EAttribute getTimeConstraint_Op()
   {
     return (EAttribute)timeConstraintEClass.getEStructuralFeatures().get(2);
   }
@@ -394,7 +416,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTimeConstraint_Value()
+  @Override
+public EAttribute getTimeConstraint_Value()
   {
     return (EAttribute)timeConstraintEClass.getEStructuralFeatures().get(3);
   }
@@ -404,7 +427,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBooleanVariable()
+  @Override
+public EClass getBooleanVariable()
   {
     return booleanVariableEClass;
   }
@@ -414,7 +438,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getBooleanVariable_Variable()
+  @Override
+public EAttribute getBooleanVariable_Variable()
   {
     return (EAttribute)booleanVariableEClass.getEStructuralFeatures().get(0);
   }
@@ -424,7 +449,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getVariableCondition()
+  @Override
+public EClass getVariableCondition()
   {
     return variableConditionEClass;
   }
@@ -434,7 +460,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getVariableCondition_Expression_left()
+  @Override
+public EReference getVariableCondition_Expression_left()
   {
     return (EReference)variableConditionEClass.getEStructuralFeatures().get(0);
   }
@@ -444,7 +471,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVariableCondition_Relation()
+  @Override
+public EAttribute getVariableCondition_Relation()
   {
     return (EAttribute)variableConditionEClass.getEStructuralFeatures().get(1);
   }
@@ -454,7 +482,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getVariableCondition_Expression_right()
+  @Override
+public EReference getVariableCondition_Expression_right()
   {
     return (EReference)variableConditionEClass.getEStructuralFeatures().get(2);
   }
@@ -464,7 +493,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getEXPRESSION()
+  @Override
+public EClass getEXPRESSION()
   {
     return expressionEClass;
   }
@@ -474,7 +504,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEXPRESSION_FirstTerm()
+  @Override
+public EReference getEXPRESSION_FirstTerm()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(0);
   }
@@ -484,7 +515,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEXPRESSION_Operator()
+  @Override
+public EAttribute getEXPRESSION_Operator()
   {
     return (EAttribute)expressionEClass.getEStructuralFeatures().get(1);
   }
@@ -494,7 +526,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEXPRESSION_SecondTerm()
+  @Override
+public EReference getEXPRESSION_SecondTerm()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(2);
   }
@@ -504,7 +537,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEXPRESSION_Alone()
+  @Override
+public EReference getEXPRESSION_Alone()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(3);
   }
@@ -514,7 +548,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTERM()
+  @Override
+public EClass getTERM()
   {
     return termEClass;
   }
@@ -524,7 +559,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTERM_Variable()
+  @Override
+public EAttribute getTERM_Variable()
   {
     return (EAttribute)termEClass.getEStructuralFeatures().get(0);
   }
@@ -534,7 +570,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTERM_Constant()
+  @Override
+public EAttribute getTERM_Constant()
   {
     return (EAttribute)termEClass.getEStructuralFeatures().get(1);
   }
@@ -544,7 +581,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getEvent()
+  @Override
+public EClass getEvent()
   {
     return eventEClass;
   }
@@ -554,7 +592,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEvent_EventName()
+  @Override
+public EAttribute getEvent_EventName()
   {
     return (EAttribute)eventEClass.getEStructuralFeatures().get(0);
   }
@@ -564,7 +603,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEvent_EventExtension()
+  @Override
+public EAttribute getEvent_EventExtension()
   {
     return (EAttribute)eventEClass.getEStructuralFeatures().get(1);
   }
@@ -574,7 +614,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEvent_NowEvent()
+  @Override
+public EAttribute getEvent_NowEvent()
   {
     return (EAttribute)eventEClass.getEStructuralFeatures().get(2);
   }
@@ -584,7 +625,8 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public BooleanExpressionsFactory getBooleanExpressionsFactory()
+  @Override
+public BooleanExpressionsFactory getBooleanExpressionsFactory()
   {
     return (BooleanExpressionsFactory)getEFactoryInstance();
   }

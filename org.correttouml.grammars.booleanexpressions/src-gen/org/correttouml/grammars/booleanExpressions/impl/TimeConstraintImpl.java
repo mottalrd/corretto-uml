@@ -119,7 +119,8 @@ public class TimeConstraintImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public Event getEvent2()
+  @Override
+public Event getEvent2()
   {
     return event2;
   }
@@ -146,7 +147,8 @@ public class TimeConstraintImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEvent2(Event newEvent2)
+  @Override
+public void setEvent2(Event newEvent2)
   {
     if (newEvent2 != event2)
     {
@@ -167,7 +169,8 @@ public class TimeConstraintImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public Event getEvent1()
+  @Override
+public Event getEvent1()
   {
     return event1;
   }
@@ -194,7 +197,8 @@ public class TimeConstraintImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEvent1(Event newEvent1)
+  @Override
+public void setEvent1(Event newEvent1)
   {
     if (newEvent1 != event1)
     {
@@ -215,7 +219,8 @@ public class TimeConstraintImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getOp()
+  @Override
+public String getOp()
   {
     return op;
   }
@@ -225,7 +230,8 @@ public class TimeConstraintImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setOp(String newOp)
+  @Override
+public void setOp(String newOp)
   {
     String oldOp = op;
     op = newOp;
@@ -238,7 +244,8 @@ public class TimeConstraintImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getValue()
+  @Override
+public int getValue()
   {
     return value;
   }
@@ -248,7 +255,8 @@ public class TimeConstraintImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(int newValue)
+  @Override
+public void setValue(int newValue)
   {
     int oldValue = value;
     value = newValue;

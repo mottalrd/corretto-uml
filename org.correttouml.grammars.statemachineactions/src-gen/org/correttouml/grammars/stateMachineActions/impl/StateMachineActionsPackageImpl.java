@@ -158,7 +158,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getModel()
+  @Override
+public EClass getModel()
   {
     return modelEClass;
   }
@@ -168,7 +169,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Action()
+  @Override
+public EReference getModel_Action()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -178,7 +180,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Actions()
+  @Override
+public EReference getModel_Actions()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(1);
   }
@@ -188,7 +191,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAction()
+  @Override
+public EClass getAction()
   {
     return actionEClass;
   }
@@ -198,7 +202,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAction_Assignment()
+  @Override
+public EReference getAction_Assignment()
   {
     return (EReference)actionEClass.getEStructuralFeatures().get(0);
   }
@@ -208,7 +213,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAction_EventAction()
+  @Override
+public EReference getAction_EventAction()
   {
     return (EReference)actionEClass.getEStructuralFeatures().get(1);
   }
@@ -218,7 +224,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAssignment()
+  @Override
+public EClass getAssignment()
   {
     return assignmentEClass;
   }
@@ -228,7 +235,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAssignment_Leftvar()
+  @Override
+public EAttribute getAssignment_Leftvar()
   {
     return (EAttribute)assignmentEClass.getEStructuralFeatures().get(0);
   }
@@ -238,7 +246,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAssignment_Expression()
+  @Override
+public EReference getAssignment_Expression()
   {
     return (EReference)assignmentEClass.getEStructuralFeatures().get(1);
   }
@@ -248,7 +257,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getEXPRESSION()
+  @Override
+public EClass getEXPRESSION()
   {
     return expressionEClass;
   }
@@ -258,7 +268,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEXPRESSION_FirstTerm()
+  @Override
+public EReference getEXPRESSION_FirstTerm()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(0);
   }
@@ -268,7 +279,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEXPRESSION_Operator()
+  @Override
+public EAttribute getEXPRESSION_Operator()
   {
     return (EAttribute)expressionEClass.getEStructuralFeatures().get(1);
   }
@@ -278,7 +290,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEXPRESSION_SecondTerm()
+  @Override
+public EReference getEXPRESSION_SecondTerm()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(2);
   }
@@ -288,7 +301,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEXPRESSION_Alone()
+  @Override
+public EReference getEXPRESSION_Alone()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(3);
   }
@@ -298,7 +312,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTERM()
+  @Override
+public EClass getTERM()
   {
     return termEClass;
   }
@@ -308,7 +323,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTERM_IsPast()
+  @Override
+public EAttribute getTERM_IsPast()
   {
     return (EAttribute)termEClass.getEStructuralFeatures().get(0);
   }
@@ -318,7 +334,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTERM_IsFuture()
+  @Override
+public EAttribute getTERM_IsFuture()
   {
     return (EAttribute)termEClass.getEStructuralFeatures().get(1);
   }
@@ -328,7 +345,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTERM_Variable()
+  @Override
+public EAttribute getTERM_Variable()
   {
     return (EAttribute)termEClass.getEStructuralFeatures().get(2);
   }
@@ -338,7 +356,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTERM_Constant()
+  @Override
+public EAttribute getTERM_Constant()
   {
     return (EAttribute)termEClass.getEStructuralFeatures().get(3);
   }
@@ -348,7 +367,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getEventAction()
+  @Override
+public EClass getEventAction()
   {
     return eventActionEClass;
   }
@@ -358,7 +378,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEventAction_Link()
+  @Override
+public EReference getEventAction_Link()
   {
     return (EReference)eventActionEClass.getEStructuralFeatures().get(0);
   }
@@ -368,7 +389,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEventAction_Event()
+  @Override
+public EReference getEventAction_Event()
   {
     return (EReference)eventActionEClass.getEStructuralFeatures().get(1);
   }
@@ -378,7 +400,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getLink()
+  @Override
+public EClass getLink()
   {
     return linkEClass;
   }
@@ -388,7 +411,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLink_LinkName()
+  @Override
+public EAttribute getLink_LinkName()
   {
     return (EAttribute)linkEClass.getEStructuralFeatures().get(0);
   }
@@ -398,7 +422,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLink_AssociationEnd()
+  @Override
+public EAttribute getLink_AssociationEnd()
   {
     return (EAttribute)linkEClass.getEStructuralFeatures().get(1);
   }
@@ -408,7 +433,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLink_Self()
+  @Override
+public EAttribute getLink_Self()
   {
     return (EAttribute)linkEClass.getEStructuralFeatures().get(2);
   }
@@ -418,7 +444,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getEvent()
+  @Override
+public EClass getEvent()
   {
     return eventEClass;
   }
@@ -428,7 +455,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEvent_EventName()
+  @Override
+public EAttribute getEvent_EventName()
   {
     return (EAttribute)eventEClass.getEStructuralFeatures().get(0);
   }
@@ -438,7 +466,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEvent_Parameters()
+  @Override
+public EReference getEvent_Parameters()
   {
     return (EReference)eventEClass.getEStructuralFeatures().get(1);
   }
@@ -448,7 +477,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEvent_EventExtension()
+  @Override
+public EAttribute getEvent_EventExtension()
   {
     return (EAttribute)eventEClass.getEStructuralFeatures().get(2);
   }
@@ -458,7 +488,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getParameters()
+  @Override
+public EClass getParameters()
   {
     return parametersEClass;
   }
@@ -468,7 +499,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getParameters_IsPast()
+  @Override
+public EAttribute getParameters_IsPast()
   {
     return (EAttribute)parametersEClass.getEStructuralFeatures().get(0);
   }
@@ -478,7 +510,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getParameters_IsFuture()
+  @Override
+public EAttribute getParameters_IsFuture()
   {
     return (EAttribute)parametersEClass.getEStructuralFeatures().get(1);
   }
@@ -488,7 +521,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getParameters_Param()
+  @Override
+public EAttribute getParameters_Param()
   {
     return (EAttribute)parametersEClass.getEStructuralFeatures().get(2);
   }
@@ -498,7 +532,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getParameters_Parameters()
+  @Override
+public EReference getParameters_Parameters()
   {
     return (EReference)parametersEClass.getEStructuralFeatures().get(3);
   }
@@ -508,7 +543,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  public StateMachineActionsFactory getStateMachineActionsFactory()
+  @Override
+public StateMachineActionsFactory getStateMachineActionsFactory()
   {
     return (StateMachineActionsFactory)getEFactoryInstance();
   }

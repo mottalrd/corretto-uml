@@ -1,7 +1,5 @@
 package org.correttouml.uml.diagrams.expressions;
 
-import org.correttouml.uml2zot.UML2Zot;
-
 public class Assignment {
 	
 	private org.correttouml.grammars.stateMachineActions.Assignment assignment;

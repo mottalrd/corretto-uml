@@ -78,7 +78,8 @@ public class EventActionImpl extends MinimalEObjectImpl.Container implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public Link getLink()
+  @Override
+public Link getLink()
   {
     return link;
   }
@@ -105,7 +106,8 @@ public class EventActionImpl extends MinimalEObjectImpl.Container implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLink(Link newLink)
+  @Override
+public void setLink(Link newLink)
   {
     if (newLink != link)
     {
@@ -126,7 +128,8 @@ public class EventActionImpl extends MinimalEObjectImpl.Container implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public Event getEvent()
+  @Override
+public Event getEvent()
   {
     return event;
   }
@@ -153,7 +156,8 @@ public class EventActionImpl extends MinimalEObjectImpl.Container implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEvent(Event newEvent)
+  @Override
+public void setEvent(Event newEvent)
   {
     if (newEvent != event)
     {

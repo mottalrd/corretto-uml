@@ -79,7 +79,8 @@ public class StateMachineTriggersFactoryImpl extends EFactoryImpl implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public Model createModel()
+  @Override
+public Model createModel()
   {
     ModelImpl model = new ModelImpl();
     return model;
@@ -90,7 +91,8 @@ public class StateMachineTriggersFactoryImpl extends EFactoryImpl implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public Trigger createTrigger()
+  @Override
+public Trigger createTrigger()
   {
     TriggerImpl trigger = new TriggerImpl();
     return trigger;
@@ -101,7 +103,8 @@ public class StateMachineTriggersFactoryImpl extends EFactoryImpl implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public Left createLeft()
+  @Override
+public Left createLeft()
   {
     LeftImpl left = new LeftImpl();
     return left;
@@ -112,7 +115,8 @@ public class StateMachineTriggersFactoryImpl extends EFactoryImpl implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public Right createRight()
+  @Override
+public Right createRight()
   {
     RightImpl right = new RightImpl();
     return right;
@@ -123,7 +127,8 @@ public class StateMachineTriggersFactoryImpl extends EFactoryImpl implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public Event createEvent()
+  @Override
+public Event createEvent()
   {
     EventImpl event = new EventImpl();
     return event;
@@ -134,7 +139,8 @@ public class StateMachineTriggersFactoryImpl extends EFactoryImpl implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public StateMachineTriggersPackage getStateMachineTriggersPackage()
+  @Override
+public StateMachineTriggersPackage getStateMachineTriggersPackage()
   {
     return (StateMachineTriggersPackage)getEPackage();
   }

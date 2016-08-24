@@ -1,7 +1,6 @@
 package org.correttouml.grammars.serializer;
 
 import com.google.inject.Inject;
-import com.google.inject.Provider;
 import org.correttouml.grammars.services.StateMachineActionsGrammarAccess;
 import org.correttouml.grammars.stateMachineActions.Action;
 import org.correttouml.grammars.stateMachineActions.Assignment;
@@ -14,15 +13,9 @@ import org.correttouml.grammars.stateMachineActions.Parameters;
 import org.correttouml.grammars.stateMachineActions.StateMachineActionsPackage;
 import org.correttouml.grammars.stateMachineActions.TERM;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
-import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
-import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
 import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
-import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
@@ -31,6 +24,7 @@ public class StateMachineActionsSemanticSequencer extends AbstractDelegatingSema
 	@Inject
 	private StateMachineActionsGrammarAccess grammarAccess;
 	
+	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == StateMachineActionsPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case StateMachineActionsPackage.ACTION:

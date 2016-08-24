@@ -98,7 +98,8 @@ public class OrExpressionImpl extends MinimalEObjectImpl.Container implements Or
    * <!-- end-user-doc -->
    * @generated
    */
-  public AndExpression getLeftExpression()
+  @Override
+public AndExpression getLeftExpression()
   {
     return leftExpression;
   }
@@ -125,7 +126,8 @@ public class OrExpressionImpl extends MinimalEObjectImpl.Container implements Or
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLeftExpression(AndExpression newLeftExpression)
+  @Override
+public void setLeftExpression(AndExpression newLeftExpression)
   {
     if (newLeftExpression != leftExpression)
     {
@@ -146,7 +148,8 @@ public class OrExpressionImpl extends MinimalEObjectImpl.Container implements Or
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getOr()
+  @Override
+public String getOr()
   {
     return or;
   }
@@ -156,7 +159,8 @@ public class OrExpressionImpl extends MinimalEObjectImpl.Container implements Or
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setOr(String newOr)
+  @Override
+public void setOr(String newOr)
   {
     String oldOr = or;
     or = newOr;
@@ -169,7 +173,8 @@ public class OrExpressionImpl extends MinimalEObjectImpl.Container implements Or
    * <!-- end-user-doc -->
    * @generated
    */
-  public OrExpression getRightExpression()
+  @Override
+public OrExpression getRightExpression()
   {
     return rightExpression;
   }
@@ -196,7 +201,8 @@ public class OrExpressionImpl extends MinimalEObjectImpl.Container implements Or
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRightExpression(OrExpression newRightExpression)
+  @Override
+public void setRightExpression(OrExpression newRightExpression)
   {
     if (newRightExpression != rightExpression)
     {

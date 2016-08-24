@@ -87,7 +87,8 @@ public class ASSIGNMENTImpl extends MinimalEObjectImpl.Container implements ASSI
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getVariable()
+  @Override
+public String getVariable()
   {
     return variable;
   }
@@ -97,7 +98,8 @@ public class ASSIGNMENTImpl extends MinimalEObjectImpl.Container implements ASSI
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVariable(String newVariable)
+  @Override
+public void setVariable(String newVariable)
   {
     String oldVariable = variable;
     variable = newVariable;
@@ -110,7 +112,8 @@ public class ASSIGNMENTImpl extends MinimalEObjectImpl.Container implements ASSI
    * <!-- end-user-doc -->
    * @generated
    */
-  public EXPRESSION getExpression()
+  @Override
+public EXPRESSION getExpression()
   {
     return expression;
   }
@@ -137,7 +140,8 @@ public class ASSIGNMENTImpl extends MinimalEObjectImpl.Container implements ASSI
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpression(EXPRESSION newExpression)
+  @Override
+public void setExpression(EXPRESSION newExpression)
   {
     if (newExpression != expression)
     {

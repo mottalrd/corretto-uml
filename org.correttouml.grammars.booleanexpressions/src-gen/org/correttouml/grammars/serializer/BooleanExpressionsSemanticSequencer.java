@@ -1,7 +1,6 @@
 package org.correttouml.grammars.serializer;
 
 import com.google.inject.Inject;
-import com.google.inject.Provider;
 import org.correttouml.grammars.booleanExpressions.AndExpression;
 import org.correttouml.grammars.booleanExpressions.BaseExpression;
 import org.correttouml.grammars.booleanExpressions.BooleanExpressionsPackage;
@@ -16,15 +15,9 @@ import org.correttouml.grammars.booleanExpressions.VariableCondition;
 import org.correttouml.grammars.booleanExpressions.booleanTerm;
 import org.correttouml.grammars.services.BooleanExpressionsGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
-import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
-import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
 import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
-import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
@@ -33,6 +26,7 @@ public class BooleanExpressionsSemanticSequencer extends AbstractDelegatingSeman
 	@Inject
 	private BooleanExpressionsGrammarAccess grammarAccess;
 	
+	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == BooleanExpressionsPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case BooleanExpressionsPackage.AND_EXPRESSION:

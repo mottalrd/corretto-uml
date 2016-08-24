@@ -98,7 +98,8 @@ public class AndExpressionImpl extends MinimalEObjectImpl.Container implements A
    * <!-- end-user-doc -->
    * @generated
    */
-  public BaseExpression getLeftExpression()
+  @Override
+public BaseExpression getLeftExpression()
   {
     return leftExpression;
   }
@@ -125,7 +126,8 @@ public class AndExpressionImpl extends MinimalEObjectImpl.Container implements A
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLeftExpression(BaseExpression newLeftExpression)
+  @Override
+public void setLeftExpression(BaseExpression newLeftExpression)
   {
     if (newLeftExpression != leftExpression)
     {
@@ -146,7 +148,8 @@ public class AndExpressionImpl extends MinimalEObjectImpl.Container implements A
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getAnd()
+  @Override
+public String getAnd()
   {
     return and;
   }
@@ -156,7 +159,8 @@ public class AndExpressionImpl extends MinimalEObjectImpl.Container implements A
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAnd(String newAnd)
+  @Override
+public void setAnd(String newAnd)
   {
     String oldAnd = and;
     and = newAnd;
@@ -169,7 +173,8 @@ public class AndExpressionImpl extends MinimalEObjectImpl.Container implements A
    * <!-- end-user-doc -->
    * @generated
    */
-  public AndExpression getRightExpression()
+  @Override
+public AndExpression getRightExpression()
   {
     return rightExpression;
   }
@@ -196,7 +201,8 @@ public class AndExpressionImpl extends MinimalEObjectImpl.Container implements A
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRightExpression(AndExpression newRightExpression)
+  @Override
+public void setRightExpression(AndExpression newRightExpression)
   {
     if (newRightExpression != rightExpression)
     {

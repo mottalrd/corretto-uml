@@ -25,6 +25,7 @@ public class StateMachineTriggersGrammarAccess extends AbstractGrammarElementFin
 		
 		//Model:
 		//	trigger=Trigger;
+		@Override
 		public ParserRule getRule() { return rule; }
 
 		//trigger=Trigger
@@ -44,6 +45,7 @@ public class StateMachineTriggersGrammarAccess extends AbstractGrammarElementFin
 		
 		//Trigger:
 		//	left=Left right=Right?;
+		@Override
 		public ParserRule getRule() { return rule; }
 
 		//left=Left right=Right?
@@ -71,6 +73,7 @@ public class StateMachineTriggersGrammarAccess extends AbstractGrammarElementFin
 		
 		//Left:
 		//	"@" event=Event;
+		@Override
 		public ParserRule getRule() { return rule; }
 
 		//"@" event=Event
@@ -100,6 +103,7 @@ public class StateMachineTriggersGrammarAccess extends AbstractGrammarElementFin
 		
 		//Right:
 		//	"-" "@" event=Event op=RELATIONS value=INT;
+		@Override
 		public ParserRule getRule() { return rule; }
 
 		//"-" "@" event=Event op=RELATIONS value=INT
@@ -144,6 +148,7 @@ public class StateMachineTriggersGrammarAccess extends AbstractGrammarElementFin
 		
 		//Event:
 		//	eventName=ID "." eventExtension=EventExtensions | nowEvent?="now";
+		@Override
 		public ParserRule getRule() { return rule; }
 
 		//eventName=ID "." eventExtension=EventExtensions | nowEvent?="now"
@@ -187,6 +192,7 @@ public class StateMachineTriggersGrammarAccess extends AbstractGrammarElementFin
 		
 		//EventExtensions:
 		//	"exit" | "enter" | "start" | "end" | "tick" | "sig" | "call";
+		@Override
 		public ParserRule getRule() { return rule; }
 
 		//"exit" | "enter" | "start" | "end" | "tick" | "sig" | "call"
@@ -251,6 +257,7 @@ public class StateMachineTriggersGrammarAccess extends AbstractGrammarElementFin
 	}
 	
 	
+	@Override
 	public Grammar getGrammar() {
 		return grammar;
 	}

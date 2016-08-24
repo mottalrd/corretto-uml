@@ -128,7 +128,8 @@ public class ParametersImpl extends MinimalEObjectImpl.Container implements Para
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getIsPast()
+  @Override
+public String getIsPast()
   {
     return isPast;
   }
@@ -138,7 +139,8 @@ public class ParametersImpl extends MinimalEObjectImpl.Container implements Para
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setIsPast(String newIsPast)
+  @Override
+public void setIsPast(String newIsPast)
   {
     String oldIsPast = isPast;
     isPast = newIsPast;
@@ -151,7 +153,8 @@ public class ParametersImpl extends MinimalEObjectImpl.Container implements Para
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getIsFuture()
+  @Override
+public String getIsFuture()
   {
     return isFuture;
   }
@@ -161,7 +164,8 @@ public class ParametersImpl extends MinimalEObjectImpl.Container implements Para
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setIsFuture(String newIsFuture)
+  @Override
+public void setIsFuture(String newIsFuture)
   {
     String oldIsFuture = isFuture;
     isFuture = newIsFuture;
@@ -174,7 +178,8 @@ public class ParametersImpl extends MinimalEObjectImpl.Container implements Para
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getParam()
+  @Override
+public String getParam()
   {
     return param;
   }
@@ -184,7 +189,8 @@ public class ParametersImpl extends MinimalEObjectImpl.Container implements Para
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setParam(String newParam)
+  @Override
+public void setParam(String newParam)
   {
     String oldParam = param;
     param = newParam;
@@ -197,7 +203,8 @@ public class ParametersImpl extends MinimalEObjectImpl.Container implements Para
    * <!-- end-user-doc -->
    * @generated
    */
-  public Parameters getParameters()
+  @Override
+public Parameters getParameters()
   {
     return parameters;
   }
@@ -224,7 +231,8 @@ public class ParametersImpl extends MinimalEObjectImpl.Container implements Para
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setParameters(Parameters newParameters)
+  @Override
+public void setParameters(Parameters newParameters)
   {
     if (newParameters != parameters)
     {

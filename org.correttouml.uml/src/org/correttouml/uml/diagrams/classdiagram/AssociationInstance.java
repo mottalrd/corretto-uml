@@ -2,7 +2,6 @@ package org.correttouml.uml.diagrams.classdiagram;
 
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.uml2.uml.InstanceSpecification;
 
 public class AssociationInstance {
 
@@ -74,7 +73,7 @@ public class AssociationInstance {
 		for (EAnnotation e:uml_instancespecificationlink.getEAnnotations()){
 			for (EObject eo : e.getReferences())
 				if (((org.eclipse.uml2.uml.InstanceSpecification) eo).getClassifiers().get(0).getName().equals(memberEndClass.getName()))
-					return new Object((org.eclipse.uml2.uml.InstanceSpecification) ((org.eclipse.uml2.uml.InstanceSpecification) eo));
+					return new Object(((org.eclipse.uml2.uml.InstanceSpecification) eo));
 			}
 		return null;
 	}

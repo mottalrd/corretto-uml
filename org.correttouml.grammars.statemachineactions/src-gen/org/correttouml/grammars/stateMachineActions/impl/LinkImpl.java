@@ -115,7 +115,8 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getLinkName()
+  @Override
+public String getLinkName()
   {
     return linkName;
   }
@@ -125,7 +126,8 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLinkName(String newLinkName)
+  @Override
+public void setLinkName(String newLinkName)
   {
     String oldLinkName = linkName;
     linkName = newLinkName;
@@ -138,7 +140,8 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getAssociationEnd()
+  @Override
+public String getAssociationEnd()
   {
     return associationEnd;
   }
@@ -148,7 +151,8 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAssociationEnd(String newAssociationEnd)
+  @Override
+public void setAssociationEnd(String newAssociationEnd)
   {
     String oldAssociationEnd = associationEnd;
     associationEnd = newAssociationEnd;
@@ -161,7 +165,8 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getSelf()
+  @Override
+public String getSelf()
   {
     return self;
   }
@@ -171,7 +176,8 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSelf(String newSelf)
+  @Override
+public void setSelf(String newSelf)
   {
     String oldSelf = self;
     self = newSelf;
