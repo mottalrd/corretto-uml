@@ -29,9 +29,11 @@ import org.correttouml.uml2zot.semantics.util.bool.Iff;
 import org.correttouml.uml2zot.semantics.util.bool.Implies;
 import org.correttouml.uml2zot.semantics.util.bool.Not;
 import org.correttouml.uml2zot.semantics.util.bool.Or;
+import org.correttouml.uml2zot.semantics.util.trio.Next;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 import org.correttouml.uml2zot.semantics.util.trio.Since_ei;
 import org.correttouml.uml2zot.semantics.util.trio.Until_ei;
+import org.correttouml.uml2zot.semantics.util.trio.Yesterday;
 
 public class SSequenceDiagram {
 
@@ -246,7 +248,7 @@ public class SSequenceDiagram {
                 	if(t.hasActions()){
                 		for(Action act: t.getActions(null)){
                         	if(act instanceof SequenceDiagramAction && ((SequenceDiagramAction) act).getSequenceDiagram().equals(this.mades_sd)){
-        	                	condStart.addFormulae(new STransition(t).getPredicate(mades_object));
+        	                	condStart.addFormulae(new Yesterday(new STransition(t).getPredicate(mades_object)));
         	                }
                 		}
                 	}
