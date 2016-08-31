@@ -44,7 +44,7 @@ public class FisherProtocol {
 	public void start() {
 		LOGGER.info("Creating the UML model");
 		String modeltype = "sat";
-		for (int i = 2; i <= 10; i++) {
+		for (int i = 2; i <= 2; i++) {
 			create_fisher_model(i);
 			create_alw_not_counter_greater_than_one(); modeltype = "p";
 			//create_alw_not_some_state(STATE_UPDATED); modeltype = "test";

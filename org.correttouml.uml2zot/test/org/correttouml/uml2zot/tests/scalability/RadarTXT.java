@@ -8,20 +8,21 @@ import org.correttouml.uml2zot.tests.TestConfiguration;
 import org.correttouml.uml2zot.tests.helpers.UML2Helper;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.resource.UMLResource;
 
 public class RadarTXT {
 	
 	/** The UML2ZOT entry point for making the transformation */
 	private static UML2Zot t;
-	
+	private static Profile madesProfile;	
 	private static final Logger LOGGER = Logger.getLogger(SequenceDiagram.class); 
 	
 	public static void main(String[] args){
 		for(int num_processi=1; num_processi<=1; num_processi++){
 			LOGGER.info("Creating the UML model");
-			boolean verify = false;//SAT
-//			boolean verify = true; //Property
+//			boolean verify = false;//SAT
+			boolean verify = true; //Property
 			String modeltype = "sat";
 			if (verify) modeltype = "p";
 			create_txt_model(num_processi, verify);
@@ -38,7 +39,8 @@ public class RadarTXT {
 	private static void create_txt_model(int num_processes, boolean verify_property){
 		//Preparazione modello e package
 		Model myModel = UML2Helper.createModel("Radar TXT");
-		org.eclipse.uml2.uml.Profile madesProfile = UML2Helper.loadProfile(TestConfiguration.MADES_PROFILE_PATH);
+//		org.eclipse.uml2.uml.Profile madesProfile = UML2Helper.loadProfile(TestConfiguration.MADES_PROFILE_PATH);
+		madesProfile = UML2Helper.loadProfile(TestConfiguration.MADES_PROFILE_PATH);
 		myModel.createElementImport(madesProfile);
 		myModel.applyProfile(madesProfile);
 		
@@ -137,6 +139,9 @@ public class RadarTXT {
 		UML2Helper.createMessage(sdMainMMIToEnvironment, l1, l2, swEnvironmentop9, "main_weather_setImage");
 		UML2Helper.createMessage(sdMainMMIToEnvironment, l1, l1, swMainMMIop5, "showData");
 		
+		org.eclipse.uml2.uml.Stereotype timeConstraintStereotype = UML2Helper.getMADESTimeStereotype(madesProfile, "TimeConstraint");
+		org.eclipse.uml2.uml.Comment tcComment = UML2Helper.createSDTimeConstraint(madesProfile, sdMainMMIToEnvironment, "@main_panel_getButton_message.receive - @" + sdMainMMIToEnvironment.getName() + ".start <= 2");
+		
 		//STD MAIN MMI
 		org.eclipse.uml2.uml.StateMachine smMainMMI=UML2Helper.createStateMachine(swMainMMI, "smMainMMI");
 		UML2Helper.createRegion(smMainMMI);
@@ -198,6 +203,7 @@ public class RadarTXT {
 	}
 
 	private static void create_panel_data(org.eclipse.uml2.uml.Package systemPackage, org.eclipse.uml2.uml.InstanceSpecification environment, org.eclipse.uml2.uml.Operation panel_getLed,  org.eclipse.uml2.uml.Operation panel_setButton, int id){
+//		org.eclipse.uml2.uml.Profile madesProfile = UML2Helper.loadProfile(TestConfiguration.MADES_PROFILE_PATH);
 		//PANEL DATA
 		org.eclipse.uml2.uml.Class swPanelData=UML2Helper.createClass(systemPackage, "swPanelData"+id, false);
 		org.eclipse.uml2.uml.InstanceSpecification panelData=UML2Helper.createInstanceSpecification(systemPackage, swPanelData, "panelData"+id);
@@ -217,6 +223,10 @@ public class RadarTXT {
 		UML2Helper.createMessage(SDPanelDataToEnvironment, l1, l1, swPanelDataop3, "processData");
 		UML2Helper.createMessage(SDPanelDataToEnvironment, l1, l2, panel_setButton, "panel_setButton");
 		UML2Helper.createMessage(SDPanelDataToEnvironment, l1, l1, swPanelDataop5, "showData");
+
+		org.eclipse.uml2.uml.Stereotype timeConstraintStereotype = UML2Helper.getMADESTimeStereotype(madesProfile, "TimeConstraint");
+		org.eclipse.uml2.uml.Comment tcComment = UML2Helper.createSDTimeConstraint(madesProfile, SDPanelDataToEnvironment, "@panel_setButton.receive - @" + SDPanelDataToEnvironment.getName() + ".start > 5");
+		
 		
 		//STD PANEL DATA
 		org.eclipse.uml2.uml.StateMachine SMPanelData=UML2Helper.createStateMachine(swPanelData, "SMPanelData"+id);

@@ -25,7 +25,7 @@ public class SSequenceDiagramParameter implements SVariable{
 	public String getSemantics() {
 		String sem="";
 //		Predicate sd_inside=new SSequenceDiagram(this.mades_sdp.getSequenceDiagram()).getPredicate();
-		BooleanFormulae sd_insideNotFirstTI = new And (new SSequenceDiagram(this.mades_sdp.getSequenceDiagram()).getPredicate(), new Not(new SSequenceDiagram(this.mades_sdp.getSequenceDiagram()).getPredicateStart()));
+		BooleanFormulae sd_insideNotFirstTI = new And (new SSequenceDiagram(this.mades_sdp.getSequenceDiagram()).getPredicate(), new Not(new SSequenceDiagram(this.mades_sdp.getSequenceDiagram()).getPredicate().getStartPredicate()));
 		//TODO: Put back assignments for sequence diagrams parameters
 //		// The sequence diagram parameter has always the same value
 //		// if we do not make any assignment to it

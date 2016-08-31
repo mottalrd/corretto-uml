@@ -26,6 +26,7 @@ public class MadesModel{
 	
 	//private static final Logger LOGGER = Logger.getLogger(MadesModel.class); 
 
+	
     public MadesModel(org.eclipse.uml2.uml.Model m){
     	this.uml_model=m;
     	

@@ -8,6 +8,8 @@ import org.correttouml.uml.diagrams.expressions.ValueSpecification;
 import org.correttouml.uml.diagrams.statediagram.StateDiagram;
 import org.correttouml.uml2zot.semantics.SMadesModel;
 import org.correttouml.uml2zot.semantics.statediagram.SStateDiagram;
+import org.correttouml.uml2zot.semantics.util.trio.Constant;
+import org.correttouml.uml2zot.semantics.util.trio.EQ;
 
 
 public class SObject {
@@ -21,14 +23,14 @@ public class SObject {
 	public String getSemantics(){
 		String sem="";
 		
-		sem=sem+SMadesModel.printSeparatorSmall("Object operation definitions", false);
+		SMadesModel.printSeparatorSmall("Object operation definitions", false);
 		for(Operation op: this.mades_obj.getOwningClass().getOperations()){
-			sem=sem+new SOperation(op).getSemantics(mades_obj)+"\n";
+			sem=sem+new SOperation(op).getSemantics(mades_obj);
 		}
 		
-		sem=sem+SMadesModel.printSeparatorSmall("Attribute semantics", false);
+		SMadesModel.printSeparatorSmall("Attribute semantics", false);
 		for(Attribute attr: this.mades_obj.getOwningClass().getAttributes()){
-			sem=sem+new SAttribute(attr).getSemantics(mades_obj)+"\n";
+			sem=sem+new SAttribute(attr).getSemantics(mades_obj);
 		}
 		
 		//TODO Add the blocking semantics
@@ -52,7 +54,7 @@ public class SObject {
 			if((s=mades_obj.getSlot(att))!=null){
 				value=s.getValueSpecification();
 			}else{
-				//[TODO]: To initialise an attribute right now you MUST
+				//[TODO]: To initialize an attribute right now you MUST
 				// create a slot at instance level. Going for a default value
 				// here is tricky and must be thought carefully.
 				//value=att.getDefaultValue();

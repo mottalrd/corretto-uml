@@ -1,7 +1,9 @@
 package org.correttouml.uml.diagrams.sequencediagram;
 
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.correttouml.uml.MadesModel;
@@ -17,19 +19,34 @@ import org.eclipse.uml2.uml.Interaction;
 public class SequenceDiagram implements ExpressionContext, PTermElement{
 
 	private org.eclipse.uml2.uml.Interaction uml_interaction;
-	
+
 	public SequenceDiagram(Interaction e) {
 		this.uml_interaction=e;
 	}
 
-	public Set<Lifeline> getLifelines(){
+	public ArrayList<Lifeline> getLifelines(){
+		ArrayList<Lifeline> lifelines = new ArrayList<Lifeline>();
+		for(org.eclipse.uml2.uml.Lifeline l: uml_interaction.getLifelines()){
+				lifelines.add(new Lifeline(l));
+		}
+		return lifelines;
+	}
+	
+	public Lifeline getLifeline(int index){
+		return getLifelines().get(index);
+	}
+	
+	
+/* Before SD_CF
+ * public Set<Lifeline> getLifelines(){
 		Set<Lifeline> lifelines=new HashSet<Lifeline>();
 		for(org.eclipse.uml2.uml.Lifeline l: uml_interaction.getLifelines()){
 			lifelines.add(new Lifeline(l));
 		}
 		return lifelines;
 	}
-
+ */
+	
 	public String getName() {
 		return uml_interaction.getName();
 	}
@@ -42,6 +59,15 @@ public class SequenceDiagram implements ExpressionContext, PTermElement{
 		return messages;
 	}
 
+	public ArrayList<CombinedFragment> getCombinedFragments() {
+		ArrayList<CombinedFragment> combinedfragments = new ArrayList<CombinedFragment>();
+		for (org.eclipse.uml2.uml.InteractionFragment sdif : uml_interaction.getFragments()) {
+			if (sdif instanceof org.eclipse.uml2.uml.CombinedFragment)
+				combinedfragments.add(new CombinedFragment((org.eclipse.uml2.uml.CombinedFragment)sdif));
+		}
+		return combinedfragments;
+	}
+	
 	public Set<ExecutionOccurrence> getExecutionOccurrences() {
 		Set<ExecutionOccurrence> exoccs=new HashSet<ExecutionOccurrence>();
 		for(org.eclipse.uml2.uml.Lifeline l: this.uml_interaction.getLifelines()){
@@ -83,6 +109,30 @@ public class SequenceDiagram implements ExpressionContext, PTermElement{
 			
 		}
 		return tcs;
+	}
+	
+	public String [] getConfig() {
+		String [] strConfig = new String[3];
+		for(Comment c: this.uml_interaction.getOwnedComments()){
+			if(!UML2ModelHelper.hasStereotype(c, "TimeConstraint")){
+				String [] cText = c.getBody().split("\n");
+				for(String s :cText){
+					s=s.replace(" ", "");
+					String [] cPar = s.split(":");
+					if (cPar.length<=1)
+						return null;
+					cPar[1]=cPar[1].replaceAll("\r", "");
+					if (cPar[0].toLowerCase().equals("combine"))
+						strConfig[0] = cPar[1].toUpperCase();
+					if (cPar[0].toLowerCase().equals("loop"))
+						strConfig[1] = cPar[1].toUpperCase();
+					if (cPar[0].toLowerCase().equals("choice"))
+						strConfig[2] = cPar[1].toUpperCase();
+				}
+				return strConfig;
+			}
+		}
+		return null;
 	}
 	
 	@Override

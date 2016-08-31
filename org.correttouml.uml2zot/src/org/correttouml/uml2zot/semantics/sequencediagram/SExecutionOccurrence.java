@@ -1,7 +1,12 @@
 package org.correttouml.uml2zot.semantics.sequencediagram;
 
+import java.util.ArrayList;
+
 import org.correttouml.uml.diagrams.sequencediagram.ExecutionOccurrence;
+import org.correttouml.uml2zot.UML2Zot;
+import org.correttouml.uml2zot.semantics.SMadesModel;
 import org.correttouml.uml2zot.semantics.util.bool.And;
+import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
 import org.correttouml.uml2zot.semantics.util.bool.Iff;
 import org.correttouml.uml2zot.semantics.util.bool.Not;
 import org.correttouml.uml2zot.semantics.util.bool.Or;
@@ -9,7 +14,7 @@ import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 import org.correttouml.uml2zot.semantics.util.trio.Since_ei;
 
 
-public class SExecutionOccurrence implements SInteractionFragment{
+public class SExecutionOccurrence implements SInteractionFragment, BooleanFormulae{
 	
 	private ExecutionOccurrence mades_exocc;
 
@@ -19,23 +24,15 @@ public class SExecutionOccurrence implements SInteractionFragment{
 	
 	@Override
 	public Predicate getPredicate(){
+		//return new Predicate("EXOCC"+this.mades_exocc.getUMLId().replace("-", "_"));
 		return new Predicate("EXOCC"+ this.mades_exocc.getUMLId());
-
-	}
-	public Predicate getPredicateStart(){
-		return new Predicate("EXOCC" + this.mades_exocc.getUMLId() + "_START");
-	}
-	public Predicate getPredicateEnd(){
-		return new Predicate("EXOCC" + this.mades_exocc.getUMLId() + "_End");
 	}
 
 	public String getSemantics() {
         String sem = "";
-        Predicate sdstop=new SSequenceDiagram(this.mades_exocc.getSequenceDiagram()).getPredicateStop();
-//        Predicate exoccstart=new SExecutionOccurrenceStart(this.mades_exocc.getExecutionOccurrenceStart()).getPredicate();
-        Predicate exoccstart = this.getPredicateStart();
-//        Predicate exoccend=new SExecutionOccurrenceEnd(this.mades_exocc.getExecutionOccurrenceEnd()).getPredicate();
-        Predicate exoccend = this.getPredicateEnd();
+        Predicate sdstop=new SSequenceDiagram(this.mades_exocc.getSequenceDiagram()).getPredicate().getStopPredicate();
+        Predicate exoccstart=new SExecutionOccurrenceStart(this.mades_exocc.getExecutionOccurrenceStart()).getPredicate();
+        Predicate exoccend=new SExecutionOccurrenceEnd(this.mades_exocc.getExecutionOccurrenceEnd()).getPredicate();
         Predicate exocc=this.getPredicate();
 
         /*@AXIOM
@@ -55,18 +52,45 @@ public class SExecutionOccurrence implements SInteractionFragment{
         
         return sem;
 	}
+	
+	public BooleanFormulae getSemanticsBF() {
+        Predicate sdstop=new SSequenceDiagram(this.mades_exocc.getSequenceDiagram()).getPredicate().getStopPredicate();
+        return new SBorders(this.getPredicate(), sdstop);
+	}
+	
+//	public String getSyncSemantics() {
+//		String sem = "";
+//		if (!(this.mades_exocc.getExecutionOccurrenceSyncStart() == null)) {
+//			new SInteractionFragmentFactory();
+//			sem += new Iff(this.getPredicate().getStartPredicate(), SInteractionFragmentFactory.getInstance(this.mades_exocc.getExecutionOccurrenceSyncStart()).getPredicate()) + "\n";
+//		}
+//		if (!(this.mades_exocc.getExecutionOccurrenceSyncFinish() == null)) {
+//			new SInteractionFragmentFactory();
+//			sem += new Iff(this.getPredicate().getEndPredicate(), SInteractionFragmentFactory.getInstance(this.mades_exocc.getExecutionOccurrenceSyncFinish()).getPredicate()) + "\n";
+//		}		
+//		return sem;
+//	}
 
-	public String getSyncSemantics() {
-		String sem = "";
+	public ArrayList<BooleanFormulae> getSyncSemanticsBF() {
+		ArrayList<BooleanFormulae> f = new ArrayList<BooleanFormulae>();
 		if (!(this.mades_exocc.getExecutionOccurrenceSyncStart() == null)) {
 			new SInteractionFragmentFactory();
-			sem += new Iff(this.getPredicateStart(), SInteractionFragmentFactory.getInstance(this.mades_exocc.getExecutionOccurrenceSyncStart()).getPredicate()) + "\n";
+			f.add(new Iff(this.getPredicate().getStartPredicate(), SInteractionFragmentFactory.getInstance(this.mades_exocc.getExecutionOccurrenceSyncStart()).getPredicate()));
 		}
 		if (!(this.mades_exocc.getExecutionOccurrenceSyncFinish() == null)) {
 			new SInteractionFragmentFactory();
-			sem += new Iff(this.getPredicateEnd(), SInteractionFragmentFactory.getInstance(this.mades_exocc.getExecutionOccurrenceSyncFinish()).getPredicate()) + "\n";
+			f.add(new Iff(this.getPredicate().getEndPredicate(), SInteractionFragmentFactory.getInstance(this.mades_exocc.getExecutionOccurrenceSyncFinish()).getPredicate()));
 		}		
-		return sem;
+		return f;
 	}
 
+	public String getSyncSemantics() {
+    	String s = "";
+    	ArrayList<BooleanFormulae> tempf1 = new ArrayList<BooleanFormulae>();
+    	tempf1.addAll(getSyncSemanticsBF());
+    	for (BooleanFormulae bf:tempf1)
+    		s += bf.toString() + "\n";
+    	return s;
+	}
+	
 }

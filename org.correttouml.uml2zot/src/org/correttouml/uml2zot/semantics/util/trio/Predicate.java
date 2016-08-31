@@ -57,21 +57,41 @@ public class Predicate implements Atom{
         return predicatename;
     }
 
-    @Override
-    public String toString() {
-        return "(-P- " +predicatename+ ")";
+    public Predicate getStartPredicate(){
+    	return new Predicate(getPredicateName()+"_Start");
+    }
+    
+    public Predicate getEndPredicate(){
+    	return new Predicate(getPredicateName()+"_End");
+    }
+
+    public Predicate getSkipPredicate(){
+    	return new Predicate(getPredicateName()+"_Skip");
+    }
+    
+    public Predicate getStopPredicate(){
+    	return new Predicate(getPredicateName()+"_Stop");
     }
     
     @Override
-	public boolean equals(Object o){
+    public String toString() {
+    	return "(-P- " +predicatename+ ")";
+    }
+    
+    public boolean equals(Object o){
         if(o instanceof Predicate){
             return ((Predicate)o).predicatename.toUpperCase().equals(predicatename.toUpperCase());
         }
         return false;
     }    
 
-    @Override
-	public int hashCode(){
-      return this.predicatename.toUpperCase().hashCode();
+    public int hashCode(){
+      try {
+		return this.predicatename.toUpperCase().hashCode();
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+      return 0;
     }
 }

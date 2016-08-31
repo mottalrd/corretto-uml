@@ -52,7 +52,7 @@ public class EventFactory {
 			String eventName) {
 		for(Message m: context.getMessages()){
 			if(m.getName().equals(eventName)){
-				return m.getMessageStartEvent();
+				return m.getMessageEndEvent();
 			}
 		}
 		return null;
@@ -62,7 +62,7 @@ public class EventFactory {
 			String eventName) {
 		for(Message m: context.getMessages()){
 			if(m.getName().equals(eventName)){
-				return m.getMessageEndEvent();
+				return m.getMessageStartEvent();
 			}
 		}
 		return null;

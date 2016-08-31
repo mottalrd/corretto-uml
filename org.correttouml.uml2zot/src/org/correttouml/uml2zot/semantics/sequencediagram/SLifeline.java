@@ -23,43 +23,43 @@ public class SLifeline {
 
 	public String getSemantics() {
         String sem="";
-        sem=sem+SMadesModel.printSeparatorSmall("LIFELINE " + this.mades_lifeline.getName());
-        Predicate sd_stop=new SSequenceDiagram(this.mades_lifeline.getSequenceDiagram()).getPredicateStop();
-        Iterator<InteractionFragment> it=this.mades_lifeline.getEvents().iterator();
-        
-        
-        InteractionFragment prec_event=null;
-        Predicate prec_predicate=null;
-        if(it.hasNext()){
-        	prec_event=it.next();
-        	if (prec_event instanceof ExecutionOccurrence){
-        		sem += new SExecutionOccurrence((ExecutionOccurrence) prec_event).getSyncSemantics() + "\n";
-        		if(it.hasNext())
-        			prec_event = it.next();
-        	}
-        	prec_predicate=SInteractionFragmentFactory.getInstance(prec_event).getPredicate();
-        }
-        while(it.hasNext()){
-        	InteractionFragment curr_event=it.next();
-        	if (curr_event instanceof ExecutionOccurrence){
-        		sem += new SExecutionOccurrence((ExecutionOccurrence) curr_event).getSyncSemantics() + "\n";
-        		if(it.hasNext())
-        			curr_event = it.next();
-        	}
-        	Predicate curr_predicate=SInteractionFragmentFactory.getInstance(curr_event).getPredicate();
-        	
-        	                      
-            sem = sem + SSequenceDiagram.buildOrderingSemanticsLTEAxiom(prec_predicate, curr_predicate, sd_stop)+"\n";
-            sem = sem + SSequenceDiagram.buildOrderingSemanticsBackwardAxiom(prec_predicate, curr_predicate, sd_stop)+"\n";
-            
-            //Messages are always separated by one time instant, see below list of comments for details
-            if((prec_event instanceof MessageStart || prec_event instanceof MessageEnd) &&
-            		(curr_event instanceof MessageStart || curr_event instanceof MessageEnd)){
-            	sem = sem + new Implies(prec_predicate, new Not(curr_predicate)) + "\n";
-            }
-            
-            prec_predicate=curr_predicate;
-        }
+//        sem=sem+SMadesModel.printSeparatorSmall("LIFELINE " + this.mades_lifeline.getName());
+//        Predicate sd_stop=new SSequenceDiagram(this.mades_lifeline.getSequenceDiagram()).getPredicateStop();
+//        Iterator<InteractionFragment> it=this.mades_lifeline.getEvents().iterator();
+//        
+//        
+//        InteractionFragment prec_event=null;
+//        Predicate prec_predicate=null;
+//        if(it.hasNext()){
+//        	prec_event=it.next();
+//        	if (prec_event instanceof ExecutionOccurrence){
+//        		sem += new SExecutionOccurrence((ExecutionOccurrence) prec_event).getSyncSemantics() + "\n";
+//        		if(it.hasNext())
+//        			prec_event = it.next();
+//        	}
+//        	prec_predicate=SInteractionFragmentFactory.getInstance(prec_event).getPredicate();
+//        }
+//        while(it.hasNext()){
+//        	InteractionFragment curr_event=it.next();
+//        	if (curr_event instanceof ExecutionOccurrence){
+//        		sem += new SExecutionOccurrence((ExecutionOccurrence) curr_event).getSyncSemantics() + "\n";
+//        		if(it.hasNext())
+//        			curr_event = it.next();
+//        	}
+//        	Predicate curr_predicate=SInteractionFragmentFactory.getInstance(curr_event).getPredicate();
+//        	
+//        	                      
+//            sem = sem + SSequenceDiagram.buildOrderingSemanticsLTEAxiom(prec_predicate, curr_predicate, sd_stop)+"\n";
+//            sem = sem + SSequenceDiagram.buildOrderingSemanticsBackwardAxiom(prec_predicate, curr_predicate, sd_stop)+"\n";
+//            
+//            //Messages are always separated by one time instant, see below list of comments for details
+//            if((prec_event instanceof MessageStart || prec_event instanceof MessageEnd) &&
+//            		(curr_event instanceof MessageStart || curr_event instanceof MessageEnd)){
+//            	sem = sem + new Implies(prec_predicate, new Not(curr_predicate)) + "\n";
+//            }
+//            
+//            prec_predicate=curr_predicate;
+//        }
         return sem;
 	}
 	

@@ -22,7 +22,7 @@ public class PSBooleanExpression {
 		Model m=BooleanExpressionsParser.parse(boolean_expression.getStringExpression());
 		//TODO: here we do not have an object
 		//The user should specify to what object he is referring to, otherwise
-		//the semantics shold be for every object in the system
+		//the semantics should be for every object in the system
 		Object obj=null;
 		if(boolean_expression.getExpressionContext() instanceof StateDiagram){
 			obj=((StateDiagram)boolean_expression.getExpressionContext()).getOwningClass().getObjects().iterator().next();

@@ -6,6 +6,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashSet;
 
+import org.correttouml.uml.MadesModel;
+import org.correttouml.uml2zot.UML2Zot;
 import org.correttouml.uml2zot.semantics.SMadesModel;
 import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
 
@@ -63,6 +65,8 @@ public class ZOTConf {
         String definetimebound = "(defvar TSPACE " + timebound + ")\n";
         BooleanFormulae property_formulae=null;
         if (model.hasProperty()) property_formulae=model.getProperty();
+        String declarations= model.getDeclarations();
+        String defuns= model.getDefun();
         String ae2zotVariables = model.getVariableDeclarationsForae2zot();
         String definemodel = "(defvar AX1 \n (&& \n" + sem + "\n)) ;;END AX1 \n\n\n";
         String smtsolverparameter = "";
@@ -110,8 +114,8 @@ public class ZOTConf {
         thesystem = thesystem + "\n\n\n" + "(" + plugin + ":zot TSPACE (&& the_system) " + smtsolverparameter + " )";
         int arithVarsN=0;
         for(org.correttouml.uml2zot.semantics.util.trio.TrioVar t: org.correttouml.uml2zot.semantics.util.trio.TrioVar.instances){
-            arithVarsN++;
-        }
+			arithVarsN++;
+		}
         String zot = modelStats + ";  " + Integer.toString(arithVarsN) + "\t:Number of arithmetic variables\n"
                 + ""
                 + loadplugin
@@ -119,7 +123,7 @@ public class ZOTConf {
                 + loadsatsolverinterface
                 + ""
                 + definetimebound
-                + ""
+                + declarations
                 + ae2zotVariables
                 + ""
                 + definemodel

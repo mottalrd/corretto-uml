@@ -3,6 +3,8 @@ package org.correttouml.uml.diagrams.sequencediagram;
 public class InteractionFragmentFactory {
 
 	public static InteractionFragment getInstance(org.eclipse.uml2.uml.InteractionFragment uml_interactionfragment){
+		String ss="";//
+		
 		try{
 			if(uml_interactionfragment instanceof org.eclipse.uml2.uml.MessageOccurrenceSpecification){
 				org.eclipse.uml2.uml.MessageOccurrenceSpecification mof=(org.eclipse.uml2.uml.MessageOccurrenceSpecification) uml_interactionfragment;
@@ -14,6 +16,9 @@ public class InteractionFragmentFactory {
 				if(ocs.getExecution().getStart().equals(ocs)) return new ExecutionOccurrenceStart(ocs);
 				if(ocs.getExecution().getFinish().equals(ocs)) return new ExecutionOccurrenceEnd(ocs);
 			}
+			if(uml_interactionfragment instanceof org.eclipse.uml2.uml.CombinedFragment)
+//				return new CombinedFragment((org.eclipse.uml2.uml.CombinedFragment)uml_interactionfragment);
+				return (CombinedFragmentFactory.getInstance((org.eclipse.uml2.uml.CombinedFragment)uml_interactionfragment));
 			if(uml_interactionfragment instanceof org.eclipse.uml2.uml.ExecutionSpecification){
 //				org.eclipse.uml2.uml.ExecutionSpecification es = (org.eclipse.uml2.uml.ExecutionSpecification) uml_interactionfragment;
 				return new ExecutionOccurrence((org.eclipse.uml2.uml.ExecutionSpecification) uml_interactionfragment);

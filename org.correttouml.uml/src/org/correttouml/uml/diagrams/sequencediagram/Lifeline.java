@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.correttouml.uml.diagrams.classdiagram.Object;
+import org.eclipse.uml2.uml.GeneralOrdering;
 
 public class Lifeline {
 
@@ -19,20 +20,34 @@ public class Lifeline {
 		
 		//la lista ordinata del sequence diagram
 		List<org.eclipse.uml2.uml.InteractionFragment> sd_fragment=uml_lifeline.getInteraction().getFragments();
-		//NOTA: in Papyrus la lista coveredbys non sembra essere ordinata
+		//TODO: in Papyrus the list covoredbys seems not ordered
 		for(org.eclipse.uml2.uml.InteractionFragment ifr: sd_fragment){
 			if(uml_lifeline.getCoveredBys().contains(ifr)){
-				events.add(InteractionFragmentFactory.getInstance(ifr));
+				//FIXME: Please do not ignore ActionExecutionSpecification and BehaviorExecutionSpecification
+				//
+				////<##del me>
+//				if (ifr instanceof org.eclipse.uml2.uml.CombinedFragment){
+//					CombinedFragment cf = new CombinedFragment((org.eclipse.uml2.uml.CombinedFragment)ifr);
+//					org.eclipse.uml2.uml.Interaction fffff= cf.getEnclosingFragment();
+//					fffff.getFragments();
+//					String adsfs = "sfd";
+//				}
+				////</###del me>
+				events.add(InteractionFragmentFactory.getInstance(ifr)); //keep only this for new version
+				//
+				//if(!(ifr instanceof org.eclipse.uml2.uml.ActionExecutionSpecification) && !(ifr instanceof org.eclipse.uml2.uml.BehaviorExecutionSpecification)){ 
+//				<old version>
+//					if (!(ifr instanceof org.eclipse.uml2.uml.CombinedFragment)
+//						&& !(ifr instanceof org.eclipse.uml2.uml.ActionExecutionSpecification)
+//						&& !(ifr instanceof org.eclipse.uml2.uml.BehaviorExecutionSpecification)) {
+//					events.add(InteractionFragmentFactory.getInstance(ifr));
+//				}
+//					</old version>
 			}
 		}
-		
-// the following code seems to return ordered events.		
-//		for(org.eclipse.uml2.uml.InteractionFragment ifr: uml_lifeline.getCoveredBys()){
-//			events.add(InteractionFragmentFactory.getInstance(ifr));
-//		}
-		
 		return events;
 	}
+	
 
 	public SequenceDiagram getSequenceDiagram() {
 		return new SequenceDiagram(uml_lifeline.getInteraction());

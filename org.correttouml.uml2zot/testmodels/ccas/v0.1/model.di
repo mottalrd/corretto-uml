@@ -33,9 +33,6 @@
     <windows>
       <children xsi:type="di:TabFolder">
         <children>
-          <emfPageIdentifier href="model.notation#_x9KcAAN9EeKTXbQztILh3g"/>
-        </children>
-        <children>
           <emfPageIdentifier href="model.notation#_N8zWsAN-EeKTXbQztILh3g"/>
         </children>
         <children>
@@ -54,10 +51,10 @@
           <emfPageIdentifier href="model.notation#_4vOzcAOCEeKTXbQztILh3g"/>
         </children>
         <children>
-          <emfPageIdentifier href="model.notation#_Czi7kAOEEeKTXbQztILh3g"/>
+          <emfPageIdentifier href="model.notation#_KoCBAAODEeKTXbQztILh3g"/>
         </children>
         <children>
-          <emfPageIdentifier href="model.notation#_KoCBAAODEeKTXbQztILh3g"/>
+          <emfPageIdentifier href="model.notation#_Czi7kAOEEeKTXbQztILh3g"/>
         </children>
       </children>
     </windows>

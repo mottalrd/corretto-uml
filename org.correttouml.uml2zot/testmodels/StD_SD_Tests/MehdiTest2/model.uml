@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MADESVerification="http:///schemas/MADESVerification/_iXxZQAajEeKtRYEODWfJYQ/19" xmlns:MADESVerification.Properties="http:///MADESVerification/Properties.ecore" xmlns:MADESVerification.VerificationTags="http:///MADESVerification/VerificationTags.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/MADESVerification/_iXxZQAajEeKtRYEODWfJYQ/19 ../../../eu.mades.profile/model.profile.uml#_iXz1gAajEeKtRYEODWfJYQ http:///MADESVerification/Properties.ecore ../../../eu.mades.profile/model.profile.uml#_iXz1lAajEeKtRYEODWfJYQ http:///MADESVerification/VerificationTags.ecore ../../../eu.mades.profile/model.profile.uml#_iXz2KwajEeKtRYEODWfJYQ">
   <uml:Model xmi:id="_P2Wa0GofEeKQ9axmdpwygg" name="model">
-    <packageImport xmi:type="uml:PackageImport" xmi:id="_tR4yIGonEeKN0Lfsey8Guw">
+    <packageImport xmi:id="_tR4yIGonEeKN0Lfsey8Guw">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
     <packagedElement xmi:type="uml:Package" xmi:id="_zj2ZEGofEeKQ9axmdpwygg" name="Package1">
       <packagedElement xmi:type="uml:Class" xmi:id="_EnajkGonEeKN0Lfsey8Guw" name="Card" classifierBehavior="_2Fg5AGopEeKN0Lfsey8Guw">
         <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_2Fg5AGopEeKN0Lfsey8Guw" name="SM_Card">
-          <region xmi:type="uml:Region" xmi:id="_3rn7MGopEeKN0Lfsey8Guw" name="Region1">
-            <transition xmi:type="uml:Transition" xmi:id="_FyOCcGoqEeKN0Lfsey8Guw" name="" source="_9P2YwGopEeKN0Lfsey8Guw" target="_9-_WsGopEeKN0Lfsey8Guw"/>
-            <transition xmi:type="uml:Transition" xmi:id="_KlkcsGoqEeKN0Lfsey8Guw" name="[ @now - @Removed.enter &lt; 10 ]" source="_9-_WsGopEeKN0Lfsey8Guw" target="_IaeeIGoqEeKN0Lfsey8Guw"/>
+          <region xmi:id="_3rn7MGopEeKN0Lfsey8Guw" name="Region1">
+            <transition xmi:id="_FyOCcGoqEeKN0Lfsey8Guw" name="" source="_9P2YwGopEeKN0Lfsey8Guw" target="_9-_WsGopEeKN0Lfsey8Guw"/>
+            <transition xmi:id="_KlkcsGoqEeKN0Lfsey8Guw" name="[ @now - @Removed.enter &lt; 10 ]" source="_9-_WsGopEeKN0Lfsey8Guw" target="_IaeeIGoqEeKN0Lfsey8Guw"/>
             <subvertex xmi:type="uml:Pseudostate" xmi:id="_9P2YwGopEeKN0Lfsey8Guw" name="Initial0"/>
             <subvertex xmi:type="uml:State" xmi:id="_9-_WsGopEeKN0Lfsey8Guw" name="Removed"/>
             <subvertex xmi:type="uml:State" xmi:id="_IaeeIGoqEeKN0Lfsey8Guw" name="Inserted"/>
@@ -17,77 +17,77 @@
         </ownedBehavior>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_SdefAGooEeKN0Lfsey8Guw" name="ATM">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_WC9X8GooEeKN0Lfsey8Guw" name="card" type="_EnajkGonEeKN0Lfsey8Guw" association="_WC9_AGooEeKN0Lfsey8Guw">
+        <ownedAttribute xmi:id="_WC9X8GooEeKN0Lfsey8Guw" name="card" type="_EnajkGonEeKN0Lfsey8Guw" association="_WC9_AGooEeKN0Lfsey8Guw">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WC9X8WooEeKN0Lfsey8Guw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WC9X8mooEeKN0Lfsey8Guw" value="*"/>
         </ownedAttribute>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_YpJXEGooEeKN0Lfsey8Guw" name="ATM_InsertCard">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_gknY0GooEeKN0Lfsey8Guw" name="CardID" effect="read">
+        <ownedOperation xmi:id="_YpJXEGooEeKN0Lfsey8Guw" name="ATM_InsertCard">
+          <ownedParameter xmi:id="_gknY0GooEeKN0Lfsey8Guw" name="CardID" effect="read">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
             <defaultValue xmi:type="uml:LiteralString" xmi:id="_gknY0WooEeKN0Lfsey8Guw" name="" value="1"/>
           </ownedParameter>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_WC9_AGooEeKN0Lfsey8Guw" name="aTM_card_1" memberEnd="_WC9_AWooEeKN0Lfsey8Guw _WC9X8GooEeKN0Lfsey8Guw" navigableOwnedEnd="_WC9_AWooEeKN0Lfsey8Guw">
-        <ownedEnd xmi:type="uml:Property" xmi:id="_WC9_AWooEeKN0Lfsey8Guw" name="aTM" type="_SdefAGooEeKN0Lfsey8Guw" association="_WC9_AGooEeKN0Lfsey8Guw">
+        <ownedEnd xmi:id="_WC9_AWooEeKN0Lfsey8Guw" name="aTM" type="_SdefAGooEeKN0Lfsey8Guw" association="_WC9_AGooEeKN0Lfsey8Guw">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WC9_AmooEeKN0Lfsey8Guw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WC9_A2ooEeKN0Lfsey8Guw" value="1"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_31MjYGooEeKN0Lfsey8Guw" name="c1" classifier="_EnajkGonEeKN0Lfsey8Guw"/>
       <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_AKy8YGopEeKN0Lfsey8Guw" name="atm1" classifier="_SdefAGooEeKN0Lfsey8Guw">
-        <slot xmi:type="uml:Slot" xmi:id="_rkiNkWopEeKN0Lfsey8Guw" definingFeature="_WC9X8GooEeKN0Lfsey8Guw">
+        <slot xmi:id="_rkiNkWopEeKN0Lfsey8Guw" definingFeature="_WC9X8GooEeKN0Lfsey8Guw">
           <value xmi:type="uml:InstanceValue" xmi:id="_rkiNkmopEeKN0Lfsey8Guw" name="InstanceValue0" type="_EnajkGonEeKN0Lfsey8Guw" instance="_31MjYGooEeKN0Lfsey8Guw"/>
         </slot>
-        <slot xmi:type="uml:Slot" xmi:id="_qjktI3lOEeK4E7I3_bMoKw" definingFeature="_WC9X8GooEeKN0Lfsey8Guw">
+        <slot xmi:id="_qjktI3lOEeK4E7I3_bMoKw" definingFeature="_WC9X8GooEeKN0Lfsey8Guw">
           <value xmi:type="uml:InstanceValue" xmi:id="_qjktJHlOEeK4E7I3_bMoKw" name="InstanceValue0" type="_EnajkGonEeKN0Lfsey8Guw" instance="_A9RIcHlOEeK4E7I3_bMoKw"/>
         </slot>
       </packagedElement>
       <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_rkgYYGopEeKN0Lfsey8Guw" name="InstanceSpecification0" classifier="_WC9_AGooEeKN0Lfsey8Guw">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_rkhmgGopEeKN0Lfsey8Guw" source="InstanceEnd" references="_AKy8YGopEeKN0Lfsey8Guw _31MjYGooEeKN0Lfsey8Guw"/>
-        <slot xmi:type="uml:Slot" xmi:id="_rkhmgWopEeKN0Lfsey8Guw" definingFeature="_WC9_AWooEeKN0Lfsey8Guw">
+        <eAnnotations xmi:id="_rkhmgGopEeKN0Lfsey8Guw" source="InstanceEnd" references="_AKy8YGopEeKN0Lfsey8Guw _31MjYGooEeKN0Lfsey8Guw"/>
+        <slot xmi:id="_rkhmgWopEeKN0Lfsey8Guw" definingFeature="_WC9_AWooEeKN0Lfsey8Guw">
           <value xmi:type="uml:InstanceValue" xmi:id="_rkiNkGopEeKN0Lfsey8Guw" name="InstanceValue0" type="_SdefAGooEeKN0Lfsey8Guw" instance="_AKy8YGopEeKN0Lfsey8Guw"/>
         </slot>
       </packagedElement>
       <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_A9RIcHlOEeK4E7I3_bMoKw" name="c2" classifier="_EnajkGonEeKN0Lfsey8Guw"/>
       <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_qi-3QHlOEeK4E7I3_bMoKw" name="InstanceSpecification1" classifier="_WC9_AGooEeKN0Lfsey8Guw">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qjktIHlOEeK4E7I3_bMoKw" source="InstanceEnd" references="_AKy8YGopEeKN0Lfsey8Guw _A9RIcHlOEeK4E7I3_bMoKw"/>
-        <slot xmi:type="uml:Slot" xmi:id="_qjktIXlOEeK4E7I3_bMoKw" definingFeature="_WC9_AWooEeKN0Lfsey8Guw">
+        <eAnnotations xmi:id="_qjktIHlOEeK4E7I3_bMoKw" source="InstanceEnd" references="_AKy8YGopEeKN0Lfsey8Guw _A9RIcHlOEeK4E7I3_bMoKw"/>
+        <slot xmi:id="_qjktIXlOEeK4E7I3_bMoKw" definingFeature="_WC9_AWooEeKN0Lfsey8Guw">
           <value xmi:type="uml:InstanceValue" xmi:id="_qjktInlOEeK4E7I3_bMoKw" name="InstanceValue0" type="_SdefAGooEeKN0Lfsey8Guw" instance="_AKy8YGopEeKN0Lfsey8Guw"/>
         </slot>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_fJMxcGotEeKN0Lfsey8Guw" name="Package2">
       <packagedElement xmi:type="uml:Class" xmi:id="_STL4gG1zEeKMYfuImxuktQ" name="Root">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_z0T2oG3zEeKV_5NylfjiIg" name="class1" type="_6v4w0G1zEeKMYfuImxuktQ" association="_z0T2o23zEeKV_5NylfjiIg">
+        <ownedAttribute xmi:id="_z0T2oG3zEeKV_5NylfjiIg" name="class1" type="_6v4w0G1zEeKMYfuImxuktQ" association="_z0T2o23zEeKV_5NylfjiIg">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_z0T2oW3zEeKV_5NylfjiIg" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_z0T2om3zEeKV_5NylfjiIg" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_6v4w0G1zEeKMYfuImxuktQ" name="Class1">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_FxU10G30EeKV_5NylfjiIg" name="class2" type="_BaoiYG30EeKV_5NylfjiIg" association="_FxU10230EeKV_5NylfjiIg">
+        <ownedAttribute xmi:id="_FxU10G30EeKV_5NylfjiIg" name="class2" type="_BaoiYG30EeKV_5NylfjiIg" association="_FxU10230EeKV_5NylfjiIg">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FxU10W30EeKV_5NylfjiIg" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FxU10m30EeKV_5NylfjiIg" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_z0T2o23zEeKV_5NylfjiIg" name="root_class1_1" memberEnd="_z0T2pG3zEeKV_5NylfjiIg _z0T2oG3zEeKV_5NylfjiIg">
-        <ownedEnd xmi:type="uml:Property" xmi:id="_z0T2pG3zEeKV_5NylfjiIg" name="root" type="_STL4gG1zEeKMYfuImxuktQ" association="_z0T2o23zEeKV_5NylfjiIg">
+        <ownedEnd xmi:id="_z0T2pG3zEeKV_5NylfjiIg" name="root" type="_STL4gG1zEeKMYfuImxuktQ" association="_z0T2o23zEeKV_5NylfjiIg">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_z0T2pW3zEeKV_5NylfjiIg" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_z0T2pm3zEeKV_5NylfjiIg" value="1"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_BaoiYG30EeKV_5NylfjiIg" name="Class2">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_rAgCMG30EeKV_5NylfjiIg" name="class3" type="_P2SToG30EeKV_5NylfjiIg" association="_rAgCM230EeKV_5NylfjiIg">
+        <ownedAttribute xmi:id="_rAgCMG30EeKV_5NylfjiIg" name="class3" type="_P2SToG30EeKV_5NylfjiIg" association="_rAgCM230EeKV_5NylfjiIg">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rAgCMW30EeKV_5NylfjiIg" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rAgCMm30EeKV_5NylfjiIg" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_w2zuQG30EeKV_5NylfjiIg" name="class4" type="_QMmh4G30EeKV_5NylfjiIg" association="_w2zuQ230EeKV_5NylfjiIg">
+        <ownedAttribute xmi:id="_w2zuQG30EeKV_5NylfjiIg" name="class4" type="_QMmh4G30EeKV_5NylfjiIg" association="_w2zuQ230EeKV_5NylfjiIg">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_w2zuQW30EeKV_5NylfjiIg" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_w2zuQm30EeKV_5NylfjiIg" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_FxU10230EeKV_5NylfjiIg" name="class1_class2_1" memberEnd="_FxU11G30EeKV_5NylfjiIg _FxU10G30EeKV_5NylfjiIg">
-        <ownedEnd xmi:type="uml:Property" xmi:id="_FxU11G30EeKV_5NylfjiIg" name="class1" type="_6v4w0G1zEeKMYfuImxuktQ" association="_FxU10230EeKV_5NylfjiIg">
+        <ownedEnd xmi:id="_FxU11G30EeKV_5NylfjiIg" name="class1" type="_6v4w0G1zEeKMYfuImxuktQ" association="_FxU10230EeKV_5NylfjiIg">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FxU11W30EeKV_5NylfjiIg" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FxU11m30EeKV_5NylfjiIg" value="1"/>
         </ownedEnd>
@@ -95,13 +95,13 @@
       <packagedElement xmi:type="uml:Class" xmi:id="_P2SToG30EeKV_5NylfjiIg" name="Class3"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_QMmh4G30EeKV_5NylfjiIg" name="Class4"/>
       <packagedElement xmi:type="uml:Association" xmi:id="_rAgCM230EeKV_5NylfjiIg" name="class2_class3_1" memberEnd="_rAgCNG30EeKV_5NylfjiIg _rAgCMG30EeKV_5NylfjiIg">
-        <ownedEnd xmi:type="uml:Property" xmi:id="_rAgCNG30EeKV_5NylfjiIg" name="class2" type="_BaoiYG30EeKV_5NylfjiIg" association="_rAgCM230EeKV_5NylfjiIg">
+        <ownedEnd xmi:id="_rAgCNG30EeKV_5NylfjiIg" name="class2" type="_BaoiYG30EeKV_5NylfjiIg" association="_rAgCM230EeKV_5NylfjiIg">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rAgCNW30EeKV_5NylfjiIg" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rAgCNm30EeKV_5NylfjiIg" value="1"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_w2zuQ230EeKV_5NylfjiIg" name="class2_class4_1" memberEnd="_w2zuRG30EeKV_5NylfjiIg _w2zuQG30EeKV_5NylfjiIg">
-        <ownedEnd xmi:type="uml:Property" xmi:id="_w2zuRG30EeKV_5NylfjiIg" name="class2" type="_BaoiYG30EeKV_5NylfjiIg" association="_w2zuQ230EeKV_5NylfjiIg">
+        <ownedEnd xmi:id="_w2zuRG30EeKV_5NylfjiIg" name="class2" type="_BaoiYG30EeKV_5NylfjiIg" association="_w2zuQ230EeKV_5NylfjiIg">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_w2zuRW30EeKV_5NylfjiIg" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_w2zuRm30EeKV_5NylfjiIg" value="1"/>
         </ownedEnd>
@@ -109,38 +109,38 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_p0acAG4UEeKV_5NylfjiIg" name="Package3">
       <packagedElement xmi:type="uml:Class" xmi:id="_vFYmYG4UEeKV_5NylfjiIg" name="Root">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_-RUlEG4UEeKV_5NylfjiIg" name="class1" type="_5AfkoG4UEeKV_5NylfjiIg" association="_-RUlE24UEeKV_5NylfjiIg">
+        <ownedAttribute xmi:id="_-RUlEG4UEeKV_5NylfjiIg" name="class1" type="_5AfkoG4UEeKV_5NylfjiIg" association="_-RUlE24UEeKV_5NylfjiIg">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-RUlEW4UEeKV_5NylfjiIg" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-RUlEm4UEeKV_5NylfjiIg" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_5AfkoG4UEeKV_5NylfjiIg" name="Class1">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_CGzB0G4VEeKV_5NylfjiIg" name="class2" type="__wPaIG4UEeKV_5NylfjiIg" association="_CGzB024VEeKV_5NylfjiIg">
+        <ownedAttribute xmi:id="_CGzB0G4VEeKV_5NylfjiIg" name="class2" type="__wPaIG4UEeKV_5NylfjiIg" association="_CGzB024VEeKV_5NylfjiIg">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CGzB0W4VEeKV_5NylfjiIg" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CGzB0m4VEeKV_5NylfjiIg" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_-RUlE24UEeKV_5NylfjiIg" name="root_class1_1" memberEnd="_-RUlFG4UEeKV_5NylfjiIg _-RUlEG4UEeKV_5NylfjiIg">
-        <ownedEnd xmi:type="uml:Property" xmi:id="_-RUlFG4UEeKV_5NylfjiIg" name="root" type="_vFYmYG4UEeKV_5NylfjiIg" association="_-RUlE24UEeKV_5NylfjiIg">
+        <ownedEnd xmi:id="_-RUlFG4UEeKV_5NylfjiIg" name="root" type="_vFYmYG4UEeKV_5NylfjiIg" association="_-RUlE24UEeKV_5NylfjiIg">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-RUlFW4UEeKV_5NylfjiIg" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-RUlFm4UEeKV_5NylfjiIg" value="1"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="__wPaIG4UEeKV_5NylfjiIg" name="Class2">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_JFRP0G4VEeKV_5NylfjiIg" name="class3" type="_FYHooG4VEeKV_5NylfjiIg" association="_JFRP024VEeKV_5NylfjiIg">
+        <ownedAttribute xmi:id="_JFRP0G4VEeKV_5NylfjiIg" name="class3" type="_FYHooG4VEeKV_5NylfjiIg" association="_JFRP024VEeKV_5NylfjiIg">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JFRP0W4VEeKV_5NylfjiIg" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JFRP0m4VEeKV_5NylfjiIg" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_CGzB024VEeKV_5NylfjiIg" name="class1_class2_1" memberEnd="_CGzB1G4VEeKV_5NylfjiIg _CGzB0G4VEeKV_5NylfjiIg">
-        <ownedEnd xmi:type="uml:Property" xmi:id="_CGzB1G4VEeKV_5NylfjiIg" name="class1" type="_5AfkoG4UEeKV_5NylfjiIg" association="_CGzB024VEeKV_5NylfjiIg">
+        <ownedEnd xmi:id="_CGzB1G4VEeKV_5NylfjiIg" name="class1" type="_5AfkoG4UEeKV_5NylfjiIg" association="_CGzB024VEeKV_5NylfjiIg">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CGzB1W4VEeKV_5NylfjiIg" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CGzB1m4VEeKV_5NylfjiIg" value="1"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_FYHooG4VEeKV_5NylfjiIg" name="Class3"/>
       <packagedElement xmi:type="uml:Association" xmi:id="_JFRP024VEeKV_5NylfjiIg" name="class2_class3_1" memberEnd="_JFRP1G4VEeKV_5NylfjiIg _JFRP0G4VEeKV_5NylfjiIg">
-        <ownedEnd xmi:type="uml:Property" xmi:id="_JFRP1G4VEeKV_5NylfjiIg" name="class2" type="__wPaIG4UEeKV_5NylfjiIg" association="_JFRP024VEeKV_5NylfjiIg">
+        <ownedEnd xmi:id="_JFRP1G4VEeKV_5NylfjiIg" name="class2" type="__wPaIG4UEeKV_5NylfjiIg" association="_JFRP024VEeKV_5NylfjiIg">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JFRP1W4VEeKV_5NylfjiIg" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JFRP1m4VEeKV_5NylfjiIg" value="1"/>
         </ownedEnd>
@@ -173,11 +173,11 @@
       <packagedElement xmi:type="uml:Class" xmi:id="_3_GRUHeREeKl7--4xFmfUg" name="Class8"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_63IOYHeREeKl7--4xFmfUg" name="Class9"/>
     </packagedElement>
-    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0ehNYGomEeKN0Lfsey8Guw">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0eibgGomEeKN0Lfsey8Guw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <profileApplication xmi:id="_0ehNYGomEeKN0Lfsey8Guw">
+      <eAnnotations xmi:id="_0eibgGomEeKN0Lfsey8Guw" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="../../../eu.mades.profile/model.profile.uml#_iXz1gAajEeKtRYEODWfJYQ"/>
       </eAnnotations>
-      <appliedProfile xmi:type="uml:Profile" href="../../../eu.mades.profile/model.profile.uml#_jpeHMANtEeKTXbQztILh3g"/>
+      <appliedProfile href="../../../eu.mades.profile/model.profile.uml#_jpeHMANtEeKTXbQztILh3g"/>
     </profileApplication>
   </uml:Model>
   <MADESVerification.VerificationTags:System xmi:id="_2T4MgGomEeKN0Lfsey8Guw" base_Package="_zj2ZEGofEeKQ9axmdpwygg"/>
