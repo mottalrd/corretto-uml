@@ -27,6 +27,4 @@ public class SOperationParameter implements SVariable{
 		return null;
 	}
 	
-	
-	
 }

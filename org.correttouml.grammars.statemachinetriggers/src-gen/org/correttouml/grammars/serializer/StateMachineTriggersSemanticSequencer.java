@@ -1,6 +1,7 @@
 package org.correttouml.grammars.serializer;
 
 import com.google.inject.Inject;
+import com.google.inject.Provider;
 import org.correttouml.grammars.services.StateMachineTriggersGrammarAccess;
 import org.correttouml.grammars.stateMachineTriggers.Event;
 import org.correttouml.grammars.stateMachineTriggers.Left;
@@ -9,9 +10,15 @@ import org.correttouml.grammars.stateMachineTriggers.Right;
 import org.correttouml.grammars.stateMachineTriggers.StateMachineTriggersPackage;
 import org.correttouml.grammars.stateMachineTriggers.Trigger;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
+import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
+import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
+import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
 import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
+import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
+import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
@@ -20,7 +27,6 @@ public class StateMachineTriggersSemanticSequencer extends AbstractDelegatingSem
 	@Inject
 	private StateMachineTriggersGrammarAccess grammarAccess;
 	
-	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == StateMachineTriggersPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case StateMachineTriggersPackage.EVENT:

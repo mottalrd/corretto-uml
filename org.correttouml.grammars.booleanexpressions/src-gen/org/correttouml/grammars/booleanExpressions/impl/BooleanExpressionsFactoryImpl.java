@@ -85,8 +85,7 @@ public class BooleanExpressionsFactoryImpl extends EFactoryImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public Model createModel()
+  public Model createModel()
   {
     ModelImpl model = new ModelImpl();
     return model;
@@ -97,8 +96,7 @@ public Model createModel()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public OrExpression createOrExpression()
+  public OrExpression createOrExpression()
   {
     OrExpressionImpl orExpression = new OrExpressionImpl();
     return orExpression;
@@ -109,8 +107,7 @@ public OrExpression createOrExpression()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public AndExpression createAndExpression()
+  public AndExpression createAndExpression()
   {
     AndExpressionImpl andExpression = new AndExpressionImpl();
     return andExpression;
@@ -121,8 +118,7 @@ public AndExpression createAndExpression()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public BaseExpression createBaseExpression()
+  public BaseExpression createBaseExpression()
   {
     BaseExpressionImpl baseExpression = new BaseExpressionImpl();
     return baseExpression;
@@ -133,8 +129,7 @@ public BaseExpression createBaseExpression()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public booleanTerm createbooleanTerm()
+  public booleanTerm createbooleanTerm()
   {
     booleanTermImpl booleanTerm = new booleanTermImpl();
     return booleanTerm;
@@ -145,8 +140,7 @@ public booleanTerm createbooleanTerm()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public TimeConstraint createTimeConstraint()
+  public TimeConstraint createTimeConstraint()
   {
     TimeConstraintImpl timeConstraint = new TimeConstraintImpl();
     return timeConstraint;
@@ -157,8 +151,7 @@ public TimeConstraint createTimeConstraint()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public BooleanVariable createBooleanVariable()
+  public BooleanVariable createBooleanVariable()
   {
     BooleanVariableImpl booleanVariable = new BooleanVariableImpl();
     return booleanVariable;
@@ -169,8 +162,7 @@ public BooleanVariable createBooleanVariable()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public VariableCondition createVariableCondition()
+  public VariableCondition createVariableCondition()
   {
     VariableConditionImpl variableCondition = new VariableConditionImpl();
     return variableCondition;
@@ -181,8 +173,7 @@ public VariableCondition createVariableCondition()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EXPRESSION createEXPRESSION()
+  public EXPRESSION createEXPRESSION()
   {
     EXPRESSIONImpl expression = new EXPRESSIONImpl();
     return expression;
@@ -193,8 +184,7 @@ public EXPRESSION createEXPRESSION()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public TERM createTERM()
+  public TERM createTERM()
   {
     TERMImpl term = new TERMImpl();
     return term;
@@ -205,8 +195,7 @@ public TERM createTERM()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public Event createEvent()
+  public Event createEvent()
   {
     EventImpl event = new EventImpl();
     return event;
@@ -217,8 +206,7 @@ public Event createEvent()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public BooleanExpressionsPackage getBooleanExpressionsPackage()
+  public BooleanExpressionsPackage getBooleanExpressionsPackage()
   {
     return (BooleanExpressionsPackage)getEPackage();
   }

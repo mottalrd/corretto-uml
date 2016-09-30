@@ -66,7 +66,6 @@ public class State implements PTermElement{
 	
 	public String getUMLId() {
 		String id=((XMLResource) this.uml_state.eResource()).getID(uml_state);
-//		return id;
 		return UML2Zot.Utility.umlIDtoPrdID(id);
 	}
 	

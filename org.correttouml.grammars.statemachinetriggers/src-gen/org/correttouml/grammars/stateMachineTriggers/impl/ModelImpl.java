@@ -66,8 +66,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public Trigger getTrigger()
+  public Trigger getTrigger()
   {
     return trigger;
   }
@@ -94,8 +93,7 @@ public Trigger getTrigger()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setTrigger(Trigger newTrigger)
+  public void setTrigger(Trigger newTrigger)
   {
     if (newTrigger != trigger)
     {

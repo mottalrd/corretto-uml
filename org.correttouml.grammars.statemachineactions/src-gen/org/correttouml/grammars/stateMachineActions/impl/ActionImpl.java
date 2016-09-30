@@ -78,8 +78,7 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public Assignment getAssignment()
+  public Assignment getAssignment()
   {
     return assignment;
   }
@@ -106,8 +105,7 @@ public Assignment getAssignment()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setAssignment(Assignment newAssignment)
+  public void setAssignment(Assignment newAssignment)
   {
     if (newAssignment != assignment)
     {
@@ -128,8 +126,7 @@ public void setAssignment(Assignment newAssignment)
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EventAction getEventAction()
+  public EventAction getEventAction()
   {
     return eventAction;
   }
@@ -156,8 +153,7 @@ public EventAction getEventAction()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setEventAction(EventAction newEventAction)
+  public void setEventAction(EventAction newEventAction)
   {
     if (newEventAction != eventAction)
     {

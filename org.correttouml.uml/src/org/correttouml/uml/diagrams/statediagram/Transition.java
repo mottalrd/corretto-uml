@@ -3,7 +3,9 @@ package org.correttouml.uml.diagrams.statediagram;
 
 import java.util.List;
 
+import org.correttouml.uml.MadesModel;
 import org.correttouml.uml.diagrams.expressions.AssignmentContext;
+import org.correttouml.uml.diagrams.expressions.ExpressionContext;
 import org.correttouml.uml.diagrams.statediagram.actions.Action;
 import org.correttouml.uml.diagrams.statediagram.actions.ActionFactory;
 import org.correttouml.uml.helpers.StDTransitionsParser;
@@ -11,7 +13,8 @@ import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml2zot.UML2Zot;
 
-public class Transition implements AssignmentContext{
+//public class Transition implements AssignmentContext, ExpressionContext{
+public class Transition implements ExpressionContext{
 	
 	/** the decorated transition */
 	org.eclipse.uml2.uml.Transition uml_transition;
@@ -108,6 +111,11 @@ public class Transition implements AssignmentContext{
 	@Override
 	public int hashCode(){
 		return this.uml_transition.hashCode();
+	}
+
+	@Override
+	public MadesModel getMadesModel() {
+		return getStateDiagram().getMadesModel();
 	}
 
 }

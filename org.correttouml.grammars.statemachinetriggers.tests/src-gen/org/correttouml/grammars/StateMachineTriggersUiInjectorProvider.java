@@ -9,7 +9,6 @@ import com.google.inject.Injector;
 
 public class StateMachineTriggersUiInjectorProvider implements IInjectorProvider {
 	
-	@Override
 	public Injector getInjector() {
 		return org.correttouml.grammars.ui.internal.StateMachineTriggersActivator.getInstance().getInjector("org.correttouml.grammars.StateMachineTriggers");
 	}

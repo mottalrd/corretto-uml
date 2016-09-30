@@ -1,5 +1,6 @@
 package org.correttouml.uml2zot.semantics.classdiagram;
 
+import org.correttouml.uml.diagrams.activitydiagram.AD;
 import org.correttouml.uml.diagrams.classdiagram.Attribute;
 import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.classdiagram.Operation;
@@ -7,6 +8,7 @@ import org.correttouml.uml.diagrams.classdiagram.Slot;
 import org.correttouml.uml.diagrams.expressions.ValueSpecification;
 import org.correttouml.uml.diagrams.statediagram.StateDiagram;
 import org.correttouml.uml2zot.semantics.SMadesModel;
+import org.correttouml.uml2zot.semantics.activitydiagram.SAD;
 import org.correttouml.uml2zot.semantics.statediagram.SStateDiagram;
 import org.correttouml.uml2zot.semantics.util.trio.Constant;
 import org.correttouml.uml2zot.semantics.util.trio.EQ;
@@ -37,8 +39,15 @@ public class SObject {
 		
 		//If the object has a state diagram associated to it, return its semantics
 		for(StateDiagram std: mades_obj.getOwningClass().getStateDiagrams()){
-			sem=sem+SMadesModel.printSeparatorSmall(mades_obj.toString() + " STD " + std + " SEMANTICS");
+			sem=sem+SMadesModel.printSeparatorSmall(mades_obj.toString() + " STD " + std.getName() + std + " SEMANTICS");
 			sem=sem+new SStateDiagram(std).getSemantics(this.mades_obj);
+		}
+		
+		//If the object has an activity diagram associated to it, return its semantics
+		AD ad = this.mades_obj.getAD();
+		if (ad != null){
+			sem += SMadesModel.printSeparatorSmall(mades_obj.toString() + " AD " + ad.getName() + ad + " SEMANTICS");
+			sem += new SAD(ad).getSemantics();
 		}
 		
 		return sem;

@@ -3,9 +3,11 @@ package org.correttouml.uml.diagrams.expressions;
 public class Assignment {
 	
 	private org.correttouml.grammars.stateMachineActions.Assignment assignment;
-	private AssignmentContext context;
+//	private AssignmentContext context;
+	private ExpressionContext context;
 	
-	public Assignment(org.correttouml.grammars.stateMachineActions.Assignment assignment, AssignmentContext context){
+//	public Assignment(org.correttouml.grammars.stateMachineActions.Assignment assignment, AssignmentContext context){
+	public Assignment(org.correttouml.grammars.stateMachineActions.Assignment assignment, ExpressionContext context){
 		this.assignment=assignment;
 		this.context=context;
 	}

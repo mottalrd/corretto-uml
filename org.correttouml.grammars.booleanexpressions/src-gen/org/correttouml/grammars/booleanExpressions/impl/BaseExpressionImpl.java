@@ -99,8 +99,7 @@ public class BaseExpressionImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public String getNot()
+  public String getNot()
   {
     return not;
   }
@@ -110,8 +109,7 @@ public String getNot()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setNot(String newNot)
+  public void setNot(String newNot)
   {
     String oldNot = not;
     not = newNot;
@@ -124,8 +122,7 @@ public void setNot(String newNot)
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public booleanTerm getBooleanTerm()
+  public booleanTerm getBooleanTerm()
   {
     return booleanTerm;
   }
@@ -152,8 +149,7 @@ public booleanTerm getBooleanTerm()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setBooleanTerm(booleanTerm newBooleanTerm)
+  public void setBooleanTerm(booleanTerm newBooleanTerm)
   {
     if (newBooleanTerm != booleanTerm)
     {
@@ -174,8 +170,7 @@ public void setBooleanTerm(booleanTerm newBooleanTerm)
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public OrExpression getRootExpression()
+  public OrExpression getRootExpression()
   {
     return rootExpression;
   }
@@ -202,8 +197,7 @@ public OrExpression getRootExpression()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setRootExpression(OrExpression newRootExpression)
+  public void setRootExpression(OrExpression newRootExpression)
   {
     if (newRootExpression != rootExpression)
     {

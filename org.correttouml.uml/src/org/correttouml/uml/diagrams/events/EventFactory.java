@@ -1,5 +1,7 @@
 package org.correttouml.uml.diagrams.events;
 
+import org.correttouml.uml.diagrams.activity.Activity;
+import org.correttouml.uml.diagrams.activitydiagram.AD;
 import org.correttouml.uml.diagrams.classdiagram.Clock;
 import org.correttouml.uml.diagrams.classdiagram.Operation;
 import org.correttouml.uml.diagrams.classdiagram.Signal;
@@ -30,7 +32,8 @@ public class EventFactory {
 				return getClockTickEvent(context, eventName);
 			}
 			else if(eventExtension.equals("call")){
-				return getCallEvent(eventName, (StateDiagram) context);
+//				return getCallEvent(eventName, (StateDiagram) context);
+				return getCallEvent(eventName, context);
 			}
 			else if(eventExtension.equals("sig")){
 				return getSignalEvent(context, eventName);
@@ -75,10 +78,22 @@ public class EventFactory {
 		return null;
 	}
 
-	private static Event getCallEvent(String eventName, StateDiagram context) {
-		for(Operation op: context.getOwningClass().getOperations()){
-			if(op.getName().equals(eventName)) return new CallEvent(op);
-		}
+//	private static Event getCallEvent(String eventName, StateDiagram context) {
+//		for(Operation op: context.getOwningClass().getOperations()){
+//			if(op.getName().equals(eventName)) return new CallEvent(op);
+//		}
+//		return null;
+//	}
+	
+	private static Event getCallEvent(String eventName, ExpressionContext context) {
+		if (context instanceof StateDiagram)
+			for(Operation op: ((StateDiagram) context).getOwningClass().getOperations()){
+				if(op.getName().equals(eventName)) return new CallEvent(op);
+			}
+		if (context instanceof Activity)
+			for(Operation op: ((Activity) context).getObject().getOwningClass().getOperations()){
+				if(op.getName().equals(eventName)) return new CallEvent(op);
+			}
 		return null;
 	}
 

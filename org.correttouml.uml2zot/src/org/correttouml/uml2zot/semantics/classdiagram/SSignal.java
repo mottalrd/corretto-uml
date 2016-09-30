@@ -1,11 +1,14 @@
 package org.correttouml.uml2zot.semantics.classdiagram;
 
+import org.correttouml.uml.diagrams.activity.SendSignalNode;
+import org.correttouml.uml.diagrams.activitydiagram.AD;
 import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.classdiagram.Signal;
 import org.correttouml.uml.diagrams.statediagram.StateDiagram;
 import org.correttouml.uml.diagrams.statediagram.Transition;
 import org.correttouml.uml.diagrams.statediagram.actions.Action;
 import org.correttouml.uml.diagrams.statediagram.actions.SignalAction;
+import org.correttouml.uml2zot.semantics.activity.SSendSignalNode;
 import org.correttouml.uml2zot.semantics.statediagram.actions.SSignalAction;
 import org.correttouml.uml2zot.semantics.util.bool.Iff;
 import org.correttouml.uml2zot.semantics.util.bool.Or;
@@ -55,6 +58,14 @@ public class SSignal {
             				}
             			}
             		}
+            	}
+            }
+            
+            AD ad = obj.getAD();
+            if (ad != null){
+            	for (SendSignalNode ssn: ad.getSendSignalNodes()){
+            		if (ssn.getName().equals("@"+this.mades_signal.getName()+".sig"))
+            			orCond.addFormulae(new SSendSignalNode(ssn, ad).getPredicate());
             	}
             }
         }

@@ -8,7 +8,6 @@ import org.eclipse.xtext.parser.antlr.IAntlrTokenFileProvider;
 
 public class BooleanExpressionsAntlrTokenFileProvider implements IAntlrTokenFileProvider {
 	
-	@Override
 	public InputStream getAntlrTokenFile() {
 		ClassLoader classLoader = getClass().getClassLoader();
     	return classLoader.getResourceAsStream("org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.tokens");

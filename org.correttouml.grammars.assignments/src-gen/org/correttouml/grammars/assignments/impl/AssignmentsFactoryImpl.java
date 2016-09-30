@@ -78,8 +78,7 @@ public class AssignmentsFactoryImpl extends EFactoryImpl implements AssignmentsF
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public Model createModel()
+  public Model createModel()
   {
     ModelImpl model = new ModelImpl();
     return model;
@@ -90,8 +89,7 @@ public Model createModel()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public ASSIGNMENT createASSIGNMENT()
+  public ASSIGNMENT createASSIGNMENT()
   {
     ASSIGNMENTImpl assignment = new ASSIGNMENTImpl();
     return assignment;
@@ -102,8 +100,7 @@ public ASSIGNMENT createASSIGNMENT()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EXPRESSION createEXPRESSION()
+  public EXPRESSION createEXPRESSION()
   {
     EXPRESSIONImpl expression = new EXPRESSIONImpl();
     return expression;
@@ -114,8 +111,7 @@ public EXPRESSION createEXPRESSION()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public TERM createTERM()
+  public TERM createTERM()
   {
     TERMImpl term = new TERMImpl();
     return term;
@@ -126,8 +122,7 @@ public TERM createTERM()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public AssignmentsPackage getAssignmentsPackage()
+  public AssignmentsPackage getAssignmentsPackage()
   {
     return (AssignmentsPackage)getEPackage();
   }

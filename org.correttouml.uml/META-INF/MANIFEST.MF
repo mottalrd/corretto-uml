@@ -14,6 +14,8 @@ Require-Bundle: org.apache.log4j;bundle-version="1.2.15",
  org.correttouml.grammars.statemachinetriggers;bundle-version="1.0.0",
  org.eclipse.uml2.uml;bundle-version="4.0.0"
 Export-Package: org.correttouml.uml,
+ org.correttouml.uml.diagrams.activity,
+ org.correttouml.uml.diagrams.activitydiagram,
  org.correttouml.uml.diagrams.classdiagram,
  org.correttouml.uml.diagrams.events,
  org.correttouml.uml.diagrams.expressions,

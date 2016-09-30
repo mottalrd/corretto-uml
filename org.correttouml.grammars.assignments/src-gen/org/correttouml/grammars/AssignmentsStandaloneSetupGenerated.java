@@ -16,7 +16,6 @@ import com.google.inject.Injector;
 @SuppressWarnings("all")
 public class AssignmentsStandaloneSetupGenerated implements ISetup {
 
-	@Override
 	public Injector createInjectorAndDoEMFRegistration() {
 		org.eclipse.xtext.common.TerminalsStandaloneSetup.doSetup();
 

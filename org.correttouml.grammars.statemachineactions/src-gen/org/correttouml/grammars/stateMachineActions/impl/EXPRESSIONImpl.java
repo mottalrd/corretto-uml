@@ -109,8 +109,7 @@ public class EXPRESSIONImpl extends MinimalEObjectImpl.Container implements EXPR
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public TERM getFirstTerm()
+  public TERM getFirstTerm()
   {
     return firstTerm;
   }
@@ -137,8 +136,7 @@ public TERM getFirstTerm()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setFirstTerm(TERM newFirstTerm)
+  public void setFirstTerm(TERM newFirstTerm)
   {
     if (newFirstTerm != firstTerm)
     {
@@ -159,8 +157,7 @@ public void setFirstTerm(TERM newFirstTerm)
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public String getOperator()
+  public String getOperator()
   {
     return operator;
   }
@@ -170,8 +167,7 @@ public String getOperator()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setOperator(String newOperator)
+  public void setOperator(String newOperator)
   {
     String oldOperator = operator;
     operator = newOperator;
@@ -184,8 +180,7 @@ public void setOperator(String newOperator)
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public TERM getSecondTerm()
+  public TERM getSecondTerm()
   {
     return secondTerm;
   }
@@ -212,8 +207,7 @@ public TERM getSecondTerm()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setSecondTerm(TERM newSecondTerm)
+  public void setSecondTerm(TERM newSecondTerm)
   {
     if (newSecondTerm != secondTerm)
     {
@@ -234,8 +228,7 @@ public void setSecondTerm(TERM newSecondTerm)
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public TERM getAlone()
+  public TERM getAlone()
   {
     return alone;
   }
@@ -262,8 +255,7 @@ public TERM getAlone()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setAlone(TERM newAlone)
+  public void setAlone(TERM newAlone)
   {
     if (newAlone != alone)
     {

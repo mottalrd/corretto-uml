@@ -20,7 +20,6 @@ public class StateMachineActionsInjectorProvider implements IInjectorProvider, I
 		GlobalRegistries.initializeDefaults();
 	}
 
-	@Override
 	public Injector getInjector()
 	{
 		if (injector == null) {
@@ -35,12 +34,10 @@ public class StateMachineActionsInjectorProvider implements IInjectorProvider, I
 	    return new StateMachineActionsStandaloneSetup().createInjectorAndDoEMFRegistration();
 	}
 
-	@Override
 	public void restoreRegistry() {
 		stateBeforeInjectorCreation.restoreGlobalState();
 	}
 
-	@Override
 	public void setupRegistry() {
 		getInjector();
 		stateAfterInjectorCreation.restoreGlobalState();

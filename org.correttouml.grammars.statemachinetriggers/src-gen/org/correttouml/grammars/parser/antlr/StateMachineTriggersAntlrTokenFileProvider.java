@@ -8,7 +8,6 @@ import org.eclipse.xtext.parser.antlr.IAntlrTokenFileProvider;
 
 public class StateMachineTriggersAntlrTokenFileProvider implements IAntlrTokenFileProvider {
 	
-	@Override
 	public InputStream getAntlrTokenFile() {
 		ClassLoader classLoader = getClass().getClassLoader();
     	return classLoader.getResourceAsStream("org/correttouml/grammars/parser/antlr/internal/InternalStateMachineTriggers.tokens");

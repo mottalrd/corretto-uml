@@ -20,7 +20,6 @@ public class PartialAssignmentsContentAssistParser extends AssignmentsParser imp
 
 	private AbstractRule rule;
 
-	@Override
 	public void initializeFor(AbstractRule rule) {
 		this.rule = rule;
 	}

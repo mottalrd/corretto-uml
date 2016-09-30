@@ -115,8 +115,7 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public String getEventName()
+  public String getEventName()
   {
     return eventName;
   }
@@ -126,8 +125,7 @@ public String getEventName()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setEventName(String newEventName)
+  public void setEventName(String newEventName)
   {
     String oldEventName = eventName;
     eventName = newEventName;
@@ -140,8 +138,7 @@ public void setEventName(String newEventName)
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public String getEventExtension()
+  public String getEventExtension()
   {
     return eventExtension;
   }
@@ -151,8 +148,7 @@ public String getEventExtension()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setEventExtension(String newEventExtension)
+  public void setEventExtension(String newEventExtension)
   {
     String oldEventExtension = eventExtension;
     eventExtension = newEventExtension;
@@ -165,8 +161,7 @@ public void setEventExtension(String newEventExtension)
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public boolean isNowEvent()
+  public boolean isNowEvent()
   {
     return nowEvent;
   }
@@ -176,8 +171,7 @@ public boolean isNowEvent()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setNowEvent(boolean newNowEvent)
+  public void setNowEvent(boolean newNowEvent)
   {
     boolean oldNowEvent = nowEvent;
     nowEvent = newNowEvent;

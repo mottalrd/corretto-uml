@@ -9,7 +9,6 @@ import com.google.inject.Injector;
 
 public class AssignmentsUiInjectorProvider implements IInjectorProvider {
 	
-	@Override
 	public Injector getInjector() {
 		return org.correttouml.grammars.ui.internal.AssignmentsActivator.getInstance().getInjector("org.correttouml.grammars.Assignments");
 	}

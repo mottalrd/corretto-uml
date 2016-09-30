@@ -1,8 +1,8 @@
 package org.correttouml.uml2zot.semantics.classdiagram;
 
 import java.util.List;
-import java.util.Set;
 
+import org.correttouml.uml.diagrams.activity.OpaqueActionNode;
 import org.correttouml.uml.diagrams.classdiagram.Attribute;
 import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.expressions.PrimitiveType;
@@ -67,7 +67,6 @@ public class SAttribute implements SVariable {
 		
 		Or orCond=new Or();
 		
-		Set<AssignmentAction> actions;
 		if(this.mades_attribute.isStatic()){
 			getActionsChangingThisStaticAttribute(mades_obj, orCond);
 		}else{
@@ -79,8 +78,8 @@ public class SAttribute implements SVariable {
 					+ new Implies(new Not(orCond), new EQ(
 							this.getPredicate(mades_obj), new Yesterday(
 									this.getPredicate(mades_obj)))) + "\n";
-		}else{
-			sem = sem+ new EQ(this.getPredicate(mades_obj), new Yesterday(this.getPredicate(mades_obj)));
+		}else if (mades_obj.getSlot(mades_attribute).getValueSpecification() != null){
+			sem = sem+ new EQ(this.getPredicate(mades_obj), new Yesterday(this.getPredicate(mades_obj))) + "\n";
 		}
 		return sem;
 	}
@@ -98,7 +97,11 @@ public class SAttribute implements SVariable {
 						}
 					}
 				}
-			}			
+			}
+			for (OpaqueActionNode opAc: obj.getAD().getOpaqueActions()){
+				if(isActionAssigningAttribute(opAc.getAction(obj)))
+					orCond.addFormulae(new SAssignmentAction((AssignmentAction) opAc.getAction(obj)).getPredicate(obj));
+			}
 		}
 	}
 	
@@ -114,7 +117,13 @@ public class SAttribute implements SVariable {
 					}
 				}
 			}
-		}	
+		}
+		
+		if (curr_obj.getAD() != null)
+			for (OpaqueActionNode opAc: curr_obj.getAD().getOpaqueActions()){
+				if(isActionAssigningAttribute(opAc.getAction(curr_obj)))
+					orCond.addFormulae(new SAssignmentAction((AssignmentAction) opAc.getAction(curr_obj)).getPredicate(curr_obj));
+		}
 	}	
 
 	private boolean isActionAssigningAttribute(Action act) {

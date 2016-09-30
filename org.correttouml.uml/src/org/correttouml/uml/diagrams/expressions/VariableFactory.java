@@ -1,5 +1,7 @@
 package org.correttouml.uml.diagrams.expressions;
 
+import org.correttouml.uml.diagrams.activity.Activity;
+import org.correttouml.uml.diagrams.activitydiagram.AD;
 import org.correttouml.uml.diagrams.classdiagram.Attribute;
 import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.classdiagram.Operation;
@@ -23,6 +25,9 @@ public class VariableFactory {
 			if (context instanceof StateDiagram) {
 				return findVariableInStateDiagram(varname, object,
 						(StateDiagram) context);
+			}
+			if (context instanceof Activity) {
+				return findVariableInAD(varname, object);
 			}
 			throw new Exception("Variable context not found");
 		} catch (Exception e) {
@@ -62,7 +67,22 @@ public class VariableFactory {
 				if (a.getName().equals(varname))
 					return a;
 			}
-			throw new Exception("Variable not found in state diagram");
+			throw new Exception("Variable " + varname + "not found in the sequence diagram");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+
+	}
+	
+	private static Variable findVariableInAD(String varname,
+		Object object) {
+		try {
+			for (Attribute a : object.getOwningClass().getAttributes()) {
+				if (a.getName().toUpperCase().equals(varname.toUpperCase()))
+					return a;
+			}
+			throw new Exception("Variable " + varname + " not found in the object's activity diagram");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

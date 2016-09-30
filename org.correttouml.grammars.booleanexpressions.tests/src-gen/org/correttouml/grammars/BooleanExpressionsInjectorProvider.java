@@ -20,7 +20,6 @@ public class BooleanExpressionsInjectorProvider implements IInjectorProvider, IR
 		GlobalRegistries.initializeDefaults();
 	}
 
-	@Override
 	public Injector getInjector()
 	{
 		if (injector == null) {
@@ -35,12 +34,10 @@ public class BooleanExpressionsInjectorProvider implements IInjectorProvider, IR
 	    return new BooleanExpressionsStandaloneSetup().createInjectorAndDoEMFRegistration();
 	}
 
-	@Override
 	public void restoreRegistry() {
 		stateBeforeInjectorCreation.restoreGlobalState();
 	}
 
-	@Override
 	public void setupRegistry() {
 		getInjector();
 		stateAfterInjectorCreation.restoreGlobalState();

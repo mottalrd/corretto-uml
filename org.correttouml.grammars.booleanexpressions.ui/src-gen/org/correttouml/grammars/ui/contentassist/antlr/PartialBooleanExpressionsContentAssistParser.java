@@ -20,7 +20,6 @@ public class PartialBooleanExpressionsContentAssistParser extends BooleanExpress
 
 	private AbstractRule rule;
 
-	@Override
 	public void initializeFor(AbstractRule rule) {
 		this.rule = rule;
 	}

@@ -21,7 +21,11 @@ public class SSequenceDiagramParameter implements SVariable{
 	public SSequenceDiagramParameter(SequenceDiagramParameter sdp) {
 		this.mades_sdp = sdp;
 	}
-
+	
+	public PrimitiveType getType() {
+		return mades_sdp.getType();
+	}
+	
 	public String getSemantics() {
 		String sem="";
 //		Predicate sd_inside=new SSequenceDiagram(this.mades_sdp.getSequenceDiagram()).getPredicate();
@@ -48,6 +52,10 @@ public class SSequenceDiagramParameter implements SVariable{
 		sem=sem+new Implies(sd_insideNotFirstTI,eq) + "\n";
 		
 		return sem;
+	}
+	
+	public String getName(){
+		return mades_sdp.getName();
 	}
 
 	@Override

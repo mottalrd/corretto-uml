@@ -43,6 +43,7 @@ with the sysClock</body>
         <message xmi:type="uml:Message" xmi:id="_pzkOcBXjEeKU3rHUqZ-LRQ" name="Message" messageSort="asynchCall" receiveEvent="_pz-eIBXjEeKU3rHUqZ-LRQ" sendEvent="_pz93EBXjEeKU3rHUqZ-LRQ" signature="_KEbsQAYWEeKDB5y-CSxkCg"/>
         <message xmi:type="uml:Message" xmi:id="_bxAgYBXoEeKU3rHUqZ-LRQ" name="Message0" messageSort="asynchCall" receiveEvent="_bxBugBXoEeKU3rHUqZ-LRQ" sendEvent="_bxBHcBXoEeKU3rHUqZ-LRQ" signature="_Z9qTcBXoEeKU3rHUqZ-LRQ"/>
       </packagedElement>
+      <packagedElement xmi:type="uml:Activity" xmi:id="_QrLqYG9PEea5etIvuq2v8Q" name="Activity1"/>
       <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_lSfyIGtpEeaRpvA3HSzZKw">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lS73AGtpEeaRpvA3HSzZKw" source="http://www.eclipse.org/uml2/2.0.0/UML">
           <references xmi:type="ecore:EPackage" href="../../../../org.correttouml.profiles/resources/model.profile.uml#_YfVcwIvzEeKLvcTv2F9FYg"/>
@@ -66,7 +67,7 @@ with the sysClock</body>
   <CorrettoUML.Properties:BooleanFormulae xmi:id="_l3vDYAZ_EeKCgqqlDd45Lg" base_Class="_gU6UAAZ_EeKCgqqlDd45Lg"/>
   <CorrettoUML.Properties:BooleanFormulae xmi:id="_vpsFoAZ_EeKCgqqlDd45Lg" base_Class="_r-QVsAZ_EeKCgqqlDd45Lg"/>
   <CorrettoUML.Properties:Term xmi:id="_XXVqIAaBEeKCgqqlDd45Lg" base_Class="_gU6UAAZ_EeKCgqqlDd45Lg" element="_JwPu4AZsEeKCgqqlDd45Lg"/>
-  <CorrettoUML.Time:ClockType xmi:id="_ynydIBXjEeKU3rHUqZ-LRQ" period="5" base_Class="_xlU6kBXjEeKU3rHUqZ-LRQ"/>
+  <CorrettoUML.Time:ClockType xmi:id="_ynydIBXjEeKU3rHUqZ-LRQ" base_Class="_xlU6kBXjEeKU3rHUqZ-LRQ" period="5"/>
   <CorrettoUML:Event xmi:id="_KNVY0BXpEeKU3rHUqZ-LRQ" base_Class="_FtSVEBXpEeKU3rHUqZ-LRQ" event="@op1.call" context="__qxTsAZrEeKCgqqlDd45Lg" object="_NGXMMAYWEeKDB5y-CSxkCg"/>
   <CorrettoUML.Properties:BooleanFormulae xmi:id="_Zi2KQBXpEeKU3rHUqZ-LRQ" base_Class="_V9-8YBXpEeKU3rHUqZ-LRQ"/>
   <CorrettoUML.Properties:And xmi:id="_ZjK6YBXpEeKU3rHUqZ-LRQ" base_Class="_V9-8YBXpEeKU3rHUqZ-LRQ" left="_l3vDYAZ_EeKCgqqlDd45Lg" right="_clGaUBXpEeKU3rHUqZ-LRQ"/>

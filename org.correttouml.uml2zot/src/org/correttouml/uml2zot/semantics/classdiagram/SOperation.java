@@ -3,6 +3,7 @@ package org.correttouml.uml2zot.semantics.classdiagram;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.correttouml.uml.diagrams.activity.CallActionNode;
 import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.classdiagram.Operation;
 import org.correttouml.uml.diagrams.sequencediagram.Message;
@@ -45,7 +46,8 @@ public class SOperation {
 		
 		//ACTIONS INVOKING THIS OPERATION
 		Set<CallAction> actions=getActionsInvokingThisOperation(object);
-		for(CallAction act: actions) orCond.addFormulae(new SCallAction(act).getPredicate(object));
+		for(CallAction act: actions)
+			orCond.addFormulae(new SCallAction(act).getPredicate(object));
 		
 		
         if(orCond.size()!=0) sem=sem+new Iff(this.getPredicate(object),orCond) + "\n";
@@ -69,8 +71,13 @@ public class SOperation {
 			                }
 		                }
 		            }
-		         }  
-			}			
+		         }
+			}
+	        if (obj.getAD() != null)
+		        for (CallActionNode can: obj.getAD().getCallActionNodes()){
+		        	if (can.getOperation().equals(this.mades_operation))
+		        		retactions.add((CallAction) can.getAction(obj));
+		        }
 		}
 		return retactions;
 	}

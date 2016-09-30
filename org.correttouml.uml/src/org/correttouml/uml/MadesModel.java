@@ -4,6 +4,7 @@ package org.correttouml.uml;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.correttouml.uml.diagrams.activitydiagram.AD;
 import org.correttouml.uml.diagrams.classdiagram.ClassDiagram;
 import org.correttouml.uml.diagrams.iod.IOD;
 import org.correttouml.uml.diagrams.property.Property;
@@ -80,6 +81,17 @@ public class MadesModel{
 			}
 		}
 		return iods;
+	}
+	
+	public Set<AD> getADs() {
+		Set<AD> ads=new HashSet<AD>();
+		for(org.correttouml.uml.diagrams.classdiagram.Class c: getClassdiagram().getClasses()){
+			for (org.correttouml.uml.diagrams.classdiagram.Object object: c.getObjects()){
+				if (object.getAD() != null)
+					ads.add(object.getAD());
+				}
+			}
+		return ads;
 	}
 	
 	public Property getProperty(){

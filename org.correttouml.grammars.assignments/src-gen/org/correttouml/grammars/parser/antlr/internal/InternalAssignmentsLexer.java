@@ -6,6 +6,9 @@ import org.eclipse.xtext.parser.antlr.Lexer;
 
 
 import org.antlr.runtime.*;
+import java.util.Stack;
+import java.util.List;
+import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalAssignmentsLexer extends Lexer {
@@ -31,8 +34,7 @@ public class InternalAssignmentsLexer extends Lexer {
         super(input,state);
 
     }
-    @Override
-	public String getGrammarFileName() { return "../org.correttouml.grammars.assignments/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalAssignments.g"; }
+    public String getGrammarFileName() { return "../org.correttouml.grammars.assignments/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalAssignments.g"; }
 
     // $ANTLR start "T__12"
     public final void mT__12() throws RecognitionException {
@@ -596,8 +598,7 @@ public class InternalAssignmentsLexer extends Lexer {
     }
     // $ANTLR end "RULE_ANY_OTHER"
 
-    @Override
-	public void mTokens() throws RecognitionException {
+    public void mTokens() throws RecognitionException {
         // ../org.correttouml.grammars.assignments/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalAssignments.g:1:8: ( T__12 | RULE_OPERATOR | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
         int alt12=9;
         alt12 = dfa12.predict(input);
@@ -738,12 +739,10 @@ public class InternalAssignmentsLexer extends Lexer {
             this.special = DFA12_special;
             this.transition = DFA12_transition;
         }
-        @Override
-		public String getDescription() {
+        public String getDescription() {
             return "1:1: Tokens : ( T__12 | RULE_OPERATOR | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
-        @Override
-		public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
+        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {

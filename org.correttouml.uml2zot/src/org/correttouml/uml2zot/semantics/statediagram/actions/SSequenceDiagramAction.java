@@ -25,6 +25,5 @@ public class SSequenceDiagramAction implements SAction{
 		// No need for semantics here
 		return null;
 	}
-
 	
 }

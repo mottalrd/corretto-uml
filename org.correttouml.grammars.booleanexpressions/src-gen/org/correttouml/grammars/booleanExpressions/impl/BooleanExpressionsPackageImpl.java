@@ -174,8 +174,7 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getModel()
+  public EClass getModel()
   {
     return modelEClass;
   }
@@ -185,8 +184,7 @@ public EClass getModel()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getModel_Expression()
+  public EReference getModel_Expression()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -196,8 +194,7 @@ public EReference getModel_Expression()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getOrExpression()
+  public EClass getOrExpression()
   {
     return orExpressionEClass;
   }
@@ -207,8 +204,7 @@ public EClass getOrExpression()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getOrExpression_LeftExpression()
+  public EReference getOrExpression_LeftExpression()
   {
     return (EReference)orExpressionEClass.getEStructuralFeatures().get(0);
   }
@@ -218,8 +214,7 @@ public EReference getOrExpression_LeftExpression()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getOrExpression_Or()
+  public EAttribute getOrExpression_Or()
   {
     return (EAttribute)orExpressionEClass.getEStructuralFeatures().get(1);
   }
@@ -229,8 +224,7 @@ public EAttribute getOrExpression_Or()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getOrExpression_RightExpression()
+  public EReference getOrExpression_RightExpression()
   {
     return (EReference)orExpressionEClass.getEStructuralFeatures().get(2);
   }
@@ -240,8 +234,7 @@ public EReference getOrExpression_RightExpression()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getAndExpression()
+  public EClass getAndExpression()
   {
     return andExpressionEClass;
   }
@@ -251,8 +244,7 @@ public EClass getAndExpression()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getAndExpression_LeftExpression()
+  public EReference getAndExpression_LeftExpression()
   {
     return (EReference)andExpressionEClass.getEStructuralFeatures().get(0);
   }
@@ -262,8 +254,7 @@ public EReference getAndExpression_LeftExpression()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getAndExpression_And()
+  public EAttribute getAndExpression_And()
   {
     return (EAttribute)andExpressionEClass.getEStructuralFeatures().get(1);
   }
@@ -273,8 +264,7 @@ public EAttribute getAndExpression_And()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getAndExpression_RightExpression()
+  public EReference getAndExpression_RightExpression()
   {
     return (EReference)andExpressionEClass.getEStructuralFeatures().get(2);
   }
@@ -284,8 +274,7 @@ public EReference getAndExpression_RightExpression()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getBaseExpression()
+  public EClass getBaseExpression()
   {
     return baseExpressionEClass;
   }
@@ -295,8 +284,7 @@ public EClass getBaseExpression()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getBaseExpression_Not()
+  public EAttribute getBaseExpression_Not()
   {
     return (EAttribute)baseExpressionEClass.getEStructuralFeatures().get(0);
   }
@@ -306,8 +294,7 @@ public EAttribute getBaseExpression_Not()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getBaseExpression_BooleanTerm()
+  public EReference getBaseExpression_BooleanTerm()
   {
     return (EReference)baseExpressionEClass.getEStructuralFeatures().get(1);
   }
@@ -317,8 +304,7 @@ public EReference getBaseExpression_BooleanTerm()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getBaseExpression_RootExpression()
+  public EReference getBaseExpression_RootExpression()
   {
     return (EReference)baseExpressionEClass.getEStructuralFeatures().get(2);
   }
@@ -328,8 +314,7 @@ public EReference getBaseExpression_RootExpression()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getbooleanTerm()
+  public EClass getbooleanTerm()
   {
     return booleanTermEClass;
   }
@@ -339,8 +324,7 @@ public EClass getbooleanTerm()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getbooleanTerm_TimeConstraint()
+  public EReference getbooleanTerm_TimeConstraint()
   {
     return (EReference)booleanTermEClass.getEStructuralFeatures().get(0);
   }
@@ -350,8 +334,7 @@ public EReference getbooleanTerm_TimeConstraint()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getbooleanTerm_BooleanVariable()
+  public EReference getbooleanTerm_BooleanVariable()
   {
     return (EReference)booleanTermEClass.getEStructuralFeatures().get(1);
   }
@@ -361,8 +344,7 @@ public EReference getbooleanTerm_BooleanVariable()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getbooleanTerm_VariableCondition()
+  public EReference getbooleanTerm_VariableCondition()
   {
     return (EReference)booleanTermEClass.getEStructuralFeatures().get(2);
   }
@@ -372,8 +354,7 @@ public EReference getbooleanTerm_VariableCondition()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getTimeConstraint()
+  public EClass getTimeConstraint()
   {
     return timeConstraintEClass;
   }
@@ -383,8 +364,7 @@ public EClass getTimeConstraint()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getTimeConstraint_Event2()
+  public EReference getTimeConstraint_Event2()
   {
     return (EReference)timeConstraintEClass.getEStructuralFeatures().get(0);
   }
@@ -394,8 +374,7 @@ public EReference getTimeConstraint_Event2()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getTimeConstraint_Event1()
+  public EReference getTimeConstraint_Event1()
   {
     return (EReference)timeConstraintEClass.getEStructuralFeatures().get(1);
   }
@@ -405,8 +384,7 @@ public EReference getTimeConstraint_Event1()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getTimeConstraint_Op()
+  public EAttribute getTimeConstraint_Op()
   {
     return (EAttribute)timeConstraintEClass.getEStructuralFeatures().get(2);
   }
@@ -416,8 +394,7 @@ public EAttribute getTimeConstraint_Op()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getTimeConstraint_Value()
+  public EAttribute getTimeConstraint_Value()
   {
     return (EAttribute)timeConstraintEClass.getEStructuralFeatures().get(3);
   }
@@ -427,8 +404,7 @@ public EAttribute getTimeConstraint_Value()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getBooleanVariable()
+  public EClass getBooleanVariable()
   {
     return booleanVariableEClass;
   }
@@ -438,8 +414,7 @@ public EClass getBooleanVariable()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getBooleanVariable_Variable()
+  public EAttribute getBooleanVariable_Variable()
   {
     return (EAttribute)booleanVariableEClass.getEStructuralFeatures().get(0);
   }
@@ -449,8 +424,7 @@ public EAttribute getBooleanVariable_Variable()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getVariableCondition()
+  public EClass getVariableCondition()
   {
     return variableConditionEClass;
   }
@@ -460,8 +434,7 @@ public EClass getVariableCondition()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getVariableCondition_Expression_left()
+  public EReference getVariableCondition_Expression_left()
   {
     return (EReference)variableConditionEClass.getEStructuralFeatures().get(0);
   }
@@ -471,8 +444,7 @@ public EReference getVariableCondition_Expression_left()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getVariableCondition_Relation()
+  public EAttribute getVariableCondition_Relation()
   {
     return (EAttribute)variableConditionEClass.getEStructuralFeatures().get(1);
   }
@@ -482,8 +454,7 @@ public EAttribute getVariableCondition_Relation()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getVariableCondition_Expression_right()
+  public EReference getVariableCondition_Expression_right()
   {
     return (EReference)variableConditionEClass.getEStructuralFeatures().get(2);
   }
@@ -493,8 +464,7 @@ public EReference getVariableCondition_Expression_right()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getEXPRESSION()
+  public EClass getEXPRESSION()
   {
     return expressionEClass;
   }
@@ -504,8 +474,7 @@ public EClass getEXPRESSION()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getEXPRESSION_FirstTerm()
+  public EReference getEXPRESSION_FirstTerm()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(0);
   }
@@ -515,8 +484,7 @@ public EReference getEXPRESSION_FirstTerm()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getEXPRESSION_Operator()
+  public EAttribute getEXPRESSION_Operator()
   {
     return (EAttribute)expressionEClass.getEStructuralFeatures().get(1);
   }
@@ -526,8 +494,7 @@ public EAttribute getEXPRESSION_Operator()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getEXPRESSION_SecondTerm()
+  public EReference getEXPRESSION_SecondTerm()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(2);
   }
@@ -537,8 +504,7 @@ public EReference getEXPRESSION_SecondTerm()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getEXPRESSION_Alone()
+  public EReference getEXPRESSION_Alone()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(3);
   }
@@ -548,8 +514,7 @@ public EReference getEXPRESSION_Alone()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getTERM()
+  public EClass getTERM()
   {
     return termEClass;
   }
@@ -559,8 +524,7 @@ public EClass getTERM()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getTERM_Variable()
+  public EAttribute getTERM_Variable()
   {
     return (EAttribute)termEClass.getEStructuralFeatures().get(0);
   }
@@ -570,8 +534,7 @@ public EAttribute getTERM_Variable()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getTERM_Constant()
+  public EAttribute getTERM_Constant()
   {
     return (EAttribute)termEClass.getEStructuralFeatures().get(1);
   }
@@ -581,8 +544,7 @@ public EAttribute getTERM_Constant()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getEvent()
+  public EClass getEvent()
   {
     return eventEClass;
   }
@@ -592,8 +554,7 @@ public EClass getEvent()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getEvent_EventName()
+  public EAttribute getEvent_EventName()
   {
     return (EAttribute)eventEClass.getEStructuralFeatures().get(0);
   }
@@ -603,8 +564,7 @@ public EAttribute getEvent_EventName()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getEvent_EventExtension()
+  public EAttribute getEvent_EventExtension()
   {
     return (EAttribute)eventEClass.getEStructuralFeatures().get(1);
   }
@@ -614,8 +574,7 @@ public EAttribute getEvent_EventExtension()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getEvent_NowEvent()
+  public EAttribute getEvent_NowEvent()
   {
     return (EAttribute)eventEClass.getEStructuralFeatures().get(2);
   }
@@ -625,8 +584,7 @@ public EAttribute getEvent_NowEvent()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public BooleanExpressionsFactory getBooleanExpressionsFactory()
+  public BooleanExpressionsFactory getBooleanExpressionsFactory()
   {
     return (BooleanExpressionsFactory)getEFactoryInstance();
   }

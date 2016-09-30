@@ -2,6 +2,7 @@ package org.correttouml.uml.diagrams.statediagram.actions;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.correttouml.grammars.stateMachineActions.Model;
 import org.correttouml.grammars.stateMachineActions.Parameters;
 import org.correttouml.uml.diagrams.classdiagram.AssociationEnd;
@@ -10,14 +11,14 @@ import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.classdiagram.Operation;
 import org.correttouml.uml.diagrams.classdiagram.Signal;
 import org.correttouml.uml.diagrams.expressions.Assignment;
-import org.correttouml.uml.diagrams.expressions.AssignmentContext;
+import org.correttouml.uml.diagrams.expressions.ExpressionContext;
 import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagram;
-import org.correttouml.uml.diagrams.statediagram.Transition;
 import org.correttouml.uml.helpers.StDActionsParser;
 
 public class ActionFactory {
 	
-	public static List<Action> getInstance(String action, Transition transition, Object object){
+//	public static List<Action> getInstance(String action, Transition transition, Object object){
+	public static List<Action> getInstance(String action, ExpressionContext context, Object object){
 		
 		ArrayList<Action> actions=new ArrayList<Action>();
 		
@@ -26,7 +27,8 @@ public class ActionFactory {
 		do{
 			org.correttouml.grammars.stateMachineActions.Action curr=m.getAction();
 			try {
-				actions.add(getAction(curr, transition, object));
+//				actions.add(getAction(curr, transition, object));
+				actions.add(getAction(curr, context, object));
 			} catch (Exception e) {
 				System.err.println("Error for action: " + action);
 				e.printStackTrace();
@@ -36,33 +38,34 @@ public class ActionFactory {
 		return actions;
 	}
 	
-	private static Action getAction(org.correttouml.grammars.stateMachineActions.Action curr, Transition transition, Object object) throws Exception {
+	private static Action getAction(org.correttouml.grammars.stateMachineActions.Action curr, ExpressionContext context, Object object) throws Exception {
 		if (curr.getEventAction() != null) {
 			if (curr.getEventAction().getEvent().getEventExtension()
 					.equals("call")) {
-				return getCallAction(curr, transition, object);
+				return getCallAction(curr, context, object);
 			}
 			if (curr.getEventAction().getEvent().getEventExtension()
 					.equals("sig")) {
-				return getSignalAction(curr, transition, object);
+				return getSignalAction(curr, context, object);
 			}
 			if (curr.getEventAction().getEvent().getEventExtension()
 					.equals("start")) {
-				return getSequenceDiagramAction(curr, transition);
+				return getSequenceDiagramAction(curr, context);
 			}
 		}
 		if (curr.getAssignment() != null) {
-			return getAssignmentAction(curr.getAssignment(), transition);
+			return getAssignmentAction(curr.getAssignment(), context);
 		}
 		throw new Exception("Action type not supported");
 	}
 
-	private static Action getAssignmentAction(org.correttouml.grammars.stateMachineActions.Assignment assignment, AssignmentContext context) {
+//	private static Action getAssignmentAction(org.correttouml.grammars.stateMachineActions.Assignment assignment, AssignmentContext context) {
+	private static Action getAssignmentAction(org.correttouml.grammars.stateMachineActions.Assignment assignment, ExpressionContext context) {
 		Assignment a= new Assignment(assignment, context);
 		return new AssignmentAction(a);
 	}
 	
-	private static CallAction getCallAction(org.correttouml.grammars.stateMachineActions.Action curr, Transition transition, Object object) throws Exception{
+	private static CallAction getCallAction(org.correttouml.grammars.stateMachineActions.Action curr, ExpressionContext context, Object object) throws Exception{
 		// [corretto-man] Syntax of actions in StD: #linkName.memberEndName@opName.call
 		String opname = curr.getEventAction().getEvent().getEventName();
 
@@ -103,7 +106,7 @@ public class ActionFactory {
 
 		// Check if everything is ok, please
 		CallAction action = null;
-		if (invoked_op != null) action = new CallAction(transition, objToInvoke, invoked_op);
+		if (invoked_op != null) action = new CallAction(context, objToInvoke, invoked_op);
 		// ops, something went wrong
 		else throw new Exception("Operation not found");
 
@@ -112,20 +115,20 @@ public class ActionFactory {
 		do {
 			if (next == null) break; // no parameters
 			String param_name = next.getParam();
-			action.addCallActionParameter(new CallActionParameter(param_name, action, transition.getStateDiagram(), next));
+			action.addCallActionParameter(new CallActionParameter(param_name, action, context, next));
 			next = next.getParameters();
 		} while (next != null);
 
 		return action;
 	}
 	
-	private static SignalAction getSignalAction(org.correttouml.grammars.stateMachineActions.Action action, Transition transition, Object object){
+//	private static SignalAction getSignalAction(org.correttouml.grammars.stateMachineActions.Action action, Transition transition, Object object){
+	private static SignalAction getSignalAction(org.correttouml.grammars.stateMachineActions.Action action, ExpressionContext context, Object object){
 		try {
 			String signame=action.getEventAction().getEvent().getEventName();
-			//TODO[mottalrd][improvement] wtf you are doing here? why we need the transition to get this info?
-			for(Signal s: transition.getStateDiagram().getMadesModel().getClassdiagram().getSignals()){
-				if(s.getName().equals(signame)) return new SignalAction(s, transition, object);
-			}
+			for(Signal s: context.getMadesModel().getClassdiagram().getSignals()){
+					if(s.getName().equals(signame)) return new SignalAction(s, context, object);
+				}
 			throw new Exception("Signal not found Exception");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -133,11 +136,11 @@ public class ActionFactory {
 		return null;
 	}
 
-	private static SequenceDiagramAction getSequenceDiagramAction(org.correttouml.grammars.stateMachineActions.Action action, Transition transition){
+//	private static SequenceDiagramAction getSequenceDiagramAction(org.correttouml.grammars.stateMachineActions.Action action, Transition transition){
+	private static SequenceDiagramAction getSequenceDiagramAction(org.correttouml.grammars.stateMachineActions.Action action, ExpressionContext context){
 		try{
 			String sdname=action.getEventAction().getEvent().getEventName();
-			//TODO[mottalrd][improvement] wtf you are doing here? why we need the transition to get this info?
-			for(SequenceDiagram sd: transition.getStateDiagram().getMadesModel().getSequenceDiagrams()){
+			for(SequenceDiagram sd: context.getMadesModel().getSequenceDiagrams()){
 				if(sd.getName().equals(sdname)) return new SequenceDiagramAction(sd);
 			}
 			throw new Exception("Sequence diagram not found Exception");

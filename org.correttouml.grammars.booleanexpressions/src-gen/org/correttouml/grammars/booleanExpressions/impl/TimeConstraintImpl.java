@@ -119,8 +119,7 @@ public class TimeConstraintImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public Event getEvent2()
+  public Event getEvent2()
   {
     return event2;
   }
@@ -147,8 +146,7 @@ public Event getEvent2()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setEvent2(Event newEvent2)
+  public void setEvent2(Event newEvent2)
   {
     if (newEvent2 != event2)
     {
@@ -169,8 +167,7 @@ public void setEvent2(Event newEvent2)
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public Event getEvent1()
+  public Event getEvent1()
   {
     return event1;
   }
@@ -197,8 +194,7 @@ public Event getEvent1()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setEvent1(Event newEvent1)
+  public void setEvent1(Event newEvent1)
   {
     if (newEvent1 != event1)
     {
@@ -219,8 +215,7 @@ public void setEvent1(Event newEvent1)
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public String getOp()
+  public String getOp()
   {
     return op;
   }
@@ -230,8 +225,7 @@ public String getOp()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setOp(String newOp)
+  public void setOp(String newOp)
   {
     String oldOp = op;
     op = newOp;
@@ -244,8 +238,7 @@ public void setOp(String newOp)
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public int getValue()
+  public int getValue()
   {
     return value;
   }
@@ -255,8 +248,7 @@ public int getValue()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setValue(int newValue)
+  public void setValue(int newValue)
   {
     int oldValue = value;
     value = newValue;

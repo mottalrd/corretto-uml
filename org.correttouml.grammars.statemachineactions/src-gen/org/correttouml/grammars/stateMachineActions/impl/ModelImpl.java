@@ -77,8 +77,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public Action getAction()
+  public Action getAction()
   {
     return action;
   }
@@ -105,8 +104,7 @@ public Action getAction()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setAction(Action newAction)
+  public void setAction(Action newAction)
   {
     if (newAction != action)
     {
@@ -127,8 +125,7 @@ public void setAction(Action newAction)
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public Model getActions()
+  public Model getActions()
   {
     return actions;
   }
@@ -155,8 +152,7 @@ public Model getActions()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setActions(Model newActions)
+  public void setActions(Model newActions)
   {
     if (newActions != actions)
     {

@@ -22,7 +22,7 @@ public class SBooleanExpression {
 		this.exp=exp;
 	}
 	
-	public BooleanFormulae getSemantics( org.correttouml.uml.diagrams.classdiagram.Object mades_object, ExpressionContext context ){
+	public BooleanFormulae getSemantics(org.correttouml.uml.diagrams.classdiagram.Object mades_object, ExpressionContext context ){
 		this.mades_object=mades_object;
 		this.context=context;
 		

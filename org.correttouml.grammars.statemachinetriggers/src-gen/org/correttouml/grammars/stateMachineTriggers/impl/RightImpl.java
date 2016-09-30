@@ -108,8 +108,7 @@ public class RightImpl extends MinimalEObjectImpl.Container implements Right
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public Event getEvent()
+  public Event getEvent()
   {
     return event;
   }
@@ -136,8 +135,7 @@ public Event getEvent()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setEvent(Event newEvent)
+  public void setEvent(Event newEvent)
   {
     if (newEvent != event)
     {
@@ -158,8 +156,7 @@ public void setEvent(Event newEvent)
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public String getOp()
+  public String getOp()
   {
     return op;
   }
@@ -169,8 +166,7 @@ public String getOp()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setOp(String newOp)
+  public void setOp(String newOp)
   {
     String oldOp = op;
     op = newOp;
@@ -183,8 +179,7 @@ public void setOp(String newOp)
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public int getValue()
+  public int getValue()
   {
     return value;
   }
@@ -194,8 +189,7 @@ public int getValue()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setValue(int newValue)
+  public void setValue(int newValue)
   {
     int oldValue = value;
     value = newValue;

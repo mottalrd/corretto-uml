@@ -30,7 +30,6 @@ public class StateMachineActionsGrammarAccess extends AbstractGrammarElementFind
 		
 		//Model:
 		//	action=Action ("," actions=Model)?;
-		@Override
 		public ParserRule getRule() { return rule; }
 
 		//action=Action ("," actions=Model)?
@@ -65,7 +64,6 @@ public class StateMachineActionsGrammarAccess extends AbstractGrammarElementFind
 		
 		//Action:
 		//	assignment=Assignment | eventAction=EventAction;
-		@Override
 		public ParserRule getRule() { return rule; }
 
 		//assignment=Assignment | eventAction=EventAction
@@ -98,7 +96,6 @@ public class StateMachineActionsGrammarAccess extends AbstractGrammarElementFind
 		// * to make cross references between grammars
 		// * / Assignment:
 		//	leftvar=ID "=" expression=EXPRESSION;
-		@Override
 		public ParserRule getRule() { return rule; }
 
 		//leftvar=ID "=" expression=EXPRESSION
@@ -135,7 +132,6 @@ public class StateMachineActionsGrammarAccess extends AbstractGrammarElementFind
 		
 		//EXPRESSION:
 		//	firstTerm=TERM operator=OPERATOR secondTerm=TERM | alone=TERM;
-		@Override
 		public ParserRule getRule() { return rule; }
 
 		//firstTerm=TERM operator=OPERATOR secondTerm=TERM | alone=TERM
@@ -186,7 +182,6 @@ public class StateMachineActionsGrammarAccess extends AbstractGrammarElementFind
 		//TERM:
 		//	(isPast="<P>" //we can decide if we want the value at the previous time instant or at the next
 		//	| isFuture="<F>")? (variable=ID | constant=INT);
-		@Override
 		public ParserRule getRule() { return rule; }
 
 		//(isPast="<P>" //we can decide if we want the value at the previous time instant or at the next
@@ -236,7 +231,6 @@ public class StateMachineActionsGrammarAccess extends AbstractGrammarElementFind
 		//EventAction:
 		//	link=Link? //we need the link for .call events
 		//	event=Event;
-		@Override
 		public ParserRule getRule() { return rule; }
 
 		//link=Link? //we need the link for .call events
@@ -271,7 +265,6 @@ public class StateMachineActionsGrammarAccess extends AbstractGrammarElementFind
 		
 		//Link:
 		//	"#" linkName=ID "." associationEnd=ID | self="self";
-		@Override
 		public ParserRule getRule() { return rule; }
 
 		//"#" linkName=ID "." associationEnd=ID | self="self"
@@ -322,7 +315,6 @@ public class StateMachineActionsGrammarAccess extends AbstractGrammarElementFind
 		
 		//Event:
 		//	"@" eventName=ID ("(" parameters=Parameters ")")? "." eventExtension=EventExtensions;
-		@Override
 		public ParserRule getRule() { return rule; }
 
 		//"@" eventName=ID ("(" parameters=Parameters ")")? "." eventExtension=EventExtensions
@@ -388,7 +380,6 @@ public class StateMachineActionsGrammarAccess extends AbstractGrammarElementFind
 		//Parameters:
 		//	(isPast="<P>" //TODO very bad duplication for <P> and <F> (see TERM)
 		//	| isFuture="<F>")? param=ID | (isPast="<P>" | isFuture="<F>")? param=ID "," parameters=Parameters;
-		@Override
 		public ParserRule getRule() { return rule; }
 
 		//(isPast="<P>" //TODO very bad duplication for <P> and <F> (see TERM)
@@ -468,7 +459,6 @@ public class StateMachineActionsGrammarAccess extends AbstractGrammarElementFind
 		
 		//EventExtensions:
 		//	"exit" | "enter" | "start" | "end" | "tick" | "sig" | "call";
-		@Override
 		public ParserRule getRule() { return rule; }
 
 		//"exit" | "enter" | "start" | "end" | "tick" | "sig" | "call"
@@ -537,7 +527,6 @@ public class StateMachineActionsGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	
-	@Override
 	public Grammar getGrammar() {
 		return grammar;
 	}

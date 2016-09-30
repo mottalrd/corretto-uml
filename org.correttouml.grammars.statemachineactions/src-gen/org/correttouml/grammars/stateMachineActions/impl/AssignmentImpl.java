@@ -87,8 +87,7 @@ public class AssignmentImpl extends MinimalEObjectImpl.Container implements Assi
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public String getLeftvar()
+  public String getLeftvar()
   {
     return leftvar;
   }
@@ -98,8 +97,7 @@ public String getLeftvar()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setLeftvar(String newLeftvar)
+  public void setLeftvar(String newLeftvar)
   {
     String oldLeftvar = leftvar;
     leftvar = newLeftvar;
@@ -112,8 +110,7 @@ public void setLeftvar(String newLeftvar)
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EXPRESSION getExpression()
+  public EXPRESSION getExpression()
   {
     return expression;
   }
@@ -140,8 +137,7 @@ public EXPRESSION getExpression()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setExpression(EXPRESSION newExpression)
+  public void setExpression(EXPRESSION newExpression)
   {
     if (newExpression != expression)
     {

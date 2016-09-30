@@ -73,8 +73,7 @@ public class BooleanVariableImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public String getVariable()
+  public String getVariable()
   {
     return variable;
   }
@@ -84,8 +83,7 @@ public String getVariable()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setVariable(String newVariable)
+  public void setVariable(String newVariable)
   {
     String oldVariable = variable;
     variable = newVariable;

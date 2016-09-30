@@ -108,8 +108,7 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public String getEventName()
+  public String getEventName()
   {
     return eventName;
   }
@@ -119,8 +118,7 @@ public String getEventName()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setEventName(String newEventName)
+  public void setEventName(String newEventName)
   {
     String oldEventName = eventName;
     eventName = newEventName;
@@ -133,8 +131,7 @@ public void setEventName(String newEventName)
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public Parameters getParameters()
+  public Parameters getParameters()
   {
     return parameters;
   }
@@ -161,8 +158,7 @@ public Parameters getParameters()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setParameters(Parameters newParameters)
+  public void setParameters(Parameters newParameters)
   {
     if (newParameters != parameters)
     {
@@ -183,8 +179,7 @@ public void setParameters(Parameters newParameters)
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public String getEventExtension()
+  public String getEventExtension()
   {
     return eventExtension;
   }
@@ -194,8 +189,7 @@ public String getEventExtension()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setEventExtension(String newEventExtension)
+  public void setEventExtension(String newEventExtension)
   {
     String oldEventExtension = eventExtension;
     eventExtension = newEventExtension;

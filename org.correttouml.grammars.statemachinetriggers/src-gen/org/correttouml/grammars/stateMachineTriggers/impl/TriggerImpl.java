@@ -78,8 +78,7 @@ public class TriggerImpl extends MinimalEObjectImpl.Container implements Trigger
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public Left getLeft()
+  public Left getLeft()
   {
     return left;
   }
@@ -106,8 +105,7 @@ public Left getLeft()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setLeft(Left newLeft)
+  public void setLeft(Left newLeft)
   {
     if (newLeft != left)
     {
@@ -128,8 +126,7 @@ public void setLeft(Left newLeft)
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public Right getRight()
+  public Right getRight()
   {
     return right;
   }
@@ -156,8 +153,7 @@ public Right getRight()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setRight(Right newRight)
+  public void setRight(Right newRight)
   {
     if (newRight != right)
     {

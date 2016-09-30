@@ -158,8 +158,7 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getModel()
+  public EClass getModel()
   {
     return modelEClass;
   }
@@ -169,8 +168,7 @@ public EClass getModel()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getModel_Action()
+  public EReference getModel_Action()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -180,8 +178,7 @@ public EReference getModel_Action()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getModel_Actions()
+  public EReference getModel_Actions()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(1);
   }
@@ -191,8 +188,7 @@ public EReference getModel_Actions()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getAction()
+  public EClass getAction()
   {
     return actionEClass;
   }
@@ -202,8 +198,7 @@ public EClass getAction()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getAction_Assignment()
+  public EReference getAction_Assignment()
   {
     return (EReference)actionEClass.getEStructuralFeatures().get(0);
   }
@@ -213,8 +208,7 @@ public EReference getAction_Assignment()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getAction_EventAction()
+  public EReference getAction_EventAction()
   {
     return (EReference)actionEClass.getEStructuralFeatures().get(1);
   }
@@ -224,8 +218,7 @@ public EReference getAction_EventAction()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getAssignment()
+  public EClass getAssignment()
   {
     return assignmentEClass;
   }
@@ -235,8 +228,7 @@ public EClass getAssignment()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getAssignment_Leftvar()
+  public EAttribute getAssignment_Leftvar()
   {
     return (EAttribute)assignmentEClass.getEStructuralFeatures().get(0);
   }
@@ -246,8 +238,7 @@ public EAttribute getAssignment_Leftvar()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getAssignment_Expression()
+  public EReference getAssignment_Expression()
   {
     return (EReference)assignmentEClass.getEStructuralFeatures().get(1);
   }
@@ -257,8 +248,7 @@ public EReference getAssignment_Expression()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getEXPRESSION()
+  public EClass getEXPRESSION()
   {
     return expressionEClass;
   }
@@ -268,8 +258,7 @@ public EClass getEXPRESSION()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getEXPRESSION_FirstTerm()
+  public EReference getEXPRESSION_FirstTerm()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(0);
   }
@@ -279,8 +268,7 @@ public EReference getEXPRESSION_FirstTerm()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getEXPRESSION_Operator()
+  public EAttribute getEXPRESSION_Operator()
   {
     return (EAttribute)expressionEClass.getEStructuralFeatures().get(1);
   }
@@ -290,8 +278,7 @@ public EAttribute getEXPRESSION_Operator()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getEXPRESSION_SecondTerm()
+  public EReference getEXPRESSION_SecondTerm()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(2);
   }
@@ -301,8 +288,7 @@ public EReference getEXPRESSION_SecondTerm()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getEXPRESSION_Alone()
+  public EReference getEXPRESSION_Alone()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(3);
   }
@@ -312,8 +298,7 @@ public EReference getEXPRESSION_Alone()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getTERM()
+  public EClass getTERM()
   {
     return termEClass;
   }
@@ -323,8 +308,7 @@ public EClass getTERM()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getTERM_IsPast()
+  public EAttribute getTERM_IsPast()
   {
     return (EAttribute)termEClass.getEStructuralFeatures().get(0);
   }
@@ -334,8 +318,7 @@ public EAttribute getTERM_IsPast()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getTERM_IsFuture()
+  public EAttribute getTERM_IsFuture()
   {
     return (EAttribute)termEClass.getEStructuralFeatures().get(1);
   }
@@ -345,8 +328,7 @@ public EAttribute getTERM_IsFuture()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getTERM_Variable()
+  public EAttribute getTERM_Variable()
   {
     return (EAttribute)termEClass.getEStructuralFeatures().get(2);
   }
@@ -356,8 +338,7 @@ public EAttribute getTERM_Variable()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getTERM_Constant()
+  public EAttribute getTERM_Constant()
   {
     return (EAttribute)termEClass.getEStructuralFeatures().get(3);
   }
@@ -367,8 +348,7 @@ public EAttribute getTERM_Constant()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getEventAction()
+  public EClass getEventAction()
   {
     return eventActionEClass;
   }
@@ -378,8 +358,7 @@ public EClass getEventAction()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getEventAction_Link()
+  public EReference getEventAction_Link()
   {
     return (EReference)eventActionEClass.getEStructuralFeatures().get(0);
   }
@@ -389,8 +368,7 @@ public EReference getEventAction_Link()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getEventAction_Event()
+  public EReference getEventAction_Event()
   {
     return (EReference)eventActionEClass.getEStructuralFeatures().get(1);
   }
@@ -400,8 +378,7 @@ public EReference getEventAction_Event()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getLink()
+  public EClass getLink()
   {
     return linkEClass;
   }
@@ -411,8 +388,7 @@ public EClass getLink()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getLink_LinkName()
+  public EAttribute getLink_LinkName()
   {
     return (EAttribute)linkEClass.getEStructuralFeatures().get(0);
   }
@@ -422,8 +398,7 @@ public EAttribute getLink_LinkName()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getLink_AssociationEnd()
+  public EAttribute getLink_AssociationEnd()
   {
     return (EAttribute)linkEClass.getEStructuralFeatures().get(1);
   }
@@ -433,8 +408,7 @@ public EAttribute getLink_AssociationEnd()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getLink_Self()
+  public EAttribute getLink_Self()
   {
     return (EAttribute)linkEClass.getEStructuralFeatures().get(2);
   }
@@ -444,8 +418,7 @@ public EAttribute getLink_Self()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getEvent()
+  public EClass getEvent()
   {
     return eventEClass;
   }
@@ -455,8 +428,7 @@ public EClass getEvent()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getEvent_EventName()
+  public EAttribute getEvent_EventName()
   {
     return (EAttribute)eventEClass.getEStructuralFeatures().get(0);
   }
@@ -466,8 +438,7 @@ public EAttribute getEvent_EventName()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getEvent_Parameters()
+  public EReference getEvent_Parameters()
   {
     return (EReference)eventEClass.getEStructuralFeatures().get(1);
   }
@@ -477,8 +448,7 @@ public EReference getEvent_Parameters()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getEvent_EventExtension()
+  public EAttribute getEvent_EventExtension()
   {
     return (EAttribute)eventEClass.getEStructuralFeatures().get(2);
   }
@@ -488,8 +458,7 @@ public EAttribute getEvent_EventExtension()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getParameters()
+  public EClass getParameters()
   {
     return parametersEClass;
   }
@@ -499,8 +468,7 @@ public EClass getParameters()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getParameters_IsPast()
+  public EAttribute getParameters_IsPast()
   {
     return (EAttribute)parametersEClass.getEStructuralFeatures().get(0);
   }
@@ -510,8 +478,7 @@ public EAttribute getParameters_IsPast()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getParameters_IsFuture()
+  public EAttribute getParameters_IsFuture()
   {
     return (EAttribute)parametersEClass.getEStructuralFeatures().get(1);
   }
@@ -521,8 +488,7 @@ public EAttribute getParameters_IsFuture()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getParameters_Param()
+  public EAttribute getParameters_Param()
   {
     return (EAttribute)parametersEClass.getEStructuralFeatures().get(2);
   }
@@ -532,8 +498,7 @@ public EAttribute getParameters_Param()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getParameters_Parameters()
+  public EReference getParameters_Parameters()
   {
     return (EReference)parametersEClass.getEStructuralFeatures().get(3);
   }
@@ -543,8 +508,7 @@ public EReference getParameters_Parameters()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public StateMachineActionsFactory getStateMachineActionsFactory()
+  public StateMachineActionsFactory getStateMachineActionsFactory()
   {
     return (StateMachineActionsFactory)getEFactoryInstance();
   }

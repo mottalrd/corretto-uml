@@ -98,8 +98,7 @@ public class VariableConditionImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EXPRESSION getExpression_left()
+  public EXPRESSION getExpression_left()
   {
     return expression_left;
   }
@@ -126,8 +125,7 @@ public EXPRESSION getExpression_left()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setExpression_left(EXPRESSION newExpression_left)
+  public void setExpression_left(EXPRESSION newExpression_left)
   {
     if (newExpression_left != expression_left)
     {
@@ -148,8 +146,7 @@ public void setExpression_left(EXPRESSION newExpression_left)
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public String getRelation()
+  public String getRelation()
   {
     return relation;
   }
@@ -159,8 +156,7 @@ public String getRelation()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setRelation(String newRelation)
+  public void setRelation(String newRelation)
   {
     String oldRelation = relation;
     relation = newRelation;
@@ -173,8 +169,7 @@ public void setRelation(String newRelation)
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EXPRESSION getExpression_right()
+  public EXPRESSION getExpression_right()
   {
     return expression_right;
   }
@@ -201,8 +196,7 @@ public EXPRESSION getExpression_right()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setExpression_right(EXPRESSION newExpression_right)
+  public void setExpression_right(EXPRESSION newExpression_right)
   {
     if (newExpression_right != expression_right)
     {

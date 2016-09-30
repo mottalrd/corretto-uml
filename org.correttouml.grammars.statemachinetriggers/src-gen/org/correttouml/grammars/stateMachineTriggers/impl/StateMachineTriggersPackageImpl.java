@@ -128,8 +128,7 @@ public class StateMachineTriggersPackageImpl extends EPackageImpl implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getModel()
+  public EClass getModel()
   {
     return modelEClass;
   }
@@ -139,8 +138,7 @@ public EClass getModel()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getModel_Trigger()
+  public EReference getModel_Trigger()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -150,8 +148,7 @@ public EReference getModel_Trigger()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getTrigger()
+  public EClass getTrigger()
   {
     return triggerEClass;
   }
@@ -161,8 +158,7 @@ public EClass getTrigger()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getTrigger_Left()
+  public EReference getTrigger_Left()
   {
     return (EReference)triggerEClass.getEStructuralFeatures().get(0);
   }
@@ -172,8 +168,7 @@ public EReference getTrigger_Left()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getTrigger_Right()
+  public EReference getTrigger_Right()
   {
     return (EReference)triggerEClass.getEStructuralFeatures().get(1);
   }
@@ -183,8 +178,7 @@ public EReference getTrigger_Right()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getLeft()
+  public EClass getLeft()
   {
     return leftEClass;
   }
@@ -194,8 +188,7 @@ public EClass getLeft()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getLeft_Event()
+  public EReference getLeft_Event()
   {
     return (EReference)leftEClass.getEStructuralFeatures().get(0);
   }
@@ -205,8 +198,7 @@ public EReference getLeft_Event()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getRight()
+  public EClass getRight()
   {
     return rightEClass;
   }
@@ -216,8 +208,7 @@ public EClass getRight()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getRight_Event()
+  public EReference getRight_Event()
   {
     return (EReference)rightEClass.getEStructuralFeatures().get(0);
   }
@@ -227,8 +218,7 @@ public EReference getRight_Event()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getRight_Op()
+  public EAttribute getRight_Op()
   {
     return (EAttribute)rightEClass.getEStructuralFeatures().get(1);
   }
@@ -238,8 +228,7 @@ public EAttribute getRight_Op()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getRight_Value()
+  public EAttribute getRight_Value()
   {
     return (EAttribute)rightEClass.getEStructuralFeatures().get(2);
   }
@@ -249,8 +238,7 @@ public EAttribute getRight_Value()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getEvent()
+  public EClass getEvent()
   {
     return eventEClass;
   }
@@ -260,8 +248,7 @@ public EClass getEvent()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getEvent_EventName()
+  public EAttribute getEvent_EventName()
   {
     return (EAttribute)eventEClass.getEStructuralFeatures().get(0);
   }
@@ -271,8 +258,7 @@ public EAttribute getEvent_EventName()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getEvent_EventExtension()
+  public EAttribute getEvent_EventExtension()
   {
     return (EAttribute)eventEClass.getEStructuralFeatures().get(1);
   }
@@ -282,8 +268,7 @@ public EAttribute getEvent_EventExtension()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getEvent_NowEvent()
+  public EAttribute getEvent_NowEvent()
   {
     return (EAttribute)eventEClass.getEStructuralFeatures().get(2);
   }
@@ -293,8 +278,7 @@ public EAttribute getEvent_NowEvent()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public StateMachineTriggersFactory getStateMachineTriggersFactory()
+  public StateMachineTriggersFactory getStateMachineTriggersFactory()
   {
     return (StateMachineTriggersFactory)getEFactoryInstance();
   }

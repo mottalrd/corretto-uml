@@ -11,9 +11,8 @@ import java.util.Set;
 
 import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.iod.IOD;
-import org.correttouml.uml.diagrams.iod.InterruptibleRegion;
-import org.correttouml.uml.diagrams.iod.Node;
-import org.correttouml.uml.diagrams.iod.SequenceDiagramNode;
+import org.correttouml.uml.diagrams.activity.*;
+import org.correttouml.uml.diagrams.activitydiagram.AD;
 import org.correttouml.uml.diagrams.sequencediagram.CombinedFragment;
 import org.correttouml.uml.diagrams.sequencediagram.ExecutionOccurrence;
 import org.correttouml.uml.diagrams.sequencediagram.Lifeline;
@@ -27,7 +26,7 @@ import org.correttouml.uml.diagrams.statediagram.actions.Action;
 import org.correttouml.uml.diagrams.statediagram.actions.SequenceDiagramAction;
 import org.correttouml.uml.diagrams.timeconstraints.TimeConstraint;
 import org.correttouml.uml2zot.semantics.SMadesModel;
-import org.correttouml.uml2zot.semantics.iod.SSequenceDiagramNode;
+import org.correttouml.uml2zot.semantics.activity.SSequenceDiagramNode;
 import org.correttouml.uml2zot.semantics.statediagram.STransition;
 import org.correttouml.uml2zot.semantics.timeconstraints.STimeConstraint;
 import org.correttouml.uml2zot.semantics.util.bool.And;
@@ -245,24 +244,15 @@ public class SSequenceDiagram {
         
         //Get all the IOD nodes
 		addIODInvocations(condStart, condEnd);
+		
+        //Get all the AD nodes
+		addADInvocations(condStart, condEnd);
         
         Or condStop=new Or();
         //The stop is connected to the interruptible regions
         //TODO: connect to the transitions that use @sd.stop, i.e. addSDStopInvocations
         addIODStopInvocations(condStop);
 		
-		// The stop is connected to the interruptible regions
-		// TODO: connect to the transitions that use @sd.stop
-		for (IOD iod : this.mades_sd.getMadesModel().getIODs()) {
-			for (InterruptibleRegion ir : iod.getInterruptibleRegions()) {
-				for (SequenceDiagramNode sd_node : ir.getSequenceDiagramNodes()) {
-					if (sd_node.getSequenceDiagram().equals(this.mades_sd)) {
-						condStop.addFormulae(new SSequenceDiagramNode(sd_node).getStopPredicate());
-					}
-				}
-			}
-		}
-
 		if (condStart.size() > 0) {
 			sem = sem + new Iff(sd_start, condStart) + "\n";
 		}
@@ -286,7 +276,7 @@ public class SSequenceDiagram {
         	for(InterruptibleRegion ir: iod.getInterruptibleRegions()){
         		for(SequenceDiagramNode sd_node: ir.getSequenceDiagramNodes()){
         			if(sd_node.getSequenceDiagram().equals(this.mades_sd)){
-        				condStop.addFormulae(new SSequenceDiagramNode(sd_node).getStopPredicate());
+        				condStop.addFormulae(new SSequenceDiagramNode(sd_node, iod).getStopPredicate());
         			}
         		}
         	}
@@ -299,8 +289,22 @@ public class SSequenceDiagram {
         		if(n instanceof SequenceDiagramNode){
         			SequenceDiagramNode sdnode=((SequenceDiagramNode) n);
         			if(sdnode.getSequenceDiagram().equals(this.mades_sd)){
-            			condStart.addFormulae(new SSequenceDiagramNode((SequenceDiagramNode) n).getStartPredicate());
-            			condEnd.addFormulae(new SSequenceDiagramNode((SequenceDiagramNode) n).getEndPredicate());
+            			condStart.addFormulae(new SSequenceDiagramNode((SequenceDiagramNode) n, iod).getStartPredicate());
+            			condEnd.addFormulae(new SSequenceDiagramNode((SequenceDiagramNode) n, iod).getEndPredicate());
+        			}
+        		}
+        	}
+        }
+	}
+	
+	private void addADInvocations(Or condStart, Or condEnd) {
+        for(AD ad: this.mades_sd.getMadesModel().getADs()){
+        	for(Node n: ad.getNodes()){
+        		if(n instanceof SequenceDiagramNode){
+        			SequenceDiagramNode sdnode=((SequenceDiagramNode) n);
+        			if(sdnode.getSequenceDiagram().equals(this.mades_sd)){
+            			condStart.addFormulae(new SSequenceDiagramNode((SequenceDiagramNode) n, ad).getStartPredicate());
+            			condEnd.addFormulae(new SSequenceDiagramNode((SequenceDiagramNode) n, ad).getEndPredicate());
         			}
         		}
         	}

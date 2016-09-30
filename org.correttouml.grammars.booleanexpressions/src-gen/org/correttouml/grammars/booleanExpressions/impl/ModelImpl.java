@@ -66,8 +66,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public OrExpression getExpression()
+  public OrExpression getExpression()
   {
     return expression;
   }
@@ -94,8 +93,7 @@ public OrExpression getExpression()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setExpression(OrExpression newExpression)
+  public void setExpression(OrExpression newExpression)
   {
     if (newExpression != expression)
     {

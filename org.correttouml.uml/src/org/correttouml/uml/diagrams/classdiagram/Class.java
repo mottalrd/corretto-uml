@@ -5,6 +5,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.correttouml.uml.MadesModel;
+import org.correttouml.uml.diagrams.activitydiagram.AD;
+import org.correttouml.uml.diagrams.iod.IOD;
 import org.correttouml.uml.diagrams.statediagram.StateDiagram;
 import org.correttouml.uml.helpers.UML2ModelHelper;
 import org.eclipse.uml2.uml.Element;
@@ -29,6 +31,17 @@ public class Class {
 			}
 		}
 		return statemachines;
+	}
+	
+	/** Returns the activity diagram associated to this object */
+	public org.eclipse.uml2.uml.Activity getUMLAD() {
+		for (Element e : uml_class.getOwnedElements()) {
+			if(e instanceof org.eclipse.uml2.uml.Activity && !UML2ModelHelper.hasStereotype(e, "Ignore")){
+//				return new AD((org.eclipse.uml2.uml.Activity) e, null);
+				return (org.eclipse.uml2.uml.Activity) e;
+			}
+		}
+		return null;
 	}
 	
 	public StateDiagram findStateDiagram(String name) {

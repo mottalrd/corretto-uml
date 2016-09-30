@@ -128,8 +128,7 @@ public class ParametersImpl extends MinimalEObjectImpl.Container implements Para
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public String getIsPast()
+  public String getIsPast()
   {
     return isPast;
   }
@@ -139,8 +138,7 @@ public String getIsPast()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setIsPast(String newIsPast)
+  public void setIsPast(String newIsPast)
   {
     String oldIsPast = isPast;
     isPast = newIsPast;
@@ -153,8 +151,7 @@ public void setIsPast(String newIsPast)
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public String getIsFuture()
+  public String getIsFuture()
   {
     return isFuture;
   }
@@ -164,8 +161,7 @@ public String getIsFuture()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setIsFuture(String newIsFuture)
+  public void setIsFuture(String newIsFuture)
   {
     String oldIsFuture = isFuture;
     isFuture = newIsFuture;
@@ -178,8 +174,7 @@ public void setIsFuture(String newIsFuture)
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public String getParam()
+  public String getParam()
   {
     return param;
   }
@@ -189,8 +184,7 @@ public String getParam()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setParam(String newParam)
+  public void setParam(String newParam)
   {
     String oldParam = param;
     param = newParam;
@@ -203,8 +197,7 @@ public void setParam(String newParam)
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public Parameters getParameters()
+  public Parameters getParameters()
   {
     return parameters;
   }
@@ -231,8 +224,7 @@ public Parameters getParameters()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public void setParameters(Parameters newParameters)
+  public void setParameters(Parameters newParameters)
   {
     if (newParameters != parameters)
     {

@@ -117,8 +117,7 @@ public class AssignmentsPackageImpl extends EPackageImpl implements AssignmentsP
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getModel()
+  public EClass getModel()
   {
     return modelEClass;
   }
@@ -128,8 +127,7 @@ public EClass getModel()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getModel_Assignment()
+  public EReference getModel_Assignment()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -139,8 +137,7 @@ public EReference getModel_Assignment()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getASSIGNMENT()
+  public EClass getASSIGNMENT()
   {
     return assignmentEClass;
   }
@@ -150,8 +147,7 @@ public EClass getASSIGNMENT()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getASSIGNMENT_Variable()
+  public EAttribute getASSIGNMENT_Variable()
   {
     return (EAttribute)assignmentEClass.getEStructuralFeatures().get(0);
   }
@@ -161,8 +157,7 @@ public EAttribute getASSIGNMENT_Variable()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getASSIGNMENT_Expression()
+  public EReference getASSIGNMENT_Expression()
   {
     return (EReference)assignmentEClass.getEStructuralFeatures().get(1);
   }
@@ -172,8 +167,7 @@ public EReference getASSIGNMENT_Expression()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getEXPRESSION()
+  public EClass getEXPRESSION()
   {
     return expressionEClass;
   }
@@ -183,8 +177,7 @@ public EClass getEXPRESSION()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getEXPRESSION_FirstTerm()
+  public EReference getEXPRESSION_FirstTerm()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(0);
   }
@@ -194,8 +187,7 @@ public EReference getEXPRESSION_FirstTerm()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getEXPRESSION_Operator()
+  public EAttribute getEXPRESSION_Operator()
   {
     return (EAttribute)expressionEClass.getEStructuralFeatures().get(1);
   }
@@ -205,8 +197,7 @@ public EAttribute getEXPRESSION_Operator()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getEXPRESSION_SecondTerm()
+  public EReference getEXPRESSION_SecondTerm()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(2);
   }
@@ -216,8 +207,7 @@ public EReference getEXPRESSION_SecondTerm()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EReference getEXPRESSION_Alone()
+  public EReference getEXPRESSION_Alone()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(3);
   }
@@ -227,8 +217,7 @@ public EReference getEXPRESSION_Alone()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EClass getTERM()
+  public EClass getTERM()
   {
     return termEClass;
   }
@@ -238,8 +227,7 @@ public EClass getTERM()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getTERM_Variable()
+  public EAttribute getTERM_Variable()
   {
     return (EAttribute)termEClass.getEStructuralFeatures().get(0);
   }
@@ -249,8 +237,7 @@ public EAttribute getTERM_Variable()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EAttribute getTERM_Constant()
+  public EAttribute getTERM_Constant()
   {
     return (EAttribute)termEClass.getEStructuralFeatures().get(1);
   }
@@ -260,8 +247,7 @@ public EAttribute getTERM_Constant()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public AssignmentsFactory getAssignmentsFactory()
+  public AssignmentsFactory getAssignmentsFactory()
   {
     return (AssignmentsFactory)getEFactoryInstance();
   }

@@ -83,8 +83,7 @@ public class StateMachineActionsFactoryImpl extends EFactoryImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public Model createModel()
+  public Model createModel()
   {
     ModelImpl model = new ModelImpl();
     return model;
@@ -95,8 +94,7 @@ public Model createModel()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public Action createAction()
+  public Action createAction()
   {
     ActionImpl action = new ActionImpl();
     return action;
@@ -107,8 +105,7 @@ public Action createAction()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public Assignment createAssignment()
+  public Assignment createAssignment()
   {
     AssignmentImpl assignment = new AssignmentImpl();
     return assignment;
@@ -119,8 +116,7 @@ public Assignment createAssignment()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EXPRESSION createEXPRESSION()
+  public EXPRESSION createEXPRESSION()
   {
     EXPRESSIONImpl expression = new EXPRESSIONImpl();
     return expression;
@@ -131,8 +127,7 @@ public EXPRESSION createEXPRESSION()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public TERM createTERM()
+  public TERM createTERM()
   {
     TERMImpl term = new TERMImpl();
     return term;
@@ -143,8 +138,7 @@ public TERM createTERM()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public EventAction createEventAction()
+  public EventAction createEventAction()
   {
     EventActionImpl eventAction = new EventActionImpl();
     return eventAction;
@@ -155,8 +149,7 @@ public EventAction createEventAction()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public Link createLink()
+  public Link createLink()
   {
     LinkImpl link = new LinkImpl();
     return link;
@@ -167,8 +160,7 @@ public Link createLink()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public Event createEvent()
+  public Event createEvent()
   {
     EventImpl event = new EventImpl();
     return event;
@@ -179,8 +171,7 @@ public Event createEvent()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public Parameters createParameters()
+  public Parameters createParameters()
   {
     ParametersImpl parameters = new ParametersImpl();
     return parameters;
@@ -191,8 +182,7 @@ public Parameters createParameters()
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-public StateMachineActionsPackage getStateMachineActionsPackage()
+  public StateMachineActionsPackage getStateMachineActionsPackage()
   {
     return (StateMachineActionsPackage)getEPackage();
   }

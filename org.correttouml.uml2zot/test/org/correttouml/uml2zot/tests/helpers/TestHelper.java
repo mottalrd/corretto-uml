@@ -84,7 +84,7 @@ public class TestHelper {
 			LOGGER.warn("Moving "+mappings.getName()+" to output folder failed");
 			e.printStackTrace();
 		}
-		LOGGER.warn("The Zot model is generated.");
+//		LOGGER.warn("The Zot model is generated.");
 	}
 	
 	public boolean isUnsat() throws Exception{

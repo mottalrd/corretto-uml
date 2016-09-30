@@ -25,7 +25,6 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 		
 		//Model:
 		//	expression=OrExpression;
-		@Override
 		public ParserRule getRule() { return rule; }
 
 		//expression=OrExpression
@@ -51,7 +50,6 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 		////============================================//
 		//OrExpression:
 		//	leftExpression=AndExpression (or=OR rightExpression=OrExpression)?;
-		@Override
 		public ParserRule getRule() { return rule; }
 
 		//leftExpression=AndExpression (or=OR rightExpression=OrExpression)?
@@ -92,7 +90,6 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 		
 		//AndExpression:
 		//	leftExpression=BaseExpression (and=AND rightExpression=AndExpression)?;
-		@Override
 		public ParserRule getRule() { return rule; }
 
 		//leftExpression=BaseExpression (and=AND rightExpression=AndExpression)?
@@ -136,7 +133,6 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 		
 		//BaseExpression:
 		//	not=NOT? (booleanTerm=booleanTerm | "(" rootExpression=OrExpression ")");
-		@Override
 		public ParserRule getRule() { return rule; }
 
 		//not=NOT? (booleanTerm=booleanTerm | "(" rootExpression=OrExpression ")")
@@ -185,7 +181,6 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 		
 		//booleanTerm:
 		//	timeConstraint=TimeConstraint | booleanVariable=BooleanVariable | variableCondition=VariableCondition;
-		@Override
 		public ParserRule getRule() { return rule; }
 
 		//timeConstraint=TimeConstraint | booleanVariable=BooleanVariable | variableCondition=VariableCondition
@@ -227,7 +222,6 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 		
 		//TimeConstraint:
 		//	"@" event2=Event "-" "@" event1=Event op=RELATIONS value=INT;
-		@Override
 		public ParserRule getRule() { return rule; }
 
 		//"@" event2=Event "-" "@" event1=Event op=RELATIONS value=INT
@@ -274,7 +268,6 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 		
 		//BooleanVariable:
 		//	variable=ID;
-		@Override
 		public ParserRule getRule() { return rule; }
 
 		//variable=ID
@@ -298,7 +291,6 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 		
 		//VariableCondition:
 		//	"{" expression_left=EXPRESSION relation=RELATIONS expression_right=EXPRESSION "}";
-		@Override
 		public ParserRule getRule() { return rule; }
 
 		//"{" expression_left=EXPRESSION relation=RELATIONS expression_right=EXPRESSION "}"
@@ -344,7 +336,6 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 		
 		//EXPRESSION:
 		//	firstTerm=TERM operator=OPERATOR secondTerm=TERM | alone=TERM;
-		@Override
 		public ParserRule getRule() { return rule; }
 
 		//firstTerm=TERM operator=OPERATOR secondTerm=TERM | alone=TERM
@@ -388,7 +379,6 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 		
 		//TERM:
 		//	variable=ID | constant=INT;
-		@Override
 		public ParserRule getRule() { return rule; }
 
 		//variable=ID | constant=INT
@@ -421,7 +411,6 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 		
 		//Event:
 		//	eventName=ID "." eventExtension=EventExtensions | nowEvent?="now";
-		@Override
 		public ParserRule getRule() { return rule; }
 
 		//eventName=ID "." eventExtension=EventExtensions | nowEvent?="now"
@@ -467,7 +456,6 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 		
 		//EventExtensions:
 		//	"exit" | "enter" | "start" | "end" | "tick" | "sig" | "call" | "send" | "receive";
-		@Override
 		public ParserRule getRule() { return rule; }
 
 		//"exit" | "enter" | "start" | "end" | "tick" | "sig" | "call" | "send" | "receive"
@@ -548,7 +536,6 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 	}
 	
 	
-	@Override
 	public Grammar getGrammar() {
 		return grammar;
 	}

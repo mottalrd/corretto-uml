@@ -20,7 +20,6 @@ public class AssignmentsInjectorProvider implements IInjectorProvider, IRegistry
 		GlobalRegistries.initializeDefaults();
 	}
 
-	@Override
 	public Injector getInjector()
 	{
 		if (injector == null) {
@@ -35,12 +34,10 @@ public class AssignmentsInjectorProvider implements IInjectorProvider, IRegistry
 	    return new AssignmentsStandaloneSetup().createInjectorAndDoEMFRegistration();
 	}
 
-	@Override
 	public void restoreRegistry() {
 		stateBeforeInjectorCreation.restoreGlobalState();
 	}
 
-	@Override
 	public void setupRegistry() {
 		getInjector();
 		stateAfterInjectorCreation.restoreGlobalState();

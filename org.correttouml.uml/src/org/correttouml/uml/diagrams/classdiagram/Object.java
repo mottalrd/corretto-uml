@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.correttouml.uml.MadesModel;
+import org.correttouml.uml.diagrams.activitydiagram.AD;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.uml2.uml.Classifier;
@@ -66,7 +67,7 @@ public class Object {
 		for(Element c: this.uml_object.getModel().allOwnedElements()){
 			if(c instanceof org.eclipse.uml2.uml.InstanceSpecification){
 				org.eclipse.uml2.uml.InstanceSpecification ass=(org.eclipse.uml2.uml.InstanceSpecification) c;
-				//TODO verificare che l'instance specification �� un instance specification link guardando il suo classifier
+				//TODO verificare che l'instance specification ������ un instance specification link guardando il suo classifier
 				for(EAnnotation e: ass.getEAnnotations()){
 					for(EObject eobj: e.getReferences()){
 						if(eobj instanceof org.eclipse.uml2.uml.InstanceSpecification){
@@ -91,8 +92,13 @@ public class Object {
 			}
 		}
 
-		
 		return ass_objects;		
+	}
+
+	public AD getAD(){
+		if (getOwningClass().getUMLAD() != null)
+			return new AD (getOwningClass().getUMLAD(), this);
+		return null;
 	}
 	
 	@Override
@@ -110,7 +116,5 @@ public class Object {
 	public int hashCode(){
 		return this.uml_object.hashCode();
 	}
-
-
 	
 }
