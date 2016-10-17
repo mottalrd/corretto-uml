@@ -67,7 +67,7 @@ public class ZOTConf {
         if (model.hasProperty()) property_formulae=model.getProperty();
         String declarations= model.getDeclarations();
         String defuns= model.getDefun();
-        String ae2zotVariables = model.getVariableDeclarationsForae2zot();
+//        String ae2zotVariables = model.getVariableDeclarationsForae2zot();
         String definemodel = "(defvar AX1 \n (&& \n" + sem + "\n)) ;;END AX1 \n\n\n";
         String smtsolverparameter = "";
 
@@ -96,7 +96,7 @@ public class ZOTConf {
             property = ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n"
                     + ";;; PROPERTIES\n"
                     + ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n"
-                    + "(defvar Q1 " + property_formulae + " )\n\n\n";
+                    + "(defvar Q1 " + property_formulae + ")\n\n\n";
         }
         String initaxiom = ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n"
                 + ";;; INIT AXIOM\n"
@@ -107,11 +107,11 @@ public class ZOTConf {
                 + ";;; THE SYSTEM\n"
                 + ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n";
         if (model.hasProperty()) {
-            thesystem = thesystem + "(defvar the_system  (&& (yesterday (alwf AX1)) (!!(yesterday (alwf Q1))) initAx ))";
+            thesystem = thesystem + "(defvar the_system  (&& (yesterday (alwf AX1)) (!!(yesterday Q1)) initAx))";
         } else {
-            thesystem = thesystem + "(defvar the_system  (&& (yesterday (alwf AX1)) initAx ))";
+            thesystem = thesystem + "(defvar the_system  (&& (yesterday (alwf AX1)) initAx))";
         }
-        thesystem = thesystem + "\n\n\n" + "(" + plugin + ":zot TSPACE (&& the_system) " + smtsolverparameter + " )";
+        thesystem = thesystem + "\n\n\n" + "(" + plugin + ":zot TSPACE (&& the_system) " + smtsolverparameter + ")";
         int arithVarsN=0;
         for(org.correttouml.uml2zot.semantics.util.trio.TrioVar t: org.correttouml.uml2zot.semantics.util.trio.TrioVar.instances){
 			arithVarsN++;

@@ -10,6 +10,7 @@ import org.correttouml.uml.diagrams.expressions.ExpressionContext;
 import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagram;
 import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagramParameter;
 import org.correttouml.uml.diagrams.statediagram.StateDiagram;
+import org.correttouml.uml.diagrams.statediagram.Transition;
 
 
 public class VariableFactory {
@@ -25,6 +26,10 @@ public class VariableFactory {
 			if (context instanceof StateDiagram) {
 				return findVariableInStateDiagram(varname, object,
 						(StateDiagram) context);
+			}
+			if (context instanceof Transition) {
+				return findVariableInStateDiagram(varname, object,
+						(StateDiagram) ((Transition) context).getStateDiagram());
 			}
 			if (context instanceof Activity) {
 				return findVariableInAD(varname, object);

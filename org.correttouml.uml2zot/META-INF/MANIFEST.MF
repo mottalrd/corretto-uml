@@ -13,8 +13,12 @@ Require-Bundle: org.correttouml.uml;bundle-version="1.0.0",
  org.eclipse.uml2.uml;bundle-version="4.0.0",
  org.apache.commons.io;bundle-version="2.0.1",
  org.eclipse.uml2.uml.resources;bundle-version="4.0.1",
- org.correttouml.profiles;bundle-version="1.0.0"
-Export-Package: org.correttouml.uml2zot
+ org.correttouml.profiles;bundle-version="1.0.0",
+ org.correttouml.grammars.property
+Export-Package: org.correttouml.uml2zot,
+ org.correttouml.uml2zot.semantics.expressions,
+ org.correttouml.uml2zot.semantics.util.bool,
+ org.correttouml.uml2zot.semantics.util.trio
 Import-Package: org.apache.commons.io,
  org.eclipse.uml2.uml.resources.util,
  org.junit

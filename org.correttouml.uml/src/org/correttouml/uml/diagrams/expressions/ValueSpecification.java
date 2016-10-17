@@ -1,6 +1,7 @@
 package org.correttouml.uml.diagrams.expressions;
 
 import org.eclipse.uml2.uml.LiteralInteger;
+import org.eclipse.uml2.uml.LiteralString;
 
 public class ValueSpecification {
 

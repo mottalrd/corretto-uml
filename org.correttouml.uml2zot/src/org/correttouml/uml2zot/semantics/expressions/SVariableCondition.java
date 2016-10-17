@@ -11,6 +11,7 @@ import org.correttouml.uml.diagrams.expressions.Variable;
 import org.correttouml.uml.diagrams.expressions.VariableFactory;
 import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
 import org.correttouml.uml2zot.semantics.util.bool.Not;
+import org.correttouml.uml2zot.semantics.util.trio.Constant;
 import org.correttouml.uml2zot.semantics.util.trio.EQ;
 import org.correttouml.uml2zot.semantics.util.trio.GT;
 import org.correttouml.uml2zot.semantics.util.trio.GTE;
@@ -96,7 +97,7 @@ public class SVariableCondition {
 			r=s_variable.getPredicate(obj);
 		}
 		else{
-			r=new SConstant(parsed.getConstant());
+			r=new SConstant(new Constant(parsed.getConstant()));
 		}
 		return r;
 	}	

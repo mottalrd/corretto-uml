@@ -8,9 +8,11 @@ import org.eclipse.uml2.uml.Parameter;
 public class OperationParameter extends Variable {
 
 	private Parameter uml_parameter;
+	private Operation mades_operation;
 
-	public OperationParameter(Parameter p) {
+	public OperationParameter(Operation op, Parameter p) {
 		this.uml_parameter=p;
+		this.mades_operation = op;
 	}
 
 	@Override
@@ -27,6 +29,10 @@ public class OperationParameter extends Variable {
 
 	public String getName() {
 		return uml_parameter.getName();
+	}
+	
+	public String getOperationName(){
+		return mades_operation.getName();
 	}
 	
 	@Override

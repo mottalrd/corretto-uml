@@ -9,11 +9,16 @@ import org.correttouml.uml.diagrams.classdiagram.ClassDiagram;
 import org.correttouml.uml.diagrams.iod.IOD;
 import org.correttouml.uml.diagrams.property.Property;
 import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagram;
+import org.correttouml.uml.helpers.PropertyParser;
 import org.correttouml.uml.helpers.UML2ModelHelper;
+import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.LiteralString;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.PackageableElement;
+import org.eclipse.uml2.uml.Stereotype;
 
 public class MadesModel{
 	
@@ -94,27 +99,45 @@ public class MadesModel{
 		return ads;
 	}
 	
-	public Property getProperty(){
-		for(Element e: this.property_package.getOwnedElements()){
-			if(UML2ModelHelper.hasStereotype(e, "Property")){
-				return new Property((Class) e);
+//	public Property getProperty(){
+//		for(Element e: this.property_package.getOwnedElements()){
+//			if(UML2ModelHelper.hasStereotype(e, "Property")){
+//				return new Property((Class) e);
+//			}
+//		}
+//		return null;
+//	}
+	
+	public BooleanFormulae getProperty() throws Exception{
+		BooleanFormulae property = null;
+		for(Element e:this.system_package.getOwnedElements())
+			if (e instanceof Constraint){
+				property = new PropertyParser(((LiteralString) ((Constraint) e).getSpecification()).getValue()).getProperty();
+				return property;
 			}
-		}
 		return null;
 	}
-
-	public boolean hasProperty() {
-		//no property package at all
-		if(this.property_package==null) return false;
-		
-		//there is a property package, let's look for the property
-		for(Element e: this.property_package.getOwnedElements()){
-			if(UML2ModelHelper.hasStereotype(e, "Property")){
-				return true;
-			}
+	
+//	public boolean hasProperty() {
+//		//no property package at all
+//		if(this.property_package==null) return false;
+//		
+//		//there is a property package, let's look for the property
+//		for(Element e: this.property_package.getOwnedElements()){
+//			if(UML2ModelHelper.hasStereotype(e, "Property")){
+//				return true;
+//			}
+//		}
+//		
+//		//property not found in the property package
+//		return false;
+//	}
+	public boolean hasProperty() throws Exception {
+		for(Element e:this.system_package.getOwnedElements()){
+			if (e instanceof Constraint)
+				if (new PropertyParser(((LiteralString) ((Constraint) e).getSpecification()).getValue()).getProperty() != null)
+					return true;
 		}
-		
-		//property not found in the property package
 		return false;
 	}
 

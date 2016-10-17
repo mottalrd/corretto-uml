@@ -25,12 +25,12 @@ public class SObject {
 	public String getSemantics(){
 		String sem="";
 		
-		SMadesModel.printSeparatorSmall("Object operation definitions", false);
+		sem += SMadesModel.printSeparatorSmall("Object operation definitions", false);
 		for(Operation op: this.mades_obj.getOwningClass().getOperations()){
 			sem=sem+new SOperation(op).getSemantics(mades_obj);
 		}
 		
-		SMadesModel.printSeparatorSmall("Attribute semantics", false);
+		sem += SMadesModel.printSeparatorSmall("Attribute semantics", false);
 		for(Attribute attr: this.mades_obj.getOwningClass().getAttributes()){
 			sem=sem+new SAttribute(attr).getSemantics(mades_obj);
 		}
@@ -60,7 +60,7 @@ public class SObject {
 			
 			ValueSpecification value=null;
 			Slot s=null;
-			if((s=mades_obj.getSlot(att))!=null){
+			if((s=mades_obj.getSlot(att))!=null && !mades_obj.getSlot(att).isTimeVariant()){
 				value=s.getValueSpecification();
 			}else{
 				//[TODO]: To initialize an attribute right now you MUST

@@ -46,12 +46,25 @@ public class LeaderElection {
 	public void start() {
 		LOGGER.info("Creating the UML model");
 		String modeltype = "";
-		int numOfProcesses = 5;
-		create_leader_election_model(numOfProcesses); 
-//		modeltype = "sat"; create_invariant_for_sat();
-//		modeltype = "p1"; create_alw_somf_idgenerator_stateend_implies_somf_monitor_state_winner();
-		modeltype = "p2"; create_alw_not_monitor_state_error();
+		int numOfProcesses = 3;
+		
+//		(alwf (!! (somf (-P- $OBJidGenerator_STDIdGenerator_SM_STATEEND))))
+		modeltype = "sat"; create_leader_election_model(numOfProcesses, "stateEnd = idGenerator.getState(IdGenerator_SM, end)\n"
+				+ "inStateEnd = idGenerator.in(stateEnd)\n"
+				+ "Corretto.verify(Time.alwaysTrue(!(Time.eventually(inStateEnd))))");
 
+//		(alwf (-> (somf (-P- $OBJidGenerator_STDIdGenerator_SM_STATEEND)) (somf (-P- $OBJmonitor_STDMonitor_SM_STATESTATE_WINNER))))
+//		modeltype = "p1"; create_leader_election_model(numOfProcesses, "stateEnd = idGenerator.getState(IdGenerator_SM, end)\n"
+//				+ "inStateEnd = idGenerator.in(stateEnd)\n"
+//				+ "stateWinner = monitor.getState(Monitor_SM, state_Winner)\n"
+//				+ "inStateWinner = monitor.in(stateWinner)\n"
+//				+ "Corretto.verify(Time.alwaysTrue(Time.eventually(inStateEnd) => Time.eventually(inStateWinner)))");
+		
+////		(alwf (!! (-P- $OBJmonitor_STDMonitor_SM_STATESTATE_ERROR)))
+//		modeltype = "p2"; create_leader_election_model(numOfProcesses, "stateError= monitor.getState(monitor_SM, State_Error)\n"
+//				+ "inStateError = monitor.in(stateError)\n"
+//				+ "Corretto.verify(Time.neverTrue(inStateError))");
+		
 		// Save it to disk
 		UML2Helper.save(myModel,
 				URI.createFileURI(TestConfiguration.MODEL_SAVE_PATH)
@@ -132,7 +145,7 @@ public class LeaderElection {
 
 	}
 
-	private void create_invariant_for_sat() {
+	private void create_invariant_for_satTPD() {
 
 		// Creazione <<Property>> package
 		org.eclipse.uml2.uml.Package propertyPackage = UML2Helper.createPackage(myModel, "Property");
@@ -158,7 +171,7 @@ public class LeaderElection {
 
 	}
 	
-	private void create_leader_election_model(int num_process) {
+	private void create_leader_election_model(int num_process, String property) {
 		// Prepare the model and the package
 		myModel = UML2Helper.createModel("ScalabilityModel");
 		madesProfile = UML2Helper
@@ -169,6 +182,9 @@ public class LeaderElection {
 		// Creazione <<System>> package
 		org.eclipse.uml2.uml.Package systemPackage = UML2Helper.createPackage(
 				myModel, "System");
+		
+		UML2Helper.createConstraint(systemPackage, "property", property);
+		
 		org.eclipse.uml2.uml.Stereotype systemStereotype = UML2Helper
 				.getMADESVerificationTagsStereotype(madesProfile, "System");
 		systemPackage.applyStereotype(systemStereotype);

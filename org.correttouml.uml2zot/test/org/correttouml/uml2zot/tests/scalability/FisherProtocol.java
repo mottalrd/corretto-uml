@@ -45,11 +45,12 @@ public class FisherProtocol {
 		LOGGER.info("Creating the UML model");
 		String modeltype = "sat";
 		for (int i = 2; i <= 2; i++) {
-			create_fisher_model(i);
-			create_alw_not_counter_greater_than_one(); modeltype = "p";
-			//create_alw_not_some_state(STATE_UPDATED); modeltype = "test";
-			//create_state_future_exit_check(STATE_UPDATED, 4); modeltype = "test";
-
+			create_fisher_model(i, null);
+			
+			//(alwf (!! ([>] (-V- ATTRcounter) 1)))
+			modeltype = "p";
+			create_fisher_model(i, "Corretto.verify(Time.neverTrue(system.getStaticVar(counter) > 1))");
+			
 			// Save it to disk
 			UML2Helper.save(myModel,
 					URI.createFileURI(TestConfiguration.MODEL_SAVE_PATH)
@@ -160,7 +161,7 @@ public class FisherProtocol {
 
 	}
 
-	private void create_fisher_model(int num_process) {
+	private void create_fisher_model(int num_process, String property) {
 		// Preparazione modello e package
 		myModel = UML2Helper.createModel("Fisher Protocol Model");
 		madesProfile = UML2Helper
@@ -174,6 +175,9 @@ public class FisherProtocol {
 		org.eclipse.uml2.uml.Stereotype systemStereotype = UML2Helper
 				.getMADESVerificationTagsStereotype(madesProfile, "System");
 		systemPackage.applyStereotype(systemStereotype);
+		
+		if (property != null)
+			UML2Helper.createConstraint(systemPackage, "property", property);
 
 		// Class diagram
 		PrimitiveType integer = UML2Helper.createPrimitiveType(myModel,

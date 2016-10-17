@@ -142,12 +142,12 @@ public class SMadesModel {
 		return s;
 	}
 	
-	public boolean hasProperty() {
+	public boolean hasProperty() throws Exception {
 		return this.mm.hasProperty();
 	}
 
-	public BooleanFormulae getProperty() {
-		return new SProperty(this.mm.getProperty()).getSemantics();
+	public BooleanFormulae getProperty() throws Exception {
+		return mm.getProperty();
 	}    
 	
 }

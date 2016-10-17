@@ -12,7 +12,9 @@ Require-Bundle: org.apache.log4j;bundle-version="1.2.15",
  org.correttouml.grammars.booleanexpressions;bundle-version="1.0.0",
  org.correttouml.grammars.statemachineactions;bundle-version="1.0.0",
  org.correttouml.grammars.statemachinetriggers;bundle-version="1.0.0",
- org.eclipse.uml2.uml;bundle-version="4.0.0"
+ org.eclipse.uml2.uml;bundle-version="4.0.0",
+ org.correttouml.grammars.property.tests,
+ org.correttouml.grammars.property
 Export-Package: org.correttouml.uml,
  org.correttouml.uml.diagrams.activity,
  org.correttouml.uml.diagrams.activitydiagram,
@@ -27,4 +29,8 @@ Export-Package: org.correttouml.uml,
  org.correttouml.uml.diagrams.statediagram.triggers,
  org.correttouml.uml.diagrams.timeconstraints,
  org.correttouml.uml.helpers
-Import-Package: org.correttouml.uml2zot
+Import-Package: org.correttouml.grammars.property,
+ org.correttouml.uml2zot,
+ org.correttouml.uml2zot.semantics.expressions,
+ org.correttouml.uml2zot.semantics.util.bool,
+ org.correttouml.uml2zot.semantics.util.trio

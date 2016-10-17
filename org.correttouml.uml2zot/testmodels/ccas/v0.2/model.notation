@@ -469,7 +469,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_A2LAItSQEeSh2fa_VC6TCQ"/>
       </children>
       <element xmi:type="uml:InstanceSpecification" href="model.uml#_QoOlsAN_EeKTXbQztILh3g"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Qod2QQN_EeKTXbQztILh3g" x="280" y="215"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Qod2QQN_EeKTXbQztILh3g" x="266" y="215"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_RaphIAN_EeKTXbQztILh3g" type="2001" fontName="Segoe UI" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RaqIMAN_EeKTXbQztILh3g" source="ShadowFigure">
@@ -1177,7 +1177,7 @@
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I4-6sQOCEeKTXbQztILh3g" id="(0.0,0.4681818181818182)"/>
     </edges>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_4vOzcAOCEeKTXbQztILh3g" type="PapyrusUMLStateMachineDiagram" name="SmDiagram" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_4vOzcAOCEeKTXbQztILh3g" type="PapyrusUMLStateMachineDiagram" name="brakingSM" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_4vOzcQOCEeKTXbQztILh3g" type="2000" fontName="Segoe UI" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_4vOzcgOCEeKTXbQztILh3g" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4vOzcwOCEeKTXbQztILh3g" key="ShadowFigure_Value" value="false"/>
@@ -1189,7 +1189,7 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4vOzdwOCEeKTXbQztILh3g" key="QualifiedNameDepth" value="1000"/>
       </eAnnotations>
       <children xmi:type="notation:DecorationNode" xmi:id="_4vOzeAOCEeKTXbQztILh3g" type="2001">
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4vOzeQOCEeKTXbQztILh3g" width="700" height="15"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4vOzeQOCEeKTXbQztILh3g" width="700" height="16"/>
       </children>
       <children xmi:type="notation:DecorationNode" xmi:id="_4vOzegOCEeKTXbQztILh3g" type="2002">
         <children xmi:type="notation:Shape" xmi:id="_4vOzewOCEeKTXbQztILh3g" type="3000" fontName="Segoe UI" lineColor="0">
@@ -1289,7 +1289,7 @@
           <element xmi:type="uml:Region" href="model.uml#_4vNlUAOCEeKTXbQztILh3g"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4vOzhgOCEeKTXbQztILh3g" width="700" height="287"/>
         </children>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4vOzhwOCEeKTXbQztILh3g" y="15" width="700" height="287"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4vOzhwOCEeKTXbQztILh3g" y="16" width="700" height="287"/>
       </children>
       <children xmi:type="notation:BasicCompartment" xmi:id="_BJZeINSQEeSh2fa_VC6TCQ" visible="false" type="compartment_shape_display">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BJaFMNSQEeSh2fa_VC6TCQ" source="PapyrusCSSForceValue">
@@ -1299,7 +1299,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BJZeItSQEeSh2fa_VC6TCQ"/>
       </children>
       <element xmi:type="uml:StateMachine" href="model.uml#_4N_uoAOCEeKTXbQztILh3g"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4vOziAOCEeKTXbQztILh3g" x="30" y="30" width="700" height="302"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4vOziAOCEeKTXbQztILh3g" x="30" y="30" width="700" height="303"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_4vOziQOCEeKTXbQztILh3g"/>
     <element xmi:type="uml:StateMachine" href="model.uml#_4N_uoAOCEeKTXbQztILh3g"/>
@@ -1348,7 +1348,7 @@
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_FEBl4gODEeKTXbQztILh3g" points="[0, 20, 130, 18]$[0, 55, 130, 53]$[-130, 55, 0, 53]$[-130, 22, 0, 20]"/>
     </edges>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_KoCBAAODEeKTXbQztILh3g" type="PapyrusUMLStateMachineDiagram" name="SmDiagram" measurementUnit="Pixel">
+  <notation:Diagram xmi:id="_KoCBAAODEeKTXbQztILh3g" type="PapyrusUMLStateMachineDiagram" name="controllerSM" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_KoCBAQODEeKTXbQztILh3g" type="2000" fontName="Segoe UI" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KoCBAgODEeKTXbQztILh3g" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KoCBAwODEeKTXbQztILh3g" key="ShadowFigure_Value" value="false"/>

@@ -5,6 +5,9 @@
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
     <packagedElement xmi:type="uml:Package" xmi:id="_QQClADScEeKHnb_Vy6iALg" name="System">
+      <ownedRule xmi:type="uml:Constraint" xmi:id="_YFhTkJRzEeaRo6wfaLZqOA" name="Property">
+        <specification xmi:type="uml:LiteralString" xmi:id="_YFkW4JRzEeaRo6wfaLZqOA" name="propertySpec" value="//(alwf (-> (-P- OBJcashdispenserOPcd_releaseMoney) ([=] (-V- OBJcashdispenserPARAMamount_released) 50)))&#xA;releaseMoney = cashdispenser.call(cd_releaseMoney)&#xA;Corretto.verify(Time.alwaysTrue(releaseMoney => (cashdispenser::cd_releaseMoney.amount_released == 50))"/>
+      </ownedRule>
       <packagedElement xmi:type="uml:Class" xmi:id="_pHW5UDSbEeKHnb_Vy6iALg" name="Bank" classifierBehavior="_o5zaIDTKEeKHnb_Vy6iALg">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_Zf6a0TTREeKiSICNaDv0AA" name="controller" type="_w0gyQDSbEeKHnb_Vy6iALg" association="_Zf6a0DTREeKiSICNaDv0AA">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Zf6a0jTREeKiSICNaDv0AA" value="1"/>

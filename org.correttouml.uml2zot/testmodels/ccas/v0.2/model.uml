@@ -5,6 +5,9 @@
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
     <packagedElement xmi:type="uml:Package" xmi:id="_GdyncAN-EeKTXbQztILh3g" name="CCAS">
+      <ownedRule xmi:type="uml:Constraint" xmi:id="_Tx3uQJIcEea87e8STc3geQ" name="Property">
+        <specification xmi:type="uml:LiteralString" xmi:id="_Tx6xkJIcEea87e8STc3geQ" name="propertySpec" value="smallDistance = sendSensorDistance.getParameter(distance) &lt; 2&#xA;brakingState = brakeS.getState(brakingSM, braking)&#xA;inBraking = brakeS.in(brakingState)&#xA;brakingInTime1 = Time.lasted(smallDistance &amp;&amp; !(system.getSignal(failure)), 52) => Time.withinP(inBraking, 52)&#xA;property1 = Time.alwaysTrue(brakingInTime1)&#xA;brakingInTime2 = Time.lasted(smallDistance &amp;&amp; !(system.getSignal(failure)), 45) => Time.withinP(inBraking, 45)&#xA;property2 = Time.alwaysTrue(brakingInTime2)&#xA;//Corretto.verify(property1)&#xA;Corretto.verify(property2)&#xA;//Corretto.execute()"/>
+      </ownedRule>
       <packagedElement xmi:type="uml:Class" xmi:id="_Z5iOcAN-EeKTXbQztILh3g" name="Radar" classifierBehavior="_KZBcYHpeEeaR4ezXoKL4ew">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_iLJfUAN-EeKTXbQztILh3g" name="bus" type="_c6casAN-EeKTXbQztILh3g" association="_iLKtcAN-EeKTXbQztILh3g">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iLJfUQN-EeKTXbQztILh3g" value="1"/>
@@ -88,7 +91,7 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iykrsgN-EeKTXbQztILh3g" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iykrswN-EeKTXbQztILh3g" value="1"/>
         </ownedAttribute>
-        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_KbjrQAODEeKTXbQztILh3g" name="StateMachine1">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_KbjrQAODEeKTXbQztILh3g" name="controllerSM">
           <region xmi:type="uml:Region" xmi:id="_KoAy4AODEeKTXbQztILh3g" name="Region1">
             <transition xmi:type="uml:Transition" xmi:id="_Uj2J4AODEeKTXbQztILh3g" name="Transition0" source="_LhoigAODEeKTXbQztILh3g" target="_M8hzMAODEeKTXbQztILh3g"/>
             <transition xmi:type="uml:Transition" xmi:id="_WCvw0AODEeKTXbQztILh3g" name="@notifyDistance.call [ { receivedDistance >= 2 } ]" source="_M8hzMAODEeKTXbQztILh3g" target="_M8hzMAODEeKTXbQztILh3g"/>
@@ -111,7 +114,7 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jMMsogN-EeKTXbQztILh3g" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jMMsowN-EeKTXbQztILh3g" value="1"/>
         </ownedAttribute>
-        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_4N_uoAOCEeKTXbQztILh3g" name="StateMachine1">
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_4N_uoAOCEeKTXbQztILh3g" name="brakingSM">
           <region xmi:type="uml:Region" xmi:id="_4vNlUAOCEeKTXbQztILh3g" name="Region1">
             <transition xmi:type="uml:Transition" xmi:id="_9sXb0AOCEeKTXbQztILh3g" name="Transition0" source="_5VHuwAOCEeKTXbQztILh3g" target="_6IhhoAOCEeKTXbQztILh3g"/>
             <transition xmi:type="uml:Transition" xmi:id="__APegAOCEeKTXbQztILh3g" name="@notifyBrake.call" source="_6IhhoAOCEeKTXbQztILh3g" target="_63an8AOCEeKTXbQztILh3g"/>
@@ -131,7 +134,9 @@
         <slot xmi:type="uml:Slot" xmi:id="_jJkZ8AN_EeKTXbQztILh3g" definingFeature="_iLJfUAN-EeKTXbQztILh3g">
           <value xmi:type="uml:InstanceValue" xmi:id="_jJkZ8QN_EeKTXbQztILh3g" name="InstanceValue0" type="_c6casAN-EeKTXbQztILh3g" instance="_TFEbkAN_EeKTXbQztILh3g"/>
         </slot>
-        <slot xmi:type="uml:Slot" xmi:id="_Sfd8sH8MEea02b1gNNvQ5w" definingFeature="_O2ecwH8MEea02b1gNNvQ5w"/>
+        <slot xmi:type="uml:Slot" xmi:id="_Sfd8sH8MEea02b1gNNvQ5w" definingFeature="_O2ecwH8MEea02b1gNNvQ5w">
+          <value xmi:type="uml:LiteralString" xmi:id="_7SZy8JPBEeaNXd9OnphwJw" value="timeVariant"/>
+        </slot>
         <slot xmi:type="uml:Slot" xmi:id="_e4OGAISGEeah-pkLUtOMoA" definingFeature="_bhHAQISGEeah-pkLUtOMoA">
           <value xmi:type="uml:LiteralInteger" xmi:id="_iwBeAISGEeah-pkLUtOMoA"/>
         </slot>

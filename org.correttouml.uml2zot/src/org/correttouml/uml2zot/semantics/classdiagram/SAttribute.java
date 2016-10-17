@@ -22,6 +22,10 @@ import org.correttouml.uml2zot.semantics.util.trio.EQ;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 import org.correttouml.uml2zot.semantics.util.trio.TrioVar;
 import org.correttouml.uml2zot.semantics.util.trio.Yesterday;
+import org.correttouml.uml2zot.tests.helpers.UML2Helper;
+import org.eclipse.uml2.uml.LiteralString;
+import org.eclipse.uml2.uml.UMLFactory;
+import org.eclipse.uml2.uml.internal.resource.UMLHandler;
 
 
 public class SAttribute implements SVariable {
@@ -78,7 +82,8 @@ public class SAttribute implements SVariable {
 					+ new Implies(new Not(orCond), new EQ(
 							this.getPredicate(mades_obj), new Yesterday(
 									this.getPredicate(mades_obj)))) + "\n";
-		}else if (mades_obj.getSlot(mades_attribute).getValueSpecification() != null){
+		}else if (!(mades_obj.getSlot(mades_attribute) != null && 
+				mades_obj.getSlot(mades_attribute).isTimeVariant())){ //If it is not a time variant variable.
 			sem = sem+ new EQ(this.getPredicate(mades_obj), new Yesterday(this.getPredicate(mades_obj))) + "\n";
 		}
 		return sem;
@@ -98,10 +103,11 @@ public class SAttribute implements SVariable {
 					}
 				}
 			}
-			for (OpaqueActionNode opAc: obj.getAD().getOpaqueActions()){
-				if(isActionAssigningAttribute(opAc.getAction(obj)))
-					orCond.addFormulae(new SAssignmentAction((AssignmentAction) opAc.getAction(obj)).getPredicate(obj));
-			}
+			if (obj.getAD() != null)
+				for (OpaqueActionNode opAc: obj.getAD().getOpaqueActions()){
+					if(isActionAssigningAttribute(opAc.getAction(obj)))
+						orCond.addFormulae(new SAssignmentAction((AssignmentAction) opAc.getAction(obj)).getPredicate(obj));
+				}
 		}
 	}
 	
@@ -123,7 +129,7 @@ public class SAttribute implements SVariable {
 			for (OpaqueActionNode opAc: curr_obj.getAD().getOpaqueActions()){
 				if(isActionAssigningAttribute(opAc.getAction(curr_obj)))
 					orCond.addFormulae(new SAssignmentAction((AssignmentAction) opAc.getAction(curr_obj)).getPredicate(curr_obj));
-		}
+			}
 	}	
 
 	private boolean isActionAssigningAttribute(Action act) {

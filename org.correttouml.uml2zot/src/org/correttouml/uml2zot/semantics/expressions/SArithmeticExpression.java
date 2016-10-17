@@ -3,6 +3,7 @@ package org.correttouml.uml2zot.semantics.expressions;
 import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.expressions.*;
 import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
+import org.correttouml.uml2zot.semantics.util.trio.Constant;
 import org.correttouml.uml2zot.semantics.util.trio.Minus;
 import org.correttouml.uml2zot.semantics.util.trio.Multiply;
 import org.correttouml.uml2zot.semantics.util.trio.Next;
@@ -14,7 +15,6 @@ import org.correttouml.uml2zot.semantics.util.trio.Yesterday;
 public class SArithmeticExpression {
 
 	private org.correttouml.grammars.stateMachineActions.EXPRESSION mades_expression;
-
 	public SArithmeticExpression(org.correttouml.grammars.stateMachineActions.EXPRESSION mades_expression){
 		this.mades_expression=mades_expression;
 	}
@@ -57,7 +57,7 @@ public class SArithmeticExpression {
 			}
 		}
 		else{
-			r=new SConstant(parsed.getConstant());
+			r=new SConstant(new Constant(parsed.getConstant()));
 		}
 		return r;
 	}

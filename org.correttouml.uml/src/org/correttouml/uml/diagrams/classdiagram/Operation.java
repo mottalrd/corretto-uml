@@ -26,7 +26,7 @@ public class Operation implements PTermElement {
 	public List<OperationParameter> getParameters(){
 		ArrayList<OperationParameter> parameters=new ArrayList<OperationParameter>();
 		for(org.eclipse.uml2.uml.Parameter p: this.uml_operation.getOwnedParameters()){
-			parameters.add(new OperationParameter(p));
+			parameters.add(new OperationParameter(this, p));
 		}
 		return parameters;
 	}

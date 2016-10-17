@@ -15,6 +15,7 @@ public class Test1 {
 	
 	/** THE CCAS MODEL */
 //	private String MODEL_FILE="testmodels/ccas/v0.1/model.uml";
+//	private String MODEL_FILE="testmodels/ccas/v0.2/model.uml";
 	//private String MODEL_FILE="testmodels/plugin/model.uml";
 	
 	/** SEQUENCE DIAGRAM TESTING */
@@ -29,7 +30,15 @@ public class Test1 {
 //	private String MODEL_FILE="testmodels/testSTD2/model.uml";
 	
 	/** IOD TESTING */
-	//private String MODEL_FILE="testmodels/iod/test1/model.uml";
+//	private String MODEL_FILE="testmodels/iod/test1/model.uml";
+	
+	/** Activity Diagram Testing*/
+//	private String MODEL_FILE="testmodels/AD/DecNode/model.uml";
+//	private String MODEL_FILE="testmodels/AD/AccNode/model.uml";
+//	private String MODEL_FILE="testmodels/AD/Fork/model.uml";
+//	private String MODEL_FILE="testmodels/AD/Assignment/model.uml";
+//	private String MODEL_FILE="testmodels/AD/OPObjectFlow/model.uml";
+//	private String MODEL_FILE="testmodels/AD/ccasDraft/model.uml";
 	
 	/** TXT RADAR MODEL */
 	//private String MODEL_FILE="testmodels/txt/v0.1/model.uml";

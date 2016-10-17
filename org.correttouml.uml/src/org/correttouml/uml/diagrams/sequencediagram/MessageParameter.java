@@ -4,6 +4,7 @@ package org.correttouml.uml.diagrams.sequencediagram;
 import java.util.List;
 
 import org.correttouml.uml.diagrams.classdiagram.Object;
+import org.correttouml.uml.diagrams.classdiagram.Operation;
 import org.correttouml.uml.diagrams.classdiagram.OperationParameter;
 import org.correttouml.uml.diagrams.expressions.Variable;
 import org.correttouml.uml.diagrams.expressions.VariableFactory;
@@ -39,7 +40,7 @@ public class MessageParameter {
         for(int i=0; i<parameters.size(); i++) if(parameters.get(i).equals(this)) paramIndex=i;
         
         org.eclipse.uml2.uml.Operation op=(org.eclipse.uml2.uml.Operation) this.uml_message.getSignature();
-        return new OperationParameter(op.getOwnedParameters().get(paramIndex));
+        return new OperationParameter(new Operation(op), op.getOwnedParameters().get(paramIndex));
 	}
 	
 	@Override
