@@ -46,25 +46,24 @@ public class LeaderElection {
 	public void start() {
 		LOGGER.info("Creating the UML model");
 		String modeltype = "";
-		int numOfProcesses = 3;
-		
-//		(alwf (!! (somf (-P- $OBJidGenerator_STDIdGenerator_SM_STATEEND))))
-		modeltype = "sat"; create_leader_election_model(numOfProcesses, "stateEnd = idGenerator.getState(IdGenerator_SM, end)\n"
-				+ "inStateEnd = idGenerator.in(stateEnd)\n"
-				+ "Corretto.verify(Time.alwaysTrue(!(Time.eventually(inStateEnd))))");
-
-//		(alwf (-> (somf (-P- $OBJidGenerator_STDIdGenerator_SM_STATEEND)) (somf (-P- $OBJmonitor_STDMonitor_SM_STATESTATE_WINNER))))
+		int numOfProcesses = 12;
+		//<SAT> (alwf (!! (somf (-P- $OBJidGenerator_STDIdGenerator_SM_STATEEND))))
+//		modeltype = "sat"; create_leader_election_model(numOfProcesses, "stateEnd = idGenerator.getState(IdGenerator_SM, end)\n"
+//				+ "inStateEnd = idGenerator.in(stateEnd)\n"
+//				+ "Corretto.verify(Time.alwaysTrue(!(Time.eventually(inStateEnd))))");
+		//</SAT>
+		//<P1> (alwf (-> (somf (-P- $OBJidGenerator_STDIdGenerator_SM_STATEEND)) (somf (-P- $OBJmonitor_STDMonitor_SM_STATESTATE_WINNER))))
 //		modeltype = "p1"; create_leader_election_model(numOfProcesses, "stateEnd = idGenerator.getState(IdGenerator_SM, end)\n"
 //				+ "inStateEnd = idGenerator.in(stateEnd)\n"
 //				+ "stateWinner = monitor.getState(Monitor_SM, state_Winner)\n"
 //				+ "inStateWinner = monitor.in(stateWinner)\n"
 //				+ "Corretto.verify(Time.alwaysTrue(Time.eventually(inStateEnd) => Time.eventually(inStateWinner)))");
-		
-////		(alwf (!! (-P- $OBJmonitor_STDMonitor_SM_STATESTATE_ERROR)))
-//		modeltype = "p2"; create_leader_election_model(numOfProcesses, "stateError= monitor.getState(monitor_SM, State_Error)\n"
-//				+ "inStateError = monitor.in(stateError)\n"
-//				+ "Corretto.verify(Time.neverTrue(inStateError))");
-		
+		//</P1>
+		//<P2> (alwf (!! (-P- $OBJmonitor_STDMonitor_SM_STATESTATE_ERROR)))
+		modeltype = "p2"; create_leader_election_model(numOfProcesses, "stateError= monitor.getState(monitor_SM, State_Error)\n"
+				+ "inStateError = monitor.in(stateError)\n"
+				+ "Corretto.verify(Time.neverTrue(inStateError))");
+		//</P2>
 		// Save it to disk
 		UML2Helper.save(myModel,
 				URI.createFileURI(TestConfiguration.MODEL_SAVE_PATH)
@@ -78,7 +77,6 @@ public class LeaderElection {
 		LOGGER.info("Generate the ZOT File");
 		t.generateZOTFile(25, "ae2bvzot", "z3",
 				new File("output/leader-"+modeltype+"-"+numOfProcesses+".lisp").getAbsolutePath());
-			
 	}
 	
 	//Alw(SomF(IDGENERATOR_STATE_END) => SomF(MONITOR_STATE_WINNER))

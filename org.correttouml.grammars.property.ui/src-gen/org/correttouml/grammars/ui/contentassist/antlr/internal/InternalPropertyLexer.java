@@ -38,8 +38,6 @@ public class InternalPropertyLexer extends Lexer {
     public static final int RULE_STRING=14;
     public static final int T__33=33;
     public static final int T__34=34;
-    public static final int T__35=35;
-    public static final int T__36=36;
     public static final int RULE_TRIOOPF=6;
     public static final int RULE_INT=9;
     public static final int RULE_EXECUTE=4;
@@ -209,10 +207,10 @@ public class InternalPropertyLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:18:7: ( '.call(' )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:18:9: '.call('
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:18:7: ( '()' )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:18:9: '()'
             {
-            match(".call("); 
+            match("()"); 
 
 
             }
@@ -230,10 +228,10 @@ public class InternalPropertyLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:19:7: ( 'system.getSignal(' )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:19:9: 'system.getSignal('
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:19:7: ( '!(' )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:19:9: '!('
             {
-            match("system.getSignal("); 
+            match("!("); 
 
 
             }
@@ -251,10 +249,10 @@ public class InternalPropertyLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:20:7: ( '!(' )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:20:9: '!('
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:20:7: ( 'Time.' )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:20:9: 'Time.'
             {
-            match("!("); 
+            match("Time."); 
 
 
             }
@@ -272,11 +270,10 @@ public class InternalPropertyLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:21:7: ( 'Time.' )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:21:9: 'Time.'
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:21:7: ( '(' )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:21:9: '('
             {
-            match("Time."); 
-
+            match('('); 
 
             }
 
@@ -293,10 +290,11 @@ public class InternalPropertyLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:22:7: ( '(' )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:22:9: '('
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:22:7: ( 'Futr(' )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:22:9: 'Futr('
             {
-            match('('); 
+            match("Futr("); 
+
 
             }
 
@@ -313,10 +311,10 @@ public class InternalPropertyLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:23:7: ( 'Futr(' )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:23:9: 'Futr('
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:23:7: ( 'Past(' )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:23:9: 'Past('
             {
-            match("Futr("); 
+            match("Past("); 
 
 
             }
@@ -334,11 +332,10 @@ public class InternalPropertyLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:24:7: ( 'Past(' )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:24:9: 'Past('
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:24:7: ( '.' )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:24:9: '.'
             {
-            match("Past("); 
-
+            match('.'); 
 
             }
 
@@ -355,10 +352,11 @@ public class InternalPropertyLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:25:7: ( '.' )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:25:9: '.'
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:25:7: ( '::' )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:25:9: '::'
             {
-            match('.'); 
+            match("::"); 
+
 
             }
 
@@ -375,29 +373,8 @@ public class InternalPropertyLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:26:7: ( '::' )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:26:9: '::'
-            {
-            match("::"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__34"
-
-    // $ANTLR start "T__35"
-    public final void mT__35() throws RecognitionException {
-        try {
-            int _type = T__35;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:27:7: ( '.getParameter(' )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:27:9: '.getParameter('
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:26:7: ( '.getParameter(' )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:26:9: '.getParameter('
             {
             match(".getParameter("); 
 
@@ -410,36 +387,15 @@ public class InternalPropertyLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__35"
-
-    // $ANTLR start "T__36"
-    public final void mT__36() throws RecognitionException {
-        try {
-            int _type = T__36;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:28:7: ( 'system.getStaticVar(' )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:28:9: 'system.getStaticVar('
-            {
-            match("system.getStaticVar("); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__36"
+    // $ANTLR end "T__34"
 
     // $ANTLR start "RULE_EXECUTE"
     public final void mRULE_EXECUTE() throws RecognitionException {
         try {
             int _type = RULE_EXECUTE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4392:14: ( 'execute()' )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4392:16: 'execute()'
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4134:14: ( 'execute()' )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4134:16: 'execute()'
             {
             match("execute()"); 
 
@@ -459,10 +415,10 @@ public class InternalPropertyLexer extends Lexer {
         try {
             int _type = RULE_TRIOOP2;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4394:14: ( ( '&&' | '||' | '=>' | '<=>' | '->' | '<->' ) )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4394:16: ( '&&' | '||' | '=>' | '<=>' | '->' | '<->' )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4136:14: ( ( '&&' | '||' | '=>' | '<=>' | '->' | '<->' ) )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4136:16: ( '&&' | '||' | '=>' | '<=>' | '->' | '<->' )
             {
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4394:16: ( '&&' | '||' | '=>' | '<=>' | '->' | '<->' )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4136:16: ( '&&' | '||' | '=>' | '<=>' | '->' | '<->' )
             int alt1=6;
             switch ( input.LA(1) ) {
             case '&':
@@ -512,7 +468,7 @@ public class InternalPropertyLexer extends Lexer {
 
             switch (alt1) {
                 case 1 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4394:17: '&&'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4136:17: '&&'
                     {
                     match("&&"); 
 
@@ -520,7 +476,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4394:22: '||'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4136:22: '||'
                     {
                     match("||"); 
 
@@ -528,7 +484,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4394:27: '=>'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4136:27: '=>'
                     {
                     match("=>"); 
 
@@ -536,7 +492,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4394:32: '<=>'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4136:32: '<=>'
                     {
                     match("<=>"); 
 
@@ -544,7 +500,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 5 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4394:38: '->'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4136:38: '->'
                     {
                     match("->"); 
 
@@ -552,7 +508,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 6 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4394:43: '<->'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4136:43: '<->'
                     {
                     match("<->"); 
 
@@ -578,15 +534,15 @@ public class InternalPropertyLexer extends Lexer {
         try {
             int _type = RULE_TRIOOPF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4396:14: ( ( 'alw' | 'always' | 'alwaysTrue' | 'neverFalse' | 'som' | 'atLeastOnce' | 'alwF' | 'alwaysWillBe' | 'somF' | 'eventually' | 'eventuallyWillBe' | 'alwP' | 'historically' | 'alwaysHasBeen' | 'somP' | 'alwaysFalse' | 'neverTrue' ) )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4396:16: ( 'alw' | 'always' | 'alwaysTrue' | 'neverFalse' | 'som' | 'atLeastOnce' | 'alwF' | 'alwaysWillBe' | 'somF' | 'eventually' | 'eventuallyWillBe' | 'alwP' | 'historically' | 'alwaysHasBeen' | 'somP' | 'alwaysFalse' | 'neverTrue' )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4138:14: ( ( 'alw' | 'always' | 'alwaysTrue' | 'neverFalse' | 'som' | 'atLeastOnce' | 'alwF' | 'alwaysWillBe' | 'somF' | 'eventually' | 'eventuallyWillBe' | 'alwP' | 'historically' | 'alwaysHasBeen' | 'somP' | 'alwaysFalse' | 'neverTrue' ) )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4138:16: ( 'alw' | 'always' | 'alwaysTrue' | 'neverFalse' | 'som' | 'atLeastOnce' | 'alwF' | 'alwaysWillBe' | 'somF' | 'eventually' | 'eventuallyWillBe' | 'alwP' | 'historically' | 'alwaysHasBeen' | 'somP' | 'alwaysFalse' | 'neverTrue' )
             {
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4396:16: ( 'alw' | 'always' | 'alwaysTrue' | 'neverFalse' | 'som' | 'atLeastOnce' | 'alwF' | 'alwaysWillBe' | 'somF' | 'eventually' | 'eventuallyWillBe' | 'alwP' | 'historically' | 'alwaysHasBeen' | 'somP' | 'alwaysFalse' | 'neverTrue' )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4138:16: ( 'alw' | 'always' | 'alwaysTrue' | 'neverFalse' | 'som' | 'atLeastOnce' | 'alwF' | 'alwaysWillBe' | 'somF' | 'eventually' | 'eventuallyWillBe' | 'alwP' | 'historically' | 'alwaysHasBeen' | 'somP' | 'alwaysFalse' | 'neverTrue' )
             int alt2=17;
             alt2 = dfa2.predict(input);
             switch (alt2) {
                 case 1 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4396:17: 'alw'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4138:17: 'alw'
                     {
                     match("alw"); 
 
@@ -594,7 +550,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4396:23: 'always'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4138:23: 'always'
                     {
                     match("always"); 
 
@@ -602,7 +558,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4396:32: 'alwaysTrue'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4138:32: 'alwaysTrue'
                     {
                     match("alwaysTrue"); 
 
@@ -610,7 +566,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4396:45: 'neverFalse'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4138:45: 'neverFalse'
                     {
                     match("neverFalse"); 
 
@@ -618,7 +574,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 5 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4396:58: 'som'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4138:58: 'som'
                     {
                     match("som"); 
 
@@ -626,7 +582,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 6 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4396:64: 'atLeastOnce'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4138:64: 'atLeastOnce'
                     {
                     match("atLeastOnce"); 
 
@@ -634,7 +590,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 7 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4396:78: 'alwF'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4138:78: 'alwF'
                     {
                     match("alwF"); 
 
@@ -642,7 +598,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 8 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4396:85: 'alwaysWillBe'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4138:85: 'alwaysWillBe'
                     {
                     match("alwaysWillBe"); 
 
@@ -650,7 +606,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 9 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4396:100: 'somF'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4138:100: 'somF'
                     {
                     match("somF"); 
 
@@ -658,7 +614,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 10 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4396:107: 'eventually'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4138:107: 'eventually'
                     {
                     match("eventually"); 
 
@@ -666,7 +622,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 11 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4396:120: 'eventuallyWillBe'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4138:120: 'eventuallyWillBe'
                     {
                     match("eventuallyWillBe"); 
 
@@ -674,7 +630,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 12 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4396:139: 'alwP'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4138:139: 'alwP'
                     {
                     match("alwP"); 
 
@@ -682,7 +638,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 13 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4396:146: 'historically'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4138:146: 'historically'
                     {
                     match("historically"); 
 
@@ -690,7 +646,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 14 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4396:161: 'alwaysHasBeen'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4138:161: 'alwaysHasBeen'
                     {
                     match("alwaysHasBeen"); 
 
@@ -698,7 +654,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 15 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4396:177: 'somP'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4138:177: 'somP'
                     {
                     match("somP"); 
 
@@ -706,7 +662,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 16 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4396:184: 'alwaysFalse'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4138:184: 'alwaysFalse'
                     {
                     match("alwaysFalse"); 
 
@@ -714,7 +670,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 17 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4396:198: 'neverTrue'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4138:198: 'neverTrue'
                     {
                     match("neverTrue"); 
 
@@ -740,10 +696,10 @@ public class InternalPropertyLexer extends Lexer {
         try {
             int _type = RULE_TRIOOPFF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4398:15: ( ( 'until' | 'since' | 'release' | 'trigger' ) )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4398:17: ( 'until' | 'since' | 'release' | 'trigger' )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4140:15: ( ( 'until' | 'since' | 'release' | 'trigger' ) )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4140:17: ( 'until' | 'since' | 'release' | 'trigger' )
             {
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4398:17: ( 'until' | 'since' | 'release' | 'trigger' )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4140:17: ( 'until' | 'since' | 'release' | 'trigger' )
             int alt3=4;
             switch ( input.LA(1) ) {
             case 'u':
@@ -775,7 +731,7 @@ public class InternalPropertyLexer extends Lexer {
 
             switch (alt3) {
                 case 1 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4398:18: 'until'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4140:18: 'until'
                     {
                     match("until"); 
 
@@ -783,7 +739,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4398:26: 'since'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4140:26: 'since'
                     {
                     match("since"); 
 
@@ -791,7 +747,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4398:34: 'release'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4140:34: 'release'
                     {
                     match("release"); 
 
@@ -799,7 +755,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4398:44: 'trigger'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4140:44: 'trigger'
                     {
                     match("trigger"); 
 
@@ -825,15 +781,15 @@ public class InternalPropertyLexer extends Lexer {
         try {
             int _type = RULE_TRIOOPFN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4400:15: ( ( 'futr' | 'past' | 'withinF' | 'withinP' | 'lasts' | 'lasted' ) )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4400:17: ( 'futr' | 'past' | 'withinF' | 'withinP' | 'lasts' | 'lasted' )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4142:15: ( ( 'futr' | 'past' | 'withinF' | 'withinP' | 'lasts' | 'lasted' ) )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4142:17: ( 'futr' | 'past' | 'withinF' | 'withinP' | 'lasts' | 'lasted' )
             {
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4400:17: ( 'futr' | 'past' | 'withinF' | 'withinP' | 'lasts' | 'lasted' )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4142:17: ( 'futr' | 'past' | 'withinF' | 'withinP' | 'lasts' | 'lasted' )
             int alt4=6;
             alt4 = dfa4.predict(input);
             switch (alt4) {
                 case 1 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4400:18: 'futr'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4142:18: 'futr'
                     {
                     match("futr"); 
 
@@ -841,7 +797,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4400:25: 'past'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4142:25: 'past'
                     {
                     match("past"); 
 
@@ -849,7 +805,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4400:32: 'withinF'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4142:32: 'withinF'
                     {
                     match("withinF"); 
 
@@ -857,7 +813,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4400:42: 'withinP'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4142:42: 'withinP'
                     {
                     match("withinP"); 
 
@@ -865,7 +821,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 5 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4400:52: 'lasts'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4142:52: 'lasts'
                     {
                     match("lasts"); 
 
@@ -873,7 +829,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 6 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4400:60: 'lasted'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4142:60: 'lasted'
                     {
                     match("lasted"); 
 
@@ -899,11 +855,11 @@ public class InternalPropertyLexer extends Lexer {
         try {
             int _type = RULE_FLOAT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4402:12: ( '.' ( '0' .. '9' )+ )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4402:14: '.' ( '0' .. '9' )+
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4144:12: ( '.' ( '0' .. '9' )+ )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4144:14: '.' ( '0' .. '9' )+
             {
             match('.'); 
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4402:18: ( '0' .. '9' )+
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4144:18: ( '0' .. '9' )+
             int cnt5=0;
             loop5:
             do {
@@ -917,7 +873,7 @@ public class InternalPropertyLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4402:19: '0' .. '9'
+            	    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4144:19: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -949,8 +905,8 @@ public class InternalPropertyLexer extends Lexer {
         try {
             int _type = RULE_ARITH_OP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4404:15: ( ( '+' | '-' | '*' | '/' ) )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4404:17: ( '+' | '-' | '*' | '/' )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4146:15: ( ( '+' | '-' | '*' | '/' ) )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4146:17: ( '+' | '-' | '*' | '/' )
             {
             if ( (input.LA(1)>='*' && input.LA(1)<='+')||input.LA(1)=='-'||input.LA(1)=='/' ) {
                 input.consume();
@@ -977,10 +933,10 @@ public class InternalPropertyLexer extends Lexer {
         try {
             int _type = RULE_ARITH_COMPARE_OP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4406:23: ( ( '>' | '>=' | '<' | '<=' | '==' | '!=' ) )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4406:25: ( '>' | '>=' | '<' | '<=' | '==' | '!=' )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4148:23: ( ( '>' | '>=' | '<' | '<=' | '==' | '!=' ) )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4148:25: ( '>' | '>=' | '<' | '<=' | '==' | '!=' )
             {
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4406:25: ( '>' | '>=' | '<' | '<=' | '==' | '!=' )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4148:25: ( '>' | '>=' | '<' | '<=' | '==' | '!=' )
             int alt6=6;
             switch ( input.LA(1) ) {
             case '>':
@@ -1024,14 +980,14 @@ public class InternalPropertyLexer extends Lexer {
 
             switch (alt6) {
                 case 1 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4406:26: '>'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4148:26: '>'
                     {
                     match('>'); 
 
                     }
                     break;
                 case 2 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4406:30: '>='
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4148:30: '>='
                     {
                     match(">="); 
 
@@ -1039,14 +995,14 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4406:35: '<'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4148:35: '<'
                     {
                     match('<'); 
 
                     }
                     break;
                 case 4 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4406:39: '<='
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4148:39: '<='
                     {
                     match("<="); 
 
@@ -1054,7 +1010,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 5 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4406:44: '=='
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4148:44: '=='
                     {
                     match("=="); 
 
@@ -1062,7 +1018,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 6 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4406:49: '!='
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4148:49: '!='
                     {
                     match("!="); 
 
@@ -1088,10 +1044,10 @@ public class InternalPropertyLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4408:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4408:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4150:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4150:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4408:11: ( '^' )?
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4150:11: ( '^' )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1100,7 +1056,7 @@ public class InternalPropertyLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4408:11: '^'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4150:11: '^'
                     {
                     match('^'); 
 
@@ -1118,7 +1074,7 @@ public class InternalPropertyLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4408:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4150:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop8:
             do {
                 int alt8=2;
@@ -1167,10 +1123,10 @@ public class InternalPropertyLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4410:10: ( ( '0' .. '9' )+ )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4410:12: ( '0' .. '9' )+
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4152:10: ( ( '0' .. '9' )+ )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4152:12: ( '0' .. '9' )+
             {
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4410:12: ( '0' .. '9' )+
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4152:12: ( '0' .. '9' )+
             int cnt9=0;
             loop9:
             do {
@@ -1184,7 +1140,7 @@ public class InternalPropertyLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4410:13: '0' .. '9'
+            	    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4152:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1216,10 +1172,10 @@ public class InternalPropertyLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4412:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4412:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4154:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4154:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4412:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4154:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1237,10 +1193,10 @@ public class InternalPropertyLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4412:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4154:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4412:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4154:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop10:
                     do {
                         int alt10=3;
@@ -1256,7 +1212,7 @@ public class InternalPropertyLexer extends Lexer {
 
                         switch (alt10) {
                     	case 1 :
-                    	    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4412:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4154:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1272,7 +1228,7 @@ public class InternalPropertyLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4412:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4154:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1297,10 +1253,10 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4412:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4154:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4412:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4154:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop11:
                     do {
                         int alt11=3;
@@ -1316,7 +1272,7 @@ public class InternalPropertyLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4412:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4154:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1332,7 +1288,7 @@ public class InternalPropertyLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4412:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4154:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1375,12 +1331,12 @@ public class InternalPropertyLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4414:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4414:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4156:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4156:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4414:24: ( options {greedy=false; } : . )*
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4156:24: ( options {greedy=false; } : . )*
             loop13:
             do {
                 int alt13=2;
@@ -1405,7 +1361,7 @@ public class InternalPropertyLexer extends Lexer {
 
                 switch (alt13) {
             	case 1 :
-            	    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4414:52: .
+            	    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4156:52: .
             	    {
             	    matchAny(); 
 
@@ -1435,12 +1391,12 @@ public class InternalPropertyLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4416:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4416:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4158:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4158:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4416:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4158:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop14:
             do {
                 int alt14=2;
@@ -1453,7 +1409,7 @@ public class InternalPropertyLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4416:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4158:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1473,7 +1429,7 @@ public class InternalPropertyLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4416:40: ( ( '\\r' )? '\\n' )?
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4158:40: ( ( '\\r' )? '\\n' )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -1482,9 +1438,9 @@ public class InternalPropertyLexer extends Lexer {
             }
             switch (alt16) {
                 case 1 :
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4416:41: ( '\\r' )? '\\n'
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4158:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4416:41: ( '\\r' )?
+                    // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4158:41: ( '\\r' )?
                     int alt15=2;
                     int LA15_0 = input.LA(1);
 
@@ -1493,7 +1449,7 @@ public class InternalPropertyLexer extends Lexer {
                     }
                     switch (alt15) {
                         case 1 :
-                            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4416:41: '\\r'
+                            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4158:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1525,10 +1481,10 @@ public class InternalPropertyLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4418:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4418:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4160:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4160:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4418:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4160:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt17=0;
             loop17:
             do {
@@ -1582,8 +1538,8 @@ public class InternalPropertyLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4420:16: ( . )
-            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4420:18: .
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4162:16: ( . )
+            // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:4162:18: .
             {
             matchAny(); 
 
@@ -1598,8 +1554,8 @@ public class InternalPropertyLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:8: ( T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | RULE_EXECUTE | RULE_TRIOOP2 | RULE_TRIOOPF | RULE_TRIOOPFF | RULE_TRIOOPFN | RULE_FLOAT | RULE_ARITH_OP | RULE_ARITH_COMPARE_OP | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt18=33;
+        // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:8: ( T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | RULE_EXECUTE | RULE_TRIOOP2 | RULE_TRIOOPF | RULE_TRIOOPFF | RULE_TRIOOPFN | RULE_FLOAT | RULE_ARITH_OP | RULE_ARITH_COMPARE_OP | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt18=31;
         alt18 = dfa18.predict(input);
         switch (alt18) {
             case 1 :
@@ -1715,119 +1671,105 @@ public class InternalPropertyLexer extends Lexer {
                 }
                 break;
             case 17 :
-                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:106: T__35
-                {
-                mT__35(); 
-
-                }
-                break;
-            case 18 :
-                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:112: T__36
-                {
-                mT__36(); 
-
-                }
-                break;
-            case 19 :
-                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:118: RULE_EXECUTE
+                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:106: RULE_EXECUTE
                 {
                 mRULE_EXECUTE(); 
 
                 }
                 break;
-            case 20 :
-                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:131: RULE_TRIOOP2
+            case 18 :
+                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:119: RULE_TRIOOP2
                 {
                 mRULE_TRIOOP2(); 
 
                 }
                 break;
-            case 21 :
-                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:144: RULE_TRIOOPF
+            case 19 :
+                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:132: RULE_TRIOOPF
                 {
                 mRULE_TRIOOPF(); 
 
                 }
                 break;
-            case 22 :
-                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:157: RULE_TRIOOPFF
+            case 20 :
+                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:145: RULE_TRIOOPFF
                 {
                 mRULE_TRIOOPFF(); 
 
                 }
                 break;
-            case 23 :
-                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:171: RULE_TRIOOPFN
+            case 21 :
+                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:159: RULE_TRIOOPFN
                 {
                 mRULE_TRIOOPFN(); 
 
                 }
                 break;
-            case 24 :
-                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:185: RULE_FLOAT
+            case 22 :
+                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:173: RULE_FLOAT
                 {
                 mRULE_FLOAT(); 
 
                 }
                 break;
-            case 25 :
-                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:196: RULE_ARITH_OP
+            case 23 :
+                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:184: RULE_ARITH_OP
                 {
                 mRULE_ARITH_OP(); 
 
                 }
                 break;
-            case 26 :
-                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:210: RULE_ARITH_COMPARE_OP
+            case 24 :
+                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:198: RULE_ARITH_COMPARE_OP
                 {
                 mRULE_ARITH_COMPARE_OP(); 
 
                 }
                 break;
-            case 27 :
-                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:232: RULE_ID
+            case 25 :
+                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:220: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 28 :
-                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:240: RULE_INT
+            case 26 :
+                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:228: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 29 :
-                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:249: RULE_STRING
+            case 27 :
+                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:237: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 30 :
-                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:261: RULE_ML_COMMENT
+            case 28 :
+                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:249: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 31 :
-                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:277: RULE_SL_COMMENT
+            case 29 :
+                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:265: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 32 :
-                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:293: RULE_WS
+            case 30 :
+                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:281: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 33 :
-                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:301: RULE_ANY_OTHER
+            case 31 :
+                // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:289: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1937,7 +1879,7 @@ public class InternalPropertyLexer extends Lexer {
             this.transition = DFA2_transition;
         }
         public String getDescription() {
-            return "4396:16: ( 'alw' | 'always' | 'alwaysTrue' | 'neverFalse' | 'som' | 'atLeastOnce' | 'alwF' | 'alwaysWillBe' | 'somF' | 'eventually' | 'eventuallyWillBe' | 'alwP' | 'historically' | 'alwaysHasBeen' | 'somP' | 'alwaysFalse' | 'neverTrue' )";
+            return "4138:16: ( 'alw' | 'always' | 'alwaysTrue' | 'neverFalse' | 'som' | 'atLeastOnce' | 'alwF' | 'alwaysWillBe' | 'somF' | 'eventually' | 'eventuallyWillBe' | 'alwP' | 'historically' | 'alwaysHasBeen' | 'somP' | 'alwaysFalse' | 'neverTrue' )";
         }
     }
     static final String DFA4_eotS =
@@ -2004,98 +1946,95 @@ public class InternalPropertyLexer extends Lexer {
             this.transition = DFA4_transition;
         }
         public String getDescription() {
-            return "4400:17: ( 'futr' | 'past' | 'withinF' | 'withinP' | 'lasts' | 'lasted' )";
+            return "4142:17: ( 'futr' | 'past' | 'withinF' | 'withinP' | 'lasts' | 'lasted' )";
         }
     }
     static final String DFA18_eotS =
-        "\1\uffff\2\50\1\uffff\1\55\1\61\1\uffff\1\50\1\46\1\50\1\uffff\2"+
-        "\50\1\46\1\50\2\46\1\54\1\100\12\50\1\100\1\uffff\1\46\2\uffff\2"+
-        "\46\3\uffff\1\50\1\uffff\1\50\12\uffff\3\50\1\uffff\1\50\1\uffff"+
-        "\2\50\1\uffff\2\50\1\54\1\uffff\13\50\5\uffff\2\50\1\uffff\1\50"+
-        "\1\155\6\50\1\155\14\50\1\uffff\1\50\2\155\1\uffff\7\50\2\155\6"+
-        "\50\2\u0093\4\50\2\uffff\1\50\1\u009a\3\uffff\6\50\1\u009a\2\50"+
-        "\1\uffff\1\50\1\u0093\4\50\1\uffff\2\50\1\155\7\50\1\u0093\1\50"+
-        "\2\uffff\12\50\2\u009a\2\u0093\1\50\2\uffff\11\50\2\uffff\7\50\1"+
-        "\155\1\50\1\uffff\2\155\4\50\1\155\1\50\1\uffff\3\50\2\155\1\50"+
-        "\2\uffff\1\50\1\155\1\50\1\155\1\50\1\155\2\50\1\155";
+        "\1\uffff\2\50\1\uffff\1\55\1\60\1\uffff\1\64\1\46\3\50\1\46\1\50"+
+        "\2\46\1\54\1\75\13\50\1\75\1\uffff\1\46\2\uffff\2\46\3\uffff\1\50"+
+        "\1\uffff\1\50\14\uffff\3\50\1\uffff\2\50\1\54\1\uffff\15\50\5\uffff"+
+        "\2\50\1\uffff\5\50\1\160\2\50\1\160\13\50\1\uffff\6\50\2\160\1\uffff"+
+        "\2\50\2\160\5\50\2\u008f\4\50\5\uffff\5\50\1\u009b\1\50\1\u009b"+
+        "\2\50\1\uffff\1\50\1\u008f\5\50\1\160\3\50\1\uffff\4\50\1\u008f"+
+        "\1\50\1\uffff\12\50\2\u009b\2\u008f\1\50\1\uffff\11\50\1\uffff\7"+
+        "\50\1\160\1\50\2\160\4\50\1\160\4\50\2\160\2\50\1\160\1\50\1\160"+
+        "\1\50\1\160\2\50\1\160";
     static final String DFA18_eofS =
-        "\u00e9\uffff";
+        "\u00dd\uffff";
     static final String DFA18_minS =
-        "\1\0\1\157\1\145\1\uffff\1\75\1\60\1\uffff\1\151\1\50\1\151\1\uffff"+
-        "\1\165\1\141\1\72\1\166\1\46\1\174\1\55\1\76\1\154\1\145\1\151\1"+
-        "\156\1\145\1\162\1\165\1\141\1\151\1\141\1\52\1\uffff\1\101\2\uffff"+
-        "\2\0\3\uffff\1\162\1\uffff\1\162\4\uffff\1\145\5\uffff\1\163\1\155"+
-        "\1\156\1\uffff\1\155\1\uffff\1\164\1\163\1\uffff\2\145\1\76\1\uffff"+
-        "\1\167\1\114\1\166\1\163\1\164\1\154\1\151\1\164\1\163\1\164\1\163"+
-        "\5\uffff\1\162\1\151\2\164\1\60\1\143\1\145\1\162\1\164\1\143\1"+
-        "\156\1\60\2\145\1\164\1\151\1\145\1\147\1\162\1\164\1\150\1\164"+
-        "\1\145\1\146\1\120\1\145\2\60\1\uffff\1\145\1\56\2\50\1\165\1\164"+
-        "\1\171\2\60\1\141\1\162\1\157\1\154\1\141\1\147\2\60\1\151\1\145"+
-        "\1\164\1\171\2\uffff\1\155\1\60\3\uffff\1\164\1\165\2\163\1\106"+
-        "\1\162\1\60\1\163\1\145\1\uffff\1\156\1\60\1\144\1\164\1\50\1\56"+
-        "\1\uffff\1\145\1\141\1\60\1\164\1\141\1\162\1\151\1\145\1\162\1"+
-        "\106\1\60\1\157\1\uffff\1\147\1\50\1\154\1\162\1\151\2\141\1\117"+
-        "\1\154\1\165\1\143\4\60\1\56\1\145\1\uffff\1\154\1\165\1\154\1\163"+
-        "\1\154\1\156\1\163\1\145\1\141\1\uffff\1\164\1\171\1\145\1\154\1"+
-        "\102\1\163\1\143\1\145\1\60\1\154\1\123\2\60\1\102\3\145\1\60\1"+
-        "\154\2\151\2\145\2\60\1\171\2\uffff\1\154\1\60\1\156\1\60\1\154"+
-        "\1\60\1\102\1\145\1\60";
+        "\1\0\1\157\1\145\1\uffff\1\75\1\60\1\uffff\1\51\1\50\1\151\1\165"+
+        "\1\141\1\72\1\166\1\46\1\174\1\55\1\76\1\154\1\145\2\151\1\156\1"+
+        "\145\1\162\1\165\1\141\1\151\1\141\1\52\1\uffff\1\101\2\uffff\2"+
+        "\0\3\uffff\1\162\1\uffff\1\162\4\uffff\1\145\7\uffff\1\155\1\164"+
+        "\1\163\1\uffff\2\145\1\76\1\uffff\1\167\1\114\1\166\1\155\1\156"+
+        "\1\163\1\164\1\154\1\151\1\164\1\163\1\164\1\163\5\uffff\1\162\1"+
+        "\151\1\164\1\145\1\162\1\164\1\143\1\156\1\60\2\145\1\60\1\143\1"+
+        "\164\1\151\1\145\1\147\1\162\1\164\1\150\1\164\1\145\1\146\1\120"+
+        "\1\56\2\50\1\165\1\164\1\171\2\60\1\uffff\1\141\1\162\2\60\1\145"+
+        "\1\157\1\154\1\141\1\147\2\60\1\151\1\145\1\164\1\171\5\uffff\1"+
+        "\164\1\165\2\163\1\106\1\60\1\162\1\60\1\163\1\145\1\uffff\1\156"+
+        "\1\60\1\144\1\164\1\50\1\145\1\141\1\60\1\164\1\141\1\162\1\uffff"+
+        "\1\151\1\145\1\162\1\106\1\60\1\157\1\uffff\1\50\1\154\1\162\1\151"+
+        "\2\141\1\117\1\154\1\165\1\143\4\60\1\56\1\uffff\1\154\1\165\1\154"+
+        "\1\163\1\154\1\156\1\163\1\145\1\141\1\uffff\1\171\1\145\1\154\1"+
+        "\102\1\163\1\143\1\145\1\60\1\154\2\60\1\102\3\145\1\60\1\154\1"+
+        "\151\2\145\2\60\1\171\1\154\1\60\1\156\1\60\1\154\1\60\1\102\1\145"+
+        "\1\60";
     static final String DFA18_maxS =
-        "\1\uffff\1\157\1\145\1\uffff\1\76\1\151\1\uffff\1\171\1\75\1\151"+
-        "\1\uffff\1\165\1\141\1\72\1\170\1\46\1\174\1\75\1\76\1\164\1\145"+
-        "\1\151\1\156\1\145\1\162\1\165\1\141\1\151\1\141\1\57\1\uffff\1"+
-        "\172\2\uffff\2\uffff\3\uffff\1\162\1\uffff\1\162\4\uffff\1\145\5"+
-        "\uffff\1\163\1\155\1\156\1\uffff\1\155\1\uffff\1\164\1\163\1\uffff"+
-        "\2\145\1\76\1\uffff\1\167\1\114\1\166\1\163\1\164\1\154\1\151\1"+
-        "\164\1\163\1\164\1\163\5\uffff\1\162\1\151\2\164\1\172\1\143\1\145"+
-        "\1\162\1\164\1\143\1\156\1\172\2\145\1\164\1\151\1\145\1\147\1\162"+
-        "\1\164\1\150\1\164\1\145\1\146\1\123\1\145\2\172\1\uffff\1\145\1"+
-        "\56\2\50\1\165\1\164\1\171\2\172\1\141\1\162\1\157\1\154\1\141\1"+
-        "\147\2\172\1\151\1\163\1\164\1\171\2\uffff\1\155\1\172\3\uffff\1"+
-        "\164\1\165\2\163\1\124\1\162\1\172\1\163\1\145\1\uffff\1\156\1\172"+
-        "\1\144\1\164\1\50\1\56\1\uffff\1\145\1\141\1\172\1\164\1\141\1\162"+
-        "\1\151\1\145\1\162\1\120\1\172\1\157\1\uffff\1\147\1\50\1\154\1"+
-        "\162\1\151\2\141\1\117\1\154\1\165\1\143\4\172\1\56\1\145\1\uffff"+
-        "\1\154\1\165\1\154\1\163\1\154\1\156\1\163\1\145\1\141\1\uffff\1"+
-        "\164\1\171\1\145\1\154\1\102\1\163\1\143\1\145\1\172\1\154\1\123"+
-        "\2\172\1\102\3\145\1\172\1\154\1\164\1\151\2\145\2\172\1\171\2\uffff"+
-        "\1\154\1\172\1\156\1\172\1\154\1\172\1\102\1\145\1\172";
+        "\1\uffff\1\157\1\145\1\uffff\1\76\1\151\1\uffff\1\51\1\75\1\151"+
+        "\1\165\1\141\1\72\1\170\1\46\1\174\1\75\1\76\1\164\1\145\1\157\1"+
+        "\151\1\156\1\145\1\162\1\165\1\141\1\151\1\141\1\57\1\uffff\1\172"+
+        "\2\uffff\2\uffff\3\uffff\1\162\1\uffff\1\162\4\uffff\1\145\7\uffff"+
+        "\1\155\1\164\1\163\1\uffff\2\145\1\76\1\uffff\1\167\1\114\1\166"+
+        "\1\155\1\156\1\163\1\164\1\154\1\151\1\164\1\163\1\164\1\163\5\uffff"+
+        "\1\162\1\151\1\164\1\145\1\162\1\164\1\143\1\156\1\172\2\145\1\172"+
+        "\1\143\1\164\1\151\1\145\1\147\1\162\1\164\1\150\1\164\1\145\1\146"+
+        "\1\123\1\56\2\50\1\165\1\164\1\171\2\172\1\uffff\1\141\1\162\2\172"+
+        "\1\145\1\157\1\154\1\141\1\147\2\172\1\151\1\163\1\164\1\171\5\uffff"+
+        "\1\164\1\165\2\163\1\124\1\172\1\162\1\172\1\163\1\145\1\uffff\1"+
+        "\156\1\172\1\144\1\164\1\50\1\145\1\141\1\172\1\164\1\141\1\162"+
+        "\1\uffff\1\151\1\145\1\162\1\120\1\172\1\157\1\uffff\1\50\1\154"+
+        "\1\162\1\151\2\141\1\117\1\154\1\165\1\143\4\172\1\56\1\uffff\1"+
+        "\154\1\165\1\154\1\163\1\154\1\156\1\163\1\145\1\141\1\uffff\1\171"+
+        "\1\145\1\154\1\102\1\163\1\143\1\145\1\172\1\154\2\172\1\102\3\145"+
+        "\1\172\1\154\1\151\2\145\2\172\1\171\1\154\1\172\1\156\1\172\1\154"+
+        "\1\172\1\102\1\145\1\172";
     static final String DFA18_acceptS =
-        "\3\uffff\1\3\2\uffff\1\6\3\uffff\1\14\23\uffff\1\32\1\uffff\1\33"+
-        "\1\34\2\uffff\1\31\1\40\1\41\1\uffff\1\33\1\uffff\1\3\1\24\1\32"+
-        "\1\4\1\uffff\1\7\1\10\1\17\1\30\1\6\3\uffff\1\12\1\uffff\1\14\2"+
-        "\uffff\1\20\3\uffff\1\31\13\uffff\1\36\1\37\1\34\1\35\1\40\34\uffff"+
-        "\1\25\25\uffff\1\5\1\21\2\uffff\1\13\1\15\1\16\11\uffff\1\27\6\uffff"+
-        "\1\26\14\uffff\1\2\21\uffff\1\23\11\uffff\1\1\32\uffff\1\11\1\22"+
-        "\11\uffff";
+        "\3\uffff\1\3\2\uffff\1\6\27\uffff\1\30\1\uffff\1\31\1\32\2\uffff"+
+        "\1\27\1\36\1\37\1\uffff\1\31\1\uffff\1\3\1\22\1\30\1\4\1\uffff\1"+
+        "\7\1\16\1\26\1\6\1\10\1\13\1\11\3\uffff\1\17\3\uffff\1\27\15\uffff"+
+        "\1\34\1\35\1\32\1\33\1\36\40\uffff\1\23\17\uffff\1\5\1\20\1\12\1"+
+        "\14\1\15\12\uffff\1\25\13\uffff\1\24\6\uffff\1\2\17\uffff\1\21\11"+
+        "\uffff\1\1\40\uffff";
     static final String DFA18_specialS =
-        "\1\0\41\uffff\1\2\1\1\u00c5\uffff}>";
+        "\1\1\41\uffff\1\2\1\0\u00b9\uffff}>";
     static final String[] DFA18_transitionS = {
-            "\11\46\2\45\2\46\1\45\22\46\1\45\1\10\1\42\3\46\1\17\1\43\1"+
-            "\12\1\3\2\44\1\6\1\22\1\5\1\35\12\41\1\15\1\46\1\21\1\4\1\36"+
-            "\2\46\2\40\1\1\2\40\1\13\11\40\1\14\3\40\1\11\6\40\3\46\1\37"+
-            "\1\40\1\46\1\23\3\40\1\16\1\31\1\40\1\25\3\40\1\34\1\40\1\24"+
-            "\1\40\1\32\1\40\1\27\1\7\1\30\1\26\1\2\1\33\3\40\1\46\1\20\uff83"+
-            "\46",
+            "\11\46\2\45\2\46\1\45\22\46\1\45\1\10\1\42\3\46\1\16\1\43\1"+
+            "\7\1\3\2\44\1\6\1\21\1\5\1\35\12\41\1\14\1\46\1\20\1\4\1\36"+
+            "\2\46\2\40\1\1\2\40\1\12\11\40\1\13\3\40\1\11\6\40\3\46\1\37"+
+            "\1\40\1\46\1\22\3\40\1\15\1\31\1\40\1\25\3\40\1\34\1\40\1\23"+
+            "\1\40\1\32\1\40\1\27\1\24\1\30\1\26\1\2\1\33\3\40\1\46\1\17"+
+            "\uff83\46",
             "\1\47",
             "\1\51",
             "",
             "\1\54\1\53",
-            "\12\62\51\uffff\1\60\3\uffff\1\56\1\uffff\1\57",
+            "\12\61\55\uffff\1\56\1\uffff\1\57",
             "",
-            "\1\66\5\uffff\1\65\11\uffff\1\64",
-            "\1\67\24\uffff\1\54",
+            "\1\63",
+            "\1\65\24\uffff\1\54",
+            "\1\66",
+            "\1\67",
             "\1\70",
-            "",
-            "\1\72",
-            "\1\73",
-            "\1\74",
-            "\1\76\1\uffff\1\75",
+            "\1\71",
+            "\1\73\1\uffff\1\72",
             "\1\53",
             "\1\53",
-            "\1\53\17\uffff\1\77",
+            "\1\53\17\uffff\1\74",
             "\1\53",
-            "\1\101\7\uffff\1\102",
+            "\1\76\7\uffff\1\77",
+            "\1\100",
+            "\1\102\5\uffff\1\101",
             "\1\103",
             "\1\104",
             "\1\105",
@@ -2104,43 +2043,43 @@ public class InternalPropertyLexer extends Lexer {
             "\1\110",
             "\1\111",
             "\1\112",
-            "\1\113",
-            "\1\114\4\uffff\1\115",
+            "\1\113\4\uffff\1\114",
             "",
             "\32\50\4\uffff\1\50\1\uffff\32\50",
             "",
             "",
-            "\0\117",
-            "\0\117",
+            "\0\116",
+            "\0\116",
             "",
             "",
+            "",
+            "\1\120",
             "",
             "\1\121",
+            "",
+            "",
+            "",
             "",
             "\1\122",
             "",
             "",
             "",
             "",
+            "",
+            "",
+            "",
             "\1\123",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\124",
             "\1\125",
-            "\1\126",
             "",
+            "\1\126",
             "\1\127",
+            "\1\53",
             "",
             "\1\130",
             "\1\131",
-            "",
             "\1\132",
             "\1\133",
-            "\1\53",
-            "",
             "\1\134",
             "\1\135",
             "\1\136",
@@ -2150,27 +2089,27 @@ public class InternalPropertyLexer extends Lexer {
             "\1\142",
             "\1\143",
             "\1\144",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\145",
             "\1\146",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\147",
             "\1\150",
             "\1\151",
             "\1\152",
-            "\12\50\7\uffff\5\50\1\153\11\50\1\154\12\50\4\uffff\1\50\1"+
-            "\uffff\32\50",
-            "\1\156",
-            "\1\157",
-            "\1\160",
+            "\1\153",
+            "\1\154",
+            "\12\50\7\uffff\5\50\1\156\11\50\1\157\12\50\4\uffff\1\50\1"+
+            "\uffff\1\155\31\50",
             "\1\161",
             "\1\162",
-            "\1\163",
-            "\12\50\7\uffff\5\50\1\165\11\50\1\166\12\50\4\uffff\1\50\1"+
-            "\uffff\1\164\31\50",
+            "\12\50\7\uffff\5\50\1\163\11\50\1\164\12\50\4\uffff\1\50\1"+
+            "\uffff\32\50",
+            "\1\165",
+            "\1\166",
             "\1\167",
             "\1\170",
             "\1\171",
@@ -2180,92 +2119,93 @@ public class InternalPropertyLexer extends Lexer {
             "\1\175",
             "\1\176",
             "\1\177",
-            "\1\u0080",
-            "\1\u0081",
+            "\1\u0081\2\uffff\1\u0080",
             "\1\u0082",
-            "\1\u0084\2\uffff\1\u0083",
+            "\1\u0083",
+            "\1\u0084",
             "\1\u0085",
+            "\1\u0086",
+            "\1\u0087",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "",
-            "\1\u0086",
-            "\1\u0087",
             "\1\u0088",
             "\1\u0089",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u008a",
             "\1\u008b",
             "\1\u008c",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u008d",
             "\1\u008e",
-            "\1\u008f",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u0090",
-            "\1\u0091",
-            "\1\u0092",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u0092\15\uffff\1\u0091",
+            "\1\u0093",
             "\1\u0094",
-            "\1\u0096\15\uffff\1\u0095",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u0095",
+            "\1\u0096",
             "\1\u0097",
             "\1\u0098",
-            "",
-            "",
-            "\1\u0099",
+            "\1\u0099\15\uffff\1\u009a",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "",
-            "",
-            "",
-            "\1\u009b",
             "\1\u009c",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u009d",
             "\1\u009e",
-            "\1\u009f\15\uffff\1\u00a0",
-            "\1\u00a1",
+            "",
+            "\1\u009f",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u00a0",
+            "\1\u00a1",
             "\1\u00a2",
             "\1\u00a3",
-            "",
             "\1\u00a4",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u00a5",
-            "\1\u00a6",
-            "\1\u00a7",
-            "\1\u00a8",
-            "",
+            "\12\50\7\uffff\5\50\1\u00a8\1\50\1\u00a7\13\50\1\u00a5\2\50"+
+            "\1\u00a6\3\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u00a9",
             "\1\u00aa",
-            "\12\50\7\uffff\5\50\1\u00ae\1\50\1\u00ad\13\50\1\u00ab\2\50"+
-            "\1\u00ac\3\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u00af",
-            "\1\u00b0",
+            "\1\u00ab",
+            "",
+            "\1\u00ac",
+            "\1\u00ad",
+            "\1\u00ae",
+            "\1\u00af\11\uffff\1\u00b0",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u00b1",
+            "",
             "\1\u00b2",
             "\1\u00b3",
             "\1\u00b4",
-            "\1\u00b5\11\uffff\1\u00b6",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u00b5",
+            "\1\u00b6",
             "\1\u00b7",
-            "",
             "\1\u00b8",
             "\1\u00b9",
             "\1\u00ba",
             "\1\u00bb",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u00bc",
+            "",
             "\1\u00bd",
             "\1\u00be",
             "\1\u00bf",
             "\1\u00c0",
             "\1\u00c1",
             "\1\u00c2",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u00c3",
             "\1\u00c4",
-            "",
             "\1\u00c5",
+            "",
             "\1\u00c6",
             "\1\u00c7",
             "\1\u00c8",
@@ -2273,44 +2213,30 @@ public class InternalPropertyLexer extends Lexer {
             "\1\u00ca",
             "\1\u00cb",
             "\1\u00cc",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u00cd",
-            "",
-            "\1\u00ce",
+            "\12\50\7\uffff\26\50\1\u00ce\3\50\4\uffff\1\50\1\uffff\32\50",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u00cf",
             "\1\u00d0",
             "\1\u00d1",
             "\1\u00d2",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u00d3",
             "\1\u00d4",
             "\1\u00d5",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u00d6",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u00d7",
-            "\12\50\7\uffff\26\50\1\u00d8\3\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u00d8",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u00d9",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u00da",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u00db",
             "\1\u00dc",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u00dd",
-            "\1\u00de\12\uffff\1\u00df",
-            "\1\u00e0",
-            "\1\u00e1",
-            "\1\u00e2",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u00e3",
-            "",
-            "",
-            "\1\u00e4",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u00e5",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u00e6",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u00e7",
-            "\1\u00e8",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50"
     };
 
@@ -2344,13 +2270,23 @@ public class InternalPropertyLexer extends Lexer {
             this.transition = DFA18_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | RULE_EXECUTE | RULE_TRIOOP2 | RULE_TRIOOPF | RULE_TRIOOPFF | RULE_TRIOOPFN | RULE_FLOAT | RULE_ARITH_OP | RULE_ARITH_COMPARE_OP | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | RULE_EXECUTE | RULE_TRIOOP2 | RULE_TRIOOPF | RULE_TRIOOPFF | RULE_TRIOOPFN | RULE_FLOAT | RULE_ARITH_OP | RULE_ARITH_COMPARE_OP | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
+                        int LA18_35 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA18_35>='\u0000' && LA18_35<='\uFFFF')) ) {s = 78;}
+
+                        else s = 38;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
                         int LA18_0 = input.LA(1);
 
                         s = -1;
@@ -2366,33 +2302,33 @@ public class InternalPropertyLexer extends Lexer {
 
                         else if ( (LA18_0==',') ) {s = 6;}
 
-                        else if ( (LA18_0=='s') ) {s = 7;}
+                        else if ( (LA18_0=='(') ) {s = 7;}
 
                         else if ( (LA18_0=='!') ) {s = 8;}
 
                         else if ( (LA18_0=='T') ) {s = 9;}
 
-                        else if ( (LA18_0=='(') ) {s = 10;}
+                        else if ( (LA18_0=='F') ) {s = 10;}
 
-                        else if ( (LA18_0=='F') ) {s = 11;}
+                        else if ( (LA18_0=='P') ) {s = 11;}
 
-                        else if ( (LA18_0=='P') ) {s = 12;}
+                        else if ( (LA18_0==':') ) {s = 12;}
 
-                        else if ( (LA18_0==':') ) {s = 13;}
+                        else if ( (LA18_0=='e') ) {s = 13;}
 
-                        else if ( (LA18_0=='e') ) {s = 14;}
+                        else if ( (LA18_0=='&') ) {s = 14;}
 
-                        else if ( (LA18_0=='&') ) {s = 15;}
+                        else if ( (LA18_0=='|') ) {s = 15;}
 
-                        else if ( (LA18_0=='|') ) {s = 16;}
+                        else if ( (LA18_0=='<') ) {s = 16;}
 
-                        else if ( (LA18_0=='<') ) {s = 17;}
+                        else if ( (LA18_0=='-') ) {s = 17;}
 
-                        else if ( (LA18_0=='-') ) {s = 18;}
+                        else if ( (LA18_0=='a') ) {s = 18;}
 
-                        else if ( (LA18_0=='a') ) {s = 19;}
+                        else if ( (LA18_0=='n') ) {s = 19;}
 
-                        else if ( (LA18_0=='n') ) {s = 20;}
+                        else if ( (LA18_0=='s') ) {s = 20;}
 
                         else if ( (LA18_0=='h') ) {s = 21;}
 
@@ -2432,21 +2368,11 @@ public class InternalPropertyLexer extends Lexer {
 
                         if ( s>=0 ) return s;
                         break;
-                    case 1 : 
-                        int LA18_35 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA18_35>='\u0000' && LA18_35<='\uFFFF')) ) {s = 79;}
-
-                        else s = 38;
-
-                        if ( s>=0 ) return s;
-                        break;
                     case 2 : 
                         int LA18_34 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA18_34>='\u0000' && LA18_34<='\uFFFF')) ) {s = 79;}
+                        if ( ((LA18_34>='\u0000' && LA18_34<='\uFFFF')) ) {s = 78;}
 
                         else s = 38;
 

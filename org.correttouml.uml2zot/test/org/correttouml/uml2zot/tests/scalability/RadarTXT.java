@@ -19,24 +19,25 @@ public class RadarTXT {
 	private static final Logger LOGGER = Logger.getLogger(SequenceDiagram.class); 
 	
 	public static void main(String[] args){
-		for(int num_processi=1; num_processi<=1; num_processi++){
-			LOGGER.info("Creating the UML model");
-			String modeltype = "sat";
-			
-//			create_txt_model(num_processi, null);
-			
-			modeltype = "p";//(alwf (-> (-P- OBJenvironmentOPpanel_setButton) (withinf (-P- OBJenvironmentOPmain_panel_getButton) 15)))
-			create_txt_model(num_processi, "setButtonCall = environment.call(panel_setButton)\n"
-					+ "getButtonCall = environment.call(main_panel_getButton)\n"
-					+ "Corretto.verify(Time.alwaysTrue(setButtonCall => Time.withinF(getButtonCall, 15)))");
-			
-			LOGGER.info("Building the MADES UML representation");
-			t=new UML2Zot(new File(TestConfiguration.MODEL_FILE).getAbsolutePath());
-			
-			LOGGER.info("Generate the ZOT File");
-			t.generateZOTFile(100, "bvzot", "z3", new File("output/txt-" + modeltype + "-" +num_processi+".lisp").getAbsolutePath());
-			//t.generateZOTFile(100, "ae2zot", "z3", new File("output/txt_model_"+i+".lisp").getAbsolutePath());
-		}
+		int processesN = 5;
+		LOGGER.info("Creating the UML model");
+		String modeltype = "sat";
+		//<SAT>
+//		create_txt_model(processesN, null);
+		//</SAT>
+		//<P>
+		//(alwf (-> (-P- OBJenvironmentOPpanel_setButton) (withinf (-P- OBJenvironmentOPmain_panel_getButton) 15)))
+		modeltype = "p";
+		create_txt_model(processesN, "setButtonCall = environment^panel_setButton()\n"
+				+ "getButtonCall = environment^main_panel_getButton()\n"
+				+ "Corretto.verify(Time.alwaysTrue(setButtonCall => Time.withinF(getButtonCall, 15)))");
+		//</P>
+		LOGGER.info("Building the MADES UML representation");
+		t=new UML2Zot(new File(TestConfiguration.MODEL_FILE).getAbsolutePath());
+		
+		LOGGER.info("Generate the ZOT File");
+		t.generateZOTFile(100, "bvzot", "z3", new File("output/txt-" + modeltype + "-" +processesN+".lisp").getAbsolutePath());
+		//t.generateZOTFile(100, "ae2zot", "z3", new File("output/txt_model_"+i+".lisp").getAbsolutePath());
 	}
 
 	private static void create_txt_model(int num_processes, String property){

@@ -24,7 +24,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link org.correttouml.grammars.property.impl.ArithVarImpl#getOp <em>Op</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.impl.ArithVarImpl#getParam <em>Param</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.impl.ArithVarImpl#getSd <em>Sd</em>}</li>
- *   <li>{@link org.correttouml.grammars.property.impl.ArithVarImpl#getStaticVar <em>Static Var</em>}</li>
  * </ul>
  * </p>
  *
@@ -131,26 +130,6 @@ public class ArithVarImpl extends MinimalEObjectImpl.Container implements ArithV
    * @ordered
    */
   protected String sd = SD_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getStaticVar() <em>Static Var</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getStaticVar()
-   * @generated
-   * @ordered
-   */
-  protected static final String STATIC_VAR_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getStaticVar() <em>Static Var</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getStaticVar()
-   * @generated
-   * @ordered
-   */
-  protected String staticVar = STATIC_VAR_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -293,29 +272,6 @@ public class ArithVarImpl extends MinimalEObjectImpl.Container implements ArithV
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getStaticVar()
-  {
-    return staticVar;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setStaticVar(String newStaticVar)
-  {
-    String oldStaticVar = staticVar;
-    staticVar = newStaticVar;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PropertyPackage.ARITH_VAR__STATIC_VAR, oldStaticVar, staticVar));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -331,8 +287,6 @@ public class ArithVarImpl extends MinimalEObjectImpl.Container implements ArithV
         return getParam();
       case PropertyPackage.ARITH_VAR__SD:
         return getSd();
-      case PropertyPackage.ARITH_VAR__STATIC_VAR:
-        return getStaticVar();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -361,9 +315,6 @@ public class ArithVarImpl extends MinimalEObjectImpl.Container implements ArithV
         return;
       case PropertyPackage.ARITH_VAR__SD:
         setSd((String)newValue);
-        return;
-      case PropertyPackage.ARITH_VAR__STATIC_VAR:
-        setStaticVar((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -394,9 +345,6 @@ public class ArithVarImpl extends MinimalEObjectImpl.Container implements ArithV
       case PropertyPackage.ARITH_VAR__SD:
         setSd(SD_EDEFAULT);
         return;
-      case PropertyPackage.ARITH_VAR__STATIC_VAR:
-        setStaticVar(STATIC_VAR_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -421,8 +369,6 @@ public class ArithVarImpl extends MinimalEObjectImpl.Container implements ArithV
         return PARAM_EDEFAULT == null ? param != null : !PARAM_EDEFAULT.equals(param);
       case PropertyPackage.ARITH_VAR__SD:
         return SD_EDEFAULT == null ? sd != null : !SD_EDEFAULT.equals(sd);
-      case PropertyPackage.ARITH_VAR__STATIC_VAR:
-        return STATIC_VAR_EDEFAULT == null ? staticVar != null : !STATIC_VAR_EDEFAULT.equals(staticVar);
     }
     return super.eIsSet(featureID);
   }
@@ -448,8 +394,6 @@ public class ArithVarImpl extends MinimalEObjectImpl.Container implements ArithV
     result.append(param);
     result.append(", sd: ");
     result.append(sd);
-    result.append(", staticVar: ");
-    result.append(staticVar);
     result.append(')');
     return result.toString();
   }

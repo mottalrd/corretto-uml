@@ -391,15 +391,15 @@ ruleDeclaration returns [EObject current=null]
 	    }
 
 )
-)((	otherlv_12='.in(' 
+)	otherlv_12='.in(' 
     {
-    	newLeafNode(otherlv_12, grammarAccess.getDeclarationAccess().getInKeyword_1_2_1_1_0_0());
+    	newLeafNode(otherlv_12, grammarAccess.getDeclarationAccess().getInKeyword_1_2_1_1());
     }
 (
 (
 		lv_stateName_13_0=RULE_ID
 		{
-			newLeafNode(lv_stateName_13_0, grammarAccess.getDeclarationAccess().getStateNameIDTerminalRuleCall_1_2_1_1_0_1_0()); 
+			newLeafNode(lv_stateName_13_0, grammarAccess.getDeclarationAccess().getStateNameIDTerminalRuleCall_1_2_1_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -415,36 +415,9 @@ ruleDeclaration returns [EObject current=null]
 )
 )	otherlv_14=')' 
     {
-    	newLeafNode(otherlv_14, grammarAccess.getDeclarationAccess().getRightParenthesisKeyword_1_2_1_1_0_2());
+    	newLeafNode(otherlv_14, grammarAccess.getDeclarationAccess().getRightParenthesisKeyword_1_2_1_3());
     }
-)
-    |(	otherlv_15='.call(' 
-    {
-    	newLeafNode(otherlv_15, grammarAccess.getDeclarationAccess().getCallKeyword_1_2_1_1_1_0());
-    }
-(
-(
-		lv_operationName_16_0=RULE_ID
-		{
-			newLeafNode(lv_operationName_16_0, grammarAccess.getDeclarationAccess().getOperationNameIDTerminalRuleCall_1_2_1_1_1_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getDeclarationRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"operationName",
-        		lv_operationName_16_0, 
-        		"ID");
-	    }
-
-)
-)	otherlv_17=')' 
-    {
-    	newLeafNode(otherlv_17, grammarAccess.getDeclarationAccess().getRightParenthesisKeyword_1_2_1_1_1_2());
-    }
-))))))
+))))
 ;
 
 
@@ -522,11 +495,11 @@ ruleTRIOL returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(((
 (
 		lv_trioVar_0_0=RULE_ID
 		{
-			newLeafNode(lv_trioVar_0_0, grammarAccess.getTRIOLAccess().getTrioVarIDTerminalRuleCall_0_0()); 
+			newLeafNode(lv_trioVar_0_0, grammarAccess.getTRIOLAccess().getTrioVarIDTerminalRuleCall_0_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -540,16 +513,11 @@ ruleTRIOL returns [EObject current=null]
 	    }
 
 )
-)
-    |(	otherlv_1='system.getSignal(' 
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getTRIOLAccess().getSystemGetSignalKeyword_1_0());
-    }
+)((
 (
-(
-		lv_signal_2_0=RULE_ID
+		lv_opName_1_0=RULE_ID
 		{
-			newLeafNode(lv_signal_2_0, grammarAccess.getTRIOLAccess().getSignalIDTerminalRuleCall_1_1_0()); 
+			newLeafNode(lv_opName_1_0, grammarAccess.getTRIOLAccess().getOpNameIDTerminalRuleCall_0_1_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -557,72 +525,72 @@ ruleTRIOL returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"signal",
-        		lv_signal_2_0, 
+       			"opName",
+        		lv_opName_1_0, 
         		"ID");
 	    }
 
 )
-)	otherlv_3=')' 
+)	otherlv_2='()' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getTRIOLAccess().getRightParenthesisKeyword_1_2());
+    	newLeafNode(otherlv_2, grammarAccess.getTRIOLAccess().getLeftParenthesisRightParenthesisKeyword_0_1_1());
     }
-)
+)?)
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTRIOLAccess().getArithBoolArithBoolParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getTRIOLAccess().getArithBoolArithBoolParserRuleCall_1_0()); 
 	    }
-		lv_arithBool_4_0=ruleArithBool		{
+		lv_arithBool_3_0=ruleArithBool		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getTRIOLRule());
 	        }
        		set(
        			$current, 
        			"arithBool",
-        		lv_arithBool_4_0, 
+        		lv_arithBool_3_0, 
         		"ArithBool");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
 )
-    |(	otherlv_5='!(' 
+    |(	otherlv_4='!(' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getTRIOLAccess().getExclamationMarkLeftParenthesisKeyword_3_0());
+    	newLeafNode(otherlv_4, grammarAccess.getTRIOLAccess().getExclamationMarkLeftParenthesisKeyword_2_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTRIOLAccess().getTrioNotTRIOParserRuleCall_3_1_0()); 
+	        newCompositeNode(grammarAccess.getTRIOLAccess().getTrioNotTRIOParserRuleCall_2_1_0()); 
 	    }
-		lv_trioNot_6_0=ruleTRIO		{
+		lv_trioNot_5_0=ruleTRIO		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getTRIOLRule());
 	        }
        		set(
        			$current, 
        			"trioNot",
-        		lv_trioNot_6_0, 
+        		lv_trioNot_5_0, 
         		"TRIO");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_7=')' 
+)	otherlv_6=')' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getTRIOLAccess().getRightParenthesisKeyword_3_2());
+    	newLeafNode(otherlv_6, grammarAccess.getTRIOLAccess().getRightParenthesisKeyword_2_2());
     }
 )
-    |(	otherlv_8='Time.' 
+    |(	otherlv_7='Time.' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getTRIOLAccess().getTimeKeyword_4_0());
+    	newLeafNode(otherlv_7, grammarAccess.getTRIOLAccess().getTimeKeyword_3_0());
     }
 (
 (
-		lv_trioOpF_9_0=RULE_TRIOOPF
+		lv_trioOpF_8_0=RULE_TRIOOPF
 		{
-			newLeafNode(lv_trioOpF_9_0, grammarAccess.getTRIOLAccess().getTrioOpFTRIOOPFTerminalRuleCall_4_1_0()); 
+			newLeafNode(lv_trioOpF_8_0, grammarAccess.getTRIOLAccess().getTrioOpFTRIOOPFTerminalRuleCall_3_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -631,47 +599,47 @@ ruleTRIOL returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"trioOpF",
-        		lv_trioOpF_9_0, 
+        		lv_trioOpF_8_0, 
         		"TRIOOPF");
 	    }
 
 )
-)	otherlv_10='(' 
+)	otherlv_9='(' 
     {
-    	newLeafNode(otherlv_10, grammarAccess.getTRIOLAccess().getLeftParenthesisKeyword_4_2());
+    	newLeafNode(otherlv_9, grammarAccess.getTRIOLAccess().getLeftParenthesisKeyword_3_2());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTRIOLAccess().getTrioOpF1TRIOParserRuleCall_4_3_0()); 
+	        newCompositeNode(grammarAccess.getTRIOLAccess().getTrioOpF1TRIOParserRuleCall_3_3_0()); 
 	    }
-		lv_trioOpF1_11_0=ruleTRIO		{
+		lv_trioOpF1_10_0=ruleTRIO		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getTRIOLRule());
 	        }
        		set(
        			$current, 
        			"trioOpF1",
-        		lv_trioOpF1_11_0, 
+        		lv_trioOpF1_10_0, 
         		"TRIO");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_12=')' 
+)	otherlv_11=')' 
     {
-    	newLeafNode(otherlv_12, grammarAccess.getTRIOLAccess().getRightParenthesisKeyword_4_4());
+    	newLeafNode(otherlv_11, grammarAccess.getTRIOLAccess().getRightParenthesisKeyword_3_4());
     }
 )
-    |(	otherlv_13='Time.' 
+    |(	otherlv_12='Time.' 
     {
-    	newLeafNode(otherlv_13, grammarAccess.getTRIOLAccess().getTimeKeyword_5_0());
+    	newLeafNode(otherlv_12, grammarAccess.getTRIOLAccess().getTimeKeyword_4_0());
     }
 (
 (
-		lv_trioOpFF_14_0=RULE_TRIOOPFF
+		lv_trioOpFF_13_0=RULE_TRIOOPFF
 		{
-			newLeafNode(lv_trioOpFF_14_0, grammarAccess.getTRIOLAccess().getTrioOpFFTRIOOPFFTerminalRuleCall_5_1_0()); 
+			newLeafNode(lv_trioOpFF_13_0, grammarAccess.getTRIOLAccess().getTrioOpFFTRIOOPFFTerminalRuleCall_4_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -680,69 +648,69 @@ ruleTRIOL returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"trioOpFF",
-        		lv_trioOpFF_14_0, 
+        		lv_trioOpFF_13_0, 
         		"TRIOOPFF");
 	    }
 
 )
-)	otherlv_15='(' 
+)	otherlv_14='(' 
     {
-    	newLeafNode(otherlv_15, grammarAccess.getTRIOLAccess().getLeftParenthesisKeyword_5_2());
+    	newLeafNode(otherlv_14, grammarAccess.getTRIOLAccess().getLeftParenthesisKeyword_4_2());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTRIOLAccess().getTrioOpFF1TRIOParserRuleCall_5_3_0()); 
+	        newCompositeNode(grammarAccess.getTRIOLAccess().getTrioOpFF1TRIOParserRuleCall_4_3_0()); 
 	    }
-		lv_trioOpFF1_16_0=ruleTRIO		{
+		lv_trioOpFF1_15_0=ruleTRIO		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getTRIOLRule());
 	        }
        		set(
        			$current, 
        			"trioOpFF1",
-        		lv_trioOpFF1_16_0, 
+        		lv_trioOpFF1_15_0, 
         		"TRIO");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_17=',' 
+)	otherlv_16=',' 
     {
-    	newLeafNode(otherlv_17, grammarAccess.getTRIOLAccess().getCommaKeyword_5_4());
+    	newLeafNode(otherlv_16, grammarAccess.getTRIOLAccess().getCommaKeyword_4_4());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTRIOLAccess().getTrioOpFF2TRIOParserRuleCall_5_5_0()); 
+	        newCompositeNode(grammarAccess.getTRIOLAccess().getTrioOpFF2TRIOParserRuleCall_4_5_0()); 
 	    }
-		lv_trioOpFF2_18_0=ruleTRIO		{
+		lv_trioOpFF2_17_0=ruleTRIO		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getTRIOLRule());
 	        }
        		set(
        			$current, 
        			"trioOpFF2",
-        		lv_trioOpFF2_18_0, 
+        		lv_trioOpFF2_17_0, 
         		"TRIO");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_19=')' 
+)	otherlv_18=')' 
     {
-    	newLeafNode(otherlv_19, grammarAccess.getTRIOLAccess().getRightParenthesisKeyword_5_6());
+    	newLeafNode(otherlv_18, grammarAccess.getTRIOLAccess().getRightParenthesisKeyword_4_6());
     }
 )
-    |(	otherlv_20='Time.' 
+    |(	otherlv_19='Time.' 
     {
-    	newLeafNode(otherlv_20, grammarAccess.getTRIOLAccess().getTimeKeyword_6_0());
+    	newLeafNode(otherlv_19, grammarAccess.getTRIOLAccess().getTimeKeyword_5_0());
     }
 (
 (
-		lv_trioOpFN_21_0=RULE_TRIOOPFN
+		lv_trioOpFN_20_0=RULE_TRIOOPFN
 		{
-			newLeafNode(lv_trioOpFN_21_0, grammarAccess.getTRIOLAccess().getTrioOpFNTRIOOPFNTerminalRuleCall_6_1_0()); 
+			newLeafNode(lv_trioOpFN_20_0, grammarAccess.getTRIOLAccess().getTrioOpFNTRIOOPFNTerminalRuleCall_5_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -751,42 +719,42 @@ ruleTRIOL returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"trioOpFN",
-        		lv_trioOpFN_21_0, 
+        		lv_trioOpFN_20_0, 
         		"TRIOOPFN");
 	    }
 
 )
-)	otherlv_22='(' 
+)	otherlv_21='(' 
     {
-    	newLeafNode(otherlv_22, grammarAccess.getTRIOLAccess().getLeftParenthesisKeyword_6_2());
+    	newLeafNode(otherlv_21, grammarAccess.getTRIOLAccess().getLeftParenthesisKeyword_5_2());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTRIOLAccess().getTrioOpFN1TRIOParserRuleCall_6_3_0()); 
+	        newCompositeNode(grammarAccess.getTRIOLAccess().getTrioOpFN1TRIOParserRuleCall_5_3_0()); 
 	    }
-		lv_trioOpFN1_23_0=ruleTRIO		{
+		lv_trioOpFN1_22_0=ruleTRIO		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getTRIOLRule());
 	        }
        		set(
        			$current, 
        			"trioOpFN1",
-        		lv_trioOpFN1_23_0, 
+        		lv_trioOpFN1_22_0, 
         		"TRIO");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_24=',' 
+)	otherlv_23=',' 
     {
-    	newLeafNode(otherlv_24, grammarAccess.getTRIOLAccess().getCommaKeyword_6_4());
+    	newLeafNode(otherlv_23, grammarAccess.getTRIOLAccess().getCommaKeyword_5_4());
     }
 (
 (
-		lv_int_25_0=RULE_INT
+		lv_int_24_0=RULE_INT
 		{
-			newLeafNode(lv_int_25_0, grammarAccess.getTRIOLAccess().getIntINTTerminalRuleCall_6_5_0()); 
+			newLeafNode(lv_int_24_0, grammarAccess.getTRIOLAccess().getIntINTTerminalRuleCall_5_5_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -795,14 +763,14 @@ ruleTRIOL returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"int",
-        		lv_int_25_0, 
+        		lv_int_24_0, 
         		"INT");
 	    }
 
 )
-)	otherlv_26=')' 
+)	otherlv_25=')' 
     {
-    	newLeafNode(otherlv_26, grammarAccess.getTRIOLAccess().getRightParenthesisKeyword_6_6());
+    	newLeafNode(otherlv_25, grammarAccess.getTRIOLAccess().getRightParenthesisKeyword_5_6());
     }
 ))
 ;
@@ -1401,33 +1369,6 @@ ruleArithVar returns [EObject current=null]
 )	otherlv_11=')' 
     {
     	newLeafNode(otherlv_11, grammarAccess.getArithVarAccess().getRightParenthesisKeyword_2_3());
-    }
-)
-    |(	otherlv_12='system.getStaticVar(' 
-    {
-    	newLeafNode(otherlv_12, grammarAccess.getArithVarAccess().getSystemGetStaticVarKeyword_3_0());
-    }
-(
-(
-		lv_staticVar_13_0=RULE_ID
-		{
-			newLeafNode(lv_staticVar_13_0, grammarAccess.getArithVarAccess().getStaticVarIDTerminalRuleCall_3_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getArithVarRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"staticVar",
-        		lv_staticVar_13_0, 
-        		"ID");
-	    }
-
-)
-)	otherlv_14=')' 
-    {
-    	newLeafNode(otherlv_14, grammarAccess.getArithVarAccess().getRightParenthesisKeyword_3_2());
     }
 ))
 ;

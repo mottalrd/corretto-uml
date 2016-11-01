@@ -167,7 +167,7 @@ public class PropertySemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     ((obj=ID atr=ID) | (obj=ID op=ID param=ID) | (sd=ID param=ID) | staticVar=ID)
+	 *     ((obj=ID atr=ID) | (obj=ID op=ID param=ID) | (sd=ID param=ID))
 	 */
 	protected void sequence_ArithVar(EObject context, ArithVar semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -194,7 +194,7 @@ public class PropertySemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     ((stateName=ID obj=ID std=ID uMLStateName=ID) | (trioVar=ID (trio=TRIO | (obj=ID (stateName=ID | operationName=ID)))))
+	 *     ((stateName=ID obj=ID std=ID uMLStateName=ID) | (trioVar=ID (trio=TRIO | (obj=ID stateName=ID))))
 	 */
 	protected void sequence_Declaration(EObject context, Declaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -213,8 +213,7 @@ public class PropertySemanticSequencer extends AbstractDelegatingSemanticSequenc
 	/**
 	 * Constraint:
 	 *     (
-	 *         trioVar=ID | 
-	 *         signal=ID | 
+	 *         (trioVar=ID opName=ID?) | 
 	 *         arithBool=ArithBool | 
 	 *         trioNot=TRIO | 
 	 *         (trioOpF=TRIOOPF trioOpF1=TRIO) | 

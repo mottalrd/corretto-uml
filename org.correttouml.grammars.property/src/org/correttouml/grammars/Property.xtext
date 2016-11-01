@@ -24,7 +24,7 @@ Verify:
 
 Declaration:
 	stateName=ID '=' obj=ID '.getState(' std=ID ',' uMLStateName=ID ')' |
-	trioVar=ID '=' (trio=TRIO | obj=ID ('.in(' stateName=ID ')' | '.call(' operationName=ID ')'))
+	trioVar=ID '=' (trio=TRIO | obj=ID '.in(' stateName=ID ')')
 ;
 
 TRIO:
@@ -32,8 +32,7 @@ TRIO:
 ;
 
 TRIOL:
-	trioVar=ID |
-	'system.getSignal(' signal=ID ')' |
+	trioVar=ID (opName=ID '()')? | //xtext consumes '^' between two IDs. E.g. if TRIOL=obj1^op1(), then trioVar=obj1, and opName=op1. // If there is no definition for trioVar, it is a <<signal>>. (Time.neverTrue(failure))
 	arithBool=ArithBool |
 	'!(' trioNot=TRIO ')' |
 	'Time.' trioOpF=TRIOOPF '(' trioOpF1=TRIO ')' |
@@ -85,8 +84,7 @@ ArithTermR:
 ArithVar:
 	obj=ID '.' atr=ID |
 	obj=ID '::' op=ID '.' param=ID |
-	sd=ID '.getParameter(' param=ID ')' |
-	'system.getStaticVar(' staticVar=ID ')'
+	sd=ID '.getParameter(' param=ID ')'
 ;
 
 DataType:

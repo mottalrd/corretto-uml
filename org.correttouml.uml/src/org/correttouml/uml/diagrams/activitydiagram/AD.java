@@ -64,4 +64,7 @@ public class AD extends org.correttouml.uml.diagrams.activity.Activity implement
 		return ssn;
 	}
 
+	public int getNodeN(){
+		return uml_activity.getNodes().size();
+	}
 }

@@ -5,6 +5,7 @@ import org.apache.log4j.Logger;
 import org.correttouml.uml.diagrams.expressions.PrimitiveType;
 import org.correttouml.uml.diagrams.expressions.ValueSpecification;
 import org.correttouml.uml.diagrams.expressions.Variable;
+import org.correttouml.uml.helpers.UML2ModelHelper;
 import org.eclipse.uml2.uml.Property;
 
 public class Attribute extends Variable{
@@ -32,6 +33,11 @@ public class Attribute extends Variable{
 	
 	public boolean isStatic(){
 		return this.uml_attribute.isStatic();
+	}
+	
+	public boolean isFree(){ // Does it have <<Free>> stereotype, that means is it a time variant variable?
+		return UML2ModelHelper.hasStereotype(this.uml_attribute, "Free");
+		
 	}
 	
 	public String getName(){

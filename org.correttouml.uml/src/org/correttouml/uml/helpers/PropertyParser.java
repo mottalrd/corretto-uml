@@ -2,6 +2,7 @@ package org.correttouml.uml.helpers;
 
 import java.io.ByteArrayInputStream;
 
+import org.correttouml.uml.MadesModel;
 import org.correttouml.uml.diagrams.expressions.PrimitiveType;
 import org.correttouml.uml2zot.semantics.expressions.SConstant;
 import org.correttouml.uml2zot.semantics.util.trio.*;
@@ -23,9 +24,11 @@ import com.google.inject.Injector;
 
 public class PropertyParser {
 	private Model model;
+	private MadesModel madesModel;
 	private Set<Declaration> trioVars = new HashSet();
 	private Set<Declaration> stateNames = new HashSet();
-	public PropertyParser(String property){
+	public PropertyParser(MadesModel madesModel, String property){
+		this.madesModel = madesModel;
 		Injector injector = new PropertyStandaloneSetup().createInjectorAndDoEMFRegistration();
 		XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
 		resourceSet.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
@@ -55,10 +58,6 @@ public class PropertyParser {
 	}
 	
 	public BooleanFormulae getProperty() throws Exception{
-		/*
-		 * Command:
-		 * 'Corretto.Verify('trio=TRIO')'
-		 * */
 		if (model.getCorrettoCommand().getVerify() != null)
 			return getTRIOF(model.getCorrettoCommand().getVerify().getTrio());
 		return null;
@@ -117,8 +116,7 @@ public class PropertyParser {
 	
 	/*
 	 * TRIOL:
-	trioVar=ID |
-	'system.getSignal(' signal=ID ')' |
+	trioVar=ID (opName=ID '()')? |
 	arithBool=ArithBool |
 	'!(' trioNot=TRIO ')'
 	'Time.' trioOpF=TRIOOPF '(' trioOpF1=TRIO ')' |
@@ -126,10 +124,15 @@ public class PropertyParser {
 	'Time.' trioOpFN=TRIOOPFN '(' trioOpFN1=TRIO ',' int=INT ')';
 	 */
 	private BooleanFormulae getTRIOLF(TRIOL trioL) throws Exception { 
-		if (trioL.getTrioVar() != null) //TRIO: trioVar=ID
-			return getTrioVarF(getTrioVarDeclaration(trioL.getTrioVar()));
-		if (trioL.getSignal() != null) //TRIO: 'system.getSignal(' signal=ID ')'
-			return new Predicate(trioL.getSignal());
+		if (trioL.getTrioVar() != null){
+			if (trioL.getOpName() == null) //TRIO: trioVar=ID
+				if (getTrioVarDeclaration(trioL.getTrioVar()) != null && getTrioVarF(getTrioVarDeclaration(trioL.getTrioVar())) != null)
+					return getTrioVarF(getTrioVarDeclaration(trioL.getTrioVar())); // Fetch definition of the triovar.
+				else
+					return new Predicate(trioL.getTrioVar()); // If there is no definition, it is a <<signal>>. (Time.neverTrue(failure))
+			else //TRIO: trioVar=ID opName=ID '()', xtext consumes the '^' character.
+				return getOperationCallPredicate(trioL.getTrioVar(), trioL.getOpName());
+		}
 		if (trioL.getTrioNot() != null)
 			return new Not(getTRIOF(trioL.getTrioNot()));
 		if (trioL.getArithBool() != null) //TRIO: arithBool=ArithBool
@@ -314,34 +317,40 @@ public class PropertyParser {
 	
 	/*
 	 * ArithVar:
-	obj=ID '.' atr=ID |
+	obj=ID '.' atr=ID | //This captures obj.atr as well as static attributes (class.atr)
 	obj=ID '::' op=ID '.' param=ID |
 	sd=ID '.getParameter(' param=ID ')';
 	 */
-	private BooleanFormulae getArithVarPredicate(ArithVar arithVar){ 
-		if (arithVar.getAtr() != null)
-			return new TrioVar("OBJ" + arithVar.getObj() + "ATTR" + arithVar.getAtr(), PrimitiveType.INTEGER); //modify.preCondition = SAttribute.java.modify
+	private BooleanFormulae getArithVarPredicate(ArithVar arithVar){
 		if (arithVar.getOp() != null)
 			return new TrioVar("OBJ" + arithVar.getObj() + "OP" + arithVar.getOp() + "PARAM" + arithVar.getParam(), PrimitiveType.INTEGER); //modify.preCondition = SOperationParameter.java.modify
 		if (arithVar.getSd() != null)
 			return new TrioVar("SD" + arithVar.getSd() + "PAR" + arithVar.getParam(), PrimitiveType.INTEGER); //modify.preCondition = SSequenceDiagramParameter.java.modify
-		if (arithVar.getStaticVar() != null)
-			return new TrioVar("ATTR" + arithVar.getStaticVar(), PrimitiveType.INTEGER); //modify.preCondition = SAttribute.java.modify
+		if (arithVar.getAtr() != null)
+			if (isAClass(arithVar.getObj()))
+				return new TrioVar("ATTR" + arithVar.getAtr(), PrimitiveType.INTEGER); //static var //modify.preCondition = SAttribute.java.modify
+			else
+				return new TrioVar("OBJ" + arithVar.getObj() + "ATTR" + arithVar.getAtr(), PrimitiveType.INTEGER); //modify.preCondition = SAttribute.java.modify
 		return null;
 	}
 
 	/*
 	 * Declaration:
 		...
-		trioVar=ID '=' (trio=TRIO | obj=ID ('.in(' stateName=ID ')' | '.call(' operationName=ID ')'));
+		trioVar=ID '=' (trio=TRIO | obj=ID '.in(' stateName=ID ')');
 	 */
 	private BooleanFormulae getTrioVarF(Declaration d) throws Exception {
 		if (d.getTrio() != null)
 			return getTRIOF(d.getTrio());
 		if (d.getStateName() != null)
 			return getStatePredicate(d.getObj(), d.getStateName());
-		if (d.getOperationName() != null)
-			return getOperationCallPredicate(d.getObj(), d.getOperationName());
 		return null;
+	}
+	
+	private boolean isAClass(String className){
+		for(org.correttouml.uml.diagrams.classdiagram.Class c: madesModel.getClassdiagram().getClasses())
+			if (c.getName().equals(className))
+				return true;
+		return false;
 	}
 }

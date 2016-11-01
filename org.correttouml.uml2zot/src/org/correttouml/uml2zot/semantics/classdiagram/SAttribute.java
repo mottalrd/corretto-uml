@@ -82,8 +82,7 @@ public class SAttribute implements SVariable {
 					+ new Implies(new Not(orCond), new EQ(
 							this.getPredicate(mades_obj), new Yesterday(
 									this.getPredicate(mades_obj)))) + "\n";
-		}else if (!(mades_obj.getSlot(mades_attribute) != null && 
-				mades_obj.getSlot(mades_attribute).isTimeVariant())){ //If it is not a time variant variable.
+		}else if (!this.mades_attribute.isFree()){ //If it is not a time variant variable.
 			sem = sem+ new EQ(this.getPredicate(mades_obj), new Yesterday(this.getPredicate(mades_obj))) + "\n";
 		}
 		return sem;

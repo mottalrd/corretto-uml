@@ -7,6 +7,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertNull;
 
+/**
+ * @author Mohammad Mehdi Pourhashem Kallehbasti
+ */
 public class Test1 {
 
 	@SuppressWarnings("unused")
@@ -14,19 +17,14 @@ public class Test1 {
 	
 	@Test
 	public void State() throws Exception{
-System.out.println("State:\n\t" + new PropertyParser("state1 = obj1.getState(STD1, UMLstate1)\n"
+System.out.println("State:\n\t" + new PropertyParser(null, "state1 = obj1.getState(STD1, UMLstate1)\n"
 		+ "inState1 = obj1.in(state1)\n"
 		+ "Corretto.verify(!(inState1))").getProperty());
 	}
 	
 	@Test
-	public void ArithBool() throws Exception{
-System.out.println("ArithBool:\n\t" + new PropertyParser("Corretto.verify(sd1.getParameter(distance) == (obj.atr1 / 3))").getProperty());
-	}
-	
-	@Test
 	public void Parentheses() throws Exception{
-System.out.println("Parentheses:\n\t" + new PropertyParser("state1 = obj1.getState(STD1, UMLstate1)\n"
+System.out.println("Parentheses:\n\t" + new PropertyParser(null, "state1 = obj1.getState(STD1, UMLstate1)\n"
 		+ "a= obj1.in(state1)\n"
 		+ "b= obj1.in(state1)\n"
 		+ "Corretto.verify((!(a) && b) || a)").getProperty());
@@ -34,7 +32,7 @@ System.out.println("Parentheses:\n\t" + new PropertyParser("state1 = obj1.getSta
 	
 	@Test
 	public void ParenthesesArithBool() throws Exception{
-System.out.println("ParenthesesArithBool:\n\t" + new PropertyParser("state1 = obj1.getState(STD1, UMLstate1)\n"
+System.out.println("ParenthesesArithBool:\n\t" + new PropertyParser(null, "state1 = obj1.getState(STD1, UMLstate1)\n"
 		+ "a= obj1.in(state1)\n"
 		+ "b= obj1.in(state1)\n"
 		+ "Corretto.verify((a && b) || (3 > 4))").getProperty());
@@ -42,7 +40,7 @@ System.out.println("ParenthesesArithBool:\n\t" + new PropertyParser("state1 = ob
 	
 	@Test
 	public void Implies() throws Exception{
-System.out.println("Implies:\n\t" + new PropertyParser("state1 = obj1.getState(STD1, UMLstate1)\n"
+System.out.println("Implies:\n\t" + new PropertyParser(null, "state1 = obj1.getState(STD1, UMLstate1)\n"
 		+ "a= obj1.in(state1)\n"
 		+ "b= obj1.in(state1)\n"
 		+ "//Corretto.verify((a => b) || (3 > 4))\n"
@@ -52,7 +50,7 @@ System.out.println("Implies:\n\t" + new PropertyParser("state1 = obj1.getState(S
 	
 	@Test
 	public void ImpliesWithinF() throws Exception{
-		System.out.println("ImpliesWithinf2:\n\t" + new PropertyParser("state1 = obj1.getState(STD1, UMLstate1)\n"
+		System.out.println("ImpliesWithinf2:\n\t" + new PropertyParser(null, "state1 = obj1.getState(STD1, UMLstate1)\n"
 		+ "a= obj1.in(state1)\n"
 		+ "b= obj1.in(state1)\n"
 		+ "Corretto.verify(Time.withinF((a => b) || (3 > 4)), 5)").getProperty());
@@ -60,9 +58,9 @@ System.out.println("Implies:\n\t" + new PropertyParser("state1 = obj1.getState(S
 	
 	@Test
 	public void CCAS1() throws Exception{
-		System.out.println("CCAS1:\n\t" + new PropertyParser(
+		System.out.println("CCAS1:\n\t" + new PropertyParser(null, 
 		"smallDistance= ctr::notifyDistance.receivedDistance < 2\n"
-		+"brakingState = brakeS.getState(brakingSM, braking)\n"
+		+ "brakingState = brakeS.getState(brakingSM, braking)\n"
 		+ "inBraking = brakeS.in(brakingState)\n"
 		+ "brakingInTime = Time.lasted(smallDistance, 52) => Time.withinP(inBraking, 52)\n"
 		+ "myProperty = Time.alwaysTrue(brakingInTime)\n"
@@ -70,24 +68,24 @@ System.out.println("Implies:\n\t" + new PropertyParser("state1 = obj1.getState(S
 	}
 	
 	@Test
-	public void CCAS() throws Exception{//system.getSignal(failure)
-		System.out.println("CCAS:\n\t" + new PropertyParser(
+	public void CCAS() throws Exception{ 
+		System.out.println("CCAS:\n\t" + new PropertyParser(null, 
 		"smallDistance = sendSensorDistance.getParameter(distance) < 2\n"
-		+"brakingState = brakeS.getState(brakingSM, braking)\n"
+		+ "brakingState = brakeS.getState(brakingSM, braking)\n"
 		+ "inBraking = brakeS.in(brakingState)\n"
-		+ "brakingInTime = Time.lasted(smallDistance && !(system.getSignal(failure)), 52) => Time.withinP(inBraking, 52)\n"
+		+ "brakingInTime = Time.lasted(smallDistance && !(failure), 52) => Time.withinP(inBraking, 52)\n"
 		+ "myProperty = Time.alwaysTrue(brakingInTime)\n"
 		+ "Corretto.verify(myProperty)"
 				).getProperty());
 	}
 	
 	@Test
-	public void CCASSat() throws Exception{//system.getSignal(failure)
-		BooleanFormulae property = new PropertyParser(
+	public void CCASSat() throws Exception{
+		BooleanFormulae property = new PropertyParser(null, 
 		"smallDistance = sendSensorDistance.getParameter(distance) < 2\n"
 		+"brakingState = brakeS.getState(brakingSM, braking)\n"
 		+ "inBraking = brakeS.in(brakingState)\n"
-		+ "brakingInTime = Time.lasted(smallDistance && !(system.getSignal(failure)), 52) => Time.withinP(inBraking, 52)\n"
+		+ "brakingInTime = Time.lasted(smallDistance && !(failure), 52) => Time.withinP(inBraking, 52)\n"
 		+ "myProperty = Time.alwaysTrue(brakingInTime)\n"
 		+ "//Corretto.verify(myProperty)\n"
 		+ "Corretto.execute()"
@@ -97,10 +95,34 @@ System.out.println("Implies:\n\t" + new PropertyParser("state1 = obj1.getState(S
 	}
 	
 	@Test
-	public void LeaderSAT() throws Exception{//system.getSignal(failure)
-		System.out.println("LeaderSAT:\n\t" + new PropertyParser("stateEnd = idGenerator.getState(IdGenerator_SM, stateEnd)\n"
+	public void LeaderSAT() throws Exception{
+		System.out.println("LeaderSAT:\n\t" + new PropertyParser(null, "stateEnd = idGenerator.getState(IdGenerator_SM, stateEnd)\n"
 						+ "inStateEnd = idGenerator.in(stateEnd)\n"
 						+ "Corretto.verify(Time.alwF(!(Time.eventually(inStateEnd))))"
+				).getProperty());
+	}
+	
+	@Test
+	public void OpCall() throws Exception{
+		System.out.println("OpCall:\n\t" + new PropertyParser(null, 
+"Corretto.verify(obj1^op1())"
+				).getProperty());
+	}
+	
+	@Test
+	public void ATM() throws Exception{
+		System.out.println("ATM:\n\t" + new PropertyParser(null, 
+				"releaseMoney = cashdispenser^cd_releaseMoney()\n"
+				+ "Corretto.verify(Time.alwaysTrue(releaseMoney => (cashdispenser::cd_releaseMoney.amount_released == 50))"
+				).getProperty());
+	}
+	
+	@Test
+	public void TXT() throws Exception{
+		System.out.println("TXT:\n\t" + new PropertyParser(null, 
+				"setButtonCall = environment^panel_setButton()\n"
+	+ "getButtonCall = environment^main_panel_getButton()\n"
+	+ "Corretto.verify(Time.alwaysTrue(setButtonCall => Time.withinF(getButtonCall, 15)))"
 				).getProperty());
 	}
 	

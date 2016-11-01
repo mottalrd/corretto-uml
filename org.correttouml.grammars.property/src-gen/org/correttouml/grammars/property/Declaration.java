@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.correttouml.grammars.property.Declaration#getUMLStateName <em>UML State Name</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.Declaration#getTrioVar <em>Trio Var</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.Declaration#getTrio <em>Trio</em>}</li>
- *   <li>{@link org.correttouml.grammars.property.Declaration#getOperationName <em>Operation Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -183,31 +182,5 @@ public interface Declaration extends EObject
    * @generated
    */
   void setTrio(TRIO value);
-
-  /**
-   * Returns the value of the '<em><b>Operation Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Operation Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Operation Name</em>' attribute.
-   * @see #setOperationName(String)
-   * @see org.correttouml.grammars.property.PropertyPackage#getDeclaration_OperationName()
-   * @model
-   * @generated
-   */
-  String getOperationName();
-
-  /**
-   * Sets the value of the '{@link org.correttouml.grammars.property.Declaration#getOperationName <em>Operation Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Operation Name</em>' attribute.
-   * @see #getOperationName()
-   * @generated
-   */
-  void setOperationName(String value);
 
 } // Declaration

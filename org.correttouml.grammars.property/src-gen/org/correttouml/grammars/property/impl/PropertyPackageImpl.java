@@ -339,16 +339,6 @@ public class PropertyPackageImpl extends EPackageImpl implements PropertyPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDeclaration_OperationName()
-  {
-    return (EAttribute)declarationEClass.getEStructuralFeatures().get(6);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getTRIO()
   {
     return trioEClass;
@@ -399,7 +389,7 @@ public class PropertyPackageImpl extends EPackageImpl implements PropertyPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTRIOL_Signal()
+  public EAttribute getTRIOL_OpName()
   {
     return (EAttribute)triolEClass.getEStructuralFeatures().get(1);
   }
@@ -779,16 +769,6 @@ public class PropertyPackageImpl extends EPackageImpl implements PropertyPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getArithVar_StaticVar()
-  {
-    return (EAttribute)arithVarEClass.getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getDataType()
   {
     return dataTypeEClass;
@@ -862,7 +842,6 @@ public class PropertyPackageImpl extends EPackageImpl implements PropertyPackage
     createEAttribute(declarationEClass, DECLARATION__UML_STATE_NAME);
     createEAttribute(declarationEClass, DECLARATION__TRIO_VAR);
     createEReference(declarationEClass, DECLARATION__TRIO);
-    createEAttribute(declarationEClass, DECLARATION__OPERATION_NAME);
 
     trioEClass = createEClass(TRIO);
     createEReference(trioEClass, TRIO__TRIO_L);
@@ -870,7 +849,7 @@ public class PropertyPackageImpl extends EPackageImpl implements PropertyPackage
 
     triolEClass = createEClass(TRIOL);
     createEAttribute(triolEClass, TRIOL__TRIO_VAR);
-    createEAttribute(triolEClass, TRIOL__SIGNAL);
+    createEAttribute(triolEClass, TRIOL__OP_NAME);
     createEReference(triolEClass, TRIOL__ARITH_BOOL);
     createEReference(triolEClass, TRIOL__TRIO_NOT);
     createEAttribute(triolEClass, TRIOL__TRIO_OP_F);
@@ -914,7 +893,6 @@ public class PropertyPackageImpl extends EPackageImpl implements PropertyPackage
     createEAttribute(arithVarEClass, ARITH_VAR__OP);
     createEAttribute(arithVarEClass, ARITH_VAR__PARAM);
     createEAttribute(arithVarEClass, ARITH_VAR__SD);
-    createEAttribute(arithVarEClass, ARITH_VAR__STATIC_VAR);
 
     dataTypeEClass = createEClass(DATA_TYPE);
     createEAttribute(dataTypeEClass, DATA_TYPE__I);
@@ -970,7 +948,6 @@ public class PropertyPackageImpl extends EPackageImpl implements PropertyPackage
     initEAttribute(getDeclaration_UMLStateName(), ecorePackage.getEString(), "uMLStateName", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDeclaration_TrioVar(), ecorePackage.getEString(), "trioVar", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDeclaration_Trio(), this.getTRIO(), null, "trio", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDeclaration_OperationName(), ecorePackage.getEString(), "operationName", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(trioEClass, org.correttouml.grammars.property.TRIO.class, "TRIO", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTRIO_TrioL(), this.getTRIOL(), null, "trioL", null, 0, 1, org.correttouml.grammars.property.TRIO.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -978,7 +955,7 @@ public class PropertyPackageImpl extends EPackageImpl implements PropertyPackage
 
     initEClass(triolEClass, org.correttouml.grammars.property.TRIOL.class, "TRIOL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTRIOL_TrioVar(), ecorePackage.getEString(), "trioVar", null, 0, 1, org.correttouml.grammars.property.TRIOL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTRIOL_Signal(), ecorePackage.getEString(), "signal", null, 0, 1, org.correttouml.grammars.property.TRIOL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTRIOL_OpName(), ecorePackage.getEString(), "opName", null, 0, 1, org.correttouml.grammars.property.TRIOL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTRIOL_ArithBool(), this.getArithBool(), null, "arithBool", null, 0, 1, org.correttouml.grammars.property.TRIOL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTRIOL_TrioNot(), this.getTRIO(), null, "trioNot", null, 0, 1, org.correttouml.grammars.property.TRIOL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTRIOL_TrioOpF(), ecorePackage.getEString(), "trioOpF", null, 0, 1, org.correttouml.grammars.property.TRIOL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1022,7 +999,6 @@ public class PropertyPackageImpl extends EPackageImpl implements PropertyPackage
     initEAttribute(getArithVar_Op(), ecorePackage.getEString(), "op", null, 0, 1, ArithVar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getArithVar_Param(), ecorePackage.getEString(), "param", null, 0, 1, ArithVar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getArithVar_Sd(), ecorePackage.getEString(), "sd", null, 0, 1, ArithVar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getArithVar_StaticVar(), ecorePackage.getEString(), "staticVar", null, 0, 1, ArithVar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dataTypeEClass, DataType.class, "DataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDataType_I(), ecorePackage.getEInt(), "i", null, 0, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

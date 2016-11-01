@@ -8,13 +8,16 @@ import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
 import org.apache.log4j.Logger;
 import org.correttouml.uml.MadesModel;
+import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagram;
 import org.correttouml.uml.helpers.UML2ModelHelper;
 import org.correttouml.uml2zot.semantics.SMadesModel;
 import org.correttouml.uml2zot.semantics.statediagram.SState;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
+import org.correttouml.uml2zot.semantics.util.trio.TrioVar;
 import org.correttouml.uml2zot.zotutil.ZOTConf;
 import org.eclipse.uml2.uml.Model;
 
@@ -84,26 +87,25 @@ public class UML2Zot {
 	
 	public String getModelStatistics() throws IOException{
 		int objectsN = 0;
+		int adsN = 0;
+		int adNodesN = 0;
 		int statesN = 0;
 		int transitionsN = 0;
 		int messagesN = 0;
 		int sdTimeConstraintsN = 0;
 		int sdParametersN = 0;
-		int arithVarsN = 0;
 		int clocksN = this.mades_model.getClassdiagram().getClocks().size();
 		int lifelinesN = 0;
 		int iodNodesN = 0;
 		for(org.correttouml.uml.diagrams.classdiagram.Class c: this.mades_model.getClassdiagram().getClasses()){
 			objectsN += c.getObjects().size();
 			for(org.correttouml.uml.diagrams.statediagram.StateDiagram std: c.getStateDiagrams()){
-				for(org.correttouml.uml.diagrams.classdiagram.Object obj: c.getObjects()){
-					transitionsN += std.getTransitions().size();
-				}
-				for(org.correttouml.uml.diagrams.statediagram.State s: std.getStates()){
-					for(org.correttouml.uml.diagrams.classdiagram.Object obj: c.getObjects()){
-						statesN++;
-					}
-				}
+				transitionsN += std.getTransitions().size() * c.getObjects().size();
+				statesN += std.getStates().size() * c.getObjects().size();
+			}
+			if (c.getUMLAD() != null){
+				adsN += c.getObjects().size();
+				adNodesN += c.getObjects().size() * c.getUMLAD().getNodes().size();
 			}
 		}
 		for(SequenceDiagram sd: this.mades_model.getSequenceDiagrams()){
@@ -123,10 +125,13 @@ public class UML2Zot {
 		String[] words = readLine.split(" ");
 		for(String s : words) {
 			if(s.startsWith("xmi:id=")) umlElementsN++;}}
+		in.close();
 
 		return ";  Model statistics:\n;  "
 		+ Integer.toString(umlElementsN) + "\t:Number of UML elements\n;  "  
-		+ Integer.toString(objectsN) + "\t:Number of objects\n;  " 
+		+ Integer.toString(objectsN) + "\t:Number of objects\n;  "
+		+ Integer.toString(adsN) + "\t:Number of activity diagrams\n;  "
+		+ Integer.toString(adNodesN) + "\t:Number of nodes in activity diagrams\n;  "
 		+ Integer.toString(statesN) + "\t:Number of states\n;  " 
 		+ Integer.toString(transitionsN) + "\t:Number of transitions\n;  "
 		+ Integer.toString(lifelinesN) + "\t:Number of lifelines in sequence diagrams\n;  "
@@ -166,7 +171,7 @@ public class UML2Zot {
 	
 	public void generateZOTFile(String zot_file){		
 		LOGGER.info("Building the ZOT file");
-		ZOTConf zot=new ZOTConf(80, "ae2sbvzot", "z3", this.s_mades_model);
+		ZOTConf zot=new ZOTConf(100, "ae2bvzot", "z3", this.s_mades_model);
 		try {
 			zot.writeVerificationZOTFile(zot_file, getModelStatistics());
 			LOGGER.info("The ZOT file is created");

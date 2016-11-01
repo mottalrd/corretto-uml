@@ -223,22 +223,13 @@ public interface PropertyPackage extends EPackage
   int DECLARATION__TRIO = 5;
 
   /**
-   * The feature id for the '<em><b>Operation Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DECLARATION__OPERATION_NAME = 6;
-
-  /**
    * The number of structural features of the '<em>Declaration</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DECLARATION_FEATURE_COUNT = 7;
+  int DECLARATION_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link org.correttouml.grammars.property.impl.TRIOImpl <em>TRIO</em>}' class.
@@ -297,13 +288,13 @@ public interface PropertyPackage extends EPackage
   int TRIOL__TRIO_VAR = 0;
 
   /**
-   * The feature id for the '<em><b>Signal</b></em>' attribute.
+   * The feature id for the '<em><b>Op Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRIOL__SIGNAL = 1;
+  int TRIOL__OP_NAME = 1;
 
   /**
    * The feature id for the '<em><b>Arith Bool</b></em>' containment reference.
@@ -699,22 +690,13 @@ public interface PropertyPackage extends EPackage
   int ARITH_VAR__SD = 4;
 
   /**
-   * The feature id for the '<em><b>Static Var</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARITH_VAR__STATIC_VAR = 5;
-
-  /**
    * The number of structural features of the '<em>Arith Var</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ARITH_VAR_FEATURE_COUNT = 6;
+  int ARITH_VAR_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link org.correttouml.grammars.property.impl.DataTypeImpl <em>Data Type</em>}' class.
@@ -916,17 +898,6 @@ public interface PropertyPackage extends EPackage
   EReference getDeclaration_Trio();
 
   /**
-   * Returns the meta object for the attribute '{@link org.correttouml.grammars.property.Declaration#getOperationName <em>Operation Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Operation Name</em>'.
-   * @see org.correttouml.grammars.property.Declaration#getOperationName()
-   * @see #getDeclaration()
-   * @generated
-   */
-  EAttribute getDeclaration_OperationName();
-
-  /**
    * Returns the meta object for class '{@link org.correttouml.grammars.property.TRIO <em>TRIO</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -980,15 +951,15 @@ public interface PropertyPackage extends EPackage
   EAttribute getTRIOL_TrioVar();
 
   /**
-   * Returns the meta object for the attribute '{@link org.correttouml.grammars.property.TRIOL#getSignal <em>Signal</em>}'.
+   * Returns the meta object for the attribute '{@link org.correttouml.grammars.property.TRIOL#getOpName <em>Op Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Signal</em>'.
-   * @see org.correttouml.grammars.property.TRIOL#getSignal()
+   * @return the meta object for the attribute '<em>Op Name</em>'.
+   * @see org.correttouml.grammars.property.TRIOL#getOpName()
    * @see #getTRIOL()
    * @generated
    */
-  EAttribute getTRIOL_Signal();
+  EAttribute getTRIOL_OpName();
 
   /**
    * Returns the meta object for the containment reference '{@link org.correttouml.grammars.property.TRIOL#getArithBool <em>Arith Bool</em>}'.
@@ -1392,17 +1363,6 @@ public interface PropertyPackage extends EPackage
   EAttribute getArithVar_Sd();
 
   /**
-   * Returns the meta object for the attribute '{@link org.correttouml.grammars.property.ArithVar#getStaticVar <em>Static Var</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Static Var</em>'.
-   * @see org.correttouml.grammars.property.ArithVar#getStaticVar()
-   * @see #getArithVar()
-   * @generated
-   */
-  EAttribute getArithVar_StaticVar();
-
-  /**
    * Returns the meta object for class '{@link org.correttouml.grammars.property.DataType <em>Data Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1586,14 +1546,6 @@ public interface PropertyPackage extends EPackage
     EReference DECLARATION__TRIO = eINSTANCE.getDeclaration_Trio();
 
     /**
-     * The meta object literal for the '<em><b>Operation Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DECLARATION__OPERATION_NAME = eINSTANCE.getDeclaration_OperationName();
-
-    /**
      * The meta object literal for the '{@link org.correttouml.grammars.property.impl.TRIOImpl <em>TRIO</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1638,12 +1590,12 @@ public interface PropertyPackage extends EPackage
     EAttribute TRIOL__TRIO_VAR = eINSTANCE.getTRIOL_TrioVar();
 
     /**
-     * The meta object literal for the '<em><b>Signal</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Op Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TRIOL__SIGNAL = eINSTANCE.getTRIOL_Signal();
+    EAttribute TRIOL__OP_NAME = eINSTANCE.getTRIOL_OpName();
 
     /**
      * The meta object literal for the '<em><b>Arith Bool</b></em>' containment reference feature.
@@ -1952,14 +1904,6 @@ public interface PropertyPackage extends EPackage
      * @generated
      */
     EAttribute ARITH_VAR__SD = eINSTANCE.getArithVar_Sd();
-
-    /**
-     * The meta object literal for the '<em><b>Static Var</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ARITH_VAR__STATIC_VAR = eINSTANCE.getArithVar_StaticVar();
 
     /**
      * The meta object literal for the '{@link org.correttouml.grammars.property.impl.DataTypeImpl <em>Data Type</em>}' class.

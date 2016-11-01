@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.correttouml.grammars.property.impl.TRIOLImpl#getTrioVar <em>Trio Var</em>}</li>
- *   <li>{@link org.correttouml.grammars.property.impl.TRIOLImpl#getSignal <em>Signal</em>}</li>
+ *   <li>{@link org.correttouml.grammars.property.impl.TRIOLImpl#getOpName <em>Op Name</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.impl.TRIOLImpl#getArithBool <em>Arith Bool</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.impl.TRIOLImpl#getTrioNot <em>Trio Not</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.impl.TRIOLImpl#getTrioOpF <em>Trio Op F</em>}</li>
@@ -63,24 +63,24 @@ public class TRIOLImpl extends MinimalEObjectImpl.Container implements TRIOL
   protected String trioVar = TRIO_VAR_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getSignal() <em>Signal</em>}' attribute.
+   * The default value of the '{@link #getOpName() <em>Op Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSignal()
+   * @see #getOpName()
    * @generated
    * @ordered
    */
-  protected static final String SIGNAL_EDEFAULT = null;
+  protected static final String OP_NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getSignal() <em>Signal</em>}' attribute.
+   * The cached value of the '{@link #getOpName() <em>Op Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSignal()
+   * @see #getOpName()
    * @generated
    * @ordered
    */
-  protected String signal = SIGNAL_EDEFAULT;
+  protected String opName = OP_NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getArithBool() <em>Arith Bool</em>}' containment reference.
@@ -271,9 +271,9 @@ public class TRIOLImpl extends MinimalEObjectImpl.Container implements TRIOL
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getSignal()
+  public String getOpName()
   {
-    return signal;
+    return opName;
   }
 
   /**
@@ -281,12 +281,12 @@ public class TRIOLImpl extends MinimalEObjectImpl.Container implements TRIOL
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSignal(String newSignal)
+  public void setOpName(String newOpName)
   {
-    String oldSignal = signal;
-    signal = newSignal;
+    String oldOpName = opName;
+    opName = newOpName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PropertyPackage.TRIOL__SIGNAL, oldSignal, signal));
+      eNotify(new ENotificationImpl(this, Notification.SET, PropertyPackage.TRIOL__OP_NAME, oldOpName, opName));
   }
 
   /**
@@ -707,8 +707,8 @@ public class TRIOLImpl extends MinimalEObjectImpl.Container implements TRIOL
     {
       case PropertyPackage.TRIOL__TRIO_VAR:
         return getTrioVar();
-      case PropertyPackage.TRIOL__SIGNAL:
-        return getSignal();
+      case PropertyPackage.TRIOL__OP_NAME:
+        return getOpName();
       case PropertyPackage.TRIOL__ARITH_BOOL:
         return getArithBool();
       case PropertyPackage.TRIOL__TRIO_NOT:
@@ -746,8 +746,8 @@ public class TRIOLImpl extends MinimalEObjectImpl.Container implements TRIOL
       case PropertyPackage.TRIOL__TRIO_VAR:
         setTrioVar((String)newValue);
         return;
-      case PropertyPackage.TRIOL__SIGNAL:
-        setSignal((String)newValue);
+      case PropertyPackage.TRIOL__OP_NAME:
+        setOpName((String)newValue);
         return;
       case PropertyPackage.TRIOL__ARITH_BOOL:
         setArithBool((ArithBool)newValue);
@@ -796,8 +796,8 @@ public class TRIOLImpl extends MinimalEObjectImpl.Container implements TRIOL
       case PropertyPackage.TRIOL__TRIO_VAR:
         setTrioVar(TRIO_VAR_EDEFAULT);
         return;
-      case PropertyPackage.TRIOL__SIGNAL:
-        setSignal(SIGNAL_EDEFAULT);
+      case PropertyPackage.TRIOL__OP_NAME:
+        setOpName(OP_NAME_EDEFAULT);
         return;
       case PropertyPackage.TRIOL__ARITH_BOOL:
         setArithBool((ArithBool)null);
@@ -845,8 +845,8 @@ public class TRIOLImpl extends MinimalEObjectImpl.Container implements TRIOL
     {
       case PropertyPackage.TRIOL__TRIO_VAR:
         return TRIO_VAR_EDEFAULT == null ? trioVar != null : !TRIO_VAR_EDEFAULT.equals(trioVar);
-      case PropertyPackage.TRIOL__SIGNAL:
-        return SIGNAL_EDEFAULT == null ? signal != null : !SIGNAL_EDEFAULT.equals(signal);
+      case PropertyPackage.TRIOL__OP_NAME:
+        return OP_NAME_EDEFAULT == null ? opName != null : !OP_NAME_EDEFAULT.equals(opName);
       case PropertyPackage.TRIOL__ARITH_BOOL:
         return arithBool != null;
       case PropertyPackage.TRIOL__TRIO_NOT:
@@ -884,8 +884,8 @@ public class TRIOLImpl extends MinimalEObjectImpl.Container implements TRIOL
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (trioVar: ");
     result.append(trioVar);
-    result.append(", signal: ");
-    result.append(signal);
+    result.append(", opName: ");
+    result.append(opName);
     result.append(", trioOpF: ");
     result.append(trioOpF);
     result.append(", trioOpFF: ");

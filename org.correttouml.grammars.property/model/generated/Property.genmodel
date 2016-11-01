@@ -25,7 +25,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Property.ecore#//Declaration/uMLStateName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Property.ecore#//Declaration/trioVar"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Property.ecore#//Declaration/trio"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Property.ecore#//Declaration/operationName"/>
     </genClasses>
     <genClasses ecoreClass="Property.ecore#//TRIO">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Property.ecore#//TRIO/trioL"/>
@@ -33,7 +32,7 @@
     </genClasses>
     <genClasses ecoreClass="Property.ecore#//TRIOL">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Property.ecore#//TRIOL/trioVar"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Property.ecore#//TRIOL/signal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Property.ecore#//TRIOL/opName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Property.ecore#//TRIOL/arithBool"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Property.ecore#//TRIOL/trioNot"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Property.ecore#//TRIOL/trioOpF"/>
@@ -77,7 +76,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Property.ecore#//ArithVar/op"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Property.ecore#//ArithVar/param"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Property.ecore#//ArithVar/sd"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Property.ecore#//ArithVar/staticVar"/>
     </genClasses>
     <genClasses ecoreClass="Property.ecore#//DataType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Property.ecore#//DataType/i"/>

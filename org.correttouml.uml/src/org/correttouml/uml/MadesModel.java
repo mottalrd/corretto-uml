@@ -112,7 +112,7 @@ public class MadesModel{
 		BooleanFormulae property = null;
 		for(Element e:this.system_package.getOwnedElements())
 			if (e instanceof Constraint){
-				property = new PropertyParser(((LiteralString) ((Constraint) e).getSpecification()).getValue()).getProperty();
+				property = new PropertyParser(this, ((LiteralString) ((Constraint) e).getSpecification()).getValue()).getProperty();
 				return property;
 			}
 		return null;
@@ -135,7 +135,7 @@ public class MadesModel{
 	public boolean hasProperty() throws Exception {
 		for(Element e:this.system_package.getOwnedElements()){
 			if (e instanceof Constraint)
-				if (new PropertyParser(((LiteralString) ((Constraint) e).getSpecification()).getValue()).getProperty() != null)
+				if (new PropertyParser(this, ((LiteralString) ((Constraint) e).getSpecification()).getValue()).getProperty() != null)
 					return true;
 		}
 		return false;

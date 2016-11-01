@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.correttouml.grammars.property.ArithVar#getOp <em>Op</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.ArithVar#getParam <em>Param</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.ArithVar#getSd <em>Sd</em>}</li>
- *   <li>{@link org.correttouml.grammars.property.ArithVar#getStaticVar <em>Static Var</em>}</li>
  * </ul>
  * </p>
  *
@@ -156,31 +155,5 @@ public interface ArithVar extends EObject
    * @generated
    */
   void setSd(String value);
-
-  /**
-   * Returns the value of the '<em><b>Static Var</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Static Var</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Static Var</em>' attribute.
-   * @see #setStaticVar(String)
-   * @see org.correttouml.grammars.property.PropertyPackage#getArithVar_StaticVar()
-   * @model
-   * @generated
-   */
-  String getStaticVar();
-
-  /**
-   * Sets the value of the '{@link org.correttouml.grammars.property.ArithVar#getStaticVar <em>Static Var</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Static Var</em>' attribute.
-   * @see #getStaticVar()
-   * @generated
-   */
-  void setStaticVar(String value);
 
 } // ArithVar

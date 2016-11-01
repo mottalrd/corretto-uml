@@ -136,25 +136,18 @@ public class PropertyGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_1_2_1 = (Group)cAlternatives_1_2.eContents().get(1);
 		private final Assignment cObjAssignment_1_2_1_0 = (Assignment)cGroup_1_2_1.eContents().get(0);
 		private final RuleCall cObjIDTerminalRuleCall_1_2_1_0_0 = (RuleCall)cObjAssignment_1_2_1_0.eContents().get(0);
-		private final Alternatives cAlternatives_1_2_1_1 = (Alternatives)cGroup_1_2_1.eContents().get(1);
-		private final Group cGroup_1_2_1_1_0 = (Group)cAlternatives_1_2_1_1.eContents().get(0);
-		private final Keyword cInKeyword_1_2_1_1_0_0 = (Keyword)cGroup_1_2_1_1_0.eContents().get(0);
-		private final Assignment cStateNameAssignment_1_2_1_1_0_1 = (Assignment)cGroup_1_2_1_1_0.eContents().get(1);
-		private final RuleCall cStateNameIDTerminalRuleCall_1_2_1_1_0_1_0 = (RuleCall)cStateNameAssignment_1_2_1_1_0_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_1_2_1_1_0_2 = (Keyword)cGroup_1_2_1_1_0.eContents().get(2);
-		private final Group cGroup_1_2_1_1_1 = (Group)cAlternatives_1_2_1_1.eContents().get(1);
-		private final Keyword cCallKeyword_1_2_1_1_1_0 = (Keyword)cGroup_1_2_1_1_1.eContents().get(0);
-		private final Assignment cOperationNameAssignment_1_2_1_1_1_1 = (Assignment)cGroup_1_2_1_1_1.eContents().get(1);
-		private final RuleCall cOperationNameIDTerminalRuleCall_1_2_1_1_1_1_0 = (RuleCall)cOperationNameAssignment_1_2_1_1_1_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_1_2_1_1_1_2 = (Keyword)cGroup_1_2_1_1_1.eContents().get(2);
+		private final Keyword cInKeyword_1_2_1_1 = (Keyword)cGroup_1_2_1.eContents().get(1);
+		private final Assignment cStateNameAssignment_1_2_1_2 = (Assignment)cGroup_1_2_1.eContents().get(2);
+		private final RuleCall cStateNameIDTerminalRuleCall_1_2_1_2_0 = (RuleCall)cStateNameAssignment_1_2_1_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_1_2_1_3 = (Keyword)cGroup_1_2_1.eContents().get(3);
 		
 		//Declaration:
-		//	stateName=ID "=" obj=ID ".getState(" std=ID "," uMLStateName=ID ")" | trioVar=ID "=" (trio=TRIO | obj=ID (".in("
-		//	stateName=ID ")" | ".call(" operationName=ID ")"));
+		//	stateName=ID "=" obj=ID ".getState(" std=ID "," uMLStateName=ID ")" | trioVar=ID "=" (trio=TRIO | obj=ID ".in("
+		//	stateName=ID ")");
 		public ParserRule getRule() { return rule; }
 
-		//stateName=ID "=" obj=ID ".getState(" std=ID "," uMLStateName=ID ")" | trioVar=ID "=" (trio=TRIO | obj=ID (".in("
-		//stateName=ID ")" | ".call(" operationName=ID ")"))
+		//stateName=ID "=" obj=ID ".getState(" std=ID "," uMLStateName=ID ")" | trioVar=ID "=" (trio=TRIO | obj=ID ".in("
+		//stateName=ID ")")
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//stateName=ID "=" obj=ID ".getState(" std=ID "," uMLStateName=ID ")"
@@ -196,7 +189,7 @@ public class PropertyGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_0_7() { return cRightParenthesisKeyword_0_7; }
 
-		//trioVar=ID "=" (trio=TRIO | obj=ID (".in(" stateName=ID ")" | ".call(" operationName=ID ")"))
+		//trioVar=ID "=" (trio=TRIO | obj=ID ".in(" stateName=ID ")")
 		public Group getGroup_1() { return cGroup_1; }
 
 		//trioVar=ID
@@ -208,7 +201,7 @@ public class PropertyGrammarAccess extends AbstractGrammarElementFinder {
 		//"="
 		public Keyword getEqualsSignKeyword_1_1() { return cEqualsSignKeyword_1_1; }
 
-		//trio=TRIO | obj=ID (".in(" stateName=ID ")" | ".call(" operationName=ID ")")
+		//trio=TRIO | obj=ID ".in(" stateName=ID ")"
 		public Alternatives getAlternatives_1_2() { return cAlternatives_1_2; }
 
 		//trio=TRIO
@@ -217,7 +210,7 @@ public class PropertyGrammarAccess extends AbstractGrammarElementFinder {
 		//TRIO
 		public RuleCall getTrioTRIOParserRuleCall_1_2_0_0() { return cTrioTRIOParserRuleCall_1_2_0_0; }
 
-		//obj=ID (".in(" stateName=ID ")" | ".call(" operationName=ID ")")
+		//obj=ID ".in(" stateName=ID ")"
 		public Group getGroup_1_2_1() { return cGroup_1_2_1; }
 
 		//obj=ID
@@ -226,38 +219,17 @@ public class PropertyGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getObjIDTerminalRuleCall_1_2_1_0_0() { return cObjIDTerminalRuleCall_1_2_1_0_0; }
 
-		//".in(" stateName=ID ")" | ".call(" operationName=ID ")"
-		public Alternatives getAlternatives_1_2_1_1() { return cAlternatives_1_2_1_1; }
-
-		//".in(" stateName=ID ")"
-		public Group getGroup_1_2_1_1_0() { return cGroup_1_2_1_1_0; }
-
 		//".in("
-		public Keyword getInKeyword_1_2_1_1_0_0() { return cInKeyword_1_2_1_1_0_0; }
+		public Keyword getInKeyword_1_2_1_1() { return cInKeyword_1_2_1_1; }
 
 		//stateName=ID
-		public Assignment getStateNameAssignment_1_2_1_1_0_1() { return cStateNameAssignment_1_2_1_1_0_1; }
+		public Assignment getStateNameAssignment_1_2_1_2() { return cStateNameAssignment_1_2_1_2; }
 
 		//ID
-		public RuleCall getStateNameIDTerminalRuleCall_1_2_1_1_0_1_0() { return cStateNameIDTerminalRuleCall_1_2_1_1_0_1_0; }
+		public RuleCall getStateNameIDTerminalRuleCall_1_2_1_2_0() { return cStateNameIDTerminalRuleCall_1_2_1_2_0; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_1_2_1_1_0_2() { return cRightParenthesisKeyword_1_2_1_1_0_2; }
-
-		//".call(" operationName=ID ")"
-		public Group getGroup_1_2_1_1_1() { return cGroup_1_2_1_1_1; }
-
-		//".call("
-		public Keyword getCallKeyword_1_2_1_1_1_0() { return cCallKeyword_1_2_1_1_1_0; }
-
-		//operationName=ID
-		public Assignment getOperationNameAssignment_1_2_1_1_1_1() { return cOperationNameAssignment_1_2_1_1_1_1; }
-
-		//ID
-		public RuleCall getOperationNameIDTerminalRuleCall_1_2_1_1_1_1_0() { return cOperationNameIDTerminalRuleCall_1_2_1_1_1_1_0; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_1_2_1_1_1_2() { return cRightParenthesisKeyword_1_2_1_1_1_2; }
+		public Keyword getRightParenthesisKeyword_1_2_1_3() { return cRightParenthesisKeyword_1_2_1_3; }
 	}
 
 	public class TRIOElements extends AbstractParserRuleElementFinder {
@@ -291,193 +263,195 @@ public class PropertyGrammarAccess extends AbstractGrammarElementFinder {
 	public class TRIOLElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TRIOL");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cTrioVarAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cTrioVarIDTerminalRuleCall_0_0 = (RuleCall)cTrioVarAssignment_0.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cSystemGetSignalKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cSignalAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cSignalIDTerminalRuleCall_1_1_0 = (RuleCall)cSignalAssignment_1_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
-		private final Assignment cArithBoolAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final RuleCall cArithBoolArithBoolParserRuleCall_2_0 = (RuleCall)cArithBoolAssignment_2.eContents().get(0);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Assignment cTrioVarAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final RuleCall cTrioVarIDTerminalRuleCall_0_0_0 = (RuleCall)cTrioVarAssignment_0_0.eContents().get(0);
+		private final Group cGroup_0_1 = (Group)cGroup_0.eContents().get(1);
+		private final Assignment cOpNameAssignment_0_1_0 = (Assignment)cGroup_0_1.eContents().get(0);
+		private final RuleCall cOpNameIDTerminalRuleCall_0_1_0_0 = (RuleCall)cOpNameAssignment_0_1_0.eContents().get(0);
+		private final Keyword cLeftParenthesisRightParenthesisKeyword_0_1_1 = (Keyword)cGroup_0_1.eContents().get(1);
+		private final Assignment cArithBoolAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cArithBoolArithBoolParserRuleCall_1_0 = (RuleCall)cArithBoolAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Keyword cExclamationMarkLeftParenthesisKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cTrioNotAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cTrioNotTRIOParserRuleCall_2_1_0 = (RuleCall)cTrioNotAssignment_2_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final Keyword cExclamationMarkLeftParenthesisKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cTrioNotAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cTrioNotTRIOParserRuleCall_3_1_0 = (RuleCall)cTrioNotAssignment_3_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
+		private final Keyword cTimeKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cTrioOpFAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cTrioOpFTRIOOPFTerminalRuleCall_3_1_0 = (RuleCall)cTrioOpFAssignment_3_1.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
+		private final Assignment cTrioOpF1Assignment_3_3 = (Assignment)cGroup_3.eContents().get(3);
+		private final RuleCall cTrioOpF1TRIOParserRuleCall_3_3_0 = (RuleCall)cTrioOpF1Assignment_3_3.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3_4 = (Keyword)cGroup_3.eContents().get(4);
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
 		private final Keyword cTimeKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cTrioOpFAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cTrioOpFTRIOOPFTerminalRuleCall_4_1_0 = (RuleCall)cTrioOpFAssignment_4_1.eContents().get(0);
+		private final Assignment cTrioOpFFAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cTrioOpFFTRIOOPFFTerminalRuleCall_4_1_0 = (RuleCall)cTrioOpFFAssignment_4_1.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
-		private final Assignment cTrioOpF1Assignment_4_3 = (Assignment)cGroup_4.eContents().get(3);
-		private final RuleCall cTrioOpF1TRIOParserRuleCall_4_3_0 = (RuleCall)cTrioOpF1Assignment_4_3.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
+		private final Assignment cTrioOpFF1Assignment_4_3 = (Assignment)cGroup_4.eContents().get(3);
+		private final RuleCall cTrioOpFF1TRIOParserRuleCall_4_3_0 = (RuleCall)cTrioOpFF1Assignment_4_3.eContents().get(0);
+		private final Keyword cCommaKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
+		private final Assignment cTrioOpFF2Assignment_4_5 = (Assignment)cGroup_4.eContents().get(5);
+		private final RuleCall cTrioOpFF2TRIOParserRuleCall_4_5_0 = (RuleCall)cTrioOpFF2Assignment_4_5.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_4_6 = (Keyword)cGroup_4.eContents().get(6);
 		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
 		private final Keyword cTimeKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cTrioOpFFAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cTrioOpFFTRIOOPFFTerminalRuleCall_5_1_0 = (RuleCall)cTrioOpFFAssignment_5_1.eContents().get(0);
+		private final Assignment cTrioOpFNAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cTrioOpFNTRIOOPFNTerminalRuleCall_5_1_0 = (RuleCall)cTrioOpFNAssignment_5_1.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
-		private final Assignment cTrioOpFF1Assignment_5_3 = (Assignment)cGroup_5.eContents().get(3);
-		private final RuleCall cTrioOpFF1TRIOParserRuleCall_5_3_0 = (RuleCall)cTrioOpFF1Assignment_5_3.eContents().get(0);
+		private final Assignment cTrioOpFN1Assignment_5_3 = (Assignment)cGroup_5.eContents().get(3);
+		private final RuleCall cTrioOpFN1TRIOParserRuleCall_5_3_0 = (RuleCall)cTrioOpFN1Assignment_5_3.eContents().get(0);
 		private final Keyword cCommaKeyword_5_4 = (Keyword)cGroup_5.eContents().get(4);
-		private final Assignment cTrioOpFF2Assignment_5_5 = (Assignment)cGroup_5.eContents().get(5);
-		private final RuleCall cTrioOpFF2TRIOParserRuleCall_5_5_0 = (RuleCall)cTrioOpFF2Assignment_5_5.eContents().get(0);
+		private final Assignment cIntAssignment_5_5 = (Assignment)cGroup_5.eContents().get(5);
+		private final RuleCall cIntINTTerminalRuleCall_5_5_0 = (RuleCall)cIntAssignment_5_5.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_5_6 = (Keyword)cGroup_5.eContents().get(6);
-		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
-		private final Keyword cTimeKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cTrioOpFNAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cTrioOpFNTRIOOPFNTerminalRuleCall_6_1_0 = (RuleCall)cTrioOpFNAssignment_6_1.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_6_2 = (Keyword)cGroup_6.eContents().get(2);
-		private final Assignment cTrioOpFN1Assignment_6_3 = (Assignment)cGroup_6.eContents().get(3);
-		private final RuleCall cTrioOpFN1TRIOParserRuleCall_6_3_0 = (RuleCall)cTrioOpFN1Assignment_6_3.eContents().get(0);
-		private final Keyword cCommaKeyword_6_4 = (Keyword)cGroup_6.eContents().get(4);
-		private final Assignment cIntAssignment_6_5 = (Assignment)cGroup_6.eContents().get(5);
-		private final RuleCall cIntINTTerminalRuleCall_6_5_0 = (RuleCall)cIntAssignment_6_5.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_6_6 = (Keyword)cGroup_6.eContents().get(6);
 		
 		//TRIOL:
-		//	trioVar=ID | "system.getSignal(" signal=ID ")" | arithBool=ArithBool | "!(" trioNot=TRIO ")" | "Time." trioOpF=TRIOOPF
-		//	"(" trioOpF1=TRIO ")" | "Time." trioOpFF=TRIOOPFF "(" trioOpFF1=TRIO "," trioOpFF2=TRIO ")" | "Time."
-		//	trioOpFN=TRIOOPFN "(" trioOpFN1=TRIO "," int=INT ")";
+		//	trioVar=ID (opName=ID "()")? //xtext consumes '^' between two IDs. E.g. if TRIOL=obj1^op1(), then trioVar=obj1, and opName=op1. // If there is no definition for trioVar, it is a <<signal>>. (Time.neverTrue(failure))
+		//	| arithBool=ArithBool | "!(" trioNot=TRIO ")" | "Time." trioOpF=TRIOOPF "(" trioOpF1=TRIO ")" | "Time."
+		//	trioOpFF=TRIOOPFF "(" trioOpFF1=TRIO "," trioOpFF2=TRIO ")" | "Time." trioOpFN=TRIOOPFN "(" trioOpFN1=TRIO "," int=INT
+		//	")";
 		public ParserRule getRule() { return rule; }
 
-		//trioVar=ID | "system.getSignal(" signal=ID ")" | arithBool=ArithBool | "!(" trioNot=TRIO ")" | "Time." trioOpF=TRIOOPF
-		//"(" trioOpF1=TRIO ")" | "Time." trioOpFF=TRIOOPFF "(" trioOpFF1=TRIO "," trioOpFF2=TRIO ")" | "Time." trioOpFN=TRIOOPFN
-		//"(" trioOpFN1=TRIO "," int=INT ")"
+		//trioVar=ID (opName=ID "()")? //xtext consumes '^' between two IDs. E.g. if TRIOL=obj1^op1(), then trioVar=obj1, and opName=op1. // If there is no definition for trioVar, it is a <<signal>>. (Time.neverTrue(failure))
+		//| arithBool=ArithBool | "!(" trioNot=TRIO ")" | "Time." trioOpF=TRIOOPF "(" trioOpF1=TRIO ")" | "Time."
+		//trioOpFF=TRIOOPFF "(" trioOpFF1=TRIO "," trioOpFF2=TRIO ")" | "Time." trioOpFN=TRIOOPFN "(" trioOpFN1=TRIO "," int=INT
+		//")"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
+		//trioVar=ID (opName=ID "()")?
+		public Group getGroup_0() { return cGroup_0; }
+
 		//trioVar=ID
-		public Assignment getTrioVarAssignment_0() { return cTrioVarAssignment_0; }
+		public Assignment getTrioVarAssignment_0_0() { return cTrioVarAssignment_0_0; }
 
 		//ID
-		public RuleCall getTrioVarIDTerminalRuleCall_0_0() { return cTrioVarIDTerminalRuleCall_0_0; }
+		public RuleCall getTrioVarIDTerminalRuleCall_0_0_0() { return cTrioVarIDTerminalRuleCall_0_0_0; }
 
-		//"system.getSignal(" signal=ID ")"
-		public Group getGroup_1() { return cGroup_1; }
+		//(opName=ID "()")?
+		public Group getGroup_0_1() { return cGroup_0_1; }
 
-		//"system.getSignal("
-		public Keyword getSystemGetSignalKeyword_1_0() { return cSystemGetSignalKeyword_1_0; }
-
-		//signal=ID
-		public Assignment getSignalAssignment_1_1() { return cSignalAssignment_1_1; }
+		//opName=ID
+		public Assignment getOpNameAssignment_0_1_0() { return cOpNameAssignment_0_1_0; }
 
 		//ID
-		public RuleCall getSignalIDTerminalRuleCall_1_1_0() { return cSignalIDTerminalRuleCall_1_1_0; }
+		public RuleCall getOpNameIDTerminalRuleCall_0_1_0_0() { return cOpNameIDTerminalRuleCall_0_1_0_0; }
 
-		//")"
-		public Keyword getRightParenthesisKeyword_1_2() { return cRightParenthesisKeyword_1_2; }
+		//"()"
+		public Keyword getLeftParenthesisRightParenthesisKeyword_0_1_1() { return cLeftParenthesisRightParenthesisKeyword_0_1_1; }
 
 		//arithBool=ArithBool
-		public Assignment getArithBoolAssignment_2() { return cArithBoolAssignment_2; }
+		public Assignment getArithBoolAssignment_1() { return cArithBoolAssignment_1; }
 
 		//ArithBool
-		public RuleCall getArithBoolArithBoolParserRuleCall_2_0() { return cArithBoolArithBoolParserRuleCall_2_0; }
+		public RuleCall getArithBoolArithBoolParserRuleCall_1_0() { return cArithBoolArithBoolParserRuleCall_1_0; }
 
 		//"!(" trioNot=TRIO ")"
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_2() { return cGroup_2; }
 
 		//"!("
-		public Keyword getExclamationMarkLeftParenthesisKeyword_3_0() { return cExclamationMarkLeftParenthesisKeyword_3_0; }
+		public Keyword getExclamationMarkLeftParenthesisKeyword_2_0() { return cExclamationMarkLeftParenthesisKeyword_2_0; }
 
 		//trioNot=TRIO
-		public Assignment getTrioNotAssignment_3_1() { return cTrioNotAssignment_3_1; }
+		public Assignment getTrioNotAssignment_2_1() { return cTrioNotAssignment_2_1; }
 
 		//TRIO
-		public RuleCall getTrioNotTRIOParserRuleCall_3_1_0() { return cTrioNotTRIOParserRuleCall_3_1_0; }
+		public RuleCall getTrioNotTRIOParserRuleCall_2_1_0() { return cTrioNotTRIOParserRuleCall_2_1_0; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_3_2() { return cRightParenthesisKeyword_3_2; }
+		public Keyword getRightParenthesisKeyword_2_2() { return cRightParenthesisKeyword_2_2; }
 
 		//"Time." trioOpF=TRIOOPF "(" trioOpF1=TRIO ")"
+		public Group getGroup_3() { return cGroup_3; }
+
+		//"Time."
+		public Keyword getTimeKeyword_3_0() { return cTimeKeyword_3_0; }
+
+		//trioOpF=TRIOOPF
+		public Assignment getTrioOpFAssignment_3_1() { return cTrioOpFAssignment_3_1; }
+
+		//TRIOOPF
+		public RuleCall getTrioOpFTRIOOPFTerminalRuleCall_3_1_0() { return cTrioOpFTRIOOPFTerminalRuleCall_3_1_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_3_2() { return cLeftParenthesisKeyword_3_2; }
+
+		//trioOpF1=TRIO
+		public Assignment getTrioOpF1Assignment_3_3() { return cTrioOpF1Assignment_3_3; }
+
+		//TRIO
+		public RuleCall getTrioOpF1TRIOParserRuleCall_3_3_0() { return cTrioOpF1TRIOParserRuleCall_3_3_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_3_4() { return cRightParenthesisKeyword_3_4; }
+
+		//"Time." trioOpFF=TRIOOPFF "(" trioOpFF1=TRIO "," trioOpFF2=TRIO ")"
 		public Group getGroup_4() { return cGroup_4; }
 
 		//"Time."
 		public Keyword getTimeKeyword_4_0() { return cTimeKeyword_4_0; }
 
-		//trioOpF=TRIOOPF
-		public Assignment getTrioOpFAssignment_4_1() { return cTrioOpFAssignment_4_1; }
+		//trioOpFF=TRIOOPFF
+		public Assignment getTrioOpFFAssignment_4_1() { return cTrioOpFFAssignment_4_1; }
 
-		//TRIOOPF
-		public RuleCall getTrioOpFTRIOOPFTerminalRuleCall_4_1_0() { return cTrioOpFTRIOOPFTerminalRuleCall_4_1_0; }
+		//TRIOOPFF
+		public RuleCall getTrioOpFFTRIOOPFFTerminalRuleCall_4_1_0() { return cTrioOpFFTRIOOPFFTerminalRuleCall_4_1_0; }
 
 		//"("
 		public Keyword getLeftParenthesisKeyword_4_2() { return cLeftParenthesisKeyword_4_2; }
 
-		//trioOpF1=TRIO
-		public Assignment getTrioOpF1Assignment_4_3() { return cTrioOpF1Assignment_4_3; }
+		//trioOpFF1=TRIO
+		public Assignment getTrioOpFF1Assignment_4_3() { return cTrioOpFF1Assignment_4_3; }
 
 		//TRIO
-		public RuleCall getTrioOpF1TRIOParserRuleCall_4_3_0() { return cTrioOpF1TRIOParserRuleCall_4_3_0; }
+		public RuleCall getTrioOpFF1TRIOParserRuleCall_4_3_0() { return cTrioOpFF1TRIOParserRuleCall_4_3_0; }
+
+		//","
+		public Keyword getCommaKeyword_4_4() { return cCommaKeyword_4_4; }
+
+		//trioOpFF2=TRIO
+		public Assignment getTrioOpFF2Assignment_4_5() { return cTrioOpFF2Assignment_4_5; }
+
+		//TRIO
+		public RuleCall getTrioOpFF2TRIOParserRuleCall_4_5_0() { return cTrioOpFF2TRIOParserRuleCall_4_5_0; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_4_4() { return cRightParenthesisKeyword_4_4; }
+		public Keyword getRightParenthesisKeyword_4_6() { return cRightParenthesisKeyword_4_6; }
 
-		//"Time." trioOpFF=TRIOOPFF "(" trioOpFF1=TRIO "," trioOpFF2=TRIO ")"
+		//"Time." trioOpFN=TRIOOPFN "(" trioOpFN1=TRIO "," int=INT ")"
 		public Group getGroup_5() { return cGroup_5; }
 
 		//"Time."
 		public Keyword getTimeKeyword_5_0() { return cTimeKeyword_5_0; }
 
-		//trioOpFF=TRIOOPFF
-		public Assignment getTrioOpFFAssignment_5_1() { return cTrioOpFFAssignment_5_1; }
+		//trioOpFN=TRIOOPFN
+		public Assignment getTrioOpFNAssignment_5_1() { return cTrioOpFNAssignment_5_1; }
 
-		//TRIOOPFF
-		public RuleCall getTrioOpFFTRIOOPFFTerminalRuleCall_5_1_0() { return cTrioOpFFTRIOOPFFTerminalRuleCall_5_1_0; }
+		//TRIOOPFN
+		public RuleCall getTrioOpFNTRIOOPFNTerminalRuleCall_5_1_0() { return cTrioOpFNTRIOOPFNTerminalRuleCall_5_1_0; }
 
 		//"("
 		public Keyword getLeftParenthesisKeyword_5_2() { return cLeftParenthesisKeyword_5_2; }
 
-		//trioOpFF1=TRIO
-		public Assignment getTrioOpFF1Assignment_5_3() { return cTrioOpFF1Assignment_5_3; }
+		//trioOpFN1=TRIO
+		public Assignment getTrioOpFN1Assignment_5_3() { return cTrioOpFN1Assignment_5_3; }
 
 		//TRIO
-		public RuleCall getTrioOpFF1TRIOParserRuleCall_5_3_0() { return cTrioOpFF1TRIOParserRuleCall_5_3_0; }
+		public RuleCall getTrioOpFN1TRIOParserRuleCall_5_3_0() { return cTrioOpFN1TRIOParserRuleCall_5_3_0; }
 
 		//","
 		public Keyword getCommaKeyword_5_4() { return cCommaKeyword_5_4; }
 
-		//trioOpFF2=TRIO
-		public Assignment getTrioOpFF2Assignment_5_5() { return cTrioOpFF2Assignment_5_5; }
+		//int=INT
+		public Assignment getIntAssignment_5_5() { return cIntAssignment_5_5; }
 
-		//TRIO
-		public RuleCall getTrioOpFF2TRIOParserRuleCall_5_5_0() { return cTrioOpFF2TRIOParserRuleCall_5_5_0; }
+		//INT
+		public RuleCall getIntINTTerminalRuleCall_5_5_0() { return cIntINTTerminalRuleCall_5_5_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_5_6() { return cRightParenthesisKeyword_5_6; }
-
-		//"Time." trioOpFN=TRIOOPFN "(" trioOpFN1=TRIO "," int=INT ")"
-		public Group getGroup_6() { return cGroup_6; }
-
-		//"Time."
-		public Keyword getTimeKeyword_6_0() { return cTimeKeyword_6_0; }
-
-		//trioOpFN=TRIOOPFN
-		public Assignment getTrioOpFNAssignment_6_1() { return cTrioOpFNAssignment_6_1; }
-
-		//TRIOOPFN
-		public RuleCall getTrioOpFNTRIOOPFNTerminalRuleCall_6_1_0() { return cTrioOpFNTRIOOPFNTerminalRuleCall_6_1_0; }
-
-		//"("
-		public Keyword getLeftParenthesisKeyword_6_2() { return cLeftParenthesisKeyword_6_2; }
-
-		//trioOpFN1=TRIO
-		public Assignment getTrioOpFN1Assignment_6_3() { return cTrioOpFN1Assignment_6_3; }
-
-		//TRIO
-		public RuleCall getTrioOpFN1TRIOParserRuleCall_6_3_0() { return cTrioOpFN1TRIOParserRuleCall_6_3_0; }
-
-		//","
-		public Keyword getCommaKeyword_6_4() { return cCommaKeyword_6_4; }
-
-		//int=INT
-		public Assignment getIntAssignment_6_5() { return cIntAssignment_6_5; }
-
-		//INT
-		public RuleCall getIntINTTerminalRuleCall_6_5_0() { return cIntINTTerminalRuleCall_6_5_0; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_6_6() { return cRightParenthesisKeyword_6_6; }
 	}
 
 	public class TRIORElements extends AbstractParserRuleElementFinder {
@@ -743,19 +717,12 @@ public class PropertyGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cParamAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
 		private final RuleCall cParamIDTerminalRuleCall_2_2_0 = (RuleCall)cParamAssignment_2_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
-		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final Keyword cSystemGetStaticVarKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cStaticVarAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cStaticVarIDTerminalRuleCall_3_1_0 = (RuleCall)cStaticVarAssignment_3_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
 		
 		//ArithVar:
-		//	obj=ID "." atr=ID | obj=ID "::" op=ID "." param=ID | sd=ID ".getParameter(" param=ID ")" | "system.getStaticVar("
-		//	staticVar=ID ")";
+		//	obj=ID "." atr=ID | obj=ID "::" op=ID "." param=ID | sd=ID ".getParameter(" param=ID ")";
 		public ParserRule getRule() { return rule; }
 
-		//obj=ID "." atr=ID | obj=ID "::" op=ID "." param=ID | sd=ID ".getParameter(" param=ID ")" | "system.getStaticVar("
-		//staticVar=ID ")"
+		//obj=ID "." atr=ID | obj=ID "::" op=ID "." param=ID | sd=ID ".getParameter(" param=ID ")"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//obj=ID "." atr=ID
@@ -823,21 +790,6 @@ public class PropertyGrammarAccess extends AbstractGrammarElementFinder {
 
 		//")"
 		public Keyword getRightParenthesisKeyword_2_3() { return cRightParenthesisKeyword_2_3; }
-
-		//"system.getStaticVar(" staticVar=ID ")"
-		public Group getGroup_3() { return cGroup_3; }
-
-		//"system.getStaticVar("
-		public Keyword getSystemGetStaticVarKeyword_3_0() { return cSystemGetStaticVarKeyword_3_0; }
-
-		//staticVar=ID
-		public Assignment getStaticVarAssignment_3_1() { return cStaticVarAssignment_3_1; }
-
-		//ID
-		public RuleCall getStaticVarIDTerminalRuleCall_3_1_0() { return cStaticVarIDTerminalRuleCall_3_1_0; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_3_2() { return cRightParenthesisKeyword_3_2; }
 	}
 
 	public class DataTypeElements extends AbstractParserRuleElementFinder {
@@ -966,8 +918,8 @@ public class PropertyGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Declaration:
-	//	stateName=ID "=" obj=ID ".getState(" std=ID "," uMLStateName=ID ")" | trioVar=ID "=" (trio=TRIO | obj=ID (".in("
-	//	stateName=ID ")" | ".call(" operationName=ID ")"));
+	//	stateName=ID "=" obj=ID ".getState(" std=ID "," uMLStateName=ID ")" | trioVar=ID "=" (trio=TRIO | obj=ID ".in("
+	//	stateName=ID ")");
 	public DeclarationElements getDeclarationAccess() {
 		return (pDeclaration != null) ? pDeclaration : (pDeclaration = new DeclarationElements());
 	}
@@ -987,9 +939,10 @@ public class PropertyGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TRIOL:
-	//	trioVar=ID | "system.getSignal(" signal=ID ")" | arithBool=ArithBool | "!(" trioNot=TRIO ")" | "Time." trioOpF=TRIOOPF
-	//	"(" trioOpF1=TRIO ")" | "Time." trioOpFF=TRIOOPFF "(" trioOpFF1=TRIO "," trioOpFF2=TRIO ")" | "Time."
-	//	trioOpFN=TRIOOPFN "(" trioOpFN1=TRIO "," int=INT ")";
+	//	trioVar=ID (opName=ID "()")? //xtext consumes '^' between two IDs. E.g. if TRIOL=obj1^op1(), then trioVar=obj1, and opName=op1. // If there is no definition for trioVar, it is a <<signal>>. (Time.neverTrue(failure))
+	//	| arithBool=ArithBool | "!(" trioNot=TRIO ")" | "Time." trioOpF=TRIOOPF "(" trioOpF1=TRIO ")" | "Time."
+	//	trioOpFF=TRIOOPFF "(" trioOpFF1=TRIO "," trioOpFF2=TRIO ")" | "Time." trioOpFN=TRIOOPFN "(" trioOpFN1=TRIO "," int=INT
+	//	")";
 	public TRIOLElements getTRIOLAccess() {
 		return (pTRIOL != null) ? pTRIOL : (pTRIOL = new TRIOLElements());
 	}
@@ -1079,8 +1032,7 @@ public class PropertyGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ArithVar:
-	//	obj=ID "." atr=ID | obj=ID "::" op=ID "." param=ID | sd=ID ".getParameter(" param=ID ")" | "system.getStaticVar("
-	//	staticVar=ID ")";
+	//	obj=ID "." atr=ID | obj=ID "::" op=ID "." param=ID | sd=ID ".getParameter(" param=ID ")";
 	public ArithVarElements getArithVarAccess() {
 		return (pArithVar != null) ? pArithVar : (pArithVar = new ArithVarElements());
 	}

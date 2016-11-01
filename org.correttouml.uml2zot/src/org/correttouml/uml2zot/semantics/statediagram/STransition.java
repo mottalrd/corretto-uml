@@ -108,8 +108,7 @@ public class STransition {
         }
         if (this.mades_transition.hasActions()){
             for(SAction act: actions){
-            	sem = sem + new Implies(new And(sourcestate, transition), new Next(act.getPredicate(object))) + "\n";
-            	sem = sem + new Implies( act.getPredicate(object), new Yesterday(new And(sourcestate, transition))) + "\n";
+            	sem += new Iff(new Yesterday(new And(sourcestate, transition)), act.getPredicate(object)) + "\n";
                 if(act.getSemantics(this.mades_transition.getStateDiagram(), object)!=null) sem=sem+act.getSemantics(this.mades_transition.getStateDiagram(), object)+"\n";
             }
         }

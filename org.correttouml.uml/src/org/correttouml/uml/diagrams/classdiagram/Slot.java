@@ -12,10 +12,7 @@ public class Slot {
 	}
 	
 	/**
-	 * [corretto-man] Every object on Object Diagram needs a slot for each variable in its classifier in the Class Diagram.
-	 * [corretto-man] A slot can have a default value. If it has "timeVariant" as the default value and does not have any assignment,
-	 *  it is left free to take any value at any time. That means there will not be a formula that limits it to keep its value
-	 *   (Var = Yesterday(Var)). 
+	 * [corretto-man] To assign a default value to a variable it needs a slot in Object Diagram.
 	 * @return Default value of the slot.
 	 */
 	public ValueSpecification getValueSpecification() {
@@ -25,10 +22,6 @@ public class Slot {
 		else
 			return null;
 		return new ValueSpecification(value);
-	}
-	
-	public boolean isTimeVariant(){
-		return uml_slot.getValues().get(0) instanceof LiteralString;
 	}
 	
 }

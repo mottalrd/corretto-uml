@@ -43,28 +43,31 @@ public class FisherProtocol {
 
 	public void start() {
 		LOGGER.info("Creating the UML model");
+		int scalabilityParameter = 9;
 		String modeltype = "sat";
-		for (int i = 2; i <= 2; i++) {
-			create_fisher_model(i, null);
-			
-			//(alwf (!! ([>] (-V- ATTRcounter) 1)))
-			modeltype = "p";
-			create_fisher_model(i, "Corretto.verify(Time.neverTrue(system.getStaticVar(counter) > 1))");
-			
-			// Save it to disk
-			UML2Helper.save(myModel,
-					URI.createFileURI(TestConfiguration.MODEL_SAVE_PATH)
-							.appendSegment(TestConfiguration.MODEL_SAVE_NAME)
-							.appendFileExtension(UMLResource.FILE_EXTENSION));
+		
+		//<SAT>
+//		create_fisher_model(scalabilityParameter, null);
+		//</SAT>
+		
+		//<P>
+		//(alwf (!! ([>] (-V- ATTRcounter) 1)))
+		modeltype = "p";
+		create_fisher_model(scalabilityParameter, "Corretto.verify(Time.neverTrue(Process.counter > 1))");
+		//</P>
+		
+		// Save it to disk
+		UML2Helper.save(myModel,
+				URI.createFileURI(TestConfiguration.MODEL_SAVE_PATH)
+						.appendSegment(TestConfiguration.MODEL_SAVE_NAME)
+						.appendFileExtension(UMLResource.FILE_EXTENSION));
 
-			LOGGER.info("Building the MADES UML representation");
-			t = new UML2Zot(
-					new File(TestConfiguration.MODEL_FILE).getAbsolutePath());
+		LOGGER.info("Building the MADES UML representation");
+		t = new UML2Zot(
+				new File(TestConfiguration.MODEL_FILE).getAbsolutePath());
 
-			LOGGER.info("Generate the ZOT File");
-			t.generateZOTFile(75, "ae2bvzot", "z3", new File("output/fischer-" + modeltype + "-" + i + ".lisp").getAbsolutePath());
-		}
-
+		LOGGER.info("Generate the ZOT File");
+		t.generateZOTFile(75, "ae2bvzot", "z3", new File("output/fischer-" + modeltype + "-" + scalabilityParameter + ".lisp").getAbsolutePath());
 	}
 	
 	private void create_alw_not_counter_greater_than_one() {

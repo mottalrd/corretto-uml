@@ -60,7 +60,7 @@ public class SObject {
 			
 			ValueSpecification value=null;
 			Slot s=null;
-			if((s=mades_obj.getSlot(att))!=null && !mades_obj.getSlot(att).isTimeVariant()){
+			if((s=mades_obj.getSlot(att))!=null){
 				value=s.getValueSpecification();
 			}else{
 				//[TODO]: To initialize an attribute right now you MUST

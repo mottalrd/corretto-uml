@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.correttouml.grammars.property.TRIOL#getTrioVar <em>Trio Var</em>}</li>
- *   <li>{@link org.correttouml.grammars.property.TRIOL#getSignal <em>Signal</em>}</li>
+ *   <li>{@link org.correttouml.grammars.property.TRIOL#getOpName <em>Op Name</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.TRIOL#getArithBool <em>Arith Bool</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.TRIOL#getTrioNot <em>Trio Not</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.TRIOL#getTrioOpF <em>Trio Op F</em>}</li>
@@ -60,30 +60,30 @@ public interface TRIOL extends EObject
   void setTrioVar(String value);
 
   /**
-   * Returns the value of the '<em><b>Signal</b></em>' attribute.
+   * Returns the value of the '<em><b>Op Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Signal</em>' attribute isn't clear,
+   * If the meaning of the '<em>Op Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Signal</em>' attribute.
-   * @see #setSignal(String)
-   * @see org.correttouml.grammars.property.PropertyPackage#getTRIOL_Signal()
+   * @return the value of the '<em>Op Name</em>' attribute.
+   * @see #setOpName(String)
+   * @see org.correttouml.grammars.property.PropertyPackage#getTRIOL_OpName()
    * @model
    * @generated
    */
-  String getSignal();
+  String getOpName();
 
   /**
-   * Sets the value of the '{@link org.correttouml.grammars.property.TRIOL#getSignal <em>Signal</em>}' attribute.
+   * Sets the value of the '{@link org.correttouml.grammars.property.TRIOL#getOpName <em>Op Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Signal</em>' attribute.
-   * @see #getSignal()
+   * @param value the new value of the '<em>Op Name</em>' attribute.
+   * @see #getOpName()
    * @generated
    */
-  void setSignal(String value);
+  void setOpName(String value);
 
   /**
    * Returns the value of the '<em><b>Arith Bool</b></em>' containment reference.

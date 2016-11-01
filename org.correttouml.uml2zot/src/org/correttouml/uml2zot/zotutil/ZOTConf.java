@@ -66,8 +66,6 @@ public class ZOTConf {
         BooleanFormulae property_formulae=null;
         if (model.hasProperty()) property_formulae=model.getProperty();
         String declarations= model.getDeclarations();
-        String defuns= model.getDefun();
-//        String ae2zotVariables = model.getVariableDeclarationsForae2zot();
         String definemodel = "(defvar AX1 \n (&& \n" + sem + "\n)) ;;END AX1 \n\n\n";
         String smtsolverparameter = "";
 
@@ -112,10 +110,7 @@ public class ZOTConf {
             thesystem = thesystem + "(defvar the_system  (&& (yesterday (alwf AX1)) initAx))";
         }
         thesystem = thesystem + "\n\n\n" + "(" + plugin + ":zot TSPACE (&& the_system) " + smtsolverparameter + ")";
-        int arithVarsN=0;
-        for(org.correttouml.uml2zot.semantics.util.trio.TrioVar t: org.correttouml.uml2zot.semantics.util.trio.TrioVar.instances){
-			arithVarsN++;
-		}
+        int arithVarsN = org.correttouml.uml2zot.semantics.util.trio.TrioVar.instances.size();
         String zot = modelStats + ";  " + Integer.toString(arithVarsN) + "\t:Number of arithmetic variables\n"
                 + ""
                 + loadplugin
