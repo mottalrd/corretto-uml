@@ -15,7 +15,7 @@ public class SCF_Opt extends SCombinedFragment implements SCombinedFragmentItf{
 	private CF_Opt mades_cf_opt;
 	
 	public SCF_Opt(CF_Opt cfopt) {
-		super((CombinedFragment)cfopt);
+		super(cfopt);
 		this.mades_cf_opt = cfopt;
 	}
 	

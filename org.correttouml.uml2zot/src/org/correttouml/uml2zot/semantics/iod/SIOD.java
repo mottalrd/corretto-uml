@@ -2,30 +2,19 @@ package org.correttouml.uml2zot.semantics.iod;
 
 
 import java.util.Collection;
-import java.util.Iterator;
-
-import org.correttouml.uml.MadesModel;
 import org.correttouml.uml.diagrams.activity.*;
-import org.correttouml.uml.diagrams.events.Event;
 import org.correttouml.uml.diagrams.iod.IOD;
 import org.correttouml.uml2zot.semantics.activity.*;
-import org.correttouml.uml2zot.semantics.activitydiagram.SAD;
-import org.correttouml.uml2zot.UML2Zot;
 import org.correttouml.uml2zot.semantics.SMadesModel;
-import org.correttouml.uml2zot.semantics.events.SEvent;
 import org.correttouml.uml2zot.semantics.events.SEventFactory;
 import org.correttouml.uml2zot.semantics.util.bool.And;
-import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
 import org.correttouml.uml2zot.semantics.util.bool.Iff;
-import org.correttouml.uml2zot.semantics.util.bool.Implies;
 import org.correttouml.uml2zot.semantics.util.bool.Not;
 import org.correttouml.uml2zot.semantics.util.bool.Or;
-import org.correttouml.uml2zot.semantics.util.trio.Futr;
 import org.correttouml.uml2zot.semantics.util.trio.Past;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 import org.correttouml.uml2zot.semantics.util.trio.Since;
 import org.correttouml.uml2zot.semantics.util.trio.Since_ei;
-import org.correttouml.uml2zot.semantics.util.trio.SomF;
 
 /**
  * @author Mohammad Mehdi Pourhashem Kallehbasti
@@ -61,7 +50,7 @@ public class SIOD extends SActivity {
             if (n instanceof SequenceDiagramNode) {
                 SequenceDiagramNode curr = (SequenceDiagramNode) n;
 				//ASSUMPION: The sequence diagram is preceded by only one node
-				Node prev = (Node) n.getIncomingNodes().iterator().next();
+				Node prev = n.getIncomingNodes().iterator().next();
 				SSequenceDiagramNode ssdNode = new SSequenceDiagramNode(curr, this.mades_iod); 
 				Predicate sd_start = ssdNode.getStartPredicate();
 				sem = sem + new Iff(sd_start, new Past(RC(curr, prev),1)) + "\n";

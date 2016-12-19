@@ -11,13 +11,11 @@ import java.io.InputStreamReader;
 
 import org.apache.log4j.Logger;
 import org.correttouml.uml.MadesModel;
-import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagram;
 import org.correttouml.uml.helpers.UML2ModelHelper;
 import org.correttouml.uml2zot.semantics.SMadesModel;
 import org.correttouml.uml2zot.semantics.statediagram.SState;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
-import org.correttouml.uml2zot.semantics.util.trio.TrioVar;
 import org.correttouml.uml2zot.zotutil.ZOTConf;
 import org.eclipse.uml2.uml.Model;
 

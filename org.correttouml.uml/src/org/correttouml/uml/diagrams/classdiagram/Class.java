@@ -5,8 +5,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.correttouml.uml.MadesModel;
-import org.correttouml.uml.diagrams.activitydiagram.AD;
-import org.correttouml.uml.diagrams.iod.IOD;
 import org.correttouml.uml.diagrams.statediagram.StateDiagram;
 import org.correttouml.uml.helpers.UML2ModelHelper;
 import org.eclipse.uml2.uml.Element;

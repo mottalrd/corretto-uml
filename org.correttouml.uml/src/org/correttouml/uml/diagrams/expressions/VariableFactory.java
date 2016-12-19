@@ -1,7 +1,6 @@
 package org.correttouml.uml.diagrams.expressions;
 
 import org.correttouml.uml.diagrams.activity.Activity;
-import org.correttouml.uml.diagrams.activitydiagram.AD;
 import org.correttouml.uml.diagrams.classdiagram.Attribute;
 import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.classdiagram.Operation;
@@ -29,7 +28,7 @@ public class VariableFactory {
 			}
 			if (context instanceof Transition) {
 				return findVariableInStateDiagram(varname, object,
-						(StateDiagram) ((Transition) context).getStateDiagram());
+						((Transition) context).getStateDiagram());
 			}
 			if (context instanceof Activity) {
 				return findVariableInAD(varname, object);
@@ -53,7 +52,7 @@ public class VariableFactory {
 					if(op_par.getName().equals(varname)) return op_par;
 				}
 			}
-			throw new Exception("Attribute " +varname+ " not found in state diagram");
+			throw new Exception("Attribute " + varname + " not found in state diagram");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -72,7 +71,13 @@ public class VariableFactory {
 				if (a.getName().equals(varname))
 					return a;
 			}
-			throw new Exception("Variable " + varname + "not found in the sequence diagram");
+			for (Object neighborObject : object.getAssociatedObjects())
+				for (Attribute a : neighborObject.getOwningClass().getAttributes())
+					if (a.getName().equals(varname)){
+						a.setObject(neighborObject);
+						return a;
+					}
+			throw new Exception("Variable " + varname + " not found in the sequence diagram");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

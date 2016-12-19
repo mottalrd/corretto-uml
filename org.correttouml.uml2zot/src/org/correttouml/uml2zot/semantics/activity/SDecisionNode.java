@@ -8,7 +8,6 @@ import org.correttouml.uml.diagrams.activity.DecisionNode;
 import org.correttouml.uml.diagrams.activity.Node;
 import org.correttouml.uml.diagrams.activitydiagram.AD;
 import org.correttouml.uml2zot.semantics.expressions.SBooleanExpression;
-import org.correttouml.uml2zot.semantics.util.bool.And;
 import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
 import org.correttouml.uml2zot.semantics.util.bool.Iff;
 import org.correttouml.uml2zot.semantics.util.bool.Implies;

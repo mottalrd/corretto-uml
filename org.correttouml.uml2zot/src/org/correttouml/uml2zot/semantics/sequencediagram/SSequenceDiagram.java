@@ -1,12 +1,7 @@
 package org.correttouml.uml2zot.semantics.sequencediagram;
 
-import java.awt.List;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Set;
 
 import org.correttouml.uml.diagrams.classdiagram.Object;
@@ -37,7 +32,6 @@ import org.correttouml.uml2zot.semantics.util.bool.Not;
 import org.correttouml.uml2zot.semantics.util.bool.Or;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 import org.correttouml.uml2zot.semantics.util.trio.Since_ei;
-import org.correttouml.uml2zot.semantics.util.trio.Until_ei;
 import org.correttouml.uml2zot.semantics.util.trio.Yesterday;
 
 public class SSequenceDiagram {

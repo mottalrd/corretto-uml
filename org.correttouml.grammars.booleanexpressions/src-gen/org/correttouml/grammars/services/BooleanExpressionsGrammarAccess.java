@@ -453,12 +453,13 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 		private final Keyword cCallKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
 		private final Keyword cSendKeyword_7 = (Keyword)cAlternatives.eContents().get(7);
 		private final Keyword cReceiveKeyword_8 = (Keyword)cAlternatives.eContents().get(8);
+		private final Keyword cReplyKeyword_9 = (Keyword)cAlternatives.eContents().get(9);
 		
 		//EventExtensions:
-		//	"exit" | "enter" | "start" | "end" | "tick" | "sig" | "call" | "send" | "receive";
+		//	"exit" | "enter" | "start" | "end" | "tick" | "sig" | "call" | "send" | "receive" | "reply";
 		public ParserRule getRule() { return rule; }
 
-		//"exit" | "enter" | "start" | "end" | "tick" | "sig" | "call" | "send" | "receive"
+		//"exit" | "enter" | "start" | "end" | "tick" | "sig" | "call" | "send" | "receive" | "reply"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"exit"
@@ -487,6 +488,9 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 
 		//"receive"
 		public Keyword getReceiveKeyword_8() { return cReceiveKeyword_8; }
+
+		//"reply"
+		public Keyword getReplyKeyword_9() { return cReplyKeyword_9; }
 	}
 	
 	
@@ -666,7 +670,7 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//EventExtensions:
-	//	"exit" | "enter" | "start" | "end" | "tick" | "sig" | "call" | "send" | "receive";
+	//	"exit" | "enter" | "start" | "end" | "tick" | "sig" | "call" | "send" | "receive" | "reply";
 	public EventExtensionsElements getEventExtensionsAccess() {
 		return (pEventExtensions != null) ? pEventExtensions : (pEventExtensions = new EventExtensionsElements());
 	}

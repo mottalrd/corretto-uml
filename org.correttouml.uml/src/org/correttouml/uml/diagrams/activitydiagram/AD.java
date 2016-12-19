@@ -1,7 +1,6 @@
 package org.correttouml.uml.diagrams.activitydiagram;
 
 
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,7 +11,6 @@ import org.correttouml.uml.diagrams.activity.SendSignalNode;
 import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.expressions.ExpressionContext;
 import org.eclipse.uml2.uml.Activity;
-import org.eclipse.uml2.uml.CallOperationAction;
 
 /**
  * @author Mohammad Mehdi Pourhashem Kallehbasti

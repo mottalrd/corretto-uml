@@ -586,6 +586,14 @@ rule__EventExtensions__Alternatives
 { after(grammarAccess.getEventExtensionsAccess().getReceiveKeyword_8()); }
 )
 
+    |(
+{ before(grammarAccess.getEventExtensionsAccess().getReplyKeyword_9()); }
+
+	'reply' 
+
+{ after(grammarAccess.getEventExtensionsAccess().getReplyKeyword_9()); }
+)
+
 ;
 finally {
 	restoreStackSize(stackSize);

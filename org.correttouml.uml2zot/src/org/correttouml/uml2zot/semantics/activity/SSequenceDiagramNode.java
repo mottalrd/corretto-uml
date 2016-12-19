@@ -8,8 +8,6 @@ import org.correttouml.uml.diagrams.activity.SequenceDiagramNode;
 import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagramParameter;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 import org.correttouml.uml2zot.semantics.sequencediagram.*;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.uml2.uml.InputPin;
 
 
 public class SSequenceDiagramNode {

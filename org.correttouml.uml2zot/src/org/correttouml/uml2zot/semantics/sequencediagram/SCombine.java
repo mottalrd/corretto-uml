@@ -3,12 +3,10 @@ package org.correttouml.uml2zot.semantics.sequencediagram;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.correttouml.uml.diagrams.events.Event;
 import org.correttouml.uml.diagrams.sequencediagram.*;
 import org.correttouml.uml2zot.semantics.sequencediagram.SInteractionOperand;
 import org.correttouml.uml2zot.semantics.util.bool.*;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
-import org.eclipse.uml2.uml.ExecutionSpecification;
 
 /**
 *@author Mohammad Mehdi Pourhashem Kallehbasti 
@@ -52,7 +50,7 @@ public class SCombine implements BooleanFormulae{
 			// first we consider algorithm for module SD and repeat same algorithm
 			// for module CF_X_Op
 			// //if (module == SD){
-			if (ssd != null) {
+			if (ssd != null) {// If it is an SD and not a CF.
 				Predicate SD = ssd.getPredicate();
 				Predicate SD_Start = ssd.getPredicate().getStartPredicate();
 				Predicate SD_End = ssd.getPredicate().getEndPredicate();
@@ -174,9 +172,12 @@ public class SCombine implements BooleanFormulae{
 								sepliEvjp1 = liNonEOEvents.get(j + 1);
 								String currentMessageUMLID = "";
 								String nextMessageUMLID = "";
+								boolean isRecursiveMessage = false;
 								if (sepliEvj instanceof MessageStart) {
 									sepliEvjPrd = new SMessageStart((MessageStart)sepliEvj).getPredicate();
 									currentMessageUMLID = ((MessageStart)sepliEvj).getMessage().getUMLId();
+									if (((MessageStart)sepliEvj).getMessage().getMessageType() == MessageType.RECURSIVE)
+										isRecursiveMessage = true;
 								}
 								if (sepliEvj instanceof MessageEnd)
 									sepliEvjPrd = new SMessageEnd((MessageEnd)sepliEvj).getPredicate();
@@ -187,9 +188,9 @@ public class SCombine implements BooleanFormulae{
 									sepliEvjp1Prd = new SMessageEnd((MessageEnd)sepliEvjp1).getPredicate();
 									nextMessageUMLID = ((MessageEnd)sepliEvjp1).getMessage().getUMLId();
 								}
-								boolean isRecursiveMessage = false;
-								if (currentMessageUMLID != "" && currentMessageUMLID == nextMessageUMLID)
-									isRecursiveMessage = true;
+								
+//								if (currentMessageUMLID != "" && currentMessageUMLID == nextMessageUMLID)
+//									isRecursiveMessage = true;
 								if (SInteractionFragmentFactory.getInstance(sepliEvj) instanceof SCombinedFragment)
 //									sepliCFj = (SCombinedFragment)SInteractionFragmentFactory.getInstance(sepliEvj, config);
 									sepliCFj = (SCombinedFragment)SCombinedFragmentFactory.getInstance((CombinedFragment)sepliEvj);
@@ -461,9 +462,12 @@ public class SCombine implements BooleanFormulae{
 								sepliEvjp1 = liNonEOEvents.get(j + 1);
 								String currentMessageUMLID = "";
 								String nextMessageUMLID = "";
+								boolean isRecursiveMessage = false;
 								if (sepliEvj instanceof MessageStart) {
 									sepliEvjPrd = new SMessageStart((MessageStart)sepliEvj).getPredicate();
 									currentMessageUMLID = ((MessageStart)sepliEvj).getMessage().getUMLId();
+									if (((MessageStart)sepliEvj).getMessage().getMessageType() == MessageType.RECURSIVE)
+										isRecursiveMessage = true;
 								}
 								if (sepliEvj instanceof MessageEnd)
 									sepliEvjPrd = new SMessageEnd((MessageEnd)sepliEvj).getPredicate();
@@ -474,9 +478,9 @@ public class SCombine implements BooleanFormulae{
 									sepliEvjp1Prd = new SMessageEnd((MessageEnd)sepliEvjp1).getPredicate();
 									nextMessageUMLID = ((MessageEnd)sepliEvjp1).getMessage().getUMLId();
 								}
-								boolean isRecursiveMessage = false;
-								if (currentMessageUMLID != "" && currentMessageUMLID == nextMessageUMLID)
-									isRecursiveMessage = true;
+								
+//								if (currentMessageUMLID != "" && currentMessageUMLID == nextMessageUMLID)
+//									isRecursiveMessage = true;
 								if (SInteractionFragmentFactory.getInstance(sepliEvj) instanceof SCombinedFragment)
 //									sepliCFj = (SCombinedFragment)SInteractionFragmentFactory.getInstance(sepliEvj, config);
 									sepliCFj = (SCombinedFragment)SCombinedFragmentFactory.getInstance((CombinedFragment)sepliEvj);

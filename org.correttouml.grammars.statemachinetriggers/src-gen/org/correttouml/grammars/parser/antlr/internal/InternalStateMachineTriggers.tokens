@@ -1,4 +1,5 @@
 RULE_ID=6
+T__23=23
 T__22=22
 RULE_ANY_OTHER=11
 T__21=21
@@ -23,6 +24,7 @@ RULE_WS=10
 'sig'=21
 'exit'=16
 '-'=13
+'reply'=23
 'tick'=20
 'enter'=17
 'call'=22

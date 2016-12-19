@@ -7,7 +7,6 @@ import org.correttouml.uml.diagrams.iod.IOD;
 import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagram;
 import org.correttouml.uml2zot.semantics.classdiagram.SClassDiagram;
 import org.correttouml.uml2zot.semantics.iod.SIOD;
-import org.correttouml.uml2zot.semantics.property.SProperty;
 import org.correttouml.uml2zot.semantics.sequencediagram.*;
 import org.correttouml.uml2zot.semantics.util.bool.And;
 import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
@@ -17,7 +16,6 @@ import org.correttouml.uml2zot.semantics.util.trio.AlwF_e;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 import org.correttouml.uml2zot.semantics.util.trio.TrioConstant;
 import org.correttouml.uml2zot.semantics.util.trio.Yesterday;
-import org.correttouml.uml2zot.semantics.sequencediagram.Config;
 
 
 public class SMadesModel {

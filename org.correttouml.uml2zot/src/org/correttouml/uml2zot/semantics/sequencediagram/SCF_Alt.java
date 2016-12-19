@@ -8,7 +8,6 @@ import org.correttouml.uml.diagrams.sequencediagram.CombinedFragment;
 import org.correttouml.uml.diagrams.sequencediagram.InteractionOperand;
 import org.correttouml.uml2zot.semantics.util.bool.*;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
-import org.omg.PortableInterceptor.NON_EXISTENT;
 
 /**
 *@author Mohammad Mehdi Pourhashem Kallehbasti 
@@ -18,7 +17,7 @@ public class SCF_Alt extends SCombinedFragment implements SCombinedFragmentItf{
 	//[documentation]: \Dropbox\SharePolimi\Documentation\Sequence Diagram\Combined_Fragment\Modular_Semantics\[CF_Alt].docx
 	private CF_Alt mades_cf_alt;
 	public SCF_Alt(CF_Alt cfalt) {
-		super((CombinedFragment)cfalt);
+		super(cfalt);
 		this.mades_cf_alt = cfalt;
 	}
 

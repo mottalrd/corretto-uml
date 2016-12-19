@@ -6,7 +6,6 @@ import java.util.List;
 import org.correttouml.uml.diagrams.classdiagram.Operation;
 import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.expressions.ExpressionContext;
-import org.correttouml.uml.diagrams.statediagram.Transition;
 
 public class CallAction implements Action{
 	

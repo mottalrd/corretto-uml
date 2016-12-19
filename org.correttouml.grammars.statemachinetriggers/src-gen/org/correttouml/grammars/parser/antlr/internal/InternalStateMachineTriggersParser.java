@@ -21,9 +21,10 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalStateMachineTriggersParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_RELATIONS", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'@'", "'-'", "'.'", "'now'", "'exit'", "'enter'", "'start'", "'end'", "'tick'", "'sig'", "'call'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_RELATIONS", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'@'", "'-'", "'.'", "'now'", "'exit'", "'enter'", "'start'", "'end'", "'tick'", "'sig'", "'call'", "'reply'"
     };
     public static final int RULE_ID=6;
+    public static final int T__23=23;
     public static final int T__22=22;
     public static final int RULE_ANY_OTHER=11;
     public static final int T__21=21;
@@ -833,7 +834,7 @@ public class InternalStateMachineTriggersParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "ruleEventExtensions"
-    // ../org.correttouml.grammars.statemachinetriggers/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineTriggers.g:375:1: ruleEventExtensions returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' ) ;
+    // ../org.correttouml.grammars.statemachinetriggers/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineTriggers.g:375:1: ruleEventExtensions returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'reply' ) ;
     public final AntlrDatatypeRuleToken ruleEventExtensions() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -842,11 +843,11 @@ public class InternalStateMachineTriggersParser extends AbstractInternalAntlrPar
          enterRule(); 
             
         try {
-            // ../org.correttouml.grammars.statemachinetriggers/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineTriggers.g:378:28: ( (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' ) )
-            // ../org.correttouml.grammars.statemachinetriggers/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineTriggers.g:379:1: (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' )
+            // ../org.correttouml.grammars.statemachinetriggers/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineTriggers.g:378:28: ( (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'reply' ) )
+            // ../org.correttouml.grammars.statemachinetriggers/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineTriggers.g:379:1: (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'reply' )
             {
-            // ../org.correttouml.grammars.statemachinetriggers/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineTriggers.g:379:1: (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' )
-            int alt3=7;
+            // ../org.correttouml.grammars.statemachinetriggers/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineTriggers.g:379:1: (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'reply' )
+            int alt3=8;
             switch ( input.LA(1) ) {
             case 16:
                 {
@@ -881,6 +882,11 @@ public class InternalStateMachineTriggersParser extends AbstractInternalAntlrPar
             case 22:
                 {
                 alt3=7;
+                }
+                break;
+            case 23:
+                {
+                alt3=8;
                 }
                 break;
             default:
@@ -968,6 +974,17 @@ public class InternalStateMachineTriggersParser extends AbstractInternalAntlrPar
 
                     }
                     break;
+                case 8 :
+                    // ../org.correttouml.grammars.statemachinetriggers/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalStateMachineTriggers.g:429:2: kw= 'reply'
+                    {
+                    kw=(Token)match(input,23,FOLLOW_23_in_ruleEventExtensions891); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getReplyKeyword_7()); 
+                        
+
+                    }
+                    break;
 
             }
 
@@ -1013,7 +1030,7 @@ public class InternalStateMachineTriggersParser extends AbstractInternalAntlrPar
     public static final BitSet FOLLOW_ruleEvent_in_entryRuleEvent543 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleEvent553 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleEvent596 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleEvent613 = new BitSet(new long[]{0x00000000007F0000L});
+    public static final BitSet FOLLOW_14_in_ruleEvent613 = new BitSet(new long[]{0x0000000000FF0000L});
     public static final BitSet FOLLOW_ruleEventExtensions_in_ruleEvent634 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_15_in_ruleEvent659 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEventExtensions_in_entryRuleEventExtensions709 = new BitSet(new long[]{0x0000000000000000L});
@@ -1025,5 +1042,6 @@ public class InternalStateMachineTriggersParser extends AbstractInternalAntlrPar
     public static final BitSet FOLLOW_20_in_ruleEventExtensions834 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_21_in_ruleEventExtensions853 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_22_in_ruleEventExtensions872 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_ruleEventExtensions891 = new BitSet(new long[]{0x0000000000000002L});
 
 }

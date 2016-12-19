@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CorrettoUML="http:///schemas/CorrettoUML/_-4rfIJULEea1kdccITC-yQ/12" xmlns:CorrettoUML.Properties="http:///CorrettoUML/Properties.ecore" xmlns:CorrettoUML.Time="http:///CorrettoUML/Time.ecore" xmlns:CorrettoUML.VerificationTags="http:///CorrettoUML/VerificationTags.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/CorrettoUML/_-4rfIJULEea1kdccITC-yQ/12 ../../../../org.correttouml.profiles/resources/model.profile.uml#_-4stQJULEea1kdccITC-yQ http:///CorrettoUML/Properties.ecore pathmap://resources/model.profile.uml#_YfVc6YvzEeKLvcTv2F9FYg http:///CorrettoUML/Time.ecore ../../../../org.correttouml.profiles/resources/model.profile.uml#_-4stRZULEea1kdccITC-yQ http:///CorrettoUML/VerificationTags.ecore ../../../../org.correttouml.profiles/resources/model.profile.uml#_-4stW5ULEea1kdccITC-yQ">
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CorrettoUML="http:///schemas/CorrettoUML/_-4rfIJULEea1kdccITC-yQ/12" xmlns:CorrettoUML.Time="http:///CorrettoUML/Time.ecore" xmlns:CorrettoUML.VerificationTags="http:///CorrettoUML/VerificationTags.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/CorrettoUML/_-4rfIJULEea1kdccITC-yQ/12 ../../../../org.correttouml.profiles/resources/model.profile.uml#_-4stQJULEea1kdccITC-yQ http:///CorrettoUML/Time.ecore ../../../../org.correttouml.profiles/resources/model.profile.uml#_-4stRZULEea1kdccITC-yQ http:///CorrettoUML/VerificationTags.ecore ../../../../org.correttouml.profiles/resources/model.profile.uml#_-4stW5ULEea1kdccITC-yQ">
   <uml:Model xmi:id="_x9J08AN9EeKTXbQztILh3g" name="Model">
     <packagedElement xmi:type="uml:Package" xmi:id="_GdyncAN-EeKTXbQztILh3g" name="CCAS">
       <ownedRule xmi:type="uml:Constraint" xmi:id="_Tx3uQJIcEea87e8STc3geQ" name="Property">
@@ -118,7 +118,7 @@
             <transition xmi:type="uml:Transition" xmi:id="_FDsOsAODEeKTXbQztILh3g" name="@now - @braking.enter == 10     " source="_63an8AOCEeKTXbQztILh3g" target="_6IhhoAOCEeKTXbQztILh3g"/>
             <subvertex xmi:type="uml:Pseudostate" xmi:id="_5VHuwAOCEeKTXbQztILh3g" name=""/>
             <subvertex xmi:type="uml:State" xmi:id="_6IhhoAOCEeKTXbQztILh3g" name="idle"/>
-            <subvertex xmi:type="uml:State" xmi:id="_63an8AOCEeKTXbQztILh3g" name="braking  "/>
+            <subvertex xmi:type="uml:State" xmi:id="_63an8AOCEeKTXbQztILh3g" name="braking"/>
           </region>
         </ownedBehavior>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_EuVmkAN_EeKTXbQztILh3g" name="notifyBrake"/>
@@ -260,28 +260,10 @@
       <appliedProfile xmi:type="uml:Profile" href="../../../../org.correttouml.profiles/resources/model.profile.uml#_DCylYIJgEeKaWIAr5_BKMw"/>
     </profileApplication>
   </uml:Model>
-  <CorrettoUML.Properties:BooleanFormulae xmi:id="_nQsOEAOEEeKTXbQztILh3g" base_Class="_VnxPkAOEEeKTXbQztILh3g"/>
-  <CorrettoUML.Properties:BooleanFormulae xmi:id="_oMz4EAOEEeKTXbQztILh3g" base_Class="_XSiIQAOEEeKTXbQztILh3g"/>
-  <CorrettoUML.Properties:Alw xmi:id="_uL5ssAOEEeKTXbQztILh3g" base_Class="_VnxPkAOEEeKTXbQztILh3g" formulae="_oMz4EAOEEeKTXbQztILh3g"/>
-  <CorrettoUML.Properties:Implies xmi:id="_vJ60IAOEEeKTXbQztILh3g" base_Class="_XSiIQAOEEeKTXbQztILh3g" left="_UnDkAAOFEeKTXbQztILh3g" right="_2KKHQAOFEeKTXbQztILh3g"/>
-  <CorrettoUML.Properties:Lasted xmi:id="_RxEOUAOFEeKTXbQztILh3g" base_Class="_MyFy4AOFEeKTXbQztILh3g" formulae="_TZ50YAOFEeKTXbQztILh3g" t="_krR1kAOFEeKTXbQztILh3g"/>
-  <CorrettoUML.Properties:BooleanFormulae xmi:id="_TZ50YAOFEeKTXbQztILh3g" base_Class="_OT6K8AOFEeKTXbQztILh3g"/>
-  <CorrettoUML.Properties:BooleanExpression xmi:id="_TaN9cAOFEeKTXbQztILh3g" base_Class="_OT6K8AOFEeKTXbQztILh3g" exp="{ distance &lt; 2 }" context="_uhTHMAN_EeKTXbQztILh3g"/>
-  <CorrettoUML.Properties:BooleanFormulae xmi:id="_UnDkAAOFEeKTXbQztILh3g" base_Class="_MyFy4AOFEeKTXbQztILh3g"/>
-  <CorrettoUML.Properties:constant xmi:id="_krR1kAOFEeKTXbQztILh3g" value="50" base_Class="_PjZc4AOFEeKTXbQztILh3g"/>
-  <CorrettoUML.Properties:BooleanFormulae xmi:id="_2KKHQAOFEeKTXbQztILh3g" base_Class="_uQy-UAOFEeKTXbQztILh3g"/>
-  <CorrettoUML.Properties:BooleanFormulae xmi:id="_3XTP0AOFEeKTXbQztILh3g" base_Class="_xHRcMAOFEeKTXbQztILh3g"/>
-  <CorrettoUML.Properties:Term xmi:id="_3XljsAOFEeKTXbQztILh3g" base_Class="_xHRcMAOFEeKTXbQztILh3g" element="_63an8AOCEeKTXbQztILh3g"/>
-  <CorrettoUML.Properties:constant xmi:id="_4KqmcAOFEeKTXbQztILh3g" value="50" base_Class="_ya7ccAOFEeKTXbQztILh3g"/>
-  <CorrettoUML.Properties:WithinP xmi:id="_E1xnIAOGEeKTXbQztILh3g" base_Class="_uQy-UAOFEeKTXbQztILh3g" formulae="_3XTP0AOFEeKTXbQztILh3g" t="_4KqmcAOFEeKTXbQztILh3g"/>
-  <CorrettoUML.Properties:Property xmi:id="_bV_YgAT2EeK-BP_vUyAIxQ" formulae="_nQsOEAOEEeKTXbQztILh3g" base_Class="_MwdQoAOEEeKTXbQztILh3g"/>
-  <CorrettoUML.Properties:Property xmi:id="_VQZtwGz5EeatHZOvjtomGw" base_Class="_MwdQoAOEEeKTXbQztILh3g"/>
-  <CorrettoUML.Time:ClockType xmi:id="_Eyy3wG05EeatHZOvjtomGw" base_Class="_ajZq0AN-EeKTXbQztILh3g" period="4"/>
-  <CorrettoUML.Time:Clock xmi:id="_0TMm4G06EeatHZOvjtomGw" base_InstanceSpecification="_WORoMAN_EeKTXbQztILh3g"/>
-  <CorrettoUML.Time:TimeConstraint xmi:id="_c1o50G1GEeatHZOvjtomGw" base_Comment="_OMJdcAOCEeKTXbQztILh3g"/>
-  <CorrettoUML.Time:TimeConstraint xmi:id="_eO8PEG1GEeatHZOvjtomGw" base_Comment="_zqY2AAOBEeKTXbQztILh3g"/>
-  <CorrettoUML.VerificationTags:System xmi:id="_d9a3wHscEeaPxvG1jU8hPg" base_Package="_GdyncAN-EeKTXbQztILh3g"/>
-  <CorrettoUML.Time:TimedEvent xmi:id="_KxMLkIYhEeaMiq1KEvWkRw" base_Message="_vUN5EIYgEeaMiq1KEvWkRw" on="_0TMm4G06EeatHZOvjtomGw"/>
-  <CorrettoUML.VerificationTags:Property xmi:id="_IseJ4JULEea1kdccITC-yQ" base_Constraint="_Tx3uQJIcEea87e8STc3geQ"/>
-  <CorrettoUML:Free xmi:id="_FCadgJUMEea1kdccITC-yQ" base_Property="_O2ecwH8MEea02b1gNNvQ5w"/>
+  <CorrettoUML.VerificationTags:System xmi:id="_yca0EMRxEearRo8CE2bgGw" base_Package="_GdyncAN-EeKTXbQztILh3g"/>
+  <CorrettoUML.VerificationTags:Property xmi:id="_0knPoMRxEearRo8CE2bgGw" base_Constraint="_Tx3uQJIcEea87e8STc3geQ"/>
+  <CorrettoUML:Free xmi:id="_384zAMRxEearRo8CE2bgGw" base_Property="_O2ecwH8MEea02b1gNNvQ5w"/>
+  <CorrettoUML.Time:TimedEvent xmi:id="_-ZFaYMRxEearRo8CE2bgGw" base_Message="_vUN5EIYgEeaMiq1KEvWkRw" on="_LwvYAMRyEearRo8CE2bgGw"/>
+  <CorrettoUML.Time:ClockType xmi:id="_FHsAYMRyEearRo8CE2bgGw" base_Class="_ajZq0AN-EeKTXbQztILh3g" period="4"/>
+  <CorrettoUML.Time:Clock xmi:id="_LwvYAMRyEearRo8CE2bgGw" base_InstanceSpecification="_WORoMAN_EeKTXbQztILh3g"/>
 </xmi:XMI>

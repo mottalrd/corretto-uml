@@ -57,7 +57,7 @@ Event:
 ;
 
 EventExtensions :
-	'exit' | 'enter' | 'start'  | 'end' | 'tick' | 'sig' | 'call' | 'send' | 'receive'
+	'exit' | 'enter' | 'start'  | 'end' | 'tick' | 'sig' | 'call' | 'send' | 'receive' | 'reply'
 ;
 	
 terminal RELATIONS:

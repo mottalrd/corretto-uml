@@ -4,7 +4,6 @@ package org.correttouml.uml.diagrams.statediagram;
 import java.util.List;
 
 import org.correttouml.uml.MadesModel;
-import org.correttouml.uml.diagrams.expressions.AssignmentContext;
 import org.correttouml.uml.diagrams.expressions.ExpressionContext;
 import org.correttouml.uml.diagrams.statediagram.actions.Action;
 import org.correttouml.uml.diagrams.statediagram.actions.ActionFactory;

@@ -20,7 +20,7 @@ public class SCF_Break extends SCombinedFragment implements SCombinedFragmentItf
 	//[documentation]: \Dropbox\SharePolimi\Documentation\Sequence Diagram\Combined_Fragment\Modular_Semantics\[CF_Break].docx
 	private CF_Break mades_cf_break;
 	public SCF_Break(CF_Break cfbreak) {
-		super((CombinedFragment)cfbreak);
+		super(cfbreak);
 		this.mades_cf_break = cfbreak;
 	}
 

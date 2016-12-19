@@ -25,7 +25,7 @@ Event:
 ;
 
 EventExtensions :
-	'exit' | 'enter' | 'start'  | 'end' | 'tick' | 'sig' | 'call'
+	'exit' | 'enter' | 'start'  | 'end' | 'tick' | 'sig' | 'call' | 'reply'
 ;
 	
 terminal RELATIONS:

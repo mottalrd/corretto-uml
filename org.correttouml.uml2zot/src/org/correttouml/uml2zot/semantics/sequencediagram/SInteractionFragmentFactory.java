@@ -1,7 +1,6 @@
 package org.correttouml.uml2zot.semantics.sequencediagram;
 
 import org.correttouml.uml.diagrams.sequencediagram.CombinedFragment;
-import org.correttouml.uml.diagrams.sequencediagram.ExecutionOccurrence;
 import org.correttouml.uml.diagrams.sequencediagram.ExecutionOccurrenceEnd;
 import org.correttouml.uml.diagrams.sequencediagram.ExecutionOccurrenceStart;
 import org.correttouml.uml.diagrams.sequencediagram.InteractionFragment;

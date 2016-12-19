@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_OR", "RULE_AND", "RULE_NOT", "RULE_RELATIONS", "RULE_INT", "RULE_ID", "RULE_OPERATOR", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'('", "')'", "'@'", "'-'", "'{'", "'}'", "'.'", "'now'", "'exit'", "'enter'", "'start'", "'end'", "'tick'", "'sig'", "'call'", "'send'", "'receive'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_OR", "RULE_AND", "RULE_NOT", "RULE_RELATIONS", "RULE_INT", "RULE_ID", "RULE_OPERATOR", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'('", "')'", "'@'", "'-'", "'{'", "'}'", "'.'", "'now'", "'exit'", "'enter'", "'start'", "'end'", "'tick'", "'sig'", "'call'", "'send'", "'receive'", "'reply'"
     };
     public static final int RULE_ID=9;
     public static final int T__29=29;
@@ -47,6 +47,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
     public static final int T__31=31;
     public static final int RULE_STRING=11;
     public static final int T__32=32;
+    public static final int T__33=33;
     public static final int T__16=16;
     public static final int T__18=18;
     public static final int T__17=17;
@@ -2092,7 +2093,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleEventExtensions"
-    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:882:1: ruleEventExtensions returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'send' | kw= 'receive' ) ;
+    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:882:1: ruleEventExtensions returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'send' | kw= 'receive' | kw= 'reply' ) ;
     public final AntlrDatatypeRuleToken ruleEventExtensions() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2101,11 +2102,11 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:885:28: ( (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'send' | kw= 'receive' ) )
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:886:1: (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'send' | kw= 'receive' )
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:885:28: ( (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'send' | kw= 'receive' | kw= 'reply' ) )
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:886:1: (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'send' | kw= 'receive' | kw= 'reply' )
             {
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:886:1: (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'send' | kw= 'receive' )
-            int alt9=9;
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:886:1: (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'send' | kw= 'receive' | kw= 'reply' )
+            int alt9=10;
             switch ( input.LA(1) ) {
             case 24:
                 {
@@ -2150,6 +2151,11 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
             case 32:
                 {
                 alt9=9;
+                }
+                break;
+            case 33:
+                {
+                alt9=10;
                 }
                 break;
             default:
@@ -2259,6 +2265,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
 
                     }
                     break;
+                case 10 :
+                    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:950:2: kw= 'reply'
+                    {
+                    kw=(Token)match(input,33,FOLLOW_33_in_ruleEventExtensions1871); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getReplyKeyword_9()); 
+                        
+
+                    }
+                    break;
 
             }
 
@@ -2340,7 +2357,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
     public static final BitSet FOLLOW_ruleEvent_in_entryRuleEvent1485 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleEvent1495 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleEvent1538 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleEvent1555 = new BitSet(new long[]{0x00000001FF000000L});
+    public static final BitSet FOLLOW_22_in_ruleEvent1555 = new BitSet(new long[]{0x00000003FF000000L});
     public static final BitSet FOLLOW_ruleEventExtensions_in_ruleEvent1576 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_23_in_ruleEvent1601 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEventExtensions_in_entryRuleEventExtensions1651 = new BitSet(new long[]{0x0000000000000000L});
@@ -2354,5 +2371,6 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
     public static final BitSet FOLLOW_30_in_ruleEventExtensions1814 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_31_in_ruleEventExtensions1833 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_32_in_ruleEventExtensions1852 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_ruleEventExtensions1871 = new BitSet(new long[]{0x0000000000000002L});
 
 }

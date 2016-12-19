@@ -22,10 +22,10 @@ public class CombinedFragment implements CombinedFragmentItf, InteractionFragmen
 	public String getPredicateName(){
 		//PrdName of  opt1, which is enclosed by par1, which is enclosed by SD1 is "SD1_par1_opt1"
 		String predicatename = uml_combinedFragment.getName();
-		org.eclipse.uml2.uml.Element element = (org.eclipse.uml2.uml.Element)uml_combinedFragment;//###
+		org.eclipse.uml2.uml.Element element = uml_combinedFragment;//###
 		while (!(element.getOwner() instanceof org.eclipse.uml2.uml.Package)) {
 			if (element.getOwner() instanceof org.eclipse.uml2.uml.CombinedFragment) {
-				element = (org.eclipse.uml2.uml.CombinedFragment) element.getOwner();
+				element = element.getOwner();
 				predicatename = ((org.eclipse.uml2.uml.CombinedFragment) element).getName() + '_' + predicatename;
 			} else if (element.getOwner() instanceof org.eclipse.uml2.uml.InteractionOperand){
 				element = element.getOwner();

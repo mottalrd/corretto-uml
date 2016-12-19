@@ -14,10 +14,21 @@ public class Attribute extends Variable{
 	private static final Logger LOGGER = Logger.getLogger(Attribute.class); 
 	
 	private Property uml_attribute;
+	private Object mades_object;
 	
 	public Attribute(Property at) {
 		this.uml_attribute=at;
+		this.mades_object = null;
 	}
+	
+	public void setObject(Object obj){
+		this.mades_object = obj;
+	}
+	
+	public Object getObject(){
+		return this.mades_object;
+	}
+	
 
 	@Override
 	public PrimitiveType getType() {

@@ -2,34 +2,14 @@ package org.correttouml.uml2zot.semantics.activitydiagram;
 
 
 import java.util.Collection;
-import java.util.Iterator;
-
-import org.correttouml.grammars.stateMachineActions.Model;
-import org.correttouml.grammars.stateMachineActions.Parameters;
-import org.correttouml.uml.MadesModel;
 import org.correttouml.uml.diagrams.activity.*;
 import org.correttouml.uml.diagrams.activitydiagram.AD;
-import org.correttouml.uml.diagrams.classdiagram.AssociationEnd;
-import org.correttouml.uml.diagrams.classdiagram.AssociationInstance;
-import org.correttouml.uml.diagrams.classdiagram.Object;
-import org.correttouml.uml.diagrams.classdiagram.OperationParameter;
-import org.correttouml.uml.diagrams.events.Event;
-import org.correttouml.uml.diagrams.expressions.PrimitiveType;
 import org.correttouml.uml.diagrams.expressions.Variable;
 import org.correttouml.uml.diagrams.expressions.VariableFactory;
-import org.correttouml.uml.diagrams.sequencediagram.Message;
-import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagram;
-import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagramParameter;
-import org.correttouml.uml.diagrams.statediagram.actions.Action;
-import org.correttouml.uml.diagrams.statediagram.actions.CallAction;
-import org.correttouml.uml2zot.UML2Zot;
 import org.correttouml.uml2zot.semantics.activity.*;
-import org.correttouml.uml2zot.semantics.classdiagram.SOperationParameter;
 import org.correttouml.uml2zot.semantics.SMadesModel;
-import org.correttouml.uml2zot.semantics.events.SEvent;
 import org.correttouml.uml2zot.semantics.events.SEventFactory;
 import org.correttouml.uml2zot.semantics.expressions.SVariableFactory;
-import org.correttouml.uml2zot.semantics.sequencediagram.SSequenceDiagram;
 import org.correttouml.uml2zot.semantics.sequencediagram.SSequenceDiagramParameter;
 import org.correttouml.uml2zot.semantics.util.bool.And;
 import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
@@ -38,14 +18,10 @@ import org.correttouml.uml2zot.semantics.util.bool.Implies;
 import org.correttouml.uml2zot.semantics.util.bool.Not;
 import org.correttouml.uml2zot.semantics.util.bool.Or;
 import org.correttouml.uml2zot.semantics.util.trio.EQ;
-import org.correttouml.uml2zot.semantics.util.trio.Futr;
 import org.correttouml.uml2zot.semantics.util.trio.Past;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 import org.correttouml.uml2zot.semantics.util.trio.Since;
 import org.correttouml.uml2zot.semantics.util.trio.Since_ei;
-import org.correttouml.uml2zot.semantics.util.trio.SomF;
-import org.correttouml.uml2zot.semantics.util.trio.TrioVar;
-import org.eclipse.uml2.uml.InputPin;
 
 /**
  * @author Mohammad Mehdi Pourhashem Kallehbasti
@@ -115,7 +91,7 @@ public class SAD extends SActivity{
 			if (n instanceof SequenceDiagramNode) {
 				SequenceDiagramNode curr = (SequenceDiagramNode) n;
 				//ASSUMPION: The sequence diagram is preceded by only one node
-				Node prev = (Node) n.getIncomingNodes().iterator().next();
+				Node prev = n.getIncomingNodes().iterator().next();
 				SSequenceDiagramNode ssdNode = new SSequenceDiagramNode(curr, this.mades_ad); 
 				Predicate sd_start = ssdNode.getStartPredicate();
 				sem = sem + new Iff(sd_start, new Past(RC(curr, prev),1)) + "\n";
@@ -145,7 +121,7 @@ public class SAD extends SActivity{
 				SDecisionNode dNode = new SDecisionNode(curr, this.mades_ad);
 				sem += dNode.getSemantics();
 				//ASSUMPION: Decision nodes are preceded by only one node
-				Node prev = (Node) n.getIncomingNodes().iterator().next();
+				Node prev = n.getIncomingNodes().iterator().next();
 				//The following says when it is the time to decide, at least one of the outgoing control flows will be selected.
 				sem = sem + new Iff(RC(curr, prev), dNode.getOrControlflows()) + "\n";
 			}

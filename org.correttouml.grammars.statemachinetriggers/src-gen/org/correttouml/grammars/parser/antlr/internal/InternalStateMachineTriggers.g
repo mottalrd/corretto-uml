@@ -424,6 +424,13 @@ ruleEventExtensions returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRul
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getCallKeyword_6()); 
     }
+
+    |
+	kw='reply' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getReplyKeyword_7()); 
+    }
 )
     ;
 

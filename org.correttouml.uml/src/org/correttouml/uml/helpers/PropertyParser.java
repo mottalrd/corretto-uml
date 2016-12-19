@@ -5,8 +5,8 @@ import java.io.ByteArrayInputStream;
 import org.correttouml.uml.MadesModel;
 import org.correttouml.uml.diagrams.expressions.PrimitiveType;
 import org.correttouml.uml2zot.semantics.expressions.SConstant;
-import org.correttouml.uml2zot.semantics.util.trio.*;
 import org.correttouml.uml2zot.semantics.util.bool.*;
+import org.correttouml.uml2zot.semantics.util.trio.*;
 import org.correttouml.grammars.PropertyStandaloneSetup;
 import org.correttouml.grammars.property.*;
 

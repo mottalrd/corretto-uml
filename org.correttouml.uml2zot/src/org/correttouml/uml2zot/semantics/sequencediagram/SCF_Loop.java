@@ -6,8 +6,6 @@ import java.util.Map;
 
 import org.correttouml.uml.diagrams.expressions.PrimitiveType;
 import org.correttouml.uml.diagrams.sequencediagram.*;
-import org.correttouml.uml2zot.UML2Zot;
-import org.correttouml.uml2zot.semantics.SMadesModel;
 import org.correttouml.uml2zot.semantics.util.bool.*;
 import org.correttouml.uml2zot.semantics.util.fun.SomPIn_i;
 import org.correttouml.uml2zot.semantics.util.trio.*;
@@ -33,7 +31,7 @@ public class SCF_Loop extends SCombinedFragment  implements SCombinedFragmentItf
 //	private org.eclipse.uml2.uml.InteractionOperand uml_operand_copy;
 	
 	public SCF_Loop(CF_Loop cfloop) {
-		super((CombinedFragment)cfloop);
+		super(cfloop);
 		this.mades_cf_loop = cfloop;
 		this.operndName = mades_cf_loop.getOperands().get(0).getName();
 		uml_operand = mades_cf_loop.getOperands().get(0).uml_interactionoperand;

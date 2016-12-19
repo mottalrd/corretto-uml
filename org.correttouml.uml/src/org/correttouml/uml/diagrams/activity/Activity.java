@@ -11,10 +11,6 @@ import org.correttouml.uml2zot.UML2Zot;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.uml2.uml.ActivityGroup;
 import org.eclipse.uml2.uml.InterruptibleActivityRegion;
-import org.eclipse.uml2.uml.OutputPin;
-import org.eclipse.uml2.uml.ReadVariableAction;
-import org.eclipse.uml2.uml.internal.impl.OutputPinImpl;
-import org.eclipse.uml2.uml.internal.impl.ReadVariableActionImpl;
 
 /**
  * @author Mohammad Mehdi Pourhashem Kallehbasti
@@ -90,6 +86,7 @@ public class Activity implements ExpressionContext{
     	return regions;
     }
 
+	@Override
 	public String getUMLId() {
 		String id=((XMLResource) this.uml_activity.eResource()).getID(uml_activity);
 		return UML2Zot.Utility.umlIDtoPrdID(id);

@@ -15,7 +15,7 @@ public class SCF_Par extends SCombinedFragment implements SCombinedFragmentItf{
 	private CF_Par mades_cf_par;
 	
 	public SCF_Par(CF_Par cfpar) {
-		super((CombinedFragment)cfpar);
+		super(cfpar);
 		this.mades_cf_par = cfpar;
 	}
 

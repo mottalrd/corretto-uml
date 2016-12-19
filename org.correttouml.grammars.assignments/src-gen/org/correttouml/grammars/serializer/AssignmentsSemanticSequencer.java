@@ -1,7 +1,6 @@
 package org.correttouml.grammars.serializer;
 
 import com.google.inject.Inject;
-import com.google.inject.Provider;
 import org.correttouml.grammars.assignments.ASSIGNMENT;
 import org.correttouml.grammars.assignments.AssignmentsPackage;
 import org.correttouml.grammars.assignments.EXPRESSION;
@@ -9,15 +8,9 @@ import org.correttouml.grammars.assignments.Model;
 import org.correttouml.grammars.assignments.TERM;
 import org.correttouml.grammars.services.AssignmentsGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
-import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
-import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
 import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
-import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")

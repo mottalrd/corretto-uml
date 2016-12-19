@@ -1,7 +1,6 @@
 package org.correttouml.uml.diagrams.events;
 
 import org.correttouml.uml.diagrams.activity.Activity;
-import org.correttouml.uml.diagrams.activitydiagram.AD;
 import org.correttouml.uml.diagrams.classdiagram.Clock;
 import org.correttouml.uml.diagrams.classdiagram.Operation;
 import org.correttouml.uml.diagrams.classdiagram.Signal;
@@ -16,34 +15,26 @@ public class EventFactory {
 	
 	public static Event getInstance(ExpressionContext context, String eventName, String eventExtension){
 		try{
-			if(eventExtension.equals("start")){
+			if(eventExtension.equals("start"))
 				return getSequenceDiagramStartEvent(context, eventName);
-			}
-			else if(eventExtension.equals("end")){
+			else if(eventExtension.equals("end"))
 				return getSequenceDiagramEndEvent(context, eventName);
-			}
-			else if(eventExtension.equals("enter")){
+			else if(eventExtension.equals("enter"))
 				return getStateEnterEvent((StateDiagram) context,eventName);
-			}
-			else if(eventExtension.equals("exit")){
+			else if(eventExtension.equals("exit"))
 				return getStateExitEvent((StateDiagram) context,eventName);
-			}
-			else if(eventExtension.equals("tick")){
+			else if(eventExtension.equals("tick"))
 				return getClockTickEvent(context, eventName);
-			}
-			else if(eventExtension.equals("call")){
-//				return getCallEvent(eventName, (StateDiagram) context);
-				return getCallEvent(eventName, context);
-			}
-			else if(eventExtension.equals("sig")){
+			else if(eventExtension.equals("call"))
+				return getCallEvent(context, eventName);
+			else if(eventExtension.equals("reply"))
+				return getReplyEvent(context, eventName);
+			else if(eventExtension.equals("sig"))
 				return getSignalEvent(context, eventName);
-			}
-			else if(eventExtension.equals("send")){
+			else if(eventExtension.equals("send"))
 				return getMessageStartEvent((SequenceDiagram)context, eventName);
-			}
-			else if(eventExtension.equals("receive")){
+			else if(eventExtension.equals("receive"))
 				return getMessageEndEvent((SequenceDiagram)context, eventName);
-			}
 			throw new Exception("Event not found");
 		}catch(Exception e){
 			e.printStackTrace();
@@ -85,7 +76,7 @@ public class EventFactory {
 //		return null;
 //	}
 	
-	private static Event getCallEvent(String eventName, ExpressionContext context) {
+	private static Event getCallEvent(ExpressionContext context, String eventName) {
 		if (context instanceof StateDiagram)
 			for(Operation op: ((StateDiagram) context).getOwningClass().getOperations()){
 				if(op.getName().equals(eventName)) return new CallEvent(op);
@@ -93,6 +84,18 @@ public class EventFactory {
 		if (context instanceof Activity)
 			for(Operation op: ((Activity) context).getObject().getOwningClass().getOperations()){
 				if(op.getName().equals(eventName)) return new CallEvent(op);
+			}
+		return null;
+	}
+	
+	private static Event getReplyEvent(ExpressionContext context, String eventName) {
+		if (context instanceof StateDiagram)
+			for(Operation op: ((StateDiagram) context).getOwningClass().getOperations()){
+				if(op.getName().equals(eventName)) return new ReplyEvent(op);
+			}
+		if (context instanceof Activity)
+			for(Operation op: ((Activity) context).getObject().getOwningClass().getOperations()){
+				if(op.getName().equals(eventName)) return new ReplyEvent(op);
 			}
 		return null;
 	}

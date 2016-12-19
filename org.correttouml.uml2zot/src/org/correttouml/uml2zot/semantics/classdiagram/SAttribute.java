@@ -7,6 +7,8 @@ import org.correttouml.uml.diagrams.classdiagram.Attribute;
 import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.expressions.PrimitiveType;
 import org.correttouml.uml.diagrams.expressions.ValueSpecification;
+import org.correttouml.uml.diagrams.sequencediagram.Message;
+import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagram;
 import org.correttouml.uml.diagrams.statediagram.StateDiagram;
 import org.correttouml.uml.diagrams.statediagram.Transition;
 import org.correttouml.uml.diagrams.statediagram.actions.Action;
@@ -22,10 +24,6 @@ import org.correttouml.uml2zot.semantics.util.trio.EQ;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 import org.correttouml.uml2zot.semantics.util.trio.TrioVar;
 import org.correttouml.uml2zot.semantics.util.trio.Yesterday;
-import org.correttouml.uml2zot.tests.helpers.UML2Helper;
-import org.eclipse.uml2.uml.LiteralString;
-import org.eclipse.uml2.uml.UMLFactory;
-import org.eclipse.uml2.uml.internal.resource.UMLHandler;
 
 
 public class SAttribute implements SVariable {
@@ -48,12 +46,17 @@ public class SAttribute implements SVariable {
 						+ mades_attribute.getName());
 			}			
 		}else{
+			String objName;
+			if (mades_attribute.getObject() != null)
+				objName = mades_attribute.getObject().getName();
+			else
+				objName = obj[0].getName();
 			if (mades_attribute.getType() == PrimitiveType.INTEGER
 					|| mades_attribute.getType() == PrimitiveType.REAL)
-				return new TrioVar("OBJ" + obj[0].getName() + "ATTR"
+				return new TrioVar("OBJ" + objName + "ATTR"
 						+ mades_attribute.getName(), mades_attribute.getType());
 			else if (mades_attribute.getType() == PrimitiveType.BOOLEAN) {
-				return new Predicate("OBJ" + obj[0].getName() + "ATTR"
+				return new Predicate("OBJ" + objName + "ATTR"
 						+ mades_attribute.getName());
 			}			
 		}
@@ -126,9 +129,19 @@ public class SAttribute implements SVariable {
 		
 		if (curr_obj.getAD() != null)
 			for (OpaqueActionNode opAc: curr_obj.getAD().getOpaqueActions()){
-				if(isActionAssigningAttribute(opAc.getAction(curr_obj)))
+				if (isActionAssigningAttribute(opAc.getAction(curr_obj)))
 					orCond.addFormulae(new SAssignmentAction((AssignmentAction) opAc.getAction(curr_obj)).getPredicate(curr_obj));
 			}
+		
+		for (SequenceDiagram sd : curr_obj.getMadesModel().getSequenceDiagrams()) {
+			for (Message m : sd.getMessages()) {
+				if (m.getName().contains("=")) {
+					Action act = m.getMessageEndEvent().getAssignmentAction();
+					if (isActionAssigningAttribute(act))
+						orCond.addFormulae(new SAssignmentAction((AssignmentAction)act).getPredicate(curr_obj));
+				}
+			}
+		}
 	}	
 
 	private boolean isActionAssigningAttribute(Action act) {

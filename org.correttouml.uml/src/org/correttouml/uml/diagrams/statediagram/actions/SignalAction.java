@@ -3,7 +3,6 @@ package org.correttouml.uml.diagrams.statediagram.actions;
 import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.classdiagram.Signal;
 import org.correttouml.uml.diagrams.expressions.ExpressionContext;
-import org.correttouml.uml.diagrams.statediagram.Transition;
 
 public class SignalAction implements Action{
 

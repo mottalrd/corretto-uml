@@ -7,10 +7,8 @@ import org.correttouml.uml2zot.semantics.events.SEventFactory;
 import org.correttouml.uml2zot.semantics.sequencediagram.SSequenceDiagram;
 import org.correttouml.uml2zot.semantics.util.bool.And;
 import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
-import org.correttouml.uml2zot.semantics.util.bool.Iff;
 import org.correttouml.uml2zot.semantics.util.bool.Implies;
 import org.correttouml.uml2zot.semantics.util.bool.Not;
-import org.correttouml.uml2zot.semantics.util.trio.Lasted;
 import org.correttouml.uml2zot.semantics.util.trio.Lasted_ie;
 import org.correttouml.uml2zot.semantics.util.trio.Lasted_ii;
 import org.correttouml.uml2zot.semantics.util.trio.LastTime_ii;
@@ -18,11 +16,8 @@ import org.correttouml.uml2zot.semantics.util.trio.Next;
 import org.correttouml.uml2zot.semantics.util.trio.Past;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 import org.correttouml.uml2zot.semantics.util.trio.Since;
-import org.correttouml.uml2zot.semantics.util.trio.Since_ei;
-import org.correttouml.uml2zot.semantics.util.trio.Since_ie;
 import org.correttouml.uml2zot.semantics.util.trio.Since_ii;
 import org.correttouml.uml2zot.semantics.util.trio.SomP;
-import org.correttouml.uml2zot.semantics.util.trio.WithinP;
 import org.correttouml.uml2zot.semantics.util.trio.WithinP_ii;
 
 

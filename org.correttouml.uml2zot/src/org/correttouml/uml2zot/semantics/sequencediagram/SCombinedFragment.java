@@ -3,7 +3,6 @@ package org.correttouml.uml2zot.semantics.sequencediagram;
 import java.util.ArrayList;
 
 import org.correttouml.uml.diagrams.sequencediagram.*;
-import org.correttouml.uml2zot.semantics.SMadesModel;
 import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
 import org.correttouml.uml2zot.semantics.util.bool.Not;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
@@ -95,7 +94,7 @@ public class SCombinedFragment implements SInteractionFragment {
 					}else {// else if enclosing element is InteractionOperand
 						org.eclipse.uml2.uml.InteractionOperand enclosingoperand = mades_combinedfragment.getEnclosingOperand();
 						CFLifelinesPreMetaPredicates.add(new MetaPredicate(new SInteractionOperand(new InteractionOperand(
-								(org.eclipse.uml2.uml.InteractionOperand) enclosingoperand), config).getLifelinePredicate(currentLifelineName).getStartPredicate(), PredicateType.CFStart)); //the actual predicate type is OP_Li_Start
+								enclosingoperand), config).getLifelinePredicate(currentLifelineName).getStartPredicate(), PredicateType.CFStart)); //the actual predicate type is OP_Li_Start
 					}
 				} else {
 					if (CFPreIFs.get(i) instanceof MessageStart)// message
@@ -120,7 +119,7 @@ public class SCombinedFragment implements SInteractionFragment {
 					}else {// else if enclosing element is InteractionOperand
 						org.eclipse.uml2.uml.InteractionOperand enclosingoperand = mades_combinedfragment.getEnclosingOperand();
 						CFLifelinesPreMetaPredicates.add(new MetaPredicate(new SInteractionOperand(new InteractionOperand(
-								(org.eclipse.uml2.uml.InteractionOperand) enclosingoperand), config).getPredicate().getStartPredicate(), PredicateType.CFStart)); //the actual predicate type is CF_Y_OP_Start.
+								enclosingoperand), config).getPredicate().getStartPredicate(), PredicateType.CFStart)); //the actual predicate type is CF_Y_OP_Start.
 					}
 				} else {
 					if (CFPreIFs.get(i) instanceof MessageStart)// message
@@ -165,7 +164,7 @@ public class SCombinedFragment implements SInteractionFragment {
 					}else {// else if enclosing element is InteractionOperand
 						org.eclipse.uml2.uml.InteractionOperand enclosingoperand = mades_combinedfragment.getEnclosingOperand();
 						CFLifelinesPostMetaPredicates.add(new MetaPredicate(new SInteractionOperand(new InteractionOperand(
-								(org.eclipse.uml2.uml.InteractionOperand) enclosingoperand), config).getLifelinePredicate(currentLifelineName).getEndPredicate(), PredicateType.CFEnd)); //the actual predicate type is OP_Li_End
+								enclosingoperand), config).getLifelinePredicate(currentLifelineName).getEndPredicate(), PredicateType.CFEnd)); //the actual predicate type is OP_Li_End
 					}
 				} else {
 					if (CFPostIFs.get(i) instanceof MessageStart) // message
@@ -187,7 +186,7 @@ public class SCombinedFragment implements SInteractionFragment {
 					}else {// else if enclosing element is InteractionOperand
 						org.eclipse.uml2.uml.InteractionOperand enclosingoperand = mades_combinedfragment.getEnclosingOperand();
 						CFLifelinesPostMetaPredicates.add(new MetaPredicate(new SInteractionOperand(new InteractionOperand(
-								(org.eclipse.uml2.uml.InteractionOperand) enclosingoperand), config).getPredicate().getEndPredicate(), PredicateType.CFEnd)); //the actual predicate type is CF_Z_OP_End.
+								enclosingoperand), config).getPredicate().getEndPredicate(), PredicateType.CFEnd)); //the actual predicate type is CF_Z_OP_End.
 					}
 				} else {
 					if (CFPostIFs.get(i) instanceof MessageStart) // message

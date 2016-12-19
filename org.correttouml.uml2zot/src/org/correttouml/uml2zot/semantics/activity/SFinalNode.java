@@ -5,7 +5,6 @@ import org.correttouml.uml.diagrams.activity.FinalNode;
 import org.correttouml.uml.diagrams.activitydiagram.AD;
 import org.correttouml.uml.diagrams.iod.IOD;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
-import org.correttouml.uml2zot.semantics.activity.SActivity;
 import org.correttouml.uml2zot.semantics.activitydiagram.SAD;
 import org.correttouml.uml2zot.semantics.iod.SIOD;
 

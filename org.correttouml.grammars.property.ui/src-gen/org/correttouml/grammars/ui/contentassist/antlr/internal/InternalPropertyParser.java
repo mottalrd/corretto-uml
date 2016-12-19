@@ -1,23 +1,12 @@
 package org.correttouml.grammars.ui.contentassist.antlr.internal; 
 
-import java.io.InputStream;
 import org.eclipse.xtext.*;
-import org.eclipse.xtext.parser.*;
-import org.eclipse.xtext.parser.impl.*;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.parser.antlr.XtextTokenStream;
-import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
-import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.DFA;
 import org.correttouml.grammars.services.PropertyGrammarAccess;
 
 
 
 import org.antlr.runtime.*;
-import java.util.Stack;
-import java.util.List;
-import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalPropertyParser extends AbstractInternalContentAssistParser {
@@ -70,8 +59,10 @@ public class InternalPropertyParser extends AbstractInternalContentAssistParser 
         }
         
 
-    public String[] getTokenNames() { return InternalPropertyParser.tokenNames; }
-    public String getGrammarFileName() { return "../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g"; }
+    @Override
+	public String[] getTokenNames() { return InternalPropertyParser.tokenNames; }
+    @Override
+	public String getGrammarFileName() { return "../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g"; }
 
 
      

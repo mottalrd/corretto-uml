@@ -7,18 +7,15 @@ import java.util.Set;
 import org.correttouml.uml.diagrams.activitydiagram.AD;
 import org.correttouml.uml.diagrams.classdiagram.ClassDiagram;
 import org.correttouml.uml.diagrams.iod.IOD;
-import org.correttouml.uml.diagrams.property.Property;
 import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagram;
 import org.correttouml.uml.helpers.PropertyParser;
 import org.correttouml.uml.helpers.UML2ModelHelper;
 import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
-import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.LiteralString;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.PackageableElement;
-import org.eclipse.uml2.uml.Stereotype;
 
 public class MadesModel{
 	

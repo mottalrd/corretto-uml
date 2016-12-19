@@ -9,7 +9,6 @@ import org.correttouml.uml.diagrams.classdiagram.OperationParameter;
 import org.correttouml.uml.diagrams.expressions.ExpressionContext;
 import org.correttouml.uml.diagrams.expressions.Variable;
 import org.correttouml.uml.diagrams.expressions.VariableFactory;
-import org.correttouml.uml.diagrams.statediagram.StateDiagram;
 
 public class CallActionParameter {
 

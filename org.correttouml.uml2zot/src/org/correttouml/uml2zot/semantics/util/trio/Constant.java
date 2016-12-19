@@ -25,6 +25,7 @@ public class Constant implements Atom{
 		this.type = PrimitiveType.BOOLEAN;
 	}
 
+	@Override
 	public String toString(){
 		if (type == PrimitiveType.INTEGER)
 			return String.valueOf(constantInt);

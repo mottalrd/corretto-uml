@@ -12,7 +12,6 @@ import org.correttouml.uml2zot.semantics.classdiagram.SOperationParameter;
 import org.correttouml.uml2zot.semantics.expressions.SVariableFactory;
 import org.correttouml.uml2zot.semantics.statediagram.actions.SAction;
 import org.correttouml.uml2zot.semantics.statediagram.actions.SActionFactory;
-import org.correttouml.uml2zot.semantics.statediagram.actions.SCallAction;
 import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
 import org.correttouml.uml2zot.semantics.util.bool.Iff;
 import org.correttouml.uml2zot.semantics.util.bool.Implies;

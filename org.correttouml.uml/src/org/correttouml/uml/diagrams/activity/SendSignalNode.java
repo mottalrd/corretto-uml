@@ -2,7 +2,6 @@ package org.correttouml.uml.diagrams.activity;
 
 import org.correttouml.uml.MadesModel;
 import org.correttouml.uml.diagrams.classdiagram.Object;
-import org.correttouml.uml.diagrams.classdiagram.Signal;
 import org.correttouml.uml.diagrams.expressions.ExpressionContext;
 import org.correttouml.uml.diagrams.statediagram.actions.Action;
 import org.correttouml.uml.diagrams.statediagram.actions.ActionFactory;
@@ -29,6 +28,7 @@ public class SendSignalNode extends Node implements ExpressionContext {
 		return uml_activitynode.getName();
 	}
 	
+	@Override
 	public String getUMLId() {
 		String id=((XMLResource) this.uml_activitynode.eResource()).getID(this.uml_activitynode);
 		return UML2Zot.Utility.umlIDtoPrdID(id);

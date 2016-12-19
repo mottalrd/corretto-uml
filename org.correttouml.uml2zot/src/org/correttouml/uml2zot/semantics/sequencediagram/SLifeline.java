@@ -1,17 +1,7 @@
 package org.correttouml.uml2zot.semantics.sequencediagram;
 
 
-import java.util.Iterator;
-
-import org.correttouml.uml.diagrams.sequencediagram.ExecutionOccurrence;
-import org.correttouml.uml.diagrams.sequencediagram.InteractionFragment;
 import org.correttouml.uml.diagrams.sequencediagram.Lifeline;
-import org.correttouml.uml.diagrams.sequencediagram.MessageEnd;
-import org.correttouml.uml.diagrams.sequencediagram.MessageStart;
-import org.correttouml.uml2zot.semantics.SMadesModel;
-import org.correttouml.uml2zot.semantics.util.bool.Implies;
-import org.correttouml.uml2zot.semantics.util.bool.Not;
-import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 
 public class SLifeline {
 

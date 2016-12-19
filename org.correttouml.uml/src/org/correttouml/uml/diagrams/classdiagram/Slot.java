@@ -1,7 +1,6 @@
 package org.correttouml.uml.diagrams.classdiagram;
 
 import org.correttouml.uml.diagrams.expressions.ValueSpecification;
-import org.eclipse.uml2.uml.LiteralString;
 
 public class Slot {
 

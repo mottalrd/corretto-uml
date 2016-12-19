@@ -308,6 +308,14 @@ rule__EventExtensions__Alternatives
 { after(grammarAccess.getEventExtensionsAccess().getCallKeyword_6()); }
 )
 
+    |(
+{ before(grammarAccess.getEventExtensionsAccess().getReplyKeyword_7()); }
+
+	'reply' 
+
+{ after(grammarAccess.getEventExtensionsAccess().getReplyKeyword_7()); }
+)
+
 ;
 finally {
 	restoreStackSize(stackSize);

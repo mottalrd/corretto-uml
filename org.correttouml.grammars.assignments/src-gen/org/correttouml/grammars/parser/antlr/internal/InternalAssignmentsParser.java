@@ -1,22 +1,12 @@
 package org.correttouml.grammars.parser.antlr.internal; 
 
-import org.eclipse.xtext.*;
-import org.eclipse.xtext.parser.*;
-import org.eclipse.xtext.parser.impl.*;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
-import org.eclipse.xtext.parser.antlr.XtextTokenStream;
-import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
-import org.eclipse.xtext.parser.antlr.AntlrDatatypeRuleToken;
 import org.correttouml.grammars.services.AssignmentsGrammarAccess;
 
 
 
 import org.antlr.runtime.*;
-import java.util.Stack;
-import java.util.List;
-import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalAssignmentsParser extends AbstractInternalAntlrParser {
@@ -47,8 +37,10 @@ public class InternalAssignmentsParser extends AbstractInternalAntlrParser {
         }
         
 
-    public String[] getTokenNames() { return InternalAssignmentsParser.tokenNames; }
-    public String getGrammarFileName() { return "../org.correttouml.grammars.assignments/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalAssignments.g"; }
+    @Override
+	public String[] getTokenNames() { return InternalAssignmentsParser.tokenNames; }
+    @Override
+	public String getGrammarFileName() { return "../org.correttouml.grammars.assignments/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalAssignments.g"; }
 
 
 

@@ -184,12 +184,13 @@ public class StateMachineTriggersGrammarAccess extends AbstractGrammarElementFin
 		private final Keyword cTickKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
 		private final Keyword cSigKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
 		private final Keyword cCallKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
+		private final Keyword cReplyKeyword_7 = (Keyword)cAlternatives.eContents().get(7);
 		
 		//EventExtensions:
-		//	"exit" | "enter" | "start" | "end" | "tick" | "sig" | "call";
+		//	"exit" | "enter" | "start" | "end" | "tick" | "sig" | "call" | "reply";
 		public ParserRule getRule() { return rule; }
 
-		//"exit" | "enter" | "start" | "end" | "tick" | "sig" | "call"
+		//"exit" | "enter" | "start" | "end" | "tick" | "sig" | "call" | "reply"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"exit"
@@ -212,6 +213,9 @@ public class StateMachineTriggersGrammarAccess extends AbstractGrammarElementFin
 
 		//"call"
 		public Keyword getCallKeyword_6() { return cCallKeyword_6; }
+
+		//"reply"
+		public Keyword getReplyKeyword_7() { return cReplyKeyword_7; }
 	}
 	
 	
@@ -312,7 +316,7 @@ public class StateMachineTriggersGrammarAccess extends AbstractGrammarElementFin
 	}
 
 	//EventExtensions:
-	//	"exit" | "enter" | "start" | "end" | "tick" | "sig" | "call";
+	//	"exit" | "enter" | "start" | "end" | "tick" | "sig" | "call" | "reply";
 	public EventExtensionsElements getEventExtensionsAccess() {
 		return (pEventExtensions != null) ? pEventExtensions : (pEventExtensions = new EventExtensionsElements());
 	}

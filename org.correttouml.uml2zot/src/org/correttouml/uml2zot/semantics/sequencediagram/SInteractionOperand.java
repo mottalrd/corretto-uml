@@ -63,7 +63,7 @@ public class SInteractionOperand implements SInteractionFragment {
 	public ArrayList<Predicate> getLifelinesPredicates() {
 		ArrayList<Predicate> lifelinesPredicates = new ArrayList<Predicate>();
 		for (Lifeline l : mades_interactionoperand.getLifelines()) {
-			lifelinesPredicates.add((Predicate) (getLifelinePredicate(l
+			lifelinesPredicates.add((getLifelinePredicate(l
 					.getName())));
 			l.getEvents();
 		}

@@ -3,8 +3,6 @@ package org.correttouml.uml2zot.semantics.sequencediagram;
 import java.util.ArrayList;
 
 import org.correttouml.uml.diagrams.sequencediagram.ExecutionOccurrence;
-import org.correttouml.uml2zot.UML2Zot;
-import org.correttouml.uml2zot.semantics.SMadesModel;
 import org.correttouml.uml2zot.semantics.util.bool.And;
 import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
 import org.correttouml.uml2zot.semantics.util.bool.Iff;

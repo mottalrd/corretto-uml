@@ -1,6 +1,5 @@
 package org.correttouml.uml2zot.semantics.activity;
 
-import org.correttouml.uml.diagrams.activity.OpaqueActionNode;
 import org.correttouml.uml.diagrams.activity.SendSignalNode;
 import org.correttouml.uml.diagrams.activitydiagram.AD;
 import org.correttouml.uml2zot.semantics.statediagram.actions.SAction;

@@ -6,9 +6,6 @@ import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.Lexer;
 
 
 import org.antlr.runtime.*;
-import java.util.Stack;
-import java.util.List;
-import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalPropertyLexer extends Lexer {
@@ -56,7 +53,8 @@ public class InternalPropertyLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g"; }
+    @Override
+	public String getGrammarFileName() { return "../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g"; }
 
     // $ANTLR start "T__19"
     public final void mT__19() throws RecognitionException {
@@ -1553,7 +1551,8 @@ public class InternalPropertyLexer extends Lexer {
     }
     // $ANTLR end "RULE_ANY_OTHER"
 
-    public void mTokens() throws RecognitionException {
+    @Override
+	public void mTokens() throws RecognitionException {
         // ../org.correttouml.grammars.property.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalProperty.g:1:8: ( T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | RULE_EXECUTE | RULE_TRIOOP2 | RULE_TRIOOPF | RULE_TRIOOPFF | RULE_TRIOOPFN | RULE_FLOAT | RULE_ARITH_OP | RULE_ARITH_COMPARE_OP | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
         int alt18=31;
         alt18 = dfa18.predict(input);
@@ -1878,7 +1877,8 @@ public class InternalPropertyLexer extends Lexer {
             this.special = DFA2_special;
             this.transition = DFA2_transition;
         }
-        public String getDescription() {
+        @Override
+		public String getDescription() {
             return "4138:16: ( 'alw' | 'always' | 'alwaysTrue' | 'neverFalse' | 'som' | 'atLeastOnce' | 'alwF' | 'alwaysWillBe' | 'somF' | 'eventually' | 'eventuallyWillBe' | 'alwP' | 'historically' | 'alwaysHasBeen' | 'somP' | 'alwaysFalse' | 'neverTrue' )";
         }
     }
@@ -1945,7 +1945,8 @@ public class InternalPropertyLexer extends Lexer {
             this.special = DFA4_special;
             this.transition = DFA4_transition;
         }
-        public String getDescription() {
+        @Override
+		public String getDescription() {
             return "4142:17: ( 'futr' | 'past' | 'withinF' | 'withinP' | 'lasts' | 'lasted' )";
         }
     }
@@ -2269,10 +2270,12 @@ public class InternalPropertyLexer extends Lexer {
             this.special = DFA18_special;
             this.transition = DFA18_transition;
         }
-        public String getDescription() {
+        @Override
+		public String getDescription() {
             return "1:1: Tokens : ( T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | RULE_EXECUTE | RULE_TRIOOP2 | RULE_TRIOOPF | RULE_TRIOOPFF | RULE_TRIOOPFN | RULE_FLOAT | RULE_ARITH_OP | RULE_ARITH_COMPARE_OP | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
-        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
+        @Override
+		public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {

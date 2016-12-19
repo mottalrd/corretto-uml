@@ -7,6 +7,7 @@ import org.correttouml.uml.diagrams.activity.CallActionNode;
 import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.classdiagram.Operation;
 import org.correttouml.uml.diagrams.sequencediagram.Message;
+import org.correttouml.uml.diagrams.sequencediagram.MessageType;
 import org.correttouml.uml.diagrams.statediagram.StateDiagram;
 import org.correttouml.uml.diagrams.statediagram.Transition;
 import org.correttouml.uml.diagrams.statediagram.actions.Action;
@@ -16,6 +17,7 @@ import org.correttouml.uml2zot.semantics.statediagram.actions.SCallAction;
 import org.correttouml.uml2zot.semantics.util.bool.Iff;
 import org.correttouml.uml2zot.semantics.util.bool.Or;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
+import org.eclipse.uml2.uml.MessageSort;
 
 
 public class SOperation {
@@ -30,6 +32,11 @@ public class SOperation {
 		return new Predicate("OBJ"+object.getName()+"OP"+mades_operation.getName());
 	}
 	
+	public Predicate getReplyPredicate(Object object){
+		return new Predicate("OBJ" + object.getName() + "OP" + mades_operation.getName() + "reply");
+	}
+	
+	
 	public String getSemantics(Object object){
         String sem="";
      
@@ -38,19 +45,27 @@ public class SOperation {
          * I messaggi nei sequence diagrams e le operation call negli stati diagrams
          * sono instanze delle operazioni.
          */
-        Or orCond=new Or();
+        Or callOrCond=new Or();
+        Or replyOrCond = new Or();
 		for(Message m: mades_operation.getMessages()){
 			Predicate msg_end=new SMessageEnd(m.getMessageEndEvent()).getPredicate();
-			orCond.addFormulae(msg_end);
+			if (m.getMessageType() != MessageType.REPLY) 
+				callOrCond.addFormulae(msg_end);
+			else
+				replyOrCond.addFormulae(msg_end);
 		}
 		
 		//ACTIONS INVOKING THIS OPERATION
 		Set<CallAction> actions=getActionsInvokingThisOperation(object);
 		for(CallAction act: actions)
-			orCond.addFormulae(new SCallAction(act).getPredicate(object));
+			callOrCond.addFormulae(new SCallAction(act).getPredicate(object));
 		
 		
-        if(orCond.size()!=0) sem=sem+new Iff(this.getPredicate(object),orCond) + "\n";
+        if(callOrCond.size()!=0)
+        	sem=sem+new Iff(this.getPredicate(object),callOrCond) + "\n";
+        if(replyOrCond.size()!=0)
+        	sem += new Iff(this.getReplyPredicate(object), replyOrCond) + "\n";
+        
         return sem;
 	}
 

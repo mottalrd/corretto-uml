@@ -6,8 +6,12 @@ import java.util.List;
 
 import org.correttouml.uml.MadesModel;
 import org.correttouml.uml.diagrams.classdiagram.Clock;
+import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.classdiagram.Operation;
 import org.correttouml.uml.diagrams.property.PTermElement;
+import org.correttouml.uml.diagrams.statediagram.actions.Action;
+import org.correttouml.uml.diagrams.statediagram.actions.ActionFactory;
+import org.correttouml.uml.helpers.StDTransitionsParser;
 import org.correttouml.uml.helpers.UML2ModelHelper;
 import org.correttouml.uml2zot.UML2Zot;
 import org.eclipse.emf.ecore.EObject;
@@ -15,6 +19,7 @@ import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.MessageOccurrenceSpecification;
+import org.eclipse.uml2.uml.MessageSort;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
@@ -27,7 +32,7 @@ public class Message implements PTermElement {
 	}
 	
 	public String getName(){
-		return uml_message.getName();
+		return uml_message.getName().replace(" ", "");
 	}
 
 	public List<MessageParameter> getParameters() {
@@ -49,9 +54,14 @@ public class Message implements PTermElement {
 	}
 
 	public MessageType getMessageType() {
-		if(this.getMessageStartEvent().getLifeline().equals(this.getMessageEndEvent().getLifeline())){
+		if(this.getMessageStartEvent().getLifeline().equals(this.getMessageEndEvent().getLifeline()))
 			return MessageType.RECURSIVE;
-		}
+
+		//[corretto-man] For every asynchronous message there must be an execution occurrence from which the message reply goes back to the target of asynchronous message.
+		if (uml_message.getMessageSort() == MessageSort.ASYNCH_CALL_LITERAL)
+			return MessageType.ASYNCHCALL;
+		if (uml_message.getMessageSort() == MessageSort.REPLY_LITERAL)
+			return MessageType.REPLY;
 		
 		//TODO: Non so ancora come distinguere tra un messaggio orizzontale e uno obliquo
 		return MessageType.INSTANTANEOUS;
@@ -62,7 +72,7 @@ public class Message implements PTermElement {
 	}
 	
 	public SequenceDiagram getSequenceDiagram() {
-		org.eclipse.uml2.uml.InteractionFragment tempif = (org.eclipse.uml2.uml.InteractionFragment)uml_message.getInteraction();
+		org.eclipse.uml2.uml.InteractionFragment tempif = uml_message.getInteraction();
 		while (tempif.getEnclosingInteraction() != null){
 			tempif = tempif.getEnclosingInteraction();
 		}
@@ -93,6 +103,10 @@ public class Message implements PTermElement {
 	private Stereotype getTimedEventStereotype() {
 		return UML2ModelHelper.getStereotype(this.uml_message, "TimedEvent");
 	}
+	
+//	public Object getSourceObject(){
+//		return uml_message.getSendEvent().getOwner()
+//	}
 	
 	@Override
 	public boolean equals(java.lang.Object object){

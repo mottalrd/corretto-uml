@@ -28,6 +28,7 @@ public class OpaqueActionNode extends Node implements ExpressionContext {
 		return uml_activitynode.getName();
 	}
 	
+	@Override
 	public String getUMLId() {
 		String id=((XMLResource) this.uml_activitynode.eResource()).getID(this.uml_activitynode);
 		return UML2Zot.Utility.umlIDtoPrdID(id);
