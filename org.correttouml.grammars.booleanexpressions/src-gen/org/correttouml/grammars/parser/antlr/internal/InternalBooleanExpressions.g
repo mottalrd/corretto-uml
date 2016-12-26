@@ -571,9 +571,9 @@ ruleVariableCondition returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='{' 
+(	otherlv_0='(' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getVariableConditionAccess().getLeftCurlyBracketKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getVariableConditionAccess().getLeftParenthesisKeyword_0());
     }
 (
 (
@@ -629,9 +629,9 @@ ruleVariableCondition returns [EObject current=null]
 	    }
 
 )
-)	otherlv_4='}' 
+)	otherlv_4=')' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getVariableConditionAccess().getRightCurlyBracketKeyword_4());
+    	newLeafNode(otherlv_4, grammarAccess.getVariableConditionAccess().getRightParenthesisKeyword_4());
     }
 )
 ;

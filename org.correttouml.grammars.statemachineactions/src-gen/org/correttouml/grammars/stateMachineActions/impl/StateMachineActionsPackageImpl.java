@@ -438,9 +438,29 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getEvent_AssociationEnd()
+  {
+    return (EAttribute)eventEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEvent_OpName()
+  {
+    return (EAttribute)eventEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getEvent_Parameters()
   {
-    return (EReference)eventEClass.getEStructuralFeatures().get(1);
+    return (EReference)eventEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -450,7 +470,7 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
    */
   public EAttribute getEvent_EventExtension()
   {
-    return (EAttribute)eventEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)eventEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -568,6 +588,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
 
     eventEClass = createEClass(EVENT);
     createEAttribute(eventEClass, EVENT__EVENT_NAME);
+    createEAttribute(eventEClass, EVENT__ASSOCIATION_END);
+    createEAttribute(eventEClass, EVENT__OP_NAME);
     createEReference(eventEClass, EVENT__PARAMETERS);
     createEAttribute(eventEClass, EVENT__EVENT_EXTENSION);
 
@@ -644,6 +666,8 @@ public class StateMachineActionsPackageImpl extends EPackageImpl implements Stat
 
     initEClass(eventEClass, Event.class, "Event", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEvent_EventName(), ecorePackage.getEString(), "eventName", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEvent_AssociationEnd(), ecorePackage.getEString(), "associationEnd", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEvent_OpName(), ecorePackage.getEString(), "opName", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEvent_Parameters(), this.getParameters(), null, "parameters", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEvent_EventExtension(), ecorePackage.getEString(), "eventExtension", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

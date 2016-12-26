@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalBooleanExpressionsParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_OR", "RULE_AND", "RULE_NOT", "RULE_RELATIONS", "RULE_INT", "RULE_ID", "RULE_OPERATOR", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'exit'", "'enter'", "'start'", "'end'", "'tick'", "'sig'", "'call'", "'send'", "'receive'", "'reply'", "'('", "')'", "'@'", "'-'", "'{'", "'}'", "'.'", "'now'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_OR", "RULE_AND", "RULE_NOT", "RULE_RELATIONS", "RULE_INT", "RULE_ID", "RULE_OPERATOR", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'exit'", "'enter'", "'start'", "'end'", "'tick'", "'sig'", "'call'", "'send'", "'receive'", "'reply'", "'('", "')'", "'@'", "'-'", "'.'", "'now'"
     };
     public static final int RULE_ID=9;
     public static final int T__29=29;
@@ -47,8 +47,6 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
     public static final int T__30=30;
     public static final int T__31=31;
     public static final int RULE_STRING=11;
-    public static final int T__32=32;
-    public static final int T__33=33;
     public static final int T__16=16;
     public static final int T__18=18;
     public static final int T__17=17;
@@ -1028,11 +1026,48 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( (LA1_0==RULE_ID||LA1_0==28||LA1_0==30) ) {
+            if ( (LA1_0==RULE_ID||LA1_0==28) ) {
                 alt1=1;
             }
             else if ( (LA1_0==26) ) {
-                alt1=2;
+                switch ( input.LA(2) ) {
+                case RULE_NOT:
+                case 26:
+                case 28:
+                    {
+                    alt1=2;
+                    }
+                    break;
+                case RULE_ID:
+                    {
+                    int LA1_4 = input.LA(3);
+
+                    if ( ((LA1_4>=RULE_OR && LA1_4<=RULE_AND)||LA1_4==27) ) {
+                        alt1=2;
+                    }
+                    else if ( (LA1_4==RULE_RELATIONS||LA1_4==RULE_OPERATOR) ) {
+                        alt1=1;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 1, 4, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case RULE_INT:
+                    {
+                    alt1=1;
+                    }
+                    break;
+                default:
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 1, 2, input);
+
+                    throw nvae;
+                }
+
             }
             else {
                 NoViableAltException nvae =
@@ -1128,7 +1163,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
                 alt2=2;
                 }
                 break;
-            case 30:
+            case 26:
                 {
                 alt2=3;
                 }
@@ -1247,7 +1282,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
             if ( (LA3_0==RULE_ID) ) {
                 int LA3_1 = input.LA(2);
 
-                if ( (LA3_1==EOF||LA3_1==RULE_RELATIONS||LA3_1==31) ) {
+                if ( (LA3_1==EOF||LA3_1==RULE_RELATIONS||LA3_1==27) ) {
                     alt3=2;
                 }
                 else if ( (LA3_1==RULE_OPERATOR) ) {
@@ -1263,7 +1298,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
             else if ( (LA3_0==RULE_INT) ) {
                 int LA3_2 = input.LA(2);
 
-                if ( (LA3_2==EOF||LA3_2==RULE_RELATIONS||LA3_2==31) ) {
+                if ( (LA3_2==EOF||LA3_2==RULE_RELATIONS||LA3_2==27) ) {
                     alt3=2;
                 }
                 else if ( (LA3_2==RULE_OPERATOR) ) {
@@ -1455,7 +1490,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
             if ( (LA5_0==RULE_ID) ) {
                 alt5=1;
             }
-            else if ( (LA5_0==33) ) {
+            else if ( (LA5_0==31) ) {
                 alt5=2;
             }
             else {
@@ -3454,21 +3489,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__VariableCondition__Group__0__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1239:1: rule__VariableCondition__Group__0__Impl : ( '{' ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1239:1: rule__VariableCondition__Group__0__Impl : ( '(' ) ;
     public final void rule__VariableCondition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1243:1: ( ( '{' ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1244:1: ( '{' )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1243:1: ( ( '(' ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1244:1: ( '(' )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1244:1: ( '{' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1245:1: '{'
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1244:1: ( '(' )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1245:1: '('
             {
-             before(grammarAccess.getVariableConditionAccess().getLeftCurlyBracketKeyword_0()); 
-            match(input,30,FOLLOW_30_in_rule__VariableCondition__Group__0__Impl2539); 
-             after(grammarAccess.getVariableConditionAccess().getLeftCurlyBracketKeyword_0()); 
+             before(grammarAccess.getVariableConditionAccess().getLeftParenthesisKeyword_0()); 
+            match(input,26,FOLLOW_26_in_rule__VariableCondition__Group__0__Impl2539); 
+             after(grammarAccess.getVariableConditionAccess().getLeftParenthesisKeyword_0()); 
 
             }
 
@@ -3779,21 +3814,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__VariableCondition__Group__4__Impl"
-    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1356:1: rule__VariableCondition__Group__4__Impl : ( '}' ) ;
+    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1356:1: rule__VariableCondition__Group__4__Impl : ( ')' ) ;
     public final void rule__VariableCondition__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1360:1: ( ( '}' ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1361:1: ( '}' )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1360:1: ( ( ')' ) )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1361:1: ( ')' )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1361:1: ( '}' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1362:1: '}'
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1361:1: ( ')' )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1362:1: ')'
             {
-             before(grammarAccess.getVariableConditionAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,31,FOLLOW_31_in_rule__VariableCondition__Group__4__Impl2778); 
-             after(grammarAccess.getVariableConditionAccess().getRightCurlyBracketKeyword_4()); 
+             before(grammarAccess.getVariableConditionAccess().getRightParenthesisKeyword_4()); 
+            match(input,27,FOLLOW_27_in_rule__VariableCondition__Group__4__Impl2778); 
+             after(grammarAccess.getVariableConditionAccess().getRightParenthesisKeyword_4()); 
 
             }
 
@@ -4202,7 +4237,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
             // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1524:1: '.'
             {
              before(grammarAccess.getEventAccess().getFullStopKeyword_0_1()); 
-            match(input,32,FOLLOW_32_in_rule__Event__Group_0__1__Impl3093); 
+            match(input,30,FOLLOW_30_in_rule__Event__Group_0__1__Impl3093); 
              after(grammarAccess.getEventAccess().getFullStopKeyword_0_1()); 
 
             }
@@ -5468,7 +5503,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
             // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2015:1: 'now'
             {
              before(grammarAccess.getEventAccess().getNowEventNowKeyword_1_0()); 
-            match(input,33,FOLLOW_33_in_rule__Event__NowEventAssignment_14096); 
+            match(input,31,FOLLOW_31_in_rule__Event__NowEventAssignment_14096); 
              after(grammarAccess.getEventAccess().getNowEventNowKeyword_1_0()); 
 
             }
@@ -5561,7 +5596,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
     public static final BitSet FOLLOW_rule__OrExpression__LeftExpressionAssignment_0_in_rule__OrExpression__Group__0__Impl1306 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__OrExpression__Group__1__Impl_in_rule__OrExpression__Group__11336 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__OrExpression__Group_1__0_in_rule__OrExpression__Group__1__Impl1363 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OrExpression__Group_1__0__Impl_in_rule__OrExpression__Group_1__01398 = new BitSet(new long[]{0x0000000054000240L});
+    public static final BitSet FOLLOW_rule__OrExpression__Group_1__0__Impl_in_rule__OrExpression__Group_1__01398 = new BitSet(new long[]{0x0000000014000240L});
     public static final BitSet FOLLOW_rule__OrExpression__Group_1__1_in_rule__OrExpression__Group_1__01401 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__OrExpression__OrAssignment_1_0_in_rule__OrExpression__Group_1__0__Impl1428 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__OrExpression__Group_1__1__Impl_in_rule__OrExpression__Group_1__11458 = new BitSet(new long[]{0x0000000000000002L});
@@ -5571,17 +5606,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
     public static final BitSet FOLLOW_rule__AndExpression__LeftExpressionAssignment_0_in_rule__AndExpression__Group__0__Impl1549 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__AndExpression__Group__1__Impl_in_rule__AndExpression__Group__11579 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__AndExpression__Group_1__0_in_rule__AndExpression__Group__1__Impl1606 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AndExpression__Group_1__0__Impl_in_rule__AndExpression__Group_1__01641 = new BitSet(new long[]{0x0000000054000240L});
+    public static final BitSet FOLLOW_rule__AndExpression__Group_1__0__Impl_in_rule__AndExpression__Group_1__01641 = new BitSet(new long[]{0x0000000014000240L});
     public static final BitSet FOLLOW_rule__AndExpression__Group_1__1_in_rule__AndExpression__Group_1__01644 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__AndExpression__AndAssignment_1_0_in_rule__AndExpression__Group_1__0__Impl1671 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__AndExpression__Group_1__1__Impl_in_rule__AndExpression__Group_1__11701 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__AndExpression__RightExpressionAssignment_1_1_in_rule__AndExpression__Group_1__1__Impl1728 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BaseExpression__Group__0__Impl_in_rule__BaseExpression__Group__01762 = new BitSet(new long[]{0x0000000054000240L});
+    public static final BitSet FOLLOW_rule__BaseExpression__Group__0__Impl_in_rule__BaseExpression__Group__01762 = new BitSet(new long[]{0x0000000014000240L});
     public static final BitSet FOLLOW_rule__BaseExpression__Group__1_in_rule__BaseExpression__Group__01765 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__BaseExpression__NotAssignment_0_in_rule__BaseExpression__Group__0__Impl1792 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__BaseExpression__Group__1__Impl_in_rule__BaseExpression__Group__11823 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__BaseExpression__Alternatives_1_in_rule__BaseExpression__Group__1__Impl1850 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BaseExpression__Group_1_1__0__Impl_in_rule__BaseExpression__Group_1_1__01884 = new BitSet(new long[]{0x0000000054000240L});
+    public static final BitSet FOLLOW_rule__BaseExpression__Group_1_1__0__Impl_in_rule__BaseExpression__Group_1_1__01884 = new BitSet(new long[]{0x0000000014000240L});
     public static final BitSet FOLLOW_rule__BaseExpression__Group_1_1__1_in_rule__BaseExpression__Group_1_1__01887 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_26_in_rule__BaseExpression__Group_1_1__0__Impl1915 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__BaseExpression__Group_1_1__1__Impl_in_rule__BaseExpression__Group_1_1__11946 = new BitSet(new long[]{0x0000000008000000L});
@@ -5589,7 +5624,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
     public static final BitSet FOLLOW_rule__BaseExpression__RootExpressionAssignment_1_1_1_in_rule__BaseExpression__Group_1_1__1__Impl1976 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__BaseExpression__Group_1_1__2__Impl_in_rule__BaseExpression__Group_1_1__22006 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_27_in_rule__BaseExpression__Group_1_1__2__Impl2034 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TimeConstraint__Group__0__Impl_in_rule__TimeConstraint__Group__02071 = new BitSet(new long[]{0x0000000200000200L});
+    public static final BitSet FOLLOW_rule__TimeConstraint__Group__0__Impl_in_rule__TimeConstraint__Group__02071 = new BitSet(new long[]{0x0000000080000200L});
     public static final BitSet FOLLOW_rule__TimeConstraint__Group__1_in_rule__TimeConstraint__Group__02074 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_28_in_rule__TimeConstraint__Group__0__Impl2102 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__TimeConstraint__Group__1__Impl_in_rule__TimeConstraint__Group__12133 = new BitSet(new long[]{0x0000000020000000L});
@@ -5598,7 +5633,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
     public static final BitSet FOLLOW_rule__TimeConstraint__Group__2__Impl_in_rule__TimeConstraint__Group__22193 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_rule__TimeConstraint__Group__3_in_rule__TimeConstraint__Group__22196 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_29_in_rule__TimeConstraint__Group__2__Impl2224 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TimeConstraint__Group__3__Impl_in_rule__TimeConstraint__Group__32255 = new BitSet(new long[]{0x0000000200000200L});
+    public static final BitSet FOLLOW_rule__TimeConstraint__Group__3__Impl_in_rule__TimeConstraint__Group__32255 = new BitSet(new long[]{0x0000000080000200L});
     public static final BitSet FOLLOW_rule__TimeConstraint__Group__4_in_rule__TimeConstraint__Group__32258 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_28_in_rule__TimeConstraint__Group__3__Impl2286 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__TimeConstraint__Group__4__Impl_in_rule__TimeConstraint__Group__42317 = new BitSet(new long[]{0x0000000000000080L});
@@ -5611,18 +5646,18 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
     public static final BitSet FOLLOW_rule__TimeConstraint__ValueAssignment_6_in_rule__TimeConstraint__Group__6__Impl2464 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__VariableCondition__Group__0__Impl_in_rule__VariableCondition__Group__02508 = new BitSet(new long[]{0x0000000000000300L});
     public static final BitSet FOLLOW_rule__VariableCondition__Group__1_in_rule__VariableCondition__Group__02511 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_rule__VariableCondition__Group__0__Impl2539 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__VariableCondition__Group__0__Impl2539 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__VariableCondition__Group__1__Impl_in_rule__VariableCondition__Group__12570 = new BitSet(new long[]{0x0000000000000080L});
     public static final BitSet FOLLOW_rule__VariableCondition__Group__2_in_rule__VariableCondition__Group__12573 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__VariableCondition__Expression_leftAssignment_1_in_rule__VariableCondition__Group__1__Impl2600 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__VariableCondition__Group__2__Impl_in_rule__VariableCondition__Group__22630 = new BitSet(new long[]{0x0000000000000300L});
     public static final BitSet FOLLOW_rule__VariableCondition__Group__3_in_rule__VariableCondition__Group__22633 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__VariableCondition__RelationAssignment_2_in_rule__VariableCondition__Group__2__Impl2660 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__VariableCondition__Group__3__Impl_in_rule__VariableCondition__Group__32690 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_rule__VariableCondition__Group__3__Impl_in_rule__VariableCondition__Group__32690 = new BitSet(new long[]{0x0000000008000000L});
     public static final BitSet FOLLOW_rule__VariableCondition__Group__4_in_rule__VariableCondition__Group__32693 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__VariableCondition__Expression_rightAssignment_3_in_rule__VariableCondition__Group__3__Impl2720 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__VariableCondition__Group__4__Impl_in_rule__VariableCondition__Group__42750 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__VariableCondition__Group__4__Impl2778 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__VariableCondition__Group__4__Impl2778 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__EXPRESSION__Group_0__0__Impl_in_rule__EXPRESSION__Group_0__02819 = new BitSet(new long[]{0x0000000000000400L});
     public static final BitSet FOLLOW_rule__EXPRESSION__Group_0__1_in_rule__EXPRESSION__Group_0__02822 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__EXPRESSION__FirstTermAssignment_0_0_in_rule__EXPRESSION__Group_0__0__Impl2849 = new BitSet(new long[]{0x0000000000000002L});
@@ -5631,12 +5666,12 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
     public static final BitSet FOLLOW_rule__EXPRESSION__OperatorAssignment_0_1_in_rule__EXPRESSION__Group_0__1__Impl2909 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__EXPRESSION__Group_0__2__Impl_in_rule__EXPRESSION__Group_0__22939 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__EXPRESSION__SecondTermAssignment_0_2_in_rule__EXPRESSION__Group_0__2__Impl2966 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__Group_0__0__Impl_in_rule__Event__Group_0__03002 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_rule__Event__Group_0__0__Impl_in_rule__Event__Group_0__03002 = new BitSet(new long[]{0x0000000040000000L});
     public static final BitSet FOLLOW_rule__Event__Group_0__1_in_rule__Event__Group_0__03005 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Event__EventNameAssignment_0_0_in_rule__Event__Group_0__0__Impl3032 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Event__Group_0__1__Impl_in_rule__Event__Group_0__13062 = new BitSet(new long[]{0x0000000003FF0000L});
     public static final BitSet FOLLOW_rule__Event__Group_0__2_in_rule__Event__Group_0__13065 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__Event__Group_0__1__Impl3093 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_rule__Event__Group_0__1__Impl3093 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Event__Group_0__2__Impl_in_rule__Event__Group_0__23124 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Event__EventExtensionAssignment_0_2_in_rule__Event__Group_0__2__Impl3151 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOrExpression_in_rule__Model__ExpressionAssignment3192 = new BitSet(new long[]{0x0000000000000002L});
@@ -5668,6 +5703,6 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
     public static final BitSet FOLLOW_RULE_INT_in_rule__TERM__ConstantAssignment_13998 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__Event__EventNameAssignment_0_04029 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEventExtensions_in_rule__Event__EventExtensionAssignment_0_24060 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_rule__Event__NowEventAssignment_14096 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_rule__Event__NowEventAssignment_14096 = new BitSet(new long[]{0x0000000000000002L});
 
 }

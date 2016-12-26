@@ -6,6 +6,9 @@ import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.Lexer;
 
 
 import org.antlr.runtime.*;
+import java.util.Stack;
+import java.util.List;
+import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalStateMachineActionsLexer extends Lexer {
@@ -47,8 +50,7 @@ public class InternalStateMachineActionsLexer extends Lexer {
         super(input,state);
 
     }
-    @Override
-	public String getGrammarFileName() { return "../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g"; }
+    public String getGrammarFileName() { return "../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g"; }
 
     // $ANTLR start "T__12"
     public final void mT__12() throws RecognitionException {
@@ -405,8 +407,8 @@ public class InternalStateMachineActionsLexer extends Lexer {
         try {
             int _type = RULE_OPERATOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2076:15: ( ( '-' | '+' | '*' ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2076:17: ( '-' | '+' | '*' )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2222:15: ( ( '-' | '+' | '*' ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2222:17: ( '-' | '+' | '*' )
             {
             if ( (input.LA(1)>='*' && input.LA(1)<='+')||input.LA(1)=='-' ) {
                 input.consume();
@@ -433,10 +435,10 @@ public class InternalStateMachineActionsLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2078:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2078:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2224:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2224:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2078:11: ( '^' )?
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2224:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -445,7 +447,7 @@ public class InternalStateMachineActionsLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2078:11: '^'
+                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2224:11: '^'
                     {
                     match('^'); 
 
@@ -463,7 +465,7 @@ public class InternalStateMachineActionsLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2078:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2224:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -512,10 +514,10 @@ public class InternalStateMachineActionsLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2080:10: ( ( '0' .. '9' )+ )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2080:12: ( '0' .. '9' )+
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2226:10: ( ( '0' .. '9' )+ )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2226:12: ( '0' .. '9' )+
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2080:12: ( '0' .. '9' )+
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2226:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -529,7 +531,7 @@ public class InternalStateMachineActionsLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2080:13: '0' .. '9'
+            	    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2226:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -561,10 +563,10 @@ public class InternalStateMachineActionsLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2082:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2082:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2228:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2228:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2082:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2228:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -582,10 +584,10 @@ public class InternalStateMachineActionsLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2082:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2228:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2082:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2228:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -601,7 +603,7 @@ public class InternalStateMachineActionsLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2082:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2228:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -617,7 +619,7 @@ public class InternalStateMachineActionsLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2082:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2228:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -642,10 +644,10 @@ public class InternalStateMachineActionsLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2082:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2228:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2082:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2228:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -661,7 +663,7 @@ public class InternalStateMachineActionsLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2082:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2228:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -677,7 +679,7 @@ public class InternalStateMachineActionsLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2082:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2228:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -720,12 +722,12 @@ public class InternalStateMachineActionsLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2084:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2084:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2230:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2230:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2084:24: ( options {greedy=false; } : . )*
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2230:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -750,7 +752,7 @@ public class InternalStateMachineActionsLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2084:52: .
+            	    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2230:52: .
             	    {
             	    matchAny(); 
 
@@ -780,12 +782,12 @@ public class InternalStateMachineActionsLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2086:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2086:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2232:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2232:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2086:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2232:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -798,7 +800,7 @@ public class InternalStateMachineActionsLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2086:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2232:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -818,7 +820,7 @@ public class InternalStateMachineActionsLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2086:40: ( ( '\\r' )? '\\n' )?
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2232:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -827,9 +829,9 @@ public class InternalStateMachineActionsLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2086:41: ( '\\r' )? '\\n'
+                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2232:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2086:41: ( '\\r' )?
+                    // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2232:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -838,7 +840,7 @@ public class InternalStateMachineActionsLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2086:41: '\\r'
+                            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2232:41: '\\r'
                             {
                             match('\r'); 
 
@@ -870,10 +872,10 @@ public class InternalStateMachineActionsLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2088:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2088:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2234:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2234:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2088:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2234:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -927,8 +929,8 @@ public class InternalStateMachineActionsLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2090:16: ( . )
-            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2090:18: .
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2236:16: ( . )
+            // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:2236:18: .
             {
             matchAny(); 
 
@@ -942,8 +944,7 @@ public class InternalStateMachineActionsLexer extends Lexer {
     }
     // $ANTLR end "RULE_ANY_OTHER"
 
-    @Override
-	public void mTokens() throws RecognitionException {
+    public void mTokens() throws RecognitionException {
         // ../org.correttouml.grammars.statemachineactions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalStateMachineActions.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | RULE_OPERATOR | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
         int alt12=25;
         alt12 = dfa12.predict(input);
@@ -1257,12 +1258,10 @@ public class InternalStateMachineActionsLexer extends Lexer {
             this.special = DFA12_special;
             this.transition = DFA12_transition;
         }
-        @Override
-		public String getDescription() {
+        public String getDescription() {
             return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | RULE_OPERATOR | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
-        @Override
-		public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
+        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {

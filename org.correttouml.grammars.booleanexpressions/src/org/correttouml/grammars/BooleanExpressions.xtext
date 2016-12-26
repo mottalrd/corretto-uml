@@ -37,7 +37,8 @@ BooleanVariable:
 ;
 
 VariableCondition:
-	'{' expression_left=EXPRESSION relation=RELATIONS expression_right=EXPRESSION '}'
+//	'{' expression_left=EXPRESSION relation=RELATIONS expression_right=EXPRESSION '}'
+'(' expression_left=EXPRESSION relation=RELATIONS expression_right=EXPRESSION ')'
 ;
 
 EXPRESSION:

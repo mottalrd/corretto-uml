@@ -66,36 +66,50 @@ public class ActionFactory {
 	}
 	
 	private static CallAction getCallAction(org.correttouml.grammars.stateMachineActions.Action curr, ExpressionContext context, Object object) throws Exception{
-		// [corretto-man] Syntax of actions in StD: #linkName.memberEndName@opName.call
-		String opname = curr.getEventAction().getEvent().getEventName();
-
-		// the association end where we are sending the invocation
-		// TODO[improvement] association ends must have unique names
-		String linkName = curr.getEventAction().getLink().getLinkName();
-		String associationEnd = curr.getEventAction().getLink().getAssociationEnd();
-
-		// let's find the guy we are looking for
+		// [corretto-man] Syntaxes of operation invocation actions in StD: 1- #linkName.memberEndName@opName.call, 2- @memberEndName.opName.call
 		Object objToInvoke = null;
-		//<For Java Models>
-		for (AssociationInstance ai : object.getAssociationInstances()) {
-			if (ai.getAssociation().getName().equals(linkName) && ai.hasMemberEnd(associationEnd) && !ai.getMemberEnd(associationEnd).equals(object)) {
-				objToInvoke = ai.getMemberEnd(associationEnd);
-			}
+		String opname, linkName, associationEnd;
+		if (curr.getEventAction().getEvent().getEventName() != null) {  //1- #linkName.memberEndName@opName.call
+			opname = curr.getEventAction().getEvent().getEventName();
+	
+			// the association end where we are sending the invocation
+			linkName = curr.getEventAction().getLink().getLinkName();
+			associationEnd = curr.getEventAction().getLink().getAssociationEnd();
+	
+			// let's find the guy we are looking for
+			
+			//<For Java Models>
+			for (AssociationInstance ai : object.getAssociationInstances())
+				if (ai.getAssociation().getName().equals(linkName) && ai.hasMemberEnd(associationEnd) && !ai.getMemberEnd(associationEnd).equals(object))
+					objToInvoke = ai.getMemberEnd(associationEnd);
+			//</For Java Models>
+			//<For Papyrus Models>
+			if (objToInvoke == null)
+				for (AssociationInstance ai : object.getAssociationInstances())
+					if (ai.getAssociation().getName().equals(linkName))
+						for (AssociationEnd ae : ai.getAssociation().getAssociationEnds())
+							if (ae.getName().equals(associationEnd))
+								objToInvoke = ai.getMemberEndObject(ae.getOwnerClass());
+			//</For Papyrus Models>
 		}
-		//</For Java Modles>
-		//<For Papyrus Models>
-		if (objToInvoke == null) {
-			for (AssociationInstance ai : object.getAssociationInstances()) {
-				if (ai.getAssociation().getName().equals(linkName)) {
-					for (AssociationEnd ae : ai.getAssociation().getAssociationEnds()){
-						if (ae.getName().equals(associationEnd)){
+		else{  //2- @memberEndName.opName.call
+			// TODO[improvement] association ends must have unique names
+			opname = curr.getEventAction().getEvent().getOpName();
+			associationEnd = curr.getEventAction().getEvent().getAssociationEnd();
+			//<For Java Models>
+			for (AssociationInstance ai : object.getAssociationInstances()) 
+				if (ai.hasMemberEnd(associationEnd) && !ai.getMemberEnd(associationEnd).equals(object)) 
+					objToInvoke = ai.getMemberEnd(associationEnd);
+			//</For Java Models>
+			//<For Papyrus Models>
+			if (objToInvoke == null)
+				for (AssociationInstance ai : object.getAssociationInstances())
+					for (AssociationEnd ae : ai.getAssociation().getAssociationEnds())
+						if (ae.getName().equals(associationEnd))
 							objToInvoke = ai.getMemberEndObject(ae.getOwnerClass());
-						}
-					}
-				}
-			}
+			//</For Papyrus Models>
 		}
-		//</For Papyrus Models>
+
 		if (objToInvoke == null) {
 			throw new Exception("Object to invoke not found");
 		}

@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_OR", "RULE_AND", "RULE_NOT", "RULE_RELATIONS", "RULE_INT", "RULE_ID", "RULE_OPERATOR", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'('", "')'", "'@'", "'-'", "'{'", "'}'", "'.'", "'now'", "'exit'", "'enter'", "'start'", "'end'", "'tick'", "'sig'", "'call'", "'send'", "'receive'", "'reply'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_OR", "RULE_AND", "RULE_NOT", "RULE_RELATIONS", "RULE_INT", "RULE_ID", "RULE_OPERATOR", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'('", "')'", "'@'", "'-'", "'.'", "'now'", "'exit'", "'enter'", "'start'", "'end'", "'tick'", "'sig'", "'call'", "'send'", "'receive'", "'reply'"
     };
     public static final int RULE_ID=9;
     public static final int T__29=29;
@@ -46,8 +46,6 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
     public static final int T__30=30;
     public static final int T__31=31;
     public static final int RULE_STRING=11;
-    public static final int T__32=32;
-    public static final int T__33=33;
     public static final int T__16=16;
     public static final int T__18=18;
     public static final int T__17=17;
@@ -652,11 +650,48 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==RULE_ID||LA4_0==18||LA4_0==20) ) {
+            if ( (LA4_0==RULE_ID||LA4_0==18) ) {
                 alt4=1;
             }
             else if ( (LA4_0==16) ) {
-                alt4=2;
+                switch ( input.LA(2) ) {
+                case RULE_ID:
+                    {
+                    int LA4_3 = input.LA(3);
+
+                    if ( (LA4_3==RULE_RELATIONS||LA4_3==RULE_OPERATOR) ) {
+                        alt4=1;
+                    }
+                    else if ( ((LA4_3>=RULE_OR && LA4_3<=RULE_AND)||LA4_3==17) ) {
+                        alt4=2;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 4, 3, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case RULE_INT:
+                    {
+                    alt4=1;
+                    }
+                    break;
+                case RULE_NOT:
+                case 16:
+                case 18:
+                    {
+                    alt4=2;
+                    }
+                    break;
+                default:
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 4, 2, input);
+
+                    throw nvae;
+                }
+
             }
             else {
                 NoViableAltException nvae =
@@ -843,7 +878,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
                 alt5=2;
                 }
                 break;
-            case 20:
+            case 16:
                 {
                 alt5=3;
                 }
@@ -1322,7 +1357,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleVariableCondition"
-    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:570:1: ruleVariableCondition returns [EObject current=null] : (otherlv_0= '{' ( (lv_expression_left_1_0= ruleEXPRESSION ) ) ( (lv_relation_2_0= RULE_RELATIONS ) ) ( (lv_expression_right_3_0= ruleEXPRESSION ) ) otherlv_4= '}' ) ;
+    // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:570:1: ruleVariableCondition returns [EObject current=null] : (otherlv_0= '(' ( (lv_expression_left_1_0= ruleEXPRESSION ) ) ( (lv_relation_2_0= RULE_RELATIONS ) ) ( (lv_expression_right_3_0= ruleEXPRESSION ) ) otherlv_4= ')' ) ;
     public final EObject ruleVariableCondition() throws RecognitionException {
         EObject current = null;
 
@@ -1337,15 +1372,15 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:573:28: ( (otherlv_0= '{' ( (lv_expression_left_1_0= ruleEXPRESSION ) ) ( (lv_relation_2_0= RULE_RELATIONS ) ) ( (lv_expression_right_3_0= ruleEXPRESSION ) ) otherlv_4= '}' ) )
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:574:1: (otherlv_0= '{' ( (lv_expression_left_1_0= ruleEXPRESSION ) ) ( (lv_relation_2_0= RULE_RELATIONS ) ) ( (lv_expression_right_3_0= ruleEXPRESSION ) ) otherlv_4= '}' )
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:573:28: ( (otherlv_0= '(' ( (lv_expression_left_1_0= ruleEXPRESSION ) ) ( (lv_relation_2_0= RULE_RELATIONS ) ) ( (lv_expression_right_3_0= ruleEXPRESSION ) ) otherlv_4= ')' ) )
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:574:1: (otherlv_0= '(' ( (lv_expression_left_1_0= ruleEXPRESSION ) ) ( (lv_relation_2_0= RULE_RELATIONS ) ) ( (lv_expression_right_3_0= ruleEXPRESSION ) ) otherlv_4= ')' )
             {
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:574:1: (otherlv_0= '{' ( (lv_expression_left_1_0= ruleEXPRESSION ) ) ( (lv_relation_2_0= RULE_RELATIONS ) ) ( (lv_expression_right_3_0= ruleEXPRESSION ) ) otherlv_4= '}' )
-            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:574:3: otherlv_0= '{' ( (lv_expression_left_1_0= ruleEXPRESSION ) ) ( (lv_relation_2_0= RULE_RELATIONS ) ) ( (lv_expression_right_3_0= ruleEXPRESSION ) ) otherlv_4= '}'
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:574:1: (otherlv_0= '(' ( (lv_expression_left_1_0= ruleEXPRESSION ) ) ( (lv_relation_2_0= RULE_RELATIONS ) ) ( (lv_expression_right_3_0= ruleEXPRESSION ) ) otherlv_4= ')' )
+            // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:574:3: otherlv_0= '(' ( (lv_expression_left_1_0= ruleEXPRESSION ) ) ( (lv_relation_2_0= RULE_RELATIONS ) ) ( (lv_expression_right_3_0= ruleEXPRESSION ) ) otherlv_4= ')'
             {
-            otherlv_0=(Token)match(input,20,FOLLOW_20_in_ruleVariableCondition1088); 
+            otherlv_0=(Token)match(input,16,FOLLOW_16_in_ruleVariableCondition1088); 
 
-                	newLeafNode(otherlv_0, grammarAccess.getVariableConditionAccess().getLeftCurlyBracketKeyword_0());
+                	newLeafNode(otherlv_0, grammarAccess.getVariableConditionAccess().getLeftParenthesisKeyword_0());
                 
             // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:578:1: ( (lv_expression_left_1_0= ruleEXPRESSION ) )
             // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:579:1: (lv_expression_left_1_0= ruleEXPRESSION )
@@ -1435,9 +1470,9 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_4=(Token)match(input,21,FOLLOW_21_in_ruleVariableCondition1164); 
+            otherlv_4=(Token)match(input,17,FOLLOW_17_in_ruleVariableCondition1164); 
 
-                	newLeafNode(otherlv_4, grammarAccess.getVariableConditionAccess().getRightCurlyBracketKeyword_4());
+                	newLeafNode(otherlv_4, grammarAccess.getVariableConditionAccess().getRightParenthesisKeyword_4());
                 
 
             }
@@ -1524,7 +1559,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
                 if ( (LA6_1==RULE_OPERATOR) ) {
                     alt6=1;
                 }
-                else if ( (LA6_1==EOF||LA6_1==RULE_RELATIONS||LA6_1==21) ) {
+                else if ( (LA6_1==EOF||LA6_1==RULE_RELATIONS||LA6_1==17) ) {
                     alt6=2;
                 }
                 else {
@@ -1537,7 +1572,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
             else if ( (LA6_0==RULE_INT) ) {
                 int LA6_2 = input.LA(2);
 
-                if ( (LA6_2==EOF||LA6_2==RULE_RELATIONS||LA6_2==21) ) {
+                if ( (LA6_2==EOF||LA6_2==RULE_RELATIONS||LA6_2==17) ) {
                     alt6=2;
                 }
                 else if ( (LA6_2==RULE_OPERATOR) ) {
@@ -1925,7 +1960,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
             if ( (LA8_0==RULE_ID) ) {
                 alt8=1;
             }
-            else if ( (LA8_0==23) ) {
+            else if ( (LA8_0==21) ) {
                 alt8=2;
             }
             else {
@@ -1967,7 +2002,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
 
                     }
 
-                    otherlv_1=(Token)match(input,22,FOLLOW_22_in_ruleEvent1555); 
+                    otherlv_1=(Token)match(input,20,FOLLOW_20_in_ruleEvent1555); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getEventAccess().getFullStopKeyword_0_1());
                         
@@ -2017,7 +2052,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
                     // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:851:1: (lv_nowEvent_3_0= 'now' )
                     // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:852:3: lv_nowEvent_3_0= 'now'
                     {
-                    lv_nowEvent_3_0=(Token)match(input,23,FOLLOW_23_in_ruleEvent1601); 
+                    lv_nowEvent_3_0=(Token)match(input,21,FOLLOW_21_in_ruleEvent1601); 
 
                             newLeafNode(lv_nowEvent_3_0, grammarAccess.getEventAccess().getNowEventNowKeyword_1_0());
                         
@@ -2108,52 +2143,52 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
             // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:886:1: (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'send' | kw= 'receive' | kw= 'reply' )
             int alt9=10;
             switch ( input.LA(1) ) {
-            case 24:
+            case 22:
                 {
                 alt9=1;
                 }
                 break;
-            case 25:
+            case 23:
                 {
                 alt9=2;
                 }
                 break;
-            case 26:
+            case 24:
                 {
                 alt9=3;
                 }
                 break;
-            case 27:
+            case 25:
                 {
                 alt9=4;
                 }
                 break;
-            case 28:
+            case 26:
                 {
                 alt9=5;
                 }
                 break;
-            case 29:
+            case 27:
                 {
                 alt9=6;
                 }
                 break;
-            case 30:
+            case 28:
                 {
                 alt9=7;
                 }
                 break;
-            case 31:
+            case 29:
                 {
                 alt9=8;
                 }
                 break;
-            case 32:
+            case 30:
                 {
                 alt9=9;
                 }
                 break;
-            case 33:
+            case 31:
                 {
                 alt9=10;
                 }
@@ -2169,7 +2204,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
                 case 1 :
                     // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:887:2: kw= 'exit'
                     {
-                    kw=(Token)match(input,24,FOLLOW_24_in_ruleEventExtensions1700); 
+                    kw=(Token)match(input,22,FOLLOW_22_in_ruleEventExtensions1700); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getExitKeyword_0()); 
@@ -2180,7 +2215,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
                 case 2 :
                     // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:894:2: kw= 'enter'
                     {
-                    kw=(Token)match(input,25,FOLLOW_25_in_ruleEventExtensions1719); 
+                    kw=(Token)match(input,23,FOLLOW_23_in_ruleEventExtensions1719); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getEnterKeyword_1()); 
@@ -2191,7 +2226,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
                 case 3 :
                     // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:901:2: kw= 'start'
                     {
-                    kw=(Token)match(input,26,FOLLOW_26_in_ruleEventExtensions1738); 
+                    kw=(Token)match(input,24,FOLLOW_24_in_ruleEventExtensions1738); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getStartKeyword_2()); 
@@ -2202,7 +2237,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
                 case 4 :
                     // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:908:2: kw= 'end'
                     {
-                    kw=(Token)match(input,27,FOLLOW_27_in_ruleEventExtensions1757); 
+                    kw=(Token)match(input,25,FOLLOW_25_in_ruleEventExtensions1757); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getEndKeyword_3()); 
@@ -2213,7 +2248,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
                 case 5 :
                     // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:915:2: kw= 'tick'
                     {
-                    kw=(Token)match(input,28,FOLLOW_28_in_ruleEventExtensions1776); 
+                    kw=(Token)match(input,26,FOLLOW_26_in_ruleEventExtensions1776); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getTickKeyword_4()); 
@@ -2224,7 +2259,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
                 case 6 :
                     // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:922:2: kw= 'sig'
                     {
-                    kw=(Token)match(input,29,FOLLOW_29_in_ruleEventExtensions1795); 
+                    kw=(Token)match(input,27,FOLLOW_27_in_ruleEventExtensions1795); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getSigKeyword_5()); 
@@ -2235,7 +2270,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
                 case 7 :
                     // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:929:2: kw= 'call'
                     {
-                    kw=(Token)match(input,30,FOLLOW_30_in_ruleEventExtensions1814); 
+                    kw=(Token)match(input,28,FOLLOW_28_in_ruleEventExtensions1814); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getCallKeyword_6()); 
@@ -2246,7 +2281,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
                 case 8 :
                     // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:936:2: kw= 'send'
                     {
-                    kw=(Token)match(input,31,FOLLOW_31_in_ruleEventExtensions1833); 
+                    kw=(Token)match(input,29,FOLLOW_29_in_ruleEventExtensions1833); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getSendKeyword_7()); 
@@ -2257,7 +2292,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
                 case 9 :
                     // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:943:2: kw= 'receive'
                     {
-                    kw=(Token)match(input,32,FOLLOW_32_in_ruleEventExtensions1852); 
+                    kw=(Token)match(input,30,FOLLOW_30_in_ruleEventExtensions1852); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getReceiveKeyword_8()); 
@@ -2268,7 +2303,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
                 case 10 :
                     // ../org.correttouml.grammars.booleanexpressions/src-gen/org/correttouml/grammars/parser/antlr/internal/InternalBooleanExpressions.g:950:2: kw= 'reply'
                     {
-                    kw=(Token)match(input,33,FOLLOW_33_in_ruleEventExtensions1871); 
+                    kw=(Token)match(input,31,FOLLOW_31_in_ruleEventExtensions1871); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getReplyKeyword_9()); 
@@ -2306,18 +2341,18 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
     public static final BitSet FOLLOW_ruleOrExpression_in_entryRuleOrExpression165 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOrExpression175 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAndExpression_in_ruleOrExpression221 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_RULE_OR_in_ruleOrExpression239 = new BitSet(new long[]{0x0000000000150240L});
+    public static final BitSet FOLLOW_RULE_OR_in_ruleOrExpression239 = new BitSet(new long[]{0x0000000000050240L});
     public static final BitSet FOLLOW_ruleOrExpression_in_ruleOrExpression265 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAndExpression_in_entryRuleAndExpression303 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAndExpression313 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBaseExpression_in_ruleAndExpression359 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_RULE_AND_in_ruleAndExpression377 = new BitSet(new long[]{0x0000000000150240L});
+    public static final BitSet FOLLOW_RULE_AND_in_ruleAndExpression377 = new BitSet(new long[]{0x0000000000050240L});
     public static final BitSet FOLLOW_ruleAndExpression_in_ruleAndExpression403 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBaseExpression_in_entryRuleBaseExpression441 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBaseExpression451 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_NOT_in_ruleBaseExpression493 = new BitSet(new long[]{0x0000000000150200L});
+    public static final BitSet FOLLOW_RULE_NOT_in_ruleBaseExpression493 = new BitSet(new long[]{0x0000000000050200L});
     public static final BitSet FOLLOW_rulebooleanTerm_in_ruleBaseExpression521 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_ruleBaseExpression540 = new BitSet(new long[]{0x0000000000150240L});
+    public static final BitSet FOLLOW_16_in_ruleBaseExpression540 = new BitSet(new long[]{0x0000000000050240L});
     public static final BitSet FOLLOW_ruleOrExpression_in_ruleBaseExpression561 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_17_in_ruleBaseExpression573 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulebooleanTerm_in_entryRulebooleanTerm611 = new BitSet(new long[]{0x0000000000000000L});
@@ -2327,10 +2362,10 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
     public static final BitSet FOLLOW_ruleVariableCondition_in_rulebooleanTerm721 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleTimeConstraint_in_entryRuleTimeConstraint757 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleTimeConstraint767 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_ruleTimeConstraint804 = new BitSet(new long[]{0x0000000000800200L});
+    public static final BitSet FOLLOW_18_in_ruleTimeConstraint804 = new BitSet(new long[]{0x0000000000200200L});
     public static final BitSet FOLLOW_ruleEvent_in_ruleTimeConstraint825 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_19_in_ruleTimeConstraint837 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleTimeConstraint849 = new BitSet(new long[]{0x0000000000800200L});
+    public static final BitSet FOLLOW_18_in_ruleTimeConstraint849 = new BitSet(new long[]{0x0000000000200200L});
     public static final BitSet FOLLOW_ruleEvent_in_ruleTimeConstraint870 = new BitSet(new long[]{0x0000000000000080L});
     public static final BitSet FOLLOW_RULE_RELATIONS_in_ruleTimeConstraint887 = new BitSet(new long[]{0x0000000000000100L});
     public static final BitSet FOLLOW_RULE_INT_in_ruleTimeConstraint909 = new BitSet(new long[]{0x0000000000000002L});
@@ -2339,11 +2374,11 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
     public static final BitSet FOLLOW_RULE_ID_in_ruleBooleanVariable1001 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleVariableCondition_in_entryRuleVariableCondition1041 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleVariableCondition1051 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_ruleVariableCondition1088 = new BitSet(new long[]{0x0000000000000300L});
+    public static final BitSet FOLLOW_16_in_ruleVariableCondition1088 = new BitSet(new long[]{0x0000000000000300L});
     public static final BitSet FOLLOW_ruleEXPRESSION_in_ruleVariableCondition1109 = new BitSet(new long[]{0x0000000000000080L});
     public static final BitSet FOLLOW_RULE_RELATIONS_in_ruleVariableCondition1126 = new BitSet(new long[]{0x0000000000000300L});
-    public static final BitSet FOLLOW_ruleEXPRESSION_in_ruleVariableCondition1152 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleVariableCondition1164 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEXPRESSION_in_ruleVariableCondition1152 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleVariableCondition1164 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEXPRESSION_in_entryRuleEXPRESSION1200 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleEXPRESSION1210 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleTERM_in_ruleEXPRESSION1257 = new BitSet(new long[]{0x0000000000000400L});
@@ -2356,21 +2391,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalAntlrParse
     public static final BitSet FOLLOW_RULE_INT_in_ruleTERM1444 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEvent_in_entryRuleEvent1485 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleEvent1495 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEvent1538 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleEvent1555 = new BitSet(new long[]{0x00000003FF000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEvent1538 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleEvent1555 = new BitSet(new long[]{0x00000000FFC00000L});
     public static final BitSet FOLLOW_ruleEventExtensions_in_ruleEvent1576 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_ruleEvent1601 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_ruleEvent1601 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEventExtensions_in_entryRuleEventExtensions1651 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleEventExtensions1662 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleEventExtensions1700 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleEventExtensions1719 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_ruleEventExtensions1738 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_ruleEventExtensions1757 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_ruleEventExtensions1776 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_ruleEventExtensions1795 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_ruleEventExtensions1814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_ruleEventExtensions1833 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_ruleEventExtensions1852 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_ruleEventExtensions1871 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_ruleEventExtensions1700 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_ruleEventExtensions1719 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_ruleEventExtensions1738 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleEventExtensions1757 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_ruleEventExtensions1776 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_ruleEventExtensions1795 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_ruleEventExtensions1814 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_ruleEventExtensions1833 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_ruleEventExtensions1852 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_ruleEventExtensions1871 = new BitSet(new long[]{0x0000000000000002L});
 
 }

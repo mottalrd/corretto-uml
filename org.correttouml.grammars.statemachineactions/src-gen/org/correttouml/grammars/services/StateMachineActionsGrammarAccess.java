@@ -302,8 +302,15 @@ public class StateMachineActionsGrammarAccess extends AbstractGrammarElementFind
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Event");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cCommercialAtKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cEventNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cEventNameIDTerminalRuleCall_1_0 = (RuleCall)cEventNameAssignment_1.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Assignment cEventNameAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
+		private final RuleCall cEventNameIDTerminalRuleCall_1_0_0 = (RuleCall)cEventNameAssignment_1_0.eContents().get(0);
+		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
+		private final Assignment cAssociationEndAssignment_1_1_0 = (Assignment)cGroup_1_1.eContents().get(0);
+		private final RuleCall cAssociationEndIDTerminalRuleCall_1_1_0_0 = (RuleCall)cAssociationEndAssignment_1_1_0.eContents().get(0);
+		private final Keyword cFullStopKeyword_1_1_1 = (Keyword)cGroup_1_1.eContents().get(1);
+		private final Assignment cOpNameAssignment_1_1_2 = (Assignment)cGroup_1_1.eContents().get(2);
+		private final RuleCall cOpNameIDTerminalRuleCall_1_1_2_0 = (RuleCall)cOpNameAssignment_1_1_2.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cLeftParenthesisKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cParametersAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
@@ -313,21 +320,46 @@ public class StateMachineActionsGrammarAccess extends AbstractGrammarElementFind
 		private final Assignment cEventExtensionAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cEventExtensionEventExtensionsParserRuleCall_4_0 = (RuleCall)cEventExtensionAssignment_4.eContents().get(0);
 		
+		////Event:
+		////	'@' eventName=ID ('(' parameters=Parameters ')')? '.' eventExtension=EventExtensions
+		////;
 		//Event:
-		//	"@" eventName=ID ("(" parameters=Parameters ")")? "." eventExtension=EventExtensions;
+		//	"@" (eventName=ID | associationEnd=ID "." opName=ID) ("(" parameters=Parameters ")")? "."
+		//	eventExtension=EventExtensions;
 		public ParserRule getRule() { return rule; }
 
-		//"@" eventName=ID ("(" parameters=Parameters ")")? "." eventExtension=EventExtensions
+		//"@" (eventName=ID | associationEnd=ID "." opName=ID) ("(" parameters=Parameters ")")? "." eventExtension=EventExtensions
 		public Group getGroup() { return cGroup; }
 
 		//"@"
 		public Keyword getCommercialAtKeyword_0() { return cCommercialAtKeyword_0; }
 
+		//eventName=ID | associationEnd=ID "." opName=ID
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+
 		//eventName=ID
-		public Assignment getEventNameAssignment_1() { return cEventNameAssignment_1; }
+		public Assignment getEventNameAssignment_1_0() { return cEventNameAssignment_1_0; }
 
 		//ID
-		public RuleCall getEventNameIDTerminalRuleCall_1_0() { return cEventNameIDTerminalRuleCall_1_0; }
+		public RuleCall getEventNameIDTerminalRuleCall_1_0_0() { return cEventNameIDTerminalRuleCall_1_0_0; }
+
+		//associationEnd=ID "." opName=ID
+		public Group getGroup_1_1() { return cGroup_1_1; }
+
+		//associationEnd=ID
+		public Assignment getAssociationEndAssignment_1_1_0() { return cAssociationEndAssignment_1_1_0; }
+
+		//ID
+		public RuleCall getAssociationEndIDTerminalRuleCall_1_1_0_0() { return cAssociationEndIDTerminalRuleCall_1_1_0_0; }
+
+		//"."
+		public Keyword getFullStopKeyword_1_1_1() { return cFullStopKeyword_1_1_1; }
+
+		//opName=ID
+		public Assignment getOpNameAssignment_1_1_2() { return cOpNameAssignment_1_1_2; }
+
+		//ID
+		public RuleCall getOpNameIDTerminalRuleCall_1_1_2_0() { return cOpNameIDTerminalRuleCall_1_1_2_0; }
 
 		//("(" parameters=Parameters ")")?
 		public Group getGroup_2() { return cGroup_2; }
@@ -618,8 +650,12 @@ public class StateMachineActionsGrammarAccess extends AbstractGrammarElementFind
 		return getLinkAccess().getRule();
 	}
 
+	////Event:
+	////	'@' eventName=ID ('(' parameters=Parameters ')')? '.' eventExtension=EventExtensions
+	////;
 	//Event:
-	//	"@" eventName=ID ("(" parameters=Parameters ")")? "." eventExtension=EventExtensions;
+	//	"@" (eventName=ID | associationEnd=ID "." opName=ID) ("(" parameters=Parameters ")")? "."
+	//	eventExtension=EventExtensions;
 	public EventElements getEventAccess() {
 		return (pEvent != null) ? pEvent : (pEvent = new EventElements());
 	}

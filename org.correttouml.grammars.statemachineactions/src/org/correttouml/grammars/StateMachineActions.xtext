@@ -42,8 +42,12 @@ Link:
 	('#' linkName=ID '.' associationEnd=ID) | self='self'
 ;
 
+//Event:
+//	'@' eventName=ID ('(' parameters=Parameters ')')? '.' eventExtension=EventExtensions
+//;
+
 Event:
-	'@' eventName=ID ('(' parameters=Parameters ')')? '.' eventExtension=EventExtensions
+	'@' (eventName=ID | (associationEnd=ID '.' opName=ID)) ('(' parameters=Parameters ')')? '.' eventExtension=EventExtensions 
 ;
 
 Parameters :

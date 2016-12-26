@@ -30,8 +30,8 @@
           <edge xmi:type="uml:ControlFlow" xmi:id="_41LXQISGEeah-pkLUtOMoA" name="valid" source="_21NDkISGEeah-pkLUtOMoA" target="_pceqwISNEeah-pkLUtOMoA"/>
           <edge xmi:type="uml:ControlFlow" xmi:id="_8rPp4ISGEeah-pkLUtOMoA" name="invalid" source="_21NDkISGEeah-pkLUtOMoA" target="_5JHiwISNEeah-pkLUtOMoA"/>
           <edge xmi:type="uml:ControlFlow" xmi:id="_rt8XEISNEeah-pkLUtOMoA" name="ControlFlow2" source="_pceqwISNEeah-pkLUtOMoA" target="_To-mYISGEeah-pkLUtOMoA"/>
-          <edge xmi:type="uml:ControlFlow" xmi:id="_AqaJ8ISOEeah-pkLUtOMoA" name="[{failureC > 1}]" source="_5JHiwISNEeah-pkLUtOMoA" target="_3b6xkITDEeah-pkLUtOMoA"/>
-          <edge xmi:type="uml:ControlFlow" xmi:id="_R41k0ISOEeah-pkLUtOMoA" name="[{failureC &lt; 2}]" source="_5JHiwISNEeah-pkLUtOMoA" target="_LQv2gISOEeah-pkLUtOMoA"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_AqaJ8ISOEeah-pkLUtOMoA" name="[(failureC > 1)]" source="_5JHiwISNEeah-pkLUtOMoA" target="_3b6xkITDEeah-pkLUtOMoA"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_R41k0ISOEeah-pkLUtOMoA" name="[(failureC &lt; 2)]" source="_5JHiwISNEeah-pkLUtOMoA" target="_LQv2gISOEeah-pkLUtOMoA"/>
           <edge xmi:type="uml:ControlFlow" xmi:id="_S6xi8ISOEeah-pkLUtOMoA" name="ControlFlow6" source="_LQv2gISOEeah-pkLUtOMoA" target="_733FIISGEeah-pkLUtOMoA"/>
           <edge xmi:type="uml:ControlFlow" xmi:id="_VYydgISOEeah-pkLUtOMoA" name="ControlFlow8" source="_To-mYISGEeah-pkLUtOMoA" target="_733FIISGEeah-pkLUtOMoA"/>
           <edge xmi:type="uml:ControlFlow" xmi:id="_bvqjMISSEeah-pkLUtOMoA" name="ControlFlow10" source="_pceqwISNEeah-pkLUtOMoA" target="_MGPtQIYREeaMiq1KEvWkRw"/>
@@ -91,10 +91,10 @@
         <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_KbjrQAODEeKTXbQztILh3g" name="controllerSM">
           <region xmi:type="uml:Region" xmi:id="_KoAy4AODEeKTXbQztILh3g" name="Region1">
             <transition xmi:type="uml:Transition" xmi:id="_Uj2J4AODEeKTXbQztILh3g" name="Transition0" source="_LhoigAODEeKTXbQztILh3g" target="_M8hzMAODEeKTXbQztILh3g"/>
-            <transition xmi:type="uml:Transition" xmi:id="_WCvw0AODEeKTXbQztILh3g" name="@notifyDistance.call [ { receivedDistance >= 2 } ]" source="_M8hzMAODEeKTXbQztILh3g" target="_M8hzMAODEeKTXbQztILh3g"/>
-            <transition xmi:type="uml:Transition" xmi:id="_bR9nsAODEeKTXbQztILh3g" name="@notifyDistance.call [ { receivedDistance &lt; 2 } ]" source="_M8hzMAODEeKTXbQztILh3g" target="_OrHb8AODEeKTXbQztILh3g"/>
-            <transition xmi:type="uml:Transition" xmi:id="_ouuu0AODEeKTXbQztILh3g" name="@notifyDistance.call [ { receivedDistance >= 2 } ]" source="_OrHb8AODEeKTXbQztILh3g" target="_M8hzMAODEeKTXbQztILh3g"/>
-            <transition xmi:type="uml:Transition" xmi:id="_qgxUMAODEeKTXbQztILh3g" name="@notifyDistance.call [ { receivedDistance &lt; 2 } &amp;&amp; @now - @warning.enter > 20 ] / @brakeInterrupt.sig" source="_OrHb8AODEeKTXbQztILh3g" target="_QrIy8AODEeKTXbQztILh3g"/>
+            <transition xmi:type="uml:Transition" xmi:id="_WCvw0AODEeKTXbQztILh3g" name="@notifyDistance.call [ ( receivedDistance >= 2 ) ]" source="_M8hzMAODEeKTXbQztILh3g" target="_M8hzMAODEeKTXbQztILh3g"/>
+            <transition xmi:type="uml:Transition" xmi:id="_bR9nsAODEeKTXbQztILh3g" name="@notifyDistance.call [ ( receivedDistance &lt; 2 ) ]" source="_M8hzMAODEeKTXbQztILh3g" target="_OrHb8AODEeKTXbQztILh3g"/>
+            <transition xmi:type="uml:Transition" xmi:id="_ouuu0AODEeKTXbQztILh3g" name="@notifyDistance.call [ ( receivedDistance >= 2 ) ]" source="_OrHb8AODEeKTXbQztILh3g" target="_M8hzMAODEeKTXbQztILh3g"/>
+            <transition xmi:type="uml:Transition" xmi:id="_qgxUMAODEeKTXbQztILh3g" name="@notifyDistance.call [ ( receivedDistance &lt; 2 ) &amp;&amp; @now - @warning.enter > 20 ] / @brakeInterrupt.sig" source="_OrHb8AODEeKTXbQztILh3g" target="_QrIy8AODEeKTXbQztILh3g"/>
             <transition xmi:type="uml:Transition" xmi:id="_vYX8UAODEeKTXbQztILh3g" name="@now - @braking.enter == 1" source="_QrIy8AODEeKTXbQztILh3g" target="_M8hzMAODEeKTXbQztILh3g"/>
             <subvertex xmi:type="uml:Pseudostate" xmi:id="_LhoigAODEeKTXbQztILh3g" name="Initial0"/>
             <subvertex xmi:type="uml:State" xmi:id="_M8hzMAODEeKTXbQztILh3g" name="noAction"/>

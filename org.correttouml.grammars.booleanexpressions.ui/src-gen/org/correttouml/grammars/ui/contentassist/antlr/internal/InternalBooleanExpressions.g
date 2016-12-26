@@ -1242,11 +1242,11 @@ rule__VariableCondition__Group__0__Impl
     }
 :
 (
-{ before(grammarAccess.getVariableConditionAccess().getLeftCurlyBracketKeyword_0()); }
+{ before(grammarAccess.getVariableConditionAccess().getLeftParenthesisKeyword_0()); }
 
-	'{' 
+	'(' 
 
-{ after(grammarAccess.getVariableConditionAccess().getLeftCurlyBracketKeyword_0()); }
+{ after(grammarAccess.getVariableConditionAccess().getLeftParenthesisKeyword_0()); }
 )
 
 ;
@@ -1359,11 +1359,11 @@ rule__VariableCondition__Group__4__Impl
     }
 :
 (
-{ before(grammarAccess.getVariableConditionAccess().getRightCurlyBracketKeyword_4()); }
+{ before(grammarAccess.getVariableConditionAccess().getRightParenthesisKeyword_4()); }
 
-	'}' 
+	')' 
 
-{ after(grammarAccess.getVariableConditionAccess().getRightCurlyBracketKeyword_4()); }
+{ after(grammarAccess.getVariableConditionAccess().getRightParenthesisKeyword_4()); }
 )
 
 ;

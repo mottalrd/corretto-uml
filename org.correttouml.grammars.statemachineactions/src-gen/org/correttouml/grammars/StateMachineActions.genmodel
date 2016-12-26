@@ -43,6 +43,8 @@
     </genClasses>
     <genClasses ecoreClass="StateMachineActions.ecore#//Event">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//Event/eventName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//Event/associationEnd"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//Event/opName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateMachineActions.ecore#//Event/parameters"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineActions.ecore#//Event/eventExtension"/>
     </genClasses>

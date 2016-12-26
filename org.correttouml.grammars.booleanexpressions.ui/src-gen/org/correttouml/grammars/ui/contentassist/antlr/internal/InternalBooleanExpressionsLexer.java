@@ -34,10 +34,8 @@ public class InternalBooleanExpressionsLexer extends Lexer {
     public static final int T__30=30;
     public static final int T__19=19;
     public static final int T__31=31;
-    public static final int T__32=32;
     public static final int RULE_STRING=11;
     public static final int T__16=16;
-    public static final int T__33=33;
     public static final int T__18=18;
     public static final int T__17=17;
     public static final int RULE_INT=8;
@@ -352,10 +350,10 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:25:7: ( '{' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:25:9: '{'
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:25:7: ( '.' )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:25:9: '.'
             {
-            match('{'); 
+            match('.'); 
 
             }
 
@@ -372,48 +370,8 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:26:7: ( '}' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:26:9: '}'
-            {
-            match('}'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__31"
-
-    // $ANTLR start "T__32"
-    public final void mT__32() throws RecognitionException {
-        try {
-            int _type = T__32;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:27:7: ( '.' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:27:9: '.'
-            {
-            match('.'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__32"
-
-    // $ANTLR start "T__33"
-    public final void mT__33() throws RecognitionException {
-        try {
-            int _type = T__33;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:28:7: ( 'now' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:28:9: 'now'
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:26:7: ( 'now' )
+            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:26:9: 'now'
             {
             match("now"); 
 
@@ -426,7 +384,7 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__33"
+    // $ANTLR end "T__31"
 
     // $ANTLR start "RULE_OPERATOR"
     public final void mRULE_OPERATOR() throws RecognitionException {
@@ -1187,8 +1145,8 @@ public class InternalBooleanExpressionsLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:8: ( T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | RULE_OPERATOR | RULE_RELATIONS | RULE_OR | RULE_AND | RULE_NOT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt14=30;
+        // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:8: ( T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | RULE_OPERATOR | RULE_RELATIONS | RULE_OR | RULE_AND | RULE_NOT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt14=28;
         alt14 = dfa14.predict(input);
         switch (alt14) {
             case 1 :
@@ -1304,98 +1262,84 @@ public class InternalBooleanExpressionsLexer extends Lexer {
                 }
                 break;
             case 17 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:106: T__32
-                {
-                mT__32(); 
-
-                }
-                break;
-            case 18 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:112: T__33
-                {
-                mT__33(); 
-
-                }
-                break;
-            case 19 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:118: RULE_OPERATOR
+                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:106: RULE_OPERATOR
                 {
                 mRULE_OPERATOR(); 
 
                 }
                 break;
-            case 20 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:132: RULE_RELATIONS
+            case 18 :
+                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:120: RULE_RELATIONS
                 {
                 mRULE_RELATIONS(); 
 
                 }
                 break;
-            case 21 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:147: RULE_OR
+            case 19 :
+                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:135: RULE_OR
                 {
                 mRULE_OR(); 
 
                 }
                 break;
-            case 22 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:155: RULE_AND
+            case 20 :
+                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:143: RULE_AND
                 {
                 mRULE_AND(); 
 
                 }
                 break;
-            case 23 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:164: RULE_NOT
+            case 21 :
+                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:152: RULE_NOT
                 {
                 mRULE_NOT(); 
 
                 }
                 break;
-            case 24 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:173: RULE_ID
+            case 22 :
+                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:161: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 25 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:181: RULE_INT
+            case 23 :
+                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:169: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 26 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:190: RULE_STRING
+            case 24 :
+                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:178: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 27 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:202: RULE_ML_COMMENT
+            case 25 :
+                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:190: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 28 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:218: RULE_SL_COMMENT
+            case 26 :
+                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:206: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 29 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:234: RULE_WS
+            case 27 :
+                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:222: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 30 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:242: RULE_ANY_OTHER
+            case 28 :
+                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:230: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1409,131 +1353,127 @@ public class InternalBooleanExpressionsLexer extends Lexer {
 
     protected DFA14 dfa14 = new DFA14(this);
     static final String DFA14_eotS =
-        "\1\uffff\5\40\3\uffff\1\53\3\uffff\1\40\4\uffff\5\35\2\uffff\3\35"+
-        "\2\uffff\2\40\1\uffff\6\40\10\uffff\1\40\11\uffff\2\40\1\106\1\40"+
-        "\1\110\5\40\1\116\1\117\1\40\1\uffff\1\40\1\uffff\1\122\1\123\1"+
-        "\124\2\40\2\uffff\1\127\1\130\3\uffff\1\40\1\132\2\uffff\1\40\1"+
-        "\uffff\1\134\1\uffff";
+        "\1\uffff\5\36\3\uffff\1\51\1\uffff\1\36\4\uffff\5\33\2\uffff\3\33"+
+        "\2\uffff\2\36\1\uffff\6\36\6\uffff\1\36\11\uffff\2\36\1\102\1\36"+
+        "\1\104\5\36\1\112\1\113\1\36\1\uffff\1\36\1\uffff\1\116\1\117\1"+
+        "\120\2\36\2\uffff\1\123\1\124\3\uffff\1\36\1\126\2\uffff\1\36\1"+
+        "\uffff\1\130\1\uffff";
     static final String DFA14_eofS =
-        "\135\uffff";
+        "\131\uffff";
     static final String DFA14_minS =
-        "\1\0\1\156\1\145\1\151\1\141\1\145\3\uffff\1\55\3\uffff\1\157\4"+
+        "\1\0\1\156\1\145\1\151\1\141\1\145\3\uffff\1\55\1\uffff\1\157\4"+
         "\uffff\1\75\1\41\1\174\1\46\1\101\2\uffff\2\0\1\52\2\uffff\1\151"+
-        "\1\144\1\uffff\1\141\1\147\1\156\1\143\1\154\1\143\10\uffff\1\167"+
+        "\1\144\1\uffff\1\141\1\147\1\156\1\143\1\154\1\143\6\uffff\1\167"+
         "\11\uffff\1\164\1\145\1\60\1\162\1\60\1\144\1\153\1\154\1\145\1"+
         "\154\2\60\1\162\1\uffff\1\164\1\uffff\3\60\1\151\1\171\2\uffff\2"+
         "\60\3\uffff\1\166\1\60\2\uffff\1\145\1\uffff\1\60\1\uffff";
     static final String DFA14_maxS =
-        "\1\uffff\1\170\1\164\1\151\1\141\1\145\3\uffff\1\55\3\uffff\1\157"+
+        "\1\uffff\1\170\1\164\1\151\1\141\1\145\3\uffff\1\55\1\uffff\1\157"+
         "\4\uffff\2\75\1\174\1\46\1\172\2\uffff\2\uffff\1\57\2\uffff\1\151"+
-        "\1\164\1\uffff\1\141\1\147\1\156\1\143\1\154\1\160\10\uffff\1\167"+
+        "\1\164\1\uffff\1\141\1\147\1\156\1\143\1\154\1\160\6\uffff\1\167"+
         "\11\uffff\1\164\1\145\1\172\1\162\1\172\1\144\1\153\1\154\1\145"+
         "\1\154\2\172\1\162\1\uffff\1\164\1\uffff\3\172\1\151\1\171\2\uffff"+
         "\2\172\3\uffff\1\166\1\172\2\uffff\1\145\1\uffff\1\172\1\uffff";
     static final String DFA14_acceptS =
-        "\6\uffff\1\13\1\14\1\15\1\uffff\1\17\1\20\1\21\1\uffff\2\23\2\24"+
-        "\5\uffff\1\30\1\31\3\uffff\1\35\1\36\2\uffff\1\30\6\uffff\1\13\1"+
-        "\14\1\15\1\23\1\16\1\17\1\20\1\21\1\uffff\1\24\1\27\1\25\1\26\1"+
-        "\31\1\32\1\33\1\34\1\35\15\uffff\1\4\1\uffff\1\6\5\uffff\1\22\1"+
-        "\1\2\uffff\1\10\1\5\1\7\2\uffff\1\2\1\3\1\uffff\1\12\1\uffff\1\11";
+        "\6\uffff\1\13\1\14\1\15\1\uffff\1\17\1\uffff\2\21\2\22\5\uffff\1"+
+        "\26\1\27\3\uffff\1\33\1\34\2\uffff\1\26\6\uffff\1\13\1\14\1\15\1"+
+        "\21\1\16\1\17\1\uffff\1\22\1\25\1\23\1\24\1\27\1\30\1\31\1\32\1"+
+        "\33\15\uffff\1\4\1\uffff\1\6\5\uffff\1\20\1\1\2\uffff\1\10\1\5\1"+
+        "\7\2\uffff\1\2\1\3\1\uffff\1\12\1\uffff\1\11";
     static final String DFA14_specialS =
-        "\1\1\30\uffff\1\2\1\0\102\uffff}>";
+        "\1\0\26\uffff\1\1\1\2\100\uffff}>";
     static final String[] DFA14_transitionS = {
-            "\11\35\2\34\2\35\1\34\22\35\1\34\1\23\1\31\3\35\1\25\1\32\1"+
-            "\6\1\7\1\17\1\16\1\35\1\11\1\14\1\33\12\30\2\35\1\20\1\22\1"+
-            "\21\1\35\1\10\32\27\3\35\1\26\1\27\1\35\2\27\1\4\1\27\1\1\10"+
-            "\27\1\15\3\27\1\5\1\2\1\3\6\27\1\12\1\24\1\13\uff82\35",
-            "\1\37\11\uffff\1\36",
-            "\1\43\3\uffff\1\42\12\uffff\1\41",
+            "\11\33\2\32\2\33\1\32\22\33\1\32\1\21\1\27\3\33\1\23\1\30\1"+
+            "\6\1\7\1\15\1\14\1\33\1\11\1\12\1\31\12\26\2\33\1\16\1\20\1"+
+            "\17\1\33\1\10\32\25\3\33\1\24\1\25\1\33\2\25\1\4\1\25\1\1\10"+
+            "\25\1\13\3\25\1\5\1\2\1\3\6\25\1\33\1\22\uff83\33",
+            "\1\35\11\uffff\1\34",
+            "\1\41\3\uffff\1\40\12\uffff\1\37",
+            "\1\42",
+            "\1\43",
             "\1\44",
-            "\1\45",
-            "\1\46",
             "",
             "",
             "",
-            "\1\52",
+            "\1\50",
+            "",
+            "\1\53",
             "",
             "",
             "",
+            "",
+            "\1\54",
+            "\1\55\33\uffff\1\54",
+            "\1\56",
             "\1\57",
+            "\32\36\4\uffff\1\36\1\uffff\32\36",
             "",
             "",
+            "\0\61",
+            "\0\61",
+            "\1\62\4\uffff\1\63",
             "",
             "",
-            "\1\60",
-            "\1\61\33\uffff\1\60",
-            "\1\62",
-            "\1\63",
-            "\32\40\4\uffff\1\40\1\uffff\32\40",
+            "\1\65",
+            "\1\67\17\uffff\1\66",
             "",
-            "",
-            "\0\65",
-            "\0\65",
-            "\1\66\4\uffff\1\67",
-            "",
-            "",
+            "\1\70",
             "\1\71",
-            "\1\73\17\uffff\1\72",
-            "",
+            "\1\72",
+            "\1\73",
             "\1\74",
-            "\1\75",
-            "\1\76",
+            "\1\75\14\uffff\1\76",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\77",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\100",
-            "\1\101\14\uffff\1\102",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
+            "\1\101",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             "\1\103",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\104",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             "\1\105",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "\1\106",
             "\1\107",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "\1\110",
             "\1\111",
-            "\1\112",
-            "\1\113",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             "\1\114",
+            "",
             "\1\115",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\1\120",
             "",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             "\1\121",
+            "\1\122",
             "",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "",
+            "",
+            "",
             "\1\125",
-            "\1\126",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             "",
             "",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "\1\127",
             "",
-            "",
-            "",
-            "\1\131",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "",
-            "",
-            "\1\133",
-            "",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             ""
     };
 
@@ -1567,23 +1507,13 @@ public class InternalBooleanExpressionsLexer extends Lexer {
             this.transition = DFA14_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | RULE_OPERATOR | RULE_RELATIONS | RULE_OR | RULE_AND | RULE_NOT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | RULE_OPERATOR | RULE_RELATIONS | RULE_OR | RULE_AND | RULE_NOT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA14_26 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA14_26>='\u0000' && LA14_26<='\uFFFF')) ) {s = 53;}
-
-                        else s = 29;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
                         int LA14_0 = input.LA(1);
 
                         s = -1;
@@ -1605,55 +1535,61 @@ public class InternalBooleanExpressionsLexer extends Lexer {
 
                         else if ( (LA14_0=='-') ) {s = 9;}
 
-                        else if ( (LA14_0=='{') ) {s = 10;}
+                        else if ( (LA14_0=='.') ) {s = 10;}
 
-                        else if ( (LA14_0=='}') ) {s = 11;}
+                        else if ( (LA14_0=='n') ) {s = 11;}
 
-                        else if ( (LA14_0=='.') ) {s = 12;}
+                        else if ( (LA14_0=='+') ) {s = 12;}
 
-                        else if ( (LA14_0=='n') ) {s = 13;}
+                        else if ( (LA14_0=='*') ) {s = 13;}
 
-                        else if ( (LA14_0=='+') ) {s = 14;}
+                        else if ( (LA14_0=='<') ) {s = 14;}
 
-                        else if ( (LA14_0=='*') ) {s = 15;}
+                        else if ( (LA14_0=='>') ) {s = 15;}
 
-                        else if ( (LA14_0=='<') ) {s = 16;}
+                        else if ( (LA14_0=='=') ) {s = 16;}
 
-                        else if ( (LA14_0=='>') ) {s = 17;}
+                        else if ( (LA14_0=='!') ) {s = 17;}
 
-                        else if ( (LA14_0=='=') ) {s = 18;}
+                        else if ( (LA14_0=='|') ) {s = 18;}
 
-                        else if ( (LA14_0=='!') ) {s = 19;}
+                        else if ( (LA14_0=='&') ) {s = 19;}
 
-                        else if ( (LA14_0=='|') ) {s = 20;}
+                        else if ( (LA14_0=='^') ) {s = 20;}
 
-                        else if ( (LA14_0=='&') ) {s = 21;}
+                        else if ( ((LA14_0>='A' && LA14_0<='Z')||LA14_0=='_'||(LA14_0>='a' && LA14_0<='b')||LA14_0=='d'||(LA14_0>='f' && LA14_0<='m')||(LA14_0>='o' && LA14_0<='q')||(LA14_0>='u' && LA14_0<='z')) ) {s = 21;}
 
-                        else if ( (LA14_0=='^') ) {s = 22;}
+                        else if ( ((LA14_0>='0' && LA14_0<='9')) ) {s = 22;}
 
-                        else if ( ((LA14_0>='A' && LA14_0<='Z')||LA14_0=='_'||(LA14_0>='a' && LA14_0<='b')||LA14_0=='d'||(LA14_0>='f' && LA14_0<='m')||(LA14_0>='o' && LA14_0<='q')||(LA14_0>='u' && LA14_0<='z')) ) {s = 23;}
+                        else if ( (LA14_0=='\"') ) {s = 23;}
 
-                        else if ( ((LA14_0>='0' && LA14_0<='9')) ) {s = 24;}
+                        else if ( (LA14_0=='\'') ) {s = 24;}
 
-                        else if ( (LA14_0=='\"') ) {s = 25;}
+                        else if ( (LA14_0=='/') ) {s = 25;}
 
-                        else if ( (LA14_0=='\'') ) {s = 26;}
+                        else if ( ((LA14_0>='\t' && LA14_0<='\n')||LA14_0=='\r'||LA14_0==' ') ) {s = 26;}
 
-                        else if ( (LA14_0=='/') ) {s = 27;}
+                        else if ( ((LA14_0>='\u0000' && LA14_0<='\b')||(LA14_0>='\u000B' && LA14_0<='\f')||(LA14_0>='\u000E' && LA14_0<='\u001F')||(LA14_0>='#' && LA14_0<='%')||LA14_0==','||(LA14_0>=':' && LA14_0<=';')||LA14_0=='?'||(LA14_0>='[' && LA14_0<=']')||LA14_0=='`'||LA14_0=='{'||(LA14_0>='}' && LA14_0<='\uFFFF')) ) {s = 27;}
 
-                        else if ( ((LA14_0>='\t' && LA14_0<='\n')||LA14_0=='\r'||LA14_0==' ') ) {s = 28;}
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA14_23 = input.LA(1);
 
-                        else if ( ((LA14_0>='\u0000' && LA14_0<='\b')||(LA14_0>='\u000B' && LA14_0<='\f')||(LA14_0>='\u000E' && LA14_0<='\u001F')||(LA14_0>='#' && LA14_0<='%')||LA14_0==','||(LA14_0>=':' && LA14_0<=';')||LA14_0=='?'||(LA14_0>='[' && LA14_0<=']')||LA14_0=='`'||(LA14_0>='~' && LA14_0<='\uFFFF')) ) {s = 29;}
+                        s = -1;
+                        if ( ((LA14_23>='\u0000' && LA14_23<='\uFFFF')) ) {s = 49;}
+
+                        else s = 27;
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA14_25 = input.LA(1);
+                        int LA14_24 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA14_25>='\u0000' && LA14_25<='\uFFFF')) ) {s = 53;}
+                        if ( ((LA14_24>='\u0000' && LA14_24<='\uFFFF')) ) {s = 49;}
 
-                        else s = 29;
+                        else s = 27;
 
                         if ( s>=0 ) return s;
                         break;

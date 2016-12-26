@@ -13,6 +13,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.Event#getEventName <em>Event Name</em>}</li>
+ *   <li>{@link org.correttouml.grammars.stateMachineActions.Event#getAssociationEnd <em>Association End</em>}</li>
+ *   <li>{@link org.correttouml.grammars.stateMachineActions.Event#getOpName <em>Op Name</em>}</li>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.Event#getParameters <em>Parameters</em>}</li>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.Event#getEventExtension <em>Event Extension</em>}</li>
  * </ul>
@@ -49,6 +51,58 @@ public interface Event extends EObject
    * @generated
    */
   void setEventName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Association End</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Association End</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Association End</em>' attribute.
+   * @see #setAssociationEnd(String)
+   * @see org.correttouml.grammars.stateMachineActions.StateMachineActionsPackage#getEvent_AssociationEnd()
+   * @model
+   * @generated
+   */
+  String getAssociationEnd();
+
+  /**
+   * Sets the value of the '{@link org.correttouml.grammars.stateMachineActions.Event#getAssociationEnd <em>Association End</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Association End</em>' attribute.
+   * @see #getAssociationEnd()
+   * @generated
+   */
+  void setAssociationEnd(String value);
+
+  /**
+   * Returns the value of the '<em><b>Op Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Op Name</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Op Name</em>' attribute.
+   * @see #setOpName(String)
+   * @see org.correttouml.grammars.stateMachineActions.StateMachineActionsPackage#getEvent_OpName()
+   * @model
+   * @generated
+   */
+  String getOpName();
+
+  /**
+   * Sets the value of the '{@link org.correttouml.grammars.stateMachineActions.Event#getOpName <em>Op Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Op Name</em>' attribute.
+   * @see #getOpName()
+   * @generated
+   */
+  void setOpName(String value);
 
   /**
    * Returns the value of the '<em><b>Parameters</b></em>' containment reference.

@@ -23,6 +23,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.impl.EventImpl#getEventName <em>Event Name</em>}</li>
+ *   <li>{@link org.correttouml.grammars.stateMachineActions.impl.EventImpl#getAssociationEnd <em>Association End</em>}</li>
+ *   <li>{@link org.correttouml.grammars.stateMachineActions.impl.EventImpl#getOpName <em>Op Name</em>}</li>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.impl.EventImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.impl.EventImpl#getEventExtension <em>Event Extension</em>}</li>
  * </ul>
@@ -51,6 +53,46 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event
    * @ordered
    */
   protected String eventName = EVENT_NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getAssociationEnd() <em>Association End</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAssociationEnd()
+   * @generated
+   * @ordered
+   */
+  protected static final String ASSOCIATION_END_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getAssociationEnd() <em>Association End</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAssociationEnd()
+   * @generated
+   * @ordered
+   */
+  protected String associationEnd = ASSOCIATION_END_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getOpName() <em>Op Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOpName()
+   * @generated
+   * @ordered
+   */
+  protected static final String OP_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getOpName() <em>Op Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOpName()
+   * @generated
+   * @ordered
+   */
+  protected String opName = OP_NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference.
@@ -124,6 +166,52 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event
     eventName = newEventName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, StateMachineActionsPackage.EVENT__EVENT_NAME, oldEventName, eventName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getAssociationEnd()
+  {
+    return associationEnd;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAssociationEnd(String newAssociationEnd)
+  {
+    String oldAssociationEnd = associationEnd;
+    associationEnd = newAssociationEnd;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, StateMachineActionsPackage.EVENT__ASSOCIATION_END, oldAssociationEnd, associationEnd));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getOpName()
+  {
+    return opName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOpName(String newOpName)
+  {
+    String oldOpName = opName;
+    opName = newOpName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, StateMachineActionsPackage.EVENT__OP_NAME, oldOpName, opName));
   }
 
   /**
@@ -225,6 +313,10 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event
     {
       case StateMachineActionsPackage.EVENT__EVENT_NAME:
         return getEventName();
+      case StateMachineActionsPackage.EVENT__ASSOCIATION_END:
+        return getAssociationEnd();
+      case StateMachineActionsPackage.EVENT__OP_NAME:
+        return getOpName();
       case StateMachineActionsPackage.EVENT__PARAMETERS:
         return getParameters();
       case StateMachineActionsPackage.EVENT__EVENT_EXTENSION:
@@ -245,6 +337,12 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event
     {
       case StateMachineActionsPackage.EVENT__EVENT_NAME:
         setEventName((String)newValue);
+        return;
+      case StateMachineActionsPackage.EVENT__ASSOCIATION_END:
+        setAssociationEnd((String)newValue);
+        return;
+      case StateMachineActionsPackage.EVENT__OP_NAME:
+        setOpName((String)newValue);
         return;
       case StateMachineActionsPackage.EVENT__PARAMETERS:
         setParameters((Parameters)newValue);
@@ -269,6 +367,12 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event
       case StateMachineActionsPackage.EVENT__EVENT_NAME:
         setEventName(EVENT_NAME_EDEFAULT);
         return;
+      case StateMachineActionsPackage.EVENT__ASSOCIATION_END:
+        setAssociationEnd(ASSOCIATION_END_EDEFAULT);
+        return;
+      case StateMachineActionsPackage.EVENT__OP_NAME:
+        setOpName(OP_NAME_EDEFAULT);
+        return;
       case StateMachineActionsPackage.EVENT__PARAMETERS:
         setParameters((Parameters)null);
         return;
@@ -291,6 +395,10 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event
     {
       case StateMachineActionsPackage.EVENT__EVENT_NAME:
         return EVENT_NAME_EDEFAULT == null ? eventName != null : !EVENT_NAME_EDEFAULT.equals(eventName);
+      case StateMachineActionsPackage.EVENT__ASSOCIATION_END:
+        return ASSOCIATION_END_EDEFAULT == null ? associationEnd != null : !ASSOCIATION_END_EDEFAULT.equals(associationEnd);
+      case StateMachineActionsPackage.EVENT__OP_NAME:
+        return OP_NAME_EDEFAULT == null ? opName != null : !OP_NAME_EDEFAULT.equals(opName);
       case StateMachineActionsPackage.EVENT__PARAMETERS:
         return parameters != null;
       case StateMachineActionsPackage.EVENT__EVENT_EXTENSION:
@@ -312,6 +420,10 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (eventName: ");
     result.append(eventName);
+    result.append(", associationEnd: ");
+    result.append(associationEnd);
+    result.append(", opName: ");
+    result.append(opName);
     result.append(", eventExtension: ");
     result.append(eventExtension);
     result.append(')');

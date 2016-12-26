@@ -280,24 +280,26 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 	public class VariableConditionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VariableCondition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cExpression_leftAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cExpression_leftEXPRESSIONParserRuleCall_1_0 = (RuleCall)cExpression_leftAssignment_1.eContents().get(0);
 		private final Assignment cRelationAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cRelationRELATIONSTerminalRuleCall_2_0 = (RuleCall)cRelationAssignment_2.eContents().get(0);
 		private final Assignment cExpression_rightAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cExpression_rightEXPRESSIONParserRuleCall_3_0 = (RuleCall)cExpression_rightAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//VariableCondition:
-		//	"{" expression_left=EXPRESSION relation=RELATIONS expression_right=EXPRESSION "}";
+		//VariableCondition: //	'{' expression_left=EXPRESSION relation=RELATIONS expression_right=EXPRESSION '}'
+		//	"(" expression_left=EXPRESSION relation=RELATIONS expression_right=EXPRESSION ")";
 		public ParserRule getRule() { return rule; }
 
-		//"{" expression_left=EXPRESSION relation=RELATIONS expression_right=EXPRESSION "}"
+		////	'{' expression_left=EXPRESSION relation=RELATIONS expression_right=EXPRESSION '}'
+		//"(" expression_left=EXPRESSION relation=RELATIONS expression_right=EXPRESSION ")"
 		public Group getGroup() { return cGroup; }
 
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
+		////	'{' expression_left=EXPRESSION relation=RELATIONS expression_right=EXPRESSION '}'
+		//"("
+		public Keyword getLeftParenthesisKeyword_0() { return cLeftParenthesisKeyword_0; }
 
 		//expression_left=EXPRESSION
 		public Assignment getExpression_leftAssignment_1() { return cExpression_leftAssignment_1; }
@@ -317,8 +319,8 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 		//EXPRESSION
 		public RuleCall getExpression_rightEXPRESSIONParserRuleCall_3_0() { return cExpression_rightEXPRESSIONParserRuleCall_3_0; }
 
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		//")"
+		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 	}
 
 	public class EXPRESSIONElements extends AbstractParserRuleElementFinder {
@@ -623,8 +625,8 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 		return getBooleanVariableAccess().getRule();
 	}
 
-	//VariableCondition:
-	//	"{" expression_left=EXPRESSION relation=RELATIONS expression_right=EXPRESSION "}";
+	//VariableCondition: //	'{' expression_left=EXPRESSION relation=RELATIONS expression_right=EXPRESSION '}'
+	//	"(" expression_left=EXPRESSION relation=RELATIONS expression_right=EXPRESSION ")";
 	public VariableConditionElements getVariableConditionAccess() {
 		return (pVariableCondition != null) ? pVariableCondition : (pVariableCondition = new VariableConditionElements());
 	}

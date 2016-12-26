@@ -42,6 +42,7 @@ public class StateMachineActionsParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTERMAccess().getAlternatives_0(), "rule__TERM__Alternatives_0");
 					put(grammarAccess.getTERMAccess().getAlternatives_1(), "rule__TERM__Alternatives_1");
 					put(grammarAccess.getLinkAccess().getAlternatives(), "rule__Link__Alternatives");
+					put(grammarAccess.getEventAccess().getAlternatives_1(), "rule__Event__Alternatives_1");
 					put(grammarAccess.getParametersAccess().getAlternatives(), "rule__Parameters__Alternatives");
 					put(grammarAccess.getParametersAccess().getAlternatives_0_0(), "rule__Parameters__Alternatives_0_0");
 					put(grammarAccess.getParametersAccess().getAlternatives_1_0(), "rule__Parameters__Alternatives_1_0");
@@ -54,6 +55,7 @@ public class StateMachineActionsParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEventActionAccess().getGroup(), "rule__EventAction__Group__0");
 					put(grammarAccess.getLinkAccess().getGroup_0(), "rule__Link__Group_0__0");
 					put(grammarAccess.getEventAccess().getGroup(), "rule__Event__Group__0");
+					put(grammarAccess.getEventAccess().getGroup_1_1(), "rule__Event__Group_1_1__0");
 					put(grammarAccess.getEventAccess().getGroup_2(), "rule__Event__Group_2__0");
 					put(grammarAccess.getParametersAccess().getGroup_0(), "rule__Parameters__Group_0__0");
 					put(grammarAccess.getParametersAccess().getGroup_1(), "rule__Parameters__Group_1__0");
@@ -76,7 +78,9 @@ public class StateMachineActionsParser extends AbstractContentAssistParser {
 					put(grammarAccess.getLinkAccess().getLinkNameAssignment_0_1(), "rule__Link__LinkNameAssignment_0_1");
 					put(grammarAccess.getLinkAccess().getAssociationEndAssignment_0_3(), "rule__Link__AssociationEndAssignment_0_3");
 					put(grammarAccess.getLinkAccess().getSelfAssignment_1(), "rule__Link__SelfAssignment_1");
-					put(grammarAccess.getEventAccess().getEventNameAssignment_1(), "rule__Event__EventNameAssignment_1");
+					put(grammarAccess.getEventAccess().getEventNameAssignment_1_0(), "rule__Event__EventNameAssignment_1_0");
+					put(grammarAccess.getEventAccess().getAssociationEndAssignment_1_1_0(), "rule__Event__AssociationEndAssignment_1_1_0");
+					put(grammarAccess.getEventAccess().getOpNameAssignment_1_1_2(), "rule__Event__OpNameAssignment_1_1_2");
 					put(grammarAccess.getEventAccess().getParametersAssignment_2_1(), "rule__Event__ParametersAssignment_2_1");
 					put(grammarAccess.getEventAccess().getEventExtensionAssignment_4(), "rule__Event__EventExtensionAssignment_4");
 					put(grammarAccess.getParametersAccess().getIsPastAssignment_0_0_0(), "rule__Parameters__IsPastAssignment_0_0_0");
