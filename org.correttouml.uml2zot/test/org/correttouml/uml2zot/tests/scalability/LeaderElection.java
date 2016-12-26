@@ -46,7 +46,7 @@ public class LeaderElection {
 	public void start() {
 		LOGGER.info("Creating the UML model");
 		String modeltype = "";
-		int numOfProcesses = 12;
+		int numOfProcesses = 3;
 		//<SAT> (alwf (!! (somf (-P- $OBJidGenerator_STDIdGenerator_SM_STATEEND))))
 //		modeltype = "sat"; create_leader_election_model(numOfProcesses, "stateEnd = idGenerator.getState(IdGenerator_SM, end)\n"
 //				+ "inStateEnd = idGenerator.in(stateEnd)\n"
@@ -257,7 +257,7 @@ public class LeaderElection {
 							idGeneratorClass, true,
 							AggregationKind.NONE_LITERAL, "in", 1, 1,
 							processClass, true,
-							AggregationKind.NONE_LITERAL, "out", 1, 1);
+							AggregationKind.NONE_LITERAL, "out" + i, 1, 1);
 			idGeneratorAssociationList.add(tmp);	
 		}
 
@@ -302,7 +302,7 @@ public class LeaderElection {
 			
 			UML2Helper.createInstanceSpecificationLink(idGenerator.getName()+"_"+proc.getName(),
 					systemPackage, association, "in", idGenerator,
-					"out", proc);
+					"out" + i, proc);
 		}
 
 		// STATE DIAGRAMS
@@ -325,11 +325,18 @@ public class LeaderElection {
 		String transition_action = "";
 		for (int i = 0; i < num_process - 1 ; i++) {
 			for (int j = i + 1; j < num_process ; j++) {
-				transition_guard += "{idattr" + i + "!=idattr" + j + "} && ";
+//				transition_guard += "{idattr" + i + "!=idattr" + j + "} && ";//old syntax: {int1 != int2}
+				transition_guard += "(idattr" + i + "!=idattr" + j + ") && ";//new syntax: (int1 != int2)
 			}
 		}
+		
+		/* The following operation invocation actions follow the old syntax, and they have to do so,
+		 * because idGenerator is connected to processes all of which have "setId" operation.
+		 * The operation invocation action becomes unique with association end name together
+		 * with the association name.
+		 */
 		for (int i = 0; i < num_process; i++) {
-			transition_action += "#gen_link_proc" + i + ".out@setId(idattr" + i + ").call, ";
+			transition_action += "@out" + i + ".setId(idattr" + i + ").call, ";   
 		}
 		transition_guard = transition_guard.substring(0, transition_guard.length() - 4);
 		transition_action = transition_action.substring(0, transition_action.length() - 2);
@@ -372,45 +379,45 @@ public class LeaderElection {
 		// initial transition
 		UML2Helper.createTransition(process_SM, STATE_0, STATE_INIT, "");
 		UML2Helper.createTransition(process_SM, STATE_INIT, STATE_MAIN,//main
-				"@setId.call / mynumber=<P>myId, #link.out@one(mynumber).call, max=mynumber");
+				"@setId.call / mynumber=<P>myId, @out.one(mynumber).call, max=mynumber");
 		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN,
-				"@one.call[{active==0}]/#link.out@one(<P>one_nr).call");
+				"@one.call[(active==0)]/@out.one(<P>one_nr).call");
 		// no active, just pass the message
 		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN,
-				"@two.call[{active==0}]/#link.out@two(<P>two_nr).call");
+				"@two.call[(active==0)]/@out.two(<P>two_nr).call");
 		// active, receive one and pass the info
 		UML2Helper
 				.createTransition(
 						process_SM,
 						STATE_MAIN,
 						STATE_MAIN,
-						"@one.call[{active==1} && {one_nr!=max}]/#link.out@two(<P>one_nr).call, neighbourR=<P>one_nr");
+						"@one.call[(active==1) && (one_nr!=max)]/@out.two(<P>one_nr).call, neighbourR=<P>one_nr");
 		// active, receive two and keep playing
 		UML2Helper
 				.createTransition(
 						process_SM,
 						STATE_MAIN,
 						STATE_MAIN,
-						"@two.call[{active==1} && {neighbourR>two_nr} && {neighbourR>max}]/max=<P>neighbourR, #link.out@one(<P>neighbourR).call");
+						"@two.call[(active==1) && (neighbourR>two_nr) && (neighbourR>max)]/max=<P>neighbourR, @out.one(<P>neighbourR).call");
 		// active, receive two and go out of the game
 		UML2Helper
 				.createTransition(
 						process_SM,
 						STATE_MAIN,
 						STATE_MAIN,
-						"@two.call[{active==1} && ({neighbourR<=two_nr} || {neighbourR<=max})]/active=0");
+						"@two.call[(active==1) && ((neighbourR<=two_nr) || (neighbourR<=max))]/active=0");
 		// winner found, communicate the winner
 		UML2Helper
 				.createTransition(process_SM, STATE_MAIN, STATE_MAIN,
-						"@one.call[{active==1} && {one_nr==max}]/#link.out@winner(<P>one_nr).call, @we_have_winner.sig");
+						"@one.call[(active==1) && (one_nr==max)]/@out.winner(<P>one_nr).call, @we_have_winner.sig");
 		// received winner communication, it is me
 		UML2Helper
 				.createTransition(process_SM, STATE_MAIN, STATE_WIN,
-						"@winner.call[{win_nr==mynumber}]/#link.out@winner(<P>win_nr).call");
+						"@winner.call[(win_nr==mynumber)]/@out.winner(<P>win_nr).call");
 		// received winner communication, it is NOT me
 		UML2Helper
 				.createTransition(process_SM, STATE_MAIN, STATE_LOST,
-						"@winner.call[{win_nr!=mynumber}]/#link.out@winner(<P>win_nr).call");
+						"@winner.call[(win_nr!=mynumber)]/@out.winner(<P>win_nr).call");
 
 	}
 

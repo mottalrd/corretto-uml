@@ -43,7 +43,7 @@ public class FisherProtocol {
 
 	public void start() {
 		LOGGER.info("Creating the UML model");
-		int scalabilityParameter = 9;
+		int scalabilityParameter = 1;
 		String modeltype = "sat";
 		
 		//<SAT>
@@ -234,15 +234,15 @@ public class FisherProtocol {
 		// initial transition
 		UML2Helper.createTransition(process_SM, STATE_0, STATE_FISHERP, "");
 		UML2Helper.createTransition(process_SM, STATE_FISHERP, STATE_REQ,
-				"@takeLock.call [{id==0--1}]");
+				"@takeLock.call [(id==0--1)]");
 		UML2Helper.createTransition(process_SM, STATE_REQ, STATE_UPDATED,
 				"/id=pid");
 		UML2Helper.createTransition(process_SM, STATE_UPDATED, STATE_WAIT,
 				"@goWait.call[@now - @UPDATED.enter >= 4]");
 		UML2Helper.createTransition(process_SM, STATE_WAIT, STATE_CS,
-				"[{id==pid}]");
+				"[(id==pid)]");
 		UML2Helper.createTransition(process_SM, STATE_WAIT, STATE_FISHERP,
-				"[{id!=pid}]");
+				"[(id!=pid)]");
 		UML2Helper.createTransition(process_SM, STATE_CS, STATE_EXIT, "/counter=<P>counter+1");
 		UML2Helper.createTransition(process_SM, STATE_EXIT, STATE_FISHERP, "/id=0-1, counter=<P>counter-1");
 	}
