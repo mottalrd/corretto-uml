@@ -1,7 +1,6 @@
 package org.correttouml.uml2zot.semantics.sequencediagram;
 
 import java.util.ArrayList;
-import org.correttouml.uml.diagrams.sequencediagram.CombinedFragment;
 import org.correttouml.uml2zot.semantics.util.bool.*;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 import org.correttouml.uml.diagrams.sequencediagram.*;

@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.property.impl.DeclarationImpl#getStateName <em>State Name</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.impl.DeclarationImpl#getObj <em>Obj</em>}</li>
@@ -29,7 +30,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link org.correttouml.grammars.property.impl.DeclarationImpl#getTrioVar <em>Trio Var</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.impl.DeclarationImpl#getTrio <em>Trio</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.property.ArithVar#getObj <em>Obj</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.ArithVar#getAtr <em>Atr</em>}</li>
@@ -18,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.correttouml.grammars.property.ArithVar#getParam <em>Param</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.ArithVar#getSd <em>Sd</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.correttouml.grammars.property.PropertyPackage#getArithVar()
  * @model

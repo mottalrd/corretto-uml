@@ -6,12 +6,8 @@ import java.util.List;
 
 import org.correttouml.uml.MadesModel;
 import org.correttouml.uml.diagrams.classdiagram.Clock;
-import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.classdiagram.Operation;
 import org.correttouml.uml.diagrams.property.PTermElement;
-import org.correttouml.uml.diagrams.statediagram.actions.Action;
-import org.correttouml.uml.diagrams.statediagram.actions.ActionFactory;
-import org.correttouml.uml.helpers.StDTransitionsParser;
 import org.correttouml.uml.helpers.UML2ModelHelper;
 import org.correttouml.uml2zot.UML2Zot;
 import org.eclipse.emf.ecore.EObject;

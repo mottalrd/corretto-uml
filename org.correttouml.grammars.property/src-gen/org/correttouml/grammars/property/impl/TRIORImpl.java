@@ -21,11 +21,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.property.impl.TRIORImpl#getTrioOP2 <em>Trio OP2</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.impl.TRIORImpl#getTrio <em>Trio</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

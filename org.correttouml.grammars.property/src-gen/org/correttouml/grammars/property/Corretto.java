@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.property.Corretto#getVerify <em>Verify</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.Corretto#getExecute <em>Execute</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.correttouml.grammars.property.PropertyPackage#getCorretto()
  * @model

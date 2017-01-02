@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.property.Declaration#getStateName <em>State Name</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.Declaration#getObj <em>Obj</em>}</li>
@@ -19,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.correttouml.grammars.property.Declaration#getTrioVar <em>Trio Var</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.Declaration#getTrio <em>Trio</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.correttouml.grammars.property.PropertyPackage#getDeclaration()
  * @model

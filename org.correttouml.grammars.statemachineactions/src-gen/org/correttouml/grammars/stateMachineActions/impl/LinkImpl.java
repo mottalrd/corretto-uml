@@ -18,12 +18,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.impl.LinkImpl#getLinkName <em>Link Name</em>}</li>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.impl.LinkImpl#getAssociationEnd <em>Association End</em>}</li>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.impl.LinkImpl#getSelf <em>Self</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

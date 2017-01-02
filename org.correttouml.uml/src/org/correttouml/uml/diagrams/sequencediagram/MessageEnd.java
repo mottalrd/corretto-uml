@@ -2,7 +2,6 @@ package org.correttouml.uml.diagrams.sequencediagram;
 
 
 import org.correttouml.uml.MadesModel;
-import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.events.Event;
 import org.correttouml.uml.diagrams.expressions.ExpressionContext;
 import org.correttouml.uml.diagrams.statediagram.actions.Action;
@@ -11,7 +10,6 @@ import org.correttouml.uml.helpers.StDTransitionsParser;
 import org.correttouml.uml2zot.UML2Zot;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.uml2.uml.MessageOccurrenceSpecification;
-import org.eclipse.xtext.util.ReplaceRegion;
 
 public class MessageEnd implements InteractionFragment, Event, ExpressionContext {
 
@@ -26,7 +24,7 @@ public class MessageEnd implements InteractionFragment, Event, ExpressionContext
 	}
 	
 	public Lifeline getLifeline(){
-		org.eclipse.uml2.uml.Lifeline l=uml_mof.getCovereds().get(0);;
+		org.eclipse.uml2.uml.Lifeline l=uml_mof.getCovereds().get(0);
 		return new Lifeline(l);
 	}
 	

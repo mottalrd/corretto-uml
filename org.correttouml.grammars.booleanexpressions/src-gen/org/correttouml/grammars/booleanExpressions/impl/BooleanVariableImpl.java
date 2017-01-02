@@ -18,10 +18,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.impl.BooleanVariableImpl#getVariable <em>Variable</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

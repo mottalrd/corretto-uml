@@ -1,7 +1,6 @@
 package org.correttouml.uml2zot.semantics.events;
 
 import org.correttouml.uml.diagrams.classdiagram.Object;
-import org.correttouml.uml.diagrams.events.CallEvent;
 import org.correttouml.uml.diagrams.events.ReplyEvent;
 import org.correttouml.uml2zot.semantics.classdiagram.SOperation;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;

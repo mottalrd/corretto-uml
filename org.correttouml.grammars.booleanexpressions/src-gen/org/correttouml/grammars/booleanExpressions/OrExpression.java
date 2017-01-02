@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.OrExpression#getLeftExpression <em>Left Expression</em>}</li>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.OrExpression#getOr <em>Or</em>}</li>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.OrExpression#getRightExpression <em>Right Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.correttouml.grammars.booleanExpressions.BooleanExpressionsPackage#getOrExpression()
  * @model

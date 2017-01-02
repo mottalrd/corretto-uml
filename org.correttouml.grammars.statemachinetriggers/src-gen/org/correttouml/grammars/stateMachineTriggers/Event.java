@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.stateMachineTriggers.Event#getEventName <em>Event Name</em>}</li>
  *   <li>{@link org.correttouml.grammars.stateMachineTriggers.Event#getEventExtension <em>Event Extension</em>}</li>
  *   <li>{@link org.correttouml.grammars.stateMachineTriggers.Event#isNowEvent <em>Now Event</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.correttouml.grammars.stateMachineTriggers.StateMachineTriggersPackage#getEvent()
  * @model

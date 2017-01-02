@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.property.impl.ArithVarImpl#getObj <em>Obj</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.impl.ArithVarImpl#getAtr <em>Atr</em>}</li>
@@ -25,7 +26,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link org.correttouml.grammars.property.impl.ArithVarImpl#getParam <em>Param</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.impl.ArithVarImpl#getSd <em>Sd</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

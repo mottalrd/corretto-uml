@@ -21,13 +21,13 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.impl.TimeConstraintImpl#getEvent2 <em>Event2</em>}</li>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.impl.TimeConstraintImpl#getEvent1 <em>Event1</em>}</li>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.impl.TimeConstraintImpl#getOp <em>Op</em>}</li>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.impl.TimeConstraintImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -43,7 +43,9 @@ public class UML2Helper {
 	//Double check that this is updated when running
 	//[TODO]: This has to be in a configuration file
 //	public static String UML_LIBRARY_PATH="jar:file:/Applications/eclipse/plugins/org.eclipse.uml2.uml.resources_4.0.1.v20120913-1441.jar!/";
-	public static String UML_LIBRARY_PATH="jar:file:/Applications/MyEclipse/eclipse-myKepler/plugins/org.eclipse.uml2.uml.resources_4.1.0.v20140202-2055.jar!/";
+//	public static String UML_LIBRARY_PATH="jar:file:/Applications/MyEclipse/eclipse-myKepler/plugins/org.eclipse.uml2.uml.resources_4.1.0.v20140202-2055.jar!/";
+	public static String UML_LIBRARY_PATH="jar:file:/Users/admin/.p2/pool/plugins/org.eclipse.uml2.uml.resources_5.2.0.v20161114-0827.jar!/";
+	
 	
 	public static org.eclipse.uml2.uml.Class createNot(org.eclipse.uml2.uml.Profile madesProfile, org.eclipse.uml2.uml.Package package_, EObject formulae){
 		//<<Alw>>
@@ -677,7 +679,9 @@ public class UML2Helper {
 		set.createResource(uri);
 		Resource r = set.getResource(uri, true);
 		
-		Profile m=(Profile)EcoreUtil.getObjectByType(r.getContents(), UMLPackage.eINSTANCE.getProfile());
+		Profile m=(Profile)EcoreUtil.getObjectByType(r.getContents(), UMLPackage.eINSTANCE.getProfile());//Main
+//		Profile m=(Profile)EcoreUtil.getObjectByType(r.getContents(), UMLPackage.Literals.PROFILE);
+//		Profile m=(Profile)EcoreUtil.getObjectByType(r.getContents(), UMLPackage.Literals.PACKAGE);
 		return m;
 	}	
 }

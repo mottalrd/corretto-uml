@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.property.TRIOR#getTrioOP2 <em>Trio OP2</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.TRIOR#getTrio <em>Trio</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.correttouml.grammars.property.PropertyPackage#getTRIOR()
  * @model

@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.property.ArithTermL#getTrio <em>Trio</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.ArithTermL#getConstant <em>Constant</em>}</li>
@@ -20,7 +21,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.correttouml.grammars.property.ArithTermL#getArithTermP <em>Arith Term P</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.ArithTermL#getIntP <em>Int P</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.correttouml.grammars.property.PropertyPackage#getArithTermL()
  * @model

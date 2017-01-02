@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.property.ArithTerm#getArithTermL <em>Arith Term L</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.ArithTerm#getArithTermR <em>Arith Term R</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.correttouml.grammars.property.PropertyPackage#getArithTerm()
  * @model

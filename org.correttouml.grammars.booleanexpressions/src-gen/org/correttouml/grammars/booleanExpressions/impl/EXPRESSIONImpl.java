@@ -21,13 +21,13 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.impl.EXPRESSIONImpl#getFirstTerm <em>First Term</em>}</li>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.impl.EXPRESSIONImpl#getOperator <em>Operator</em>}</li>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.impl.EXPRESSIONImpl#getSecondTerm <em>Second Term</em>}</li>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.impl.EXPRESSIONImpl#getAlone <em>Alone</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

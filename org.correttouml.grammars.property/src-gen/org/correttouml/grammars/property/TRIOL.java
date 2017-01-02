@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.property.TRIOL#getTrioVar <em>Trio Var</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.TRIOL#getOpName <em>Op Name</em>}</li>
@@ -25,7 +26,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.correttouml.grammars.property.TRIOL#getTrioOpFN1 <em>Trio Op FN1</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.TRIOL#getInt <em>Int</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.correttouml.grammars.property.PropertyPackage#getTRIOL()
  * @model

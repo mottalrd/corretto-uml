@@ -12,35 +12,35 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalBooleanExpressionsLexer extends Lexer {
-    public static final int RULE_ID=9;
-    public static final int T__29=29;
-    public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=15;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int RULE_OR=4;
     public static final int RULE_RELATIONS=7;
+    public static final int RULE_STRING=11;
+    public static final int RULE_NOT=6;
     public static final int RULE_AND=5;
     public static final int RULE_SL_COMMENT=13;
-    public static final int EOF=-1;
-    public static final int RULE_NOT=6;
-    public static final int RULE_ML_COMMENT=12;
-    public static final int T__30=30;
     public static final int T__19=19;
-    public static final int T__31=31;
-    public static final int RULE_STRING=11;
     public static final int T__16=16;
-    public static final int T__18=18;
     public static final int T__17=17;
-    public static final int RULE_INT=8;
+    public static final int T__18=18;
+    public static final int RULE_OR=4;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
     public static final int RULE_OPERATOR=10;
+    public static final int RULE_ID=9;
     public static final int RULE_WS=14;
+    public static final int RULE_ANY_OTHER=15;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int RULE_INT=8;
+    public static final int T__29=29;
+    public static final int T__22=22;
+    public static final int RULE_ML_COMMENT=12;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -53,15 +53,15 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g"; }
+    public String getGrammarFileName() { return "InternalBooleanExpressions.g"; }
 
     // $ANTLR start "T__16"
     public final void mT__16() throws RecognitionException {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:11:7: ( 'exit' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:11:9: 'exit'
+            // InternalBooleanExpressions.g:11:7: ( 'exit' )
+            // InternalBooleanExpressions.g:11:9: 'exit'
             {
             match("exit"); 
 
@@ -81,8 +81,8 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:12:7: ( 'enter' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:12:9: 'enter'
+            // InternalBooleanExpressions.g:12:7: ( 'enter' )
+            // InternalBooleanExpressions.g:12:9: 'enter'
             {
             match("enter"); 
 
@@ -102,8 +102,8 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:13:7: ( 'start' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:13:9: 'start'
+            // InternalBooleanExpressions.g:13:7: ( 'start' )
+            // InternalBooleanExpressions.g:13:9: 'start'
             {
             match("start"); 
 
@@ -123,8 +123,8 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:14:7: ( 'end' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:14:9: 'end'
+            // InternalBooleanExpressions.g:14:7: ( 'end' )
+            // InternalBooleanExpressions.g:14:9: 'end'
             {
             match("end"); 
 
@@ -144,8 +144,8 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:15:7: ( 'tick' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:15:9: 'tick'
+            // InternalBooleanExpressions.g:15:7: ( 'tick' )
+            // InternalBooleanExpressions.g:15:9: 'tick'
             {
             match("tick"); 
 
@@ -165,8 +165,8 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:16:7: ( 'sig' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:16:9: 'sig'
+            // InternalBooleanExpressions.g:16:7: ( 'sig' )
+            // InternalBooleanExpressions.g:16:9: 'sig'
             {
             match("sig"); 
 
@@ -186,8 +186,8 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:17:7: ( 'call' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:17:9: 'call'
+            // InternalBooleanExpressions.g:17:7: ( 'call' )
+            // InternalBooleanExpressions.g:17:9: 'call'
             {
             match("call"); 
 
@@ -207,8 +207,8 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:18:7: ( 'send' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:18:9: 'send'
+            // InternalBooleanExpressions.g:18:7: ( 'send' )
+            // InternalBooleanExpressions.g:18:9: 'send'
             {
             match("send"); 
 
@@ -228,8 +228,8 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:19:7: ( 'receive' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:19:9: 'receive'
+            // InternalBooleanExpressions.g:19:7: ( 'receive' )
+            // InternalBooleanExpressions.g:19:9: 'receive'
             {
             match("receive"); 
 
@@ -249,8 +249,8 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:20:7: ( 'reply' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:20:9: 'reply'
+            // InternalBooleanExpressions.g:20:7: ( 'reply' )
+            // InternalBooleanExpressions.g:20:9: 'reply'
             {
             match("reply"); 
 
@@ -270,8 +270,8 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:21:7: ( '(' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:21:9: '('
+            // InternalBooleanExpressions.g:21:7: ( '(' )
+            // InternalBooleanExpressions.g:21:9: '('
             {
             match('('); 
 
@@ -290,8 +290,8 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:22:7: ( ')' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:22:9: ')'
+            // InternalBooleanExpressions.g:22:7: ( ')' )
+            // InternalBooleanExpressions.g:22:9: ')'
             {
             match(')'); 
 
@@ -310,8 +310,8 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:23:7: ( '@' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:23:9: '@'
+            // InternalBooleanExpressions.g:23:7: ( '@' )
+            // InternalBooleanExpressions.g:23:9: '@'
             {
             match('@'); 
 
@@ -330,8 +330,8 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:24:7: ( '-' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:24:9: '-'
+            // InternalBooleanExpressions.g:24:7: ( '-' )
+            // InternalBooleanExpressions.g:24:9: '-'
             {
             match('-'); 
 
@@ -350,8 +350,8 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:25:7: ( '.' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:25:9: '.'
+            // InternalBooleanExpressions.g:25:7: ( '.' )
+            // InternalBooleanExpressions.g:25:9: '.'
             {
             match('.'); 
 
@@ -370,8 +370,8 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:26:7: ( 'now' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:26:9: 'now'
+            // InternalBooleanExpressions.g:26:7: ( 'now' )
+            // InternalBooleanExpressions.g:26:9: 'now'
             {
             match("now"); 
 
@@ -391,10 +391,10 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = RULE_OPERATOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2031:15: ( ( '+' | '*' | '--' ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2031:17: ( '+' | '*' | '--' )
+            // InternalBooleanExpressions.g:2031:15: ( ( '+' | '*' | '--' ) )
+            // InternalBooleanExpressions.g:2031:17: ( '+' | '*' | '--' )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2031:17: ( '+' | '*' | '--' )
+            // InternalBooleanExpressions.g:2031:17: ( '+' | '*' | '--' )
             int alt1=3;
             switch ( input.LA(1) ) {
             case '+':
@@ -421,21 +421,21 @@ public class InternalBooleanExpressionsLexer extends Lexer {
 
             switch (alt1) {
                 case 1 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2031:18: '+'
+                    // InternalBooleanExpressions.g:2031:18: '+'
                     {
                     match('+'); 
 
                     }
                     break;
                 case 2 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2031:22: '*'
+                    // InternalBooleanExpressions.g:2031:22: '*'
                     {
                     match('*'); 
 
                     }
                     break;
                 case 3 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2031:26: '--'
+                    // InternalBooleanExpressions.g:2031:26: '--'
                     {
                     match("--"); 
 
@@ -461,10 +461,10 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = RULE_RELATIONS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2033:16: ( ( '<' | '>' | '==' | '<=' | '>=' | '!=' ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2033:18: ( '<' | '>' | '==' | '<=' | '>=' | '!=' )
+            // InternalBooleanExpressions.g:2033:16: ( ( '<' | '>' | '==' | '<=' | '>=' | '!=' ) )
+            // InternalBooleanExpressions.g:2033:18: ( '<' | '>' | '==' | '<=' | '>=' | '!=' )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2033:18: ( '<' | '>' | '==' | '<=' | '>=' | '!=' )
+            // InternalBooleanExpressions.g:2033:18: ( '<' | '>' | '==' | '<=' | '>=' | '!=' )
             int alt2=6;
             switch ( input.LA(1) ) {
             case '<':
@@ -508,21 +508,21 @@ public class InternalBooleanExpressionsLexer extends Lexer {
 
             switch (alt2) {
                 case 1 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2033:19: '<'
+                    // InternalBooleanExpressions.g:2033:19: '<'
                     {
                     match('<'); 
 
                     }
                     break;
                 case 2 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2033:23: '>'
+                    // InternalBooleanExpressions.g:2033:23: '>'
                     {
                     match('>'); 
 
                     }
                     break;
                 case 3 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2033:27: '=='
+                    // InternalBooleanExpressions.g:2033:27: '=='
                     {
                     match("=="); 
 
@@ -530,7 +530,7 @@ public class InternalBooleanExpressionsLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2033:32: '<='
+                    // InternalBooleanExpressions.g:2033:32: '<='
                     {
                     match("<="); 
 
@@ -538,7 +538,7 @@ public class InternalBooleanExpressionsLexer extends Lexer {
                     }
                     break;
                 case 5 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2033:37: '>='
+                    // InternalBooleanExpressions.g:2033:37: '>='
                     {
                     match(">="); 
 
@@ -546,7 +546,7 @@ public class InternalBooleanExpressionsLexer extends Lexer {
                     }
                     break;
                 case 6 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2033:42: '!='
+                    // InternalBooleanExpressions.g:2033:42: '!='
                     {
                     match("!="); 
 
@@ -572,8 +572,8 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = RULE_OR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2035:9: ( '||' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2035:11: '||'
+            // InternalBooleanExpressions.g:2035:9: ( '||' )
+            // InternalBooleanExpressions.g:2035:11: '||'
             {
             match("||"); 
 
@@ -593,8 +593,8 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = RULE_AND;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2037:10: ( '&&' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2037:12: '&&'
+            // InternalBooleanExpressions.g:2037:10: ( '&&' )
+            // InternalBooleanExpressions.g:2037:12: '&&'
             {
             match("&&"); 
 
@@ -614,8 +614,8 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = RULE_NOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2039:10: ( '!!' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2039:12: '!!'
+            // InternalBooleanExpressions.g:2039:10: ( '!!' )
+            // InternalBooleanExpressions.g:2039:12: '!!'
             {
             match("!!"); 
 
@@ -635,10 +635,10 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2041:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2041:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalBooleanExpressions.g:2041:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalBooleanExpressions.g:2041:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2041:11: ( '^' )?
+            // InternalBooleanExpressions.g:2041:11: ( '^' )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -647,7 +647,7 @@ public class InternalBooleanExpressionsLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2041:11: '^'
+                    // InternalBooleanExpressions.g:2041:11: '^'
                     {
                     match('^'); 
 
@@ -665,7 +665,7 @@ public class InternalBooleanExpressionsLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2041:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalBooleanExpressions.g:2041:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop4:
             do {
                 int alt4=2;
@@ -678,7 +678,7 @@ public class InternalBooleanExpressionsLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:
+            	    // InternalBooleanExpressions.g:
             	    {
             	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
             	        input.consume();
@@ -714,10 +714,10 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2043:10: ( ( '0' .. '9' )+ )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2043:12: ( '0' .. '9' )+
+            // InternalBooleanExpressions.g:2043:10: ( ( '0' .. '9' )+ )
+            // InternalBooleanExpressions.g:2043:12: ( '0' .. '9' )+
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2043:12: ( '0' .. '9' )+
+            // InternalBooleanExpressions.g:2043:12: ( '0' .. '9' )+
             int cnt5=0;
             loop5:
             do {
@@ -731,7 +731,7 @@ public class InternalBooleanExpressionsLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2043:13: '0' .. '9'
+            	    // InternalBooleanExpressions.g:2043:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -763,10 +763,10 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2045:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2045:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalBooleanExpressions.g:2045:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalBooleanExpressions.g:2045:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2045:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalBooleanExpressions.g:2045:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -784,10 +784,10 @@ public class InternalBooleanExpressionsLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2045:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalBooleanExpressions.g:2045:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2045:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalBooleanExpressions.g:2045:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -803,23 +803,15 @@ public class InternalBooleanExpressionsLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2045:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // InternalBooleanExpressions.g:2045:21: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2045:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalBooleanExpressions.g:2045:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -844,10 +836,10 @@ public class InternalBooleanExpressionsLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2045:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalBooleanExpressions.g:2045:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2045:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalBooleanExpressions.g:2045:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop7:
                     do {
                         int alt7=3;
@@ -863,23 +855,15 @@ public class InternalBooleanExpressionsLexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2045:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // InternalBooleanExpressions.g:2045:54: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2045:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalBooleanExpressions.g:2045:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -922,12 +906,12 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2047:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2047:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalBooleanExpressions.g:2047:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalBooleanExpressions.g:2047:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2047:24: ( options {greedy=false; } : . )*
+            // InternalBooleanExpressions.g:2047:24: ( options {greedy=false; } : . )*
             loop9:
             do {
                 int alt9=2;
@@ -952,7 +936,7 @@ public class InternalBooleanExpressionsLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2047:52: .
+            	    // InternalBooleanExpressions.g:2047:52: .
             	    {
             	    matchAny(); 
 
@@ -982,12 +966,12 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2049:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2049:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalBooleanExpressions.g:2049:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalBooleanExpressions.g:2049:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2049:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalBooleanExpressions.g:2049:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop10:
             do {
                 int alt10=2;
@@ -1000,7 +984,7 @@ public class InternalBooleanExpressionsLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2049:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalBooleanExpressions.g:2049:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1020,7 +1004,7 @@ public class InternalBooleanExpressionsLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2049:40: ( ( '\\r' )? '\\n' )?
+            // InternalBooleanExpressions.g:2049:40: ( ( '\\r' )? '\\n' )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1029,9 +1013,9 @@ public class InternalBooleanExpressionsLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2049:41: ( '\\r' )? '\\n'
+                    // InternalBooleanExpressions.g:2049:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2049:41: ( '\\r' )?
+                    // InternalBooleanExpressions.g:2049:41: ( '\\r' )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -1040,7 +1024,7 @@ public class InternalBooleanExpressionsLexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2049:41: '\\r'
+                            // InternalBooleanExpressions.g:2049:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1072,10 +1056,10 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2051:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2051:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalBooleanExpressions.g:2051:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalBooleanExpressions.g:2051:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2051:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalBooleanExpressions.g:2051:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt13=0;
             loop13:
             do {
@@ -1089,7 +1073,7 @@ public class InternalBooleanExpressionsLexer extends Lexer {
 
                 switch (alt13) {
             	case 1 :
-            	    // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:
+            	    // InternalBooleanExpressions.g:
             	    {
             	    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
             	        input.consume();
@@ -1129,8 +1113,8 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2053:16: ( . )
-            // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:2053:18: .
+            // InternalBooleanExpressions.g:2053:16: ( . )
+            // InternalBooleanExpressions.g:2053:18: .
             {
             matchAny(); 
 
@@ -1145,201 +1129,201 @@ public class InternalBooleanExpressionsLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:8: ( T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | RULE_OPERATOR | RULE_RELATIONS | RULE_OR | RULE_AND | RULE_NOT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        // InternalBooleanExpressions.g:1:8: ( T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | RULE_OPERATOR | RULE_RELATIONS | RULE_OR | RULE_AND | RULE_NOT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
         int alt14=28;
         alt14 = dfa14.predict(input);
         switch (alt14) {
             case 1 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:10: T__16
+                // InternalBooleanExpressions.g:1:10: T__16
                 {
                 mT__16(); 
 
                 }
                 break;
             case 2 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:16: T__17
+                // InternalBooleanExpressions.g:1:16: T__17
                 {
                 mT__17(); 
 
                 }
                 break;
             case 3 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:22: T__18
+                // InternalBooleanExpressions.g:1:22: T__18
                 {
                 mT__18(); 
 
                 }
                 break;
             case 4 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:28: T__19
+                // InternalBooleanExpressions.g:1:28: T__19
                 {
                 mT__19(); 
 
                 }
                 break;
             case 5 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:34: T__20
+                // InternalBooleanExpressions.g:1:34: T__20
                 {
                 mT__20(); 
 
                 }
                 break;
             case 6 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:40: T__21
+                // InternalBooleanExpressions.g:1:40: T__21
                 {
                 mT__21(); 
 
                 }
                 break;
             case 7 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:46: T__22
+                // InternalBooleanExpressions.g:1:46: T__22
                 {
                 mT__22(); 
 
                 }
                 break;
             case 8 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:52: T__23
+                // InternalBooleanExpressions.g:1:52: T__23
                 {
                 mT__23(); 
 
                 }
                 break;
             case 9 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:58: T__24
+                // InternalBooleanExpressions.g:1:58: T__24
                 {
                 mT__24(); 
 
                 }
                 break;
             case 10 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:64: T__25
+                // InternalBooleanExpressions.g:1:64: T__25
                 {
                 mT__25(); 
 
                 }
                 break;
             case 11 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:70: T__26
+                // InternalBooleanExpressions.g:1:70: T__26
                 {
                 mT__26(); 
 
                 }
                 break;
             case 12 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:76: T__27
+                // InternalBooleanExpressions.g:1:76: T__27
                 {
                 mT__27(); 
 
                 }
                 break;
             case 13 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:82: T__28
+                // InternalBooleanExpressions.g:1:82: T__28
                 {
                 mT__28(); 
 
                 }
                 break;
             case 14 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:88: T__29
+                // InternalBooleanExpressions.g:1:88: T__29
                 {
                 mT__29(); 
 
                 }
                 break;
             case 15 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:94: T__30
+                // InternalBooleanExpressions.g:1:94: T__30
                 {
                 mT__30(); 
 
                 }
                 break;
             case 16 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:100: T__31
+                // InternalBooleanExpressions.g:1:100: T__31
                 {
                 mT__31(); 
 
                 }
                 break;
             case 17 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:106: RULE_OPERATOR
+                // InternalBooleanExpressions.g:1:106: RULE_OPERATOR
                 {
                 mRULE_OPERATOR(); 
 
                 }
                 break;
             case 18 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:120: RULE_RELATIONS
+                // InternalBooleanExpressions.g:1:120: RULE_RELATIONS
                 {
                 mRULE_RELATIONS(); 
 
                 }
                 break;
             case 19 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:135: RULE_OR
+                // InternalBooleanExpressions.g:1:135: RULE_OR
                 {
                 mRULE_OR(); 
 
                 }
                 break;
             case 20 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:143: RULE_AND
+                // InternalBooleanExpressions.g:1:143: RULE_AND
                 {
                 mRULE_AND(); 
 
                 }
                 break;
             case 21 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:152: RULE_NOT
+                // InternalBooleanExpressions.g:1:152: RULE_NOT
                 {
                 mRULE_NOT(); 
 
                 }
                 break;
             case 22 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:161: RULE_ID
+                // InternalBooleanExpressions.g:1:161: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
             case 23 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:169: RULE_INT
+                // InternalBooleanExpressions.g:1:169: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
             case 24 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:178: RULE_STRING
+                // InternalBooleanExpressions.g:1:178: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
             case 25 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:190: RULE_ML_COMMENT
+                // InternalBooleanExpressions.g:1:190: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
             case 26 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:206: RULE_SL_COMMENT
+                // InternalBooleanExpressions.g:1:206: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
             case 27 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:222: RULE_WS
+                // InternalBooleanExpressions.g:1:222: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
             case 28 :
-                // ../org.correttouml.grammars.booleanexpressions.ui/src-gen/org/correttouml/grammars/ui/contentassist/antlr/internal/InternalBooleanExpressions.g:1:230: RULE_ANY_OTHER
+                // InternalBooleanExpressions.g:1:230: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1353,40 +1337,19 @@ public class InternalBooleanExpressionsLexer extends Lexer {
 
     protected DFA14 dfa14 = new DFA14(this);
     static final String DFA14_eotS =
-        "\1\uffff\5\36\3\uffff\1\51\1\uffff\1\36\4\uffff\5\33\2\uffff\3\33"+
-        "\2\uffff\2\36\1\uffff\6\36\6\uffff\1\36\11\uffff\2\36\1\102\1\36"+
-        "\1\104\5\36\1\112\1\113\1\36\1\uffff\1\36\1\uffff\1\116\1\117\1"+
-        "\120\2\36\2\uffff\1\123\1\124\3\uffff\1\36\1\126\2\uffff\1\36\1"+
-        "\uffff\1\130\1\uffff";
+        "\1\uffff\5\36\3\uffff\1\51\1\uffff\1\36\4\uffff\5\33\2\uffff\3\33\2\uffff\2\36\1\uffff\6\36\6\uffff\1\36\11\uffff\2\36\1\102\1\36\1\104\5\36\1\112\1\113\1\36\1\uffff\1\36\1\uffff\1\116\1\117\1\120\2\36\2\uffff\1\123\1\124\3\uffff\1\36\1\126\2\uffff\1\36\1\uffff\1\130\1\uffff";
     static final String DFA14_eofS =
         "\131\uffff";
     static final String DFA14_minS =
-        "\1\0\1\156\1\145\1\151\1\141\1\145\3\uffff\1\55\1\uffff\1\157\4"+
-        "\uffff\1\75\1\41\1\174\1\46\1\101\2\uffff\2\0\1\52\2\uffff\1\151"+
-        "\1\144\1\uffff\1\141\1\147\1\156\1\143\1\154\1\143\6\uffff\1\167"+
-        "\11\uffff\1\164\1\145\1\60\1\162\1\60\1\144\1\153\1\154\1\145\1"+
-        "\154\2\60\1\162\1\uffff\1\164\1\uffff\3\60\1\151\1\171\2\uffff\2"+
-        "\60\3\uffff\1\166\1\60\2\uffff\1\145\1\uffff\1\60\1\uffff";
+        "\1\0\1\156\1\145\1\151\1\141\1\145\3\uffff\1\55\1\uffff\1\157\4\uffff\1\75\1\41\1\174\1\46\1\101\2\uffff\2\0\1\52\2\uffff\1\151\1\144\1\uffff\1\141\1\147\1\156\1\143\1\154\1\143\6\uffff\1\167\11\uffff\1\164\1\145\1\60\1\162\1\60\1\144\1\153\1\154\1\145\1\154\2\60\1\162\1\uffff\1\164\1\uffff\3\60\1\151\1\171\2\uffff\2\60\3\uffff\1\166\1\60\2\uffff\1\145\1\uffff\1\60\1\uffff";
     static final String DFA14_maxS =
-        "\1\uffff\1\170\1\164\1\151\1\141\1\145\3\uffff\1\55\1\uffff\1\157"+
-        "\4\uffff\2\75\1\174\1\46\1\172\2\uffff\2\uffff\1\57\2\uffff\1\151"+
-        "\1\164\1\uffff\1\141\1\147\1\156\1\143\1\154\1\160\6\uffff\1\167"+
-        "\11\uffff\1\164\1\145\1\172\1\162\1\172\1\144\1\153\1\154\1\145"+
-        "\1\154\2\172\1\162\1\uffff\1\164\1\uffff\3\172\1\151\1\171\2\uffff"+
-        "\2\172\3\uffff\1\166\1\172\2\uffff\1\145\1\uffff\1\172\1\uffff";
+        "\1\uffff\1\170\1\164\1\151\1\141\1\145\3\uffff\1\55\1\uffff\1\157\4\uffff\2\75\1\174\1\46\1\172\2\uffff\2\uffff\1\57\2\uffff\1\151\1\164\1\uffff\1\141\1\147\1\156\1\143\1\154\1\160\6\uffff\1\167\11\uffff\1\164\1\145\1\172\1\162\1\172\1\144\1\153\1\154\1\145\1\154\2\172\1\162\1\uffff\1\164\1\uffff\3\172\1\151\1\171\2\uffff\2\172\3\uffff\1\166\1\172\2\uffff\1\145\1\uffff\1\172\1\uffff";
     static final String DFA14_acceptS =
-        "\6\uffff\1\13\1\14\1\15\1\uffff\1\17\1\uffff\2\21\2\22\5\uffff\1"+
-        "\26\1\27\3\uffff\1\33\1\34\2\uffff\1\26\6\uffff\1\13\1\14\1\15\1"+
-        "\21\1\16\1\17\1\uffff\1\22\1\25\1\23\1\24\1\27\1\30\1\31\1\32\1"+
-        "\33\15\uffff\1\4\1\uffff\1\6\5\uffff\1\20\1\1\2\uffff\1\10\1\5\1"+
-        "\7\2\uffff\1\2\1\3\1\uffff\1\12\1\uffff\1\11";
+        "\6\uffff\1\13\1\14\1\15\1\uffff\1\17\1\uffff\2\21\2\22\5\uffff\1\26\1\27\3\uffff\1\33\1\34\2\uffff\1\26\6\uffff\1\13\1\14\1\15\1\21\1\16\1\17\1\uffff\1\22\1\25\1\23\1\24\1\27\1\30\1\31\1\32\1\33\15\uffff\1\4\1\uffff\1\6\5\uffff\1\20\1\1\2\uffff\1\10\1\5\1\7\2\uffff\1\2\1\3\1\uffff\1\12\1\uffff\1\11";
     static final String DFA14_specialS =
-        "\1\0\26\uffff\1\1\1\2\100\uffff}>";
+        "\1\2\26\uffff\1\0\1\1\100\uffff}>";
     static final String[] DFA14_transitionS = {
-            "\11\33\2\32\2\33\1\32\22\33\1\32\1\21\1\27\3\33\1\23\1\30\1"+
-            "\6\1\7\1\15\1\14\1\33\1\11\1\12\1\31\12\26\2\33\1\16\1\20\1"+
-            "\17\1\33\1\10\32\25\3\33\1\24\1\25\1\33\2\25\1\4\1\25\1\1\10"+
-            "\25\1\13\3\25\1\5\1\2\1\3\6\25\1\33\1\22\uff83\33",
+            "\11\33\2\32\2\33\1\32\22\33\1\32\1\21\1\27\3\33\1\23\1\30\1\6\1\7\1\15\1\14\1\33\1\11\1\12\1\31\12\26\2\33\1\16\1\20\1\17\1\33\1\10\32\25\3\33\1\24\1\25\1\33\2\25\1\4\1\25\1\1\10\25\1\13\3\25\1\5\1\2\1\3\6\25\1\33\1\22\uff83\33",
             "\1\35\11\uffff\1\34",
             "\1\41\3\uffff\1\40\12\uffff\1\37",
             "\1\42",
@@ -1514,6 +1477,26 @@ public class InternalBooleanExpressionsLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
+                        int LA14_23 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA14_23>='\u0000' && LA14_23<='\uFFFF')) ) {s = 49;}
+
+                        else s = 27;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA14_24 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA14_24>='\u0000' && LA14_24<='\uFFFF')) ) {s = 49;}
+
+                        else s = 27;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
                         int LA14_0 = input.LA(1);
 
                         s = -1;
@@ -1570,26 +1553,6 @@ public class InternalBooleanExpressionsLexer extends Lexer {
                         else if ( ((LA14_0>='\t' && LA14_0<='\n')||LA14_0=='\r'||LA14_0==' ') ) {s = 26;}
 
                         else if ( ((LA14_0>='\u0000' && LA14_0<='\b')||(LA14_0>='\u000B' && LA14_0<='\f')||(LA14_0>='\u000E' && LA14_0<='\u001F')||(LA14_0>='#' && LA14_0<='%')||LA14_0==','||(LA14_0>=':' && LA14_0<=';')||LA14_0=='?'||(LA14_0>='[' && LA14_0<=']')||LA14_0=='`'||LA14_0=='{'||(LA14_0>='}' && LA14_0<='\uFFFF')) ) {s = 27;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA14_23 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA14_23>='\u0000' && LA14_23<='\uFFFF')) ) {s = 49;}
-
-                        else s = 27;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA14_24 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA14_24>='\u0000' && LA14_24<='\uFFFF')) ) {s = 49;}
-
-                        else s = 27;
 
                         if ( s>=0 ) return s;
                         break;

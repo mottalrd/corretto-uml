@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.property.impl.ArithTermLImpl#getTrio <em>Trio</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.impl.ArithTermLImpl#getConstant <em>Constant</em>}</li>
@@ -33,7 +34,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link org.correttouml.grammars.property.impl.ArithTermLImpl#getArithTermP <em>Arith Term P</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.impl.ArithTermLImpl#getIntP <em>Int P</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

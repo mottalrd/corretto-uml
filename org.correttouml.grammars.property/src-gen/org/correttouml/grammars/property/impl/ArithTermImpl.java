@@ -22,11 +22,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.property.impl.ArithTermImpl#getArithTermL <em>Arith Term L</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.impl.ArithTermImpl#getArithTermR <em>Arith Term R</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

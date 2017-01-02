@@ -21,12 +21,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.impl.OrExpressionImpl#getLeftExpression <em>Left Expression</em>}</li>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.impl.OrExpressionImpl#getOr <em>Or</em>}</li>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.impl.OrExpressionImpl#getRightExpression <em>Right Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -1,15 +1,8 @@
 package org.correttouml.uml2zot.semantics.sequencediagram;
 
 import org.correttouml.uml.diagrams.classdiagram.Clock;
-import org.correttouml.uml.diagrams.classdiagram.Object;
-import org.correttouml.uml.diagrams.expressions.ExpressionContext;
 import org.correttouml.uml.diagrams.sequencediagram.*;
-import org.correttouml.uml.diagrams.statediagram.actions.Action;
-import org.correttouml.uml.diagrams.statediagram.actions.ActionFactory;
-import org.correttouml.uml.helpers.StDTransitionsParser;
 import org.correttouml.uml2zot.semantics.events.SClockTickEvent;
-import org.correttouml.uml2zot.semantics.statediagram.actions.SAction;
-import org.correttouml.uml2zot.semantics.statediagram.actions.SActionFactory;
 import org.correttouml.uml2zot.semantics.util.bool.Iff;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 import org.eclipse.uml2.uml.MessageOccurrenceSpecification;

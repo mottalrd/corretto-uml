@@ -21,12 +21,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.property.impl.ArithBoolImpl#getArithTerm1 <em>Arith Term1</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.impl.ArithBoolImpl#getArithCOP <em>Arith COP</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.impl.ArithBoolImpl#getArithTerm2 <em>Arith Term2</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

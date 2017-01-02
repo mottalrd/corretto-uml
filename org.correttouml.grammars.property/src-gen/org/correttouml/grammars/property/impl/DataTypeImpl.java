@@ -18,11 +18,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.property.impl.DataTypeImpl#getI <em>I</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.impl.DataTypeImpl#getFloat <em>Float</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.VariableCondition#getExpression_left <em>Expression left</em>}</li>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.VariableCondition#getRelation <em>Relation</em>}</li>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.VariableCondition#getExpression_right <em>Expression right</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.correttouml.grammars.booleanExpressions.BooleanExpressionsPackage#getVariableCondition()
  * @model

@@ -22,12 +22,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.impl.BaseExpressionImpl#getNot <em>Not</em>}</li>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.impl.BaseExpressionImpl#getBooleanTerm <em>Boolean Term</em>}</li>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.impl.BaseExpressionImpl#getRootExpression <em>Root Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

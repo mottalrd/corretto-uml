@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.BaseExpression#getNot <em>Not</em>}</li>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.BaseExpression#getBooleanTerm <em>Boolean Term</em>}</li>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.BaseExpression#getRootExpression <em>Root Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.correttouml.grammars.booleanExpressions.BooleanExpressionsPackage#getBaseExpression()
  * @model

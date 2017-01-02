@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.Event#getEventName <em>Event Name</em>}</li>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.Event#getAssociationEnd <em>Association End</em>}</li>
@@ -18,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.correttouml.grammars.stateMachineActions.Event#getParameters <em>Parameters</em>}</li>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.Event#getEventExtension <em>Event Extension</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.correttouml.grammars.stateMachineActions.StateMachineActionsPackage#getEvent()
  * @model

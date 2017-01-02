@@ -23,12 +23,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.impl.booleanTermImpl#getTimeConstraint <em>Time Constraint</em>}</li>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.impl.booleanTermImpl#getBooleanVariable <em>Boolean Variable</em>}</li>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.impl.booleanTermImpl#getVariableCondition <em>Variable Condition</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -11,13 +11,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.Parameters#getIsPast <em>Is Past</em>}</li>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.Parameters#getIsFuture <em>Is Future</em>}</li>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.Parameters#getParam <em>Param</em>}</li>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.Parameters#getParameters <em>Parameters</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.correttouml.grammars.stateMachineActions.StateMachineActionsPackage#getParameters()
  * @model

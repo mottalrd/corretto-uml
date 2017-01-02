@@ -17,7 +17,6 @@ import org.correttouml.uml2zot.semantics.statediagram.actions.SCallAction;
 import org.correttouml.uml2zot.semantics.util.bool.Iff;
 import org.correttouml.uml2zot.semantics.util.bool.Or;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
-import org.eclipse.uml2.uml.MessageSort;
 
 
 public class SOperation {

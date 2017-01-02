@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.property.impl.TRIOLImpl#getTrioVar <em>Trio Var</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.impl.TRIOLImpl#getOpName <em>Op Name</em>}</li>
@@ -36,7 +37,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link org.correttouml.grammars.property.impl.TRIOLImpl#getTrioOpFN1 <em>Trio Op FN1</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.impl.TRIOLImpl#getInt <em>Int</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

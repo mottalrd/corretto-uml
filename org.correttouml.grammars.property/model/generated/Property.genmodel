@@ -3,8 +3,8 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.correttouml.grammars.property/src-gen" editDirectory="/org.correttouml.grammars.property.edit/src"
     editorDirectory="/org.correttouml.grammars.property.editor/src" modelPluginID="org.correttouml.grammars.property"
     forceOverwrite="true" modelName="Property" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    complianceLevel="5.0" copyrightFields="false" editPluginID="org.correttouml.grammars.property.edit"
-    editorPluginID="org.correttouml.grammars.property.editor" runtimeVersion="2.9">
+    complianceLevel="6.0" copyrightFields="false" editPluginID="org.correttouml.grammars.property.edit"
+    editorPluginID="org.correttouml.grammars.property.editor" runtimeVersion="2.12">
   <genPackages prefix="Property" basePackage="org.correttouml.grammars" disposableProviderFactory="true"
       fileExtensions="property" ecorePackage="Property.ecore#/">
     <genClasses ecoreClass="Property.ecore#//Model">

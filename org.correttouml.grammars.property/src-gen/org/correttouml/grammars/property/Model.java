@@ -13,11 +13,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.property.Model#getDeclarations <em>Declarations</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.Model#getCorrettoCommand <em>Corretto Command</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.correttouml.grammars.property.PropertyPackage#getModel()
  * @model

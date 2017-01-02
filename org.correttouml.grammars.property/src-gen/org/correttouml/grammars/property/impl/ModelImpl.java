@@ -29,11 +29,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.property.impl.ModelImpl#getDeclarations <em>Declarations</em>}</li>
  *   <li>{@link org.correttouml.grammars.property.impl.ModelImpl#getCorrettoCommand <em>Corretto Command</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -20,13 +20,13 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.impl.ParametersImpl#getIsPast <em>Is Past</em>}</li>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.impl.ParametersImpl#getIsFuture <em>Is Future</em>}</li>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.impl.ParametersImpl#getParam <em>Param</em>}</li>
  *   <li>{@link org.correttouml.grammars.stateMachineActions.impl.ParametersImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

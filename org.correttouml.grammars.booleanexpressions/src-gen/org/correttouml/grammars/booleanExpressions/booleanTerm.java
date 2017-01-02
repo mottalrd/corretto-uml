@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.booleanTerm#getTimeConstraint <em>Time Constraint</em>}</li>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.booleanTerm#getBooleanVariable <em>Boolean Variable</em>}</li>
  *   <li>{@link org.correttouml.grammars.booleanExpressions.booleanTerm#getVariableCondition <em>Variable Condition</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.correttouml.grammars.booleanExpressions.BooleanExpressionsPackage#getbooleanTerm()
  * @model

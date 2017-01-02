@@ -18,12 +18,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.correttouml.grammars.stateMachineTriggers.impl.EventImpl#getEventName <em>Event Name</em>}</li>
  *   <li>{@link org.correttouml.grammars.stateMachineTriggers.impl.EventImpl#getEventExtension <em>Event Extension</em>}</li>
  *   <li>{@link org.correttouml.grammars.stateMachineTriggers.impl.EventImpl#isNowEvent <em>Now Event</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
