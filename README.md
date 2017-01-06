@@ -24,7 +24,7 @@ Once the user decides to run the formal verification, the UML models are first e
 
 _Corretto_ automatically associate each element in the _ZOT_ trace to its corresponding element in the UML model. Navigating the trace resume closely the debugging paradigm of well know programming languages. This is an example:
 
-<img src="https://raw.githubusercontent.com/mottalrd/CorrettoUML/master/docs/images/ccas_traceability.png" width="450" />
+<img src="https://raw.githubusercontent.com/mottalrd/CorrettoUML/master/docs/images/zotTraceability.pdf" width="450" />
 
 Code contributors
 ===========
