@@ -9,7 +9,6 @@ import java.util.HashMap;
 
 import org.antlr.runtime.RecognitionException;
 import org.eclipse.xtext.AbstractElement;
-import org.eclipse.xtext.AbstractRule;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.AbstractContentAssistParser;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.FollowElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
@@ -119,10 +118,5 @@ public class StateMachineActionsParser extends AbstractContentAssistParser {
 	
 	public void setGrammarAccess(StateMachineActionsGrammarAccess grammarAccess) {
 		this.grammarAccess = grammarAccess;
-	}
-
-	public void initializeFor(AbstractRule rule) {
-		// TODO Auto-generated method stub
-		
 	}
 }

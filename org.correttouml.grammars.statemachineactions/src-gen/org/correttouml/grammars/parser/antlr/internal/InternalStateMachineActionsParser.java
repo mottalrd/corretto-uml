@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalStateMachineActionsParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_OPERATOR", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "','", "'='", "'<P>'", "'<F>'", "'#'", "'.'", "'self'", "'@'", "'('", "')'", "'exit'", "'enter'", "'start'", "'end'", "'tick'", "'sig'", "'call'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_OPERATOR", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "','", "'='", "'<Y>'", "'<X>'", "'#'", "'.'", "'self'", "'@'", "'('", "')'", "'<P>'", "'<F>'", "'exit'", "'enter'", "'start'", "'end'", "'tick'", "'sig'", "'call'"
     };
     public static final int RULE_STRING=7;
     public static final int RULE_SL_COMMENT=9;
@@ -34,6 +34,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
+    public static final int T__30=30;
     public static final int RULE_OPERATOR=5;
     public static final int RULE_ID=4;
     public static final int RULE_WS=10;
@@ -42,6 +43,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
     public static final int T__27=27;
     public static final int T__28=28;
     public static final int RULE_INT=6;
+    public static final int T__29=29;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=8;
     public static final int T__23=23;
@@ -930,7 +932,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
 
 
     // $ANTLR start "ruleTERM"
-    // InternalStateMachineActions.g:350:1: ruleTERM returns [EObject current=null] : ( ( ( (lv_isPast_0_0= '<P>' ) ) | ( (lv_isFuture_1_0= '<F>' ) ) )? ( ( (lv_variable_2_0= RULE_ID ) ) | ( (lv_constant_3_0= RULE_INT ) ) ) ) ;
+    // InternalStateMachineActions.g:350:1: ruleTERM returns [EObject current=null] : ( ( ( (lv_isPast_0_0= '<Y>' ) ) | ( (lv_isFuture_1_0= '<X>' ) ) )? ( ( (lv_variable_2_0= RULE_ID ) ) | ( (lv_constant_3_0= RULE_INT ) ) ) ) ;
     public final EObject ruleTERM() throws RecognitionException {
         EObject current = null;
 
@@ -942,13 +944,13 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
          enterRule(); 
             
         try {
-            // InternalStateMachineActions.g:353:28: ( ( ( ( (lv_isPast_0_0= '<P>' ) ) | ( (lv_isFuture_1_0= '<F>' ) ) )? ( ( (lv_variable_2_0= RULE_ID ) ) | ( (lv_constant_3_0= RULE_INT ) ) ) ) )
-            // InternalStateMachineActions.g:354:1: ( ( ( (lv_isPast_0_0= '<P>' ) ) | ( (lv_isFuture_1_0= '<F>' ) ) )? ( ( (lv_variable_2_0= RULE_ID ) ) | ( (lv_constant_3_0= RULE_INT ) ) ) )
+            // InternalStateMachineActions.g:353:28: ( ( ( ( (lv_isPast_0_0= '<Y>' ) ) | ( (lv_isFuture_1_0= '<X>' ) ) )? ( ( (lv_variable_2_0= RULE_ID ) ) | ( (lv_constant_3_0= RULE_INT ) ) ) ) )
+            // InternalStateMachineActions.g:354:1: ( ( ( (lv_isPast_0_0= '<Y>' ) ) | ( (lv_isFuture_1_0= '<X>' ) ) )? ( ( (lv_variable_2_0= RULE_ID ) ) | ( (lv_constant_3_0= RULE_INT ) ) ) )
             {
-            // InternalStateMachineActions.g:354:1: ( ( ( (lv_isPast_0_0= '<P>' ) ) | ( (lv_isFuture_1_0= '<F>' ) ) )? ( ( (lv_variable_2_0= RULE_ID ) ) | ( (lv_constant_3_0= RULE_INT ) ) ) )
-            // InternalStateMachineActions.g:354:2: ( ( (lv_isPast_0_0= '<P>' ) ) | ( (lv_isFuture_1_0= '<F>' ) ) )? ( ( (lv_variable_2_0= RULE_ID ) ) | ( (lv_constant_3_0= RULE_INT ) ) )
+            // InternalStateMachineActions.g:354:1: ( ( ( (lv_isPast_0_0= '<Y>' ) ) | ( (lv_isFuture_1_0= '<X>' ) ) )? ( ( (lv_variable_2_0= RULE_ID ) ) | ( (lv_constant_3_0= RULE_INT ) ) ) )
+            // InternalStateMachineActions.g:354:2: ( ( (lv_isPast_0_0= '<Y>' ) ) | ( (lv_isFuture_1_0= '<X>' ) ) )? ( ( (lv_variable_2_0= RULE_ID ) ) | ( (lv_constant_3_0= RULE_INT ) ) )
             {
-            // InternalStateMachineActions.g:354:2: ( ( (lv_isPast_0_0= '<P>' ) ) | ( (lv_isFuture_1_0= '<F>' ) ) )?
+            // InternalStateMachineActions.g:354:2: ( ( (lv_isPast_0_0= '<Y>' ) ) | ( (lv_isFuture_1_0= '<X>' ) ) )?
             int alt4=3;
             int LA4_0 = input.LA(1);
 
@@ -960,23 +962,23 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
             }
             switch (alt4) {
                 case 1 :
-                    // InternalStateMachineActions.g:354:3: ( (lv_isPast_0_0= '<P>' ) )
+                    // InternalStateMachineActions.g:354:3: ( (lv_isPast_0_0= '<Y>' ) )
                     {
-                    // InternalStateMachineActions.g:354:3: ( (lv_isPast_0_0= '<P>' ) )
-                    // InternalStateMachineActions.g:355:1: (lv_isPast_0_0= '<P>' )
+                    // InternalStateMachineActions.g:354:3: ( (lv_isPast_0_0= '<Y>' ) )
+                    // InternalStateMachineActions.g:355:1: (lv_isPast_0_0= '<Y>' )
                     {
-                    // InternalStateMachineActions.g:355:1: (lv_isPast_0_0= '<P>' )
-                    // InternalStateMachineActions.g:356:3: lv_isPast_0_0= '<P>'
+                    // InternalStateMachineActions.g:355:1: (lv_isPast_0_0= '<Y>' )
+                    // InternalStateMachineActions.g:356:3: lv_isPast_0_0= '<Y>'
                     {
                     lv_isPast_0_0=(Token)match(input,14,FOLLOW_8); 
 
-                            newLeafNode(lv_isPast_0_0, grammarAccess.getTERMAccess().getIsPastPKeyword_0_0_0());
+                            newLeafNode(lv_isPast_0_0, grammarAccess.getTERMAccess().getIsPastYKeyword_0_0_0());
                         
 
                     	        if (current==null) {
                     	            current = createModelElement(grammarAccess.getTERMRule());
                     	        }
-                           		setWithLastConsumed(current, "isPast", lv_isPast_0_0, "<P>");
+                           		setWithLastConsumed(current, "isPast", lv_isPast_0_0, "<Y>");
                     	    
 
                     }
@@ -988,23 +990,23 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                     }
                     break;
                 case 2 :
-                    // InternalStateMachineActions.g:370:6: ( (lv_isFuture_1_0= '<F>' ) )
+                    // InternalStateMachineActions.g:370:6: ( (lv_isFuture_1_0= '<X>' ) )
                     {
-                    // InternalStateMachineActions.g:370:6: ( (lv_isFuture_1_0= '<F>' ) )
-                    // InternalStateMachineActions.g:371:1: (lv_isFuture_1_0= '<F>' )
+                    // InternalStateMachineActions.g:370:6: ( (lv_isFuture_1_0= '<X>' ) )
+                    // InternalStateMachineActions.g:371:1: (lv_isFuture_1_0= '<X>' )
                     {
-                    // InternalStateMachineActions.g:371:1: (lv_isFuture_1_0= '<F>' )
-                    // InternalStateMachineActions.g:372:3: lv_isFuture_1_0= '<F>'
+                    // InternalStateMachineActions.g:371:1: (lv_isFuture_1_0= '<X>' )
+                    // InternalStateMachineActions.g:372:3: lv_isFuture_1_0= '<X>'
                     {
                     lv_isFuture_1_0=(Token)match(input,15,FOLLOW_8); 
 
-                            newLeafNode(lv_isFuture_1_0, grammarAccess.getTERMAccess().getIsFutureFKeyword_0_1_0());
+                            newLeafNode(lv_isFuture_1_0, grammarAccess.getTERMAccess().getIsFutureXKeyword_0_1_0());
                         
 
                     	        if (current==null) {
                     	            current = createModelElement(grammarAccess.getTERMRule());
                     	        }
-                           		setWithLastConsumed(current, "isFuture", lv_isFuture_1_0, "<F>");
+                           		setWithLastConsumed(current, "isFuture", lv_isFuture_1_0, "<X>");
                     	    
 
                     }
@@ -1540,7 +1542,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                     if ( (LA8_2==RULE_ID) ) {
                         alt8=2;
                     }
-                    else if ( ((LA8_2>=22 && LA8_2<=28)) ) {
+                    else if ( ((LA8_2>=24 && LA8_2<=30)) ) {
                         alt8=1;
                     }
                     else {
@@ -1841,7 +1843,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
             // InternalStateMachineActions.g:713:1: ( ( ( ( (lv_isPast_0_0= '<P>' ) ) | ( (lv_isFuture_1_0= '<F>' ) ) )? ( (lv_param_2_0= RULE_ID ) ) ) | ( ( ( (lv_isPast_3_0= '<P>' ) ) | ( (lv_isFuture_4_0= '<F>' ) ) )? ( (lv_param_5_0= RULE_ID ) ) otherlv_6= ',' ( (lv_parameters_7_0= ruleParameters ) ) ) )
             int alt12=2;
             switch ( input.LA(1) ) {
-            case 14:
+            case 22:
                 {
                 int LA12_1 = input.LA(2);
 
@@ -1869,7 +1871,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                 }
                 }
                 break;
-            case 15:
+            case 23:
                 {
                 int LA12_2 = input.LA(2);
 
@@ -1933,10 +1935,10 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                     int alt10=3;
                     int LA10_0 = input.LA(1);
 
-                    if ( (LA10_0==14) ) {
+                    if ( (LA10_0==22) ) {
                         alt10=1;
                     }
-                    else if ( (LA10_0==15) ) {
+                    else if ( (LA10_0==23) ) {
                         alt10=2;
                     }
                     switch (alt10) {
@@ -1949,7 +1951,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                             // InternalStateMachineActions.g:714:1: (lv_isPast_0_0= '<P>' )
                             // InternalStateMachineActions.g:715:3: lv_isPast_0_0= '<P>'
                             {
-                            lv_isPast_0_0=(Token)match(input,14,FOLLOW_9); 
+                            lv_isPast_0_0=(Token)match(input,22,FOLLOW_9); 
 
                                     newLeafNode(lv_isPast_0_0, grammarAccess.getParametersAccess().getIsPastPKeyword_0_0_0_0());
                                 
@@ -1977,7 +1979,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                             // InternalStateMachineActions.g:730:1: (lv_isFuture_1_0= '<F>' )
                             // InternalStateMachineActions.g:731:3: lv_isFuture_1_0= '<F>'
                             {
-                            lv_isFuture_1_0=(Token)match(input,15,FOLLOW_9); 
+                            lv_isFuture_1_0=(Token)match(input,23,FOLLOW_9); 
 
                                     newLeafNode(lv_isFuture_1_0, grammarAccess.getParametersAccess().getIsFutureFKeyword_0_0_1_0());
                                 
@@ -2041,10 +2043,10 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                     int alt11=3;
                     int LA11_0 = input.LA(1);
 
-                    if ( (LA11_0==14) ) {
+                    if ( (LA11_0==22) ) {
                         alt11=1;
                     }
-                    else if ( (LA11_0==15) ) {
+                    else if ( (LA11_0==23) ) {
                         alt11=2;
                     }
                     switch (alt11) {
@@ -2057,7 +2059,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                             // InternalStateMachineActions.g:764:1: (lv_isPast_3_0= '<P>' )
                             // InternalStateMachineActions.g:765:3: lv_isPast_3_0= '<P>'
                             {
-                            lv_isPast_3_0=(Token)match(input,14,FOLLOW_9); 
+                            lv_isPast_3_0=(Token)match(input,22,FOLLOW_9); 
 
                                     newLeafNode(lv_isPast_3_0, grammarAccess.getParametersAccess().getIsPastPKeyword_1_0_0_0());
                                 
@@ -2085,7 +2087,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                             // InternalStateMachineActions.g:780:1: (lv_isFuture_4_0= '<F>' )
                             // InternalStateMachineActions.g:781:3: lv_isFuture_4_0= '<F>'
                             {
-                            lv_isFuture_4_0=(Token)match(input,15,FOLLOW_9); 
+                            lv_isFuture_4_0=(Token)match(input,23,FOLLOW_9); 
 
                                     newLeafNode(lv_isFuture_4_0, grammarAccess.getParametersAccess().getIsFutureFKeyword_1_0_1_0());
                                 
@@ -2246,37 +2248,37 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
             // InternalStateMachineActions.g:855:1: (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' )
             int alt13=7;
             switch ( input.LA(1) ) {
-            case 22:
+            case 24:
                 {
                 alt13=1;
                 }
                 break;
-            case 23:
+            case 25:
                 {
                 alt13=2;
                 }
                 break;
-            case 24:
+            case 26:
                 {
                 alt13=3;
                 }
                 break;
-            case 25:
+            case 27:
                 {
                 alt13=4;
                 }
                 break;
-            case 26:
+            case 28:
                 {
                 alt13=5;
                 }
                 break;
-            case 27:
+            case 29:
                 {
                 alt13=6;
                 }
                 break;
-            case 28:
+            case 30:
                 {
                 alt13=7;
                 }
@@ -2292,7 +2294,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                 case 1 :
                     // InternalStateMachineActions.g:856:2: kw= 'exit'
                     {
-                    kw=(Token)match(input,22,FOLLOW_2); 
+                    kw=(Token)match(input,24,FOLLOW_2); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getExitKeyword_0()); 
@@ -2303,7 +2305,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                 case 2 :
                     // InternalStateMachineActions.g:863:2: kw= 'enter'
                     {
-                    kw=(Token)match(input,23,FOLLOW_2); 
+                    kw=(Token)match(input,25,FOLLOW_2); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getEnterKeyword_1()); 
@@ -2314,7 +2316,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                 case 3 :
                     // InternalStateMachineActions.g:870:2: kw= 'start'
                     {
-                    kw=(Token)match(input,24,FOLLOW_2); 
+                    kw=(Token)match(input,26,FOLLOW_2); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getStartKeyword_2()); 
@@ -2325,7 +2327,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                 case 4 :
                     // InternalStateMachineActions.g:877:2: kw= 'end'
                     {
-                    kw=(Token)match(input,25,FOLLOW_2); 
+                    kw=(Token)match(input,27,FOLLOW_2); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getEndKeyword_3()); 
@@ -2336,7 +2338,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                 case 5 :
                     // InternalStateMachineActions.g:884:2: kw= 'tick'
                     {
-                    kw=(Token)match(input,26,FOLLOW_2); 
+                    kw=(Token)match(input,28,FOLLOW_2); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getTickKeyword_4()); 
@@ -2347,7 +2349,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                 case 6 :
                     // InternalStateMachineActions.g:891:2: kw= 'sig'
                     {
-                    kw=(Token)match(input,27,FOLLOW_2); 
+                    kw=(Token)match(input,29,FOLLOW_2); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getSigKeyword_5()); 
@@ -2358,7 +2360,7 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
                 case 7 :
                     // InternalStateMachineActions.g:898:2: kw= 'call'
                     {
-                    kw=(Token)match(input,28,FOLLOW_2); 
+                    kw=(Token)match(input,30,FOLLOW_2); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getCallKeyword_6()); 
@@ -2401,9 +2403,9 @@ public class InternalStateMachineActionsParser extends AbstractInternalAntlrPars
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000120000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x000000000000C010L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000C00010L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x000000001FC00000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x000000007F000000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000001000L});
 
 }

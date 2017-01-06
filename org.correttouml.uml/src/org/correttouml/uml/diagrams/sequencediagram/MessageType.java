@@ -1,5 +1,5 @@
 package org.correttouml.uml.diagrams.sequencediagram;
 
 public enum MessageType {
-    DELAYED, INSTANTANEOUS, RECURSIVE, ASYNCHCALL, REPLY 
+    DELAYED, INSTANTANEOUS, RECURSIVE, ASYNCHCALL, SYNCHCALL, REPLY 
 }

@@ -170,9 +170,9 @@ public class StateMachineActionsGrammarAccess extends AbstractGrammarElementFind
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
 		private final Assignment cIsPastAssignment_0_0 = (Assignment)cAlternatives_0.eContents().get(0);
-		private final Keyword cIsPastPKeyword_0_0_0 = (Keyword)cIsPastAssignment_0_0.eContents().get(0);
+		private final Keyword cIsPastYKeyword_0_0_0 = (Keyword)cIsPastAssignment_0_0.eContents().get(0);
 		private final Assignment cIsFutureAssignment_0_1 = (Assignment)cAlternatives_0.eContents().get(1);
-		private final Keyword cIsFutureFKeyword_0_1_0 = (Keyword)cIsFutureAssignment_0_1.eContents().get(0);
+		private final Keyword cIsFutureXKeyword_0_1_0 = (Keyword)cIsFutureAssignment_0_1.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Assignment cVariableAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
 		private final RuleCall cVariableIDTerminalRuleCall_1_0_0 = (RuleCall)cVariableAssignment_1_0.eContents().get(0);
@@ -180,26 +180,26 @@ public class StateMachineActionsGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cConstantINTTerminalRuleCall_1_1_0 = (RuleCall)cConstantAssignment_1_1.eContents().get(0);
 		
 		//TERM:
-		//	(isPast='<P>' | isFuture='<F>')? (variable=ID | constant=INT);
+		//	(isPast='<Y>' | isFuture='<X>')? (variable=ID | constant=INT);
 		public ParserRule getRule() { return rule; }
 
-		//(isPast='<P>' | isFuture='<F>')? (variable=ID | constant=INT)
+		//(isPast='<Y>' | isFuture='<X>')? (variable=ID | constant=INT)
 		public Group getGroup() { return cGroup; }
 
-		//(isPast='<P>' | isFuture='<F>')?
+		//(isPast='<Y>' | isFuture='<X>')?
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
-		//isPast='<P>'
+		//isPast='<Y>'
 		public Assignment getIsPastAssignment_0_0() { return cIsPastAssignment_0_0; }
 
-		//'<P>'
-		public Keyword getIsPastPKeyword_0_0_0() { return cIsPastPKeyword_0_0_0; }
+		//'<Y>'
+		public Keyword getIsPastYKeyword_0_0_0() { return cIsPastYKeyword_0_0_0; }
 
-		//isFuture='<F>'
+		//isFuture='<X>'
 		public Assignment getIsFutureAssignment_0_1() { return cIsFutureAssignment_0_1; }
 
-		//'<F>'
-		public Keyword getIsFutureFKeyword_0_1_0() { return cIsFutureFKeyword_0_1_0; }
+		//'<X>'
+		public Keyword getIsFutureXKeyword_0_1_0() { return cIsFutureXKeyword_0_1_0; }
 
 		//(variable=ID | constant=INT)
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
@@ -616,7 +616,7 @@ public class StateMachineActionsGrammarAccess extends AbstractGrammarElementFind
 	}
 
 	//TERM:
-	//	(isPast='<P>' | isFuture='<F>')? (variable=ID | constant=INT);
+	//	(isPast='<Y>' | isFuture='<X>')? (variable=ID | constant=INT);
 	public TERMElements getTERMAccess() {
 		return pTERM;
 	}

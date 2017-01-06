@@ -181,7 +181,7 @@ public class StateMachineActionsSemanticSequencer extends AbstractDelegatingSema
 	 *     TERM returns TERM
 	 *
 	 * Constraint:
-	 *     ((isPast='<P>' | isFuture='<F>')? (variable=ID | constant=INT))
+	 *     ((isPast='<Y>' | isFuture='<X>')? (variable=ID | constant=INT))
 	 */
 	protected void sequence_TERM(ISerializationContext context, TERM semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

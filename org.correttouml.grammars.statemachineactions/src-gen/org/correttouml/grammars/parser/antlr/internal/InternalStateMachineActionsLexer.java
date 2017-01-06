@@ -23,6 +23,7 @@ public class InternalStateMachineActionsLexer extends Lexer {
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
+    public static final int T__30=30;
     public static final int RULE_OPERATOR=5;
     public static final int RULE_ID=4;
     public static final int RULE_WS=10;
@@ -31,6 +32,7 @@ public class InternalStateMachineActionsLexer extends Lexer {
     public static final int T__27=27;
     public static final int T__28=28;
     public static final int RULE_INT=6;
+    public static final int T__29=29;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=8;
     public static final int T__23=23;
@@ -97,10 +99,10 @@ public class InternalStateMachineActionsLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalStateMachineActions.g:13:7: ( '<P>' )
-            // InternalStateMachineActions.g:13:9: '<P>'
+            // InternalStateMachineActions.g:13:7: ( '<Y>' )
+            // InternalStateMachineActions.g:13:9: '<Y>'
             {
-            match("<P>"); 
+            match("<Y>"); 
 
 
             }
@@ -118,10 +120,10 @@ public class InternalStateMachineActionsLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalStateMachineActions.g:14:7: ( '<F>' )
-            // InternalStateMachineActions.g:14:9: '<F>'
+            // InternalStateMachineActions.g:14:7: ( '<X>' )
+            // InternalStateMachineActions.g:14:9: '<X>'
             {
-            match("<F>"); 
+            match("<X>"); 
 
 
             }
@@ -260,10 +262,10 @@ public class InternalStateMachineActionsLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalStateMachineActions.g:21:7: ( 'exit' )
-            // InternalStateMachineActions.g:21:9: 'exit'
+            // InternalStateMachineActions.g:21:7: ( '<P>' )
+            // InternalStateMachineActions.g:21:9: '<P>'
             {
-            match("exit"); 
+            match("<P>"); 
 
 
             }
@@ -281,10 +283,10 @@ public class InternalStateMachineActionsLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalStateMachineActions.g:22:7: ( 'enter' )
-            // InternalStateMachineActions.g:22:9: 'enter'
+            // InternalStateMachineActions.g:22:7: ( '<F>' )
+            // InternalStateMachineActions.g:22:9: '<F>'
             {
-            match("enter"); 
+            match("<F>"); 
 
 
             }
@@ -302,10 +304,10 @@ public class InternalStateMachineActionsLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalStateMachineActions.g:23:7: ( 'start' )
-            // InternalStateMachineActions.g:23:9: 'start'
+            // InternalStateMachineActions.g:23:7: ( 'exit' )
+            // InternalStateMachineActions.g:23:9: 'exit'
             {
-            match("start"); 
+            match("exit"); 
 
 
             }
@@ -323,10 +325,10 @@ public class InternalStateMachineActionsLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalStateMachineActions.g:24:7: ( 'end' )
-            // InternalStateMachineActions.g:24:9: 'end'
+            // InternalStateMachineActions.g:24:7: ( 'enter' )
+            // InternalStateMachineActions.g:24:9: 'enter'
             {
-            match("end"); 
+            match("enter"); 
 
 
             }
@@ -344,10 +346,10 @@ public class InternalStateMachineActionsLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalStateMachineActions.g:25:7: ( 'tick' )
-            // InternalStateMachineActions.g:25:9: 'tick'
+            // InternalStateMachineActions.g:25:7: ( 'start' )
+            // InternalStateMachineActions.g:25:9: 'start'
             {
-            match("tick"); 
+            match("start"); 
 
 
             }
@@ -365,10 +367,10 @@ public class InternalStateMachineActionsLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalStateMachineActions.g:26:7: ( 'sig' )
-            // InternalStateMachineActions.g:26:9: 'sig'
+            // InternalStateMachineActions.g:26:7: ( 'end' )
+            // InternalStateMachineActions.g:26:9: 'end'
             {
-            match("sig"); 
+            match("end"); 
 
 
             }
@@ -386,8 +388,50 @@ public class InternalStateMachineActionsLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalStateMachineActions.g:27:7: ( 'call' )
-            // InternalStateMachineActions.g:27:9: 'call'
+            // InternalStateMachineActions.g:27:7: ( 'tick' )
+            // InternalStateMachineActions.g:27:9: 'tick'
+            {
+            match("tick"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__28"
+
+    // $ANTLR start "T__29"
+    public final void mT__29() throws RecognitionException {
+        try {
+            int _type = T__29;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalStateMachineActions.g:28:7: ( 'sig' )
+            // InternalStateMachineActions.g:28:9: 'sig'
+            {
+            match("sig"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__29"
+
+    // $ANTLR start "T__30"
+    public final void mT__30() throws RecognitionException {
+        try {
+            int _type = T__30;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalStateMachineActions.g:29:7: ( 'call' )
+            // InternalStateMachineActions.g:29:9: 'call'
             {
             match("call"); 
 
@@ -400,7 +444,7 @@ public class InternalStateMachineActionsLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__28"
+    // $ANTLR end "T__30"
 
     // $ANTLR start "RULE_OPERATOR"
     public final void mRULE_OPERATOR() throws RecognitionException {
@@ -929,8 +973,8 @@ public class InternalStateMachineActionsLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // InternalStateMachineActions.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | RULE_OPERATOR | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=25;
+        // InternalStateMachineActions.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | RULE_OPERATOR | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=27;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -1053,56 +1097,70 @@ public class InternalStateMachineActionsLexer extends Lexer {
                 }
                 break;
             case 18 :
-                // InternalStateMachineActions.g:1:112: RULE_OPERATOR
+                // InternalStateMachineActions.g:1:112: T__29
+                {
+                mT__29(); 
+
+                }
+                break;
+            case 19 :
+                // InternalStateMachineActions.g:1:118: T__30
+                {
+                mT__30(); 
+
+                }
+                break;
+            case 20 :
+                // InternalStateMachineActions.g:1:124: RULE_OPERATOR
                 {
                 mRULE_OPERATOR(); 
 
                 }
                 break;
-            case 19 :
-                // InternalStateMachineActions.g:1:126: RULE_ID
+            case 21 :
+                // InternalStateMachineActions.g:1:138: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 20 :
-                // InternalStateMachineActions.g:1:134: RULE_INT
+            case 22 :
+                // InternalStateMachineActions.g:1:146: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 21 :
-                // InternalStateMachineActions.g:1:143: RULE_STRING
+            case 23 :
+                // InternalStateMachineActions.g:1:155: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 22 :
-                // InternalStateMachineActions.g:1:155: RULE_ML_COMMENT
+            case 24 :
+                // InternalStateMachineActions.g:1:167: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 23 :
-                // InternalStateMachineActions.g:1:171: RULE_SL_COMMENT
+            case 25 :
+                // InternalStateMachineActions.g:1:183: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 24 :
-                // InternalStateMachineActions.g:1:187: RULE_WS
+            case 26 :
+                // InternalStateMachineActions.g:1:199: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 25 :
-                // InternalStateMachineActions.g:1:195: RULE_ANY_OTHER
+            case 27 :
+                // InternalStateMachineActions.g:1:207: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1116,83 +1174,85 @@ public class InternalStateMachineActionsLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\3\uffff\1\25\2\uffff\1\37\3\uffff\3\37\1\uffff\1\25\2\uffff\3\25\10\uffff\3\37\4\uffff\4\37\6\uffff\2\37\1\67\2\37\1\72\2\37\1\75\1\37\1\uffff\1\77\1\37\1\uffff\1\101\1\102\1\uffff\1\103\1\uffff\1\104\4\uffff";
+        "\3\uffff\1\25\2\uffff\1\41\3\uffff\3\41\1\uffff\1\25\2\uffff\3\25\12\uffff\3\41\4\uffff\4\41\6\uffff\2\41\1\71\2\41\1\74\2\41\1\77\1\41\1\uffff\1\101\1\41\1\uffff\1\103\1\104\1\uffff\1\105\1\uffff\1\106\4\uffff";
     static final String DFA12_eofS =
-        "\105\uffff";
+        "\107\uffff";
     static final String DFA12_minS =
-        "\1\0\2\uffff\1\106\2\uffff\1\145\3\uffff\1\156\1\151\1\141\1\uffff\1\101\2\uffff\2\0\1\52\10\uffff\1\154\1\141\1\147\4\uffff\1\151\1\144\1\143\1\154\6\uffff\1\146\1\162\1\60\1\164\1\145\1\60\1\153\1\154\1\60\1\164\1\uffff\1\60\1\162\1\uffff\2\60\1\uffff\1\60\1\uffff\1\60\4\uffff";
+        "\1\0\2\uffff\1\106\2\uffff\1\145\3\uffff\1\156\1\151\1\141\1\uffff\1\101\2\uffff\2\0\1\52\12\uffff\1\154\1\141\1\147\4\uffff\1\151\1\144\1\143\1\154\6\uffff\1\146\1\162\1\60\1\164\1\145\1\60\1\153\1\154\1\60\1\164\1\uffff\1\60\1\162\1\uffff\2\60\1\uffff\1\60\1\uffff\1\60\4\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\2\uffff\1\120\2\uffff\1\164\3\uffff\1\170\1\151\1\141\1\uffff\1\172\2\uffff\2\uffff\1\57\10\uffff\1\154\1\141\1\147\4\uffff\1\151\1\164\1\143\1\154\6\uffff\1\146\1\162\1\172\1\164\1\145\1\172\1\153\1\154\1\172\1\164\1\uffff\1\172\1\162\1\uffff\2\172\1\uffff\1\172\1\uffff\1\172\4\uffff";
+        "\1\uffff\2\uffff\1\131\2\uffff\1\164\3\uffff\1\170\1\151\1\141\1\uffff\1\172\2\uffff\2\uffff\1\57\12\uffff\1\154\1\141\1\147\4\uffff\1\151\1\164\1\143\1\154\6\uffff\1\146\1\162\1\172\1\164\1\145\1\172\1\153\1\154\1\172\1\164\1\uffff\1\172\1\162\1\uffff\2\172\1\uffff\1\172\1\uffff\1\172\4\uffff";
     static final String DFA12_acceptS =
-        "\1\uffff\1\1\1\2\1\uffff\1\5\1\6\1\uffff\1\10\1\11\1\12\3\uffff\1\22\1\uffff\1\23\1\24\3\uffff\1\30\1\31\1\1\1\2\1\3\1\4\1\5\1\6\3\uffff\1\23\1\10\1\11\1\12\4\uffff\1\22\1\24\1\25\1\26\1\27\1\30\12\uffff\1\20\2\uffff\1\16\2\uffff\1\7\1\uffff\1\13\1\uffff\1\17\1\21\1\15\1\14";
+        "\1\uffff\1\1\1\2\1\uffff\1\5\1\6\1\uffff\1\10\1\11\1\12\3\uffff\1\24\1\uffff\1\25\1\26\3\uffff\1\32\1\33\1\1\1\2\1\3\1\4\1\13\1\14\1\5\1\6\3\uffff\1\25\1\10\1\11\1\12\4\uffff\1\24\1\26\1\27\1\30\1\31\1\32\12\uffff\1\22\2\uffff\1\20\2\uffff\1\7\1\uffff\1\15\1\uffff\1\21\1\23\1\17\1\16";
     static final String DFA12_specialS =
-        "\1\0\20\uffff\1\2\1\1\62\uffff}>";
+        "\1\0\20\uffff\1\1\1\2\64\uffff}>";
     static final String[] DFA12_transitionS = {
             "\11\25\2\24\2\25\1\24\22\25\1\24\1\25\1\21\1\4\3\25\1\22\1\10\1\11\2\15\1\1\1\15\1\5\1\23\12\20\2\25\1\3\1\2\2\25\1\7\32\17\3\25\1\16\1\17\1\25\2\17\1\14\1\17\1\12\15\17\1\6\1\13\6\17\uff85\25",
             "",
             "",
-            "\1\31\11\uffff\1\30",
+            "\1\33\11\uffff\1\32\7\uffff\1\31\1\30",
             "",
             "",
-            "\1\34\3\uffff\1\36\12\uffff\1\35",
-            "",
-            "",
-            "",
-            "\1\44\11\uffff\1\43",
-            "\1\45",
-            "\1\46",
-            "",
-            "\32\37\4\uffff\1\37\1\uffff\32\37",
-            "",
-            "",
-            "\0\51",
-            "\0\51",
-            "\1\52\4\uffff\1\53",
+            "\1\36\3\uffff\1\40\12\uffff\1\37",
             "",
             "",
             "",
+            "\1\46\11\uffff\1\45",
+            "\1\47",
+            "\1\50",
+            "",
+            "\32\41\4\uffff\1\41\1\uffff\32\41",
+            "",
+            "",
+            "\0\53",
+            "\0\53",
+            "\1\54\4\uffff\1\55",
             "",
             "",
             "",
             "",
             "",
-            "\1\55",
-            "\1\56",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\57",
-            "",
-            "",
-            "",
-            "",
             "\1\60",
-            "\1\62\17\uffff\1\61",
-            "\1\63",
-            "\1\64",
+            "\1\61",
             "",
             "",
             "",
             "",
-            "",
-            "",
+            "\1\62",
+            "\1\64\17\uffff\1\63",
             "\1\65",
             "\1\66",
-            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
-            "\1\70",
-            "\1\71",
-            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
-            "\1\73",
-            "\1\74",
-            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
-            "\1\76",
             "",
-            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\67",
+            "\1\70",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\1\72",
+            "\1\73",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\1\75",
+            "\1\76",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
             "\1\100",
             "",
-            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
-            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\1\102",
             "",
-            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
             "",
-            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
             "",
             "",
             "",
@@ -1229,7 +1289,7 @@ public class InternalStateMachineActionsLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | RULE_OPERATOR | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | RULE_OPERATOR | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
@@ -1284,20 +1344,20 @@ public class InternalStateMachineActionsLexer extends Lexer {
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA12_18 = input.LA(1);
+                        int LA12_17 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_18>='\u0000' && LA12_18<='\uFFFF')) ) {s = 41;}
+                        if ( ((LA12_17>='\u0000' && LA12_17<='\uFFFF')) ) {s = 43;}
 
                         else s = 21;
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA12_17 = input.LA(1);
+                        int LA12_18 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_17>='\u0000' && LA12_17<='\uFFFF')) ) {s = 41;}
+                        if ( ((LA12_18>='\u0000' && LA12_18<='\uFFFF')) ) {s = 43;}
 
                         else s = 21;
 

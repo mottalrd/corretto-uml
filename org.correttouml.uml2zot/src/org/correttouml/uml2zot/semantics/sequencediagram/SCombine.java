@@ -7,6 +7,7 @@ import org.correttouml.uml.diagrams.sequencediagram.*;
 import org.correttouml.uml2zot.semantics.sequencediagram.SInteractionOperand;
 import org.correttouml.uml2zot.semantics.util.bool.*;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
+import org.correttouml.uml2zot.semantics.util.trio.Until_ei;
 
 /**
 *@author Mohammad Mehdi Pourhashem Kallehbasti 
@@ -251,6 +252,11 @@ public class SCombine implements BooleanFormulae{
 								// // }
 							}
 							//</Separation>
+							//<SynMessage>
+							ArrayList<BooleanFormulae> syncWithReplyBF = getSyncWithReplyBF(liEvents);
+							if (syncWithReplyBF.size() > 0)
+								f.addAll(syncWithReplyBF);
+							//</SynMessage>
 						}
 					}
 					// // for (j = 1; j < EV[i].size - 1; j++){
@@ -536,7 +542,11 @@ public class SCombine implements BooleanFormulae{
 							// // }
 							}
 				            //</Separation>
-						
+							//<SynMessage>
+							ArrayList<BooleanFormulae> syncWithReplyBF = getSyncWithReplyBF(liEvents);
+							if (syncWithReplyBF.size() > 0)
+								f.addAll(syncWithReplyBF);
+							//</SynMessage>
 						}
 						
 						// // EV[i][EV[i].size-1] => module_Li_End 	//in WS and (last event = CF_X) module_Li_End <=> CF_X_Li_End. in SYNC and (last event = CF_X) module_Li_End <=> CF_X_End 
@@ -708,6 +718,60 @@ public class SCombine implements BooleanFormulae{
 			return separate(m1, group2.get(0));
 		else
 			return (new Implies(m1, new Not(new Or(group2))));
+	}
+	
+	/*Considering a specific lifeline, no message can follow
+	 *a synchronous message except its reply, whereas there is
+	 *no such constraint for asynchronous messages. In other words,
+	 *sender of a synchronous message (m1Synch) cannot send further
+	 *messages before receiving the reply message (m1SynchReply), and
+	 *sender of an asynchronous message (m1Asynch) can send and receive
+	 *further messages before it receives the reply message (m1AsynchReply).
+	 * 
+	 */
+	/**
+	 * @param liEvents
+	 * @return Formulae that force each synchronous message to be followed by its reply and not other messages.
+	 */
+	public ArrayList<BooleanFormulae> getSyncWithReplyBF(List<InteractionFragment> liEvents){
+		ArrayList<BooleanFormulae> f = new ArrayList<BooleanFormulae>();
+		int evSize = liEvents.size();
+		for (int j = 0; j < evSize - 1; j++) {
+			InteractionFragment liEvj = liEvents.get(j);
+			Predicate syncMStart = null;
+			Predicate syncMReplyEnd = null;
+			if (liEvj instanceof MessageStart && ((MessageStart)liEvj).getMessage().getMessageType() == MessageType.SYNCHCALL) {
+				ArrayList<Predicate> messagesBeforeReply = new ArrayList<Predicate>();
+				syncMStart = new SMessageStart((MessageStart)liEvj).getPredicate();
+				InteractionFragment liEvjReply = null;
+				int indexOfReply = 0;
+				for (int k = j + 1; k < evSize; k++) {//Find its reply.
+					liEvjReply = liEvents.get(k);
+					if (liEvjReply instanceof MessageEnd && ((MessageEnd)liEvjReply).getMessage().getMessageType() == MessageType.REPLY){
+						syncMReplyEnd = new SMessageEnd((MessageEnd)liEvjReply).getPredicate();
+						indexOfReply = k;
+						break;
+					}
+				}
+				for (int j2k = j + 1; j2k < indexOfReply; j2k++){
+					if (liEvents.get(j2k) instanceof MessageStart)
+						messagesBeforeReply.add(new SMessageStart((MessageStart) liEvents.get(j2k)).getPredicate());
+					else if (liEvents.get(j2k) instanceof MessageEnd)
+						messagesBeforeReply.add(new SMessageEnd((MessageEnd) liEvents.get(j2k)).getPredicate());
+				}
+				if (messagesBeforeReply.size() > 0 && syncMReplyEnd != null){
+					Or firstOr = new Or(messagesBeforeReply);
+					firstOr.addFormulae(syncMStart);
+					firstOr.addFormulae(syncMReplyEnd);
+					Or secondOr = new Or(messagesBeforeReply);
+					secondOr.addFormulae(syncMStart);
+					secondOr.addFormulae(ssd.getPredicate().getStopPredicate());
+//					(-> syncMStart (|| (until_ei (!! (|| syncMStart messagesBeforeReply syncMReplyEnd) exception) (until_ei (!! (|| syncMStart messagesBeforeReply exception)) syncMReplyEnd)))
+					f.add(new Implies(syncMStart, new Or(new Until_ei(new Not(firstOr), ssd.getPredicate().getStopPredicate()), new Until_ei(new Not(secondOr), syncMReplyEnd))));
+				}
+			}
+		}
+		return f;
 	}
 
 }

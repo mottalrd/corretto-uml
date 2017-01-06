@@ -23,6 +23,7 @@ public class Test1 {
 	//private String MODEL_FILE="testmodels/sequencediagram/test2/model.uml";
 	//private String MODEL_FILE="testmodels/sequencediagram/test3/model.uml";
 	//private String MODEL_FILE="testmodels/sequencediagram/test4/model.uml";
+	private String MODEL_FILE="testmodels/sequencediagram/SynchMessage/model.uml";
 	
 	/** STATE DIAGRAM TESTING */
 //	private String MODEL_FILE="testmodels/statediagram/test1/model.uml";
@@ -41,13 +42,13 @@ public class Test1 {
 //	private String MODEL_FILE="testmodels/AD/ccasDraft/model.uml";
 	
 	/** TXT RADAR MODEL */
-	//private String MODEL_FILE="testmodels/txt/v0.1/model.uml";
+//	private String MODEL_FILE="testmodels/txt/v0.1/model.uml";
 	
 	/** CASSIDIAN RADAR MODEL */
 	//private String MODEL_FILE="testmodels/cassidian/model.uml";
 	
 	/** OMEGA ATM MODEL */
-	private String MODEL_FILE="testmodels/atm_omega/v0.1/model.uml";
+//	private String MODEL_FILE="testmodels/atm_omega/v0.1/model.uml";
 	
 	/** SD and StD **/
 //	private String MODEL_FILE="testmodels/SD_and_StD/test1/model.uml";

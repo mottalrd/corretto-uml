@@ -58,6 +58,8 @@ public class Message implements PTermElement {
 			return MessageType.ASYNCHCALL;
 		if (uml_message.getMessageSort() == MessageSort.REPLY_LITERAL)
 			return MessageType.REPLY;
+		if (uml_message.getMessageSort() == MessageSort.SYNCH_CALL_LITERAL)
+			return MessageType.SYNCHCALL;
 		
 		//TODO: Non so ancora come distinguere tra un messaggio orizzontale e uno obliquo
 		return MessageType.INSTANTANEOUS;

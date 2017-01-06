@@ -353,32 +353,32 @@ ruleTERM returns [EObject current=null]
     @after { leaveRule(); }:
 (((
 (
-		lv_isPast_0_0=	'<P>' 
+		lv_isPast_0_0=	'<Y>' 
     {
-        newLeafNode(lv_isPast_0_0, grammarAccess.getTERMAccess().getIsPastPKeyword_0_0_0());
+        newLeafNode(lv_isPast_0_0, grammarAccess.getTERMAccess().getIsPastYKeyword_0_0_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getTERMRule());
 	        }
-       		setWithLastConsumed($current, "isPast", lv_isPast_0_0, "<P>");
+       		setWithLastConsumed($current, "isPast", lv_isPast_0_0, "<Y>");
 	    }
 
 )
 )
     |(
 (
-		lv_isFuture_1_0=	'<F>' 
+		lv_isFuture_1_0=	'<X>' 
     {
-        newLeafNode(lv_isFuture_1_0, grammarAccess.getTERMAccess().getIsFutureFKeyword_0_1_0());
+        newLeafNode(lv_isFuture_1_0, grammarAccess.getTERMAccess().getIsFutureXKeyword_0_1_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getTERMRule());
 	        }
-       		setWithLastConsumed($current, "isFuture", lv_isFuture_1_0, "<F>");
+       		setWithLastConsumed($current, "isFuture", lv_isFuture_1_0, "<X>");
 	    }
 
 )

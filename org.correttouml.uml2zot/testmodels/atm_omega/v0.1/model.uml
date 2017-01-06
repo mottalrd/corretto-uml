@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CorrettoUML.VerificationTags="http:///CorrettoUML/VerificationTags.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///CorrettoUML/VerificationTags.ecore ../../../../org.correttouml.profiles/resources/model.profile.uml#_-4stW5ULEea1kdccITC-yQ">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CorrettoUML.VerificationTags="http:///CorrettoUML/VerificationTags.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///CorrettoUML/VerificationTags.ecore ../../../../org.correttouml.profiles/resources/model.profile.uml#_pFp2XdKZEea6e53zfdOTBg">
   <uml:Model xmi:id="_UzILIDSbEeKHnb_Vy6iALg" name="Model">
     <packagedElement xmi:type="uml:Package" xmi:id="_QQClADScEeKHnb_Vy6iALg" name="System">
       <ownedRule xmi:type="uml:Constraint" xmi:id="_YFhTkJRzEeaRo6wfaLZqOA" name="Property">
@@ -43,7 +43,7 @@
             <transition xmi:type="uml:Transition" xmi:id="_n7zfoDSwEeKHnb_Vy6iALg" name="Transition0" source="_kEvHcDSwEeKHnb_Vy6iALg" target="_kxp30DSwEeKHnb_Vy6iALg"/>
             <transition xmi:type="uml:Transition" xmi:id="_qWKCMDSwEeKHnb_Vy6iALg" name="@atm_insertCard.call / #aTM_cardReader_1.cardReader@cr_readCard.call" source="_kxp30DSwEeKHnb_Vy6iALg" target="_kxp30DSwEeKHnb_Vy6iALg"/>
             <transition xmi:type="uml:Transition" xmi:id="_xNFdwDSwEeKHnb_Vy6iALg" name="@atm_verifyPin.call / #aTM_console_1.console@cs_verifyPin.call" source="_kxp30DSwEeKHnb_Vy6iALg" target="_kxp30DSwEeKHnb_Vy6iALg"/>
-            <transition xmi:type="uml:Transition" xmi:id="_AJ_h8DSxEeKHnb_Vy6iALg" name="@atm_selectAmount.call / #aTM_console_1.console@cs_selectAmount(&lt;P>amount).call" source="_kxp30DSwEeKHnb_Vy6iALg" target="_kxp30DSwEeKHnb_Vy6iALg"/>
+            <transition xmi:type="uml:Transition" xmi:id="_AJ_h8DSxEeKHnb_Vy6iALg" name="@atm_selectAmount.call / #aTM_console_1.console@cs_selectAmount(&lt;Y>amount).call" source="_kxp30DSwEeKHnb_Vy6iALg" target="_kxp30DSwEeKHnb_Vy6iALg"/>
             <transition xmi:type="uml:Transition" xmi:id="_Wa2U4DSxEeKHnb_Vy6iALg" name="@atm_notifyPinDeclined.call / #user_aTM_1.user@usr_notifyPinDeclined.call" source="_kxp30DSwEeKHnb_Vy6iALg" target="_kxp30DSwEeKHnb_Vy6iALg"/>
             <transition xmi:type="uml:Transition" xmi:id="_8sAisDSxEeKHnb_Vy6iALg" name="@atm_notifyPinAccepted.call / #user_aTM_1.user@usr_notifyPinAccepted.call" source="_kxp30DSwEeKHnb_Vy6iALg" target="_kxp30DSwEeKHnb_Vy6iALg"/>
             <transition xmi:type="uml:Transition" xmi:id="_xFfVEDS9EeKHnb_Vy6iALg" name="@atm_notifyCardEjected.call  / #user_aTM_1.user@usr_notifyCardEjected.call" source="_kxp30DSwEeKHnb_Vy6iALg" target="_kxp30DSwEeKHnb_Vy6iALg"/>
@@ -128,7 +128,7 @@
             <transition xmi:type="uml:Transition" xmi:id="_F428sDTGEeKHnb_Vy6iALg" name="@ctr_verifyPin.call / #cardReader_controller_1.cardReader@cr_verifyPin.call" source="_9hawoDTFEeKHnb_Vy6iALg" target="_EE1aUDTGEeKHnb_Vy6iALg"/>
             <transition xmi:type="uml:Transition" xmi:id="_RqsMADTGEeKHnb_Vy6iALg" name="@ctr_notifyPinAccepted.call / #console_controller_1.console@cs_notifyPinAccepted.call" source="_EE1aUDTGEeKHnb_Vy6iALg" target="_P5xA8DTGEeKHnb_Vy6iALg"/>
             <transition xmi:type="uml:Transition" xmi:id="_nMT6YDTGEeKHnb_Vy6iALg" name="@ctr_notifyPinDeclined.call / #console_controller_1.console@cs_notifyPinDeclined.call" source="_EE1aUDTGEeKHnb_Vy6iALg" target="_CEFgADTFEeKHnb_Vy6iALg"/>
-            <transition xmi:type="uml:Transition" xmi:id="_OlL-MDTHEeKHnb_Vy6iALg" name="@ctr_selectAmount.call / amount_requested=&lt;P>amount" source="_P5xA8DTGEeKHnb_Vy6iALg" target="_r53JID2OEeKDLbajGyL_Pg"/>
+            <transition xmi:type="uml:Transition" xmi:id="_OlL-MDTHEeKHnb_Vy6iALg" name="@ctr_selectAmount.call / amount_requested=&lt;Y>amount" source="_P5xA8DTGEeKHnb_Vy6iALg" target="_r53JID2OEeKDLbajGyL_Pg"/>
             <transition xmi:type="uml:Transition" xmi:id="_cZPj8DTHEeKHnb_Vy6iALg" name="@ctr_notifyWithdrawalDeclined.call / #console_controller_1.console@cs_notifyWithdrawalDeclined.call" source="_c5tpMDTGEeKHnb_Vy6iALg" target="_CEFgADTFEeKHnb_Vy6iALg"/>
             <transition xmi:type="uml:Transition" xmi:id="_re9l4DTHEeKHnb_Vy6iALg" name="@ctr_notifyWithdrawalAccepted.call / #console_controller_1.console@cs_notifyWithdrawalAccepted.call" source="_c5tpMDTGEeKHnb_Vy6iALg" target="_O-xwoDTMEeKHnb_Vy6iALg"/>
             <transition xmi:type="uml:Transition" xmi:id="_Y_jSADTMEeKHnb_Vy6iALg" name="/ #controller_cashDispenser_1.cashDispenser@cd_releaseMoney(amount_requested).call" source="_O-xwoDTMEeKHnb_Vy6iALg" target="_WdioQDTMEeKHnb_Vy6iALg"/>
@@ -173,7 +173,7 @@
           <region xmi:type="uml:Region" xmi:id="_DiLWADTCEeKHnb_Vy6iALg" name="Region1">
             <transition xmi:type="uml:Transition" xmi:id="_yJQs8DTCEeKHnb_Vy6iALg" name="Transition0" source="_vA3YoDTCEeKHnb_Vy6iALg" target="_wMalwDTCEeKHnb_Vy6iALg"/>
             <transition xmi:type="uml:Transition" xmi:id="_9Tr-ADTCEeKHnb_Vy6iALg" name="@cs_verifyPin.call / #console_controller_1.controller@ctr_verifyPin.call" source="_wMalwDTCEeKHnb_Vy6iALg" target="_wMalwDTCEeKHnb_Vy6iALg"/>
-            <transition xmi:type="uml:Transition" xmi:id="_ZRzOsDTDEeKHnb_Vy6iALg" name="@cs_selectAmount.call / #console_controller_1.controller@ctr_selectAmount(&lt;P>amount).call" source="_wMalwDTCEeKHnb_Vy6iALg" target="_wMalwDTCEeKHnb_Vy6iALg"/>
+            <transition xmi:type="uml:Transition" xmi:id="_ZRzOsDTDEeKHnb_Vy6iALg" name="@cs_selectAmount.call / #console_controller_1.controller@ctr_selectAmount(&lt;Y>amount).call" source="_wMalwDTCEeKHnb_Vy6iALg" target="_wMalwDTCEeKHnb_Vy6iALg"/>
             <transition xmi:type="uml:Transition" xmi:id="_jlGqgDTDEeKHnb_Vy6iALg" name="@cs_notifyPinAccepted.call / #aTM_console_1.aTM@atm_notifyPinAccepted.call" source="_wMalwDTCEeKHnb_Vy6iALg" target="_wMalwDTCEeKHnb_Vy6iALg"/>
             <transition xmi:type="uml:Transition" xmi:id="_wDQ0UDTDEeKHnb_Vy6iALg" name="@cs_notifyPinDeclined.call / #aTM_console_1.aTM@atm_notifyPinDeclined.call" source="_wMalwDTCEeKHnb_Vy6iALg" target="_wMalwDTCEeKHnb_Vy6iALg"/>
             <transition xmi:type="uml:Transition" xmi:id="_3_ttgDTDEeKHnb_Vy6iALg" name="@cs_notifyWithdrawalAccepted.call / #aTM_console_1.aTM@atm_notifyWithdrawalAccepted.call" source="_wMalwDTCEeKHnb_Vy6iALg" target="_wMalwDTCEeKHnb_Vy6iALg"/>
@@ -326,16 +326,30 @@
         </slot>
       </packagedElement>
       <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Fsk-sFHKEeafnNewOq0xYg">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KuDggNKrEea6e53zfdOTBg" source="PapyrusVersion">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KuDggdKrEea6e53zfdOTBg" key="Version" value="0.0.14"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KuDggtKrEea6e53zfdOTBg" key="Comment" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KuDgg9KrEea6e53zfdOTBg" key="Copyright" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KuDghNKrEea6e53zfdOTBg" key="Date" value="2017-01-04"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KuDghdKrEea6e53zfdOTBg" key="Author" value=""/>
+        </eAnnotations>
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FtdIcFHKEeafnNewOq0xYg" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <references xmi:type="ecore:EPackage" href="../../../../org.correttouml.profiles/resources/model.profile.uml#_-4stQJULEea1kdccITC-yQ"/>
+          <references xmi:type="ecore:EPackage" href="../../../../org.correttouml.profiles/resources/model.profile.uml#_pFp2QNKZEea6e53zfdOTBg"/>
         </eAnnotations>
         <appliedProfile xmi:type="uml:Profile" href="../../../../org.correttouml.profiles/resources/model.profile.uml#_DCylYIJgEeKaWIAr5_BKMw"/>
       </profileApplication>
     </packagedElement>
     <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N6tL0F4BEeaJbczAw2NuTg" name="Integer"/>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Cup1AFHKEeafnNewOq0xYg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KuNRgNKrEea6e53zfdOTBg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KuNRgdKrEea6e53zfdOTBg" key="Version" value="0.0.14"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KuNRgtKrEea6e53zfdOTBg" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KuNRg9KrEea6e53zfdOTBg" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KuNRhNKrEea6e53zfdOTBg" key="Date" value="2017-01-04"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KuNRhdKrEea6e53zfdOTBg" key="Author" value=""/>
+      </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CwDjMFHKEeafnNewOq0xYg" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="../../../../org.correttouml.profiles/resources/model.profile.uml#_-4stQJULEea1kdccITC-yQ"/>
+        <references xmi:type="ecore:EPackage" href="../../../../org.correttouml.profiles/resources/model.profile.uml#_pFp2QNKZEea6e53zfdOTBg"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="../../../../org.correttouml.profiles/resources/model.profile.uml#_DCylYIJgEeKaWIAr5_BKMw"/>
     </profileApplication>

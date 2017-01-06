@@ -1016,7 +1016,7 @@
       <styles xmi:type="notation:LineStyle" xmi:id="_tOQLFMuNEeaq4ZJ-RCS8lQ"/>
       <element xmi:type="uml:Message" href="model.uml#_tNevAMuNEeaq4ZJ-RCS8lQ"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tOPkAsuNEeaq4ZJ-RCS8lQ" points="[1, 0, -158, -10]$[175, 10, 16, 0]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOgCsMuNEeaq4ZJ-RCS8lQ" id="(0.0,0.26305218110872736)"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOgCsMuNEeaq4ZJ-RCS8lQ" id="(0.0,0.2709725718913595)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOgCscuNEeaq4ZJ-RCS8lQ" id="(0.0,0.0){8}"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_Y6zDgMuOEeaq4ZJ-RCS8lQ" type="Message_AsynchEdge" source="_riUNsMuNEeaq4ZJ-RCS8lQ" target="_wDt8MAN_EeKTXbQztILh3g">
@@ -1031,7 +1031,7 @@
       <element xmi:type="uml:Message" href="model.uml#_Y6TUQMuOEeaq4ZJ-RCS8lQ"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Y6zDgsuOEeaq4ZJ-RCS8lQ" points="[16, 0, -122, -20]$[138, 20, 0, 0]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Y7BF8MuOEeaq4ZJ-RCS8lQ" id="(0.0,1.0){32}"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Y7BF8cuOEeaq4ZJ-RCS8lQ" id="(0.0,0.6197331046459846){R}"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Y7BF8cuOEeaq4ZJ-RCS8lQ" id="(0.0,0.6383930083542194){R}"/>
     </edges>
   </notation:Diagram>
   <notation:Diagram xmi:id="_5dNJMAOBEeKTXbQztILh3g" type="PapyrusUMLSequenceDiagram" name="sendBrakeCommand" measurementUnit="Pixel">
@@ -1158,7 +1158,7 @@
       </styles>
       <element xmi:type="uml:Message" href="model.uml#__Xcz0MuHEeaTl4sg7dKNpQ"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__YWLssuHEeaTl4sg7dKNpQ" points="[1, 0, -136, -18]$[153, 18, 16, 0]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__YtYEMuHEeaTl4sg7dKNpQ" id="(0.0,0.2512869444948603)"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__YtYEMuHEeaTl4sg7dKNpQ" id="(0.0,0.25589287001018624)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="__YtYEcuHEeaTl4sg7dKNpQ" id="(0.0,0.0){8}"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_m8lOIMuMEeaq4ZJ-RCS8lQ" type="Message_AsynchEdge" source="_99cT8MuHEeaTl4sg7dKNpQ" target="_80SZwAOBEeKTXbQztILh3g">
@@ -1173,7 +1173,7 @@
       <element xmi:type="uml:Message" href="model.uml#_m7khgMuMEeaq4ZJ-RCS8lQ"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_m8lOIsuMEeaq4ZJ-RCS8lQ" points="[16, 0, -126, -16]$[142, 16, 0, 0]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m89ooMuMEeaq4ZJ-RCS8lQ" id="(0.0,1.0){32}"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m8-PsMuMEeaq4ZJ-RCS8lQ" id="(0.0,0.5355531623236248){R}"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m8-PsMuMEeaq4ZJ-RCS8lQ" id="(0.0,0.5453695018876182){R}"/>
     </edges>
   </notation:Diagram>
   <notation:Diagram xmi:id="_4vOzcAOCEeKTXbQztILh3g" type="PapyrusUMLStateMachineDiagram" name="brakingSM" measurementUnit="Pixel">
@@ -2198,8 +2198,8 @@
       </styles>
       <element xmi:type="uml:Message" href="model.uml#_vUN5EIYgEeaMiq1KEvWkRw"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_vUXDA4YgEeaMiq1KEvWkRw" points="[0, 0, 0, -44]$[-62, 0, -62, -44]$[-62, 44, -62, 0]$[0, 44, 0, 0]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_vUoIwIYgEeaMiq1KEvWkRw" id="(0.0,0.31027024219966726)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_vUoIwYYgEeaMiq1KEvWkRw" id="(0.0,0.7368918252242095){L}"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_vUoIwIYgEeaMiq1KEvWkRw" id="(0.0,0.33069900979739175)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_vUoIwYYgEeaMiq1KEvWkRw" id="(0.0,0.7854101482688054){L}"/>
     </edges>
   </notation:Diagram>
 </xmi:XMI>

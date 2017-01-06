@@ -243,7 +243,7 @@ public class FisherProtocol {
 				"[(id==pid)]");
 		UML2Helper.createTransition(process_SM, STATE_WAIT, STATE_FISHERP,
 				"[(id!=pid)]");
-		UML2Helper.createTransition(process_SM, STATE_CS, STATE_EXIT, "/counter=<P>counter+1");
-		UML2Helper.createTransition(process_SM, STATE_EXIT, STATE_FISHERP, "/id=0-1, counter=<P>counter-1");
+		UML2Helper.createTransition(process_SM, STATE_CS, STATE_EXIT, "/counter=<Y>counter+1");
+		UML2Helper.createTransition(process_SM, STATE_EXIT, STATE_FISHERP, "/id=0-1, counter=<Y>counter-1");
 	}
 }

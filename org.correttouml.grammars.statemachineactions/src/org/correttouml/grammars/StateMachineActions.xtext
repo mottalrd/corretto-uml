@@ -27,7 +27,7 @@ EXPRESSION:
 
 TERM:
 	//we can decide if we want the value at the previous time instant or at the next
-	(isPast='<P>' | isFuture='<F>')? (variable=ID | constant=INT)
+	(isPast='<Y>' | isFuture='<X>')? (variable=ID | constant=INT)
 ;
 
 terminal OPERATOR:

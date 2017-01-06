@@ -379,26 +379,26 @@ public class LeaderElection {
 		// initial transition
 		UML2Helper.createTransition(process_SM, STATE_0, STATE_INIT, "");
 		UML2Helper.createTransition(process_SM, STATE_INIT, STATE_MAIN,//main
-				"@setId.call / mynumber=<P>myId, @out.one(mynumber).call, max=mynumber");
+				"@setId.call / mynumber=<Y>myId, @out.one(mynumber).call, max=mynumber");
 		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN,
-				"@one.call[(active==0)]/@out.one(<P>one_nr).call");
+				"@one.call[(active==0)]/@out.one(<Y>one_nr).call");
 		// no active, just pass the message
 		UML2Helper.createTransition(process_SM, STATE_MAIN, STATE_MAIN,
-				"@two.call[(active==0)]/@out.two(<P>two_nr).call");
+				"@two.call[(active==0)]/@out.two(<Y>two_nr).call");
 		// active, receive one and pass the info
 		UML2Helper
 				.createTransition(
 						process_SM,
 						STATE_MAIN,
 						STATE_MAIN,
-						"@one.call[(active==1) && (one_nr!=max)]/@out.two(<P>one_nr).call, neighbourR=<P>one_nr");
+						"@one.call[(active==1) && (one_nr!=max)]/@out.two(<Y>one_nr).call, neighbourR=<Y>one_nr");
 		// active, receive two and keep playing
 		UML2Helper
 				.createTransition(
 						process_SM,
 						STATE_MAIN,
 						STATE_MAIN,
-						"@two.call[(active==1) && (neighbourR>two_nr) && (neighbourR>max)]/max=<P>neighbourR, @out.one(<P>neighbourR).call");
+						"@two.call[(active==1) && (neighbourR>two_nr) && (neighbourR>max)]/max=<Y>neighbourR, @out.one(<Y>neighbourR).call");
 		// active, receive two and go out of the game
 		UML2Helper
 				.createTransition(
@@ -409,15 +409,15 @@ public class LeaderElection {
 		// winner found, communicate the winner
 		UML2Helper
 				.createTransition(process_SM, STATE_MAIN, STATE_MAIN,
-						"@one.call[(active==1) && (one_nr==max)]/@out.winner(<P>one_nr).call, @we_have_winner.sig");
+						"@one.call[(active==1) && (one_nr==max)]/@out.winner(<Y>one_nr).call, @we_have_winner.sig");
 		// received winner communication, it is me
 		UML2Helper
 				.createTransition(process_SM, STATE_MAIN, STATE_WIN,
-						"@winner.call[(win_nr==mynumber)]/@out.winner(<P>win_nr).call");
+						"@winner.call[(win_nr==mynumber)]/@out.winner(<Y>win_nr).call");
 		// received winner communication, it is NOT me
 		UML2Helper
 				.createTransition(process_SM, STATE_MAIN, STATE_LOST,
-						"@winner.call[(win_nr!=mynumber)]/@out.winner(<P>win_nr).call");
+						"@winner.call[(win_nr!=mynumber)]/@out.winner(<Y>win_nr).call");
 
 	}
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CorrettoUML="http:///schemas/CorrettoUML/_-4rfIJULEea1kdccITC-yQ/12" xmlns:CorrettoUML.Time="http:///CorrettoUML/Time.ecore" xmlns:CorrettoUML.VerificationTags="http:///CorrettoUML/VerificationTags.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/CorrettoUML/_-4rfIJULEea1kdccITC-yQ/12 ../../../../org.correttouml.profiles/resources/model.profile.uml#_-4stQJULEea1kdccITC-yQ http:///CorrettoUML/Time.ecore ../../../../org.correttouml.profiles/resources/model.profile.uml#_-4stRZULEea1kdccITC-yQ http:///CorrettoUML/VerificationTags.ecore ../../../../org.correttouml.profiles/resources/model.profile.uml#_-4stW5ULEea1kdccITC-yQ">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CorrettoUML="http:///schemas/CorrettoUML/_pFhTYNKZEea6e53zfdOTBg/13" xmlns:CorrettoUML.Time="http:///CorrettoUML/Time.ecore" xmlns:CorrettoUML.VerificationTags="http:///CorrettoUML/VerificationTags.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/CorrettoUML/_pFhTYNKZEea6e53zfdOTBg/13 ../../../../org.correttouml.profiles/resources/model.profile.uml#_pFp2QNKZEea6e53zfdOTBg http:///CorrettoUML/Time.ecore ../../../../org.correttouml.profiles/resources/model.profile.uml#_pFp2R9KZEea6e53zfdOTBg http:///CorrettoUML/VerificationTags.ecore ../../../../org.correttouml.profiles/resources/model.profile.uml#_pFp2XdKZEea6e53zfdOTBg">
   <uml:Model xmi:id="_x9J08AN9EeKTXbQztILh3g" name="Model">
     <packagedElement xmi:type="uml:Package" xmi:id="_GdyncAN-EeKTXbQztILh3g" name="CCAS">
       <ownedRule xmi:type="uml:Constraint" xmi:id="_Tx3uQJIcEea87e8STc3geQ" name="Property">
@@ -47,7 +47,7 @@
           <node xmi:type="uml:FlowFinalNode" xmi:id="_733FIISGEeah-pkLUtOMoA" name="FlowFinalNode" incoming="_S6xi8ISOEeah-pkLUtOMoA _VYydgISOEeah-pkLUtOMoA _kykHEISSEeah-pkLUtOMoA"/>
           <node xmi:type="uml:ForkNode" xmi:id="_pceqwISNEeah-pkLUtOMoA" name="ForkNode" incoming="_41LXQISGEeah-pkLUtOMoA" outgoing="_rt8XEISNEeah-pkLUtOMoA _bvqjMISSEeah-pkLUtOMoA"/>
           <node xmi:type="uml:DecisionNode" xmi:id="_5JHiwISNEeah-pkLUtOMoA" name="DecisionNode1" incoming="_8rPp4ISGEeah-pkLUtOMoA" outgoing="_AqaJ8ISOEeah-pkLUtOMoA _R41k0ISOEeah-pkLUtOMoA"/>
-          <node xmi:type="uml:OpaqueAction" xmi:id="_LQv2gISOEeah-pkLUtOMoA" name="failureC = &lt;P>failureC + 1" incoming="_R41k0ISOEeah-pkLUtOMoA" outgoing="_S6xi8ISOEeah-pkLUtOMoA"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="_LQv2gISOEeah-pkLUtOMoA" name="failureC = &lt;Y>failureC + 1" incoming="_R41k0ISOEeah-pkLUtOMoA" outgoing="_S6xi8ISOEeah-pkLUtOMoA"/>
           <node xmi:type="uml:SendSignalAction" xmi:id="_3b6xkITDEeah-pkLUtOMoA" name="@failure.sig" incoming="_AqaJ8ISOEeah-pkLUtOMoA" signal="_w0DFsITDEeah-pkLUtOMoA">
             <target xmi:type="uml:InputPin" xmi:id="_49ZycITDEeah-pkLUtOMoA" name="">
               <upperBound xmi:type="uml:LiteralInteger" xmi:id="_49ZycYTDEeah-pkLUtOMoA" value="1"/>
@@ -253,15 +253,15 @@
     </packagedElement>
     <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_rMeRoF2REeaZq_6Zf2bIUA" name="Integer"/>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_1kNBwGz4EeatHZOvjtomGw">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_moJssMuAEeaTl4sg7dKNpQ" source="PapyrusVersion">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_moJsscuAEeaTl4sg7dKNpQ" key="Version" value="0.0.14"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_moJsssuAEeaTl4sg7dKNpQ" key="Comment" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_moJss8uAEeaTl4sg7dKNpQ" key="Copyright" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_moJstMuAEeaTl4sg7dKNpQ" key="Date" value="2016-12-25"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_moJstcuAEeaTl4sg7dKNpQ" key="Author" value="Pourhashem"/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_wM1roNKqEea6e53zfdOTBg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_wM1rodKqEea6e53zfdOTBg" key="Version" value="0.0.14"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_wM1rotKqEea6e53zfdOTBg" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_wM1ro9KqEea6e53zfdOTBg" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_wM1rpNKqEea6e53zfdOTBg" key="Date" value="2017-01-04"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_wM1rpdKqEea6e53zfdOTBg" key="Author" value=""/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_1lGZoGz4EeatHZOvjtomGw" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="../../../../org.correttouml.profiles/resources/model.profile.uml#_-4stQJULEea1kdccITC-yQ"/>
+        <references xmi:type="ecore:EPackage" href="../../../../org.correttouml.profiles/resources/model.profile.uml#_pFp2QNKZEea6e53zfdOTBg"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="../../../../org.correttouml.profiles/resources/model.profile.uml#_DCylYIJgEeKaWIAr5_BKMw"/>
     </profileApplication>

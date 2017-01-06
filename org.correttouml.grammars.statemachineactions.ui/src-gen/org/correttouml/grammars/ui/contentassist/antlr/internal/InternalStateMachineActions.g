@@ -1853,16 +1853,16 @@ rule__TERM__IsPastAssignment_0_0
     }
 :
 (
-{ before(grammarAccess.getTERMAccess().getIsPastPKeyword_0_0_0()); }
+{ before(grammarAccess.getTERMAccess().getIsPastYKeyword_0_0_0()); }
 (
-{ before(grammarAccess.getTERMAccess().getIsPastPKeyword_0_0_0()); }
+{ before(grammarAccess.getTERMAccess().getIsPastYKeyword_0_0_0()); }
 
-	'<P>' 
+	'<Y>' 
 
-{ after(grammarAccess.getTERMAccess().getIsPastPKeyword_0_0_0()); }
+{ after(grammarAccess.getTERMAccess().getIsPastYKeyword_0_0_0()); }
 )
 
-{ after(grammarAccess.getTERMAccess().getIsPastPKeyword_0_0_0()); }
+{ after(grammarAccess.getTERMAccess().getIsPastYKeyword_0_0_0()); }
 )
 
 ;
@@ -1876,16 +1876,16 @@ rule__TERM__IsFutureAssignment_0_1
     }
 :
 (
-{ before(grammarAccess.getTERMAccess().getIsFutureFKeyword_0_1_0()); }
+{ before(grammarAccess.getTERMAccess().getIsFutureXKeyword_0_1_0()); }
 (
-{ before(grammarAccess.getTERMAccess().getIsFutureFKeyword_0_1_0()); }
+{ before(grammarAccess.getTERMAccess().getIsFutureXKeyword_0_1_0()); }
 
-	'<F>' 
+	'<X>' 
 
-{ after(grammarAccess.getTERMAccess().getIsFutureFKeyword_0_1_0()); }
+{ after(grammarAccess.getTERMAccess().getIsFutureXKeyword_0_1_0()); }
 )
 
-{ after(grammarAccess.getTERMAccess().getIsFutureFKeyword_0_1_0()); }
+{ after(grammarAccess.getTERMAccess().getIsFutureXKeyword_0_1_0()); }
 )
 
 ;

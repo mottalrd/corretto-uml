@@ -19,7 +19,6 @@ public class PartialStateMachineActionsContentAssistParser extends StateMachineA
 
 	private AbstractRule rule;
 
-	@Override
 	public void initializeFor(AbstractRule rule) {
 		this.rule = rule;
 	}
