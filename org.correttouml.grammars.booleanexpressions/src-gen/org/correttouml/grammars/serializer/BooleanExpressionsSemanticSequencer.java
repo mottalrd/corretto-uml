@@ -139,7 +139,7 @@ public class BooleanExpressionsSemanticSequencer extends AbstractDelegatingSeman
 	 *     Event returns Event
 	 *
 	 * Constraint:
-	 *     ((eventName=ID eventExtension=EventExtensions) | nowEvent?='now')
+	 *     ((objName=ID? eventName=ID eventExtension=EventExtensions) | nowEvent?='now')
 	 */
 	protected void sequence_Event(ISerializationContext context, Event semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

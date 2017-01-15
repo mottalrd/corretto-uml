@@ -42,8 +42,7 @@ public class SObject {
 		}
 		
 		//If the object has an activity diagram associated to it, return its semantics
-		AD ad = this.mades_obj.getAD();
-		if (ad != null){
+		for (AD ad : mades_obj.getADs()) {
 			sem += SMadesModel.printSeparatorSmall(mades_obj.toString() + " AD " + ad.getName() + ad + " SEMANTICS");
 			sem += new SAD(ad).getSemantics();
 		}

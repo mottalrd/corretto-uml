@@ -31,7 +31,7 @@ public class AbstractHyperlinkDetector1 extends AbstractHyperlinkDetector implem
 		File javafile = file.getRawLocation().makeAbsolute().toFile();
 
 		String contents = textViewer.getDocument().get();
-		Pattern p = Pattern.compile("\\$[A-Z|a-z|0-9|_]+");
+		Pattern p = Pattern.compile("\\$[A-Z|a-z|0-9|^|_]+");
 		Matcher m = p.matcher(contents);
 		while (m.find()) {
 			if (m.start() <= region.getOffset() && m.end() >= region.getOffset() + region.getLength()) {

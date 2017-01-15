@@ -61,13 +61,10 @@ public class SSignal {
             	}
             }
             
-            AD ad = obj.getAD();
-            if (ad != null){
-            	for (SendSignalNode ssn: ad.getSendSignalNodes()){
+            for (AD ad : obj.getADs())
+            	for (SendSignalNode ssn: ad.getSendSignalNodes())
             		if (ssn.getName().equals("@"+this.mades_signal.getName()+".sig"))
             			orCond.addFormulae(new SSendSignalNode(ssn, ad).getPredicate());
-            	}
-            }
         }
 	}
 	

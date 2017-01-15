@@ -46,7 +46,7 @@ public class ActionFactory {
 			}
 			if (curr.getEventAction().getEvent().getEventExtension()
 					.equals("sig")) {
-				return getSignalAction(curr, context, object);
+				return getSignalAction(curr, context);
 			}
 			if (curr.getEventAction().getEvent().getEventExtension()
 					.equals("start")) {
@@ -137,11 +137,11 @@ public class ActionFactory {
 	}
 	
 //	private static SignalAction getSignalAction(org.correttouml.grammars.stateMachineActions.Action action, Transition transition, Object object){
-	private static SignalAction getSignalAction(org.correttouml.grammars.stateMachineActions.Action action, ExpressionContext context, Object object){
+	private static SignalAction getSignalAction(org.correttouml.grammars.stateMachineActions.Action action, ExpressionContext context){
 		try {
 			String signame=action.getEventAction().getEvent().getEventName();
 			for(Signal s: context.getMadesModel().getClassdiagram().getSignals()){
-					if(s.getName().equals(signame)) return new SignalAction(s, context, object);
+					if(s.getName().equals(signame)) return new SignalAction(s, context);
 				}
 			throw new Exception("Signal not found Exception");
 		} catch (Exception e) {

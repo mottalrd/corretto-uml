@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalBooleanExpressionsParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_OR", "RULE_AND", "RULE_NOT", "RULE_RELATIONS", "RULE_INT", "RULE_ID", "RULE_OPERATOR", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'exit'", "'enter'", "'start'", "'end'", "'tick'", "'sig'", "'call'", "'send'", "'receive'", "'reply'", "'('", "')'", "'@'", "'-'", "'.'", "'now'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_OR", "RULE_AND", "RULE_NOT", "RULE_RELATIONS", "RULE_INT", "RULE_ID", "RULE_OPERATOR", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'exit'", "'enter'", "'start'", "'end'", "'tick'", "'sig'", "'call'", "'send'", "'receive'", "'reply'", "'adstart'", "'adend'", "'iodstart'", "'iodend'", "'('", "')'", "'@'", "'-'", "'.'", "'now'"
     };
     public static final int RULE_RELATIONS=7;
     public static final int RULE_STRING=11;
@@ -33,11 +33,15 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
+    public static final int T__33=33;
+    public static final int T__34=34;
+    public static final int T__35=35;
     public static final int RULE_OR=4;
     public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
     public static final int RULE_OPERATOR=10;
+    public static final int T__32=32;
     public static final int RULE_ID=9;
     public static final int RULE_WS=14;
     public static final int RULE_ANY_OTHER=15;
@@ -1026,31 +1030,24 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( (LA1_0==RULE_ID||LA1_0==28) ) {
+            if ( (LA1_0==RULE_ID||LA1_0==32) ) {
                 alt1=1;
             }
-            else if ( (LA1_0==26) ) {
+            else if ( (LA1_0==30) ) {
                 switch ( input.LA(2) ) {
-                case RULE_NOT:
-                case 26:
-                case 28:
-                    {
-                    alt1=2;
-                    }
-                    break;
                 case RULE_ID:
                     {
-                    int LA1_4 = input.LA(3);
+                    int LA1_3 = input.LA(3);
 
-                    if ( (LA1_4==RULE_RELATIONS||LA1_4==RULE_OPERATOR) ) {
+                    if ( (LA1_3==RULE_RELATIONS||LA1_3==RULE_OPERATOR) ) {
                         alt1=1;
                     }
-                    else if ( ((LA1_4>=RULE_OR && LA1_4<=RULE_AND)||LA1_4==27) ) {
+                    else if ( ((LA1_3>=RULE_OR && LA1_3<=RULE_AND)||LA1_3==31) ) {
                         alt1=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 1, 4, input);
+                            new NoViableAltException("", 1, 3, input);
 
                         throw nvae;
                     }
@@ -1059,6 +1056,13 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
                 case RULE_INT:
                     {
                     alt1=1;
+                    }
+                    break;
+                case RULE_NOT:
+                case 30:
+                case 32:
+                    {
+                    alt1=2;
                     }
                     break;
                 default:
@@ -1153,7 +1157,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
             // InternalBooleanExpressions.g:422:1: ( ( ( rule__BooleanTerm__TimeConstraintAssignment_0 ) ) | ( ( rule__BooleanTerm__BooleanVariableAssignment_1 ) ) | ( ( rule__BooleanTerm__VariableConditionAssignment_2 ) ) )
             int alt2=3;
             switch ( input.LA(1) ) {
-            case 28:
+            case 32:
                 {
                 alt2=1;
                 }
@@ -1163,7 +1167,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
                 alt2=2;
                 }
                 break;
-            case 26:
+            case 30:
                 {
                 alt2=3;
                 }
@@ -1282,11 +1286,11 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
             if ( (LA3_0==RULE_ID) ) {
                 int LA3_1 = input.LA(2);
 
-                if ( (LA3_1==EOF||LA3_1==RULE_RELATIONS||LA3_1==27) ) {
-                    alt3=2;
-                }
-                else if ( (LA3_1==RULE_OPERATOR) ) {
+                if ( (LA3_1==RULE_OPERATOR) ) {
                     alt3=1;
+                }
+                else if ( (LA3_1==EOF||LA3_1==RULE_RELATIONS||LA3_1==31) ) {
+                    alt3=2;
                 }
                 else {
                     NoViableAltException nvae =
@@ -1298,11 +1302,11 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
             else if ( (LA3_0==RULE_INT) ) {
                 int LA3_2 = input.LA(2);
 
-                if ( (LA3_2==EOF||LA3_2==RULE_RELATIONS||LA3_2==27) ) {
-                    alt3=2;
-                }
-                else if ( (LA3_2==RULE_OPERATOR) ) {
+                if ( (LA3_2==RULE_OPERATOR) ) {
                     alt3=1;
+                }
+                else if ( (LA3_2==EOF||LA3_2==RULE_RELATIONS||LA3_2==31) ) {
+                    alt3=2;
                 }
                 else {
                     NoViableAltException nvae =
@@ -1490,7 +1494,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
             if ( (LA5_0==RULE_ID) ) {
                 alt5=1;
             }
-            else if ( (LA5_0==31) ) {
+            else if ( (LA5_0==35) ) {
                 alt5=2;
             }
             else {
@@ -1568,14 +1572,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__EventExtensions__Alternatives"
-    // InternalBooleanExpressions.g:512:1: rule__EventExtensions__Alternatives : ( ( 'exit' ) | ( 'enter' ) | ( 'start' ) | ( 'end' ) | ( 'tick' ) | ( 'sig' ) | ( 'call' ) | ( 'send' ) | ( 'receive' ) | ( 'reply' ) );
+    // InternalBooleanExpressions.g:512:1: rule__EventExtensions__Alternatives : ( ( 'exit' ) | ( 'enter' ) | ( 'start' ) | ( 'end' ) | ( 'tick' ) | ( 'sig' ) | ( 'call' ) | ( 'send' ) | ( 'receive' ) | ( 'reply' ) | ( 'adstart' ) | ( 'adend' ) | ( 'iodstart' ) | ( 'iodend' ) );
     public final void rule__EventExtensions__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:516:1: ( ( 'exit' ) | ( 'enter' ) | ( 'start' ) | ( 'end' ) | ( 'tick' ) | ( 'sig' ) | ( 'call' ) | ( 'send' ) | ( 'receive' ) | ( 'reply' ) )
-            int alt6=10;
+            // InternalBooleanExpressions.g:516:1: ( ( 'exit' ) | ( 'enter' ) | ( 'start' ) | ( 'end' ) | ( 'tick' ) | ( 'sig' ) | ( 'call' ) | ( 'send' ) | ( 'receive' ) | ( 'reply' ) | ( 'adstart' ) | ( 'adend' ) | ( 'iodstart' ) | ( 'iodend' ) )
+            int alt6=14;
             switch ( input.LA(1) ) {
             case 16:
                 {
@@ -1625,6 +1629,26 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
             case 25:
                 {
                 alt6=10;
+                }
+                break;
+            case 26:
+                {
+                alt6=11;
+                }
+                break;
+            case 27:
+                {
+                alt6=12;
+                }
+                break;
+            case 28:
+                {
+                alt6=13;
+                }
+                break;
+            case 29:
+                {
+                alt6=14;
                 }
                 break;
             default:
@@ -1785,6 +1809,66 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
                     }
                     break;
+                case 11 :
+                    // InternalBooleanExpressions.g:597:6: ( 'adstart' )
+                    {
+                    // InternalBooleanExpressions.g:597:6: ( 'adstart' )
+                    // InternalBooleanExpressions.g:598:1: 'adstart'
+                    {
+                     before(grammarAccess.getEventExtensionsAccess().getAdstartKeyword_10()); 
+                    match(input,26,FOLLOW_2); 
+                     after(grammarAccess.getEventExtensionsAccess().getAdstartKeyword_10()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 12 :
+                    // InternalBooleanExpressions.g:605:6: ( 'adend' )
+                    {
+                    // InternalBooleanExpressions.g:605:6: ( 'adend' )
+                    // InternalBooleanExpressions.g:606:1: 'adend'
+                    {
+                     before(grammarAccess.getEventExtensionsAccess().getAdendKeyword_11()); 
+                    match(input,27,FOLLOW_2); 
+                     after(grammarAccess.getEventExtensionsAccess().getAdendKeyword_11()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 13 :
+                    // InternalBooleanExpressions.g:613:6: ( 'iodstart' )
+                    {
+                    // InternalBooleanExpressions.g:613:6: ( 'iodstart' )
+                    // InternalBooleanExpressions.g:614:1: 'iodstart'
+                    {
+                     before(grammarAccess.getEventExtensionsAccess().getIodstartKeyword_12()); 
+                    match(input,28,FOLLOW_2); 
+                     after(grammarAccess.getEventExtensionsAccess().getIodstartKeyword_12()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 14 :
+                    // InternalBooleanExpressions.g:621:6: ( 'iodend' )
+                    {
+                    // InternalBooleanExpressions.g:621:6: ( 'iodend' )
+                    // InternalBooleanExpressions.g:622:1: 'iodend'
+                    {
+                     before(grammarAccess.getEventExtensionsAccess().getIodendKeyword_13()); 
+                    match(input,29,FOLLOW_2); 
+                     after(grammarAccess.getEventExtensionsAccess().getIodendKeyword_13()); 
+
+                    }
+
+
+                    }
+                    break;
 
             }
         }
@@ -1803,14 +1887,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__OrExpression__Group__0"
-    // InternalBooleanExpressions.g:604:1: rule__OrExpression__Group__0 : rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1 ;
+    // InternalBooleanExpressions.g:636:1: rule__OrExpression__Group__0 : rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1 ;
     public final void rule__OrExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:608:1: ( rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1 )
-            // InternalBooleanExpressions.g:609:2: rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1
+            // InternalBooleanExpressions.g:640:1: ( rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1 )
+            // InternalBooleanExpressions.g:641:2: rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__OrExpression__Group__0__Impl();
@@ -1841,21 +1925,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__OrExpression__Group__0__Impl"
-    // InternalBooleanExpressions.g:616:1: rule__OrExpression__Group__0__Impl : ( ( rule__OrExpression__LeftExpressionAssignment_0 ) ) ;
+    // InternalBooleanExpressions.g:648:1: rule__OrExpression__Group__0__Impl : ( ( rule__OrExpression__LeftExpressionAssignment_0 ) ) ;
     public final void rule__OrExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:620:1: ( ( ( rule__OrExpression__LeftExpressionAssignment_0 ) ) )
-            // InternalBooleanExpressions.g:621:1: ( ( rule__OrExpression__LeftExpressionAssignment_0 ) )
+            // InternalBooleanExpressions.g:652:1: ( ( ( rule__OrExpression__LeftExpressionAssignment_0 ) ) )
+            // InternalBooleanExpressions.g:653:1: ( ( rule__OrExpression__LeftExpressionAssignment_0 ) )
             {
-            // InternalBooleanExpressions.g:621:1: ( ( rule__OrExpression__LeftExpressionAssignment_0 ) )
-            // InternalBooleanExpressions.g:622:1: ( rule__OrExpression__LeftExpressionAssignment_0 )
+            // InternalBooleanExpressions.g:653:1: ( ( rule__OrExpression__LeftExpressionAssignment_0 ) )
+            // InternalBooleanExpressions.g:654:1: ( rule__OrExpression__LeftExpressionAssignment_0 )
             {
              before(grammarAccess.getOrExpressionAccess().getLeftExpressionAssignment_0()); 
-            // InternalBooleanExpressions.g:623:1: ( rule__OrExpression__LeftExpressionAssignment_0 )
-            // InternalBooleanExpressions.g:623:2: rule__OrExpression__LeftExpressionAssignment_0
+            // InternalBooleanExpressions.g:655:1: ( rule__OrExpression__LeftExpressionAssignment_0 )
+            // InternalBooleanExpressions.g:655:2: rule__OrExpression__LeftExpressionAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__OrExpression__LeftExpressionAssignment_0();
@@ -1888,14 +1972,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__OrExpression__Group__1"
-    // InternalBooleanExpressions.g:633:1: rule__OrExpression__Group__1 : rule__OrExpression__Group__1__Impl ;
+    // InternalBooleanExpressions.g:665:1: rule__OrExpression__Group__1 : rule__OrExpression__Group__1__Impl ;
     public final void rule__OrExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:637:1: ( rule__OrExpression__Group__1__Impl )
-            // InternalBooleanExpressions.g:638:2: rule__OrExpression__Group__1__Impl
+            // InternalBooleanExpressions.g:669:1: ( rule__OrExpression__Group__1__Impl )
+            // InternalBooleanExpressions.g:670:2: rule__OrExpression__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__OrExpression__Group__1__Impl();
@@ -1921,20 +2005,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__OrExpression__Group__1__Impl"
-    // InternalBooleanExpressions.g:644:1: rule__OrExpression__Group__1__Impl : ( ( rule__OrExpression__Group_1__0 )? ) ;
+    // InternalBooleanExpressions.g:676:1: rule__OrExpression__Group__1__Impl : ( ( rule__OrExpression__Group_1__0 )? ) ;
     public final void rule__OrExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:648:1: ( ( ( rule__OrExpression__Group_1__0 )? ) )
-            // InternalBooleanExpressions.g:649:1: ( ( rule__OrExpression__Group_1__0 )? )
+            // InternalBooleanExpressions.g:680:1: ( ( ( rule__OrExpression__Group_1__0 )? ) )
+            // InternalBooleanExpressions.g:681:1: ( ( rule__OrExpression__Group_1__0 )? )
             {
-            // InternalBooleanExpressions.g:649:1: ( ( rule__OrExpression__Group_1__0 )? )
-            // InternalBooleanExpressions.g:650:1: ( rule__OrExpression__Group_1__0 )?
+            // InternalBooleanExpressions.g:681:1: ( ( rule__OrExpression__Group_1__0 )? )
+            // InternalBooleanExpressions.g:682:1: ( rule__OrExpression__Group_1__0 )?
             {
              before(grammarAccess.getOrExpressionAccess().getGroup_1()); 
-            // InternalBooleanExpressions.g:651:1: ( rule__OrExpression__Group_1__0 )?
+            // InternalBooleanExpressions.g:683:1: ( rule__OrExpression__Group_1__0 )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1943,7 +2027,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
             }
             switch (alt7) {
                 case 1 :
-                    // InternalBooleanExpressions.g:651:2: rule__OrExpression__Group_1__0
+                    // InternalBooleanExpressions.g:683:2: rule__OrExpression__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__OrExpression__Group_1__0();
@@ -1979,14 +2063,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__OrExpression__Group_1__0"
-    // InternalBooleanExpressions.g:665:1: rule__OrExpression__Group_1__0 : rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1 ;
+    // InternalBooleanExpressions.g:697:1: rule__OrExpression__Group_1__0 : rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1 ;
     public final void rule__OrExpression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:669:1: ( rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1 )
-            // InternalBooleanExpressions.g:670:2: rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1
+            // InternalBooleanExpressions.g:701:1: ( rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1 )
+            // InternalBooleanExpressions.g:702:2: rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1
             {
             pushFollow(FOLLOW_4);
             rule__OrExpression__Group_1__0__Impl();
@@ -2017,21 +2101,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__OrExpression__Group_1__0__Impl"
-    // InternalBooleanExpressions.g:677:1: rule__OrExpression__Group_1__0__Impl : ( ( rule__OrExpression__OrAssignment_1_0 ) ) ;
+    // InternalBooleanExpressions.g:709:1: rule__OrExpression__Group_1__0__Impl : ( ( rule__OrExpression__OrAssignment_1_0 ) ) ;
     public final void rule__OrExpression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:681:1: ( ( ( rule__OrExpression__OrAssignment_1_0 ) ) )
-            // InternalBooleanExpressions.g:682:1: ( ( rule__OrExpression__OrAssignment_1_0 ) )
+            // InternalBooleanExpressions.g:713:1: ( ( ( rule__OrExpression__OrAssignment_1_0 ) ) )
+            // InternalBooleanExpressions.g:714:1: ( ( rule__OrExpression__OrAssignment_1_0 ) )
             {
-            // InternalBooleanExpressions.g:682:1: ( ( rule__OrExpression__OrAssignment_1_0 ) )
-            // InternalBooleanExpressions.g:683:1: ( rule__OrExpression__OrAssignment_1_0 )
+            // InternalBooleanExpressions.g:714:1: ( ( rule__OrExpression__OrAssignment_1_0 ) )
+            // InternalBooleanExpressions.g:715:1: ( rule__OrExpression__OrAssignment_1_0 )
             {
              before(grammarAccess.getOrExpressionAccess().getOrAssignment_1_0()); 
-            // InternalBooleanExpressions.g:684:1: ( rule__OrExpression__OrAssignment_1_0 )
-            // InternalBooleanExpressions.g:684:2: rule__OrExpression__OrAssignment_1_0
+            // InternalBooleanExpressions.g:716:1: ( rule__OrExpression__OrAssignment_1_0 )
+            // InternalBooleanExpressions.g:716:2: rule__OrExpression__OrAssignment_1_0
             {
             pushFollow(FOLLOW_2);
             rule__OrExpression__OrAssignment_1_0();
@@ -2064,14 +2148,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__OrExpression__Group_1__1"
-    // InternalBooleanExpressions.g:694:1: rule__OrExpression__Group_1__1 : rule__OrExpression__Group_1__1__Impl ;
+    // InternalBooleanExpressions.g:726:1: rule__OrExpression__Group_1__1 : rule__OrExpression__Group_1__1__Impl ;
     public final void rule__OrExpression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:698:1: ( rule__OrExpression__Group_1__1__Impl )
-            // InternalBooleanExpressions.g:699:2: rule__OrExpression__Group_1__1__Impl
+            // InternalBooleanExpressions.g:730:1: ( rule__OrExpression__Group_1__1__Impl )
+            // InternalBooleanExpressions.g:731:2: rule__OrExpression__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__OrExpression__Group_1__1__Impl();
@@ -2097,21 +2181,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__OrExpression__Group_1__1__Impl"
-    // InternalBooleanExpressions.g:705:1: rule__OrExpression__Group_1__1__Impl : ( ( rule__OrExpression__RightExpressionAssignment_1_1 ) ) ;
+    // InternalBooleanExpressions.g:737:1: rule__OrExpression__Group_1__1__Impl : ( ( rule__OrExpression__RightExpressionAssignment_1_1 ) ) ;
     public final void rule__OrExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:709:1: ( ( ( rule__OrExpression__RightExpressionAssignment_1_1 ) ) )
-            // InternalBooleanExpressions.g:710:1: ( ( rule__OrExpression__RightExpressionAssignment_1_1 ) )
+            // InternalBooleanExpressions.g:741:1: ( ( ( rule__OrExpression__RightExpressionAssignment_1_1 ) ) )
+            // InternalBooleanExpressions.g:742:1: ( ( rule__OrExpression__RightExpressionAssignment_1_1 ) )
             {
-            // InternalBooleanExpressions.g:710:1: ( ( rule__OrExpression__RightExpressionAssignment_1_1 ) )
-            // InternalBooleanExpressions.g:711:1: ( rule__OrExpression__RightExpressionAssignment_1_1 )
+            // InternalBooleanExpressions.g:742:1: ( ( rule__OrExpression__RightExpressionAssignment_1_1 ) )
+            // InternalBooleanExpressions.g:743:1: ( rule__OrExpression__RightExpressionAssignment_1_1 )
             {
              before(grammarAccess.getOrExpressionAccess().getRightExpressionAssignment_1_1()); 
-            // InternalBooleanExpressions.g:712:1: ( rule__OrExpression__RightExpressionAssignment_1_1 )
-            // InternalBooleanExpressions.g:712:2: rule__OrExpression__RightExpressionAssignment_1_1
+            // InternalBooleanExpressions.g:744:1: ( rule__OrExpression__RightExpressionAssignment_1_1 )
+            // InternalBooleanExpressions.g:744:2: rule__OrExpression__RightExpressionAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__OrExpression__RightExpressionAssignment_1_1();
@@ -2144,14 +2228,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AndExpression__Group__0"
-    // InternalBooleanExpressions.g:726:1: rule__AndExpression__Group__0 : rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1 ;
+    // InternalBooleanExpressions.g:758:1: rule__AndExpression__Group__0 : rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1 ;
     public final void rule__AndExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:730:1: ( rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1 )
-            // InternalBooleanExpressions.g:731:2: rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1
+            // InternalBooleanExpressions.g:762:1: ( rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1 )
+            // InternalBooleanExpressions.g:763:2: rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1
             {
             pushFollow(FOLLOW_5);
             rule__AndExpression__Group__0__Impl();
@@ -2182,21 +2266,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AndExpression__Group__0__Impl"
-    // InternalBooleanExpressions.g:738:1: rule__AndExpression__Group__0__Impl : ( ( rule__AndExpression__LeftExpressionAssignment_0 ) ) ;
+    // InternalBooleanExpressions.g:770:1: rule__AndExpression__Group__0__Impl : ( ( rule__AndExpression__LeftExpressionAssignment_0 ) ) ;
     public final void rule__AndExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:742:1: ( ( ( rule__AndExpression__LeftExpressionAssignment_0 ) ) )
-            // InternalBooleanExpressions.g:743:1: ( ( rule__AndExpression__LeftExpressionAssignment_0 ) )
+            // InternalBooleanExpressions.g:774:1: ( ( ( rule__AndExpression__LeftExpressionAssignment_0 ) ) )
+            // InternalBooleanExpressions.g:775:1: ( ( rule__AndExpression__LeftExpressionAssignment_0 ) )
             {
-            // InternalBooleanExpressions.g:743:1: ( ( rule__AndExpression__LeftExpressionAssignment_0 ) )
-            // InternalBooleanExpressions.g:744:1: ( rule__AndExpression__LeftExpressionAssignment_0 )
+            // InternalBooleanExpressions.g:775:1: ( ( rule__AndExpression__LeftExpressionAssignment_0 ) )
+            // InternalBooleanExpressions.g:776:1: ( rule__AndExpression__LeftExpressionAssignment_0 )
             {
              before(grammarAccess.getAndExpressionAccess().getLeftExpressionAssignment_0()); 
-            // InternalBooleanExpressions.g:745:1: ( rule__AndExpression__LeftExpressionAssignment_0 )
-            // InternalBooleanExpressions.g:745:2: rule__AndExpression__LeftExpressionAssignment_0
+            // InternalBooleanExpressions.g:777:1: ( rule__AndExpression__LeftExpressionAssignment_0 )
+            // InternalBooleanExpressions.g:777:2: rule__AndExpression__LeftExpressionAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__AndExpression__LeftExpressionAssignment_0();
@@ -2229,14 +2313,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AndExpression__Group__1"
-    // InternalBooleanExpressions.g:755:1: rule__AndExpression__Group__1 : rule__AndExpression__Group__1__Impl ;
+    // InternalBooleanExpressions.g:787:1: rule__AndExpression__Group__1 : rule__AndExpression__Group__1__Impl ;
     public final void rule__AndExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:759:1: ( rule__AndExpression__Group__1__Impl )
-            // InternalBooleanExpressions.g:760:2: rule__AndExpression__Group__1__Impl
+            // InternalBooleanExpressions.g:791:1: ( rule__AndExpression__Group__1__Impl )
+            // InternalBooleanExpressions.g:792:2: rule__AndExpression__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AndExpression__Group__1__Impl();
@@ -2262,20 +2346,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AndExpression__Group__1__Impl"
-    // InternalBooleanExpressions.g:766:1: rule__AndExpression__Group__1__Impl : ( ( rule__AndExpression__Group_1__0 )? ) ;
+    // InternalBooleanExpressions.g:798:1: rule__AndExpression__Group__1__Impl : ( ( rule__AndExpression__Group_1__0 )? ) ;
     public final void rule__AndExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:770:1: ( ( ( rule__AndExpression__Group_1__0 )? ) )
-            // InternalBooleanExpressions.g:771:1: ( ( rule__AndExpression__Group_1__0 )? )
+            // InternalBooleanExpressions.g:802:1: ( ( ( rule__AndExpression__Group_1__0 )? ) )
+            // InternalBooleanExpressions.g:803:1: ( ( rule__AndExpression__Group_1__0 )? )
             {
-            // InternalBooleanExpressions.g:771:1: ( ( rule__AndExpression__Group_1__0 )? )
-            // InternalBooleanExpressions.g:772:1: ( rule__AndExpression__Group_1__0 )?
+            // InternalBooleanExpressions.g:803:1: ( ( rule__AndExpression__Group_1__0 )? )
+            // InternalBooleanExpressions.g:804:1: ( rule__AndExpression__Group_1__0 )?
             {
              before(grammarAccess.getAndExpressionAccess().getGroup_1()); 
-            // InternalBooleanExpressions.g:773:1: ( rule__AndExpression__Group_1__0 )?
+            // InternalBooleanExpressions.g:805:1: ( rule__AndExpression__Group_1__0 )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -2284,7 +2368,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
             }
             switch (alt8) {
                 case 1 :
-                    // InternalBooleanExpressions.g:773:2: rule__AndExpression__Group_1__0
+                    // InternalBooleanExpressions.g:805:2: rule__AndExpression__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__AndExpression__Group_1__0();
@@ -2320,14 +2404,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AndExpression__Group_1__0"
-    // InternalBooleanExpressions.g:787:1: rule__AndExpression__Group_1__0 : rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1 ;
+    // InternalBooleanExpressions.g:819:1: rule__AndExpression__Group_1__0 : rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1 ;
     public final void rule__AndExpression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:791:1: ( rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1 )
-            // InternalBooleanExpressions.g:792:2: rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1
+            // InternalBooleanExpressions.g:823:1: ( rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1 )
+            // InternalBooleanExpressions.g:824:2: rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1
             {
             pushFollow(FOLLOW_4);
             rule__AndExpression__Group_1__0__Impl();
@@ -2358,21 +2442,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AndExpression__Group_1__0__Impl"
-    // InternalBooleanExpressions.g:799:1: rule__AndExpression__Group_1__0__Impl : ( ( rule__AndExpression__AndAssignment_1_0 ) ) ;
+    // InternalBooleanExpressions.g:831:1: rule__AndExpression__Group_1__0__Impl : ( ( rule__AndExpression__AndAssignment_1_0 ) ) ;
     public final void rule__AndExpression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:803:1: ( ( ( rule__AndExpression__AndAssignment_1_0 ) ) )
-            // InternalBooleanExpressions.g:804:1: ( ( rule__AndExpression__AndAssignment_1_0 ) )
+            // InternalBooleanExpressions.g:835:1: ( ( ( rule__AndExpression__AndAssignment_1_0 ) ) )
+            // InternalBooleanExpressions.g:836:1: ( ( rule__AndExpression__AndAssignment_1_0 ) )
             {
-            // InternalBooleanExpressions.g:804:1: ( ( rule__AndExpression__AndAssignment_1_0 ) )
-            // InternalBooleanExpressions.g:805:1: ( rule__AndExpression__AndAssignment_1_0 )
+            // InternalBooleanExpressions.g:836:1: ( ( rule__AndExpression__AndAssignment_1_0 ) )
+            // InternalBooleanExpressions.g:837:1: ( rule__AndExpression__AndAssignment_1_0 )
             {
              before(grammarAccess.getAndExpressionAccess().getAndAssignment_1_0()); 
-            // InternalBooleanExpressions.g:806:1: ( rule__AndExpression__AndAssignment_1_0 )
-            // InternalBooleanExpressions.g:806:2: rule__AndExpression__AndAssignment_1_0
+            // InternalBooleanExpressions.g:838:1: ( rule__AndExpression__AndAssignment_1_0 )
+            // InternalBooleanExpressions.g:838:2: rule__AndExpression__AndAssignment_1_0
             {
             pushFollow(FOLLOW_2);
             rule__AndExpression__AndAssignment_1_0();
@@ -2405,14 +2489,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AndExpression__Group_1__1"
-    // InternalBooleanExpressions.g:816:1: rule__AndExpression__Group_1__1 : rule__AndExpression__Group_1__1__Impl ;
+    // InternalBooleanExpressions.g:848:1: rule__AndExpression__Group_1__1 : rule__AndExpression__Group_1__1__Impl ;
     public final void rule__AndExpression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:820:1: ( rule__AndExpression__Group_1__1__Impl )
-            // InternalBooleanExpressions.g:821:2: rule__AndExpression__Group_1__1__Impl
+            // InternalBooleanExpressions.g:852:1: ( rule__AndExpression__Group_1__1__Impl )
+            // InternalBooleanExpressions.g:853:2: rule__AndExpression__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AndExpression__Group_1__1__Impl();
@@ -2438,21 +2522,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AndExpression__Group_1__1__Impl"
-    // InternalBooleanExpressions.g:827:1: rule__AndExpression__Group_1__1__Impl : ( ( rule__AndExpression__RightExpressionAssignment_1_1 ) ) ;
+    // InternalBooleanExpressions.g:859:1: rule__AndExpression__Group_1__1__Impl : ( ( rule__AndExpression__RightExpressionAssignment_1_1 ) ) ;
     public final void rule__AndExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:831:1: ( ( ( rule__AndExpression__RightExpressionAssignment_1_1 ) ) )
-            // InternalBooleanExpressions.g:832:1: ( ( rule__AndExpression__RightExpressionAssignment_1_1 ) )
+            // InternalBooleanExpressions.g:863:1: ( ( ( rule__AndExpression__RightExpressionAssignment_1_1 ) ) )
+            // InternalBooleanExpressions.g:864:1: ( ( rule__AndExpression__RightExpressionAssignment_1_1 ) )
             {
-            // InternalBooleanExpressions.g:832:1: ( ( rule__AndExpression__RightExpressionAssignment_1_1 ) )
-            // InternalBooleanExpressions.g:833:1: ( rule__AndExpression__RightExpressionAssignment_1_1 )
+            // InternalBooleanExpressions.g:864:1: ( ( rule__AndExpression__RightExpressionAssignment_1_1 ) )
+            // InternalBooleanExpressions.g:865:1: ( rule__AndExpression__RightExpressionAssignment_1_1 )
             {
              before(grammarAccess.getAndExpressionAccess().getRightExpressionAssignment_1_1()); 
-            // InternalBooleanExpressions.g:834:1: ( rule__AndExpression__RightExpressionAssignment_1_1 )
-            // InternalBooleanExpressions.g:834:2: rule__AndExpression__RightExpressionAssignment_1_1
+            // InternalBooleanExpressions.g:866:1: ( rule__AndExpression__RightExpressionAssignment_1_1 )
+            // InternalBooleanExpressions.g:866:2: rule__AndExpression__RightExpressionAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__AndExpression__RightExpressionAssignment_1_1();
@@ -2485,14 +2569,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__Group__0"
-    // InternalBooleanExpressions.g:848:1: rule__BaseExpression__Group__0 : rule__BaseExpression__Group__0__Impl rule__BaseExpression__Group__1 ;
+    // InternalBooleanExpressions.g:880:1: rule__BaseExpression__Group__0 : rule__BaseExpression__Group__0__Impl rule__BaseExpression__Group__1 ;
     public final void rule__BaseExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:852:1: ( rule__BaseExpression__Group__0__Impl rule__BaseExpression__Group__1 )
-            // InternalBooleanExpressions.g:853:2: rule__BaseExpression__Group__0__Impl rule__BaseExpression__Group__1
+            // InternalBooleanExpressions.g:884:1: ( rule__BaseExpression__Group__0__Impl rule__BaseExpression__Group__1 )
+            // InternalBooleanExpressions.g:885:2: rule__BaseExpression__Group__0__Impl rule__BaseExpression__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__BaseExpression__Group__0__Impl();
@@ -2523,20 +2607,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__Group__0__Impl"
-    // InternalBooleanExpressions.g:860:1: rule__BaseExpression__Group__0__Impl : ( ( rule__BaseExpression__NotAssignment_0 )? ) ;
+    // InternalBooleanExpressions.g:892:1: rule__BaseExpression__Group__0__Impl : ( ( rule__BaseExpression__NotAssignment_0 )? ) ;
     public final void rule__BaseExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:864:1: ( ( ( rule__BaseExpression__NotAssignment_0 )? ) )
-            // InternalBooleanExpressions.g:865:1: ( ( rule__BaseExpression__NotAssignment_0 )? )
+            // InternalBooleanExpressions.g:896:1: ( ( ( rule__BaseExpression__NotAssignment_0 )? ) )
+            // InternalBooleanExpressions.g:897:1: ( ( rule__BaseExpression__NotAssignment_0 )? )
             {
-            // InternalBooleanExpressions.g:865:1: ( ( rule__BaseExpression__NotAssignment_0 )? )
-            // InternalBooleanExpressions.g:866:1: ( rule__BaseExpression__NotAssignment_0 )?
+            // InternalBooleanExpressions.g:897:1: ( ( rule__BaseExpression__NotAssignment_0 )? )
+            // InternalBooleanExpressions.g:898:1: ( rule__BaseExpression__NotAssignment_0 )?
             {
              before(grammarAccess.getBaseExpressionAccess().getNotAssignment_0()); 
-            // InternalBooleanExpressions.g:867:1: ( rule__BaseExpression__NotAssignment_0 )?
+            // InternalBooleanExpressions.g:899:1: ( rule__BaseExpression__NotAssignment_0 )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2545,7 +2629,7 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
             }
             switch (alt9) {
                 case 1 :
-                    // InternalBooleanExpressions.g:867:2: rule__BaseExpression__NotAssignment_0
+                    // InternalBooleanExpressions.g:899:2: rule__BaseExpression__NotAssignment_0
                     {
                     pushFollow(FOLLOW_2);
                     rule__BaseExpression__NotAssignment_0();
@@ -2581,14 +2665,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__Group__1"
-    // InternalBooleanExpressions.g:877:1: rule__BaseExpression__Group__1 : rule__BaseExpression__Group__1__Impl ;
+    // InternalBooleanExpressions.g:909:1: rule__BaseExpression__Group__1 : rule__BaseExpression__Group__1__Impl ;
     public final void rule__BaseExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:881:1: ( rule__BaseExpression__Group__1__Impl )
-            // InternalBooleanExpressions.g:882:2: rule__BaseExpression__Group__1__Impl
+            // InternalBooleanExpressions.g:913:1: ( rule__BaseExpression__Group__1__Impl )
+            // InternalBooleanExpressions.g:914:2: rule__BaseExpression__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BaseExpression__Group__1__Impl();
@@ -2614,21 +2698,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__Group__1__Impl"
-    // InternalBooleanExpressions.g:888:1: rule__BaseExpression__Group__1__Impl : ( ( rule__BaseExpression__Alternatives_1 ) ) ;
+    // InternalBooleanExpressions.g:920:1: rule__BaseExpression__Group__1__Impl : ( ( rule__BaseExpression__Alternatives_1 ) ) ;
     public final void rule__BaseExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:892:1: ( ( ( rule__BaseExpression__Alternatives_1 ) ) )
-            // InternalBooleanExpressions.g:893:1: ( ( rule__BaseExpression__Alternatives_1 ) )
+            // InternalBooleanExpressions.g:924:1: ( ( ( rule__BaseExpression__Alternatives_1 ) ) )
+            // InternalBooleanExpressions.g:925:1: ( ( rule__BaseExpression__Alternatives_1 ) )
             {
-            // InternalBooleanExpressions.g:893:1: ( ( rule__BaseExpression__Alternatives_1 ) )
-            // InternalBooleanExpressions.g:894:1: ( rule__BaseExpression__Alternatives_1 )
+            // InternalBooleanExpressions.g:925:1: ( ( rule__BaseExpression__Alternatives_1 ) )
+            // InternalBooleanExpressions.g:926:1: ( rule__BaseExpression__Alternatives_1 )
             {
              before(grammarAccess.getBaseExpressionAccess().getAlternatives_1()); 
-            // InternalBooleanExpressions.g:895:1: ( rule__BaseExpression__Alternatives_1 )
-            // InternalBooleanExpressions.g:895:2: rule__BaseExpression__Alternatives_1
+            // InternalBooleanExpressions.g:927:1: ( rule__BaseExpression__Alternatives_1 )
+            // InternalBooleanExpressions.g:927:2: rule__BaseExpression__Alternatives_1
             {
             pushFollow(FOLLOW_2);
             rule__BaseExpression__Alternatives_1();
@@ -2661,14 +2745,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__Group_1_1__0"
-    // InternalBooleanExpressions.g:909:1: rule__BaseExpression__Group_1_1__0 : rule__BaseExpression__Group_1_1__0__Impl rule__BaseExpression__Group_1_1__1 ;
+    // InternalBooleanExpressions.g:941:1: rule__BaseExpression__Group_1_1__0 : rule__BaseExpression__Group_1_1__0__Impl rule__BaseExpression__Group_1_1__1 ;
     public final void rule__BaseExpression__Group_1_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:913:1: ( rule__BaseExpression__Group_1_1__0__Impl rule__BaseExpression__Group_1_1__1 )
-            // InternalBooleanExpressions.g:914:2: rule__BaseExpression__Group_1_1__0__Impl rule__BaseExpression__Group_1_1__1
+            // InternalBooleanExpressions.g:945:1: ( rule__BaseExpression__Group_1_1__0__Impl rule__BaseExpression__Group_1_1__1 )
+            // InternalBooleanExpressions.g:946:2: rule__BaseExpression__Group_1_1__0__Impl rule__BaseExpression__Group_1_1__1
             {
             pushFollow(FOLLOW_4);
             rule__BaseExpression__Group_1_1__0__Impl();
@@ -2699,20 +2783,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__Group_1_1__0__Impl"
-    // InternalBooleanExpressions.g:921:1: rule__BaseExpression__Group_1_1__0__Impl : ( '(' ) ;
+    // InternalBooleanExpressions.g:953:1: rule__BaseExpression__Group_1_1__0__Impl : ( '(' ) ;
     public final void rule__BaseExpression__Group_1_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:925:1: ( ( '(' ) )
-            // InternalBooleanExpressions.g:926:1: ( '(' )
+            // InternalBooleanExpressions.g:957:1: ( ( '(' ) )
+            // InternalBooleanExpressions.g:958:1: ( '(' )
             {
-            // InternalBooleanExpressions.g:926:1: ( '(' )
-            // InternalBooleanExpressions.g:927:1: '('
+            // InternalBooleanExpressions.g:958:1: ( '(' )
+            // InternalBooleanExpressions.g:959:1: '('
             {
              before(grammarAccess.getBaseExpressionAccess().getLeftParenthesisKeyword_1_1_0()); 
-            match(input,26,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getBaseExpressionAccess().getLeftParenthesisKeyword_1_1_0()); 
 
             }
@@ -2736,14 +2820,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__Group_1_1__1"
-    // InternalBooleanExpressions.g:940:1: rule__BaseExpression__Group_1_1__1 : rule__BaseExpression__Group_1_1__1__Impl rule__BaseExpression__Group_1_1__2 ;
+    // InternalBooleanExpressions.g:972:1: rule__BaseExpression__Group_1_1__1 : rule__BaseExpression__Group_1_1__1__Impl rule__BaseExpression__Group_1_1__2 ;
     public final void rule__BaseExpression__Group_1_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:944:1: ( rule__BaseExpression__Group_1_1__1__Impl rule__BaseExpression__Group_1_1__2 )
-            // InternalBooleanExpressions.g:945:2: rule__BaseExpression__Group_1_1__1__Impl rule__BaseExpression__Group_1_1__2
+            // InternalBooleanExpressions.g:976:1: ( rule__BaseExpression__Group_1_1__1__Impl rule__BaseExpression__Group_1_1__2 )
+            // InternalBooleanExpressions.g:977:2: rule__BaseExpression__Group_1_1__1__Impl rule__BaseExpression__Group_1_1__2
             {
             pushFollow(FOLLOW_6);
             rule__BaseExpression__Group_1_1__1__Impl();
@@ -2774,21 +2858,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__Group_1_1__1__Impl"
-    // InternalBooleanExpressions.g:952:1: rule__BaseExpression__Group_1_1__1__Impl : ( ( rule__BaseExpression__RootExpressionAssignment_1_1_1 ) ) ;
+    // InternalBooleanExpressions.g:984:1: rule__BaseExpression__Group_1_1__1__Impl : ( ( rule__BaseExpression__RootExpressionAssignment_1_1_1 ) ) ;
     public final void rule__BaseExpression__Group_1_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:956:1: ( ( ( rule__BaseExpression__RootExpressionAssignment_1_1_1 ) ) )
-            // InternalBooleanExpressions.g:957:1: ( ( rule__BaseExpression__RootExpressionAssignment_1_1_1 ) )
+            // InternalBooleanExpressions.g:988:1: ( ( ( rule__BaseExpression__RootExpressionAssignment_1_1_1 ) ) )
+            // InternalBooleanExpressions.g:989:1: ( ( rule__BaseExpression__RootExpressionAssignment_1_1_1 ) )
             {
-            // InternalBooleanExpressions.g:957:1: ( ( rule__BaseExpression__RootExpressionAssignment_1_1_1 ) )
-            // InternalBooleanExpressions.g:958:1: ( rule__BaseExpression__RootExpressionAssignment_1_1_1 )
+            // InternalBooleanExpressions.g:989:1: ( ( rule__BaseExpression__RootExpressionAssignment_1_1_1 ) )
+            // InternalBooleanExpressions.g:990:1: ( rule__BaseExpression__RootExpressionAssignment_1_1_1 )
             {
              before(grammarAccess.getBaseExpressionAccess().getRootExpressionAssignment_1_1_1()); 
-            // InternalBooleanExpressions.g:959:1: ( rule__BaseExpression__RootExpressionAssignment_1_1_1 )
-            // InternalBooleanExpressions.g:959:2: rule__BaseExpression__RootExpressionAssignment_1_1_1
+            // InternalBooleanExpressions.g:991:1: ( rule__BaseExpression__RootExpressionAssignment_1_1_1 )
+            // InternalBooleanExpressions.g:991:2: rule__BaseExpression__RootExpressionAssignment_1_1_1
             {
             pushFollow(FOLLOW_2);
             rule__BaseExpression__RootExpressionAssignment_1_1_1();
@@ -2821,14 +2905,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__Group_1_1__2"
-    // InternalBooleanExpressions.g:969:1: rule__BaseExpression__Group_1_1__2 : rule__BaseExpression__Group_1_1__2__Impl ;
+    // InternalBooleanExpressions.g:1001:1: rule__BaseExpression__Group_1_1__2 : rule__BaseExpression__Group_1_1__2__Impl ;
     public final void rule__BaseExpression__Group_1_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:973:1: ( rule__BaseExpression__Group_1_1__2__Impl )
-            // InternalBooleanExpressions.g:974:2: rule__BaseExpression__Group_1_1__2__Impl
+            // InternalBooleanExpressions.g:1005:1: ( rule__BaseExpression__Group_1_1__2__Impl )
+            // InternalBooleanExpressions.g:1006:2: rule__BaseExpression__Group_1_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BaseExpression__Group_1_1__2__Impl();
@@ -2854,20 +2938,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__Group_1_1__2__Impl"
-    // InternalBooleanExpressions.g:980:1: rule__BaseExpression__Group_1_1__2__Impl : ( ')' ) ;
+    // InternalBooleanExpressions.g:1012:1: rule__BaseExpression__Group_1_1__2__Impl : ( ')' ) ;
     public final void rule__BaseExpression__Group_1_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:984:1: ( ( ')' ) )
-            // InternalBooleanExpressions.g:985:1: ( ')' )
+            // InternalBooleanExpressions.g:1016:1: ( ( ')' ) )
+            // InternalBooleanExpressions.g:1017:1: ( ')' )
             {
-            // InternalBooleanExpressions.g:985:1: ( ')' )
-            // InternalBooleanExpressions.g:986:1: ')'
+            // InternalBooleanExpressions.g:1017:1: ( ')' )
+            // InternalBooleanExpressions.g:1018:1: ')'
             {
              before(grammarAccess.getBaseExpressionAccess().getRightParenthesisKeyword_1_1_2()); 
-            match(input,27,FOLLOW_2); 
+            match(input,31,FOLLOW_2); 
              after(grammarAccess.getBaseExpressionAccess().getRightParenthesisKeyword_1_1_2()); 
 
             }
@@ -2891,14 +2975,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__0"
-    // InternalBooleanExpressions.g:1005:1: rule__TimeConstraint__Group__0 : rule__TimeConstraint__Group__0__Impl rule__TimeConstraint__Group__1 ;
+    // InternalBooleanExpressions.g:1037:1: rule__TimeConstraint__Group__0 : rule__TimeConstraint__Group__0__Impl rule__TimeConstraint__Group__1 ;
     public final void rule__TimeConstraint__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1009:1: ( rule__TimeConstraint__Group__0__Impl rule__TimeConstraint__Group__1 )
-            // InternalBooleanExpressions.g:1010:2: rule__TimeConstraint__Group__0__Impl rule__TimeConstraint__Group__1
+            // InternalBooleanExpressions.g:1041:1: ( rule__TimeConstraint__Group__0__Impl rule__TimeConstraint__Group__1 )
+            // InternalBooleanExpressions.g:1042:2: rule__TimeConstraint__Group__0__Impl rule__TimeConstraint__Group__1
             {
             pushFollow(FOLLOW_7);
             rule__TimeConstraint__Group__0__Impl();
@@ -2929,20 +3013,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__0__Impl"
-    // InternalBooleanExpressions.g:1017:1: rule__TimeConstraint__Group__0__Impl : ( '@' ) ;
+    // InternalBooleanExpressions.g:1049:1: rule__TimeConstraint__Group__0__Impl : ( '@' ) ;
     public final void rule__TimeConstraint__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1021:1: ( ( '@' ) )
-            // InternalBooleanExpressions.g:1022:1: ( '@' )
+            // InternalBooleanExpressions.g:1053:1: ( ( '@' ) )
+            // InternalBooleanExpressions.g:1054:1: ( '@' )
             {
-            // InternalBooleanExpressions.g:1022:1: ( '@' )
-            // InternalBooleanExpressions.g:1023:1: '@'
+            // InternalBooleanExpressions.g:1054:1: ( '@' )
+            // InternalBooleanExpressions.g:1055:1: '@'
             {
              before(grammarAccess.getTimeConstraintAccess().getCommercialAtKeyword_0()); 
-            match(input,28,FOLLOW_2); 
+            match(input,32,FOLLOW_2); 
              after(grammarAccess.getTimeConstraintAccess().getCommercialAtKeyword_0()); 
 
             }
@@ -2966,14 +3050,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__1"
-    // InternalBooleanExpressions.g:1036:1: rule__TimeConstraint__Group__1 : rule__TimeConstraint__Group__1__Impl rule__TimeConstraint__Group__2 ;
+    // InternalBooleanExpressions.g:1068:1: rule__TimeConstraint__Group__1 : rule__TimeConstraint__Group__1__Impl rule__TimeConstraint__Group__2 ;
     public final void rule__TimeConstraint__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1040:1: ( rule__TimeConstraint__Group__1__Impl rule__TimeConstraint__Group__2 )
-            // InternalBooleanExpressions.g:1041:2: rule__TimeConstraint__Group__1__Impl rule__TimeConstraint__Group__2
+            // InternalBooleanExpressions.g:1072:1: ( rule__TimeConstraint__Group__1__Impl rule__TimeConstraint__Group__2 )
+            // InternalBooleanExpressions.g:1073:2: rule__TimeConstraint__Group__1__Impl rule__TimeConstraint__Group__2
             {
             pushFollow(FOLLOW_8);
             rule__TimeConstraint__Group__1__Impl();
@@ -3004,21 +3088,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__1__Impl"
-    // InternalBooleanExpressions.g:1048:1: rule__TimeConstraint__Group__1__Impl : ( ( rule__TimeConstraint__Event2Assignment_1 ) ) ;
+    // InternalBooleanExpressions.g:1080:1: rule__TimeConstraint__Group__1__Impl : ( ( rule__TimeConstraint__Event2Assignment_1 ) ) ;
     public final void rule__TimeConstraint__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1052:1: ( ( ( rule__TimeConstraint__Event2Assignment_1 ) ) )
-            // InternalBooleanExpressions.g:1053:1: ( ( rule__TimeConstraint__Event2Assignment_1 ) )
+            // InternalBooleanExpressions.g:1084:1: ( ( ( rule__TimeConstraint__Event2Assignment_1 ) ) )
+            // InternalBooleanExpressions.g:1085:1: ( ( rule__TimeConstraint__Event2Assignment_1 ) )
             {
-            // InternalBooleanExpressions.g:1053:1: ( ( rule__TimeConstraint__Event2Assignment_1 ) )
-            // InternalBooleanExpressions.g:1054:1: ( rule__TimeConstraint__Event2Assignment_1 )
+            // InternalBooleanExpressions.g:1085:1: ( ( rule__TimeConstraint__Event2Assignment_1 ) )
+            // InternalBooleanExpressions.g:1086:1: ( rule__TimeConstraint__Event2Assignment_1 )
             {
              before(grammarAccess.getTimeConstraintAccess().getEvent2Assignment_1()); 
-            // InternalBooleanExpressions.g:1055:1: ( rule__TimeConstraint__Event2Assignment_1 )
-            // InternalBooleanExpressions.g:1055:2: rule__TimeConstraint__Event2Assignment_1
+            // InternalBooleanExpressions.g:1087:1: ( rule__TimeConstraint__Event2Assignment_1 )
+            // InternalBooleanExpressions.g:1087:2: rule__TimeConstraint__Event2Assignment_1
             {
             pushFollow(FOLLOW_2);
             rule__TimeConstraint__Event2Assignment_1();
@@ -3051,14 +3135,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__2"
-    // InternalBooleanExpressions.g:1065:1: rule__TimeConstraint__Group__2 : rule__TimeConstraint__Group__2__Impl rule__TimeConstraint__Group__3 ;
+    // InternalBooleanExpressions.g:1097:1: rule__TimeConstraint__Group__2 : rule__TimeConstraint__Group__2__Impl rule__TimeConstraint__Group__3 ;
     public final void rule__TimeConstraint__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1069:1: ( rule__TimeConstraint__Group__2__Impl rule__TimeConstraint__Group__3 )
-            // InternalBooleanExpressions.g:1070:2: rule__TimeConstraint__Group__2__Impl rule__TimeConstraint__Group__3
+            // InternalBooleanExpressions.g:1101:1: ( rule__TimeConstraint__Group__2__Impl rule__TimeConstraint__Group__3 )
+            // InternalBooleanExpressions.g:1102:2: rule__TimeConstraint__Group__2__Impl rule__TimeConstraint__Group__3
             {
             pushFollow(FOLLOW_9);
             rule__TimeConstraint__Group__2__Impl();
@@ -3089,20 +3173,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__2__Impl"
-    // InternalBooleanExpressions.g:1077:1: rule__TimeConstraint__Group__2__Impl : ( '-' ) ;
+    // InternalBooleanExpressions.g:1109:1: rule__TimeConstraint__Group__2__Impl : ( '-' ) ;
     public final void rule__TimeConstraint__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1081:1: ( ( '-' ) )
-            // InternalBooleanExpressions.g:1082:1: ( '-' )
+            // InternalBooleanExpressions.g:1113:1: ( ( '-' ) )
+            // InternalBooleanExpressions.g:1114:1: ( '-' )
             {
-            // InternalBooleanExpressions.g:1082:1: ( '-' )
-            // InternalBooleanExpressions.g:1083:1: '-'
+            // InternalBooleanExpressions.g:1114:1: ( '-' )
+            // InternalBooleanExpressions.g:1115:1: '-'
             {
              before(grammarAccess.getTimeConstraintAccess().getHyphenMinusKeyword_2()); 
-            match(input,29,FOLLOW_2); 
+            match(input,33,FOLLOW_2); 
              after(grammarAccess.getTimeConstraintAccess().getHyphenMinusKeyword_2()); 
 
             }
@@ -3126,14 +3210,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__3"
-    // InternalBooleanExpressions.g:1096:1: rule__TimeConstraint__Group__3 : rule__TimeConstraint__Group__3__Impl rule__TimeConstraint__Group__4 ;
+    // InternalBooleanExpressions.g:1128:1: rule__TimeConstraint__Group__3 : rule__TimeConstraint__Group__3__Impl rule__TimeConstraint__Group__4 ;
     public final void rule__TimeConstraint__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1100:1: ( rule__TimeConstraint__Group__3__Impl rule__TimeConstraint__Group__4 )
-            // InternalBooleanExpressions.g:1101:2: rule__TimeConstraint__Group__3__Impl rule__TimeConstraint__Group__4
+            // InternalBooleanExpressions.g:1132:1: ( rule__TimeConstraint__Group__3__Impl rule__TimeConstraint__Group__4 )
+            // InternalBooleanExpressions.g:1133:2: rule__TimeConstraint__Group__3__Impl rule__TimeConstraint__Group__4
             {
             pushFollow(FOLLOW_7);
             rule__TimeConstraint__Group__3__Impl();
@@ -3164,20 +3248,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__3__Impl"
-    // InternalBooleanExpressions.g:1108:1: rule__TimeConstraint__Group__3__Impl : ( '@' ) ;
+    // InternalBooleanExpressions.g:1140:1: rule__TimeConstraint__Group__3__Impl : ( '@' ) ;
     public final void rule__TimeConstraint__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1112:1: ( ( '@' ) )
-            // InternalBooleanExpressions.g:1113:1: ( '@' )
+            // InternalBooleanExpressions.g:1144:1: ( ( '@' ) )
+            // InternalBooleanExpressions.g:1145:1: ( '@' )
             {
-            // InternalBooleanExpressions.g:1113:1: ( '@' )
-            // InternalBooleanExpressions.g:1114:1: '@'
+            // InternalBooleanExpressions.g:1145:1: ( '@' )
+            // InternalBooleanExpressions.g:1146:1: '@'
             {
              before(grammarAccess.getTimeConstraintAccess().getCommercialAtKeyword_3()); 
-            match(input,28,FOLLOW_2); 
+            match(input,32,FOLLOW_2); 
              after(grammarAccess.getTimeConstraintAccess().getCommercialAtKeyword_3()); 
 
             }
@@ -3201,14 +3285,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__4"
-    // InternalBooleanExpressions.g:1127:1: rule__TimeConstraint__Group__4 : rule__TimeConstraint__Group__4__Impl rule__TimeConstraint__Group__5 ;
+    // InternalBooleanExpressions.g:1159:1: rule__TimeConstraint__Group__4 : rule__TimeConstraint__Group__4__Impl rule__TimeConstraint__Group__5 ;
     public final void rule__TimeConstraint__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1131:1: ( rule__TimeConstraint__Group__4__Impl rule__TimeConstraint__Group__5 )
-            // InternalBooleanExpressions.g:1132:2: rule__TimeConstraint__Group__4__Impl rule__TimeConstraint__Group__5
+            // InternalBooleanExpressions.g:1163:1: ( rule__TimeConstraint__Group__4__Impl rule__TimeConstraint__Group__5 )
+            // InternalBooleanExpressions.g:1164:2: rule__TimeConstraint__Group__4__Impl rule__TimeConstraint__Group__5
             {
             pushFollow(FOLLOW_10);
             rule__TimeConstraint__Group__4__Impl();
@@ -3239,21 +3323,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__4__Impl"
-    // InternalBooleanExpressions.g:1139:1: rule__TimeConstraint__Group__4__Impl : ( ( rule__TimeConstraint__Event1Assignment_4 ) ) ;
+    // InternalBooleanExpressions.g:1171:1: rule__TimeConstraint__Group__4__Impl : ( ( rule__TimeConstraint__Event1Assignment_4 ) ) ;
     public final void rule__TimeConstraint__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1143:1: ( ( ( rule__TimeConstraint__Event1Assignment_4 ) ) )
-            // InternalBooleanExpressions.g:1144:1: ( ( rule__TimeConstraint__Event1Assignment_4 ) )
+            // InternalBooleanExpressions.g:1175:1: ( ( ( rule__TimeConstraint__Event1Assignment_4 ) ) )
+            // InternalBooleanExpressions.g:1176:1: ( ( rule__TimeConstraint__Event1Assignment_4 ) )
             {
-            // InternalBooleanExpressions.g:1144:1: ( ( rule__TimeConstraint__Event1Assignment_4 ) )
-            // InternalBooleanExpressions.g:1145:1: ( rule__TimeConstraint__Event1Assignment_4 )
+            // InternalBooleanExpressions.g:1176:1: ( ( rule__TimeConstraint__Event1Assignment_4 ) )
+            // InternalBooleanExpressions.g:1177:1: ( rule__TimeConstraint__Event1Assignment_4 )
             {
              before(grammarAccess.getTimeConstraintAccess().getEvent1Assignment_4()); 
-            // InternalBooleanExpressions.g:1146:1: ( rule__TimeConstraint__Event1Assignment_4 )
-            // InternalBooleanExpressions.g:1146:2: rule__TimeConstraint__Event1Assignment_4
+            // InternalBooleanExpressions.g:1178:1: ( rule__TimeConstraint__Event1Assignment_4 )
+            // InternalBooleanExpressions.g:1178:2: rule__TimeConstraint__Event1Assignment_4
             {
             pushFollow(FOLLOW_2);
             rule__TimeConstraint__Event1Assignment_4();
@@ -3286,14 +3370,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__5"
-    // InternalBooleanExpressions.g:1156:1: rule__TimeConstraint__Group__5 : rule__TimeConstraint__Group__5__Impl rule__TimeConstraint__Group__6 ;
+    // InternalBooleanExpressions.g:1188:1: rule__TimeConstraint__Group__5 : rule__TimeConstraint__Group__5__Impl rule__TimeConstraint__Group__6 ;
     public final void rule__TimeConstraint__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1160:1: ( rule__TimeConstraint__Group__5__Impl rule__TimeConstraint__Group__6 )
-            // InternalBooleanExpressions.g:1161:2: rule__TimeConstraint__Group__5__Impl rule__TimeConstraint__Group__6
+            // InternalBooleanExpressions.g:1192:1: ( rule__TimeConstraint__Group__5__Impl rule__TimeConstraint__Group__6 )
+            // InternalBooleanExpressions.g:1193:2: rule__TimeConstraint__Group__5__Impl rule__TimeConstraint__Group__6
             {
             pushFollow(FOLLOW_11);
             rule__TimeConstraint__Group__5__Impl();
@@ -3324,21 +3408,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__5__Impl"
-    // InternalBooleanExpressions.g:1168:1: rule__TimeConstraint__Group__5__Impl : ( ( rule__TimeConstraint__OpAssignment_5 ) ) ;
+    // InternalBooleanExpressions.g:1200:1: rule__TimeConstraint__Group__5__Impl : ( ( rule__TimeConstraint__OpAssignment_5 ) ) ;
     public final void rule__TimeConstraint__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1172:1: ( ( ( rule__TimeConstraint__OpAssignment_5 ) ) )
-            // InternalBooleanExpressions.g:1173:1: ( ( rule__TimeConstraint__OpAssignment_5 ) )
+            // InternalBooleanExpressions.g:1204:1: ( ( ( rule__TimeConstraint__OpAssignment_5 ) ) )
+            // InternalBooleanExpressions.g:1205:1: ( ( rule__TimeConstraint__OpAssignment_5 ) )
             {
-            // InternalBooleanExpressions.g:1173:1: ( ( rule__TimeConstraint__OpAssignment_5 ) )
-            // InternalBooleanExpressions.g:1174:1: ( rule__TimeConstraint__OpAssignment_5 )
+            // InternalBooleanExpressions.g:1205:1: ( ( rule__TimeConstraint__OpAssignment_5 ) )
+            // InternalBooleanExpressions.g:1206:1: ( rule__TimeConstraint__OpAssignment_5 )
             {
              before(grammarAccess.getTimeConstraintAccess().getOpAssignment_5()); 
-            // InternalBooleanExpressions.g:1175:1: ( rule__TimeConstraint__OpAssignment_5 )
-            // InternalBooleanExpressions.g:1175:2: rule__TimeConstraint__OpAssignment_5
+            // InternalBooleanExpressions.g:1207:1: ( rule__TimeConstraint__OpAssignment_5 )
+            // InternalBooleanExpressions.g:1207:2: rule__TimeConstraint__OpAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__TimeConstraint__OpAssignment_5();
@@ -3371,14 +3455,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__6"
-    // InternalBooleanExpressions.g:1185:1: rule__TimeConstraint__Group__6 : rule__TimeConstraint__Group__6__Impl ;
+    // InternalBooleanExpressions.g:1217:1: rule__TimeConstraint__Group__6 : rule__TimeConstraint__Group__6__Impl ;
     public final void rule__TimeConstraint__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1189:1: ( rule__TimeConstraint__Group__6__Impl )
-            // InternalBooleanExpressions.g:1190:2: rule__TimeConstraint__Group__6__Impl
+            // InternalBooleanExpressions.g:1221:1: ( rule__TimeConstraint__Group__6__Impl )
+            // InternalBooleanExpressions.g:1222:2: rule__TimeConstraint__Group__6__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TimeConstraint__Group__6__Impl();
@@ -3404,21 +3488,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Group__6__Impl"
-    // InternalBooleanExpressions.g:1196:1: rule__TimeConstraint__Group__6__Impl : ( ( rule__TimeConstraint__ValueAssignment_6 ) ) ;
+    // InternalBooleanExpressions.g:1228:1: rule__TimeConstraint__Group__6__Impl : ( ( rule__TimeConstraint__ValueAssignment_6 ) ) ;
     public final void rule__TimeConstraint__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1200:1: ( ( ( rule__TimeConstraint__ValueAssignment_6 ) ) )
-            // InternalBooleanExpressions.g:1201:1: ( ( rule__TimeConstraint__ValueAssignment_6 ) )
+            // InternalBooleanExpressions.g:1232:1: ( ( ( rule__TimeConstraint__ValueAssignment_6 ) ) )
+            // InternalBooleanExpressions.g:1233:1: ( ( rule__TimeConstraint__ValueAssignment_6 ) )
             {
-            // InternalBooleanExpressions.g:1201:1: ( ( rule__TimeConstraint__ValueAssignment_6 ) )
-            // InternalBooleanExpressions.g:1202:1: ( rule__TimeConstraint__ValueAssignment_6 )
+            // InternalBooleanExpressions.g:1233:1: ( ( rule__TimeConstraint__ValueAssignment_6 ) )
+            // InternalBooleanExpressions.g:1234:1: ( rule__TimeConstraint__ValueAssignment_6 )
             {
              before(grammarAccess.getTimeConstraintAccess().getValueAssignment_6()); 
-            // InternalBooleanExpressions.g:1203:1: ( rule__TimeConstraint__ValueAssignment_6 )
-            // InternalBooleanExpressions.g:1203:2: rule__TimeConstraint__ValueAssignment_6
+            // InternalBooleanExpressions.g:1235:1: ( rule__TimeConstraint__ValueAssignment_6 )
+            // InternalBooleanExpressions.g:1235:2: rule__TimeConstraint__ValueAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__TimeConstraint__ValueAssignment_6();
@@ -3451,14 +3535,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__VariableCondition__Group__0"
-    // InternalBooleanExpressions.g:1227:1: rule__VariableCondition__Group__0 : rule__VariableCondition__Group__0__Impl rule__VariableCondition__Group__1 ;
+    // InternalBooleanExpressions.g:1259:1: rule__VariableCondition__Group__0 : rule__VariableCondition__Group__0__Impl rule__VariableCondition__Group__1 ;
     public final void rule__VariableCondition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1231:1: ( rule__VariableCondition__Group__0__Impl rule__VariableCondition__Group__1 )
-            // InternalBooleanExpressions.g:1232:2: rule__VariableCondition__Group__0__Impl rule__VariableCondition__Group__1
+            // InternalBooleanExpressions.g:1263:1: ( rule__VariableCondition__Group__0__Impl rule__VariableCondition__Group__1 )
+            // InternalBooleanExpressions.g:1264:2: rule__VariableCondition__Group__0__Impl rule__VariableCondition__Group__1
             {
             pushFollow(FOLLOW_12);
             rule__VariableCondition__Group__0__Impl();
@@ -3489,20 +3573,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__VariableCondition__Group__0__Impl"
-    // InternalBooleanExpressions.g:1239:1: rule__VariableCondition__Group__0__Impl : ( '(' ) ;
+    // InternalBooleanExpressions.g:1271:1: rule__VariableCondition__Group__0__Impl : ( '(' ) ;
     public final void rule__VariableCondition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1243:1: ( ( '(' ) )
-            // InternalBooleanExpressions.g:1244:1: ( '(' )
+            // InternalBooleanExpressions.g:1275:1: ( ( '(' ) )
+            // InternalBooleanExpressions.g:1276:1: ( '(' )
             {
-            // InternalBooleanExpressions.g:1244:1: ( '(' )
-            // InternalBooleanExpressions.g:1245:1: '('
+            // InternalBooleanExpressions.g:1276:1: ( '(' )
+            // InternalBooleanExpressions.g:1277:1: '('
             {
              before(grammarAccess.getVariableConditionAccess().getLeftParenthesisKeyword_0()); 
-            match(input,26,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getVariableConditionAccess().getLeftParenthesisKeyword_0()); 
 
             }
@@ -3526,14 +3610,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__VariableCondition__Group__1"
-    // InternalBooleanExpressions.g:1258:1: rule__VariableCondition__Group__1 : rule__VariableCondition__Group__1__Impl rule__VariableCondition__Group__2 ;
+    // InternalBooleanExpressions.g:1290:1: rule__VariableCondition__Group__1 : rule__VariableCondition__Group__1__Impl rule__VariableCondition__Group__2 ;
     public final void rule__VariableCondition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1262:1: ( rule__VariableCondition__Group__1__Impl rule__VariableCondition__Group__2 )
-            // InternalBooleanExpressions.g:1263:2: rule__VariableCondition__Group__1__Impl rule__VariableCondition__Group__2
+            // InternalBooleanExpressions.g:1294:1: ( rule__VariableCondition__Group__1__Impl rule__VariableCondition__Group__2 )
+            // InternalBooleanExpressions.g:1295:2: rule__VariableCondition__Group__1__Impl rule__VariableCondition__Group__2
             {
             pushFollow(FOLLOW_10);
             rule__VariableCondition__Group__1__Impl();
@@ -3564,21 +3648,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__VariableCondition__Group__1__Impl"
-    // InternalBooleanExpressions.g:1270:1: rule__VariableCondition__Group__1__Impl : ( ( rule__VariableCondition__Expression_leftAssignment_1 ) ) ;
+    // InternalBooleanExpressions.g:1302:1: rule__VariableCondition__Group__1__Impl : ( ( rule__VariableCondition__Expression_leftAssignment_1 ) ) ;
     public final void rule__VariableCondition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1274:1: ( ( ( rule__VariableCondition__Expression_leftAssignment_1 ) ) )
-            // InternalBooleanExpressions.g:1275:1: ( ( rule__VariableCondition__Expression_leftAssignment_1 ) )
+            // InternalBooleanExpressions.g:1306:1: ( ( ( rule__VariableCondition__Expression_leftAssignment_1 ) ) )
+            // InternalBooleanExpressions.g:1307:1: ( ( rule__VariableCondition__Expression_leftAssignment_1 ) )
             {
-            // InternalBooleanExpressions.g:1275:1: ( ( rule__VariableCondition__Expression_leftAssignment_1 ) )
-            // InternalBooleanExpressions.g:1276:1: ( rule__VariableCondition__Expression_leftAssignment_1 )
+            // InternalBooleanExpressions.g:1307:1: ( ( rule__VariableCondition__Expression_leftAssignment_1 ) )
+            // InternalBooleanExpressions.g:1308:1: ( rule__VariableCondition__Expression_leftAssignment_1 )
             {
              before(grammarAccess.getVariableConditionAccess().getExpression_leftAssignment_1()); 
-            // InternalBooleanExpressions.g:1277:1: ( rule__VariableCondition__Expression_leftAssignment_1 )
-            // InternalBooleanExpressions.g:1277:2: rule__VariableCondition__Expression_leftAssignment_1
+            // InternalBooleanExpressions.g:1309:1: ( rule__VariableCondition__Expression_leftAssignment_1 )
+            // InternalBooleanExpressions.g:1309:2: rule__VariableCondition__Expression_leftAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__VariableCondition__Expression_leftAssignment_1();
@@ -3611,14 +3695,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__VariableCondition__Group__2"
-    // InternalBooleanExpressions.g:1287:1: rule__VariableCondition__Group__2 : rule__VariableCondition__Group__2__Impl rule__VariableCondition__Group__3 ;
+    // InternalBooleanExpressions.g:1319:1: rule__VariableCondition__Group__2 : rule__VariableCondition__Group__2__Impl rule__VariableCondition__Group__3 ;
     public final void rule__VariableCondition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1291:1: ( rule__VariableCondition__Group__2__Impl rule__VariableCondition__Group__3 )
-            // InternalBooleanExpressions.g:1292:2: rule__VariableCondition__Group__2__Impl rule__VariableCondition__Group__3
+            // InternalBooleanExpressions.g:1323:1: ( rule__VariableCondition__Group__2__Impl rule__VariableCondition__Group__3 )
+            // InternalBooleanExpressions.g:1324:2: rule__VariableCondition__Group__2__Impl rule__VariableCondition__Group__3
             {
             pushFollow(FOLLOW_12);
             rule__VariableCondition__Group__2__Impl();
@@ -3649,21 +3733,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__VariableCondition__Group__2__Impl"
-    // InternalBooleanExpressions.g:1299:1: rule__VariableCondition__Group__2__Impl : ( ( rule__VariableCondition__RelationAssignment_2 ) ) ;
+    // InternalBooleanExpressions.g:1331:1: rule__VariableCondition__Group__2__Impl : ( ( rule__VariableCondition__RelationAssignment_2 ) ) ;
     public final void rule__VariableCondition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1303:1: ( ( ( rule__VariableCondition__RelationAssignment_2 ) ) )
-            // InternalBooleanExpressions.g:1304:1: ( ( rule__VariableCondition__RelationAssignment_2 ) )
+            // InternalBooleanExpressions.g:1335:1: ( ( ( rule__VariableCondition__RelationAssignment_2 ) ) )
+            // InternalBooleanExpressions.g:1336:1: ( ( rule__VariableCondition__RelationAssignment_2 ) )
             {
-            // InternalBooleanExpressions.g:1304:1: ( ( rule__VariableCondition__RelationAssignment_2 ) )
-            // InternalBooleanExpressions.g:1305:1: ( rule__VariableCondition__RelationAssignment_2 )
+            // InternalBooleanExpressions.g:1336:1: ( ( rule__VariableCondition__RelationAssignment_2 ) )
+            // InternalBooleanExpressions.g:1337:1: ( rule__VariableCondition__RelationAssignment_2 )
             {
              before(grammarAccess.getVariableConditionAccess().getRelationAssignment_2()); 
-            // InternalBooleanExpressions.g:1306:1: ( rule__VariableCondition__RelationAssignment_2 )
-            // InternalBooleanExpressions.g:1306:2: rule__VariableCondition__RelationAssignment_2
+            // InternalBooleanExpressions.g:1338:1: ( rule__VariableCondition__RelationAssignment_2 )
+            // InternalBooleanExpressions.g:1338:2: rule__VariableCondition__RelationAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__VariableCondition__RelationAssignment_2();
@@ -3696,14 +3780,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__VariableCondition__Group__3"
-    // InternalBooleanExpressions.g:1316:1: rule__VariableCondition__Group__3 : rule__VariableCondition__Group__3__Impl rule__VariableCondition__Group__4 ;
+    // InternalBooleanExpressions.g:1348:1: rule__VariableCondition__Group__3 : rule__VariableCondition__Group__3__Impl rule__VariableCondition__Group__4 ;
     public final void rule__VariableCondition__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1320:1: ( rule__VariableCondition__Group__3__Impl rule__VariableCondition__Group__4 )
-            // InternalBooleanExpressions.g:1321:2: rule__VariableCondition__Group__3__Impl rule__VariableCondition__Group__4
+            // InternalBooleanExpressions.g:1352:1: ( rule__VariableCondition__Group__3__Impl rule__VariableCondition__Group__4 )
+            // InternalBooleanExpressions.g:1353:2: rule__VariableCondition__Group__3__Impl rule__VariableCondition__Group__4
             {
             pushFollow(FOLLOW_6);
             rule__VariableCondition__Group__3__Impl();
@@ -3734,21 +3818,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__VariableCondition__Group__3__Impl"
-    // InternalBooleanExpressions.g:1328:1: rule__VariableCondition__Group__3__Impl : ( ( rule__VariableCondition__Expression_rightAssignment_3 ) ) ;
+    // InternalBooleanExpressions.g:1360:1: rule__VariableCondition__Group__3__Impl : ( ( rule__VariableCondition__Expression_rightAssignment_3 ) ) ;
     public final void rule__VariableCondition__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1332:1: ( ( ( rule__VariableCondition__Expression_rightAssignment_3 ) ) )
-            // InternalBooleanExpressions.g:1333:1: ( ( rule__VariableCondition__Expression_rightAssignment_3 ) )
+            // InternalBooleanExpressions.g:1364:1: ( ( ( rule__VariableCondition__Expression_rightAssignment_3 ) ) )
+            // InternalBooleanExpressions.g:1365:1: ( ( rule__VariableCondition__Expression_rightAssignment_3 ) )
             {
-            // InternalBooleanExpressions.g:1333:1: ( ( rule__VariableCondition__Expression_rightAssignment_3 ) )
-            // InternalBooleanExpressions.g:1334:1: ( rule__VariableCondition__Expression_rightAssignment_3 )
+            // InternalBooleanExpressions.g:1365:1: ( ( rule__VariableCondition__Expression_rightAssignment_3 ) )
+            // InternalBooleanExpressions.g:1366:1: ( rule__VariableCondition__Expression_rightAssignment_3 )
             {
              before(grammarAccess.getVariableConditionAccess().getExpression_rightAssignment_3()); 
-            // InternalBooleanExpressions.g:1335:1: ( rule__VariableCondition__Expression_rightAssignment_3 )
-            // InternalBooleanExpressions.g:1335:2: rule__VariableCondition__Expression_rightAssignment_3
+            // InternalBooleanExpressions.g:1367:1: ( rule__VariableCondition__Expression_rightAssignment_3 )
+            // InternalBooleanExpressions.g:1367:2: rule__VariableCondition__Expression_rightAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__VariableCondition__Expression_rightAssignment_3();
@@ -3781,14 +3865,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__VariableCondition__Group__4"
-    // InternalBooleanExpressions.g:1345:1: rule__VariableCondition__Group__4 : rule__VariableCondition__Group__4__Impl ;
+    // InternalBooleanExpressions.g:1377:1: rule__VariableCondition__Group__4 : rule__VariableCondition__Group__4__Impl ;
     public final void rule__VariableCondition__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1349:1: ( rule__VariableCondition__Group__4__Impl )
-            // InternalBooleanExpressions.g:1350:2: rule__VariableCondition__Group__4__Impl
+            // InternalBooleanExpressions.g:1381:1: ( rule__VariableCondition__Group__4__Impl )
+            // InternalBooleanExpressions.g:1382:2: rule__VariableCondition__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__VariableCondition__Group__4__Impl();
@@ -3814,20 +3898,20 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__VariableCondition__Group__4__Impl"
-    // InternalBooleanExpressions.g:1356:1: rule__VariableCondition__Group__4__Impl : ( ')' ) ;
+    // InternalBooleanExpressions.g:1388:1: rule__VariableCondition__Group__4__Impl : ( ')' ) ;
     public final void rule__VariableCondition__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1360:1: ( ( ')' ) )
-            // InternalBooleanExpressions.g:1361:1: ( ')' )
+            // InternalBooleanExpressions.g:1392:1: ( ( ')' ) )
+            // InternalBooleanExpressions.g:1393:1: ( ')' )
             {
-            // InternalBooleanExpressions.g:1361:1: ( ')' )
-            // InternalBooleanExpressions.g:1362:1: ')'
+            // InternalBooleanExpressions.g:1393:1: ( ')' )
+            // InternalBooleanExpressions.g:1394:1: ')'
             {
              before(grammarAccess.getVariableConditionAccess().getRightParenthesisKeyword_4()); 
-            match(input,27,FOLLOW_2); 
+            match(input,31,FOLLOW_2); 
              after(grammarAccess.getVariableConditionAccess().getRightParenthesisKeyword_4()); 
 
             }
@@ -3851,14 +3935,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__EXPRESSION__Group_0__0"
-    // InternalBooleanExpressions.g:1385:1: rule__EXPRESSION__Group_0__0 : rule__EXPRESSION__Group_0__0__Impl rule__EXPRESSION__Group_0__1 ;
+    // InternalBooleanExpressions.g:1417:1: rule__EXPRESSION__Group_0__0 : rule__EXPRESSION__Group_0__0__Impl rule__EXPRESSION__Group_0__1 ;
     public final void rule__EXPRESSION__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1389:1: ( rule__EXPRESSION__Group_0__0__Impl rule__EXPRESSION__Group_0__1 )
-            // InternalBooleanExpressions.g:1390:2: rule__EXPRESSION__Group_0__0__Impl rule__EXPRESSION__Group_0__1
+            // InternalBooleanExpressions.g:1421:1: ( rule__EXPRESSION__Group_0__0__Impl rule__EXPRESSION__Group_0__1 )
+            // InternalBooleanExpressions.g:1422:2: rule__EXPRESSION__Group_0__0__Impl rule__EXPRESSION__Group_0__1
             {
             pushFollow(FOLLOW_13);
             rule__EXPRESSION__Group_0__0__Impl();
@@ -3889,21 +3973,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__EXPRESSION__Group_0__0__Impl"
-    // InternalBooleanExpressions.g:1397:1: rule__EXPRESSION__Group_0__0__Impl : ( ( rule__EXPRESSION__FirstTermAssignment_0_0 ) ) ;
+    // InternalBooleanExpressions.g:1429:1: rule__EXPRESSION__Group_0__0__Impl : ( ( rule__EXPRESSION__FirstTermAssignment_0_0 ) ) ;
     public final void rule__EXPRESSION__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1401:1: ( ( ( rule__EXPRESSION__FirstTermAssignment_0_0 ) ) )
-            // InternalBooleanExpressions.g:1402:1: ( ( rule__EXPRESSION__FirstTermAssignment_0_0 ) )
+            // InternalBooleanExpressions.g:1433:1: ( ( ( rule__EXPRESSION__FirstTermAssignment_0_0 ) ) )
+            // InternalBooleanExpressions.g:1434:1: ( ( rule__EXPRESSION__FirstTermAssignment_0_0 ) )
             {
-            // InternalBooleanExpressions.g:1402:1: ( ( rule__EXPRESSION__FirstTermAssignment_0_0 ) )
-            // InternalBooleanExpressions.g:1403:1: ( rule__EXPRESSION__FirstTermAssignment_0_0 )
+            // InternalBooleanExpressions.g:1434:1: ( ( rule__EXPRESSION__FirstTermAssignment_0_0 ) )
+            // InternalBooleanExpressions.g:1435:1: ( rule__EXPRESSION__FirstTermAssignment_0_0 )
             {
              before(grammarAccess.getEXPRESSIONAccess().getFirstTermAssignment_0_0()); 
-            // InternalBooleanExpressions.g:1404:1: ( rule__EXPRESSION__FirstTermAssignment_0_0 )
-            // InternalBooleanExpressions.g:1404:2: rule__EXPRESSION__FirstTermAssignment_0_0
+            // InternalBooleanExpressions.g:1436:1: ( rule__EXPRESSION__FirstTermAssignment_0_0 )
+            // InternalBooleanExpressions.g:1436:2: rule__EXPRESSION__FirstTermAssignment_0_0
             {
             pushFollow(FOLLOW_2);
             rule__EXPRESSION__FirstTermAssignment_0_0();
@@ -3936,14 +4020,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__EXPRESSION__Group_0__1"
-    // InternalBooleanExpressions.g:1414:1: rule__EXPRESSION__Group_0__1 : rule__EXPRESSION__Group_0__1__Impl rule__EXPRESSION__Group_0__2 ;
+    // InternalBooleanExpressions.g:1446:1: rule__EXPRESSION__Group_0__1 : rule__EXPRESSION__Group_0__1__Impl rule__EXPRESSION__Group_0__2 ;
     public final void rule__EXPRESSION__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1418:1: ( rule__EXPRESSION__Group_0__1__Impl rule__EXPRESSION__Group_0__2 )
-            // InternalBooleanExpressions.g:1419:2: rule__EXPRESSION__Group_0__1__Impl rule__EXPRESSION__Group_0__2
+            // InternalBooleanExpressions.g:1450:1: ( rule__EXPRESSION__Group_0__1__Impl rule__EXPRESSION__Group_0__2 )
+            // InternalBooleanExpressions.g:1451:2: rule__EXPRESSION__Group_0__1__Impl rule__EXPRESSION__Group_0__2
             {
             pushFollow(FOLLOW_12);
             rule__EXPRESSION__Group_0__1__Impl();
@@ -3974,21 +4058,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__EXPRESSION__Group_0__1__Impl"
-    // InternalBooleanExpressions.g:1426:1: rule__EXPRESSION__Group_0__1__Impl : ( ( rule__EXPRESSION__OperatorAssignment_0_1 ) ) ;
+    // InternalBooleanExpressions.g:1458:1: rule__EXPRESSION__Group_0__1__Impl : ( ( rule__EXPRESSION__OperatorAssignment_0_1 ) ) ;
     public final void rule__EXPRESSION__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1430:1: ( ( ( rule__EXPRESSION__OperatorAssignment_0_1 ) ) )
-            // InternalBooleanExpressions.g:1431:1: ( ( rule__EXPRESSION__OperatorAssignment_0_1 ) )
+            // InternalBooleanExpressions.g:1462:1: ( ( ( rule__EXPRESSION__OperatorAssignment_0_1 ) ) )
+            // InternalBooleanExpressions.g:1463:1: ( ( rule__EXPRESSION__OperatorAssignment_0_1 ) )
             {
-            // InternalBooleanExpressions.g:1431:1: ( ( rule__EXPRESSION__OperatorAssignment_0_1 ) )
-            // InternalBooleanExpressions.g:1432:1: ( rule__EXPRESSION__OperatorAssignment_0_1 )
+            // InternalBooleanExpressions.g:1463:1: ( ( rule__EXPRESSION__OperatorAssignment_0_1 ) )
+            // InternalBooleanExpressions.g:1464:1: ( rule__EXPRESSION__OperatorAssignment_0_1 )
             {
              before(grammarAccess.getEXPRESSIONAccess().getOperatorAssignment_0_1()); 
-            // InternalBooleanExpressions.g:1433:1: ( rule__EXPRESSION__OperatorAssignment_0_1 )
-            // InternalBooleanExpressions.g:1433:2: rule__EXPRESSION__OperatorAssignment_0_1
+            // InternalBooleanExpressions.g:1465:1: ( rule__EXPRESSION__OperatorAssignment_0_1 )
+            // InternalBooleanExpressions.g:1465:2: rule__EXPRESSION__OperatorAssignment_0_1
             {
             pushFollow(FOLLOW_2);
             rule__EXPRESSION__OperatorAssignment_0_1();
@@ -4021,14 +4105,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__EXPRESSION__Group_0__2"
-    // InternalBooleanExpressions.g:1443:1: rule__EXPRESSION__Group_0__2 : rule__EXPRESSION__Group_0__2__Impl ;
+    // InternalBooleanExpressions.g:1475:1: rule__EXPRESSION__Group_0__2 : rule__EXPRESSION__Group_0__2__Impl ;
     public final void rule__EXPRESSION__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1447:1: ( rule__EXPRESSION__Group_0__2__Impl )
-            // InternalBooleanExpressions.g:1448:2: rule__EXPRESSION__Group_0__2__Impl
+            // InternalBooleanExpressions.g:1479:1: ( rule__EXPRESSION__Group_0__2__Impl )
+            // InternalBooleanExpressions.g:1480:2: rule__EXPRESSION__Group_0__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EXPRESSION__Group_0__2__Impl();
@@ -4054,21 +4138,21 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__EXPRESSION__Group_0__2__Impl"
-    // InternalBooleanExpressions.g:1454:1: rule__EXPRESSION__Group_0__2__Impl : ( ( rule__EXPRESSION__SecondTermAssignment_0_2 ) ) ;
+    // InternalBooleanExpressions.g:1486:1: rule__EXPRESSION__Group_0__2__Impl : ( ( rule__EXPRESSION__SecondTermAssignment_0_2 ) ) ;
     public final void rule__EXPRESSION__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1458:1: ( ( ( rule__EXPRESSION__SecondTermAssignment_0_2 ) ) )
-            // InternalBooleanExpressions.g:1459:1: ( ( rule__EXPRESSION__SecondTermAssignment_0_2 ) )
+            // InternalBooleanExpressions.g:1490:1: ( ( ( rule__EXPRESSION__SecondTermAssignment_0_2 ) ) )
+            // InternalBooleanExpressions.g:1491:1: ( ( rule__EXPRESSION__SecondTermAssignment_0_2 ) )
             {
-            // InternalBooleanExpressions.g:1459:1: ( ( rule__EXPRESSION__SecondTermAssignment_0_2 ) )
-            // InternalBooleanExpressions.g:1460:1: ( rule__EXPRESSION__SecondTermAssignment_0_2 )
+            // InternalBooleanExpressions.g:1491:1: ( ( rule__EXPRESSION__SecondTermAssignment_0_2 ) )
+            // InternalBooleanExpressions.g:1492:1: ( rule__EXPRESSION__SecondTermAssignment_0_2 )
             {
              before(grammarAccess.getEXPRESSIONAccess().getSecondTermAssignment_0_2()); 
-            // InternalBooleanExpressions.g:1461:1: ( rule__EXPRESSION__SecondTermAssignment_0_2 )
-            // InternalBooleanExpressions.g:1461:2: rule__EXPRESSION__SecondTermAssignment_0_2
+            // InternalBooleanExpressions.g:1493:1: ( rule__EXPRESSION__SecondTermAssignment_0_2 )
+            // InternalBooleanExpressions.g:1493:2: rule__EXPRESSION__SecondTermAssignment_0_2
             {
             pushFollow(FOLLOW_2);
             rule__EXPRESSION__SecondTermAssignment_0_2();
@@ -4101,14 +4185,14 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Event__Group_0__0"
-    // InternalBooleanExpressions.g:1477:1: rule__Event__Group_0__0 : rule__Event__Group_0__0__Impl rule__Event__Group_0__1 ;
+    // InternalBooleanExpressions.g:1509:1: rule__Event__Group_0__0 : rule__Event__Group_0__0__Impl rule__Event__Group_0__1 ;
     public final void rule__Event__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1481:1: ( rule__Event__Group_0__0__Impl rule__Event__Group_0__1 )
-            // InternalBooleanExpressions.g:1482:2: rule__Event__Group_0__0__Impl rule__Event__Group_0__1
+            // InternalBooleanExpressions.g:1513:1: ( rule__Event__Group_0__0__Impl rule__Event__Group_0__1 )
+            // InternalBooleanExpressions.g:1514:2: rule__Event__Group_0__0__Impl rule__Event__Group_0__1
             {
             pushFollow(FOLLOW_14);
             rule__Event__Group_0__0__Impl();
@@ -4139,31 +4223,50 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Event__Group_0__0__Impl"
-    // InternalBooleanExpressions.g:1489:1: rule__Event__Group_0__0__Impl : ( ( rule__Event__EventNameAssignment_0_0 ) ) ;
+    // InternalBooleanExpressions.g:1521:1: rule__Event__Group_0__0__Impl : ( ( rule__Event__Group_0_0__0 )? ) ;
     public final void rule__Event__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1493:1: ( ( ( rule__Event__EventNameAssignment_0_0 ) ) )
-            // InternalBooleanExpressions.g:1494:1: ( ( rule__Event__EventNameAssignment_0_0 ) )
+            // InternalBooleanExpressions.g:1525:1: ( ( ( rule__Event__Group_0_0__0 )? ) )
+            // InternalBooleanExpressions.g:1526:1: ( ( rule__Event__Group_0_0__0 )? )
             {
-            // InternalBooleanExpressions.g:1494:1: ( ( rule__Event__EventNameAssignment_0_0 ) )
-            // InternalBooleanExpressions.g:1495:1: ( rule__Event__EventNameAssignment_0_0 )
+            // InternalBooleanExpressions.g:1526:1: ( ( rule__Event__Group_0_0__0 )? )
+            // InternalBooleanExpressions.g:1527:1: ( rule__Event__Group_0_0__0 )?
             {
-             before(grammarAccess.getEventAccess().getEventNameAssignment_0_0()); 
-            // InternalBooleanExpressions.g:1496:1: ( rule__Event__EventNameAssignment_0_0 )
-            // InternalBooleanExpressions.g:1496:2: rule__Event__EventNameAssignment_0_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__Event__EventNameAssignment_0_0();
+             before(grammarAccess.getEventAccess().getGroup_0_0()); 
+            // InternalBooleanExpressions.g:1528:1: ( rule__Event__Group_0_0__0 )?
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            state._fsp--;
+            if ( (LA10_0==RULE_ID) ) {
+                int LA10_1 = input.LA(2);
 
+                if ( (LA10_1==34) ) {
+                    int LA10_2 = input.LA(3);
+
+                    if ( (LA10_2==RULE_ID) ) {
+                        alt10=1;
+                    }
+                }
+            }
+            switch (alt10) {
+                case 1 :
+                    // InternalBooleanExpressions.g:1528:2: rule__Event__Group_0_0__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Event__Group_0_0__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
 
             }
 
-             after(grammarAccess.getEventAccess().getEventNameAssignment_0_0()); 
+             after(grammarAccess.getEventAccess().getGroup_0_0()); 
 
             }
 
@@ -4186,22 +4289,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Event__Group_0__1"
-    // InternalBooleanExpressions.g:1506:1: rule__Event__Group_0__1 : rule__Event__Group_0__1__Impl rule__Event__Group_0__2 ;
+    // InternalBooleanExpressions.g:1538:1: rule__Event__Group_0__1 : rule__Event__Group_0__1__Impl ;
     public final void rule__Event__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1510:1: ( rule__Event__Group_0__1__Impl rule__Event__Group_0__2 )
-            // InternalBooleanExpressions.g:1511:2: rule__Event__Group_0__1__Impl rule__Event__Group_0__2
+            // InternalBooleanExpressions.g:1542:1: ( rule__Event__Group_0__1__Impl )
+            // InternalBooleanExpressions.g:1543:2: rule__Event__Group_0__1__Impl
             {
-            pushFollow(FOLLOW_15);
-            rule__Event__Group_0__1__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__Event__Group_0__2();
+            rule__Event__Group_0__1__Impl();
 
             state._fsp--;
 
@@ -4224,21 +4322,31 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Event__Group_0__1__Impl"
-    // InternalBooleanExpressions.g:1518:1: rule__Event__Group_0__1__Impl : ( '.' ) ;
+    // InternalBooleanExpressions.g:1549:1: rule__Event__Group_0__1__Impl : ( ( rule__Event__Group_0_1__0 ) ) ;
     public final void rule__Event__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1522:1: ( ( '.' ) )
-            // InternalBooleanExpressions.g:1523:1: ( '.' )
+            // InternalBooleanExpressions.g:1553:1: ( ( ( rule__Event__Group_0_1__0 ) ) )
+            // InternalBooleanExpressions.g:1554:1: ( ( rule__Event__Group_0_1__0 ) )
             {
-            // InternalBooleanExpressions.g:1523:1: ( '.' )
-            // InternalBooleanExpressions.g:1524:1: '.'
+            // InternalBooleanExpressions.g:1554:1: ( ( rule__Event__Group_0_1__0 ) )
+            // InternalBooleanExpressions.g:1555:1: ( rule__Event__Group_0_1__0 )
             {
-             before(grammarAccess.getEventAccess().getFullStopKeyword_0_1()); 
-            match(input,30,FOLLOW_2); 
-             after(grammarAccess.getEventAccess().getFullStopKeyword_0_1()); 
+             before(grammarAccess.getEventAccess().getGroup_0_1()); 
+            // InternalBooleanExpressions.g:1556:1: ( rule__Event__Group_0_1__0 )
+            // InternalBooleanExpressions.g:1556:2: rule__Event__Group_0_1__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Event__Group_0_1__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getEventAccess().getGroup_0_1()); 
 
             }
 
@@ -4260,18 +4368,23 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
     // $ANTLR end "rule__Event__Group_0__1__Impl"
 
 
-    // $ANTLR start "rule__Event__Group_0__2"
-    // InternalBooleanExpressions.g:1537:1: rule__Event__Group_0__2 : rule__Event__Group_0__2__Impl ;
-    public final void rule__Event__Group_0__2() throws RecognitionException {
+    // $ANTLR start "rule__Event__Group_0_0__0"
+    // InternalBooleanExpressions.g:1570:1: rule__Event__Group_0_0__0 : rule__Event__Group_0_0__0__Impl rule__Event__Group_0_0__1 ;
+    public final void rule__Event__Group_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1541:1: ( rule__Event__Group_0__2__Impl )
-            // InternalBooleanExpressions.g:1542:2: rule__Event__Group_0__2__Impl
+            // InternalBooleanExpressions.g:1574:1: ( rule__Event__Group_0_0__0__Impl rule__Event__Group_0_0__1 )
+            // InternalBooleanExpressions.g:1575:2: rule__Event__Group_0_0__0__Impl rule__Event__Group_0_0__1
             {
+            pushFollow(FOLLOW_15);
+            rule__Event__Group_0_0__0__Impl();
+
+            state._fsp--;
+
             pushFollow(FOLLOW_2);
-            rule__Event__Group_0__2__Impl();
+            rule__Event__Group_0_0__1();
 
             state._fsp--;
 
@@ -4290,35 +4403,35 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
         }
         return ;
     }
-    // $ANTLR end "rule__Event__Group_0__2"
+    // $ANTLR end "rule__Event__Group_0_0__0"
 
 
-    // $ANTLR start "rule__Event__Group_0__2__Impl"
-    // InternalBooleanExpressions.g:1548:1: rule__Event__Group_0__2__Impl : ( ( rule__Event__EventExtensionAssignment_0_2 ) ) ;
-    public final void rule__Event__Group_0__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Event__Group_0_0__0__Impl"
+    // InternalBooleanExpressions.g:1582:1: rule__Event__Group_0_0__0__Impl : ( ( rule__Event__ObjNameAssignment_0_0_0 ) ) ;
+    public final void rule__Event__Group_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1552:1: ( ( ( rule__Event__EventExtensionAssignment_0_2 ) ) )
-            // InternalBooleanExpressions.g:1553:1: ( ( rule__Event__EventExtensionAssignment_0_2 ) )
+            // InternalBooleanExpressions.g:1586:1: ( ( ( rule__Event__ObjNameAssignment_0_0_0 ) ) )
+            // InternalBooleanExpressions.g:1587:1: ( ( rule__Event__ObjNameAssignment_0_0_0 ) )
             {
-            // InternalBooleanExpressions.g:1553:1: ( ( rule__Event__EventExtensionAssignment_0_2 ) )
-            // InternalBooleanExpressions.g:1554:1: ( rule__Event__EventExtensionAssignment_0_2 )
+            // InternalBooleanExpressions.g:1587:1: ( ( rule__Event__ObjNameAssignment_0_0_0 ) )
+            // InternalBooleanExpressions.g:1588:1: ( rule__Event__ObjNameAssignment_0_0_0 )
             {
-             before(grammarAccess.getEventAccess().getEventExtensionAssignment_0_2()); 
-            // InternalBooleanExpressions.g:1555:1: ( rule__Event__EventExtensionAssignment_0_2 )
-            // InternalBooleanExpressions.g:1555:2: rule__Event__EventExtensionAssignment_0_2
+             before(grammarAccess.getEventAccess().getObjNameAssignment_0_0_0()); 
+            // InternalBooleanExpressions.g:1589:1: ( rule__Event__ObjNameAssignment_0_0_0 )
+            // InternalBooleanExpressions.g:1589:2: rule__Event__ObjNameAssignment_0_0_0
             {
             pushFollow(FOLLOW_2);
-            rule__Event__EventExtensionAssignment_0_2();
+            rule__Event__ObjNameAssignment_0_0_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getEventAccess().getEventExtensionAssignment_0_2()); 
+             after(grammarAccess.getEventAccess().getObjNameAssignment_0_0_0()); 
 
             }
 
@@ -4337,21 +4450,331 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
         }
         return ;
     }
-    // $ANTLR end "rule__Event__Group_0__2__Impl"
+    // $ANTLR end "rule__Event__Group_0_0__0__Impl"
+
+
+    // $ANTLR start "rule__Event__Group_0_0__1"
+    // InternalBooleanExpressions.g:1599:1: rule__Event__Group_0_0__1 : rule__Event__Group_0_0__1__Impl ;
+    public final void rule__Event__Group_0_0__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // InternalBooleanExpressions.g:1603:1: ( rule__Event__Group_0_0__1__Impl )
+            // InternalBooleanExpressions.g:1604:2: rule__Event__Group_0_0__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Event__Group_0_0__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Event__Group_0_0__1"
+
+
+    // $ANTLR start "rule__Event__Group_0_0__1__Impl"
+    // InternalBooleanExpressions.g:1610:1: rule__Event__Group_0_0__1__Impl : ( '.' ) ;
+    public final void rule__Event__Group_0_0__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // InternalBooleanExpressions.g:1614:1: ( ( '.' ) )
+            // InternalBooleanExpressions.g:1615:1: ( '.' )
+            {
+            // InternalBooleanExpressions.g:1615:1: ( '.' )
+            // InternalBooleanExpressions.g:1616:1: '.'
+            {
+             before(grammarAccess.getEventAccess().getFullStopKeyword_0_0_1()); 
+            match(input,34,FOLLOW_2); 
+             after(grammarAccess.getEventAccess().getFullStopKeyword_0_0_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Event__Group_0_0__1__Impl"
+
+
+    // $ANTLR start "rule__Event__Group_0_1__0"
+    // InternalBooleanExpressions.g:1633:1: rule__Event__Group_0_1__0 : rule__Event__Group_0_1__0__Impl rule__Event__Group_0_1__1 ;
+    public final void rule__Event__Group_0_1__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // InternalBooleanExpressions.g:1637:1: ( rule__Event__Group_0_1__0__Impl rule__Event__Group_0_1__1 )
+            // InternalBooleanExpressions.g:1638:2: rule__Event__Group_0_1__0__Impl rule__Event__Group_0_1__1
+            {
+            pushFollow(FOLLOW_15);
+            rule__Event__Group_0_1__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Event__Group_0_1__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Event__Group_0_1__0"
+
+
+    // $ANTLR start "rule__Event__Group_0_1__0__Impl"
+    // InternalBooleanExpressions.g:1645:1: rule__Event__Group_0_1__0__Impl : ( ( rule__Event__EventNameAssignment_0_1_0 ) ) ;
+    public final void rule__Event__Group_0_1__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // InternalBooleanExpressions.g:1649:1: ( ( ( rule__Event__EventNameAssignment_0_1_0 ) ) )
+            // InternalBooleanExpressions.g:1650:1: ( ( rule__Event__EventNameAssignment_0_1_0 ) )
+            {
+            // InternalBooleanExpressions.g:1650:1: ( ( rule__Event__EventNameAssignment_0_1_0 ) )
+            // InternalBooleanExpressions.g:1651:1: ( rule__Event__EventNameAssignment_0_1_0 )
+            {
+             before(grammarAccess.getEventAccess().getEventNameAssignment_0_1_0()); 
+            // InternalBooleanExpressions.g:1652:1: ( rule__Event__EventNameAssignment_0_1_0 )
+            // InternalBooleanExpressions.g:1652:2: rule__Event__EventNameAssignment_0_1_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Event__EventNameAssignment_0_1_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getEventAccess().getEventNameAssignment_0_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Event__Group_0_1__0__Impl"
+
+
+    // $ANTLR start "rule__Event__Group_0_1__1"
+    // InternalBooleanExpressions.g:1662:1: rule__Event__Group_0_1__1 : rule__Event__Group_0_1__1__Impl rule__Event__Group_0_1__2 ;
+    public final void rule__Event__Group_0_1__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // InternalBooleanExpressions.g:1666:1: ( rule__Event__Group_0_1__1__Impl rule__Event__Group_0_1__2 )
+            // InternalBooleanExpressions.g:1667:2: rule__Event__Group_0_1__1__Impl rule__Event__Group_0_1__2
+            {
+            pushFollow(FOLLOW_16);
+            rule__Event__Group_0_1__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Event__Group_0_1__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Event__Group_0_1__1"
+
+
+    // $ANTLR start "rule__Event__Group_0_1__1__Impl"
+    // InternalBooleanExpressions.g:1674:1: rule__Event__Group_0_1__1__Impl : ( '.' ) ;
+    public final void rule__Event__Group_0_1__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // InternalBooleanExpressions.g:1678:1: ( ( '.' ) )
+            // InternalBooleanExpressions.g:1679:1: ( '.' )
+            {
+            // InternalBooleanExpressions.g:1679:1: ( '.' )
+            // InternalBooleanExpressions.g:1680:1: '.'
+            {
+             before(grammarAccess.getEventAccess().getFullStopKeyword_0_1_1()); 
+            match(input,34,FOLLOW_2); 
+             after(grammarAccess.getEventAccess().getFullStopKeyword_0_1_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Event__Group_0_1__1__Impl"
+
+
+    // $ANTLR start "rule__Event__Group_0_1__2"
+    // InternalBooleanExpressions.g:1693:1: rule__Event__Group_0_1__2 : rule__Event__Group_0_1__2__Impl ;
+    public final void rule__Event__Group_0_1__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // InternalBooleanExpressions.g:1697:1: ( rule__Event__Group_0_1__2__Impl )
+            // InternalBooleanExpressions.g:1698:2: rule__Event__Group_0_1__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Event__Group_0_1__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Event__Group_0_1__2"
+
+
+    // $ANTLR start "rule__Event__Group_0_1__2__Impl"
+    // InternalBooleanExpressions.g:1704:1: rule__Event__Group_0_1__2__Impl : ( ( rule__Event__EventExtensionAssignment_0_1_2 ) ) ;
+    public final void rule__Event__Group_0_1__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // InternalBooleanExpressions.g:1708:1: ( ( ( rule__Event__EventExtensionAssignment_0_1_2 ) ) )
+            // InternalBooleanExpressions.g:1709:1: ( ( rule__Event__EventExtensionAssignment_0_1_2 ) )
+            {
+            // InternalBooleanExpressions.g:1709:1: ( ( rule__Event__EventExtensionAssignment_0_1_2 ) )
+            // InternalBooleanExpressions.g:1710:1: ( rule__Event__EventExtensionAssignment_0_1_2 )
+            {
+             before(grammarAccess.getEventAccess().getEventExtensionAssignment_0_1_2()); 
+            // InternalBooleanExpressions.g:1711:1: ( rule__Event__EventExtensionAssignment_0_1_2 )
+            // InternalBooleanExpressions.g:1711:2: rule__Event__EventExtensionAssignment_0_1_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__Event__EventExtensionAssignment_0_1_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getEventAccess().getEventExtensionAssignment_0_1_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Event__Group_0_1__2__Impl"
 
 
     // $ANTLR start "rule__Model__ExpressionAssignment"
-    // InternalBooleanExpressions.g:1572:1: rule__Model__ExpressionAssignment : ( ruleOrExpression ) ;
+    // InternalBooleanExpressions.g:1728:1: rule__Model__ExpressionAssignment : ( ruleOrExpression ) ;
     public final void rule__Model__ExpressionAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1576:1: ( ( ruleOrExpression ) )
-            // InternalBooleanExpressions.g:1577:1: ( ruleOrExpression )
+            // InternalBooleanExpressions.g:1732:1: ( ( ruleOrExpression ) )
+            // InternalBooleanExpressions.g:1733:1: ( ruleOrExpression )
             {
-            // InternalBooleanExpressions.g:1577:1: ( ruleOrExpression )
-            // InternalBooleanExpressions.g:1578:1: ruleOrExpression
+            // InternalBooleanExpressions.g:1733:1: ( ruleOrExpression )
+            // InternalBooleanExpressions.g:1734:1: ruleOrExpression
             {
              before(grammarAccess.getModelAccess().getExpressionOrExpressionParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -4382,17 +4805,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__OrExpression__LeftExpressionAssignment_0"
-    // InternalBooleanExpressions.g:1587:1: rule__OrExpression__LeftExpressionAssignment_0 : ( ruleAndExpression ) ;
+    // InternalBooleanExpressions.g:1743:1: rule__OrExpression__LeftExpressionAssignment_0 : ( ruleAndExpression ) ;
     public final void rule__OrExpression__LeftExpressionAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1591:1: ( ( ruleAndExpression ) )
-            // InternalBooleanExpressions.g:1592:1: ( ruleAndExpression )
+            // InternalBooleanExpressions.g:1747:1: ( ( ruleAndExpression ) )
+            // InternalBooleanExpressions.g:1748:1: ( ruleAndExpression )
             {
-            // InternalBooleanExpressions.g:1592:1: ( ruleAndExpression )
-            // InternalBooleanExpressions.g:1593:1: ruleAndExpression
+            // InternalBooleanExpressions.g:1748:1: ( ruleAndExpression )
+            // InternalBooleanExpressions.g:1749:1: ruleAndExpression
             {
              before(grammarAccess.getOrExpressionAccess().getLeftExpressionAndExpressionParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -4423,17 +4846,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__OrExpression__OrAssignment_1_0"
-    // InternalBooleanExpressions.g:1602:1: rule__OrExpression__OrAssignment_1_0 : ( RULE_OR ) ;
+    // InternalBooleanExpressions.g:1758:1: rule__OrExpression__OrAssignment_1_0 : ( RULE_OR ) ;
     public final void rule__OrExpression__OrAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1606:1: ( ( RULE_OR ) )
-            // InternalBooleanExpressions.g:1607:1: ( RULE_OR )
+            // InternalBooleanExpressions.g:1762:1: ( ( RULE_OR ) )
+            // InternalBooleanExpressions.g:1763:1: ( RULE_OR )
             {
-            // InternalBooleanExpressions.g:1607:1: ( RULE_OR )
-            // InternalBooleanExpressions.g:1608:1: RULE_OR
+            // InternalBooleanExpressions.g:1763:1: ( RULE_OR )
+            // InternalBooleanExpressions.g:1764:1: RULE_OR
             {
              before(grammarAccess.getOrExpressionAccess().getOrORTerminalRuleCall_1_0_0()); 
             match(input,RULE_OR,FOLLOW_2); 
@@ -4460,17 +4883,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__OrExpression__RightExpressionAssignment_1_1"
-    // InternalBooleanExpressions.g:1617:1: rule__OrExpression__RightExpressionAssignment_1_1 : ( ruleOrExpression ) ;
+    // InternalBooleanExpressions.g:1773:1: rule__OrExpression__RightExpressionAssignment_1_1 : ( ruleOrExpression ) ;
     public final void rule__OrExpression__RightExpressionAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1621:1: ( ( ruleOrExpression ) )
-            // InternalBooleanExpressions.g:1622:1: ( ruleOrExpression )
+            // InternalBooleanExpressions.g:1777:1: ( ( ruleOrExpression ) )
+            // InternalBooleanExpressions.g:1778:1: ( ruleOrExpression )
             {
-            // InternalBooleanExpressions.g:1622:1: ( ruleOrExpression )
-            // InternalBooleanExpressions.g:1623:1: ruleOrExpression
+            // InternalBooleanExpressions.g:1778:1: ( ruleOrExpression )
+            // InternalBooleanExpressions.g:1779:1: ruleOrExpression
             {
              before(grammarAccess.getOrExpressionAccess().getRightExpressionOrExpressionParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -4501,17 +4924,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AndExpression__LeftExpressionAssignment_0"
-    // InternalBooleanExpressions.g:1632:1: rule__AndExpression__LeftExpressionAssignment_0 : ( ruleBaseExpression ) ;
+    // InternalBooleanExpressions.g:1788:1: rule__AndExpression__LeftExpressionAssignment_0 : ( ruleBaseExpression ) ;
     public final void rule__AndExpression__LeftExpressionAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1636:1: ( ( ruleBaseExpression ) )
-            // InternalBooleanExpressions.g:1637:1: ( ruleBaseExpression )
+            // InternalBooleanExpressions.g:1792:1: ( ( ruleBaseExpression ) )
+            // InternalBooleanExpressions.g:1793:1: ( ruleBaseExpression )
             {
-            // InternalBooleanExpressions.g:1637:1: ( ruleBaseExpression )
-            // InternalBooleanExpressions.g:1638:1: ruleBaseExpression
+            // InternalBooleanExpressions.g:1793:1: ( ruleBaseExpression )
+            // InternalBooleanExpressions.g:1794:1: ruleBaseExpression
             {
              before(grammarAccess.getAndExpressionAccess().getLeftExpressionBaseExpressionParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -4542,17 +4965,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AndExpression__AndAssignment_1_0"
-    // InternalBooleanExpressions.g:1647:1: rule__AndExpression__AndAssignment_1_0 : ( RULE_AND ) ;
+    // InternalBooleanExpressions.g:1803:1: rule__AndExpression__AndAssignment_1_0 : ( RULE_AND ) ;
     public final void rule__AndExpression__AndAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1651:1: ( ( RULE_AND ) )
-            // InternalBooleanExpressions.g:1652:1: ( RULE_AND )
+            // InternalBooleanExpressions.g:1807:1: ( ( RULE_AND ) )
+            // InternalBooleanExpressions.g:1808:1: ( RULE_AND )
             {
-            // InternalBooleanExpressions.g:1652:1: ( RULE_AND )
-            // InternalBooleanExpressions.g:1653:1: RULE_AND
+            // InternalBooleanExpressions.g:1808:1: ( RULE_AND )
+            // InternalBooleanExpressions.g:1809:1: RULE_AND
             {
              before(grammarAccess.getAndExpressionAccess().getAndANDTerminalRuleCall_1_0_0()); 
             match(input,RULE_AND,FOLLOW_2); 
@@ -4579,17 +5002,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AndExpression__RightExpressionAssignment_1_1"
-    // InternalBooleanExpressions.g:1662:1: rule__AndExpression__RightExpressionAssignment_1_1 : ( ruleAndExpression ) ;
+    // InternalBooleanExpressions.g:1818:1: rule__AndExpression__RightExpressionAssignment_1_1 : ( ruleAndExpression ) ;
     public final void rule__AndExpression__RightExpressionAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1666:1: ( ( ruleAndExpression ) )
-            // InternalBooleanExpressions.g:1667:1: ( ruleAndExpression )
+            // InternalBooleanExpressions.g:1822:1: ( ( ruleAndExpression ) )
+            // InternalBooleanExpressions.g:1823:1: ( ruleAndExpression )
             {
-            // InternalBooleanExpressions.g:1667:1: ( ruleAndExpression )
-            // InternalBooleanExpressions.g:1668:1: ruleAndExpression
+            // InternalBooleanExpressions.g:1823:1: ( ruleAndExpression )
+            // InternalBooleanExpressions.g:1824:1: ruleAndExpression
             {
              before(grammarAccess.getAndExpressionAccess().getRightExpressionAndExpressionParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -4620,17 +5043,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__NotAssignment_0"
-    // InternalBooleanExpressions.g:1677:1: rule__BaseExpression__NotAssignment_0 : ( RULE_NOT ) ;
+    // InternalBooleanExpressions.g:1833:1: rule__BaseExpression__NotAssignment_0 : ( RULE_NOT ) ;
     public final void rule__BaseExpression__NotAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1681:1: ( ( RULE_NOT ) )
-            // InternalBooleanExpressions.g:1682:1: ( RULE_NOT )
+            // InternalBooleanExpressions.g:1837:1: ( ( RULE_NOT ) )
+            // InternalBooleanExpressions.g:1838:1: ( RULE_NOT )
             {
-            // InternalBooleanExpressions.g:1682:1: ( RULE_NOT )
-            // InternalBooleanExpressions.g:1683:1: RULE_NOT
+            // InternalBooleanExpressions.g:1838:1: ( RULE_NOT )
+            // InternalBooleanExpressions.g:1839:1: RULE_NOT
             {
              before(grammarAccess.getBaseExpressionAccess().getNotNOTTerminalRuleCall_0_0()); 
             match(input,RULE_NOT,FOLLOW_2); 
@@ -4657,17 +5080,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__BooleanTermAssignment_1_0"
-    // InternalBooleanExpressions.g:1692:1: rule__BaseExpression__BooleanTermAssignment_1_0 : ( rulebooleanTerm ) ;
+    // InternalBooleanExpressions.g:1848:1: rule__BaseExpression__BooleanTermAssignment_1_0 : ( rulebooleanTerm ) ;
     public final void rule__BaseExpression__BooleanTermAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1696:1: ( ( rulebooleanTerm ) )
-            // InternalBooleanExpressions.g:1697:1: ( rulebooleanTerm )
+            // InternalBooleanExpressions.g:1852:1: ( ( rulebooleanTerm ) )
+            // InternalBooleanExpressions.g:1853:1: ( rulebooleanTerm )
             {
-            // InternalBooleanExpressions.g:1697:1: ( rulebooleanTerm )
-            // InternalBooleanExpressions.g:1698:1: rulebooleanTerm
+            // InternalBooleanExpressions.g:1853:1: ( rulebooleanTerm )
+            // InternalBooleanExpressions.g:1854:1: rulebooleanTerm
             {
              before(grammarAccess.getBaseExpressionAccess().getBooleanTermBooleanTermParserRuleCall_1_0_0()); 
             pushFollow(FOLLOW_2);
@@ -4698,17 +5121,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BaseExpression__RootExpressionAssignment_1_1_1"
-    // InternalBooleanExpressions.g:1707:1: rule__BaseExpression__RootExpressionAssignment_1_1_1 : ( ruleOrExpression ) ;
+    // InternalBooleanExpressions.g:1863:1: rule__BaseExpression__RootExpressionAssignment_1_1_1 : ( ruleOrExpression ) ;
     public final void rule__BaseExpression__RootExpressionAssignment_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1711:1: ( ( ruleOrExpression ) )
-            // InternalBooleanExpressions.g:1712:1: ( ruleOrExpression )
+            // InternalBooleanExpressions.g:1867:1: ( ( ruleOrExpression ) )
+            // InternalBooleanExpressions.g:1868:1: ( ruleOrExpression )
             {
-            // InternalBooleanExpressions.g:1712:1: ( ruleOrExpression )
-            // InternalBooleanExpressions.g:1713:1: ruleOrExpression
+            // InternalBooleanExpressions.g:1868:1: ( ruleOrExpression )
+            // InternalBooleanExpressions.g:1869:1: ruleOrExpression
             {
              before(grammarAccess.getBaseExpressionAccess().getRootExpressionOrExpressionParserRuleCall_1_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -4739,17 +5162,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BooleanTerm__TimeConstraintAssignment_0"
-    // InternalBooleanExpressions.g:1722:1: rule__BooleanTerm__TimeConstraintAssignment_0 : ( ruleTimeConstraint ) ;
+    // InternalBooleanExpressions.g:1878:1: rule__BooleanTerm__TimeConstraintAssignment_0 : ( ruleTimeConstraint ) ;
     public final void rule__BooleanTerm__TimeConstraintAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1726:1: ( ( ruleTimeConstraint ) )
-            // InternalBooleanExpressions.g:1727:1: ( ruleTimeConstraint )
+            // InternalBooleanExpressions.g:1882:1: ( ( ruleTimeConstraint ) )
+            // InternalBooleanExpressions.g:1883:1: ( ruleTimeConstraint )
             {
-            // InternalBooleanExpressions.g:1727:1: ( ruleTimeConstraint )
-            // InternalBooleanExpressions.g:1728:1: ruleTimeConstraint
+            // InternalBooleanExpressions.g:1883:1: ( ruleTimeConstraint )
+            // InternalBooleanExpressions.g:1884:1: ruleTimeConstraint
             {
              before(grammarAccess.getBooleanTermAccess().getTimeConstraintTimeConstraintParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -4780,17 +5203,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BooleanTerm__BooleanVariableAssignment_1"
-    // InternalBooleanExpressions.g:1737:1: rule__BooleanTerm__BooleanVariableAssignment_1 : ( ruleBooleanVariable ) ;
+    // InternalBooleanExpressions.g:1893:1: rule__BooleanTerm__BooleanVariableAssignment_1 : ( ruleBooleanVariable ) ;
     public final void rule__BooleanTerm__BooleanVariableAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1741:1: ( ( ruleBooleanVariable ) )
-            // InternalBooleanExpressions.g:1742:1: ( ruleBooleanVariable )
+            // InternalBooleanExpressions.g:1897:1: ( ( ruleBooleanVariable ) )
+            // InternalBooleanExpressions.g:1898:1: ( ruleBooleanVariable )
             {
-            // InternalBooleanExpressions.g:1742:1: ( ruleBooleanVariable )
-            // InternalBooleanExpressions.g:1743:1: ruleBooleanVariable
+            // InternalBooleanExpressions.g:1898:1: ( ruleBooleanVariable )
+            // InternalBooleanExpressions.g:1899:1: ruleBooleanVariable
             {
              before(grammarAccess.getBooleanTermAccess().getBooleanVariableBooleanVariableParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -4821,17 +5244,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BooleanTerm__VariableConditionAssignment_2"
-    // InternalBooleanExpressions.g:1752:1: rule__BooleanTerm__VariableConditionAssignment_2 : ( ruleVariableCondition ) ;
+    // InternalBooleanExpressions.g:1908:1: rule__BooleanTerm__VariableConditionAssignment_2 : ( ruleVariableCondition ) ;
     public final void rule__BooleanTerm__VariableConditionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1756:1: ( ( ruleVariableCondition ) )
-            // InternalBooleanExpressions.g:1757:1: ( ruleVariableCondition )
+            // InternalBooleanExpressions.g:1912:1: ( ( ruleVariableCondition ) )
+            // InternalBooleanExpressions.g:1913:1: ( ruleVariableCondition )
             {
-            // InternalBooleanExpressions.g:1757:1: ( ruleVariableCondition )
-            // InternalBooleanExpressions.g:1758:1: ruleVariableCondition
+            // InternalBooleanExpressions.g:1913:1: ( ruleVariableCondition )
+            // InternalBooleanExpressions.g:1914:1: ruleVariableCondition
             {
              before(grammarAccess.getBooleanTermAccess().getVariableConditionVariableConditionParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -4862,17 +5285,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Event2Assignment_1"
-    // InternalBooleanExpressions.g:1767:1: rule__TimeConstraint__Event2Assignment_1 : ( ruleEvent ) ;
+    // InternalBooleanExpressions.g:1923:1: rule__TimeConstraint__Event2Assignment_1 : ( ruleEvent ) ;
     public final void rule__TimeConstraint__Event2Assignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1771:1: ( ( ruleEvent ) )
-            // InternalBooleanExpressions.g:1772:1: ( ruleEvent )
+            // InternalBooleanExpressions.g:1927:1: ( ( ruleEvent ) )
+            // InternalBooleanExpressions.g:1928:1: ( ruleEvent )
             {
-            // InternalBooleanExpressions.g:1772:1: ( ruleEvent )
-            // InternalBooleanExpressions.g:1773:1: ruleEvent
+            // InternalBooleanExpressions.g:1928:1: ( ruleEvent )
+            // InternalBooleanExpressions.g:1929:1: ruleEvent
             {
              before(grammarAccess.getTimeConstraintAccess().getEvent2EventParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -4903,17 +5326,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__Event1Assignment_4"
-    // InternalBooleanExpressions.g:1782:1: rule__TimeConstraint__Event1Assignment_4 : ( ruleEvent ) ;
+    // InternalBooleanExpressions.g:1938:1: rule__TimeConstraint__Event1Assignment_4 : ( ruleEvent ) ;
     public final void rule__TimeConstraint__Event1Assignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1786:1: ( ( ruleEvent ) )
-            // InternalBooleanExpressions.g:1787:1: ( ruleEvent )
+            // InternalBooleanExpressions.g:1942:1: ( ( ruleEvent ) )
+            // InternalBooleanExpressions.g:1943:1: ( ruleEvent )
             {
-            // InternalBooleanExpressions.g:1787:1: ( ruleEvent )
-            // InternalBooleanExpressions.g:1788:1: ruleEvent
+            // InternalBooleanExpressions.g:1943:1: ( ruleEvent )
+            // InternalBooleanExpressions.g:1944:1: ruleEvent
             {
              before(grammarAccess.getTimeConstraintAccess().getEvent1EventParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -4944,17 +5367,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__OpAssignment_5"
-    // InternalBooleanExpressions.g:1797:1: rule__TimeConstraint__OpAssignment_5 : ( RULE_RELATIONS ) ;
+    // InternalBooleanExpressions.g:1953:1: rule__TimeConstraint__OpAssignment_5 : ( RULE_RELATIONS ) ;
     public final void rule__TimeConstraint__OpAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1801:1: ( ( RULE_RELATIONS ) )
-            // InternalBooleanExpressions.g:1802:1: ( RULE_RELATIONS )
+            // InternalBooleanExpressions.g:1957:1: ( ( RULE_RELATIONS ) )
+            // InternalBooleanExpressions.g:1958:1: ( RULE_RELATIONS )
             {
-            // InternalBooleanExpressions.g:1802:1: ( RULE_RELATIONS )
-            // InternalBooleanExpressions.g:1803:1: RULE_RELATIONS
+            // InternalBooleanExpressions.g:1958:1: ( RULE_RELATIONS )
+            // InternalBooleanExpressions.g:1959:1: RULE_RELATIONS
             {
              before(grammarAccess.getTimeConstraintAccess().getOpRELATIONSTerminalRuleCall_5_0()); 
             match(input,RULE_RELATIONS,FOLLOW_2); 
@@ -4981,17 +5404,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TimeConstraint__ValueAssignment_6"
-    // InternalBooleanExpressions.g:1812:1: rule__TimeConstraint__ValueAssignment_6 : ( RULE_INT ) ;
+    // InternalBooleanExpressions.g:1968:1: rule__TimeConstraint__ValueAssignment_6 : ( RULE_INT ) ;
     public final void rule__TimeConstraint__ValueAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1816:1: ( ( RULE_INT ) )
-            // InternalBooleanExpressions.g:1817:1: ( RULE_INT )
+            // InternalBooleanExpressions.g:1972:1: ( ( RULE_INT ) )
+            // InternalBooleanExpressions.g:1973:1: ( RULE_INT )
             {
-            // InternalBooleanExpressions.g:1817:1: ( RULE_INT )
-            // InternalBooleanExpressions.g:1818:1: RULE_INT
+            // InternalBooleanExpressions.g:1973:1: ( RULE_INT )
+            // InternalBooleanExpressions.g:1974:1: RULE_INT
             {
              before(grammarAccess.getTimeConstraintAccess().getValueINTTerminalRuleCall_6_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -5018,17 +5441,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__BooleanVariable__VariableAssignment"
-    // InternalBooleanExpressions.g:1827:1: rule__BooleanVariable__VariableAssignment : ( RULE_ID ) ;
+    // InternalBooleanExpressions.g:1983:1: rule__BooleanVariable__VariableAssignment : ( RULE_ID ) ;
     public final void rule__BooleanVariable__VariableAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1831:1: ( ( RULE_ID ) )
-            // InternalBooleanExpressions.g:1832:1: ( RULE_ID )
+            // InternalBooleanExpressions.g:1987:1: ( ( RULE_ID ) )
+            // InternalBooleanExpressions.g:1988:1: ( RULE_ID )
             {
-            // InternalBooleanExpressions.g:1832:1: ( RULE_ID )
-            // InternalBooleanExpressions.g:1833:1: RULE_ID
+            // InternalBooleanExpressions.g:1988:1: ( RULE_ID )
+            // InternalBooleanExpressions.g:1989:1: RULE_ID
             {
              before(grammarAccess.getBooleanVariableAccess().getVariableIDTerminalRuleCall_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5055,17 +5478,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__VariableCondition__Expression_leftAssignment_1"
-    // InternalBooleanExpressions.g:1842:1: rule__VariableCondition__Expression_leftAssignment_1 : ( ruleEXPRESSION ) ;
+    // InternalBooleanExpressions.g:1998:1: rule__VariableCondition__Expression_leftAssignment_1 : ( ruleEXPRESSION ) ;
     public final void rule__VariableCondition__Expression_leftAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1846:1: ( ( ruleEXPRESSION ) )
-            // InternalBooleanExpressions.g:1847:1: ( ruleEXPRESSION )
+            // InternalBooleanExpressions.g:2002:1: ( ( ruleEXPRESSION ) )
+            // InternalBooleanExpressions.g:2003:1: ( ruleEXPRESSION )
             {
-            // InternalBooleanExpressions.g:1847:1: ( ruleEXPRESSION )
-            // InternalBooleanExpressions.g:1848:1: ruleEXPRESSION
+            // InternalBooleanExpressions.g:2003:1: ( ruleEXPRESSION )
+            // InternalBooleanExpressions.g:2004:1: ruleEXPRESSION
             {
              before(grammarAccess.getVariableConditionAccess().getExpression_leftEXPRESSIONParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -5096,17 +5519,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__VariableCondition__RelationAssignment_2"
-    // InternalBooleanExpressions.g:1857:1: rule__VariableCondition__RelationAssignment_2 : ( RULE_RELATIONS ) ;
+    // InternalBooleanExpressions.g:2013:1: rule__VariableCondition__RelationAssignment_2 : ( RULE_RELATIONS ) ;
     public final void rule__VariableCondition__RelationAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1861:1: ( ( RULE_RELATIONS ) )
-            // InternalBooleanExpressions.g:1862:1: ( RULE_RELATIONS )
+            // InternalBooleanExpressions.g:2017:1: ( ( RULE_RELATIONS ) )
+            // InternalBooleanExpressions.g:2018:1: ( RULE_RELATIONS )
             {
-            // InternalBooleanExpressions.g:1862:1: ( RULE_RELATIONS )
-            // InternalBooleanExpressions.g:1863:1: RULE_RELATIONS
+            // InternalBooleanExpressions.g:2018:1: ( RULE_RELATIONS )
+            // InternalBooleanExpressions.g:2019:1: RULE_RELATIONS
             {
              before(grammarAccess.getVariableConditionAccess().getRelationRELATIONSTerminalRuleCall_2_0()); 
             match(input,RULE_RELATIONS,FOLLOW_2); 
@@ -5133,17 +5556,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__VariableCondition__Expression_rightAssignment_3"
-    // InternalBooleanExpressions.g:1872:1: rule__VariableCondition__Expression_rightAssignment_3 : ( ruleEXPRESSION ) ;
+    // InternalBooleanExpressions.g:2028:1: rule__VariableCondition__Expression_rightAssignment_3 : ( ruleEXPRESSION ) ;
     public final void rule__VariableCondition__Expression_rightAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1876:1: ( ( ruleEXPRESSION ) )
-            // InternalBooleanExpressions.g:1877:1: ( ruleEXPRESSION )
+            // InternalBooleanExpressions.g:2032:1: ( ( ruleEXPRESSION ) )
+            // InternalBooleanExpressions.g:2033:1: ( ruleEXPRESSION )
             {
-            // InternalBooleanExpressions.g:1877:1: ( ruleEXPRESSION )
-            // InternalBooleanExpressions.g:1878:1: ruleEXPRESSION
+            // InternalBooleanExpressions.g:2033:1: ( ruleEXPRESSION )
+            // InternalBooleanExpressions.g:2034:1: ruleEXPRESSION
             {
              before(grammarAccess.getVariableConditionAccess().getExpression_rightEXPRESSIONParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -5174,17 +5597,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__EXPRESSION__FirstTermAssignment_0_0"
-    // InternalBooleanExpressions.g:1887:1: rule__EXPRESSION__FirstTermAssignment_0_0 : ( ruleTERM ) ;
+    // InternalBooleanExpressions.g:2043:1: rule__EXPRESSION__FirstTermAssignment_0_0 : ( ruleTERM ) ;
     public final void rule__EXPRESSION__FirstTermAssignment_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1891:1: ( ( ruleTERM ) )
-            // InternalBooleanExpressions.g:1892:1: ( ruleTERM )
+            // InternalBooleanExpressions.g:2047:1: ( ( ruleTERM ) )
+            // InternalBooleanExpressions.g:2048:1: ( ruleTERM )
             {
-            // InternalBooleanExpressions.g:1892:1: ( ruleTERM )
-            // InternalBooleanExpressions.g:1893:1: ruleTERM
+            // InternalBooleanExpressions.g:2048:1: ( ruleTERM )
+            // InternalBooleanExpressions.g:2049:1: ruleTERM
             {
              before(grammarAccess.getEXPRESSIONAccess().getFirstTermTERMParserRuleCall_0_0_0()); 
             pushFollow(FOLLOW_2);
@@ -5215,17 +5638,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__EXPRESSION__OperatorAssignment_0_1"
-    // InternalBooleanExpressions.g:1902:1: rule__EXPRESSION__OperatorAssignment_0_1 : ( RULE_OPERATOR ) ;
+    // InternalBooleanExpressions.g:2058:1: rule__EXPRESSION__OperatorAssignment_0_1 : ( RULE_OPERATOR ) ;
     public final void rule__EXPRESSION__OperatorAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1906:1: ( ( RULE_OPERATOR ) )
-            // InternalBooleanExpressions.g:1907:1: ( RULE_OPERATOR )
+            // InternalBooleanExpressions.g:2062:1: ( ( RULE_OPERATOR ) )
+            // InternalBooleanExpressions.g:2063:1: ( RULE_OPERATOR )
             {
-            // InternalBooleanExpressions.g:1907:1: ( RULE_OPERATOR )
-            // InternalBooleanExpressions.g:1908:1: RULE_OPERATOR
+            // InternalBooleanExpressions.g:2063:1: ( RULE_OPERATOR )
+            // InternalBooleanExpressions.g:2064:1: RULE_OPERATOR
             {
              before(grammarAccess.getEXPRESSIONAccess().getOperatorOPERATORTerminalRuleCall_0_1_0()); 
             match(input,RULE_OPERATOR,FOLLOW_2); 
@@ -5252,17 +5675,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__EXPRESSION__SecondTermAssignment_0_2"
-    // InternalBooleanExpressions.g:1917:1: rule__EXPRESSION__SecondTermAssignment_0_2 : ( ruleTERM ) ;
+    // InternalBooleanExpressions.g:2073:1: rule__EXPRESSION__SecondTermAssignment_0_2 : ( ruleTERM ) ;
     public final void rule__EXPRESSION__SecondTermAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1921:1: ( ( ruleTERM ) )
-            // InternalBooleanExpressions.g:1922:1: ( ruleTERM )
+            // InternalBooleanExpressions.g:2077:1: ( ( ruleTERM ) )
+            // InternalBooleanExpressions.g:2078:1: ( ruleTERM )
             {
-            // InternalBooleanExpressions.g:1922:1: ( ruleTERM )
-            // InternalBooleanExpressions.g:1923:1: ruleTERM
+            // InternalBooleanExpressions.g:2078:1: ( ruleTERM )
+            // InternalBooleanExpressions.g:2079:1: ruleTERM
             {
              before(grammarAccess.getEXPRESSIONAccess().getSecondTermTERMParserRuleCall_0_2_0()); 
             pushFollow(FOLLOW_2);
@@ -5293,17 +5716,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__EXPRESSION__AloneAssignment_1"
-    // InternalBooleanExpressions.g:1932:1: rule__EXPRESSION__AloneAssignment_1 : ( ruleTERM ) ;
+    // InternalBooleanExpressions.g:2088:1: rule__EXPRESSION__AloneAssignment_1 : ( ruleTERM ) ;
     public final void rule__EXPRESSION__AloneAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1936:1: ( ( ruleTERM ) )
-            // InternalBooleanExpressions.g:1937:1: ( ruleTERM )
+            // InternalBooleanExpressions.g:2092:1: ( ( ruleTERM ) )
+            // InternalBooleanExpressions.g:2093:1: ( ruleTERM )
             {
-            // InternalBooleanExpressions.g:1937:1: ( ruleTERM )
-            // InternalBooleanExpressions.g:1938:1: ruleTERM
+            // InternalBooleanExpressions.g:2093:1: ( ruleTERM )
+            // InternalBooleanExpressions.g:2094:1: ruleTERM
             {
              before(grammarAccess.getEXPRESSIONAccess().getAloneTERMParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -5334,17 +5757,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TERM__VariableAssignment_0"
-    // InternalBooleanExpressions.g:1947:1: rule__TERM__VariableAssignment_0 : ( RULE_ID ) ;
+    // InternalBooleanExpressions.g:2103:1: rule__TERM__VariableAssignment_0 : ( RULE_ID ) ;
     public final void rule__TERM__VariableAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1951:1: ( ( RULE_ID ) )
-            // InternalBooleanExpressions.g:1952:1: ( RULE_ID )
+            // InternalBooleanExpressions.g:2107:1: ( ( RULE_ID ) )
+            // InternalBooleanExpressions.g:2108:1: ( RULE_ID )
             {
-            // InternalBooleanExpressions.g:1952:1: ( RULE_ID )
-            // InternalBooleanExpressions.g:1953:1: RULE_ID
+            // InternalBooleanExpressions.g:2108:1: ( RULE_ID )
+            // InternalBooleanExpressions.g:2109:1: RULE_ID
             {
              before(grammarAccess.getTERMAccess().getVariableIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5371,17 +5794,17 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__TERM__ConstantAssignment_1"
-    // InternalBooleanExpressions.g:1962:1: rule__TERM__ConstantAssignment_1 : ( RULE_INT ) ;
+    // InternalBooleanExpressions.g:2118:1: rule__TERM__ConstantAssignment_1 : ( RULE_INT ) ;
     public final void rule__TERM__ConstantAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1966:1: ( ( RULE_INT ) )
-            // InternalBooleanExpressions.g:1967:1: ( RULE_INT )
+            // InternalBooleanExpressions.g:2122:1: ( ( RULE_INT ) )
+            // InternalBooleanExpressions.g:2123:1: ( RULE_INT )
             {
-            // InternalBooleanExpressions.g:1967:1: ( RULE_INT )
-            // InternalBooleanExpressions.g:1968:1: RULE_INT
+            // InternalBooleanExpressions.g:2123:1: ( RULE_INT )
+            // InternalBooleanExpressions.g:2124:1: RULE_INT
             {
              before(grammarAccess.getTERMAccess().getConstantINTTerminalRuleCall_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -5407,22 +5830,22 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
     // $ANTLR end "rule__TERM__ConstantAssignment_1"
 
 
-    // $ANTLR start "rule__Event__EventNameAssignment_0_0"
-    // InternalBooleanExpressions.g:1977:1: rule__Event__EventNameAssignment_0_0 : ( RULE_ID ) ;
-    public final void rule__Event__EventNameAssignment_0_0() throws RecognitionException {
+    // $ANTLR start "rule__Event__ObjNameAssignment_0_0_0"
+    // InternalBooleanExpressions.g:2133:1: rule__Event__ObjNameAssignment_0_0_0 : ( RULE_ID ) ;
+    public final void rule__Event__ObjNameAssignment_0_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1981:1: ( ( RULE_ID ) )
-            // InternalBooleanExpressions.g:1982:1: ( RULE_ID )
+            // InternalBooleanExpressions.g:2137:1: ( ( RULE_ID ) )
+            // InternalBooleanExpressions.g:2138:1: ( RULE_ID )
             {
-            // InternalBooleanExpressions.g:1982:1: ( RULE_ID )
-            // InternalBooleanExpressions.g:1983:1: RULE_ID
+            // InternalBooleanExpressions.g:2138:1: ( RULE_ID )
+            // InternalBooleanExpressions.g:2139:1: RULE_ID
             {
-             before(grammarAccess.getEventAccess().getEventNameIDTerminalRuleCall_0_0_0()); 
+             before(grammarAccess.getEventAccess().getObjNameIDTerminalRuleCall_0_0_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getEventAccess().getEventNameIDTerminalRuleCall_0_0_0()); 
+             after(grammarAccess.getEventAccess().getObjNameIDTerminalRuleCall_0_0_0_0()); 
 
             }
 
@@ -5441,29 +5864,66 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
         }
         return ;
     }
-    // $ANTLR end "rule__Event__EventNameAssignment_0_0"
+    // $ANTLR end "rule__Event__ObjNameAssignment_0_0_0"
 
 
-    // $ANTLR start "rule__Event__EventExtensionAssignment_0_2"
-    // InternalBooleanExpressions.g:1992:1: rule__Event__EventExtensionAssignment_0_2 : ( ruleEventExtensions ) ;
-    public final void rule__Event__EventExtensionAssignment_0_2() throws RecognitionException {
+    // $ANTLR start "rule__Event__EventNameAssignment_0_1_0"
+    // InternalBooleanExpressions.g:2148:1: rule__Event__EventNameAssignment_0_1_0 : ( RULE_ID ) ;
+    public final void rule__Event__EventNameAssignment_0_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:1996:1: ( ( ruleEventExtensions ) )
-            // InternalBooleanExpressions.g:1997:1: ( ruleEventExtensions )
+            // InternalBooleanExpressions.g:2152:1: ( ( RULE_ID ) )
+            // InternalBooleanExpressions.g:2153:1: ( RULE_ID )
             {
-            // InternalBooleanExpressions.g:1997:1: ( ruleEventExtensions )
-            // InternalBooleanExpressions.g:1998:1: ruleEventExtensions
+            // InternalBooleanExpressions.g:2153:1: ( RULE_ID )
+            // InternalBooleanExpressions.g:2154:1: RULE_ID
             {
-             before(grammarAccess.getEventAccess().getEventExtensionEventExtensionsParserRuleCall_0_2_0()); 
+             before(grammarAccess.getEventAccess().getEventNameIDTerminalRuleCall_0_1_0_0()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getEventAccess().getEventNameIDTerminalRuleCall_0_1_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Event__EventNameAssignment_0_1_0"
+
+
+    // $ANTLR start "rule__Event__EventExtensionAssignment_0_1_2"
+    // InternalBooleanExpressions.g:2163:1: rule__Event__EventExtensionAssignment_0_1_2 : ( ruleEventExtensions ) ;
+    public final void rule__Event__EventExtensionAssignment_0_1_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // InternalBooleanExpressions.g:2167:1: ( ( ruleEventExtensions ) )
+            // InternalBooleanExpressions.g:2168:1: ( ruleEventExtensions )
+            {
+            // InternalBooleanExpressions.g:2168:1: ( ruleEventExtensions )
+            // InternalBooleanExpressions.g:2169:1: ruleEventExtensions
+            {
+             before(grammarAccess.getEventAccess().getEventExtensionEventExtensionsParserRuleCall_0_1_2_0()); 
             pushFollow(FOLLOW_2);
             ruleEventExtensions();
 
             state._fsp--;
 
-             after(grammarAccess.getEventAccess().getEventExtensionEventExtensionsParserRuleCall_0_2_0()); 
+             after(grammarAccess.getEventAccess().getEventExtensionEventExtensionsParserRuleCall_0_1_2_0()); 
 
             }
 
@@ -5482,28 +5942,28 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
         }
         return ;
     }
-    // $ANTLR end "rule__Event__EventExtensionAssignment_0_2"
+    // $ANTLR end "rule__Event__EventExtensionAssignment_0_1_2"
 
 
     // $ANTLR start "rule__Event__NowEventAssignment_1"
-    // InternalBooleanExpressions.g:2007:1: rule__Event__NowEventAssignment_1 : ( ( 'now' ) ) ;
+    // InternalBooleanExpressions.g:2178:1: rule__Event__NowEventAssignment_1 : ( ( 'now' ) ) ;
     public final void rule__Event__NowEventAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalBooleanExpressions.g:2011:1: ( ( ( 'now' ) ) )
-            // InternalBooleanExpressions.g:2012:1: ( ( 'now' ) )
+            // InternalBooleanExpressions.g:2182:1: ( ( ( 'now' ) ) )
+            // InternalBooleanExpressions.g:2183:1: ( ( 'now' ) )
             {
-            // InternalBooleanExpressions.g:2012:1: ( ( 'now' ) )
-            // InternalBooleanExpressions.g:2013:1: ( 'now' )
-            {
-             before(grammarAccess.getEventAccess().getNowEventNowKeyword_1_0()); 
-            // InternalBooleanExpressions.g:2014:1: ( 'now' )
-            // InternalBooleanExpressions.g:2015:1: 'now'
+            // InternalBooleanExpressions.g:2183:1: ( ( 'now' ) )
+            // InternalBooleanExpressions.g:2184:1: ( 'now' )
             {
              before(grammarAccess.getEventAccess().getNowEventNowKeyword_1_0()); 
-            match(input,31,FOLLOW_2); 
+            // InternalBooleanExpressions.g:2185:1: ( 'now' )
+            // InternalBooleanExpressions.g:2186:1: 'now'
+            {
+             before(grammarAccess.getEventAccess().getNowEventNowKeyword_1_0()); 
+            match(input,35,FOLLOW_2); 
              after(grammarAccess.getEventAccess().getNowEventNowKeyword_1_0()); 
 
             }
@@ -5537,17 +5997,18 @@ public class InternalBooleanExpressionsParser extends AbstractInternalContentAss
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000014000240L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000140000240L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000080000200L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000800000200L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000080L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000100L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000300L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000003FF0000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x000000003FFF0000L});
 
 }

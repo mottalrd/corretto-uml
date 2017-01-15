@@ -95,10 +95,19 @@ public class Object {
 		return ass_objects;		
 	}
 
-	public AD getAD(){
-		if (getOwningClass().getUMLAD() != null)
-			return new AD (getOwningClass().getUMLAD(), this);
-		return null;
+//	public AD getAD(){
+//		if (getOwningClass().getUMLAD() != null)
+//			return new AD (getOwningClass().getUMLAD(), this);
+//		return null;
+//	}
+	public Set<AD> getADs(){
+		HashSet<AD> ads = new HashSet<AD>();
+		
+		for (org.eclipse.uml2.uml.Activity umlAD : getOwningClass().getUMLADs()){
+			ads.add(new AD (umlAD, this));
+		}
+		
+		return ads;
 	}
 	
 	@Override

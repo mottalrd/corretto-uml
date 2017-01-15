@@ -299,11 +299,33 @@ ruleEvent returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(((
+((((
 (
-		lv_eventName_0_0=RULE_ID
+		lv_objName_0_0=RULE_ID
 		{
-			newLeafNode(lv_eventName_0_0, grammarAccess.getEventAccess().getEventNameIDTerminalRuleCall_0_0_0()); 
+			newLeafNode(lv_objName_0_0, grammarAccess.getEventAccess().getObjNameIDTerminalRuleCall_0_0_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getEventRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"objName",
+        		lv_objName_0_0, 
+        		"org.eclipse.xtext.common.Terminals.ID");
+	    }
+
+)
+)	otherlv_1='.' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getEventAccess().getFullStopKeyword_0_0_1());
+    }
+)?((
+(
+		lv_eventName_2_0=RULE_ID
+		{
+			newLeafNode(lv_eventName_2_0, grammarAccess.getEventAccess().getEventNameIDTerminalRuleCall_0_1_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -312,39 +334,39 @@ ruleEvent returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"eventName",
-        		lv_eventName_0_0, 
+        		lv_eventName_2_0, 
         		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
-)	otherlv_1='.' 
+)	otherlv_3='.' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getEventAccess().getFullStopKeyword_0_1());
+    	newLeafNode(otherlv_3, grammarAccess.getEventAccess().getFullStopKeyword_0_1_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEventAccess().getEventExtensionEventExtensionsParserRuleCall_0_2_0()); 
+	        newCompositeNode(grammarAccess.getEventAccess().getEventExtensionEventExtensionsParserRuleCall_0_1_2_0()); 
 	    }
-		lv_eventExtension_2_0=ruleEventExtensions		{
+		lv_eventExtension_4_0=ruleEventExtensions		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getEventRule());
 	        }
        		set(
        			$current, 
        			"eventExtension",
-        		lv_eventExtension_2_0, 
+        		lv_eventExtension_4_0, 
         		"org.correttouml.grammars.StateMachineTriggers.EventExtensions");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))
+)))
     |(
 (
-		lv_nowEvent_3_0=	'now' 
+		lv_nowEvent_5_0=	'now' 
     {
-        newLeafNode(lv_nowEvent_3_0, grammarAccess.getEventAccess().getNowEventNowKeyword_1_0());
+        newLeafNode(lv_nowEvent_5_0, grammarAccess.getEventAccess().getNowEventNowKeyword_1_0());
     }
  
 	    {
@@ -430,6 +452,34 @@ ruleEventExtensions returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRul
     {
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getReplyKeyword_7()); 
+    }
+
+    |
+	kw='adstart' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getAdstartKeyword_8()); 
+    }
+
+    |
+	kw='adend' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getAdendKeyword_9()); 
+    }
+
+    |
+	kw='iodstart' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getIodstartKeyword_10()); 
+    }
+
+    |
+	kw='iodend' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getIodendKeyword_11()); 
     }
 )
     ;

@@ -22,16 +22,8 @@ public class SSequenceDiagramNode {
 		sd_name = this.mades_sequencediagramnode.getSequenceDiagram().getName();
 	}
 
-	public Predicate getStartPredicate(){
-		return new Predicate(activity_name + "_" + sd_name + "_START");
-	}
-
-	public Predicate getEndPredicate() {
-		return new Predicate(activity_name + "_" + sd_name + "_END");
-	}
-
-	public Predicate getStopPredicate() {
-		return new Predicate(activity_name + "_" + sd_name + "_STOP");
+	public Predicate getPredicate(){
+		return new Predicate("$" + activity_name + "_" + sd_name);
 	}
 	
 	public Set<SSequenceDiagramParameter> getSSDParameters(){

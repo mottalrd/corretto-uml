@@ -3,6 +3,7 @@ package org.correttouml.uml2zot.semantics.classdiagram;
 import java.util.List;
 
 import org.correttouml.uml.diagrams.activity.OpaqueActionNode;
+import org.correttouml.uml.diagrams.activitydiagram.AD;
 import org.correttouml.uml.diagrams.classdiagram.Attribute;
 import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.expressions.PrimitiveType;
@@ -105,8 +106,8 @@ public class SAttribute implements SVariable {
 					}
 				}
 			}
-			if (obj.getAD() != null)
-				for (OpaqueActionNode opAc: obj.getAD().getOpaqueActions()){
+			for (AD ad : obj.getADs())
+				for (OpaqueActionNode opAc: ad.getOpaqueActions()){
 					if(isActionAssigningAttribute(opAc.getAction(obj)))
 						orCond.addFormulae(new SAssignmentAction((AssignmentAction) opAc.getAction(obj)).getPredicate(obj));
 				}
@@ -127,8 +128,8 @@ public class SAttribute implements SVariable {
 			}
 		}
 		
-		if (curr_obj.getAD() != null)
-			for (OpaqueActionNode opAc: curr_obj.getAD().getOpaqueActions()){
+		for (AD ad : curr_obj.getADs())
+			for (OpaqueActionNode opAc: ad.getOpaqueActions()){
 				if (isActionAssigningAttribute(opAc.getAction(curr_obj)))
 					orCond.addFormulae(new SAssignmentAction((AssignmentAction) opAc.getAction(curr_obj)).getPredicate(curr_obj));
 			}

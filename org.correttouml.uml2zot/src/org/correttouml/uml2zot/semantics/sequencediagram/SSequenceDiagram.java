@@ -48,7 +48,7 @@ public class SSequenceDiagram {
 	}
 
 	public Predicate getPredicate(){
-		return new Predicate(mades_sd.getName());
+		return new Predicate("$SD_" + mades_sd.getName());
 	}
 
 	public Predicate getLifelinePredicate(int index) {
@@ -73,7 +73,7 @@ public class SSequenceDiagram {
 			lifelinesnames.add(l.getName().replace(":", ""));
 		return lifelinesnames;
 	}
-
+	
 	public ArrayList<Predicate> getLifelinesPredicateStarts() {
 		ArrayList<Predicate> lifelinesPredicateStarts = new ArrayList<Predicate>();
 		for (Predicate p : getLifelinesPredicates())
@@ -175,48 +175,14 @@ public class SSequenceDiagram {
 		}
 
 		// get time constraint semantics
-		// <###test me>
 		sem = sem + SMadesModel.printSeparatorSmall("TIME CONSTRAINTS SEMANTICS");
 		sem += getAllTimeConstraintsSemantics();
-		// </###test me>
-		// <working code for time constrants semantics>
-		// int counter=0;
-		// for (TimeConstraint t : mades_sd.getTimeConstraints()) {
-		// //Give a predicate to the current time constraint
-		// //SD_TIMECONSTRAINT_i <=> something...
-		// //sem=sem+new Iff()
-		//
-		// counter++;
-		// SSequenceDiagram sd = new SSequenceDiagram(mades_sd);
-		// sem = sem + "(<-> (-P- " + mades_sd.getName() + "_TIMECONSTRAINT_" +
-		// Integer.toString(counter) + ") " + new
-		// STimeConstraint(t).getSemantics().toString() + ")\n";
-		// sem = sem + "(-> " + sd.getPredicate().toString() + " (-P- " +
-		// mades_sd.getName() + "_TIMECONSTRAINT_" + Integer.toString(counter) +
-		// "))\n";
-		//// new STimeConstraint(t).getSemantics().toString();
-		// //axiom saying that the time constraint holds
-		// //when we are in the sequence diagram
-		// //
-		// // SD_inside => TIMECONSTRAINT_SDname_i
-		// }
-		// <working code for time constrants semantics>
 
 		// get parameter semantics
 		sem = sem + SMadesModel.printSeparatorSmall("SEQUENCE DIAGRAM PARAMETER SEMANTICS");
 		for (SequenceDiagramParameter sdp : this.mades_sd.getSequenceDiagramParameters()) {
 			sem = sem + new SSequenceDiagramParameter(sdp).getSemantics();
 		}
-
-		// TODO: Assignment semantics
-		// // get assignment semantics
-		// sem = sem + MadesModel.printSeparatorSmall("ASSIGNMENT SEMANTICS");
-		// for (sequencediagram.Assignment a : this.getAssignments()) {
-		// sem = sem + a.getSemantics();
-		// }
-		// sem += "(-> (-P- BigBang) (next "+ sd_start + "))\n(->
-		// "+sd_start+"(yesterday (-P- BigBang) ))\n\n\n\n\n\n\n"; ////#### Del
-		// me
 		return sem;
 	}
 
@@ -270,7 +236,7 @@ public class SSequenceDiagram {
         	for(InterruptibleRegion ir: iod.getInterruptibleRegions()){
         		for(SequenceDiagramNode sd_node: ir.getSequenceDiagramNodes()){
         			if(sd_node.getSequenceDiagram().equals(this.mades_sd)){
-        				condStop.addFormulae(new SSequenceDiagramNode(sd_node, iod).getStopPredicate());
+        				condStop.addFormulae(new SSequenceDiagramNode(sd_node, iod).getPredicate().getStopPredicate());
         			}
         		}
         	}
@@ -283,8 +249,8 @@ public class SSequenceDiagram {
         		if(n instanceof SequenceDiagramNode){
         			SequenceDiagramNode sdnode=((SequenceDiagramNode) n);
         			if(sdnode.getSequenceDiagram().equals(this.mades_sd)){
-            			condStart.addFormulae(new SSequenceDiagramNode((SequenceDiagramNode) n, iod).getStartPredicate());
-            			condEnd.addFormulae(new SSequenceDiagramNode((SequenceDiagramNode) n, iod).getEndPredicate());
+            			condStart.addFormulae(new SSequenceDiagramNode((SequenceDiagramNode) n, iod).getPredicate().getStartPredicate());
+            			condEnd.addFormulae(new SSequenceDiagramNode((SequenceDiagramNode) n, iod).getPredicate().getEndPredicate());
         			}
         		}
         	}
@@ -297,8 +263,8 @@ public class SSequenceDiagram {
         		if(n instanceof SequenceDiagramNode){
         			SequenceDiagramNode sdnode=((SequenceDiagramNode) n);
         			if(sdnode.getSequenceDiagram().equals(this.mades_sd)){
-            			condStart.addFormulae(new SSequenceDiagramNode((SequenceDiagramNode) n, ad).getStartPredicate());
-            			condEnd.addFormulae(new SSequenceDiagramNode((SequenceDiagramNode) n, ad).getEndPredicate());
+            			condStart.addFormulae(new SSequenceDiagramNode((SequenceDiagramNode) n, ad).getPredicate().getStartPredicate());
+            			condEnd.addFormulae(new SSequenceDiagramNode((SequenceDiagramNode) n, ad).getPredicate().getEndPredicate());
         			}
         		}
         	}
@@ -320,47 +286,6 @@ public class SSequenceDiagram {
             }
         }
 	}
-
-	/*
-	protected static BooleanFormulae buildOrderingSemanticsLTEAxiom(Predicate e_i,
-			Predicate e_j, Predicate sd_stop) {
-		And sem = new And();
-		
-		// Axiom Event1
-	/*
-	 * protected static BooleanFormulae buildOrderingSemanticsLTEAxiom(Predicate
-	 * e_i, Predicate e_j, Predicate sd_stop) { And sem = new And();
-	 * 
-	 * // Axiom Event1
-	 * 
-	 * @AXIOM If the first event occurs now then either the sequence diagram
-	 * stops before the second event, or the second events occurs \begin{align}
-	 * \label{ax:LTEAxiom} prova \end{align}
-	 * 
-	 * sem.addFormulae(new Implies(e_i, new Or(new And(new Until_ei(new And( new
-	 * Not(e_i), new Not(e_j)), sd_stop), new Not(e_j)), new Until_ei(new
-	 * Not(sd_stop), e_j))));
-	 * 
-	 * return sem; }
-	 */
-
-	/*
-	 * protected static BooleanFormulae
-	 * buildOrderingSemanticsBackwardAxiom(Predicate e_i, Predicate e_j,
-	 * Predicate sd_stop) { And sem = new And();
-	 * 
-	 * // Axiom Event2
-	 * 
-	 * @AXIOM Given two events in a lifeline this could be separated by an
-	 * arbitrary amount of time\\ The events may happen at the same time instant
-	 * \begin{align} \label{ax:BackwardAxiom} prova \end{align}
-	 * 
-	 * sem.addFormulae(new Implies(e_j, new Since_ei(new And(new Not(sd_stop),
-	 * new Not(e_j)), e_i)));
-	 * 
-	 * return sem; }
-	 */
-	
 
 	protected static BooleanFormulae buildOrderingSemanticsSDEndAxiom(Predicate e_z, Set<Predicate> lastevents) {
 		And sem = new And();
@@ -446,11 +371,10 @@ public class SSequenceDiagram {
 						"Error in configuration input for Loop parameter. It must me either \"Choice:ND\" or \"Choice:FFT\".");
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
+
 	public Config getConfig(){
 		return this.config;
 	}

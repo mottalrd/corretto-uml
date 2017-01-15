@@ -24,6 +24,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineTriggers.ecore#//Right/value"/>
     </genClasses>
     <genClasses ecoreClass="StateMachineTriggers.ecore#//Event">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineTriggers.ecore#//Event/objName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineTriggers.ecore#//Event/eventName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineTriggers.ecore#//Event/eventExtension"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateMachineTriggers.ecore#//Event/nowEvent"/>

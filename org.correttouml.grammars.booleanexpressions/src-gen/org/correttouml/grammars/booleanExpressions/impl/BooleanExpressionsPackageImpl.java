@@ -554,7 +554,7 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEvent_EventName()
+  public EAttribute getEvent_ObjName()
   {
     return (EAttribute)eventEClass.getEStructuralFeatures().get(0);
   }
@@ -564,7 +564,7 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEvent_EventExtension()
+  public EAttribute getEvent_EventName()
   {
     return (EAttribute)eventEClass.getEStructuralFeatures().get(1);
   }
@@ -574,9 +574,19 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEvent_NowEvent()
+  public EAttribute getEvent_EventExtension()
   {
     return (EAttribute)eventEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEvent_NowEvent()
+  {
+    return (EAttribute)eventEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -657,6 +667,7 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
     createEAttribute(termEClass, TERM__CONSTANT);
 
     eventEClass = createEClass(EVENT);
+    createEAttribute(eventEClass, EVENT__OBJ_NAME);
     createEAttribute(eventEClass, EVENT__EVENT_NAME);
     createEAttribute(eventEClass, EVENT__EVENT_EXTENSION);
     createEAttribute(eventEClass, EVENT__NOW_EVENT);
@@ -741,6 +752,7 @@ public class BooleanExpressionsPackageImpl extends EPackageImpl implements Boole
     initEAttribute(getTERM_Constant(), ecorePackage.getEInt(), "constant", null, 0, 1, org.correttouml.grammars.booleanExpressions.TERM.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(eventEClass, Event.class, "Event", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEvent_ObjName(), ecorePackage.getEString(), "objName", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEvent_EventName(), ecorePackage.getEString(), "eventName", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEvent_EventExtension(), ecorePackage.getEString(), "eventExtension", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEvent_NowEvent(), ecorePackage.getEBoolean(), "nowEvent", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

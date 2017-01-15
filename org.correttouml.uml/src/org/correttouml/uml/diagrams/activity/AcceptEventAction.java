@@ -36,7 +36,7 @@ public class AcceptEventAction extends Node{
 	
 	public Event getEvent(Activity activity) {
 		EventParser ep=new EventParser(this.uml_activitynode.getName());
-		return EventFactory.getInstance(activity, ep.getEventName(), ep.getEventExtension());
+		return EventFactory.getInstance(activity, ep.getObjectName(), ep.getEventName(), ep.getEventExtension());
 	}
 	
 	@Override

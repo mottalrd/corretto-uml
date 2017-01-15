@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalStateMachineTriggersParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_RELATIONS", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'@'", "'-'", "'.'", "'now'", "'exit'", "'enter'", "'start'", "'end'", "'tick'", "'sig'", "'call'", "'reply'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_RELATIONS", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'@'", "'-'", "'.'", "'now'", "'exit'", "'enter'", "'start'", "'end'", "'tick'", "'sig'", "'call'", "'reply'", "'adstart'", "'adend'", "'iodstart'", "'iodend'"
     };
     public static final int RULE_RELATIONS=4;
     public static final int RULE_STRING=7;
@@ -38,10 +38,14 @@ public class InternalStateMachineTriggersParser extends AbstractInternalAntlrPar
     public static final int RULE_ID=6;
     public static final int RULE_WS=10;
     public static final int RULE_ANY_OTHER=11;
+    public static final int T__26=26;
+    public static final int T__27=27;
     public static final int RULE_INT=5;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=8;
     public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
     public static final int T__20=20;
     public static final int T__21=21;
 
@@ -643,54 +647,114 @@ public class InternalStateMachineTriggersParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "ruleEvent"
-    // InternalStateMachineTriggers.g:298:1: ruleEvent returns [EObject current=null] : ( ( ( (lv_eventName_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_eventExtension_2_0= ruleEventExtensions ) ) ) | ( (lv_nowEvent_3_0= 'now' ) ) ) ;
+    // InternalStateMachineTriggers.g:298:1: ruleEvent returns [EObject current=null] : ( ( ( ( (lv_objName_0_0= RULE_ID ) ) otherlv_1= '.' )? ( ( (lv_eventName_2_0= RULE_ID ) ) otherlv_3= '.' ( (lv_eventExtension_4_0= ruleEventExtensions ) ) ) ) | ( (lv_nowEvent_5_0= 'now' ) ) ) ;
     public final EObject ruleEvent() throws RecognitionException {
         EObject current = null;
 
-        Token lv_eventName_0_0=null;
+        Token lv_objName_0_0=null;
         Token otherlv_1=null;
-        Token lv_nowEvent_3_0=null;
-        AntlrDatatypeRuleToken lv_eventExtension_2_0 = null;
+        Token lv_eventName_2_0=null;
+        Token otherlv_3=null;
+        Token lv_nowEvent_5_0=null;
+        AntlrDatatypeRuleToken lv_eventExtension_4_0 = null;
 
 
          enterRule(); 
             
         try {
-            // InternalStateMachineTriggers.g:301:28: ( ( ( ( (lv_eventName_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_eventExtension_2_0= ruleEventExtensions ) ) ) | ( (lv_nowEvent_3_0= 'now' ) ) ) )
-            // InternalStateMachineTriggers.g:302:1: ( ( ( (lv_eventName_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_eventExtension_2_0= ruleEventExtensions ) ) ) | ( (lv_nowEvent_3_0= 'now' ) ) )
+            // InternalStateMachineTriggers.g:301:28: ( ( ( ( ( (lv_objName_0_0= RULE_ID ) ) otherlv_1= '.' )? ( ( (lv_eventName_2_0= RULE_ID ) ) otherlv_3= '.' ( (lv_eventExtension_4_0= ruleEventExtensions ) ) ) ) | ( (lv_nowEvent_5_0= 'now' ) ) ) )
+            // InternalStateMachineTriggers.g:302:1: ( ( ( ( (lv_objName_0_0= RULE_ID ) ) otherlv_1= '.' )? ( ( (lv_eventName_2_0= RULE_ID ) ) otherlv_3= '.' ( (lv_eventExtension_4_0= ruleEventExtensions ) ) ) ) | ( (lv_nowEvent_5_0= 'now' ) ) )
             {
-            // InternalStateMachineTriggers.g:302:1: ( ( ( (lv_eventName_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_eventExtension_2_0= ruleEventExtensions ) ) ) | ( (lv_nowEvent_3_0= 'now' ) ) )
-            int alt2=2;
-            int LA2_0 = input.LA(1);
+            // InternalStateMachineTriggers.g:302:1: ( ( ( ( (lv_objName_0_0= RULE_ID ) ) otherlv_1= '.' )? ( ( (lv_eventName_2_0= RULE_ID ) ) otherlv_3= '.' ( (lv_eventExtension_4_0= ruleEventExtensions ) ) ) ) | ( (lv_nowEvent_5_0= 'now' ) ) )
+            int alt3=2;
+            int LA3_0 = input.LA(1);
 
-            if ( (LA2_0==RULE_ID) ) {
-                alt2=1;
+            if ( (LA3_0==RULE_ID) ) {
+                alt3=1;
             }
-            else if ( (LA2_0==15) ) {
-                alt2=2;
+            else if ( (LA3_0==15) ) {
+                alt3=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 2, 0, input);
+                    new NoViableAltException("", 3, 0, input);
 
                 throw nvae;
             }
-            switch (alt2) {
+            switch (alt3) {
                 case 1 :
-                    // InternalStateMachineTriggers.g:302:2: ( ( (lv_eventName_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_eventExtension_2_0= ruleEventExtensions ) ) )
+                    // InternalStateMachineTriggers.g:302:2: ( ( ( (lv_objName_0_0= RULE_ID ) ) otherlv_1= '.' )? ( ( (lv_eventName_2_0= RULE_ID ) ) otherlv_3= '.' ( (lv_eventExtension_4_0= ruleEventExtensions ) ) ) )
                     {
-                    // InternalStateMachineTriggers.g:302:2: ( ( (lv_eventName_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_eventExtension_2_0= ruleEventExtensions ) ) )
-                    // InternalStateMachineTriggers.g:302:3: ( (lv_eventName_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_eventExtension_2_0= ruleEventExtensions ) )
+                    // InternalStateMachineTriggers.g:302:2: ( ( ( (lv_objName_0_0= RULE_ID ) ) otherlv_1= '.' )? ( ( (lv_eventName_2_0= RULE_ID ) ) otherlv_3= '.' ( (lv_eventExtension_4_0= ruleEventExtensions ) ) ) )
+                    // InternalStateMachineTriggers.g:302:3: ( ( (lv_objName_0_0= RULE_ID ) ) otherlv_1= '.' )? ( ( (lv_eventName_2_0= RULE_ID ) ) otherlv_3= '.' ( (lv_eventExtension_4_0= ruleEventExtensions ) ) )
                     {
-                    // InternalStateMachineTriggers.g:302:3: ( (lv_eventName_0_0= RULE_ID ) )
-                    // InternalStateMachineTriggers.g:303:1: (lv_eventName_0_0= RULE_ID )
-                    {
-                    // InternalStateMachineTriggers.g:303:1: (lv_eventName_0_0= RULE_ID )
-                    // InternalStateMachineTriggers.g:304:3: lv_eventName_0_0= RULE_ID
-                    {
-                    lv_eventName_0_0=(Token)match(input,RULE_ID,FOLLOW_8); 
+                    // InternalStateMachineTriggers.g:302:3: ( ( (lv_objName_0_0= RULE_ID ) ) otherlv_1= '.' )?
+                    int alt2=2;
+                    int LA2_0 = input.LA(1);
 
-                    			newLeafNode(lv_eventName_0_0, grammarAccess.getEventAccess().getEventNameIDTerminalRuleCall_0_0_0()); 
+                    if ( (LA2_0==RULE_ID) ) {
+                        int LA2_1 = input.LA(2);
+
+                        if ( (LA2_1==14) ) {
+                            int LA2_2 = input.LA(3);
+
+                            if ( (LA2_2==RULE_ID) ) {
+                                alt2=1;
+                            }
+                        }
+                    }
+                    switch (alt2) {
+                        case 1 :
+                            // InternalStateMachineTriggers.g:302:4: ( (lv_objName_0_0= RULE_ID ) ) otherlv_1= '.'
+                            {
+                            // InternalStateMachineTriggers.g:302:4: ( (lv_objName_0_0= RULE_ID ) )
+                            // InternalStateMachineTriggers.g:303:1: (lv_objName_0_0= RULE_ID )
+                            {
+                            // InternalStateMachineTriggers.g:303:1: (lv_objName_0_0= RULE_ID )
+                            // InternalStateMachineTriggers.g:304:3: lv_objName_0_0= RULE_ID
+                            {
+                            lv_objName_0_0=(Token)match(input,RULE_ID,FOLLOW_8); 
+
+                            			newLeafNode(lv_objName_0_0, grammarAccess.getEventAccess().getObjNameIDTerminalRuleCall_0_0_0_0()); 
+                            		
+
+                            	        if (current==null) {
+                            	            current = createModelElement(grammarAccess.getEventRule());
+                            	        }
+                                   		setWithLastConsumed(
+                                   			current, 
+                                   			"objName",
+                                    		lv_objName_0_0, 
+                                    		"org.eclipse.xtext.common.Terminals.ID");
+                            	    
+
+                            }
+
+
+                            }
+
+                            otherlv_1=(Token)match(input,14,FOLLOW_9); 
+
+                                	newLeafNode(otherlv_1, grammarAccess.getEventAccess().getFullStopKeyword_0_0_1());
+                                
+
+                            }
+                            break;
+
+                    }
+
+                    // InternalStateMachineTriggers.g:324:3: ( ( (lv_eventName_2_0= RULE_ID ) ) otherlv_3= '.' ( (lv_eventExtension_4_0= ruleEventExtensions ) ) )
+                    // InternalStateMachineTriggers.g:324:4: ( (lv_eventName_2_0= RULE_ID ) ) otherlv_3= '.' ( (lv_eventExtension_4_0= ruleEventExtensions ) )
+                    {
+                    // InternalStateMachineTriggers.g:324:4: ( (lv_eventName_2_0= RULE_ID ) )
+                    // InternalStateMachineTriggers.g:325:1: (lv_eventName_2_0= RULE_ID )
+                    {
+                    // InternalStateMachineTriggers.g:325:1: (lv_eventName_2_0= RULE_ID )
+                    // InternalStateMachineTriggers.g:326:3: lv_eventName_2_0= RULE_ID
+                    {
+                    lv_eventName_2_0=(Token)match(input,RULE_ID,FOLLOW_8); 
+
+                    			newLeafNode(lv_eventName_2_0, grammarAccess.getEventAccess().getEventNameIDTerminalRuleCall_0_1_0_0()); 
                     		
 
                     	        if (current==null) {
@@ -699,7 +763,7 @@ public class InternalStateMachineTriggersParser extends AbstractInternalAntlrPar
                            		setWithLastConsumed(
                            			current, 
                            			"eventName",
-                            		lv_eventName_0_0, 
+                            		lv_eventName_2_0, 
                             		"org.eclipse.xtext.common.Terminals.ID");
                     	    
 
@@ -708,21 +772,21 @@ public class InternalStateMachineTriggersParser extends AbstractInternalAntlrPar
 
                     }
 
-                    otherlv_1=(Token)match(input,14,FOLLOW_9); 
+                    otherlv_3=(Token)match(input,14,FOLLOW_10); 
 
-                        	newLeafNode(otherlv_1, grammarAccess.getEventAccess().getFullStopKeyword_0_1());
+                        	newLeafNode(otherlv_3, grammarAccess.getEventAccess().getFullStopKeyword_0_1_1());
                         
-                    // InternalStateMachineTriggers.g:324:1: ( (lv_eventExtension_2_0= ruleEventExtensions ) )
-                    // InternalStateMachineTriggers.g:325:1: (lv_eventExtension_2_0= ruleEventExtensions )
+                    // InternalStateMachineTriggers.g:346:1: ( (lv_eventExtension_4_0= ruleEventExtensions ) )
+                    // InternalStateMachineTriggers.g:347:1: (lv_eventExtension_4_0= ruleEventExtensions )
                     {
-                    // InternalStateMachineTriggers.g:325:1: (lv_eventExtension_2_0= ruleEventExtensions )
-                    // InternalStateMachineTriggers.g:326:3: lv_eventExtension_2_0= ruleEventExtensions
+                    // InternalStateMachineTriggers.g:347:1: (lv_eventExtension_4_0= ruleEventExtensions )
+                    // InternalStateMachineTriggers.g:348:3: lv_eventExtension_4_0= ruleEventExtensions
                     {
                      
-                    	        newCompositeNode(grammarAccess.getEventAccess().getEventExtensionEventExtensionsParserRuleCall_0_2_0()); 
+                    	        newCompositeNode(grammarAccess.getEventAccess().getEventExtensionEventExtensionsParserRuleCall_0_1_2_0()); 
                     	    
                     pushFollow(FOLLOW_2);
-                    lv_eventExtension_2_0=ruleEventExtensions();
+                    lv_eventExtension_4_0=ruleEventExtensions();
 
                     state._fsp--;
 
@@ -733,7 +797,7 @@ public class InternalStateMachineTriggersParser extends AbstractInternalAntlrPar
                            		set(
                            			current, 
                            			"eventExtension",
-                            		lv_eventExtension_2_0, 
+                            		lv_eventExtension_4_0, 
                             		"org.correttouml.grammars.StateMachineTriggers.EventExtensions");
                     	        afterParserOrEnumRuleCall();
                     	    
@@ -748,19 +812,22 @@ public class InternalStateMachineTriggersParser extends AbstractInternalAntlrPar
 
 
                     }
+
+
+                    }
                     break;
                 case 2 :
-                    // InternalStateMachineTriggers.g:343:6: ( (lv_nowEvent_3_0= 'now' ) )
+                    // InternalStateMachineTriggers.g:365:6: ( (lv_nowEvent_5_0= 'now' ) )
                     {
-                    // InternalStateMachineTriggers.g:343:6: ( (lv_nowEvent_3_0= 'now' ) )
-                    // InternalStateMachineTriggers.g:344:1: (lv_nowEvent_3_0= 'now' )
+                    // InternalStateMachineTriggers.g:365:6: ( (lv_nowEvent_5_0= 'now' ) )
+                    // InternalStateMachineTriggers.g:366:1: (lv_nowEvent_5_0= 'now' )
                     {
-                    // InternalStateMachineTriggers.g:344:1: (lv_nowEvent_3_0= 'now' )
-                    // InternalStateMachineTriggers.g:345:3: lv_nowEvent_3_0= 'now'
+                    // InternalStateMachineTriggers.g:366:1: (lv_nowEvent_5_0= 'now' )
+                    // InternalStateMachineTriggers.g:367:3: lv_nowEvent_5_0= 'now'
                     {
-                    lv_nowEvent_3_0=(Token)match(input,15,FOLLOW_2); 
+                    lv_nowEvent_5_0=(Token)match(input,15,FOLLOW_2); 
 
-                            newLeafNode(lv_nowEvent_3_0, grammarAccess.getEventAccess().getNowEventNowKeyword_1_0());
+                            newLeafNode(lv_nowEvent_5_0, grammarAccess.getEventAccess().getNowEventNowKeyword_1_0());
                         
 
                     	        if (current==null) {
@@ -798,7 +865,7 @@ public class InternalStateMachineTriggersParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "entryRuleEventExtensions"
-    // InternalStateMachineTriggers.g:366:1: entryRuleEventExtensions returns [String current=null] : iv_ruleEventExtensions= ruleEventExtensions EOF ;
+    // InternalStateMachineTriggers.g:388:1: entryRuleEventExtensions returns [String current=null] : iv_ruleEventExtensions= ruleEventExtensions EOF ;
     public final String entryRuleEventExtensions() throws RecognitionException {
         String current = null;
 
@@ -806,8 +873,8 @@ public class InternalStateMachineTriggersParser extends AbstractInternalAntlrPar
 
 
         try {
-            // InternalStateMachineTriggers.g:367:2: (iv_ruleEventExtensions= ruleEventExtensions EOF )
-            // InternalStateMachineTriggers.g:368:2: iv_ruleEventExtensions= ruleEventExtensions EOF
+            // InternalStateMachineTriggers.g:389:2: (iv_ruleEventExtensions= ruleEventExtensions EOF )
+            // InternalStateMachineTriggers.g:390:2: iv_ruleEventExtensions= ruleEventExtensions EOF
             {
              newCompositeNode(grammarAccess.getEventExtensionsRule()); 
             pushFollow(FOLLOW_1);
@@ -834,7 +901,7 @@ public class InternalStateMachineTriggersParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "ruleEventExtensions"
-    // InternalStateMachineTriggers.g:375:1: ruleEventExtensions returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'reply' ) ;
+    // InternalStateMachineTriggers.g:397:1: ruleEventExtensions returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'reply' | kw= 'adstart' | kw= 'adend' | kw= 'iodstart' | kw= 'iodend' ) ;
     public final AntlrDatatypeRuleToken ruleEventExtensions() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -843,62 +910,82 @@ public class InternalStateMachineTriggersParser extends AbstractInternalAntlrPar
          enterRule(); 
             
         try {
-            // InternalStateMachineTriggers.g:378:28: ( (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'reply' ) )
-            // InternalStateMachineTriggers.g:379:1: (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'reply' )
+            // InternalStateMachineTriggers.g:400:28: ( (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'reply' | kw= 'adstart' | kw= 'adend' | kw= 'iodstart' | kw= 'iodend' ) )
+            // InternalStateMachineTriggers.g:401:1: (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'reply' | kw= 'adstart' | kw= 'adend' | kw= 'iodstart' | kw= 'iodend' )
             {
-            // InternalStateMachineTriggers.g:379:1: (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'reply' )
-            int alt3=8;
+            // InternalStateMachineTriggers.g:401:1: (kw= 'exit' | kw= 'enter' | kw= 'start' | kw= 'end' | kw= 'tick' | kw= 'sig' | kw= 'call' | kw= 'reply' | kw= 'adstart' | kw= 'adend' | kw= 'iodstart' | kw= 'iodend' )
+            int alt4=12;
             switch ( input.LA(1) ) {
             case 16:
                 {
-                alt3=1;
+                alt4=1;
                 }
                 break;
             case 17:
                 {
-                alt3=2;
+                alt4=2;
                 }
                 break;
             case 18:
                 {
-                alt3=3;
+                alt4=3;
                 }
                 break;
             case 19:
                 {
-                alt3=4;
+                alt4=4;
                 }
                 break;
             case 20:
                 {
-                alt3=5;
+                alt4=5;
                 }
                 break;
             case 21:
                 {
-                alt3=6;
+                alt4=6;
                 }
                 break;
             case 22:
                 {
-                alt3=7;
+                alt4=7;
                 }
                 break;
             case 23:
                 {
-                alt3=8;
+                alt4=8;
+                }
+                break;
+            case 24:
+                {
+                alt4=9;
+                }
+                break;
+            case 25:
+                {
+                alt4=10;
+                }
+                break;
+            case 26:
+                {
+                alt4=11;
+                }
+                break;
+            case 27:
+                {
+                alt4=12;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 3, 0, input);
+                    new NoViableAltException("", 4, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt3) {
+            switch (alt4) {
                 case 1 :
-                    // InternalStateMachineTriggers.g:380:2: kw= 'exit'
+                    // InternalStateMachineTriggers.g:402:2: kw= 'exit'
                     {
                     kw=(Token)match(input,16,FOLLOW_2); 
 
@@ -909,7 +996,7 @@ public class InternalStateMachineTriggersParser extends AbstractInternalAntlrPar
                     }
                     break;
                 case 2 :
-                    // InternalStateMachineTriggers.g:387:2: kw= 'enter'
+                    // InternalStateMachineTriggers.g:409:2: kw= 'enter'
                     {
                     kw=(Token)match(input,17,FOLLOW_2); 
 
@@ -920,7 +1007,7 @@ public class InternalStateMachineTriggersParser extends AbstractInternalAntlrPar
                     }
                     break;
                 case 3 :
-                    // InternalStateMachineTriggers.g:394:2: kw= 'start'
+                    // InternalStateMachineTriggers.g:416:2: kw= 'start'
                     {
                     kw=(Token)match(input,18,FOLLOW_2); 
 
@@ -931,7 +1018,7 @@ public class InternalStateMachineTriggersParser extends AbstractInternalAntlrPar
                     }
                     break;
                 case 4 :
-                    // InternalStateMachineTriggers.g:401:2: kw= 'end'
+                    // InternalStateMachineTriggers.g:423:2: kw= 'end'
                     {
                     kw=(Token)match(input,19,FOLLOW_2); 
 
@@ -942,7 +1029,7 @@ public class InternalStateMachineTriggersParser extends AbstractInternalAntlrPar
                     }
                     break;
                 case 5 :
-                    // InternalStateMachineTriggers.g:408:2: kw= 'tick'
+                    // InternalStateMachineTriggers.g:430:2: kw= 'tick'
                     {
                     kw=(Token)match(input,20,FOLLOW_2); 
 
@@ -953,7 +1040,7 @@ public class InternalStateMachineTriggersParser extends AbstractInternalAntlrPar
                     }
                     break;
                 case 6 :
-                    // InternalStateMachineTriggers.g:415:2: kw= 'sig'
+                    // InternalStateMachineTriggers.g:437:2: kw= 'sig'
                     {
                     kw=(Token)match(input,21,FOLLOW_2); 
 
@@ -964,7 +1051,7 @@ public class InternalStateMachineTriggersParser extends AbstractInternalAntlrPar
                     }
                     break;
                 case 7 :
-                    // InternalStateMachineTriggers.g:422:2: kw= 'call'
+                    // InternalStateMachineTriggers.g:444:2: kw= 'call'
                     {
                     kw=(Token)match(input,22,FOLLOW_2); 
 
@@ -975,12 +1062,56 @@ public class InternalStateMachineTriggersParser extends AbstractInternalAntlrPar
                     }
                     break;
                 case 8 :
-                    // InternalStateMachineTriggers.g:429:2: kw= 'reply'
+                    // InternalStateMachineTriggers.g:451:2: kw= 'reply'
                     {
                     kw=(Token)match(input,23,FOLLOW_2); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getReplyKeyword_7()); 
+                        
+
+                    }
+                    break;
+                case 9 :
+                    // InternalStateMachineTriggers.g:458:2: kw= 'adstart'
+                    {
+                    kw=(Token)match(input,24,FOLLOW_2); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getAdstartKeyword_8()); 
+                        
+
+                    }
+                    break;
+                case 10 :
+                    // InternalStateMachineTriggers.g:465:2: kw= 'adend'
+                    {
+                    kw=(Token)match(input,25,FOLLOW_2); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getAdendKeyword_9()); 
+                        
+
+                    }
+                    break;
+                case 11 :
+                    // InternalStateMachineTriggers.g:472:2: kw= 'iodstart'
+                    {
+                    kw=(Token)match(input,26,FOLLOW_2); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getIodstartKeyword_10()); 
+                        
+
+                    }
+                    break;
+                case 12 :
+                    // InternalStateMachineTriggers.g:479:2: kw= 'iodend'
+                    {
+                    kw=(Token)match(input,27,FOLLOW_2); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getEventExtensionsAccess().getIodendKeyword_11()); 
                         
 
                     }
@@ -1017,6 +1148,7 @@ public class InternalStateMachineTriggersParser extends AbstractInternalAntlrPar
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000FF0000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x000000000FFF0000L});
 
 }

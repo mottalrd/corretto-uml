@@ -6,6 +6,8 @@ import java.util.Set;
 
 import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagram;
 import org.correttouml.uml.diagrams.sequencediagram.SequenceDiagramParameter;
+import org.correttouml.uml2zot.UML2Zot;
+import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.CallBehaviorAction;
 import org.eclipse.uml2.uml.InputPin;
@@ -39,4 +41,10 @@ public class SequenceDiagramNode extends Node {
 		}
 		return "";
 	}
+
+	public String getUMLId() {
+		String id=((XMLResource) this.uml_activitynode.eResource()).getID(uml_activitynode);
+		return UML2Zot.Utility.umlIDtoPrdID(id);
+	}
+	
 }

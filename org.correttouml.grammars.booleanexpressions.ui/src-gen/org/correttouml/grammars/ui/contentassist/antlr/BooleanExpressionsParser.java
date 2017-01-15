@@ -9,7 +9,6 @@ import java.util.HashMap;
 
 import org.antlr.runtime.RecognitionException;
 import org.eclipse.xtext.AbstractElement;
-import org.eclipse.xtext.AbstractRule;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.AbstractContentAssistParser;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.FollowElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
@@ -54,6 +53,8 @@ public class BooleanExpressionsParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVariableConditionAccess().getGroup(), "rule__VariableCondition__Group__0");
 					put(grammarAccess.getEXPRESSIONAccess().getGroup_0(), "rule__EXPRESSION__Group_0__0");
 					put(grammarAccess.getEventAccess().getGroup_0(), "rule__Event__Group_0__0");
+					put(grammarAccess.getEventAccess().getGroup_0_0(), "rule__Event__Group_0_0__0");
+					put(grammarAccess.getEventAccess().getGroup_0_1(), "rule__Event__Group_0_1__0");
 					put(grammarAccess.getModelAccess().getExpressionAssignment(), "rule__Model__ExpressionAssignment");
 					put(grammarAccess.getOrExpressionAccess().getLeftExpressionAssignment_0(), "rule__OrExpression__LeftExpressionAssignment_0");
 					put(grammarAccess.getOrExpressionAccess().getOrAssignment_1_0(), "rule__OrExpression__OrAssignment_1_0");
@@ -81,8 +82,9 @@ public class BooleanExpressionsParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEXPRESSIONAccess().getAloneAssignment_1(), "rule__EXPRESSION__AloneAssignment_1");
 					put(grammarAccess.getTERMAccess().getVariableAssignment_0(), "rule__TERM__VariableAssignment_0");
 					put(grammarAccess.getTERMAccess().getConstantAssignment_1(), "rule__TERM__ConstantAssignment_1");
-					put(grammarAccess.getEventAccess().getEventNameAssignment_0_0(), "rule__Event__EventNameAssignment_0_0");
-					put(grammarAccess.getEventAccess().getEventExtensionAssignment_0_2(), "rule__Event__EventExtensionAssignment_0_2");
+					put(grammarAccess.getEventAccess().getObjNameAssignment_0_0_0(), "rule__Event__ObjNameAssignment_0_0_0");
+					put(grammarAccess.getEventAccess().getEventNameAssignment_0_1_0(), "rule__Event__EventNameAssignment_0_1_0");
+					put(grammarAccess.getEventAccess().getEventExtensionAssignment_0_1_2(), "rule__Event__EventExtensionAssignment_0_1_2");
 					put(grammarAccess.getEventAccess().getNowEventAssignment_1(), "rule__Event__NowEventAssignment_1");
 				}
 			};
@@ -112,10 +114,5 @@ public class BooleanExpressionsParser extends AbstractContentAssistParser {
 	
 	public void setGrammarAccess(BooleanExpressionsGrammarAccess grammarAccess) {
 		this.grammarAccess = grammarAccess;
-	}
-
-	public void initializeFor(AbstractRule rule) {
-		// TODO Auto-generated method stub
-		
 	}
 }

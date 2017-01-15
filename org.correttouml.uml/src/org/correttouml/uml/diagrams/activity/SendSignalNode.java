@@ -18,10 +18,10 @@ public class SendSignalNode extends Node implements ExpressionContext {
 		this.uml_activitynode = uml_activitynode;
 	}
 
-	public Action getAction(Object object){
+	public Action getAction(){
 		StDTransitionsParser p= new StDTransitionsParser();
 		p.parse("/" + uml_activitynode.getName());
-		return ActionFactory.getInstance(p.getAction(), this, object).get(0);
+		return ActionFactory.getInstance(p.getAction(), this, null).get(0);
 	}
 	
 	public String getName(){

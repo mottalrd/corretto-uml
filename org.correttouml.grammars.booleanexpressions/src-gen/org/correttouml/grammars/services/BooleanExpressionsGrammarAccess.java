@@ -403,38 +403,58 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.correttouml.grammars.BooleanExpressions.Event");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Assignment cEventNameAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
-		private final RuleCall cEventNameIDTerminalRuleCall_0_0_0 = (RuleCall)cEventNameAssignment_0_0.eContents().get(0);
-		private final Keyword cFullStopKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Assignment cEventExtensionAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cEventExtensionEventExtensionsParserRuleCall_0_2_0 = (RuleCall)cEventExtensionAssignment_0_2.eContents().get(0);
+		private final Group cGroup_0_0 = (Group)cGroup_0.eContents().get(0);
+		private final Assignment cObjNameAssignment_0_0_0 = (Assignment)cGroup_0_0.eContents().get(0);
+		private final RuleCall cObjNameIDTerminalRuleCall_0_0_0_0 = (RuleCall)cObjNameAssignment_0_0_0.eContents().get(0);
+		private final Keyword cFullStopKeyword_0_0_1 = (Keyword)cGroup_0_0.eContents().get(1);
+		private final Group cGroup_0_1 = (Group)cGroup_0.eContents().get(1);
+		private final Assignment cEventNameAssignment_0_1_0 = (Assignment)cGroup_0_1.eContents().get(0);
+		private final RuleCall cEventNameIDTerminalRuleCall_0_1_0_0 = (RuleCall)cEventNameAssignment_0_1_0.eContents().get(0);
+		private final Keyword cFullStopKeyword_0_1_1 = (Keyword)cGroup_0_1.eContents().get(1);
+		private final Assignment cEventExtensionAssignment_0_1_2 = (Assignment)cGroup_0_1.eContents().get(2);
+		private final RuleCall cEventExtensionEventExtensionsParserRuleCall_0_1_2_0 = (RuleCall)cEventExtensionAssignment_0_1_2.eContents().get(0);
 		private final Assignment cNowEventAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
 		private final Keyword cNowEventNowKeyword_1_0 = (Keyword)cNowEventAssignment_1.eContents().get(0);
 		
 		//Event:
-		//	eventName=ID '.' eventExtension=EventExtensions | nowEvent?='now';
+		//	(objName=ID '.')? (eventName=ID '.' eventExtension=EventExtensions) | nowEvent?='now';
 		public ParserRule getRule() { return rule; }
 
-		//eventName=ID '.' eventExtension=EventExtensions | nowEvent?='now'
+		//(objName=ID '.')? (eventName=ID '.' eventExtension=EventExtensions) | nowEvent?='now'
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//eventName=ID '.' eventExtension=EventExtensions
+		//(objName=ID '.')? (eventName=ID '.' eventExtension=EventExtensions)
 		public Group getGroup_0() { return cGroup_0; }
 
-		//eventName=ID
-		public Assignment getEventNameAssignment_0_0() { return cEventNameAssignment_0_0; }
+		//(objName=ID '.')?
+		public Group getGroup_0_0() { return cGroup_0_0; }
+
+		//objName=ID
+		public Assignment getObjNameAssignment_0_0_0() { return cObjNameAssignment_0_0_0; }
 
 		//ID
-		public RuleCall getEventNameIDTerminalRuleCall_0_0_0() { return cEventNameIDTerminalRuleCall_0_0_0; }
+		public RuleCall getObjNameIDTerminalRuleCall_0_0_0_0() { return cObjNameIDTerminalRuleCall_0_0_0_0; }
 
 		//'.'
-		public Keyword getFullStopKeyword_0_1() { return cFullStopKeyword_0_1; }
+		public Keyword getFullStopKeyword_0_0_1() { return cFullStopKeyword_0_0_1; }
+
+		//(eventName=ID '.' eventExtension=EventExtensions)
+		public Group getGroup_0_1() { return cGroup_0_1; }
+
+		//eventName=ID
+		public Assignment getEventNameAssignment_0_1_0() { return cEventNameAssignment_0_1_0; }
+
+		//ID
+		public RuleCall getEventNameIDTerminalRuleCall_0_1_0_0() { return cEventNameIDTerminalRuleCall_0_1_0_0; }
+
+		//'.'
+		public Keyword getFullStopKeyword_0_1_1() { return cFullStopKeyword_0_1_1; }
 
 		//eventExtension=EventExtensions
-		public Assignment getEventExtensionAssignment_0_2() { return cEventExtensionAssignment_0_2; }
+		public Assignment getEventExtensionAssignment_0_1_2() { return cEventExtensionAssignment_0_1_2; }
 
 		//EventExtensions
-		public RuleCall getEventExtensionEventExtensionsParserRuleCall_0_2_0() { return cEventExtensionEventExtensionsParserRuleCall_0_2_0; }
+		public RuleCall getEventExtensionEventExtensionsParserRuleCall_0_1_2_0() { return cEventExtensionEventExtensionsParserRuleCall_0_1_2_0; }
 
 		//nowEvent?='now'
 		public Assignment getNowEventAssignment_1() { return cNowEventAssignment_1; }
@@ -456,12 +476,18 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 		private final Keyword cSendKeyword_7 = (Keyword)cAlternatives.eContents().get(7);
 		private final Keyword cReceiveKeyword_8 = (Keyword)cAlternatives.eContents().get(8);
 		private final Keyword cReplyKeyword_9 = (Keyword)cAlternatives.eContents().get(9);
+		private final Keyword cAdstartKeyword_10 = (Keyword)cAlternatives.eContents().get(10);
+		private final Keyword cAdendKeyword_11 = (Keyword)cAlternatives.eContents().get(11);
+		private final Keyword cIodstartKeyword_12 = (Keyword)cAlternatives.eContents().get(12);
+		private final Keyword cIodendKeyword_13 = (Keyword)cAlternatives.eContents().get(13);
 		
 		//EventExtensions:
-		//	'exit' | 'enter' | 'start' | 'end' | 'tick' | 'sig' | 'call' | 'send' | 'receive' | 'reply';
+		//	'exit' | 'enter' | 'start' | 'end' | 'tick' | 'sig' | 'call' | 'send' | 'receive' | 'reply' | 'adstart' | 'adend' |
+		//	'iodstart' | 'iodend';
 		public ParserRule getRule() { return rule; }
 
-		//'exit' | 'enter' | 'start' | 'end' | 'tick' | 'sig' | 'call' | 'send' | 'receive' | 'reply'
+		//'exit' | 'enter' | 'start' | 'end' | 'tick' | 'sig' | 'call' | 'send' | 'receive' | 'reply' | 'adstart' | 'adend' |
+		//'iodstart' | 'iodend'
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//'exit'
@@ -493,6 +519,18 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 
 		//'reply'
 		public Keyword getReplyKeyword_9() { return cReplyKeyword_9; }
+
+		//'adstart'
+		public Keyword getAdstartKeyword_10() { return cAdstartKeyword_10; }
+
+		//'adend'
+		public Keyword getAdendKeyword_11() { return cAdendKeyword_11; }
+
+		//'iodstart'
+		public Keyword getIodstartKeyword_12() { return cIodstartKeyword_12; }
+
+		//'iodend'
+		public Keyword getIodendKeyword_13() { return cIodendKeyword_13; }
 	}
 	
 	
@@ -678,7 +716,7 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 	} 
 
 	//Event:
-	//	eventName=ID '.' eventExtension=EventExtensions | nowEvent?='now';
+	//	(objName=ID '.')? (eventName=ID '.' eventExtension=EventExtensions) | nowEvent?='now';
 	public EventElements getEventAccess() {
 		return pEvent;
 	}
@@ -688,7 +726,8 @@ public class BooleanExpressionsGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//EventExtensions:
-	//	'exit' | 'enter' | 'start' | 'end' | 'tick' | 'sig' | 'call' | 'send' | 'receive' | 'reply';
+	//	'exit' | 'enter' | 'start' | 'end' | 'tick' | 'sig' | 'call' | 'send' | 'receive' | 'reply' | 'adstart' | 'adend' |
+	//	'iodstart' | 'iodend';
 	public EventExtensionsElements getEventExtensionsAccess() {
 		return pEventExtensions;
 	}

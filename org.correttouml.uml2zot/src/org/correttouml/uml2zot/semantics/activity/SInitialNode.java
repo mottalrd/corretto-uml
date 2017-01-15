@@ -27,9 +27,9 @@ public class SInitialNode {
 
 	public Predicate getPredicate() {
 		if (mades_activity instanceof AD)
-			return new SAD((AD) mades_activity).getStartPredicate();
+			return new SAD((AD) mades_activity).getPredicate().getStartPredicate();
 		else if (mades_activity instanceof IOD)
-			return new SIOD((IOD) mades_activity).getStartPredicate();
+			return new SIOD((IOD) mades_activity).getPredicate().getStartPredicate();
 		return null;
 	}
 	

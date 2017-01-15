@@ -16,8 +16,7 @@ public class SSignalAction implements SAction {
 	
 	@Override
 	public Predicate getPredicate(Object... objects) {
-//		return new Predicate("OBJ"+mades_signalAction.getObject()+"OP"+mades_signalAction.getSignal().getName()+"TR"+mades_signalAction.getTransition().getUMLId()+"_CALL");
-		return new Predicate("OBJ"+mades_signalAction.getObject() + mades_signalAction.getSignal().getName() + mades_signalAction.getContext().getUMLId()+"_CALL");
+		return new Predicate(mades_signalAction.getSignal().getName() + mades_signalAction.getContext().getUMLId()+"_CALL");
 	}
 
 	@Override

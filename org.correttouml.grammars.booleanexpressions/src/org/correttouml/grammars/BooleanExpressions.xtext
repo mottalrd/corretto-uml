@@ -54,11 +54,11 @@ terminal OPERATOR:
 	'+' | '*' | '--';
 
 Event:
-	(eventName=ID '.' eventExtension=EventExtensions) | (nowEvent ?= 'now') 
+	(objName=ID '.')? (eventName=ID '.' eventExtension=EventExtensions) | (nowEvent ?= 'now') 
 ;
 
 EventExtensions :
-	'exit' | 'enter' | 'start'  | 'end' | 'tick' | 'sig' | 'call' | 'send' | 'receive' | 'reply'
+	'exit' | 'enter' | 'start'  | 'end' | 'tick' | 'sig' | 'call' | 'send' | 'receive' | 'reply' | 'adstart' | 'adend' | 'iodstart' | 'iodend' 
 ;
 	
 terminal RELATIONS:

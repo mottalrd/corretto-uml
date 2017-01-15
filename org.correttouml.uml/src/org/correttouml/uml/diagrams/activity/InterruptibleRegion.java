@@ -11,15 +11,17 @@ import org.eclipse.uml2.uml.InterruptibleActivityRegion;
 public class InterruptibleRegion {
 
 	private InterruptibleActivityRegion uml_region;
+	private Activity uml_enclosing_activity;
 
-	public InterruptibleRegion(InterruptibleActivityRegion ag) {
-		this.uml_region=ag;
+	public InterruptibleRegion(InterruptibleActivityRegion ag, Activity activity) {
+		uml_region = ag;
+		uml_enclosing_activity = activity;
 	}
 
 	public AcceptEventAction getInterrupt(){
-		//the target node of the edges selected as interrupting edges should be an accept event action
+		//the source node of the edges selected as interrupting edges should be an accept event action
 		//the event defining the accept event action is the interrupt of the region
-		org.eclipse.uml2.uml.AcceptEventAction interrupt_node=(org.eclipse.uml2.uml.AcceptEventAction) this.uml_region.getInterruptingEdges().iterator().next().getTarget();
+		org.eclipse.uml2.uml.AcceptEventAction interrupt_node=(org.eclipse.uml2.uml.AcceptEventAction) this.uml_region.getInterruptingEdges().iterator().next().getSource();
 		return new AcceptEventAction(interrupt_node);
 	}
 	
@@ -33,10 +35,13 @@ public class InterruptibleRegion {
 		}
 		return sds;
 	}
+	
+	public Activity getEnclosingActivity(){
+		return uml_enclosing_activity;
+	}
 
 	public String getUMLId() {
 		String id=((XMLResource) this.uml_region.eResource()).getID(this.uml_region);
-//		return id;
 		return UML2Zot.Utility.umlIDtoPrdID(id);
 	}
 	

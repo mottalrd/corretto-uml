@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.correttouml.uml.diagrams.activity.CallActionNode;
+import org.correttouml.uml.diagrams.activitydiagram.AD;
 import org.correttouml.uml.diagrams.classdiagram.Object;
 import org.correttouml.uml.diagrams.classdiagram.Operation;
 import org.correttouml.uml.diagrams.sequencediagram.Message;
@@ -87,8 +88,8 @@ public class SOperation {
 		            }
 		         }
 			}
-	        if (obj.getAD() != null)
-		        for (CallActionNode can: obj.getAD().getCallActionNodes()){
+	        for (AD ad : obj.getADs())
+		        for (CallActionNode can: ad.getCallActionNodes()){
 		        	if (can.getOperation().equals(this.mades_operation))
 		        		retactions.add((CallAction) can.getAction(obj));
 		        }

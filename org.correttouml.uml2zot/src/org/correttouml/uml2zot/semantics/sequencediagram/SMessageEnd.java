@@ -19,12 +19,14 @@ public class SMessageEnd implements SInteractionFragment, SEvent{
 
 	@Override
 	public Predicate getPredicate(Object... optObject) {
-		return new Predicate("MESSAGE" + mades_messageEndEvent.getMessage().getName() + "$" + this.mades_messageEndEvent.getMessage().getUMLId() + "_End");
+//		return new Predicate("MESSAGE" + mades_messageEndEvent.getMessage().getName() + "$" + this.mades_messageEndEvent.getMessage().getUMLId() + "_End");
+		return new SMessage(mades_messageEndEvent.getMessage()).getPredicate().getEndPredicate();
 	}
 
 	@Override
 	public Predicate getPredicate() {
-		return new Predicate("MESSAGE" + mades_messageEndEvent.getMessage().getName() + "$" + this.mades_messageEndEvent.getMessage().getUMLId() + "_End");
+//		return new Predicate("MESSAGE" + mades_messageEndEvent.getMessage().getName() + "$" + this.mades_messageEndEvent.getMessage().getUMLId() + "_End");
+		return new SMessage(mades_messageEndEvent.getMessage()).getPredicate().getEndPredicate();
 	}
 
 	public String getSemantics(){

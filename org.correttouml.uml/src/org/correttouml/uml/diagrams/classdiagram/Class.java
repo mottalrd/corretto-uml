@@ -32,14 +32,25 @@ public class Class {
 	}
 	
 	/** Returns the activity diagram associated to this object */
-	public org.eclipse.uml2.uml.Activity getUMLAD() {
+	//[corretto-extensionPoint][Multiple ADs]: Change it to getUMLADs, when we need to have a class with more than one AD.
+//	public org.eclipse.uml2.uml.Activity getUMLAD() {
+//		for (Element e : uml_class.getOwnedElements()) {
+//			if(e instanceof org.eclipse.uml2.uml.Activity && !UML2ModelHelper.hasStereotype(e, "Ignore")){
+////				return new AD((org.eclipse.uml2.uml.Activity) e, null);
+//				return (org.eclipse.uml2.uml.Activity) e;
+//			}
+//		}
+//		return null;
+//	}
+	
+	public Set<org.eclipse.uml2.uml.Activity> getUMLADs() {
+		HashSet<org.eclipse.uml2.uml.Activity> umlADs = new HashSet<org.eclipse.uml2.uml.Activity>();
 		for (Element e : uml_class.getOwnedElements()) {
 			if(e instanceof org.eclipse.uml2.uml.Activity && !UML2ModelHelper.hasStereotype(e, "Ignore")){
-//				return new AD((org.eclipse.uml2.uml.Activity) e, null);
-				return (org.eclipse.uml2.uml.Activity) e;
+				umlADs.add((org.eclipse.uml2.uml.Activity) e);
 			}
 		}
-		return null;
+		return umlADs;
 	}
 	
 	public StateDiagram findStateDiagram(String name) {

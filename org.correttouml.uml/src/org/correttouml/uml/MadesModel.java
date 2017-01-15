@@ -87,12 +87,9 @@ public class MadesModel{
 	
 	public Set<AD> getADs() {
 		Set<AD> ads=new HashSet<AD>();
-		for(org.correttouml.uml.diagrams.classdiagram.Class c: getClassdiagram().getClasses()){
-			for (org.correttouml.uml.diagrams.classdiagram.Object object: c.getObjects()){
-				if (object.getAD() != null)
-					ads.add(object.getAD());
-				}
-			}
+		for(org.correttouml.uml.diagrams.classdiagram.Class c: getClassdiagram().getClasses())
+			for (org.correttouml.uml.diagrams.classdiagram.Object object: c.getObjects())
+				ads.addAll(object.getADs());
 		return ads;
 	}
 	

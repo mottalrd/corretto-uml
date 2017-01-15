@@ -91,6 +91,7 @@ public class UmlElementHyperlink implements IHyperlink {
 		IViewPart viewer = page.getViewer();
 		ModelExplorerView modelExplorerView = (ModelExplorerView)viewer;
 		CommonViewer commonViewer = modelExplorerView.getCommonViewer();
+		commonViewer.collapseAll();
 		EObject element = findElementInModelExplorer(commonViewer, view, elementID);
 		commonViewer.getControl().setFocus();
 		commonViewer.setSelection(new StructuredSelection(element), true);

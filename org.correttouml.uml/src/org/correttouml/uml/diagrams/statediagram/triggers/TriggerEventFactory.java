@@ -17,7 +17,8 @@ public class TriggerEventFactory {
 			if(m.getTrigger().getRight()==null){
 				String name=m.getTrigger().getLeft().getEvent().getEventName();
 				String extension=m.getTrigger().getLeft().getEvent().getEventExtension();
-				return EventFactory.getInstance(new Transition(uml_transition).getStateDiagram(), name, extension);
+				String objName = m.getTrigger().getLeft().getEvent().getObjName();
+				return EventFactory.getInstance(new Transition(uml_transition).getStateDiagram(), objName, name, extension);
 			}
 			//time condition
 			else{

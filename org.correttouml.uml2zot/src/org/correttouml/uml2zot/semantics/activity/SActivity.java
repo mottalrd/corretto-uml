@@ -1,17 +1,29 @@
 package org.correttouml.uml2zot.semantics.activity;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
 
 import org.correttouml.uml.diagrams.activity.*;
 import org.correttouml.uml.diagrams.activitydiagram.*;
 import org.correttouml.uml.diagrams.events.Event;
+import org.correttouml.uml2zot.semantics.SMadesModel;
 import org.correttouml.uml2zot.semantics.events.SEvent;
 import org.correttouml.uml2zot.semantics.events.SEventFactory;
 import org.correttouml.uml2zot.semantics.util.bool.And;
 import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
+import org.correttouml.uml2zot.semantics.util.bool.Iff;
+import org.correttouml.uml2zot.semantics.util.bool.Implies;
+import org.correttouml.uml2zot.semantics.util.bool.Not;
 import org.correttouml.uml2zot.semantics.util.bool.Or;
+import org.correttouml.uml2zot.semantics.util.trio.AlwF;
+import org.correttouml.uml2zot.semantics.util.trio.AlwF_e;
+import org.correttouml.uml2zot.semantics.util.trio.AlwP;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
+import org.correttouml.uml2zot.semantics.util.trio.Since_ei;
+import org.correttouml.uml2zot.semantics.util.trio.SomP_e;
+import org.correttouml.uml2zot.semantics.util.trio.Until_ei;
 
 /**
  * @author Mohammad Mehdi Pourhashem Kallehbasti
@@ -24,14 +36,6 @@ public class SActivity {
 	public SActivity(Activity activity) {
 		this.mades_activity = activity;
 	}
-
-//	public Predicate getStartPredicate() {
-//		return new Predicate(mades_activity.getName() + mades_activity.getUMLId() + "_START");
-//	}
-//
-//	public Predicate getEndPredicate() {
-//		return new Predicate(mades_activity.getName() + mades_activity.getUMLId() + "_END");
-//	}
 
 	protected BooleanFormulae RC(Node curr, Node prec) {
 		if (prec instanceof AcceptEventAction) {
@@ -53,7 +57,7 @@ public class SActivity {
 			return new SInitialNode(((InitialNode) prec), mades_activity).getPredicate();
 		}
 		if (prec instanceof SequenceDiagramNode) {
-			Predicate sd_end = new SSequenceDiagramNode((SequenceDiagramNode) prec, this.mades_activity).getEndPredicate();
+			Predicate sd_end = new SSequenceDiagramNode((SequenceDiagramNode) prec, this.mades_activity).getPredicate().getEndPredicate();
 			return sd_end;
 		}
 		if (prec instanceof MergeNode) {
@@ -72,7 +76,7 @@ public class SActivity {
 			return andCond;
 		}
 		if (prec instanceof DecisionNode) {
-			Predicate cf_predicate = new SControlFlow(this.mades_activity.findControlFlow(prec, curr)).getPredicate();
+			Predicate cf_predicate = new SControlFlow(this.mades_activity.findControlFlow(prec, curr), mades_activity).getPredicate();
 			And andCond;
 			andCond = new And(RC(prec, prec.getIncomingNodes().iterator()
 					.next()), cf_predicate);
@@ -81,11 +85,16 @@ public class SActivity {
 		if (prec instanceof JoinNode) {
 			return new SJoinNode(((JoinNode) prec)).getPredicate();
 		}
+
 		if (prec instanceof OpaqueActionNode)
 			return new SOpaqueActionNode((OpaqueActionNode) prec, (AD) mades_activity).getPredicate();
+		
 		if (prec instanceof CallActionNode)
 			return new SCallActionNode((CallActionNode) prec, (AD) mades_activity).getPredicate();
 
+		if (prec instanceof SendSignalNode)
+			return new SSendSignalNode((SendSignalNode) prec, mades_activity).getPredicate();
+		
 		return null;
 	}
 

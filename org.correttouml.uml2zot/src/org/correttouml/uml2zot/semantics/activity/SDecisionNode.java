@@ -32,7 +32,7 @@ public class SDecisionNode {
 		while (it.hasNext()) {
 			Node succ = it.next();
 			ControlFlow firstcf=this.mades_activity.findControlFlow(this.mades_dn, succ);
-			Predicate firstcf_predicate=new SControlFlow(firstcf).getPredicate();
+			Predicate firstcf_predicate=new SControlFlow(firstcf, mades_activity).getPredicate();
 			Predicate guard=null;
 	    	if (firstcf.hasGuard()){
 	    		BooleanFormulae guardFormulae=null;
@@ -48,7 +48,7 @@ public class SDecisionNode {
 				Node other = it2.next();
 				ControlFlow secondcf=this.mades_activity.findControlFlow(this.mades_dn, other);
 				if(!firstcf.equals(secondcf)){
-					Predicate othercf_predicate=new SControlFlow(secondcf).getPredicate();
+					Predicate othercf_predicate=new SControlFlow(secondcf, mades_activity).getPredicate();
 					sem += new Implies(firstcf_predicate, new Not(othercf_predicate)).toString() + "\n";                        	
 				}
 			}
@@ -61,7 +61,7 @@ public class SDecisionNode {
 		while (it.hasNext()) {
 			Node succ = it.next();
 			ControlFlow firstcf=this.mades_activity.findControlFlow(this.mades_dn, succ);
-			Predicate firstcf_predicate=new SControlFlow(firstcf).getPredicate();
+			Predicate firstcf_predicate=new SControlFlow(firstcf, mades_activity).getPredicate();
 			or.addFormulae(firstcf_predicate);
 		}
 		return or;

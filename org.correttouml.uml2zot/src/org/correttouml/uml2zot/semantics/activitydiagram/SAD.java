@@ -2,26 +2,36 @@ package org.correttouml.uml2zot.semantics.activitydiagram;
 
 
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
+
 import org.correttouml.uml.diagrams.activity.*;
 import org.correttouml.uml.diagrams.activitydiagram.AD;
 import org.correttouml.uml.diagrams.expressions.Variable;
 import org.correttouml.uml.diagrams.expressions.VariableFactory;
+import org.correttouml.uml.diagrams.timeconstraints.TimeConstraint;
 import org.correttouml.uml2zot.semantics.activity.*;
 import org.correttouml.uml2zot.semantics.SMadesModel;
 import org.correttouml.uml2zot.semantics.events.SEventFactory;
 import org.correttouml.uml2zot.semantics.expressions.SVariableFactory;
 import org.correttouml.uml2zot.semantics.sequencediagram.SSequenceDiagramParameter;
+import org.correttouml.uml2zot.semantics.timeconstraints.STimeConstraint;
 import org.correttouml.uml2zot.semantics.util.bool.And;
 import org.correttouml.uml2zot.semantics.util.bool.BooleanFormulae;
 import org.correttouml.uml2zot.semantics.util.bool.Iff;
 import org.correttouml.uml2zot.semantics.util.bool.Implies;
 import org.correttouml.uml2zot.semantics.util.bool.Not;
 import org.correttouml.uml2zot.semantics.util.bool.Or;
+import org.correttouml.uml2zot.semantics.util.trio.AlwF;
+import org.correttouml.uml2zot.semantics.util.trio.AlwF_e;
+import org.correttouml.uml2zot.semantics.util.trio.AlwP;
 import org.correttouml.uml2zot.semantics.util.trio.EQ;
 import org.correttouml.uml2zot.semantics.util.trio.Past;
 import org.correttouml.uml2zot.semantics.util.trio.Predicate;
 import org.correttouml.uml2zot.semantics.util.trio.Since;
 import org.correttouml.uml2zot.semantics.util.trio.Since_ei;
+import org.correttouml.uml2zot.semantics.util.trio.SomP_e;
+import org.correttouml.uml2zot.semantics.util.trio.Until_ei;
 
 /**
  * @author Mohammad Mehdi Pourhashem Kallehbasti
@@ -33,14 +43,6 @@ public class SAD extends SActivity{
 	public SAD(AD ad) {
 		super(ad);
 		this.mades_ad = ad;
-	}
-
-	public Predicate getStartPredicate(){
-		return new Predicate(mades_ad.getName() + "_START");
-	}
-
-	public Predicate getEndPredicate(){
-		return new Predicate(mades_ad.getName() + "_END");
 	}
 
 	public String getObjectName(){
@@ -61,7 +63,7 @@ public class SAD extends SActivity{
 	public String getSemantics() {
 
 		String sem = "";
-		boolean foundActivityFinalNode = false;
+		boolean foundFinalNode = false;
 		Or endCondition=new Or();
 		FinalNode fn=null;
 
@@ -93,7 +95,7 @@ public class SAD extends SActivity{
 				//ASSUMPION: The sequence diagram is preceded by only one node
 				Node prev = n.getIncomingNodes().iterator().next();
 				SSequenceDiagramNode ssdNode = new SSequenceDiagramNode(curr, this.mades_ad); 
-				Predicate sd_start = ssdNode.getStartPredicate();
+				Predicate sd_start = ssdNode.getPredicate().getStartPredicate();
 				sem = sem + new Iff(sd_start, new Past(RC(curr, prev),1)) + "\n";
 				
 				//<Object flow> for Sequence Diagram Node input pin. 
@@ -109,7 +111,7 @@ public class SAD extends SActivity{
 				//</Object flow>
 			}
 			if (n instanceof FinalNode) {
-				foundActivityFinalNode = true;
+				foundFinalNode = true;
 				FinalNode curr = (FinalNode) n;
                 Node prev = n.getIncomingNodes().iterator().next();
 
@@ -145,8 +147,8 @@ public class SAD extends SActivity{
 			}
 		}
 
-		if (! foundActivityFinalNode) {
-			sem = sem + new Not(this.getEndPredicate()) + "\n";
+		if (! foundFinalNode) {
+			sem = sem + new Not(getPredicate().getEndPredicate()) + "\n";
 		}
 		else{
 			sem = sem + new Iff(new SFinalNode(fn, mades_ad).getPredicate(), endCondition)+"\n";
@@ -157,16 +159,89 @@ public class SAD extends SActivity{
 			Or insideCond=new Or();
 			Predicate inside_int_region=new SInterruptibleRegion(ir).getPredicate();
 			for(SequenceDiagramNode sdn: ir.getSequenceDiagramNodes()){
-				Predicate sdn_stop=new SSequenceDiagramNode(sdn, this.mades_ad).getStopPredicate();
-				Predicate sdn_end=new SSequenceDiagramNode(sdn, this.mades_ad).getEndPredicate();
-				Predicate sdn_start=new SSequenceDiagramNode(sdn, this.mades_ad).getStartPredicate();
+				Predicate sdn_stop=new SSequenceDiagramNode(sdn, this.mades_ad).getPredicate().getStopPredicate();
+				Predicate sdn_end=new SSequenceDiagramNode(sdn, this.mades_ad).getPredicate().getEndPredicate();
+				Predicate sdn_start=new SSequenceDiagramNode(sdn, this.mades_ad).getPredicate().getStartPredicate();
 				Predicate interrupt=SEventFactory.getInstance(ir.getInterrupt().getEvent(this.mades_ad)).getPredicate();
 				sem = sem + new Iff(new And(interrupt, inside_int_region), sdn_stop)+"\n";
-				insideCond.addFormulae(new Or(sdn_start, new Since(new And(new Not(sdn_end), new Not(sdn_stop)),sdn_start)));
+				insideCond.addFormulae(new Or(sdn_start, new Since_ei(new And(new Not(sdn_end), new Not(sdn_stop)),sdn_start)));
 			}
 			sem=sem+new Iff(inside_int_region, insideCond)+"\n";
 		}
+		
+		sem += getAllTimeConstraintsSemantics();
+		if (!mades_ad.hasInialNode())
+			sem += getDiagramStartSemantics();
+		sem += getBordersSemantics();
 		return sem;
+	}
+	
+	private String getAllTimeConstraintsSemantics() {
+		String sem = "";
+		int counter = 0;
+		
+		for (TimeConstraint t : mades_ad.getTimeConstraints()) {
+			counter++;
+			String tcName = mades_ad.getName() + "_TIMECONSTRAINT_" + counter;
+			Predicate tcPredicate = new Predicate(tcName);
+			sem += new Iff(tcPredicate,
+					new STimeConstraint(t).getSemantics()) + "\n";
+			sem += new Iff(getPredicate(), tcPredicate);
+		}
+		
+		return sem + "\n";
+	}
+
+	/**
+	 * @return
+	 * Borders for ADs (and IODs):
+[No Start], [No End]:
+	ADStart <=> BigBang
+	AD
+[Start], [No End]:
+	ADStart <=> (AlwF(AD) && !!SomP_e(AD))
+[No Start], [End]:
+	ADStart <=> BigBang
+	ADEnd <=> (AlwP(AD) && AlwF_e(!!AD))
+[Start], [End]:
+	AD <=> (ADStart || since_ei (!!ADEnd, ADStart))
+	ADStart => until_ei (!!ADStart, ADEnd)
+	 */
+	private String getBordersSemantics() {
+		String sem = "";
+		if (!mades_ad.hasStart() && !mades_ad.hasEnd())
+			sem += new Iff(getPredicate().getStartPredicate(), SMadesModel.SYSTEMSTART) + "\n" + getPredicate();
+		else if (mades_ad.hasStart() && !mades_ad.hasEnd())
+			sem += new Iff(getPredicate().getStartPredicate(), new And(new AlwF(getPredicate()), new Not(new SomP_e(getPredicate()))));
+		else if (!mades_ad.hasStart() && mades_ad.hasEnd())
+			sem += new Iff(getPredicate().getStartPredicate(), SMadesModel.SYSTEMSTART) + "\n"
+					+ new Iff(getPredicate().getEndPredicate(), new And(new AlwP(getPredicate()), new AlwF_e(new Not(getPredicate()))));
+		else
+			sem += new Iff(getPredicate(), new Or(getPredicate().getStartPredicate(), new Since_ei(new Not(getPredicate().getEndPredicate()), getPredicate().getStartPredicate())))
+			+ "\n" + new Implies(getPredicate().getStartPredicate(), new Until_ei(new Not(getPredicate().getStartPredicate()), getPredicate().getEndPredicate()));
+		return sem + "\n";
+	}
+
+	private String getDiagramStartSemantics(){
+		String sem = "";
+		Or anyAE = new Or();
+		
+		for (AcceptEventAction ae : mades_ad.getAcceptEvents())
+			anyAE.addFormulae(new SAcceptEvent(ae, mades_ad).getPredicate());
+//		ADStart => (AE1 || ... || AEn)
+//		(AE1 || ... || AEn) => AD
+		if (anyAE.size() == 1)
+			sem += new Iff(getPredicate().getStartPredicate(), new SAcceptEvent((AcceptEventAction) mades_ad.getAcceptEvents().toArray()[0], mades_ad).getPredicate()) + "\n";
+		else{
+			sem += new Implies(getPredicate().getStartPredicate(), anyAE) + "\n";
+			sem += new Implies(anyAE, getPredicate()) + "\n";
+		}
+		
+		return sem;
+	}
+
+	public Predicate getPredicate() {
+		return new Predicate(mades_ad.getName());
 	}
 
 }

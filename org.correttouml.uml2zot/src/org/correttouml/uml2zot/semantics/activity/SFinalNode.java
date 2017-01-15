@@ -20,9 +20,9 @@ public class SFinalNode {
 	
 	public Predicate getPredicate(){
 		if (mades_activity instanceof AD)
-			return new SAD((AD) mades_activity).getEndPredicate();
+			return new SAD((AD) mades_activity).getPredicate().getEndPredicate();
 		else if (mades_activity instanceof IOD)
-			return new SIOD((IOD) mades_activity).getEndPredicate();
+			return new SIOD((IOD) mades_activity).getPredicate().getEndPredicate();
 		return null;
 	}
 

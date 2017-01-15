@@ -81,7 +81,7 @@ public class Activity implements ExpressionContext{
     public Set<InterruptibleRegion> getInterruptibleRegions(){
     	Set<InterruptibleRegion> regions=new HashSet<InterruptibleRegion>();
     	for(ActivityGroup ag:this.uml_activity.getGroups()){
-    		if(ag instanceof InterruptibleActivityRegion) regions.add(new InterruptibleRegion((InterruptibleActivityRegion)ag));
+    		if(ag instanceof InterruptibleActivityRegion) regions.add(new InterruptibleRegion((InterruptibleActivityRegion)ag, this));
     	}
     	return regions;
     }
@@ -104,6 +104,42 @@ public class Activity implements ExpressionContext{
 	
 	public Object getObject(){
 		return object;
+	}
+	
+	public boolean hasStart(){
+		for (Node n : getNodes())
+			if (n instanceof InitialNode || n instanceof AcceptEventAction)
+				return true;
+		return false;
+	}
+	
+	public boolean hasInialNode(){
+		for (Node n : getNodes())
+			if (n instanceof InitialNode)
+				return true;
+		return false;
+	}
+	public boolean hasEnd(){
+		for (Node n : getNodes())
+			if (n instanceof FinalNode)
+				return true;
+		return false;
+	}
+	
+	public Set<AcceptEventAction> getAcceptEvents(){
+		HashSet<AcceptEventAction> aes = new HashSet<AcceptEventAction>();
+		for (Node n : getNodes())
+			if (n instanceof AcceptEventAction)
+				aes.add((AcceptEventAction) n);
+		return aes;
+	}
+	
+	public Set<SequenceDiagramNode> getSequenceDiagramNodes(){
+		HashSet<SequenceDiagramNode> sdns = new HashSet<SequenceDiagramNode>();
+		for (Node n : getNodes())
+			if (n instanceof SequenceDiagramNode)
+				sdns.add((SequenceDiagramNode) n);
+		return sdns;
 	}
 	
 	@Override

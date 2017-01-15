@@ -21,7 +21,7 @@
             <value xsi:nil="true"/>
           </defaultValue>
         </ownedAttribute>
-        <ownedBehavior xmi:type="uml:Activity" xmi:id="_KZBcYHpeEeaR4ezXoKL4ew" name="adRadar" node="_khRroIDVEeaGHOYwzM7oOw _OFMNsISGEeah-pkLUtOMoA _To-mYISGEeah-pkLUtOMoA _21NDkISGEeah-pkLUtOMoA _733FIISGEeah-pkLUtOMoA _pceqwISNEeah-pkLUtOMoA _5JHiwISNEeah-pkLUtOMoA _LQv2gISOEeah-pkLUtOMoA _3b6xkITDEeah-pkLUtOMoA _MGPtQIYREeaMiq1KEvWkRw">
+        <ownedBehavior xmi:type="uml:Activity" xmi:id="_KZBcYHpeEeaR4ezXoKL4ew" name="adRadar" node="_khRroIDVEeaGHOYwzM7oOw _OFMNsISGEeah-pkLUtOMoA _To-mYISGEeah-pkLUtOMoA _21NDkISGEeah-pkLUtOMoA _pceqwISNEeah-pkLUtOMoA _5JHiwISNEeah-pkLUtOMoA _LQv2gISOEeah-pkLUtOMoA _3b6xkITDEeah-pkLUtOMoA _MGPtQIYREeaMiq1KEvWkRw _sY52sNmfEea4EpT9f1TLKg _v4imUNmfEea4EpT9f1TLKg _8hE0INmfEea4EpT9f1TLKg">
           <edge xmi:type="uml:ObjectFlow" xmi:id="_P44_AIPNEeaKIqd2DOEbQg" name="ObjectFlow" target="_Nvh_QIYREeaMiq1KEvWkRw" source="_khVWAIDVEeaGHOYwzM7oOw">
             <guard xmi:type="uml:LiteralBoolean" xmi:id="_P5hRIIPNEeaKIqd2DOEbQg" value="true"/>
             <weight xmi:type="uml:LiteralInteger" xmi:id="_P5jGUIPNEeaKIqd2DOEbQg" value="1"/>
@@ -32,10 +32,13 @@
           <edge xmi:type="uml:ControlFlow" xmi:id="_rt8XEISNEeah-pkLUtOMoA" name="ControlFlow2" target="_To-mYISGEeah-pkLUtOMoA" source="_pceqwISNEeah-pkLUtOMoA"/>
           <edge xmi:type="uml:ControlFlow" xmi:id="_AqaJ8ISOEeah-pkLUtOMoA" name="[(failureC > 1)]" target="_3b6xkITDEeah-pkLUtOMoA" source="_5JHiwISNEeah-pkLUtOMoA"/>
           <edge xmi:type="uml:ControlFlow" xmi:id="_R41k0ISOEeah-pkLUtOMoA" name="[(failureC &lt; 2)]" target="_LQv2gISOEeah-pkLUtOMoA" source="_5JHiwISNEeah-pkLUtOMoA"/>
-          <edge xmi:type="uml:ControlFlow" xmi:id="_S6xi8ISOEeah-pkLUtOMoA" name="ControlFlow6" target="_733FIISGEeah-pkLUtOMoA" source="_LQv2gISOEeah-pkLUtOMoA"/>
-          <edge xmi:type="uml:ControlFlow" xmi:id="_VYydgISOEeah-pkLUtOMoA" name="ControlFlow8" target="_733FIISGEeah-pkLUtOMoA" source="_To-mYISGEeah-pkLUtOMoA"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_S6xi8ISOEeah-pkLUtOMoA" name="ControlFlow6" target="_v4imUNmfEea4EpT9f1TLKg" source="_LQv2gISOEeah-pkLUtOMoA"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_VYydgISOEeah-pkLUtOMoA" name="ControlFlow8" target="_sY52sNmfEea4EpT9f1TLKg" source="_To-mYISGEeah-pkLUtOMoA"/>
           <edge xmi:type="uml:ControlFlow" xmi:id="_bvqjMISSEeah-pkLUtOMoA" name="ControlFlow10" target="_MGPtQIYREeaMiq1KEvWkRw" source="_pceqwISNEeah-pkLUtOMoA"/>
-          <edge xmi:type="uml:ControlFlow" xmi:id="_kykHEISSEeah-pkLUtOMoA" name="ControlFlow11" target="_733FIISGEeah-pkLUtOMoA" source="_MGPtQIYREeaMiq1KEvWkRw"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_kykHEISSEeah-pkLUtOMoA" name="ControlFlow11" target="_sY52sNmfEea4EpT9f1TLKg" source="_MGPtQIYREeaMiq1KEvWkRw"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_xwNSkNmfEea4EpT9f1TLKg" target="_v4imUNmfEea4EpT9f1TLKg" source="_sY52sNmfEea4EpT9f1TLKg"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_-sMA0NmfEea4EpT9f1TLKg" target="_8hE0INmfEea4EpT9f1TLKg" source="_v4imUNmfEea4EpT9f1TLKg"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_kGe7QNmkEea4EpT9f1TLKg" target="_v4imUNmfEea4EpT9f1TLKg" source="_3b6xkITDEeah-pkLUtOMoA"/>
           <node xmi:type="uml:ReadVariableAction" xmi:id="_khRroIDVEeaGHOYwzM7oOw" name="readValue">
             <result xmi:type="uml:OutputPin" xmi:id="_khVWAIDVEeaGHOYwzM7oOw" name="" outgoing="_P44_AIPNEeaKIqd2DOEbQg">
               <upperBound xmi:type="uml:LiteralInteger" xmi:id="_khVWAYDVEeaGHOYwzM7oOw" value="1"/>
@@ -44,11 +47,10 @@
           <node xmi:type="uml:AcceptEventAction" xmi:id="_OFMNsISGEeah-pkLUtOMoA" name="@readValue.call" outgoing="_3uNvMISGEeah-pkLUtOMoA"/>
           <node xmi:type="uml:OpaqueAction" xmi:id="_To-mYISGEeah-pkLUtOMoA" name="failureC = 0" incoming="_rt8XEISNEeah-pkLUtOMoA" outgoing="_VYydgISOEeah-pkLUtOMoA"/>
           <node xmi:type="uml:DecisionNode" xmi:id="_21NDkISGEeah-pkLUtOMoA" name="DecisionNode" incoming="_3uNvMISGEeah-pkLUtOMoA" outgoing="_41LXQISGEeah-pkLUtOMoA _8rPp4ISGEeah-pkLUtOMoA"/>
-          <node xmi:type="uml:FlowFinalNode" xmi:id="_733FIISGEeah-pkLUtOMoA" name="FlowFinalNode" incoming="_S6xi8ISOEeah-pkLUtOMoA _VYydgISOEeah-pkLUtOMoA _kykHEISSEeah-pkLUtOMoA"/>
           <node xmi:type="uml:ForkNode" xmi:id="_pceqwISNEeah-pkLUtOMoA" name="ForkNode" incoming="_41LXQISGEeah-pkLUtOMoA" outgoing="_rt8XEISNEeah-pkLUtOMoA _bvqjMISSEeah-pkLUtOMoA"/>
           <node xmi:type="uml:DecisionNode" xmi:id="_5JHiwISNEeah-pkLUtOMoA" name="DecisionNode1" incoming="_8rPp4ISGEeah-pkLUtOMoA" outgoing="_AqaJ8ISOEeah-pkLUtOMoA _R41k0ISOEeah-pkLUtOMoA"/>
           <node xmi:type="uml:OpaqueAction" xmi:id="_LQv2gISOEeah-pkLUtOMoA" name="failureC = &lt;Y>failureC + 1" incoming="_R41k0ISOEeah-pkLUtOMoA" outgoing="_S6xi8ISOEeah-pkLUtOMoA"/>
-          <node xmi:type="uml:SendSignalAction" xmi:id="_3b6xkITDEeah-pkLUtOMoA" name="@failure.sig" incoming="_AqaJ8ISOEeah-pkLUtOMoA" signal="_w0DFsITDEeah-pkLUtOMoA">
+          <node xmi:type="uml:SendSignalAction" xmi:id="_3b6xkITDEeah-pkLUtOMoA" name="@failure.sig" incoming="_AqaJ8ISOEeah-pkLUtOMoA" outgoing="_kGe7QNmkEea4EpT9f1TLKg" signal="_w0DFsITDEeah-pkLUtOMoA">
             <target xmi:type="uml:InputPin" xmi:id="_49ZycITDEeah-pkLUtOMoA" name="">
               <upperBound xmi:type="uml:LiteralInteger" xmi:id="_49ZycYTDEeah-pkLUtOMoA" value="1"/>
             </target>
@@ -61,6 +63,9 @@
               <upperBound xmi:type="uml:LiteralInteger" xmi:id="_Nvh_QYYREeaMiq1KEvWkRw" value="1"/>
             </argument>
           </node>
+          <node xmi:type="uml:JoinNode" xmi:id="_sY52sNmfEea4EpT9f1TLKg" name="JoinNode1" incoming="_kykHEISSEeah-pkLUtOMoA _VYydgISOEeah-pkLUtOMoA" outgoing="_xwNSkNmfEea4EpT9f1TLKg"/>
+          <node xmi:type="uml:MergeNode" xmi:id="_v4imUNmfEea4EpT9f1TLKg" name="MergeNode1" incoming="_S6xi8ISOEeah-pkLUtOMoA _xwNSkNmfEea4EpT9f1TLKg _kGe7QNmkEea4EpT9f1TLKg" outgoing="_-sMA0NmfEea4EpT9f1TLKg"/>
+          <node xmi:type="uml:ActivityFinalNode" xmi:id="_8hE0INmfEea4EpT9f1TLKg" name="adFN" incoming="_-sMA0NmfEea4EpT9f1TLKg"/>
         </ownedBehavior>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_mcEF0HpdEeaR4ezXoKL4ew" name="readValue"/>
       </packagedElement>
@@ -277,4 +282,6 @@
   <CorrettoUML.Time:TimedEvent xmi:id="_-ZFaYMRxEearRo8CE2bgGw" base_Message="_vUN5EIYgEeaMiq1KEvWkRw" on="_LwvYAMRyEearRo8CE2bgGw"/>
   <CorrettoUML.Time:ClockType xmi:id="_FHsAYMRyEearRo8CE2bgGw" base_Class="_ajZq0AN-EeKTXbQztILh3g" period="4"/>
   <CorrettoUML.Time:Clock xmi:id="_LwvYAMRyEearRo8CE2bgGw" base_InstanceSpecification="_WORoMAN_EeKTXbQztILh3g"/>
+  <CorrettoUML.Time:TimeConstraint xmi:id="_gDZZYNa8EeaKKYYXdbNrBQ" base_Comment="_zqY2AAOBEeKTXbQztILh3g"/>
+  <CorrettoUML.Time:TimeConstraint xmi:id="_izDdkNa8EeaKKYYXdbNrBQ" base_Comment="_OMJdcAOCEeKTXbQztILh3g"/>
 </xmi:XMI>
