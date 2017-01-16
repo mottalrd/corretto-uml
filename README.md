@@ -12,7 +12,7 @@ Detailed description
 
 The following diagrams describe in more details how _Corretto_ works.
 <center>
-<img src="https://raw.githubusercontent.com/mottalrd/CorrettoUML/master/docs/images/mvf_overview.png" width="450" />
+<img src="https://raw.githubusercontent.com/mottalrd/CorrettoUML/master/docs/images/mvf_overview1.png" width="450" />
 </center>
 
 The user creates a C-UML models using <a href="http://www.eclipse.org/papyrus/">Papyrus</a>. Corretto supports both static and behavioral diagrams of different types. The different views communicates by means of a shared set of events enabling the possibility to define complex behaviors. Also, dedicated time concepts borrowed from <a href="http://www.omgmarte.org/">UML/MARTE</a> have been included to predicate on the time dimension of the system. The <a href="https://github.com/mottalrd/corretto-uml/tree/master/docs/Metamodels.pdf">C-UML Superstructure Specification</a> presents the metamodels for C-UML models.
